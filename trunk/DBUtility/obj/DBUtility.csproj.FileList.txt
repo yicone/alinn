@@ -1,0 +1,3 @@
+bin\Release\HOT.DBUtility.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\HOT.DBUtility.dll
