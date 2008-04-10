@@ -1,0 +1,4 @@
+
+通过工厂模式来实现支持不同数据库类型。根据实际情况从解决方案中移除不需要的DAL.
+OracleDAL
+SQLServerDAL
