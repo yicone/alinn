@@ -1,0 +1,7 @@
+bin\Release\HOT.BLL.dll
+bin\Release\HOT.Base.dll
+bin\Release\HOT.DALFactory.dll
+bin\Release\HOT.IDAL.dll
+bin\Release\HOT.Model.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\HOT.BLL.dll

@@ -1,0 +1,8 @@
+bin\Release\HOT.Base.dll
+bin\Release\HOT.DALFactory.dll
+bin\Release\HOT.DBUtility.dll
+bin\Release\HOT.IDAL.dll
+bin\Release\HOT.Model.dll
+bin\Release\Microsoft.Web.UI.WebControls.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\HOT.Base.dll
