@@ -8,7 +8,7 @@ namespace HOT.Common
     /// 李天平
     /// 2004.8
     /// </summary>
-    public sealed class ConfigHelper
+    public class ConfigHelper
     {
         /// <summary>
         /// 得到AppSettings中的配置字符串信息

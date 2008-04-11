@@ -19,7 +19,7 @@ CREATE TABLE [dbo].[AL_User] (
 	[IsLocked] [tinyint] NULL ,--是否被锁定
 	[ActiveCode] [varchar] (16) null,--邮箱验证码（20080411新添加）
 	[RegTime] [datetime] NULL default(getdate())--用户注册时间
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) 
 GO
 --广告表
 CREATE TABLE [dbo].[AL_Ads] (
