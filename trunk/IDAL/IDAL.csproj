@@ -97,6 +97,7 @@
     <Compile Include="ISysManage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">

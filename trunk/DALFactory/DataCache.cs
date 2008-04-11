@@ -28,5 +28,10 @@ namespace HOT.DALFactory
 			System.Web.Caching.Cache objCache = HttpRuntime.Cache;
 			objCache.Insert(CacheKey, objObject);
 		}
-	}
+
+        public static void SetCache(string CacheKey, object objModel, DateTime dateTime, TimeSpan timeSpan)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
+    }
 }

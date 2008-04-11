@@ -107,6 +107,7 @@
     <Compile Include="SysManage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

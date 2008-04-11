@@ -61,5 +61,15 @@ namespace HOT.DALFactory
             return (HOT.IDAL.ISysManage)objType;		
 		}
 		#endregion
+        /// <summary>
+        /// 创建User数据层接口
+        /// </summary>
+        public static HOT.IDAL.IUser CreateUser()
+        {
+
+            string CacheKey = path + ".User";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IUser)objType;
+        }
 }
 }

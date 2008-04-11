@@ -105,6 +105,7 @@
     <Compile Include="SysNode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
