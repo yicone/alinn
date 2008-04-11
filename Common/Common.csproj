@@ -30,6 +30,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -38,36 +40,13 @@
     <Content Include="DataCache.cs" />
     <Content Include="MessageBox.cs" />
     <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
-      <Project>{96401C5E-D166-4E4E-98C2-3ECA91B6C7EB}</Project>
-      <Name>DALFactory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
-      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
-      <Name>DBUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IDAL\IDAL.csproj">
-      <Project>{B0706FA2-977C-4523-B093-F57804756498}</Project>
-      <Name>IDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{53995DBB-9836-4647-AD22-865884FDEB9E}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OracleDAL\OracleDAL.csproj">
-      <Project>{9FE00521-3A8B-42B1-814E-585E99407B2E}</Project>
-      <Name>OracleDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLServerDAL\SQLServerDAL.csproj">
-      <Project>{AB835BA2-FFD6-49CD-87B0-E216255BB32E}</Project>
-      <Name>SQLServerDAL</Name>
-    </ProjectReference>
+    <Compile Include="ClientDeal.cs" />
+    <Compile Include="Fill.cs" />
+    <Compile Include="MakeMd5.cs" />
+    <Compile Include="Picture.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="WinVal.cs" />
+    <Compile Include="WinValInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

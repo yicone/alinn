@@ -109,13 +109,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Base\Common.csproj">
-      <Project>{3831186B-412A-487E-9B9D-B0141F5D383A}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{DC6043DD-F222-45BF-8EA9-ED3EB7D1DB00}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\DALFactory\DALFactory.csproj">
       <Project>{96401C5E-D166-4E4E-98C2-3ECA91B6C7EB}</Project>

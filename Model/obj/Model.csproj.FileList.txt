@@ -1,3 +1,0 @@
-bin\Release\HOT.Model.dll
-obj\Release\ResolveAssemblyReference.cache
-obj\Release\HOT.Model.dll
