@@ -8,7 +8,7 @@ using System.Data;
 using System.IO;
 using HOT.Web;
 using System.Web.Security;
-//using LTP.Accounts.Bus;
+//using HOT.Accounts.Bus;
 namespace HOT.Web 
 {
 	/// <summary>

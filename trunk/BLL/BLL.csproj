@@ -93,13 +93,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdClass.cs" />
+    <Compile Include="Ads.cs" />
+    <Compile Include="AdSize.cs" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Employment.cs" />
     <Compile Include="SysManage.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="WebClass.cs" />
+    <Compile Include="Webs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
