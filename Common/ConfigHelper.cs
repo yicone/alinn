@@ -23,7 +23,7 @@ namespace HOT.Common
             {
                 try
                 {
-                    objModel =System.Configuration.ConfigurationSettings.AppSettings[key];
+                    objModel = ConfigurationManager.AppSettings[key];
                     if (objModel != null)
                     {
                         HOT.Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(180), TimeSpan.Zero);

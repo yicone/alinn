@@ -53,7 +53,7 @@ namespace HOT.DALFactory
         public static HOT.IDAL.ISysManage CreateSysManage()
 		{
 			//方式1			
-			//return (Maticsoft.IDAL.ISysManage)Assembly.Load(path).CreateInstance(path+".SysManage");
+			//return (HOT.IDAL.ISysManage)Assembly.Load(path).CreateInstance(path+".SysManage");
 
 			//方式2 			
 			string CacheKey = path+".SysManage";	
@@ -71,5 +71,75 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.IUser)objType;
         }
+        /// <summary>
+        /// 创建AdClass数据层接口
+        /// </summary>
+        public static HOT.IDAL.IAdClass CreateAdClass()
+        {
+
+            string CacheKey = path + ".AdClass";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IAdClass)objType;
+        }
+
+        /// <summary>
+        /// 创建Ads数据层接口
+        /// </summary>
+        public static HOT.IDAL.IAds CreateAds()
+        {
+
+            string CacheKey = path + ".Ads";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IAds)objType;
+        }
+
+
+        /// <summary>
+        /// 创建AdSize数据层接口
+        /// </summary>
+        public static HOT.IDAL.IAdSize CreateAdSize()
+        {
+
+            string CacheKey = path + ".AdSize";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IAdSize)objType;
+        }
+
+
+        /// <summary>
+        /// 创建Employment数据层接口
+        /// </summary>
+        public static HOT.IDAL.IEmployment CreateEmployment()
+        {
+
+            string CacheKey = path + ".Employment";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IEmployment)objType;
+        }
+
+
+        /// <summary>
+        /// 创建WebClass数据层接口
+        /// </summary>
+        public static HOT.IDAL.IWebClass CreateWebClass()
+        {
+
+            string CacheKey = path + ".WebClass";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IWebClass)objType;
+        }
+
+
+        /// <summary>
+        /// 创建Webs数据层接口
+        /// </summary>
+        public static HOT.IDAL.IWebs CreateWebs()
+        {
+
+            string CacheKey = path + ".Webs";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IWebs)objType;
+        }
+
 }
 }
