@@ -101,8 +101,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Base\Common.csproj">
-      <Project>{3831186B-412A-487E-9B9D-B0141F5D383A}</Project>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{DC6043DD-F222-45BF-8EA9-ED3EB7D1DB00}</Project>
       <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\DALFactory\DALFactory.csproj">

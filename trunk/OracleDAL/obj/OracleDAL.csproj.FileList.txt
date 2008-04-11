@@ -1,8 +1,0 @@
-bin\Release\Maticsoft.OracleDAL.dll
-bin\Release\CodematicDemo.IDAL.dll
-bin\Release\LTP.Common.dll
-bin\Release\Maticsoft.DBUtility.dll
-bin\Release\Maticsoft.Model.dll
-bin\Release\LTP.Accounts.dll
-obj\Release\ResolveAssemblyReference.cache
-obj\Release\Maticsoft.OracleDAL.dll

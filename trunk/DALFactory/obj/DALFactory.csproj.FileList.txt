@@ -1,5 +1,0 @@
-bin\Release\HOT.DALFactory.dll
-bin\Release\HOT.IDAL.dll
-bin\Release\HOT.Model.dll
-obj\Release\ResolveAssemblyReference.cache
-obj\Release\HOT.DALFactory.dll
