@@ -119,26 +119,26 @@ namespace HOT.DALFactory
 
 
         /// <summary>
-        /// 创建WebClass数据层接口
+        /// 创建SiteClass数据层接口
         /// </summary>
-        public static HOT.IDAL.IWebClass CreateWebClass()
+        public static HOT.IDAL.ISiteClass CreateSiteClass()
         {
 
-            string CacheKey = path + ".WebClass";
+            string CacheKey = path + ".SiteClass";
             object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IWebClass)objType;
+            return (HOT.IDAL.ISiteClass)objType;
         }
 
 
         /// <summary>
-        /// 创建Webs数据层接口
+        /// 创建Site数据层接口
         /// </summary>
-        public static HOT.IDAL.IWebs CreateWebs()
+        public static HOT.IDAL.ISite CreateSite()
         {
 
-            string CacheKey = path + ".Webs";
+            string CacheKey = path + ".Site";
             object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IWebs)objType;
+            return (HOT.IDAL.ISite)objType;
         }
 
 }
