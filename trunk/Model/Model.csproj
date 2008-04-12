@@ -106,12 +106,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="Site.cs" />
+    <Compile Include="SiteClass.cs" />
     <Compile Include="SysNode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="WebClass.cs" />
-    <Compile Include="Webs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
