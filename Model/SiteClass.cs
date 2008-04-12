@@ -2,11 +2,11 @@ using System;
 namespace HOT.Model
 {
 	/// <summary>
-	/// 实体类WebClass 。(属性说明自动提取数据库字段的描述信息)
+	/// 实体类SiteClass 。(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
-	public class WebClass
+	public class SiteClass
 	{
-		public WebClass()
+		public SiteClass()
 		{}
 		#region Model
 		private int _classid;

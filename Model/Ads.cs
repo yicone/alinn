@@ -11,7 +11,7 @@ namespace HOT.Model
 		#region Model
 		private string _adid;
 		private string _userid;
-		private string _webid;
+		private string _siteId;
 		private int? _isword;
 		private int? _isimg;
 		private int? _position;
@@ -49,10 +49,10 @@ namespace HOT.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string WebId
+		public string SiteId
 		{
-			set{ _webid=value;}
-			get{return _webid;}
+			set{ _siteId=value;}
+			get{return _siteId;}
 		}
 		/// <summary>
 		/// 

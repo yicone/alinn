@@ -3,31 +3,35 @@ using System.Data;
 namespace HOT.IDAL
 {
 	/// <summary>
-	/// 接口层IWebs 的摘要说明。
+	/// 接口层ISiteClass 的摘要说明。
 	/// </summary>
-	public interface IWebs
+	public interface ISiteClass
 	{
 		#region  成员方法
 		/// <summary>
+		/// 得到最大ID
+		/// </summary>
+		int GetMaxId();
+		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		bool Exists(string WebId);
+		bool Exists(int ClassId);
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		void Add(HOT.Model.Webs model);
+		int Add(HOT.Model.SiteClass model);
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		void Update(HOT.Model.Webs model);
+		void Update(HOT.Model.SiteClass model);
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		void Delete(string WebId);
+		void Delete(int ClassId);
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		HOT.Model.Webs GetModel(string WebId);
+		HOT.Model.SiteClass GetModel(int ClassId);
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

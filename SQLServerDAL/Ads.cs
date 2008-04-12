@@ -45,7 +45,7 @@ namespace HOT.SQLServerDAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@AdId", SqlDbType.VarChar,16),
 					new SqlParameter("@UserId", SqlDbType.VarChar,16),
-					new SqlParameter("@WebId", SqlDbType.VarChar,16),
+					new SqlParameter("@SiteId", SqlDbType.VarChar,16),
 					new SqlParameter("@IsWord", SqlDbType.TinyInt,1),
 					new SqlParameter("@IsImg", SqlDbType.TinyInt,1),
 					new SqlParameter("@Position", SqlDbType.TinyInt,1),
@@ -66,7 +66,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Description", SqlDbType.NText)};
 			parameters[0].Value = model.AdId;
 			parameters[1].Value = model.UserId;
-			parameters[2].Value = model.WebId;
+			parameters[2].Value = model.SiteId;
 			parameters[3].Value = model.IsWord;
 			parameters[4].Value = model.IsImg;
 			parameters[5].Value = model.Position;
@@ -98,7 +98,7 @@ namespace HOT.SQLServerDAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@AdId", SqlDbType.VarChar,16),
 					new SqlParameter("@UserId", SqlDbType.VarChar,16),
-					new SqlParameter("@WebId", SqlDbType.VarChar,16),
+					new SqlParameter("@SiteId", SqlDbType.VarChar,16),
 					new SqlParameter("@IsWord", SqlDbType.TinyInt,1),
 					new SqlParameter("@IsImg", SqlDbType.TinyInt,1),
 					new SqlParameter("@Position", SqlDbType.TinyInt,1),
@@ -119,7 +119,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Description", SqlDbType.NText)};
 			parameters[0].Value = model.AdId;
 			parameters[1].Value = model.UserId;
-			parameters[2].Value = model.WebId;
+			parameters[2].Value = model.SiteId;
 			parameters[3].Value = model.IsWord;
 			parameters[4].Value = model.IsImg;
 			parameters[5].Value = model.Position;
@@ -170,7 +170,7 @@ namespace HOT.SQLServerDAL
 			{
 				model.AdId=ds.Tables[0].Rows[0]["AdId"].ToString();
 				model.UserId=ds.Tables[0].Rows[0]["UserId"].ToString();
-				model.WebId=ds.Tables[0].Rows[0]["WebId"].ToString();
+				model.SiteId=ds.Tables[0].Rows[0]["SiteId"].ToString();
 				if(ds.Tables[0].Rows[0]["IsWord"].ToString()!="")
 				{
 					model.IsWord=int.Parse(ds.Tables[0].Rows[0]["IsWord"].ToString());
@@ -224,7 +224,7 @@ namespace HOT.SQLServerDAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select AdId,UserId,WebId,IsWord,IsImg,Position,Size,Type,Classes,KeyWords,TitleColor,ContentColor,UrlColor,BorderColor,BgColor,Grounding,BgImg,Corner,IsLocked,NeedCheck,Description ");
+			strSql.Append("select AdId,UserId,SiteId,IsWord,IsImg,Position,Size,Type,Classes,KeyWords,TitleColor,ContentColor,UrlColor,BorderColor,BgColor,Grounding,BgImg,Corner,IsLocked,NeedCheck,Description ");
 			strSql.Append(" FROM AL_Ads ");
 			if(strWhere.Trim()!="")
 			{
