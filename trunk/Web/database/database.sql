@@ -1,6 +1,6 @@
 --用户表
 CREATE TABLE [dbo].[AL_User] (
-	[UserID] [varchar](16) Primary key NOT NULL ,
+	[UserID] [uniqueidentifier] Primary key NOT NULL ,
 	[RoleID] [int] default(0) NULL ,--角色ID比如：个人会员、企业会员等，默认为0表示为个人会员
 	[Email] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,--同时做为登录用户名
 	[NickName] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,--昵称
@@ -23,9 +23,9 @@ CREATE TABLE [dbo].[AL_User] (
 GO
 --广告表
 CREATE TABLE [dbo].[AL_Ads] (
-	[AdId] [varchar](16) Primary key NOT NULL ,
+	[AdId] [uniqueidentifier] Primary key NOT NULL ,
 	[UserId] [varchar](16) null,--广告位发布者ID
-	[WebId] [varchar](16) null,--所属网站
+	[SiteId] [varchar](16) null,--所属网站
 	[IsWord] [tinyint] null,--是否是文字广告
 	[IsImg] [tinyint] null,--是否是图片或者Flash广告
 	[Position] [tinyint] null,--广告位置，0为首页，1为不在首页
@@ -49,35 +49,43 @@ CREATE TABLE [dbo].[AL_Ads] (
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 --网站表
-CREATE TABLE [dbo].[AL_Webs] (
-	[WebId] [varchar](16) Primary key NOT NULL ,
-	[UserId] [varchar](16) null,--添加网站的用户ID
-	[WebName] [nvarchar] (32) Null,--网站名称
-	[WebUrl] [nvarchar] (128) Null,--网址
-	[WebClass] [int] null,--网站分类ID
-	[SexType] [tinyint] null,--性别类型：0表示：多数是男的，1表示：男女基本一致，2表示多数是女的
-	[AgeType] [tinyint] null,--年龄类型：0表示：18岁以下；1表示：18~25岁，2表示：25~45岁，3表示：45岁以上
-	[Employment][int] null,--职业
-	[Taste] [nvarchar] (60) null,--爱好
-	[Description] [ntext] null--网站介绍
+
+CREATE TABLE [dbo].[AL_Site](
+	[SiteId] [uniqueidentifier]  Primary key NOT NULL ,
+	[UserId] [uniqueidentifier] NULL,			--添加网站的用户ID
+	[SiteName] [nvarchar](32) NULL,				--网站名称
+	[SiteUrl] [nvarchar](128) NULL,				--网址
+	[SiteClass] [int] NULL,						--网站分类ID
+	[SexType] [tinyint] NULL,					--性别类型：0表示：多数是男的，1表示：男女基本一致，2表示多数是女的
+	[AgeType] [tinyint] NULL,					--年龄类型：0表示：18岁以下；1表示：18~25岁，2表示：25~45岁，3表示：45岁以上
+	[Employments] [varchar](100) NULL,			--职业
+	[Taste] [nvarchar](60) NULL,				--爱好
+	[Description] [ntext] NULL,					--网站介绍
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+
 --网站分类表
-CREATE TABLE [dbo].[AL_WebClass] (
+CREATE TABLE [dbo].[AL_SiteClass] (
 	[ClassId][int] identity(1,1) Primary key NOT NULL ,
 	[ClassName] [nvarchar] (20) null
 ) 
+GO
+
 --职业分类表
 CREATE TABLE [dbo].[AL_Employment] (
 	[EmploymentId] [int] identity(1,1) Primary key NOT NULL ,
 	[EmploymentName] [nvarchar] (20) null
 )
+GO
+
 --广告尺寸表
 CREATE TABLE [dbo].[AL_AdSize] (
 	[SizeId] [int] identity(1,1) Primary key NOT NULL ,
 	[Width] [int] null,--宽
 	[Height] [int] null,--高
 )
+GO
+
 --广告分类表
 CREATE TABLE [dbo].[AL_AdClass] (
 	[AdClassId] [int] identity(1,1) Primary key NOT NULL ,

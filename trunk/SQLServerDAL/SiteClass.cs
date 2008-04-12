@@ -7,11 +7,11 @@ using HOT.DBUtility;//请先添加引用
 namespace HOT.SQLServerDAL
 {
 	/// <summary>
-	/// 数据访问类WebClass。
+	/// 数据访问类SiteClass。
 	/// </summary>
-	public class WebClass:IWebClass
+	public class SiteClass:ISiteClass
 	{
-		public WebClass()
+		public SiteClass()
 		{}
 		#region  成员方法
 
@@ -20,7 +20,7 @@ namespace HOT.SQLServerDAL
 		/// </summary>
 		public int GetMaxId()
 		{
-		return DbHelperSQL.GetMaxID("ClassId", "AL_WebClass"); 
+		return DbHelperSQL.GetMaxID("ClassId", "AL_SiteClass"); 
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@ClassId", SqlDbType.Int,4)};
 			parameters[0].Value = ClassId;
 
-			int result= DbHelperSQL.RunProcedure("UP_AL_WebClass_Exists",parameters,out rowsAffected);
+			int result= DbHelperSQL.RunProcedure("UP_AL_SiteClass_Exists",parameters,out rowsAffected);
 			if(result==1)
 			{
 				return true;
@@ -47,7 +47,7 @@ namespace HOT.SQLServerDAL
 		/// <summary>
 		///  增加一条数据
 		/// </summary>
-		public int Add(HOT.Model.WebClass model)
+		public int Add(HOT.Model.SiteClass model)
 		{
 			int rowsAffected;
 			SqlParameter[] parameters = {
@@ -56,14 +56,14 @@ namespace HOT.SQLServerDAL
 			parameters[0].Direction = ParameterDirection.Output;
 			parameters[1].Value = model.ClassName;
 
-			DbHelperSQL.RunProcedure("UP_AL_WebClass_ADD",parameters,out rowsAffected);
+			DbHelperSQL.RunProcedure("UP_AL_SiteClass_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
 		}
 
 		/// <summary>
 		///  更新一条数据
 		/// </summary>
-		public void Update(HOT.Model.WebClass model)
+		public void Update(HOT.Model.SiteClass model)
 		{
 			int rowsAffected;
 			SqlParameter[] parameters = {
@@ -72,7 +72,7 @@ namespace HOT.SQLServerDAL
 			parameters[0].Value = model.ClassId;
 			parameters[1].Value = model.ClassName;
 
-			DbHelperSQL.RunProcedure("UP_AL_WebClass_Update",parameters,out rowsAffected);
+			DbHelperSQL.RunProcedure("UP_AL_SiteClass_Update",parameters,out rowsAffected);
 		}
 
 		/// <summary>
@@ -85,20 +85,20 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@ClassId", SqlDbType.Int,4)};
 			parameters[0].Value = ClassId;
 
-			DbHelperSQL.RunProcedure("UP_AL_WebClass_Delete",parameters,out rowsAffected);
+			DbHelperSQL.RunProcedure("UP_AL_SiteClass_Delete",parameters,out rowsAffected);
 		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public HOT.Model.WebClass GetModel(int ClassId)
+		public HOT.Model.SiteClass GetModel(int ClassId)
 		{
 			SqlParameter[] parameters = {
 					new SqlParameter("@ClassId", SqlDbType.Int,4)};
 			parameters[0].Value = ClassId;
 
-			HOT.Model.WebClass model=new HOT.Model.WebClass();
-			DataSet ds= DbHelperSQL.RunProcedure("UP_AL_WebClass_GetModel",parameters,"ds");
+			HOT.Model.SiteClass model=new HOT.Model.SiteClass();
+			DataSet ds= DbHelperSQL.RunProcedure("UP_AL_SiteClass_GetModel",parameters,"ds");
 			if(ds.Tables[0].Rows.Count>0)
 			{
 				if(ds.Tables[0].Rows[0]["ClassId"].ToString()!="")
@@ -121,7 +121,7 @@ namespace HOT.SQLServerDAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select ClassId,ClassName ");
-			strSql.Append(" FROM AL_WebClass ");
+			strSql.Append(" FROM AL_SiteClass ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -144,7 +144,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@OrderType", SqlDbType.Bit),
 					new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
 					};
-			parameters[0].Value = "AL_WebClass";
+			parameters[0].Value = "AL_SiteClass";
 			parameters[1].Value = "ID";
 			parameters[2].Value = PageSize;
 			parameters[3].Value = PageIndex;
