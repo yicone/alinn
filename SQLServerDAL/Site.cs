@@ -51,7 +51,8 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@AgeType", SqlDbType.TinyInt,1),
 					new SqlParameter("@Employments", SqlDbType.VarChar,100),
 					new SqlParameter("@Taste", SqlDbType.NVarChar,60),
-					new SqlParameter("@Description", SqlDbType.NText)};
+					new SqlParameter("@Description", SqlDbType.NText),
+                     new SqlParameter("@AuditState", SqlDbType.TinyInt,1)};
             parameters[0].Value = model.SiteId;
             parameters[1].Value = model.UserId;
             parameters[2].Value = model.SiteName;
@@ -62,6 +63,7 @@ namespace HOT.SQLServerDAL
             parameters[7].Value = model.Employments;
             parameters[8].Value = model.Taste;
             parameters[9].Value = model.Description;
+            parameters[10].Value = model.AuditState;
 
             DbHelperSQL.RunProcedure("UP_AL_Site_ADD", parameters, out rowsAffected);
         }
@@ -82,7 +84,8 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@AgeType", SqlDbType.TinyInt,1),
 					new SqlParameter("@Employments", SqlDbType.VarChar,100),
 					new SqlParameter("@Taste", SqlDbType.NVarChar,60),
-					new SqlParameter("@Description", SqlDbType.NText)};
+					new SqlParameter("@Description", SqlDbType.NText),
+                    new SqlParameter("@AuditState", SqlDbType.TinyInt,1)};
             parameters[0].Value = model.SiteId;
             parameters[1].Value = model.UserId;
             parameters[2].Value = model.SiteName;
@@ -93,6 +96,7 @@ namespace HOT.SQLServerDAL
             parameters[7].Value = model.Employments;
             parameters[8].Value = model.Taste;
             parameters[9].Value = model.Description;
+            parameters[10].Value = model.AuditState;
 
             DbHelperSQL.RunProcedure("UP_AL_Site_Update", parameters, out rowsAffected);
         }
@@ -148,6 +152,10 @@ namespace HOT.SQLServerDAL
                 model.Employments = ds.Tables[0].Rows[0]["Employments"].ToString();
                 model.Taste = ds.Tables[0].Rows[0]["Taste"].ToString();
                 model.Description = ds.Tables[0].Rows[0]["Description"].ToString();
+                if (ds.Tables[0].Rows[0]["AuditState"].ToString() != "")
+                {
+                    model.AuditState = int.Parse(ds.Tables[0].Rows[0]["AuditState"].ToString());
+                }
                 return model;
             }
             else
@@ -162,7 +170,7 @@ namespace HOT.SQLServerDAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description ");
+            strSql.Append("select SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState ");
             strSql.Append(" FROM AL_Site ");
             if (strWhere.Trim() != "")
             {

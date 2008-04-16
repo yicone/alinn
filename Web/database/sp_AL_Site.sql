@@ -43,15 +43,16 @@ CREATE PROCEDURE UP_AL_Site_ADD
 @AgeType tinyint,
 @Employments varchar(100),
 @Taste nvarchar(120),
-@Description ntext
+@Description ntext,
+@AuditState tinyint
 
  AS 
 	SET @SiteId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)
 	
 	INSERT INTO AL_Site(
-	[SiteId],[UserId],[SiteName],[SiteUrl],[SiteClass],[SexType],[AgeType],[Employments],[Taste],[Description]
+	[SiteId],[UserId],[SiteName],[SiteUrl],[SiteClass],[SexType],[AgeType],[Employments],[Taste],[Description],[AuditState]
 	)VALUES(
-	@SiteId,@UserId,@SiteName,@SiteUrl,@SiteClass,@SexType,@AgeType,@Employments,@Taste,@Description
+	@SiteId,@UserId,@SiteName,@SiteUrl,@SiteClass,@SexType,@AgeType,@Employments,@Taste,@Description, @AuditState
 	)
 
 GO
@@ -75,10 +76,11 @@ CREATE PROCEDURE UP_AL_Site_Update
 @AgeType tinyint,
 @Employments varchar(100),
 @Taste nvarchar(120),
-@Description ntext
+@Description ntext,
+@AuditState tinyint
  AS 
 	UPDATE AL_Site SET 
-	[UserId] = @UserId,[SiteName] = @SiteName,[SiteUrl] = @SiteUrl,[SiteClass] = @SiteClass,[SexType] = @SexType,[AgeType] = @AgeType,[Employments] = @Employments,[Taste] = @Taste,[Description] = @Description
+	[UserId] = @UserId,[SiteName] = @SiteName,[SiteUrl] = @SiteUrl,[SiteClass] = @SiteClass,[SexType] = @SexType,[AgeType] = @AgeType,[Employments] = @Employments,[Taste] = @Taste,[Description] = @Description,[AuditState] = @AuditState
 	WHERE SiteId=@SiteId 
 
 GO
@@ -113,7 +115,7 @@ CREATE PROCEDURE UP_AL_Site_GetModel
 @SiteId uniqueidentifier
  AS 
 	SELECT 
-	SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description
+	SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState
 	 FROM AL_Site
 	 WHERE SiteId=@SiteId 
 
@@ -131,7 +133,7 @@ GO
 CREATE PROCEDURE UP_AL_Site_GetList
  AS 
 	SELECT 
-	SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description
+	SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState
 	 FROM AL_Site
 
 GO

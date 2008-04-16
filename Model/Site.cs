@@ -19,6 +19,8 @@ namespace HOT.Model
         private string _employments;
         private string _taste;
         private string _description;
+        private int? _auditState;
+
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +100,14 @@ namespace HOT.Model
         {
             set { _description = value; }
             get { return _description; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? AuditState
+        {
+            get { return _auditState; }
+            set { _auditState = value; }
         }
         #endregion Model
 
