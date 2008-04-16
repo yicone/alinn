@@ -112,6 +112,7 @@ namespace Web
             model.Employments = employments;
             model.Taste = taste;
             model.Description = description;
+            model.AuditState = 0;   //TODO:替换为枚举值 0：未提交审核
             HOT.BLL.Site bll = new HOT.BLL.Site();
             bll.Add(model);
         }

@@ -86,6 +86,7 @@ CREATE TABLE [dbo].[AL_Site](
 	[Employments] [varchar](100) NULL,			--÷∞“µ
 	[Taste] [nvarchar](60) NULL,				--∞Æ∫√
 	[Description] [ntext] NULL,					--Õ¯’æΩÈ…‹
+	[AuditState] [tinyint] NULL,				--…Û∫À◊¥Ã¨
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 

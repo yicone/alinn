@@ -15,12 +15,25 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.DataBind();
         }
 
         protected void btnAddSite_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Site.aspx");
+        }
+
+        private int _zoneCount = 1;
+
+        public int ZoneCount
+        {
+            get { return _zoneCount; }
+            set { _zoneCount = value; }
+        }
+
+        public int PrintZoneCount()
+        {
+            return _zoneCount + 1;
         }
     }
 }
