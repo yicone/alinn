@@ -24,8 +24,8 @@ GO
 --广告表
 CREATE TABLE [dbo].[AL_Ads] (
 	[AdId] [uniqueidentifier] Primary key NOT NULL ,
-	[UserId] [varchar](16) null,--广告位发布者ID
-	[SiteId] [varchar](16) null,--所属网站
+	[UserId] [uniqueidentifier] null,--广告位发布者ID
+	[SiteId] [uniqueidentifier] null,--所属网站
 	[IsWord] [tinyint] null,--是否是文字广告
 	[IsImg] [tinyint] null,--是否是图片或者Flash广告
 	[Position] [tinyint] null,--广告位置，0为首页，1为不在首页
@@ -48,6 +48,31 @@ CREATE TABLE [dbo].[AL_Ads] (
 	[Description] [ntext]--广告描述
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+--广告组(广告主用来分类自己要投放广告的组）
+CREATE TABLE [dbo].[AL_AdGroup] (
+	[AdGroupId] [uniqueidentifier]  Primary key NOT NULL ,
+	[GroupName] [nvarchar] (40) null,--广告组标题
+	[UserId]  [uniqueidentifier] null,--用户ID
+	[Class] [int] null,--广告分类
+	[KeyWords] [nvarchar](136) null--关键字
+)
+--广告主要投放的广告牌
+CREATE TABLE [dbo].[AL_SoldAds] (
+	[SoldAdId] [uniqueidentifier]  Primary key NOT NULL ,
+	[Title]	[nvarchar] (40) null,--文字广告
+	[Content] [nvarchar](120) null,--广告内容(如果是图片广告就是图片说明）
+	[Url] [nvarchar] (1024) null,--链接网址（包括图片的链接网址）
+	[UrlText] [nvarchar](256) null,--显示网址
+	[Img] [nvarchar] (50) null--图片的地址（只在图片广告时有作用）
+)
+--订单表
+CREATE TABLE [dbo].[AL_Orders] (
+	[OrderId] [uniqueidentifier]  Primary key NOT NULL ,
+	[UserId][uniqueidentifier]  ,--购买广告用户
+	[StartDate] [varchar] (12),--开始时间（200804151003）
+	[EndDate] [varchar](12),--结束时间（200804151003）
+	[AuditState] [tinyint] defautl(0)
+)
 --网站表
 
 CREATE TABLE [dbo].[AL_Site](
