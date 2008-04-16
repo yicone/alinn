@@ -72,19 +72,21 @@ CREATE TABLE [dbo].[AL_Order] (
 	[OrderName] [nvarchar] null,--订单名称，用来帮助广告主区分
 	[UserId][uniqueidentifier]  ,--购买广告用户
 	[AdId] [uniqueidentifier] not null,--广告牌ID
-	[StartDate] [varchar] (12),--开始时间（200804151003）（只针对包周广告）
-	[EndDate] [varchar](12),--结束时间（200804151003）（只针对包周广告）
+	[StartDate] datetime null,--开始时间（200804151003）（只针对包周广告）
+	[EndDate] datetime null,--结束时间（200804151003）（只针对包周广告）
 	[AuditState] [tinyint] null,--审核状态
 	[PerPoint] [decimal] null,--每次点击费用，不得少于0.08元。
 	[EverydayPrice] [decimal] null,--每天点击的费用限额
 	[Price] [decimal] null,--需要支付费用（当为包周时为包周费用，为点击方式时为投入的费用）
 	[Payment] [tinyint] default(0),--支付状态，默认为0为未支付
-	[SumPV] [int] null,--从投放开始的浏览量
-	[PointNum] [int] null,--点击数量
 	[CreateDate] NULL default(getdate())--订单提交时间
 )
 CREATE TABLE [dbo].[AL_OrderReport] (
-	[
+	[Date] datetime null,--日期
+	[OrderId] [uniqueidentifier]  Foreign key NOT NULL ,
+	[PV] [int] null,--当日的浏览量
+	[PointNum] [int] null,--点击数量
+	[Price] [decimal] null--费用
 )
 --网站表
 
@@ -122,7 +124,7 @@ CREATE TABLE [dbo].[AL_Employment] (
 GO
 
 --广告尺寸表
-CREATE TABLE [dbo].[AL_AdSize] (
+CREATE TABLE [dbo].[AL_ZoneSize] (
 	[SizeId] [int] identity(1,1) Primary key NOT NULL ,
 	[Width] [int] null,--宽
 	[Height] [int] null--高
