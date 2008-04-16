@@ -101,8 +101,9 @@ CREATE TABLE [dbo].[AL_Site](
 	[AuditState] [tinyint] null,				--审核状态
 	[PV] [int] null,							--每天的浏览量
 	[VistersNum] [int] null,					--每天的访问人数
-	[Description] [ntext] NULL				--网站介绍
 	[AuditState] [tinyint] NULL,				--审核状态
+	[Description] [ntext] NULL				--网站介绍
+
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
