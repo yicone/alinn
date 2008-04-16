@@ -22,9 +22,10 @@ CREATE TABLE [dbo].[AL_User] (
 ) 
 GO
 --广告表
-CREATE TABLE [dbo].[AL_Ads] (
-	[AdId] [uniqueidentifier] Primary key NOT NULL ,
-	[UserId] [uniqueidentifier] null,--广告位发布者ID
+CREATE TABLE [dbo].[AL_Zone] (
+	[ZoneId] [uniqueidentifier] Primary key NOT NULL ,
+	[UserId] [uniqueidentifier] null,--广告位发布者ID	
+	[ZoneName] [nvarchar] (50) null,--广告位名字
 	[SiteId] [uniqueidentifier] null,--所属网站
 	[IsWord] [tinyint] null,--是否是文字广告
 	[IsImg] [tinyint] null,--是否是图片或者Flash广告
@@ -57,8 +58,8 @@ CREATE TABLE [dbo].[AL_AdGroup] (
 	[KeyWords] [nvarchar](136) null--关键字
 )
 --广告主要投放的广告牌
-CREATE TABLE [dbo].[AL_SoldAds] (
-	[SoldAdId] [uniqueidentifier]  Primary key NOT NULL ,
+CREATE TABLE [dbo].[AL_Ad] (
+	[AdId] [uniqueidentifier]  Primary key NOT NULL ,
 	[Title]	[nvarchar] (40) null,--文字广告
 	[Content] [nvarchar](120) null,--广告内容(如果是图片广告就是图片说明）
 	[Url] [nvarchar] (1024) null,--链接网址（包括图片的链接网址）
@@ -66,12 +67,24 @@ CREATE TABLE [dbo].[AL_SoldAds] (
 	[Img] [nvarchar] (50) null--图片的地址（只在图片广告时有作用）
 )
 --订单表
-CREATE TABLE [dbo].[AL_Orders] (
+CREATE TABLE [dbo].[AL_Order] (
 	[OrderId] [uniqueidentifier]  Primary key NOT NULL ,
+	[OrderName] [nvarchar] null,--订单名称，用来帮助广告主区分
 	[UserId][uniqueidentifier]  ,--购买广告用户
-	[StartDate] [varchar] (12),--开始时间（200804151003）
-	[EndDate] [varchar](12),--结束时间（200804151003）
-	[AuditState] [tinyint] defautl(0)
+	[AdId] [uniqueidentifier] not null,--广告牌ID
+	[StartDate] [varchar] (12),--开始时间（200804151003）（只针对包周广告）
+	[EndDate] [varchar](12),--结束时间（200804151003）（只针对包周广告）
+	[AuditState] [tinyint] null,--审核状态
+	[PerPoint] [decimal] null,--每次点击费用，不得少于0.08元。
+	[EverydayPrice] [decimal] null,--每天点击的费用限额
+	[Price] [decimal] null,--需要支付费用（当为包周时为包周费用，为点击方式时为投入的费用）
+	[Payment] [tinyint] default(0),--支付状态，默认为0为未支付
+	[SumPV] [int] null,--从投放开始的浏览量
+	[PointNum] [int] null,--点击数量
+	[CreateDate] NULL default(getdate())--订单提交时间
+)
+CREATE TABLE [dbo].[AL_OrderReport] (
+	[
 )
 --网站表
 
@@ -85,7 +98,10 @@ CREATE TABLE [dbo].[AL_Site](
 	[AgeType] [tinyint] NULL,					--年龄类型：0表示：18岁以下；1表示：18~25岁，2表示：25~45岁，3表示：45岁以上
 	[Employments] [varchar](100) NULL,			--职业
 	[Taste] [nvarchar](60) NULL,				--爱好
-	[Description] [ntext] NULL,					--网站介绍
+	[AuditState] [tinyint] null,				--审核状态
+	[PV] [int] null,							--每天的浏览量
+	[VistersNum] [int] null,					--每天的访问人数
+	[Description] [ntext] NULL				--网站介绍
 	[AuditState] [tinyint] NULL,				--审核状态
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -108,13 +124,13 @@ GO
 CREATE TABLE [dbo].[AL_AdSize] (
 	[SizeId] [int] identity(1,1) Primary key NOT NULL ,
 	[Width] [int] null,--宽
-	[Height] [int] null,--高
+	[Height] [int] null--高
 )
 GO
 
 --广告分类表
-CREATE TABLE [dbo].[AL_AdClass] (
-	[AdClassId] [int] identity(1,1) Primary key NOT NULL ,
-	[AdClassName] [nvarchar](10) null,--分类名称
+CREATE TABLE [dbo].[AL_ZoneClass] (
+	[ClassId] [int] identity(1,1) Primary key NOT NULL ,
+	[ClassName] [nvarchar](10) null,--分类名称
 	[ParentId] [int] null--父类ID
 )
