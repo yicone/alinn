@@ -46,7 +46,8 @@ CREATE TABLE [dbo].[AL_Zone] (
 	--广告设置部分结束
 	[IsLocked] [tinyint] null,--审核(经过管理员审核才可以出售此广告位)
 	[NeedCheck] [tinyint] null,--此广告位是否需要站长审核才能投放？
-	[Description] [ntext]--广告描述
+	[Description] [ntext]--广告位描述
+	[ZoneCode] [ntext]  --广告位代码
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 --广告组(广告主用来分类自己要投放广告的组）
