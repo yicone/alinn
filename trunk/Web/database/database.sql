@@ -46,7 +46,7 @@ CREATE TABLE [dbo].[AL_Zone] (
 	--广告设置部分结束
 	[IsLocked] [tinyint] null,--审核(经过管理员审核才可以出售此广告位)
 	[NeedCheck] [tinyint] null,--此广告位是否需要站长审核才能投放？
-	[Description] [ntext]--广告位描述
+	[Description] [ntext],--广告位描述
 	[ZoneCode] [ntext]  --广告位代码
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -84,6 +84,7 @@ CREATE TABLE [dbo].[AL_Order] (
 )
 --广告效果报表
 CREATE TABLE [dbo].[AL_OrderReport] (
+	[OrderReportId] [uniqueidentifier]  Primary key NOT NULL ,
 	[Date] datetime null,--日期
 	[OrderId] [uniqueidentifier]  NOT NULL,
 	[PV] [int] null,--当日的浏览量

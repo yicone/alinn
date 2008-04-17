@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using HOT.DALFactory;
 using HOT.IDAL;
-using LTP.Common;
+using HOT.Common;
 using System.Text;
 
 namespace Web
@@ -119,7 +119,7 @@ namespace Web
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
