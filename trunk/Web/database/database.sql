@@ -79,11 +79,12 @@ CREATE TABLE [dbo].[AL_Order] (
 	[EverydayPrice] [decimal] null,--每天点击的费用限额
 	[Price] [decimal] null,--需要支付费用（当为包周时为包周费用，为点击方式时为投入的费用）
 	[Payment] [tinyint] default(0),--支付状态，默认为0为未支付
-	[CreateDate] NULL default(getdate())--订单提交时间
+	[CreateDate] [datetime] default(getdate()) NULL--订单提交时间
 )
+--广告效果报表
 CREATE TABLE [dbo].[AL_OrderReport] (
 	[Date] datetime null,--日期
-	[OrderId] [uniqueidentifier]  Foreign key NOT NULL ,
+	[OrderId] [uniqueidentifier]  NOT NULL,
 	[PV] [int] null,--当日的浏览量
 	[PointNum] [int] null,--点击数量
 	[Price] [decimal] null--费用
@@ -103,7 +104,6 @@ CREATE TABLE [dbo].[AL_Site](
 	[AuditState] [tinyint] null,				--审核状态
 	[PV] [int] null,							--每天的浏览量
 	[VistersNum] [int] null,					--每天的访问人数
-	[AuditState] [tinyint] NULL,				--审核状态
 	[Description] [ntext] NULL				--网站介绍
 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
