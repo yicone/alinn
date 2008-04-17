@@ -94,16 +94,20 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IAdClass.cs" />
-    <Compile Include="IAds.cs" />
-    <Compile Include="IAdSize.cs" />
+    <Compile Include="IAd.cs" />
+    <Compile Include="IAdGroup.cs" />
     <Compile Include="IEmployment.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="IOrderReport.cs" />
     <Compile Include="ISite.cs" />
     <Compile Include="ISiteClass.cs" />
     <Compile Include="ISysManage.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IUser.cs" />
+    <Compile Include="IZone.cs" />
+    <Compile Include="IZoneClass.cs" />
+    <Compile Include="IZoneSize.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">

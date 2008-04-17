@@ -99,19 +99,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdClass.cs" />
-    <Compile Include="Ads.cs" />
-    <Compile Include="AdSize.cs" />
+    <Compile Include="Ad.cs" />
+    <Compile Include="AdGroup.cs" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="SiteClass.cs" />
     <Compile Include="SysNode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="Zone.cs" />
+    <Compile Include="ZoneClass.cs" />
+    <Compile Include="ZoneSize.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

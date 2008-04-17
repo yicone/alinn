@@ -62,7 +62,78 @@ namespace HOT.DALFactory
 		}
 		#endregion
         /// <summary>
-        /// 创建User数据层接口
+        /// 创建AL_Ad数据层接口
+        /// </summary>
+        public static HOT.IDAL.IAd CreateAd()
+        {
+
+            string CacheKey = path + ".Ad";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IAd)objType;
+        }
+
+        /// <summary>
+        /// 创建AL_AdGroup数据层接口
+        /// </summary>
+        public static HOT.IDAL.IAdGroup CreateAdGroup()
+        {
+
+            string CacheKey = path + ".AdGroup";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IAdGroup)objType;
+        }
+        /// <summary>
+        /// 创建AL_Employment数据层接口
+        /// </summary>
+        public static HOT.IDAL.IEmployment CreateEmployment()
+        {
+
+            string CacheKey = path + ".Employment";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IEmployment)objType;
+        }
+        /// <summary>
+        /// 创建AL_Order数据层接口
+        /// </summary>
+        public static HOT.IDAL.IOrder CreateOrder()
+        {
+
+            string CacheKey = path + ".Order";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IOrder)objType;
+        }
+        /// <summary>
+        /// 创建AL_OrderReport数据层接口
+        /// </summary>
+        public static HOT.IDAL.IOrderReport CreateOrderReport()
+        {
+
+            string CacheKey = path + ".OrderReport";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IOrderReport)objType;
+        }
+        /// <summary>
+        /// 创建AL_Site数据层接口
+        /// </summary>
+        public static HOT.IDAL.ISite CreateSite()
+        {
+
+            string CacheKey = path + ".Site";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.ISite)objType;
+        }
+        /// <summary>
+        /// 创建AL_SiteClass数据层接口
+        /// </summary>
+        public static HOT.IDAL.ISiteClass CreateSiteClass()
+        {
+
+            string CacheKey = path + ".SiteClass";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.ISiteClass)objType;
+        }
+        /// <summary>
+        /// 创建AL_User数据层接口
         /// </summary>
         public static HOT.IDAL.IUser CreateUser()
         {
@@ -72,74 +143,36 @@ namespace HOT.DALFactory
             return (HOT.IDAL.IUser)objType;
         }
         /// <summary>
-        /// 创建AdClass数据层接口
+        /// 创建AL_Zone数据层接口
         /// </summary>
-        public static HOT.IDAL.IAdClass CreateAdClass()
+        public static HOT.IDAL.IZone CreateZone()
         {
 
-            string CacheKey = path + ".AdClass";
+            string CacheKey = path + ".Zone";
             object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IAdClass)objType;
+            return (HOT.IDAL.IZone)objType;
         }
-
         /// <summary>
-        /// 创建Ads数据层接口
+        /// 创建AL_ZoneClass数据层接口
         /// </summary>
-        public static HOT.IDAL.IAds CreateAds()
+        public static HOT.IDAL.IZoneClass CreateZoneClass()
         {
 
-            string CacheKey = path + ".Ads";
+            string CacheKey = path + ".ZoneClass";
             object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IAds)objType;
+            return (HOT.IDAL.IZoneClass)objType;
         }
-
-
         /// <summary>
-        /// 创建AdSize数据层接口
+        /// 创建AL_ZoneSize数据层接口
         /// </summary>
-        public static HOT.IDAL.IAdSize CreateAdSize()
+        public static HOT.IDAL.IZoneSize CreateZoneSize()
         {
 
-            string CacheKey = path + ".AdSize";
+            string CacheKey = path + ".ZoneSize";
             object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IAdSize)objType;
+            return (HOT.IDAL.IZoneSize)objType;
         }
 
-
-        /// <summary>
-        /// 创建Employment数据层接口
-        /// </summary>
-        public static HOT.IDAL.IEmployment CreateEmployment()
-        {
-
-            string CacheKey = path + ".Employment";
-            object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.IEmployment)objType;
-        }
-
-
-        /// <summary>
-        /// 创建SiteClass数据层接口
-        /// </summary>
-        public static HOT.IDAL.ISiteClass CreateSiteClass()
-        {
-
-            string CacheKey = path + ".SiteClass";
-            object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.ISiteClass)objType;
-        }
-
-
-        /// <summary>
-        /// 创建Site数据层接口
-        /// </summary>
-        public static HOT.IDAL.ISite CreateSite()
-        {
-
-            string CacheKey = path + ".Site";
-            object objType = CreateObject(path, CacheKey);
-            return (HOT.IDAL.ISite)objType;
-        }
 
 }
 }
