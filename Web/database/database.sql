@@ -61,6 +61,7 @@ CREATE TABLE [dbo].[AL_AdGroup] (
 --广告主要投放的广告牌
 CREATE TABLE [dbo].[AL_Ad] (
 	[AdId] [uniqueidentifier]  Primary key NOT NULL ,
+	[AdGroupId] [uniqueidentifier] null,--广告组ID
 	[Title]	[nvarchar] (40) null,--文字广告
 	[Content] [nvarchar](120) null,--广告内容(如果是图片广告就是图片说明）
 	[Url] [nvarchar] (1024) null,--链接网址（包括图片的链接网址）
@@ -136,6 +137,6 @@ GO
 --广告分类表
 CREATE TABLE [dbo].[AL_ZoneClass] (
 	[ClassId] [int] identity(1,1) Primary key NOT NULL ,
-	[ClassName] [nvarchar](10) null,--分类名称
+	[ClassName] [nvarchar](50) null,--分类名称
 	[ParentId] [int] null--父类ID
 )
