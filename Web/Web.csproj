@@ -237,7 +237,7 @@
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
     <None Include="database\sp_AL_ZoneSize.sql" />
-    <None Include="database\sp_SiteMaster.sql" />
+    <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
   </ItemGroup>
