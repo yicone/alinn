@@ -102,6 +102,11 @@ namespace HOT.BLL
         //return dal.GetList(PageSize,PageIndex,strWhere);
         //}
 
+
+        public DataSet GetSiteInfoExt(int userId)
+        {
+            return dal.GetSiteInfoExt(userId);
+        }
         #endregion  成员方法
     }
 }

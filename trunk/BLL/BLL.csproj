@@ -106,6 +106,7 @@
     <Compile Include="SysManage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TextZone.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneClass.cs" />
@@ -128,6 +129,12 @@
       <Project>{53995DBB-9836-4647-AD22-865884FDEB9E}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExampleForTextAd.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
