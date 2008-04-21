@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using HOT.DALFactory;
 using HOT.IDAL;
-using HOT.Common;
+using LTP.Common;
 using System.Text;
 
 namespace Web
@@ -97,7 +97,7 @@ namespace Web
                     sbEmployments.Append(",");
                 }
             }
-            string employments = sbEmployments.Remove(sbEmployments.Length - 1, 1).ToString();
+            string employments = (sbEmployments.Length > 0) ? (sbEmployments.Remove(sbEmployments.Length - 1, 1).ToString()) : string.Empty;
             string taste = this.txtTaste.Text; 
             string description = this.txtDescription.Text;
 
@@ -119,7 +119,7 @@ namespace Web
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

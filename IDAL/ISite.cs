@@ -37,7 +37,5 @@ namespace HOT.IDAL
         /// </summary>
         //		DataSet GetList(int PageSize,int PageIndex,string strWhere);
         #endregion  成员方法
-
-        System.Data.DataSet GetSiteInfoExt(int userId);
     }
 }

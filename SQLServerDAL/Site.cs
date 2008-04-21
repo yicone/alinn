@@ -53,7 +53,8 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Taste", SqlDbType.NVarChar,60),
 					new SqlParameter("@Description", SqlDbType.NText),
                      new SqlParameter("@AuditState", SqlDbType.TinyInt,1)};
-            parameters[0].Value = model.SiteId;
+            //yicone
+            parameters[0].Direction = ParameterDirection.Output;                
             parameters[1].Value = model.UserId;
             parameters[2].Value = model.SiteName;
             parameters[3].Value = model.SiteUrl;
@@ -66,6 +67,8 @@ namespace HOT.SQLServerDAL
             parameters[10].Value = model.AuditState;
 
             DbHelperSQL.RunProcedure("UP_AL_Site_ADD", parameters, out rowsAffected);
+            //yicone
+            model.SiteId = (Guid)parameters[0].Value;
         }
 
         /// <summary>
@@ -205,18 +208,6 @@ namespace HOT.SQLServerDAL
         }*/
 
         #endregion  成员方法
-
-
-        /// <summary>
-        /// 获得网站的扩展信息
-        /// </summary>
-        public DataSet GetSiteInfoExt(int userId)
-        {
-            SqlParameter[] parameters = { 
-                    new SqlParameter ("@UserId", SqlDbType.UniqueIdentifier)};
-
-            return DbHelperSQL.RunProcedure("UP_SiteInfoExt", parameters, "SiteInfoExt");
-        }
     }
 }
 

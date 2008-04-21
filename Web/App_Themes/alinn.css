@@ -1,0 +1,1109 @@
+﻿body, p, td, input, option, textarea, select {
+	color: #333333;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+}
+body, form, ul, li, p, ol {
+	margin: 0pt;
+	padding: 0pt;
+}
+body {
+	background: #FFFFFF none repeat scroll 0%;
+	text-align: center;
+}
+img {
+	border: 0pt none;
+}
+ul {
+	list-style-type: none;
+}
+table {
+	text-align: left;
+}
+.full {
+	margin: 0pt 10px;
+	text-align: left;
+}
+.main, .m760, .m950 {
+	margin: 0pt auto;
+	text-align: left;
+	width: 760px;
+}
+.m950 {
+	width: 950px;
+}
+.clear {
+	border-top: 1px solid transparent !important;
+	clear: both;
+ visibility:hidden;
+}
+.debug {
+	border: 1px dashed #FF00FF;
+}
+.font14 {
+	font-size: 14px;
+}
+.number {
+	font-family: Arial;
+}
+.b {
+	font-weight: bold;
+}
+.s {
+	font-family: "宋体";
+	text-decoration: line-through;
+}
+.ime {
+}
+.desc {
+	line-height: 150%;
+}
+.break {
+	line-height: 140%;
+}
+.lineCenter {
+	text-align: center;
+}
+.lineLeft {
+	text-align: left;
+}
+.lineRight {
+	text-align: right;
+}
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.overflow {
+	overflow: hidden;
+	white-space: nowrap;
+}
+.help {
+	cursor: help;
+}
+.over {
+	cursor: pointer;
+}
+a:link, a:visited {
+	color: #1835D1;
+	text-decoration: none;
+}
+.fontGreen, a.fontGreen:link, a.fontGreen:visited {
+	color: #197B30;
+}
+.fontRed, a.fontRed:link, a.fontRed:visited {
+	color: #FF0000;
+}
+.fontOrange, a.fontOrange:link, a.fontOrange:visited {
+	color: #FF4E00;
+}
+.fontGray, a.fontGray:link, a.fontGray:visited {
+	color: #808080;
+}
+.fontBlack, a.fontBlack:link, a.fontBlack:visited {
+	color: #333333;
+}
+a:active, a:hover, a.fontGray:active, a.fontGray:hover, a.fontBlack:active, a.fontBlack:hover {
+	color: #FF4E00;
+	text-decoration: underline;
+}
+a.linkLine:link, a.linkLine:visited, a.linkLine:active, a.linkLine:hover {
+	text-decoration: underline;
+}
+a.linkFloat:hover {
+	left: 1px;
+	position: relative;
+	top: 1px;
+}
+.inputMain {
+	border: 1px solid #718DA6;
+	height: 17px;
+	padding: 2px 0pt 0pt 4px;
+}
+/*---------------------------*/
+#headNote {
+	background: #FFFFF7 none repeat scroll 0%;
+	border-bottom: 1px solid #EDDCC8;
+	padding: 5px 0pt;
+}
+#headV3 {
+	background: transparent url(http://pics.paipai.com/head/headBg.gif) repeat scroll 0%;
+	font-family: Verdana;
+	height: 125px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#headV3 a:link, #headV3 a:visited, #footV3 a:link, #footV3 a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+#headV3 a:active, #headV3 a:hover, #footV3 a:active, #footV3 a:hover {
+	color: #FF4E00;
+	text-decoration: underline;
+}
+#headV3 a.linkBlue:link, #headV3 a.linkBlue:visited, #footV3 a.linkBlue:link, #footV3 a.linkBlue:visited {
+	color: #014CCC;
+	text-decoration: none;
+}
+#headV3 a.linkBlue:active, #headV3 a.linkBlue:hover, #footV3 a.linkBlue:active, #footV3 a.linkBlue:hover {
+	color: #014CCC;
+	text-decoration: underline;
+}
+#headV3 #headLogo {
+	left: 0pt;
+	top: 0pt;
+	z-index: 2;
+}
+#headV3 #headLogoBg {
+	left: 0pt;
+	top: 0pt;
+	z-index: 2;
+}
+#headV3 #headNavi {
+	background: transparent url(http://pics.paipai.com/head/naviBg.gif) no-repeat scroll left top;
+	height: 66px;
+	overflow: hidden;
+	right: 0pt;
+	text-align: right;
+	top: 0pt;
+	width: 660px;
+	z-index: 1;
+}
+#headV3 #headItem {
+	height: 26px;
+	margin-top: 6px;
+	overflow: hidden;
+}
+#headV3 #headBtn {
+	padding: 0pt 0pt 0pt 13px;
+}
+#headV3 #headMenu {
+	background: transparent url(http://pics.paipai.com/head/menuBg.gif) repeat-x scroll center bottom;
+	bottom: 0pt;
+	height: 29px;
+	right: 0pt;
+	width: 632px;
+	z-index: 3;
+}
+#headV3 #menuList {
+	background: transparent url(http://pics.paipai.com/head/menuSide.gif) no-repeat scroll right bottom;
+	height: 29px;
+	overflow: hidden;
+	width: 632px;
+}
+#headV3 #menuList li {
+	background: transparent url(http://pics.paipai.com/head/menuSplit.gif) no-repeat scroll left bottom;
+	float: left;
+	height: 29px;
+}
+#headV3 #menuList li span {
+	display: block;
+	padding: 8px 16px 0pt;
+}
+#headV3 #menuList li a:hover {
+	background: transparent url(http://pics.paipai.com/head/menuBgOver.gif) repeat-x scroll center bottom;
+	color: #FF5500;
+	display: block;
+	float: left;
+	height: 29px;
+	text-decoration: none;
+}
+#headV3 #menuList #menuHome {
+	background: transparent url(http://pics.paipai.com/head/menuLeft.gif) no-repeat scroll left bottom;
+	height: 29px;
+	padding-left: 10px;
+}
+#headV3 #menuList .menuHere {
+	background: transparent url(http://pics.paipai.com/head/menuHere.gif) no-repeat scroll left bottom;
+	font-size: 14px;
+	font-weight: bold;
+}
+#headV3 #menuList .menuHere a {
+	background: transparent url(http://pics.paipai.com/head/menuHereSide.gif) no-repeat scroll right bottom;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	height: 29px;
+}
+#headV3 #menuList .menuHere a:hover {
+	background: transparent url(http://pics.paipai.com/head/menuHere.gif) no-repeat scroll left bottom;
+	color: #FFFFFF;
+}
+#headV3 #headFind {
+	background: transparent url(http://pics.paipai.com/head/headFindBg.gif) repeat-x scroll 0%;
+	height: 60px;
+	left: 0pt;
+	overflow: hidden;
+	top: 65px;
+	width: 950px;
+	z-index: 0;
+}
+#headV3 #headPush {
+	background: transparent url(http://pics.paipai.com/head/headFindLeft.gif) no-repeat scroll left top;
+	height: 60px;
+	left: 0pt;
+	overflow: hidden;
+	top: 0pt;
+	width: 220px;
+}
+#headV3 #headForm {
+	height: 60px;
+	overflow: hidden;
+	right: 90px;
+	top: 0pt;
+	width: 640px;
+	z-index: 4;
+}
+#headV3 #headForm .findInto {
+	border: 1px solid #4194CF;
+	color: #808080;
+	font-family: "宋体";
+	height: 16px;
+	padding: 4px 0pt 0pt 4px;
+	width: 240px;
+}
+#headV3 #headForm .findGoto {
+	background: transparent url(http://pics.paipai.com/head/headFind.gif) repeat scroll 0%;
+	border: medium none;
+	height: 22px;
+	width: 47px;
+}
+#headV3 #headForm .divSelect {
+	background-color: #FFFFFF;
+	border: 1px solid #4194CF;
+	height: 20px;
+	top: 11px;
+}
+#headV3 #headForm .divSelectHide {
+	height: 16px;
+	left: 0pt;
+	margin-left: 2px;
+	margin-top: 2px;
+	top: 0pt;
+}
+#headV3 #headForm .divSelectHide select {
+	margin: -2px;
+}
+#headV3 #headHelp {
+	background: transparent url(http://pics.paipai.com/head/headFindSide.gif) no-repeat scroll right top;
+	height: 60px;
+	line-height: 150%;
+	overflow: hidden;
+	padding-right: 20px;
+	padding-top: 10px;
+	right: 0pt;
+	top: 0pt;
+}
+#headV3 #headForm #headLink {
+	left: 0pt;
+	overflow: hidden;
+	padding-left: 10px;
+	top: 39px;
+	white-space: nowrap;
+	width: 620px;
+}
+#headV3 #headForm #headLink a {
+	color: #FFFFFF;
+}
+#footV3 {
+	border-top: 1px solid #E0DFE4;
+	font-family: Verdana;
+	margin-top: 20px;
+}
+#footV3 #footLink {
+	margin: 18px auto 11px;
+	width: 560px;
+}
+#footV3 #footLink li {
+	float: left;
+	margin-right: 20px;
+}
+#footV3 div {
+	margin-bottom: 3px;
+	text-align: center;
+}
+#footV3 #wangjing {
+	float: left;
+	height: 50px;
+	padding-left: 280px;
+	width: 70px;
+}
+#footV3 #shengming {
+	float: left;
+	height: 50px;
+	line-height: 200%;
+	width: 350px;
+}
+#headV3A {
+	height: 100px;
+	margin: 0pt auto 10px;
+	overflow: hidden;
+	width: 950px;
+}
+#headV3A #headV3, #headV3A #headNavi {
+	background: transparent none repeat scroll 0%;
+}
+#headV3A {
+	background: transparent url(http://pics.paipai.com/head/headV3ABg.gif) repeat scroll 0%;
+}
+#headV3A #headV3 #headItem {
+	padding-right: 20px;
+	padding-top: 20px;
+}
+#headV3B {
+	height: 60px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#headV3B #headV3, #headV3B #headNavi {
+	background: transparent none repeat scroll 0%;
+}
+#headV3B #headV3 #headMenu {
+	background: #F2F2F2 none repeat scroll 0%;
+	height: 19px;
+	overflow: hidden;
+	right: 180px;
+	top: 34px;
+	width: 460px;
+	z-index: 4;
+}
+#headV3B #headV3 #menuList {
+	background: transparent url(http://pics.paipai.com/head/menuV3BSide.gif) no-repeat scroll right bottom;
+	height: 19px;
+	overflow: hidden;
+	width: 460px;
+}
+#headV3B #headV3 #menuList li {
+	background: transparent url(http://pics.paipai.com/head/menuV3BSplit.gif) no-repeat scroll left bottom;
+	float: left;
+	height: 19px;
+}
+#headV3B #headV3 #menuList li span {
+	display: block;
+	margin-top: 4px;
+	padding: 0pt 8px;
+}
+#headV3B #headV3 #menuList li a:hover {
+	background: transparent none repeat scroll 0%;
+	color: #FF5500;
+	height: 19px;
+	text-decoration: none;
+}
+#headV3B #headV3 #menuList #menuHome {
+	background: transparent url(http://pics.paipai.com/head/menuV3BLeft.gif) no-repeat scroll left bottom;
+	height: 19px;
+	padding-left: 10px;
+}
+#headV3B #headV3BFind {
+	right: 0pt;
+	top: 32px;
+	z-index: 3;
+}
+#headV3B .findInto {
+	border: 1px solid #BBBBBB;
+	color: #808080;
+	font-family: "宋体";
+	height: 15px;
+	padding: 3px 0pt 0pt 4px;
+	width: 120px;
+}
+#headV3B .findGoto {
+	background: transparent url(http://pics.paipai.com/head/headV3BFind.gif) repeat scroll 0%;
+	border: medium none;
+	height: 20px;
+	width: 39px;
+}
+#headV3C {
+	height: 60px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#headV3C #headV3, #headV3C #headNavi {
+	background: transparent none repeat scroll 0%;
+}
+#headV3C #headV3 #headItem {
+	text-align: right;
+}
+#headV3D {
+	height: 80px;
+	margin: 0pt auto 10px;
+	overflow: hidden;
+	width: 760px;
+}
+#headV3D #headV3, #headV3D #headNavi {
+	background: transparent none repeat scroll 0%;
+}
+#headV3D #headV3 #headNavi {
+	height: 80px;
+	width: 470px;
+}
+#headV3D #headV3 #headBtn {
+	padding: 0pt 1px 0pt 3px;
+}
+#headV3D #headV3 #headMenu {
+	background: #F2F2F2 none repeat scroll 0%;
+	height: 19px;
+	overflow: hidden;
+	right: 0pt;
+	top: 60px;
+	width: 460px;
+	z-index: 4;
+}
+#headV3D #headV3 #menuList {
+	background: transparent url(http://pics.paipai.com/head/menuV3BSide.gif) no-repeat scroll right bottom;
+	height: 19px;
+	overflow: hidden;
+	width: 460px;
+}
+#headV3D #headV3 #menuList li {
+	background: transparent url(http://pics.paipai.com/head/menuV3BSplit.gif) no-repeat scroll left bottom;
+	float: left;
+	height: 19px;
+}
+#headV3D #headV3 #menuList li span {
+	display: block;
+	margin-top: 4px;
+	padding: 0pt 8px;
+}
+#headV3D #headV3 #menuList li a:hover {
+	background: transparent none repeat scroll 0%;
+	color: #FF5500;
+	height: 19px;
+	text-decoration: none;
+}
+#headV3D #headV3 #menuList #menuHome {
+	background: transparent url(http://pics.paipai.com/head/menuV3BLeft.gif) no-repeat scroll left bottom;
+	height: 19px;
+	padding-left: 10px;
+}
+#headV3D #headV3DFind {
+	right: 0pt;
+	top: 32px;
+	z-index: 3;
+}
+#headV3D .findInto {
+	border: 1px solid #BBBBBB;
+	color: #808080;
+	font-family: "宋体";
+	height: 15px;
+	padding: 3px 0pt 0pt 4px;
+	width: 120px;
+}
+#headV3D .findGoto {
+	background: transparent url(http://pics.paipai.com/head/headV3BFind.gif) repeat scroll 0%;
+	border: medium none;
+	height: 20px;
+	width: 39px;
+}
+#result {
+	background: #FFFFFF none repeat scroll 0%;
+	border: 1px solid #808080;
+	color: gray;
+	left: 250px;
+	overflow: hidden;
+	position: absolute;
+	top: -38px;
+	width: 244px;
+}
+#result a {
+	border-bottom: 1px dotted #BADDFD;
+	color: #333333;
+	display: block;
+	height: 20px;
+	position: relative;
+	text-decoration: none;
+}
+#result a:hover, #result a.activeLink {
+	background: #E5F5FF none repeat scroll 0%;
+	color: #FF4E00;
+	text-decoration: none;
+}
+#result .resultName {
+	left: 10px;
+	overflow: hidden;
+	position: absolute;
+	text-align: left;
+	top: 5px;
+	white-space: nowrap;
+	width: 120px;
+}
+#result .resultCount {
+	overflow: hidden;
+	position: absolute;
+	right: 10px;
+	text-align: right;
+	top: 5px;
+	white-space: nowrap;
+	width: 100px;
+}
+#headV3 optgroup.optionShow {
+	background: #E4F5FB none repeat scroll 0%;
+}
+#headV3My a:link, #headV3My a:visited {
+	color: #1835D1;
+	text-decoration: underline;
+}
+#headV3My a:active, #headV3My a:hover {
+	color: #FF4E00;
+	text-decoration: underline;
+}
+#headV3My {
+	height: 60px;
+	overflow: hidden;
+}
+#headV3My #headV3, #headV3My #headNavi {
+	background: transparent none repeat scroll 0%;
+}
+#headV3My #headV3 #headLogo {
+	left: 10px;
+}
+#headMyUser {
+	left: 320px;
+	top: 10px;
+}
+#headMyItem {
+	right: 10px;
+	top: 10px;
+}
+#headMyFind {
+	right: 10px;
+	top: 30px;
+}
+#headMyFind .findInto {
+	border: 1px solid #BBBBBB;
+	color: #808080;
+	font-family: "宋体";
+	height: 15px;
+	padding: 3px 0pt 0pt 4px;
+	width: 120px;
+}
+a:link, a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+a:active, a:hover {
+	color: #FF6201;
+	text-decoration: underline;
+}
+a.linkBlue:link, a.linkBlue:visited {
+	color: #014CCC;
+	text-decoration: none;
+}
+a.linkBlue:active, a.linkBlue:hover {
+	color: #014CCC;
+	text-decoration: underline;
+}
+a.linkOrange:link, a.linkOrange:visited {
+	color: #E07B05;
+	text-decoration: none;
+}
+a.linkOrange:active, a.linkOrange:hover {
+	color: #FF6201;
+	text-decoration: underline;
+}
+.fontBlue {
+	color: #014CCC;
+}
+#mainPush {
+	height: 316px;
+	width: 293px;
+}
+#gift, #sideSale {
+	margin: 0pt auto;
+	width: 180px;
+}
+#gift a {
+	display: block;
+	float: left;
+	height: 116px;
+	overflow: hidden;
+	padding-top: 6px;
+	text-align: center;
+	width: 90px;
+}
+#gift a img {
+	margin-bottom: 5px;
+}
+#sideSale .saleItem {
+	height: 47px;
+	margin-top: 9px;
+	overflow: hidden;
+	width: 180px;
+}
+#sideSale .salePics {
+	float: left;
+	height: 47px;
+	overflow: hidden;
+	width: 77px;
+}
+#sideSale .salePics img {
+	border: 1px solid #D3D3D3;
+}
+#sideSale .saleDesc {
+	height: 37px;
+	overflow: hidden;
+	padding-top: 10px;
+	width: 100px;
+}
+.sideLineH {
+	background: transparent url(http://pics.paipai.com/index/lineH.gif) repeat-x scroll center;
+	margin: 0pt 5px;
+}
+.sideTitleGray {
+	padding: 7px 0pt 0pt 10px;
+}
+.sideTitle {
+	background: #E6F5FF none repeat scroll 0%;
+	padding: 7px 0pt 4px 10px;
+}
+.sideMore {
+	right: 10px;
+	top: 5px;
+}
+.sideHeadGray {
+	background: #F4F5F5 none repeat scroll 0%;
+	border: 1px solid #DDE0E1;
+}
+.sideHeadBlue {
+	border: 1px solid #8CC0E7;
+}
+.sideNull {
+	margin-top: 7px;
+}
+#forumList li {
+	margin-top: 8px;
+}
+.forumShow {
+	margin: 7px auto 0pt;
+	width: 176px;
+}
+#forumItem {
+	margin: 0pt auto;
+	width: 180px;
+}
+#forumItem li {
+	float: left;
+	margin-top: 9px;
+	text-align: center;
+	width: 59px;
+}
+#sidePush img {
+	border: 1px solid #DDE0E1;
+}
+.linkShow {
+	right: 5px;
+	top: -24px;
+}
+#ladyPush a, #digiPush a, #gamePush a, #sportPush a, #menPush a, #lifePush a, #bookPush a {
+	background: #FFFFFF none repeat scroll 0%;
+	border: 1px solid #D33B74;
+	color: #D33B74;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding: 0pt 5px;
+	text-decoration: none;
+}
+#digiPush a {
+	border: 1px solid #31809E;
+	color: #31809E;
+}
+#gamePush a {
+	border: 1px solid #8E4B17;
+	color: #8E4B17;
+}
+#sportPush a {
+	border: 1px solid #59B71B;
+	color: #59B71B;
+}
+#menPush a {
+	border: 1px solid #42978D;
+	color: #42978D;
+}
+#lifePush a {
+	border: 1px solid #FF8705;
+	color: #FF8705;
+}
+#bookPush a {
+	border: 1px solid #21705C;
+	color: #21705C;
+}
+#ladyPush a.ladyLinkHere, #ladyPush a:hover {
+	background: #D33B74 none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#digiPush a.digiLinkHere, #digiPush a:hover {
+	background: #31809E none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#gamePush a.gameLinkHere, #gamePush a:hover {
+	background: #8E4B17 none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#sportPush a.sportLinkHere, #sportPush a:hover {
+	background: #59B71B none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#menPush a.menLinkHere, #menPush a:hover {
+	background: #42978D none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#lifePush a.lifeLinkHere, #lifePush a:hover {
+	background: #FF8705 none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#bookPush a.bookLinkHere, #bookPush a:hover {
+	background: #21705C none repeat scroll 0%;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.channelList, .channelList2 {
+	border-bottom: 1px dashed #D3D3D3;
+	height: 104px;
+	margin: 10px 0pt 0pt 10px;
+}
+.channelList a, .channelList2 a {
+	display: block;
+	float: left;
+	height: 100px;
+	overflow: hidden;
+	text-align: center;
+	width: 95px;
+}
+.channelList a img, .channelList2 a img {
+	height: 65px;
+	margin-bottom: 3px;
+	width: 65px;
+}
+.channelList2 a {
+	width: 76px;
+}
+.channelList2 a div {
+	font-family: "宋体";
+}
+li.dotList {
+	background: transparent url(http://pics.paipai.com/index/dot.gif) no-repeat scroll left center;
+	margin: 5px 0pt 3px 10px;
+	padding-left: 15px;
+}
+#note {
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	height: 61px;
+	overflow: hidden;
+	padding: 7px 0pt 0pt 11px;
+}
+#note li, #saleInfo li {
+	margin: 2px 0pt;
+}
+#saleInfo {
+	border-bottom: 1px solid #E6E6E6;
+	padding: 2px 0pt 1px;
+}
+#ployInfo {
+	margin-left: 3px;
+	margin-top: 5px;
+}
+#ployInfo li {
+	margin: 4px 0pt 3px;
+}
+#saleInfo li {
+	padding-left: 5px;
+}
+#saleInfo .saleLine {
+	border-bottom: 1px dashed #E1E1E1;
+}
+#ployInfo img, #saleInfo a img {
+	border: 1px solid #DCDCDC;
+}
+#linkPush a {
+	color: #333333;
+	display: block;
+	float: left;
+	height: 28px;
+	padding: 6px 5px 0pt 7px;
+	text-align: center;
+	text-decoration: none;
+}
+#linkPush a:hover, #linkPush a.linkPushHere {
+	background: transparent url(http://pics.paipai.com/index/v4/pushHere.gif) no-repeat scroll 0%;
+	font-family: "宋体";
+	padding-top: 8px;
+	text-align: center;
+	width: 92px;
+}
+#saleList {
+	margin-top: 5px;
+}
+#saleList .saleTwo {
+	background: transparent url(http://pics.paipai.com/index/lineH.gif) repeat-x scroll center bottom;
+	height: 108px;
+}
+#saleList a {
+	display: block;
+	float: left;
+	height: 108px;
+	overflow: hidden;
+	text-align: center;
+	width: 86px;
+}
+#saleList a.saleItem {
+	background: transparent url(http://pics.paipai.com/index/lineV.gif) repeat-y scroll right center;
+}
+#saleList a img {
+	margin: 5px 0pt;
+}
+#saleList a:hover {
+	background-color: #EBFFC5;
+}
+#mainMenu {
+	background: transparent url(http://pics.paipai.com/index/mainMenuBg.gif) repeat-x scroll 0%;
+	height: 29px;
+	position: relative;
+}
+#mainMenu li {
+	float: left;
+	height: 29px;
+	margin-right: 3px;
+}
+#mainMenu li a {
+	background: transparent url(http://pics.paipai.com/index/mainMenuWill.gif) no-repeat scroll left top;
+	display: block;
+	float: left;
+	height: 29px;
+	text-decoration: none;
+}
+#mainMenu li a span {
+	background: transparent url(http://pics.paipai.com/index/mainMenuWillSide.gif) no-repeat scroll right top;
+	color: #000000;
+	display: block;
+	float: left;
+	height: 18px;
+	padding: 11px 20px 0pt;
+	text-align: center;
+}
+#mainMenu li a:hover, #mainMenu li.mainMenuHere a {
+	background: transparent url(http://pics.paipai.com/index/mainMenuHere.gif) no-repeat scroll left top;
+}
+#mainMenu li a:hover span, #mainMenu li.mainMenuHere a span {
+	background: transparent url(http://pics.paipai.com/index/mainMenuHereSide.gif) no-repeat scroll right top;
+	color: #FFFFFF;
+	height: 21px;
+	padding-top: 8px;
+}
+#mainMenu li.mainMenuHere a span {
+	font-size: 14px;
+	font-weight: bold;
+}
+#sort .sortThree {
+	height: 46px;
+	overflow: hidden;
+	width: 742px;
+}
+#sort .sortThree .sortList, #sort .sortThree .sortListEnd {
+	float: left;
+	height: 36px;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-top: 10px;
+	width: 232px;
+}
+#sort .sortBg {
+	background-color: #E4F5FB;
+}
+#sort .sortThree .sortList {
+	background: transparent url(http://pics.paipai.com/index/lineV.gif) repeat-y scroll right center;
+}
+#sort .sortThree .sortMain a {
+	font-size: 14px;
+	font-weight: bold;
+}
+#sort .sortThree .sortItem {
+	margin: 3px 0pt 0pt -8px;
+	overflow: hidden;
+	width: 232px;
+}
+#sort .sortThree .sortItem li {
+	border-left: 1px solid #AAAAAA;
+	float: left;
+	font-family: "宋体";
+	height: 12px;
+	margin-left: -1px;
+	overflow: hidden;
+	padding: 0pt 8px;
+	white-space: nowrap;
+}
+#sort .sortThree .sortItem a:link, #sort .sortThree .sortItem a:visited {
+	color: #666666;
+}
+#sort .sortThree .sortItem a:hover, #sort .sortThree .sortItem a:active {
+	color: #FF6201;
+	left: 1px;
+	position: relative;
+	top: 1px;
+}
+.pushBg {
+	background: transparent url(http://pics.paipai.com/index/menuPushBg.gif) no-repeat scroll 151px 0pt;
+}
+.pushBg2 {
+	background: transparent url(http://pics.paipai.com/index/menuPushBg.gif) no-repeat scroll 129px 0pt;
+}
+#newSale {
+	margin-bottom: 7px;
+}
+#newSaleInfo {
+	margin-top: 3px;
+}
+#newSaleInfo div div {
+	border-right: 1px dashed #DDE0E1;
+	float: left;
+	font-family: "宋体";
+	height: 38px;
+	line-height: 140%;
+	margin-top: 3px;
+	overflow: hidden;
+	padding: 0pt 7px;
+	width: 156px;
+}
+#newSaleInfo div div span {
+	bottom: 0pt;
+	right: 7px;
+}
+#newSaleInfo div div a {
+	color: #666666;
+}
+#bbs {
+	background: #F8F8F8 none repeat scroll 0%;
+	border-bottom: 1px solid #DEDEDE;
+}
+#bbsMain {
+	padding: 16px 0pt 4px 10px;
+}
+#bbsMain div {
+	color: #BABABA;
+	margin-bottom: 7px;
+}
+#bbsMain div a, #newHandMain div.newHandMore a {
+	color: #014CC9;
+}
+#bbsMain div a:hover, #newHandMain div.newHandMore a:hover {
+	color: #FF4E00;
+}
+#newHand {
+	margin-top: 5px;
+}
+#newHandHead {
+	background: transparent url(http://pics.paipai.com/index/v4/newHandMain.gif) repeat-x scroll 0%;
+	height: 26px;
+	overflow: hidden;
+}
+#newHand li {
+	float: left;
+	height: 26px;
+	margin-right: 2px;
+}
+#newHand li a {
+	background: transparent url(http://pics.paipai.com/index/v4/newHandLeft.gif) no-repeat scroll left top;
+	display: block;
+	float: left;
+	height: 26px;
+	text-decoration: none;
+}
+#newHand li a span {
+	background: transparent url(http://pics.paipai.com/index/v4/newHandSide.gif) no-repeat scroll right top;
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 17px;
+	padding: 9px 10px 0pt;
+	text-align: center;
+}
+#newHand li a:hover, #newHand .newHandHere a {
+	background: transparent url(http://pics.paipai.com/index/v4/newHandHereLeft.gif) no-repeat scroll left top;
+}
+#newHand li a:hover span, #newHand .newHandHere a span {
+	background: transparent url(http://pics.paipai.com/index/v4/newHandHereSide.gif) no-repeat scroll right top;
+	color: #FF4E00;
+	font-weight: bold;
+}
+#newHandMain {
+	background: #F5FFDC none repeat scroll 0%;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	height: 80px;
+	overflow: hidden;
+	padding: 10px 0pt 0pt 10px;
+}
+#newHandMain div {
+	color: #BABABA;
+	margin-bottom: 3px;
+}
+#newHandMain div.newHandMore {
+	padding-top: 3px;
+}
+#market {
+	background: #FFFFF2 none repeat scroll 0%;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	height: 136px;
+	padding-left: 10px;
+}
+#market img {
+	border: 1px solid #DDE0E1;
+}
+#market .marketLink {
+	margin-top: 5px;
+}
+/*yicone test*/
+h3 {
+	font-size: 150%;
+}
+body {
+	text-align: left;
+}
+* {
+	margin: 0pt;
+	padding: 0pt;
+}
+.button3, .button3 span {
+	background: #E7EDF8 url(http://img.alimama.cn/images/button/cpa_bt_bg.gif) no-repeat scroll left top;
+}
+.button3 {
+	background-position: right top;
+	display: block;
+	float: left;
+	margin-right: 0.67em;
+	padding: 0pt 1.2em 0pt 0pt;
+	width: auto;
+}
+.button3 span {
+	cursor: pointer;
+	display: block;
+	float: left;
+	padding: 0.8em 0pt 0.8em 1.2em;
+}
+.button3.link, .button3.visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
