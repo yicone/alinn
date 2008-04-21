@@ -55,16 +55,12 @@ namespace Web
             {
                 case 0:
                     return "未提交审核";
-                    break;
                 case 1:
                     return "审核通过";
-                    break;
                 case 2:
                     return "审核未通过";
-                    break;
                 default:
                     return "";
-                    break;
             }
         }
     }
