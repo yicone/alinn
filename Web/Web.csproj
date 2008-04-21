@@ -132,8 +132,6 @@
     <Compile Include="Ad\NewGroup.aspx.designer.cs">
       <DependentUpon>NewGroup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ZoneManager.aspx.cs">
-      <DependentUpon>ZoneManager.aspx</DependentUpon>
     <Compile Include="Zone\ZoneCategory.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
