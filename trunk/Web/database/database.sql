@@ -21,34 +21,38 @@ CREATE TABLE [dbo].[AL_User] (
 	[RegTime] [datetime] NULL default(getdate())--用户注册时间
 ) 
 GO
---广告表
-CREATE TABLE [dbo].[AL_Zone] (
-	[ZoneId] [uniqueidentifier] Primary key NOT NULL ,
-	[UserId] [uniqueidentifier] null,--广告位发布者ID	
-	[ZoneName] [nvarchar] (50) null,--广告位名字
-	[SiteId] [uniqueidentifier] null,--所属网站
-	[IsWord] [tinyint] null,--是否是文字广告
-	[IsImg] [tinyint] null,--是否是图片或者Flash广告
-	[Position] [tinyint] null,--广告位置，0为首页，1为不在首页
-	[Size] [int] null,--广告尺寸
-	[Type] [tinyint] null,--广告计费方式，0为按时长计费,1为按点击计费*
-	[Classes] [nvarchar] (7) null,--广告分类，最多可选 两个分类例如：2|3
-	[KeyWords] [nvarchar](136) null,--关键字
-	--广告设置部分开始
-	[TitleColor] [varchar] (6) null,--广告文字颜色
-	[ContentColor] [nvarchar] (300) null,--广告描述（内容）
-	[UrlColor] [varchar] (6) null,--链接颜色
-	[BorderColor] [varchar] (6) null,--边框颜色
-	[BgColor] [varchar](6) null,--背景颜色
-	[Grounding] [varchar](6) null,--底色
-	[BgImg] [nvarchar](50) null,--背景图片
-	[Corner] [nvarchar](50) null,--转角图片
-	--广告设置部分结束
-	[IsLocked] [tinyint] null,--审核(经过管理员审核才可以出售此广告位)
-	[NeedCheck] [tinyint] null,--此广告位是否需要站长审核才能投放？
-	[Description] [ntext],--广告位描述
-	[ZoneCode] [ntext]  --广告位代码
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+--广告位表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_Zone]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_Zone]
+
+CREATE TABLE [AL_Zone] (
+[ZoneId] [uniqueidentifier]  NOT NULL,
+[UserId] [uniqueidentifier]  NULL,
+[ZoneName] [nvarchar]  (100) NULL,
+[SiteId] [uniqueidentifier]  NULL,
+[MediaType] [tinyint]  NULL,	--文字广告、图片广告
+[InFirst] [tinyint]  NULL,		--是否在首页
+[SizeId] [int]  NULL,			--广告位规格对应的编号
+[TransType] [tinyint]  NULL,	--计费类型：按点击、按时长
+[ClassIds] [nvarchar]  (14) NULL,	--所属种类的编号序列
+[Keywords] [nvarchar]  (272) NULL,
+[TitleColor] [varchar]  (6) NULL,
+[DescriptionColor] [nvarchar]  (12) NULL,
+[LinkColor] [varchar]  (6) NULL,
+[BorderColor] [varchar]  (6) NULL,
+[BgColor] [varchar]  (6) NULL,
+[Grounding] [varchar]  (6) NULL,
+[BgImg] [nvarchar]  (100) NULL,
+[CornerImg] [nvarchar]  (100) NULL,
+[NeedAuditing] [tinyint]  NULL,	--是否需要审核广告
+[AllowAdultAd] [tinyint]  NULL,	
+[Description] [ntext]  NULL,	--广告位描述
+[ZoneCode] [ntext]  NULL,		--生成的广告位程序代码
+[WeekPrice] [decimal]  (10,2) NULL,	--按时长付费的价格
+[RecommendWeekPrice] [decimal]  (10,2) NULL,	--系统推荐的按时长付费价格
+[ZoneState] [tinyint]  NULL)		--广告位的状态：上架、下架、未激活、拒绝
+
+ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
 --广告组(广告主用来分类自己要投放广告的组）
 CREATE TABLE [dbo].[AL_AdGroup] (
@@ -95,6 +99,8 @@ CREATE TABLE [dbo].[AL_OrderReport] (
 	[Price] [decimal] null--费用
 )
 --网站表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_Site]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_Site]
 
 CREATE TABLE [dbo].[AL_Site](
 	[SiteId] [uniqueidentifier]  Primary key NOT NULL ,
@@ -128,13 +134,16 @@ CREATE TABLE [dbo].[AL_Employment] (
 )
 GO
 
---广告尺寸表
-CREATE TABLE [dbo].[AL_ZoneSize] (
-	[SizeId] [int] identity(1,1) Primary key NOT NULL ,
-	[Width] [int] null,--宽
-	[Height] [int] null--高
-)
-GO
+--广告位尺寸表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_ZoneSize]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_ZoneSize]
+
+CREATE TABLE [AL_ZoneSize] (
+[SizeId] [int]  IDENTITY (1, 1)  NOT NULL,
+[ZoneSize] [varchar]  (10) NULL,
+[SizeType] [int]  NULL)
+
+ALTER TABLE [AL_ZoneSize] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZoneSize] PRIMARY KEY  NONCLUSTERED ( [SizeId] )
 
 --广告分类表
 CREATE TABLE [dbo].[AL_ZoneClass] (

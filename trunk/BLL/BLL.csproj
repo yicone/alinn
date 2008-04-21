@@ -111,6 +111,8 @@
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneClass.cs" />
     <Compile Include="ZoneSize.cs" />
+    <Compile Include="ZoneState.cs" />
+    <Compile Include="ZoneType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

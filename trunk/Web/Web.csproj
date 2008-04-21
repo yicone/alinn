@@ -55,6 +55,20 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Report\ZoneSellDetail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ZoneSellDetail.aspx.designer.cs">
+      <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\Zone.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Zone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\Zone.aspx.designer.cs">
+      <DependentUpon>Zone.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Employment.aspx.cs">
       <DependentUpon>Employment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -69,31 +83,76 @@
     <Compile Include="Admin\SiteClass.aspx.designer.cs">
       <DependentUpon>SiteClass.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ZoneCategory.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ZoneCategory.aspx.designer.cs">
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.aspx.cs">
+    <Compile Include="Zone\Site.aspx.cs">
       <DependentUpon>Site.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.aspx.designer.cs">
+    <Compile Include="Zone\Site.aspx.designer.cs">
       <DependentUpon>Site.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ZoneManager.aspx.cs">
+    <Compile Include="Zone\ZoneCategory.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneCategory.aspx.designer.cs">
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneDesigner.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneDesigner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneDesigner.aspx.designer.cs">
+      <DependentUpon>ZoneDesigner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneManager.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneManager.aspx.designer.cs">
+      <DependentUpon>ZoneManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\SiteManager.aspx.cs">
+      <DependentUpon>SiteManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ZoneManager.aspx.designer.cs">
-      <DependentUpon>ZoneManager.aspx</DependentUpon>
+    <Compile Include="Zone\SiteManager.aspx.designer.cs">
+      <DependentUpon>SiteManager.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\alinn.css" />
+    <Content Include="App_Themes\common.js" />
+    <Content Include="App_Themes\jquery.js" />
+    <Content Include="App_Themes\myalinn.css" />
+    <Content Include="database\sp_AL_ZoneClass_log.LDF">
+    </Content>
+    <Content Include="Report\ZoneSellDetail.aspx" />
+    <Content Include="Zone\images\bg_sidebar.jpg" />
+    <Content Include="Zone\Zone.aspx" />
     <Content Include="Admin\Employment.aspx" />
     <Content Include="Admin\SiteClass.aspx" />
-    <Content Include="Site.aspx" />
+    <Content Include="Admin\ZoneCategory.aspx" />
+    <Content Include="App_Themes\niftyCorners.css" />
+    <Content Include="App_Themes\niftycube.js" />
+    <Content Include="App_Themes\NiftyLayout.css" />
+    <Content Include="App_Themes\niftyLayout.js" />
+    <Content Include="Zone\Site.aspx" />
     <Content Include="Web.config" />
-    <Content Include="ZoneManager.aspx" />
+    <Content Include="Zone\ZoneCategory.aspx" />
+    <Content Include="Zone\ZoneDesigner.aspx" />
+    <Content Include="Zone\ZoneManager.aspx" />
+    <Content Include="Zone\SiteManager.aspx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
@@ -132,15 +191,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="database\mytest.sql" />
+    <None Include="database\sp_AL_Ad.sql" />
+    <None Include="database\sp_AL_AdGroup.sql" />
+    <None Include="database\sp_AL_Zone.sql" />
+    <None Include="database\sp_AL_ZoneClass.sql" />
     <None Include="database\database.sql" />
     <None Include="database\sp_AL_Employment.sql" />
     <None Include="database\sp_AL_Site.sql" />
     <None Include="database\sp_AL_SiteClass.sql" />
+    <None Include="database\sp_SiteMaster.sql" />
+    <None Include="database\test.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="App_Themes\" />
     <Folder Include="Controls\" />
     <Folder Include="MasterPage\" />
   </ItemGroup>
