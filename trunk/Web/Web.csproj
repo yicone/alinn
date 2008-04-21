@@ -231,6 +231,7 @@
     <None Include="database\sp_AL_Site.sql" />
     <None Include="database\sp_AL_SiteClass.sql" />
     <Content Include="Ad\EditeAd.aspx" />
+    <Content Include="images\icon\ico_lights.gif" />
     <Content Include="MasterPage\UserCommon.Master" />
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
