@@ -205,6 +205,18 @@ namespace HOT.SQLServerDAL
         }*/
 
         #endregion  成员方法
+
+
+        /// <summary>
+        /// 获得网站的扩展信息
+        /// </summary>
+        public DataSet GetSiteInfoExt(int userId)
+        {
+            SqlParameter[] parameters = { 
+                    new SqlParameter ("@UserId", SqlDbType.UniqueIdentifier)};
+
+            return DbHelperSQL.RunProcedure("UP_SiteInfoExt", parameters, "SiteInfoExt");
+        }
     }
 }
 
