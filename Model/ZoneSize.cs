@@ -2,15 +2,15 @@ using System;
 namespace HOT.Model
 {
     /// <summary>
-    /// 实体类AL_ZoneSize 。(属性说明自动提取数据库字段的描述信息)
+    /// 实体类ZoneSize 。(属性说明自动提取数据库字段的描述信息)
     /// </summary>
-    public class AL_ZoneSize
+    public class ZoneSize
     {
-        public AL_ZoneSize()
+        public ZoneSize()
         { }
         #region Model
         private int _sizeid;
-        private string _zonesize;
+        private string _sizecode;
         private int? _sizetype;
         /// <summary>
         /// 
@@ -23,10 +23,10 @@ namespace HOT.Model
         /// <summary>
         /// 例如, 760x90
         /// </summary>
-        public string ZoneSize
+        public string SizeCode
         {
-            set { _zonesize = value; }
-            get { return _zonesize; }
+            set { _sizecode = value; }
+            get { return _sizecode; }
         }
         /// <summary>
         /// 1:横幅, 2:垂直, 3:巨幅, 4:小幅

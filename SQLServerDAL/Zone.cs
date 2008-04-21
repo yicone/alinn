@@ -3,15 +3,15 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 using HOT.IDAL;
-using Maticsoft.DBUtility;//请先添加引用
+using HOT.DBUtility;//请先添加引用
 namespace HOT.SQLServerDAL
 {
     /// <summary>
-    /// 数据访问类AL_Zone。
+    /// 数据访问类Zone。
     /// </summary>
-    public class AL_Zone : IAL_Zone
+    public class Zone : IZone
     {
-        public AL_Zone()
+        public Zone()
         { }
         #region  成员方法
         /// <summary>
@@ -38,7 +38,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         ///  增加一条数据
         /// </summary>
-        public void Add(HOT.Model.AL_Zone model)
+        public void Add(HOT.Model.Zone model)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
@@ -99,7 +99,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         ///  更新一条数据
         /// </summary>
-        public void Update(HOT.Model.AL_Zone model)
+        public void Update(HOT.Model.Zone model)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
@@ -173,13 +173,13 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public HOT.Model.AL_Zone GetModel(Guid ZoneId)
+        public HOT.Model.Zone GetModel(Guid ZoneId)
         {
             SqlParameter[] parameters = {
 					new SqlParameter("@ZoneId", SqlDbType.UniqueIdentifier)};
             parameters[0].Value = ZoneId;
 
-            HOT.Model.AL_Zone model = new HOT.Model.AL_Zone();
+            HOT.Model.Zone model = new HOT.Model.Zone();
             DataSet ds = DbHelperSQL.RunProcedure("UP_AL_Zone_GetModel", parameters, "ds");
             if (ds.Tables[0].Rows.Count > 0)
             {

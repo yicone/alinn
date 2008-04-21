@@ -163,8 +163,8 @@ DROP TABLE [AL_ZoneSize]
 
 CREATE TABLE [AL_ZoneSize] (
 [SizeId] [int]  IDENTITY (1, 1)  NOT NULL,
-[ZoneSize] [varchar]  (10) NULL,
-[SizeType] [int]  NULL)
+[SizeCode] [varchar]  (10) NULL,		--760x90
+[SizeType] [int]  NULL)					--1£ººá·ù 2£º
 
 ALTER TABLE [AL_ZoneSize] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZoneSize] PRIMARY KEY  NONCLUSTERED ( [SizeId] )
 
