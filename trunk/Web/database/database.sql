@@ -66,6 +66,8 @@ CREATE TABLE [dbo].[AL_Ad] (
 	[Content] [nvarchar](120) null,--广告内容(如果是图片广告就是图片说明）
 	[Url] [nvarchar] (1024) null,--链接网址（包括图片的链接网址）
 	[UrlText] [nvarchar](256) null,--显示网址
+	[SizeId] [int] null,--大小
+	[AuditState] [tinyint] default(0) null,--审核状态
 	[Img] [nvarchar] (50) null--图片的地址（只在图片广告时有作用）
 )
 --订单表
