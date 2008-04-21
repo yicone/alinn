@@ -1,4 +1,9 @@
+USE [Alinn]
+
 --用户表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_User]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_User]
+
 CREATE TABLE [dbo].[AL_User] (
 	[UserID] [uniqueidentifier] Primary key NOT NULL ,
 	[RoleID] [int] default(0) NULL ,--角色ID比如：个人会员、企业会员等，默认为0表示为个人会员
@@ -20,7 +25,7 @@ CREATE TABLE [dbo].[AL_User] (
 	[ActiveCode] [varchar] (16) null,--邮箱验证码（20080411新添加）
 	[RegTime] [datetime] NULL default(getdate())--用户注册时间
 ) 
-GO
+
 --广告位表
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_Zone]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [AL_Zone]
@@ -54,7 +59,11 @@ CREATE TABLE [AL_Zone] (
 
 ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
+
 --广告组(广告主用来分类自己要投放广告的组）
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_AdGroup]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_AdGroup]
+
 CREATE TABLE [dbo].[AL_AdGroup] (
 	[AdGroupId] [uniqueidentifier]  Primary key NOT NULL ,
 	[GroupName] [nvarchar] (40) null,--广告组标题
@@ -63,6 +72,9 @@ CREATE TABLE [dbo].[AL_AdGroup] (
 	[KeyWords] [nvarchar](136) null--关键字
 )
 --广告主要投放的广告牌
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_Ad]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_Ad]
+
 CREATE TABLE [dbo].[AL_Ad] (
 	[AdId] [uniqueidentifier]  Primary key NOT NULL ,
 	[AdGroupId] [uniqueidentifier] null,--广告组ID
@@ -74,7 +86,11 @@ CREATE TABLE [dbo].[AL_Ad] (
 	[AuditState] [tinyint] default(0) null,--审核状态
 	[Img] [nvarchar] (50) null--图片的地址（只在图片广告时有作用）
 )
+
 --订单表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_Order]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_Order]
+
 CREATE TABLE [dbo].[AL_Order] (
 	[OrderId] [uniqueidentifier]  Primary key NOT NULL ,
 	[OrderName] [nvarchar] null,--订单名称，用来帮助广告主区分
@@ -89,7 +105,11 @@ CREATE TABLE [dbo].[AL_Order] (
 	[Payment] [tinyint] default(0),--支付状态，默认为0为未支付
 	[CreateDate] [datetime] default(getdate()) NULL--订单提交时间
 )
+
 --广告效果报表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_OrderReport]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_OrderReport]
+
 CREATE TABLE [dbo].[AL_OrderReport] (
 	[OrderReportId] [uniqueidentifier]  Primary key NOT NULL ,
 	[Date] datetime null,--日期
@@ -118,21 +138,24 @@ CREATE TABLE [dbo].[AL_Site](
 	[Description] [ntext] NULL				--网站介绍
 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
 
 --网站分类表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_SiteClass]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_SiteClass]
+
 CREATE TABLE [dbo].[AL_SiteClass] (
 	[ClassId][int] identity(1,1) Primary key NOT NULL ,
 	[ClassName] [nvarchar] (20) null
 ) 
-GO
 
 --职业分类表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_Employment]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_Employment]
+
 CREATE TABLE [dbo].[AL_Employment] (
 	[EmploymentId] [int] identity(1,1) Primary key NOT NULL ,
 	[EmploymentName] [nvarchar] (20) null
 )
-GO
 
 --广告位尺寸表
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_ZoneSize]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -146,8 +169,13 @@ CREATE TABLE [AL_ZoneSize] (
 ALTER TABLE [AL_ZoneSize] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZoneSize] PRIMARY KEY  NONCLUSTERED ( [SizeId] )
 
 --广告分类表
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_ZoneClass]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_ZoneClass]
+
 CREATE TABLE [dbo].[AL_ZoneClass] (
 	[ClassId] [int] identity(1,1) Primary key NOT NULL ,
 	[ClassName] [nvarchar](50) null,--分类名称
 	[ParentId] [int] null--父类ID
 )
+
+GO
