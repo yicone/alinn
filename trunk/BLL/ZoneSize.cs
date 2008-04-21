@@ -17,14 +17,6 @@ namespace HOT.BLL
 		#region  成员方法
 
 		/// <summary>
-		/// 得到最大ID
-		/// </summary>
-		public int GetMaxId()
-		{
-			return dal.GetMaxId();
-		}
-
-		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
 		public bool Exists(int SizeId)

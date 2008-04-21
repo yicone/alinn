@@ -3,15 +3,15 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 using HOT.IDAL;
-using Maticsoft.DBUtility;//请先添加引用
+using HOT.DBUtility;//请先添加引用
 namespace HOT.SQLServerDAL
 {
     /// <summary>
-    /// 数据访问类AL_ZoneSize。
+    /// 数据访问类ZoneSize。
     /// </summary>
-    public class AL_ZoneSize : IAL_ZoneSize
+    public class ZoneSize : IZoneSize
     {
-        public AL_ZoneSize()
+        public ZoneSize()
         { }
         #region  成员方法
         /// <summary>
@@ -38,15 +38,15 @@ namespace HOT.SQLServerDAL
         /// <summary>
         ///  增加一条数据
         /// </summary>
-        public int Add(HOT.Model.AL_ZoneSize model)
+        public int Add(HOT.Model.ZoneSize model)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@SizeId", SqlDbType.Int,4),
-					new SqlParameter("@ZoneSize", SqlDbType.VarChar,10),
+					new SqlParameter("@SizeCode", SqlDbType.VarChar,10),
 					new SqlParameter("@SizeType", SqlDbType.Int,4)};
             parameters[0].Direction = ParameterDirection.Output;
-            parameters[1].Value = model.ZoneSize;
+            parameters[1].Value = model.SizeCode;
             parameters[2].Value = model.SizeType;
 
             DbHelperSQL.RunProcedure("UP_AL_ZoneSize_ADD", parameters, out rowsAffected);
@@ -56,15 +56,15 @@ namespace HOT.SQLServerDAL
         /// <summary>
         ///  更新一条数据
         /// </summary>
-        public void Update(HOT.Model.AL_ZoneSize model)
+        public void Update(HOT.Model.ZoneSize model)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@SizeId", SqlDbType.Int,4),
-					new SqlParameter("@ZoneSize", SqlDbType.VarChar,10),
+					new SqlParameter("@SizeCode", SqlDbType.VarChar,10),
 					new SqlParameter("@SizeType", SqlDbType.Int,4)};
             parameters[0].Value = model.SizeId;
-            parameters[1].Value = model.ZoneSize;
+            parameters[1].Value = model.SizeCode;
             parameters[2].Value = model.SizeType;
 
             DbHelperSQL.RunProcedure("UP_AL_ZoneSize_Update", parameters, out rowsAffected);
@@ -86,13 +86,13 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public HOT.Model.AL_ZoneSize GetModel(int SizeId)
+        public HOT.Model.ZoneSize GetModel(int SizeId)
         {
             SqlParameter[] parameters = {
 					new SqlParameter("@SizeId", SqlDbType.Int,4)};
             parameters[0].Value = SizeId;
 
-            HOT.Model.AL_ZoneSize model = new HOT.Model.AL_ZoneSize();
+            HOT.Model.ZoneSize model = new HOT.Model.ZoneSize();
             DataSet ds = DbHelperSQL.RunProcedure("UP_AL_ZoneSize_GetModel", parameters, "ds");
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -100,7 +100,7 @@ namespace HOT.SQLServerDAL
                 {
                     model.SizeId = int.Parse(ds.Tables[0].Rows[0]["SizeId"].ToString());
                 }
-                model.ZoneSize = ds.Tables[0].Rows[0]["ZoneSize"].ToString();
+                model.SizeCode = ds.Tables[0].Rows[0]["SizeCode"].ToString();
                 if (ds.Tables[0].Rows[0]["SizeType"].ToString() != "")
                 {
                     model.SizeType = int.Parse(ds.Tables[0].Rows[0]["SizeType"].ToString());
@@ -119,7 +119,7 @@ namespace HOT.SQLServerDAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select SizeId,ZoneSize,SizeType ");
+            strSql.Append("select SizeId,SizeCode,SizeType ");
             strSql.Append(" FROM AL_ZoneSize ");
             if (strWhere.Trim() != "")
             {

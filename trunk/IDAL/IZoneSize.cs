@@ -3,9 +3,9 @@ using System.Data;
 namespace HOT.IDAL
 {
     /// <summary>
-    /// 接口层IAL_ZoneSize 的摘要说明。
+    /// 接口层IZoneSize 的摘要说明。
     /// </summary>
-    public interface IAL_ZoneSize
+    public interface IZoneSize
     {
         #region  成员方法
         /// <summary>
@@ -15,11 +15,11 @@ namespace HOT.IDAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        int Add(HOT.Model.AL_ZoneSize model);
+        int Add(HOT.Model.ZoneSize model);
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        void Update(HOT.Model.AL_ZoneSize model);
+        void Update(HOT.Model.ZoneSize model);
         /// <summary>
         /// 删除一条数据
         /// </summary>
@@ -27,7 +27,7 @@ namespace HOT.IDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        HOT.Model.AL_ZoneSize GetModel(int SizeId);
+        HOT.Model.ZoneSize GetModel(int SizeId);
         /// <summary>
         /// 获得数据列表
         /// </summary>
