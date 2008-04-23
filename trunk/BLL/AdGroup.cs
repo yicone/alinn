@@ -91,9 +91,18 @@ namespace HOT.BLL
 		/// </summary>
 		public DataSet GetAllList()
 		{
-			return GetList("");
+			return dal.GetList("");
 		}
-
+                /// <summary>
+        /// 获得分页数据列表
+        /// powered by FZF 20080422
+        /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
+        public DataSet GetList(int startIndex, int endIndex,string userId)
+        {
+            return dal.GetList(startIndex, endIndex,userId);
+        }
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

@@ -96,6 +96,7 @@ CREATE TABLE [dbo].[AL_Order] (
 	[OrderName] [nvarchar] null,--订单名称，用来帮助广告主区分
 	[UserId][uniqueidentifier]  ,--购买广告用户
 	[AdId] [uniqueidentifier] not null,--广告牌ID
+	[ZoneId][uniqueidentifier]  NOT NULL,--广告位ID
 	[StartDate] datetime null,--开始时间（200804151003）（只针对包周广告）
 	[EndDate] datetime null,--结束时间（200804151003）（只针对包周广告）
 	[AuditState] [tinyint] null,--审核状态
@@ -139,6 +140,14 @@ CREATE TABLE [dbo].[AL_Site](
 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
+--网站缩略图
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_SitePic]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_SitePic]
+
+CREATE TABLE [dbo].[AL_SitePic] (
+	[SiteId] [uniqueidentifier]  Primary key NOT NULL ,
+	[Pic] [nvarchar] (200) 
+) 
 --网站分类表
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_SiteClass]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [AL_SiteClass]
@@ -179,3 +188,40 @@ CREATE TABLE [dbo].[AL_ZoneClass] (
 )
 
 GO
+
+
+-------test
+create table students
+(
+stuid int  identity (1,1),
+name varchar(20),
+sex varchar(20),
+score int
+)
+insert into students(name,sex,score)
+values('111','1',99)
+insert into students(name,sex,score)
+values('222','2',100)
+insert into students(name,sex,score)
+values('333','1',100)
+insert into students(name,sex,score)
+values('444','2',99)
+
+select top 2 name,max(score) from students group by sex ,name
+select top 2 name,max(score) from students group by sex,name
+
+select top 2 name,max(score) from  students group by sex ,name
+
+
+create table #tmp 
+(
+	stuid int,
+    name varchar(10),
+    sex  varchar(6),
+    score int 
+)
+insert into #tmp values(1,'张三','男',99)
+insert into #tmp values(2,'李四','女',100)
+insert into #tmp values(3,'王五','男',100)
+insert into #tmp values(4,'赵六','女',99)
+  select top 2 name,max(score) from  #tmp group by sex ,name

@@ -100,7 +100,6 @@ namespace HOT.BLL
 		{
 			return GetList("");
 		}
-
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

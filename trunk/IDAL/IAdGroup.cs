@@ -32,6 +32,13 @@ namespace HOT.IDAL
 		/// 获得数据列表
 		/// </summary>
 		DataSet GetList(string strWhere);
+        /// <summary>
+        /// 获得分页数据列表
+        /// powered by FZF 20080422
+        /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
+        DataSet GetList(int startIndex, int endIndex, string userId);
 		/// <summary>
 		/// 根据分页获得数据列表
 		/// </summary>

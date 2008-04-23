@@ -44,4 +44,42 @@ INSERT [AL_ZoneSize] ([SizeId],[SizeCode],[SizeType]) VALUES ( 16,'120x60',4)
 
 SET IDENTITY_INSERT [AL_ZoneSize] OFF
 
---
+--向广告位表加入数据
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07659','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07658','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07657','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07656','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07655','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07654','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07653','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07652','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07651','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07649','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07639','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C07629','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+
+
+
+insert into AL_user(UserId,roleid,email) values('936DA01F-9ABD-4D9D-80C7-02AF85C822A7',1,'andylaufzf@163.com')
+
+
+insert into AL_Site(SiteId,UserId,SiteName,SiteUrl,Description)
+values('936DA01F-9ABD-4D9D-80C7-02AF85C822A8','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客网','www.downke.cn','一个不错的网站')
+
+insert into AL_ZoneSize(SizeCode) values('760X80')
+
+update AL_Site set VistersNum=345
+update AL_Zone set weekprice=10.2
+update AL_User set QQ='1303036'

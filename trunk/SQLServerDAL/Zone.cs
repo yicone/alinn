@@ -266,7 +266,20 @@ namespace HOT.SQLServerDAL
             }
             return DbHelperSQL.Query(strSql.ToString());
         }
-
+        /// <summary>
+        /// 获得分页数据列表
+        /// powered by FZF 20080422
+        /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
+        public DataSet GetList(int startIndex,int endIndex)
+        {
+            SqlParameter[] parameters = { new SqlParameter("@startIndex", SqlDbType.Int,4),
+                                          new SqlParameter("@endIndex",SqlDbType.Int,4)};
+            parameters[0].Value =startIndex;
+            parameters[1].Value = endIndex;
+            return DbHelperSQL.RunProcedure("MY_AL_ZonePage", parameters, "ds");
+        }
         /*
         /// <summary>
         /// 分页获取数据列表
