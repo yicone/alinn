@@ -158,6 +158,23 @@ namespace HOT.SQLServerDAL
             parameters[0].Value = strWhere;
             return DbHelperSQL.RunProcedure("UP_AL_AdGroup_GetListWhere", parameters, "ds");
         }
+
+        /// <summary>
+        /// 获得分页数据列表
+        /// powered by FZF 20080422
+        /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
+        public DataSet GetList(int startIndex, int endIndex,string userId)
+        {
+            SqlParameter[] parameters = { new SqlParameter("@startIndex", SqlDbType.Int,4),
+                                          new SqlParameter("@endIndex",SqlDbType.Int,4),
+                                          new SqlParameter("@userId",SqlDbType.VarChar,300)};
+            parameters[0].Value = startIndex;
+            parameters[1].Value = endIndex;
+            parameters[2].Value = userId;
+            return DbHelperSQL.RunProcedure("MY_AL_AdGroupPage", parameters, "ds");
+        }
 		/*
 		/// <summary>
 		/// 分页获取数据列表

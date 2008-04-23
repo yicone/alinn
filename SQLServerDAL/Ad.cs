@@ -159,6 +159,7 @@ namespace HOT.SQLServerDAL
 
         /// <summary>
         /// 获得数据列表
+        /// powered by FZF
         /// </summary>
         /// <param name="strWhere">查询条件</param>
         /// <returns>dataset</returns>

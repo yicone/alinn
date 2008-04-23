@@ -93,7 +93,17 @@ namespace HOT.BLL
 		{
 			return GetList("");
 		}
-
+        /// <summary>
+        /// 获取分页数据列表
+        /// powered by FZF
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        public DataSet GetList(int startIndex, int endIndex)
+        {
+            return dal.GetList(startIndex, endIndex);
+        }
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
