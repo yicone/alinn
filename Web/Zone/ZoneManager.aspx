@@ -1,77 +1,104 @@
-<%@ Page Language="C#" AutoEventWireup="true" Codebehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager" %>
+Ôªø<%@ Page Language="C#" AutoEventWireup="true" Codebehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Untitled Page</title>
+    <link type="text/css" href="../App_Themes/alinn.css" />
+    <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+    <style type="text/css">
+        ul, li{
+	        list-style-type:none;
+        }
+        li{
+	        float:left;
+        }
+    </style>
+    <script type="text/javascript">
+	$(document).ready(function(){
+	    var iframe = $("iframe", parent.document);
+	    alert(iframe.css("height"));
+	   iframe.css("height", $(document.body).attr("scrollHeight") + 30);	
+	   alert(iframe.css("height"));			
+	});
+    </script>
 </head>
 <body>
-    <div>
-        <table class="tlists" cellspacing="1" cellpadding="0" border="0">
+    <div style="width: 100%; height: 100%">
+        <table class="tlists" cellspacing="1" cellpadding="0" border="0" width="800px">
             <thead class="tcaption">
                 <tr>
-                    <th>
-                        π„∏ÊŒª√˚≥∆/≥ﬂ¥Á</th>
-                    <th>
-                        ∞¥ ±≥§º∆∑—º€∏Ò(‘™/÷‹)</th>
-                    <th>
-                        ÷ß≥÷π„∏Ê¿‡–Õ</th>
-                    <th>
+                    <th style="width: 95px">
+                        ÂπøÂëä‰ΩçÂêçÁß∞/Â∞∫ÂØ∏</th>
+                    <th style="width: 119px">
+                        ÊåâÊó∂ÈïøËÆ°Ë¥π‰ª∑Ê†º(ÂÖÉ/Âë®)</th>
+                    <th style="width: 123px">
+                        ÊîØÊåÅÂπøÂëäÁ±ªÂûã</th>
+                    <th style="width: 82px">
                         <select id="status" onchange="chg_status();" name="status">
-                            <option value="">◊¥Ã¨</option>
-                            <option value="A">…œº‹</option>
-                            <option value="N">Œ¥º§ªÓ</option>
-                            <option value="O">œ¬º‹</option>
-                            <option value="R">æ‹æ¯</option>
+                            <option value="">Áä∂ÊÄÅ</option>
+                            <option value="A">‰∏äÊû∂</option>
+                            <option value="N">Êú™ÊøÄÊ¥ª</option>
+                            <option value="O">‰∏ãÊû∂</option>
+                            <option value="R">ÊãíÁªù</option>
                         </select>
                     </th>
                     <th class="actions" width="315">
-                        ≤Ÿ◊˜</th>
+                        Êìç‰Ωú</th>
                 </tr>
             </thead>
             <tbody>
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding">
                     <ItemTemplate>
                         <tr class="tlist-item">
-                            <td class="first">
-                                <a target="_blank" href='<%# "/Zone/ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'><%# Eval("ZoneName") %> </a>
+                            <td class="first" style="width: 95px; text-align: center;">
+                                <a target="_blank" href='<%# "/Zone/ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                    <%# Eval("ZoneName") %>
+                                </a>
                                 <br />
-                                <span class="gray"><%# Eval("ZoneSize") %> </span> <!-- 760x90 -->
+                                <span class="gray">
+                                    <%# Eval("SizeCode") %>
+                                </span>
+                                <!-- 760x90 -->
                             </td>
-                            <td>
+                            <td style="width: 119px; text-align: center;">
                                 <em>
                                     <%# Eval("WeekPrice") %>
                                 </em><span id="recommendWeekprice2021776" /><a onclick="calZonePrice('2021776','760x90','http://hotboo.com','','');return false;"
-                                    href="#"><span id="recommendWeekpriceCalLink2021776">º∆À„Õ∆ºˆº€∏Ò</span> </a>
+                                    href="#"><span id="recommendWeekpriceCalLink2021776">ËÆ°ÁÆóÊé®Ëçê‰ª∑Ê†º</span> </a></span>
                             </td>
-                            <td>
+                            <td style="width: 123px; text-align: center;">
                                 <%# Eval("MediaType") %>
                             </td>
-                            <td>
-                                <%# Eval("ZoneState") %>    <!--Œ¥º§ªÓ-->
+                            <td style="width: 82px; text-align: center;">
+                                <%# Eval("ZoneState") %>
+                                <!--Êú™ÊøÄÊ¥ª-->
                             </td>
-                            <td class="actions" width="315">
+                            <td class="actions" width="315px">
                                 <ul>
                                     <li><a target="_blank" href='<%# "/Report/ZoneSellDetail.aspx?zoneid=" + Eval("ZoneId") %>'>
-                                        ≤Èø¥±®±Ì</a> </li>
-                                    <li></li>
-                                    <li><a target="_blank" href='<%# "/Zone/ZoneView.aspx?oper=edit&zoneid=" + Eval("ZoneId") %>'>–ﬁ∏ƒ</a> </li>
-                                    <li><a target="_blank" href='<%# "/Zone/ZoneDesigner.aspx?oper=edit&zoneid=" + Eval("ZoneId") + "&returnactivezonelist=true"%>'>
-                                        ªÒ»°¥˙¬Î</a> </li>
-                                    <li><i /></li>
+                                        Êü•ÁúãÊä•Ë°®    </a> </li>
+                                    <li>&nbsp;</li>
+                                    <li><a target="_blank" href='<%# "/Zone/ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                        ‰øÆÊîπ    </a> </li>
+                                    <li>&nbsp;</li>
+                                    <li><a target="_blank" href='<%# "/Zone/ZoneDesigner.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                        Ëé∑Âèñ‰ª£Á†Å    </a> </li>
+                                    <li>&nbsp;</li>
                                     <li><a onclick="dojobcooperate('delete','2021776','953317','')" href="#">
                                         <img width="16" height="16" align="absmiddle" src="http://img.alimama.cn/images/adzone/alimama_070609_06.gif" />
-                                        …æ≥˝ </a></li>
-                                    <li></li>
+                                        Âà†Èô§ </a></li>
+                                    <li>&nbsp;</li>
                                 </ul>
                             </td>
                         </tr>
                     </ItemTemplate>
                 </asp:DataList></tbody></table>
     </div>
-     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="UP_ZoneInfoExt" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+        SelectCommand="UP_GetZoneInfoExtForSiteManager" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
         <SelectParameters>
-            <asp:QueryStringParameter Name="SiteId" QueryStringField="siteid" />
+            <asp:Parameter Name="SiteId" />
         </SelectParameters>
     </asp:SqlDataSource>
 </body>

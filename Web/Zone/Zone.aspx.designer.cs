@@ -65,15 +65,6 @@ namespace Web {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_siteurl;
         
         /// <summary>
-        /// hdn_zonecatids control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_zonecatids;
-        
-        /// <summary>
         /// hdn_mediatype control.
         /// </summary>
         /// <remarks>
@@ -90,6 +81,15 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_transtype;
+        
+        /// <summary>
+        /// hdn_sizeid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_sizeid;
         
         /// <summary>
         /// hdn_zonesize control.

@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Font Name="Microsoft YaHei" Size="9" />
-  <Class Name="HOT.BLL.AdClass" Collapsed="true">
+  <Class Name="HOT.BLL.OrderReport" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>AdClass.cs</FileName>
-      <HashCode>AAYggQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HOT.BLL.Ads" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <FileName>Ads.cs</FileName>
+      <FileName>OrderReport.cs</FileName>
       <HashCode>AAYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="HOT.BLL.AdSize" Collapsed="true">
+  <Class Name="HOT.BLL.ZoneSize" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ZoneSize.cs</FileName>
+      <HashCode>AAYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HOT.BLL.AdGroup" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>AdSize.cs</FileName>
-      <HashCode>AAYggQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
+      <FileName>AdGroup.cs</FileName>
+      <HashCode>AAYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="HOT.BLL.Employment" Collapsed="true">
@@ -33,7 +33,7 @@
     <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Site.cs</FileName>
-      <HashCode>AIYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
+      <HashCode>AAYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="HOT.BLL.SiteClass" Collapsed="true">
@@ -57,13 +57,6 @@
       <HashCode>AAYgAQAAAACAAAAAAAAAAAAAAAEAEAAAAAAAAAEAAAI=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="HOT.BLL.TextZone">
-    <Position X="5.5" Y="2.5" Width="1.75" />
-    <TypeIdentifier>
-      <FileName>TextZone.cs</FileName>
-      <HashCode>AAAAAAAAEAAAwABAAACAAAACGBCAAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Enum Name="HOT.BLL.ZoneState">
     <Position X="8" Y="2.25" Width="1.5" />
     <TypeIdentifier>
@@ -71,11 +64,25 @@
       <HashCode>AAAAAAAAAAAAAAAAAAABAAAIAAAAAQAAAAAAIAAAAAA=</HashCode>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="HOT.BLL.ZoneType">
+  <Enum Name="HOT.BLL.MediaType">
     <Position X="8" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ZoneType.cs</FileName>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HOT.BLL.InFirstpage">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>InFirstpage.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HOT.BLL.TransType">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TransType.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Enum>
 </ClassDiagram>

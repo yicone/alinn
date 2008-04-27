@@ -11,13 +11,13 @@
         <ul id="treelist">
             <li>
                 <asp:Button ID="btnAddSite" runat="server" Text="新增网站" OnClick="btnAddSite_Click" /></li>
-            <li>
+            <li style="height:600px">
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding">
                     <ItemTemplate>
-                        <div class="title-bar">
-                            <asp:LinkButton Text="阿斯" runat="server" ID="df">网站名称：<%# Eval("SiteName") %> (共<%# Eval("ZoneCount") %>个广告位)  <%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton></p>
+                        <div class="title-bar" style="width:950px">
+                            <asp:LinkButton Text="阿斯" runat="server" ID="df">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton></p>
                         </div>
-                        <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" height="1" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>' style="height:100px"> 
+                        <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" height="1" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>'> 
                             <!--读取广告位列表-->
                         </iframe>
                     </ItemTemplate>
@@ -25,9 +25,9 @@
             </li>
         </ul>
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="UP_SiteInfoExt" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="UP_GetSiteInfoExtForSiteManager" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
         <SelectParameters>
-            <asp:Parameter Name="UserId"   />
+            <asp:Parameter Name="UserId" />
         </SelectParameters>
     </asp:SqlDataSource>
     </form>

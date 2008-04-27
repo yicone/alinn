@@ -19,14 +19,6 @@ namespace HOT.Model
         private int? _transtype;
         private string _classids;
         private string _keywords;
-        private string _titlecolor;
-        private string _descriptioncolor;
-        private string _linkcolor;
-        private string _bordercolor;
-        private string _bgcolor;
-        private string _grounding;
-        private string _bgimg;
-        private string _cornerimg;
         private int? _needauditing;
         private int? _allowadultad;
         private string _description;
@@ -34,6 +26,8 @@ namespace HOT.Model
         private decimal? _weekprice;
         private decimal? _recommendweekprice;
         private int? _zonestate;
+        private string _zoneStyle;
+
         /// <summary>
         /// 
         /// </summary>
@@ -117,70 +111,6 @@ namespace HOT.Model
         /// <summary>
         /// 
         /// </summary>
-        public string TitleColor
-        {
-            set { _titlecolor = value; }
-            get { return _titlecolor; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string DescriptionColor
-        {
-            set { _descriptioncolor = value; }
-            get { return _descriptioncolor; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string LinkColor
-        {
-            set { _linkcolor = value; }
-            get { return _linkcolor; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string BorderColor
-        {
-            set { _bordercolor = value; }
-            get { return _bordercolor; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string BgColor
-        {
-            set { _bgcolor = value; }
-            get { return _bgcolor; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Grounding
-        {
-            set { _grounding = value; }
-            get { return _grounding; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string BgImg
-        {
-            set { _bgimg = value; }
-            get { return _bgimg; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string CornerImg
-        {
-            set { _cornerimg = value; }
-            get { return _cornerimg; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
         public int? NeedAuditing
         {
             set { _needauditing = value; }
@@ -233,6 +163,14 @@ namespace HOT.Model
         {
             set { _zonestate = value; }
             get { return _zonestate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ZoneStyle
+        {
+            get { return _zoneStyle; }
+            set { _zoneStyle = value; }
         }
         #endregion Model
 

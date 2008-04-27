@@ -35,7 +35,7 @@ GO
 --Ê±¼ä£º2008/4/21 22:57:47
 ------------------------------------
 CREATE PROCEDURE UP_AL_Zone_ADD
-@ZoneId uniqueidentifier,
+@ZoneId uniqueidentifier output,		--yicone
 @UserId uniqueidentifier,
 @ZoneName nvarchar(100),
 @SiteId uniqueidentifier,
@@ -45,27 +45,22 @@ CREATE PROCEDURE UP_AL_Zone_ADD
 @TransType tinyint,
 @ClassIds nvarchar(14),
 @Keywords nvarchar(272),
-@TitleColor varchar(6),
-@DescriptionColor nvarchar(12),
-@LinkColor varchar(6),
-@BorderColor varchar(6),
-@BgColor varchar(6),
-@Grounding varchar(6),
-@BgImg nvarchar(100),
-@CornerImg nvarchar(100),
 @NeedAuditing tinyint,
 @AllowAdultAd tinyint,
 @Description ntext,
 @ZoneCode ntext,
 @WeekPrice decimal(10,2),
 @RecommendWeekPrice decimal(10,2),
-@ZoneState tinyint
+@ZoneState tinyint,
+@ZoneStyle nvarchar(100)
 
  AS 
+	SET @ZoneId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)	-------------------------yicone£¡
+ 
 	INSERT INTO AL_Zone(
-	[ZoneId],[UserId],[ZoneName],[SiteId],[MediaType],[InFirst],[SizeId],[TransType],[ClassIds],[Keywords],[TitleColor],[DescriptionColor],[LinkColor],[BorderColor],[BgColor],[Grounding],[BgImg],[CornerImg],[NeedAuditing],[AllowAdultAd],[Description],[ZoneCode],[WeekPrice],[RecommendWeekPrice],[ZoneState]
+	[ZoneId],[UserId],[ZoneName],[SiteId],[MediaType],[InFirst],[SizeId],[TransType],[ClassIds],[Keywords],[NeedAuditing],[AllowAdultAd],[Description],[ZoneCode],[WeekPrice],[RecommendWeekPrice],[ZoneState], [ZoneStyle]
 	)VALUES(
-	@ZoneId,@UserId,@ZoneName,@SiteId,@MediaType,@InFirst,@SizeId,@TransType,@ClassIds,@Keywords,@TitleColor,@DescriptionColor,@LinkColor,@BorderColor,@BgColor,@Grounding,@BgImg,@CornerImg,@NeedAuditing,@AllowAdultAd,@Description,@ZoneCode,@WeekPrice,@RecommendWeekPrice,@ZoneState
+	@ZoneId,@UserId,@ZoneName,@SiteId,@MediaType,@InFirst,@SizeId,@TransType,@ClassIds,@Keywords,@NeedAuditing,@AllowAdultAd,@Description,@ZoneCode,@WeekPrice,@RecommendWeekPrice,@ZoneState, @ZoneStyle
 	)
 
 GO
@@ -90,24 +85,17 @@ CREATE PROCEDURE UP_AL_Zone_Update
 @TransType tinyint,
 @ClassIds nvarchar(14),
 @Keywords nvarchar(272),
-@TitleColor varchar(6),
-@DescriptionColor nvarchar(12),
-@LinkColor varchar(6),
-@BorderColor varchar(6),
-@BgColor varchar(6),
-@Grounding varchar(6),
-@BgImg nvarchar(100),
-@CornerImg nvarchar(100),
 @NeedAuditing tinyint,
 @AllowAdultAd tinyint,
 @Description ntext,
 @ZoneCode ntext,
 @WeekPrice decimal(10,2),
 @RecommendWeekPrice decimal(10,2),
-@ZoneState tinyint
+@ZoneState tinyint,
+@ZoneStyle nvarchar(100)
  AS 
 	UPDATE AL_Zone SET 
-	[UserId] = @UserId,[ZoneName] = @ZoneName,[SiteId] = @SiteId,[MediaType] = @MediaType,[InFirst] = @InFirst,[SizeId] = @SizeId,[TransType] = @TransType,[ClassIds] = @ClassIds,[Keywords] = @Keywords,[TitleColor] = @TitleColor,[DescriptionColor] = @DescriptionColor,[LinkColor] = @LinkColor,[BorderColor] = @BorderColor,[BgColor] = @BgColor,[Grounding] = @Grounding,[BgImg] = @BgImg,[CornerImg] = @CornerImg,[NeedAuditing] = @NeedAuditing,[AllowAdultAd] = @AllowAdultAd,[Description] = @Description,[ZoneCode] = @ZoneCode,[WeekPrice] = @WeekPrice,[RecommendWeekPrice] = @RecommendWeekPrice,[ZoneState] = @ZoneState
+	[UserId] = @UserId,[ZoneName] = @ZoneName,[SiteId] = @SiteId,[MediaType] = @MediaType,[InFirst] = @InFirst,[SizeId] = @SizeId,[TransType] = @TransType,[ClassIds] = @ClassIds,[Keywords] = @Keywords,[NeedAuditing] = @NeedAuditing,[AllowAdultAd] = @AllowAdultAd,[Description] = @Description,[ZoneCode] = @ZoneCode,[WeekPrice] = @WeekPrice,[RecommendWeekPrice] = @RecommendWeekPrice,[ZoneState] = @ZoneState, [ZoneStyle] = @ZoneStyle
 	WHERE ZoneId=@ZoneId 
 
 GO
@@ -142,7 +130,7 @@ CREATE PROCEDURE UP_AL_Zone_GetModel
 @ZoneId uniqueidentifier
  AS 
 	SELECT 
-	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,TitleColor,DescriptionColor,LinkColor,BorderColor,BgColor,Grounding,BgImg,CornerImg,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState
+	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState,ZoneStyle
 	 FROM AL_Zone
 	 WHERE ZoneId=@ZoneId 
 
@@ -160,7 +148,7 @@ GO
 CREATE PROCEDURE UP_AL_Zone_GetList
  AS 
 	SELECT 
-	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,TitleColor,DescriptionColor,LinkColor,BorderColor,BgColor,Grounding,BgImg,CornerImg,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState
+	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState,ZoneStyle
 	 FROM AL_Zone
 
 GO

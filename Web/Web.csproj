@@ -146,6 +146,13 @@
     <Compile Include="Zone\ZoneDesigner.aspx.designer.cs">
       <DependentUpon>ZoneDesigner.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Zone\ZoneInfoSaver.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneInfoSaver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneInfoSaver.aspx.designer.cs">
+      <DependentUpon>ZoneInfoSaver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Zone\ZoneManager.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneManager.aspx</DependentUpon>
@@ -159,6 +166,20 @@
     </Compile>
     <Compile Include="Zone\SiteManager.aspx.designer.cs">
       <DependentUpon>SiteManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneOutput.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneOutput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneOutput.aspx.designer.cs">
+      <DependentUpon>ZoneOutput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneView.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneView.aspx.designer.cs">
+      <DependentUpon>ZoneView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -231,11 +252,37 @@
     <None Include="database\sp_AL_Site.sql" />
     <None Include="database\sp_AL_SiteClass.sql" />
     <Content Include="Ad\EditeAd.aspx" />
+    <Content Include="App_Themes\inf.js" />
+    <Content Include="App_Themes\js\images\color_indic.gif" />
+    <Content Include="App_Themes\js\images\hue.png" />
+    <Content Include="App_Themes\js\images\pickerbg.png" />
+    <Content Include="App_Themes\js\images\select.gif" />
+    <Content Include="App_Themes\js\jquery\color_picker\color_picker-ie6.css" />
+    <Content Include="App_Themes\js\jquery\color_picker\color_picker-ie7.css" />
+    <Content Include="App_Themes\js\jquery\color_picker\color_picker.css" />
+    <Content Include="App_Themes\js\jquery\color_picker\color_picker.js" />
+    <Content Include="App_Themes\js\jquery\color_picker\howto_color_picker.txt" />
+    <Content Include="App_Themes\js\jquery\color_picker\images\color_indic.gif" />
+    <Content Include="App_Themes\js\jquery\color_picker\images\hue.png" />
+    <Content Include="App_Themes\js\jquery\color_picker\images\pickerbg.png" />
+    <Content Include="App_Themes\js\jquery\color_picker\images\select.gif" />
+    <Content Include="App_Themes\js\jquery\idrag.js" />
+    <Content Include="App_Themes\js\jquery\idrop.js" />
+    <Content Include="App_Themes\js\jquery\ifx.js" />
+    <Content Include="App_Themes\js\jquery\islider.js" />
+    <Content Include="App_Themes\js\jquery\iutil.js" />
+    <Content Include="App_Themes\js\jquery\jquery.js" />
+    <Content Include="App_Themes\TextZoneStyle.js" />
+    <Content Include="App_Themes\ZoneDesigner.css" />
     <Content Include="images\icon\ico_lights.gif" />
     <Content Include="MasterPage\UserCommon.Master" />
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="Zone\testZone.html" />
+    <Content Include="Zone\ZoneInfoSaver.aspx" />
+    <Content Include="Zone\ZoneOutput.aspx" />
+    <Content Include="Zone\ZoneView.aspx" />
     <None Include="database\sp_AL_ZoneSize.sql" />
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />

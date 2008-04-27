@@ -1,6 +1,6 @@
-USE [Alinn]
+ï»¿USE [Alinn]
 GO
-/****** Object:  StoredProcedure [dbo].[UP_ZoneInfoExt]    Script Date: 04/21/2008 22:46:02 ******/
+/****** Object:  StoredProcedure [dbo].[UP_ZoneInfoExt]    Script Date: 04/24/2008 19:07:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8,7 +8,7 @@ GO
 -- =============================================
 -- Author:		yicone
 -- Create date: 
--- Description:	ÁĞÊ½Ö¸¶¨Õ¾µãÏÂµÄ¹ã¸æÎ»ĞÅÏ¢
+-- Description:	åˆ—å¼æŒ‡å®šç«™ç‚¹ä¸‹çš„å¹¿å‘Šä½ä¿¡æ¯
 
 --ZoneId, ZoneName, ZoneSize, WeekPrice, SiteId, SiteUrl, ZoneType, ZoneState
 -- =============================================
@@ -17,11 +17,12 @@ CREATE PROCEDURE [dbo].[UP_ZoneInfoExt]
 	@SiteId uniqueidentifier
 AS
 BEGIN
-		select zoneid, zonename, zonesize, weekprice, al_zone.siteid as siteid, siteurl, mediatype, zonestate from al_zone
+		select zoneid, zonename, SizeCode, weekprice, al_zone.siteid as siteid, siteurl, mediatype, zonestate from al_zone
 		join al_site 
 		on al_zone.siteid = al_site.siteid join al_zonesize on al_zone.sizeid = al_zonesize.sizeid
 		where al_zone.siteid = @SiteId
 END
+
 
 USE [Alinn]
 GO
@@ -33,7 +34,7 @@ GO
 -- =============================================
 -- Author:		yicone
 -- Create date: 
--- Description:	ÁĞÊ¾ÍøÕ¾£¬²¢Í³¼ÆÍøÕ¾ÏÂÊôµÄ¹ã¸æÎ»
+-- Description:	åˆ—ç¤ºç½‘ç«™ï¼Œå¹¶ç»Ÿè®¡ç½‘ç«™ä¸‹å±çš„å¹¿å‘Šä½
 -- =============================================
 CREATE PROCEDURE [dbo].[UP_SiteInfoExt] 
 	-- Add the parameters for the stored procedure here
@@ -71,10 +72,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 ------------------------------------
---ÓÃÍ¾£ºµÃµ½ÖÆ¶¨¸¸IDµÄ¹ã¸æÎ»·ÖÀà 
---ÏîÄ¿Ãû³Æ£ºAlinn
---ËµÃ÷£º
---Ê±¼ä£º2008/4/16 17:52:11
+--ç”¨é€”ï¼šå¾—åˆ°åˆ¶å®šçˆ¶IDçš„å¹¿å‘Šä½åˆ†ç±» 
+--é¡¹ç›®åç§°ï¼šAlinn
+--è¯´æ˜ï¼š
+--æ—¶é—´ï¼š2008/4/16 17:52:11
 ------------------------------------
 CREATE PROCEDURE [dbo].[UP_ZoneClass_GetZoneClassesByParentId]
 @ParentId int
@@ -84,3 +85,42 @@ CREATE PROCEDURE [dbo].[UP_ZoneClass_GetZoneClassesByParentId]
 	 FROM AL_ZoneClass
 	 WHERE ParentId=@ParentId
 
+USE [Alinn]
+GO
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneClassListByClassIds]    Script Date: 04/23/2008 17:29:17 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		yicone
+-- Create date: <Create Date,,>
+-- Description:	é€šè¿‡å¹¿å‘Šä½åˆ†ç±»çš„ç¼–å·åºåˆ—æŸ¥è¯¢åˆ†ç±»ä¿¡æ¯
+-- =============================================
+CREATE PROCEDURE [dbo].[UP_GetZoneClassListByClassIds] 
+	@ClassIds nvarchar(14)
+AS
+BEGIN
+	exec('select * from AL_ZoneClass where classid in (' + @ClassIds + ')')
+END
+
+
+USE [Alinn]
+GO
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneStyle]    Script Date: 04/25/2008 11:24:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		yicone
+-- Create date: 20080425
+-- Description:	è·å–å¹¿å‘Šä½æ ·å¼çš„ç›¸å…³å­—æ®µ
+-- =============================================
+CREATE PROCEDURE [dbo].[UP_GetZoneStyle]
+	@ZoneId uniqueidentifier
+AS
+BEGIN
+	select al_zone.sizeid as sizeid, sizecode, zonestyle from al_zone join al_zonesize on al_zone.sizeid = al_zonesize.sizeid
+	where zoneid = @zoneid
+END

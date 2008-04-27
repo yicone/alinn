@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Data;
 using System.Configuration;
 using System.Collections;
@@ -8,40 +8,78 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using HOT.DBUtility;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Web
 {
     public partial class ZoneDesigner : System.Web.UI.Page
     {
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] hdnParams = { 
-                "TradeMAMA",        //?5
-                "returnzoneview",    //?
-                "actioncontrol",    //? "addzone"
-                "hdn_siteid", 
-                "hdn_sitename", 
-                "hdn_siteurl", 
-                "hdn_zonecatids",       //π„∏ÊŒª‘∏“‚≥–µ£≥–µ£µƒπ„∏Ê∑÷¿‡s
-                "hdn_zonetype",         //π„∏ÊŒª÷ß≥÷µƒπ„∏Ê√ΩÃÂ–Œ Ω£¨Œƒ◊÷°¢Õº∆¨∫Õflash°¢∂˛’ﬂÕ¨ ±Ã·π©
-                "hdn_transtype", //? 7
-                "hdn_sizecode", //34
-                "hdn_size", //250x250
-                "hdn_zoneid",
-                "hdn_zonename",
-                "hdn_weekprice",
-                "hdn_zonedesp",
-                "hdn_infirstpage",    //‘⁄ ◊“≥£¨≤ª‘⁄ ◊“≥
-                "hdn_allowauditad",
-                "hdn_keywords",
-                "hdn_recommendweekprice",   //Õ∆ºˆº€∏Ò
-                "hdn_tagids",       //?
-                "hdn_tagnames", //?
-                "hdn_distype", //? 1
-                "hdn_needauditing" //0
-            };
+            if (!Page.IsPostBack)
+            {
+                string oper = Request.QueryString["oper"]; 
+                //hdn_returnpage.Value = Request.QueryString["returnpage"];
+                if (!String.IsNullOrEmpty(oper) && oper.ToLower() == "edit")
+                {
+                    //UNDONE: ÂèÇÊï∞È™åËØÅ‰∫§Áî±ÂÆ¢Êà∑Á´ØËÑöÊú¨Â§ÑÁêÜ
+                    hdn_zoneid.Value = Request.QueryString["zoneid"];
+                    Guid zoneId = new Guid(hdn_zoneid.Value);
+                   
+                    SqlParameter[] parameters = {
+                        new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier)
+                    };
+                    parameters[0].Value = zoneId;
+                    SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneStyle", parameters);
+                    while (sdr.Read())
+                    {
+                        string zoneStyle = sdr["zonestyle"].ToString();
+                        string zoneSize = sdr["sizecode"].ToString();
+
+                        if(zoneStyle != "")
+                        {
+                            hdn_zonestyle.Value = zoneStyle;
+                        }
+                        if (zoneSize != "")
+                        {
+                            hdn_zonesize.Value = zoneSize;
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Assert(Request.UrlReferrer != null);
+                    string lastPageUrl = Request.UrlReferrer.AbsolutePath;
+
+                    Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
+                    string[] hiddenInputIds = new string[] { 
+                        "hdn_zoneid", "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
+                        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
+                        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
+
+                    string[] dbFields = new string[] { 
+                        "ZoneId", "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
+                        "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
+                        "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
+
+                    Debug.Assert(hiddenInputIds.Length == dbFields.Length);
+
+                    InitHiddenParamDict(hiddenInputIds, dict);
+                }
+            }
+        }
+
+        private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
+        {
+            foreach (string id in hiddenInputIds)
+            {
+                Debug.Assert(FindControl(id) != null);
+
+                dict.Add(id, FindControl(id) as HtmlInputHidden);
+            }
         }
     }
 }

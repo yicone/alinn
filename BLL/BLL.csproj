@@ -99,6 +99,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="InFirstpage.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />
@@ -107,12 +108,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TextZone.cs" />
+    <Compile Include="TransType.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
+    <Compile Include="ZoneAgeType.cs" />
     <Compile Include="ZoneClass.cs" />
     <Compile Include="ZoneSize.cs" />
     <Compile Include="ZoneState.cs" />
-    <Compile Include="ZoneType.cs" />
+    <Compile Include="MediaType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
