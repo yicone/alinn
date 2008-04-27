@@ -1,0 +1,429 @@
+/*TextZone content outer predefined styles*/
+.t120x240 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d120x240 {
+    color: #000000;
+    font-size: 12px;
+    line-height: 140%;
+    margin: 5px 0pt 5px 0px;
+    vertical-align: middle;
+}
+
+.l120x240 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t760x90 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.d760x90 {
+    color: #000000;
+    font-size: 12px;
+    line-height: 140%;
+    padding: 0pt 0pt 0pt 10px;
+    vertical-align: middle;
+}
+
+.l760x90 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 10px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t180x250 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d180x250 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l180x250 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t250x60 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d250x60 {
+    color: #000000;
+    font-size: 12px;
+    height: 18px;
+    line-height: 140%;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.l250x60 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t250x300 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 39px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d250x300 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l250x300 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t360x190 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.d360x190 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 10px 0pt 10px 0px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.l360x190 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t468x60 {
+    color: #0000FF;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.d468x60 {
+    color: #000000;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 0pt 0pt 0pt 10px;
+    vertical-align: middle;
+}
+
+.l468x60 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 10px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t120x600 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 155%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d120x600 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 5px 0pt 5px 0px;
+    vertical-align: middle;
+}
+
+.l120x600 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t728x90 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0pt auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.d728x90 {
+    color: #000000;
+    font-size: 12px;
+    line-height: 140%;
+    padding: 0pt 0pt 0pt 10px;
+    vertical-align: middle;
+}
+
+.l728x90 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 10px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t950x90 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 100%;
+    margin: 0pt auto;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.d950x90 {
+    color: #000000;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 10px 0pt 0pt 10px;
+    vertical-align: middle;
+}
+
+.l950x90 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 10px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t160x600 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 200%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d160x600 {
+    color: #000000;
+    font-size: 15px;
+    line-height: 160%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l160x600 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t250x250 {
+    color: #0000FF;
+    font-family: "black", Pmingliu, verdana, arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 180%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d250x250 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l250x250 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t200x200 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 120%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d200x200 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l200x200 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t336x280 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 39px;
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d336x280 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l336x280 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t300x250 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 39px;
+    font-weight: bold;
+    line-height: 140%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d300x250 {
+    color: #000000;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 10px 0pt 10px 0px;
+    vertical-align: middle;
+}
+
+.l300x250 {
+    color: #008000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    height: 12px;
+    line-height: 100%;
+    overflow: hidden;
+}
+
+.t120x60 {
+    color: #0000FF;
+    font-family: "black";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 105%;
+    margin: 0pt auto;
+    overflow: hidden;
+}
+
+.d120x60 {
+    display: none;
+}
+
+.l120x60 {
+    display: none;
+}

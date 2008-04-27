@@ -15,7 +15,7 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string siteId = Request.QueryString["siteid"];
+            Session["SiteId"] = Request.QueryString["siteid"];
 
         }
 
@@ -26,7 +26,10 @@ namespace Web
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            //e.Command.Parameters[0].Value = Guid.Empty;
+            if (Session["SiteId"] != null)
+            {
+                e.Command.Parameters[0].Value = new Guid(Session["SiteId"].ToString());
+            }
         }
     }
 }

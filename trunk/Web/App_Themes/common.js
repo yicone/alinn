@@ -12,3 +12,13 @@ function chkNum(oIpt){
     }
     return true;
 }
+
+function LenB(str){
+		return str.replace(/[^\x00-\xff]/g,"**").length;
+}
+
+function assert(bCondition, sErrorMessage){
+    if(!bCondition){
+        throw new Error(sErrorMessage);
+    }
+}

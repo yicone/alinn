@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using System.Data.SqlClient;
 
 namespace Web
 {
@@ -41,7 +42,8 @@ namespace Web
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            e.Command.Parameters[0].Value = Guid.Empty;
+            e.Command.Parameters[0].Value = new Guid("00000000-0000-0000-0000-000000000000"); //UNDONE: JUST FOR TEST
+
         }
 
         protected void DataList1_DataBinding(object sender, EventArgs e)

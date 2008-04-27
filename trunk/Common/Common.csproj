@@ -40,7 +40,9 @@
     <Compile Include="ClientDeal.cs" />
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="DataCache.cs" />
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="Fill.cs" />
+    <Compile Include="GuidHelper.cs" />
     <Compile Include="MakeMd5.cs" />
     <Compile Include="MessageBoxes.cs" />
     <Compile Include="PageValidater.cs" />

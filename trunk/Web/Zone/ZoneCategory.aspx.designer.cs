@@ -29,13 +29,13 @@ namespace Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ddlParentCategory control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlParentCategory;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// SqlDataSource1 control.
@@ -54,6 +54,15 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        
+        /// <summary>
+        /// ddlParentCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlParentCategory;
         
         /// <summary>
         /// lbUnselect control.
@@ -83,13 +92,13 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Button btnSelect;
         
         /// <summary>
-        /// txtKeyword control.
+        /// txtKeywords control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKeyword;
+        protected global::System.Web.UI.WebControls.TextBox txtKeywords;
         
         /// <summary>
         /// btnUnselect control.
@@ -101,22 +110,13 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Button btnUnselect;
         
         /// <summary>
-        /// Button2 control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// returnzoneview control.
@@ -164,15 +164,6 @@ namespace Web {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_siteurl;
         
         /// <summary>
-        /// hdn_zonecatids control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_zonecatids;
-        
-        /// <summary>
         /// hdn_mediatype control.
         /// </summary>
         /// <remarks>
@@ -189,6 +180,15 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_transtype;
+        
+        /// <summary>
+        /// hdn_sizeid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_sizeid;
         
         /// <summary>
         /// hdn_zonesize control.

@@ -24,8 +24,60 @@
 <body>
 
     <script type="text/javascript">
-	function LenB(str){
-		return str.replace(/[^\x00-\xff]/g,"**").length;
+    $(document).ready(initForm);
+
+	function initForm(){
+		$("#zonename").val($("#hdn_zonename").val());
+		//mediatype
+		var last_mediatype = $("#hdn_mediatype").val();
+		if(last_mediatype == 2){
+			$("#mediatype_text").attr("checked", "checked");
+		} else if(last_mediatype == 5){
+			$("#mediatype_picture").attr("checked", "checked");
+		} else{ //默认值
+			$("#mediatype_text").attr("checked", "checked");
+			$("#mediatype_picture").attr("checked", "checked");
+			$("#hdn_mediatype").val("7");
+		}
+		//transtype
+		var last_transtype = $("#hdn_transtype").val();
+		if (last_transtype == 7) {
+			$("#transtype_period").attr("checked", "checked");
+			$("#transtype_click").attr("checked", "checked");
+		}
+		else 
+			if (last_transtype == 5) {
+				$("#transtype_period").attr("checked", "checked");
+			}
+			else {  //默认值
+				$("#transtype_click").attr("checked", "checked");
+				$("#hdn_transtype").val("2");
+			}
+		//zonesize
+		if($("#hdn_zonesize").val() != "") {
+		    $("input[@value=" + $("#hdn_zonesize").val() +"]").attr("checked", "checked");
+		}
+		//weekprice
+		$("#weekprice").val($("#hdn_weekprice").val());
+		//zonedesp
+		$("#zonedesp").val($("#hdn_zonedesp").val());
+		//needauditing
+		var last_needauditing = $("#hdn_needauditing").val();
+		if(last_needauditing == 1) {
+			$("#needauditing_yes").attr("checked", "checked");
+		} else {    //默认值
+		    $("#needauditing_no").attr("checked", "checked");
+		    $("#hdn_needauditing").val("0");
+		}
+		
+		//infirstpage
+		var last_infirstpage = $("#hdn_infirstpage").val();
+		if(last_infirstpage == 1){
+			$("#infirstpage_yes").attr("checked", "checked");
+		} else{ //默认值
+			$("#infirstpage_no").attr("checked", "checked");
+			$("#hdn_infirstpage").val("0");
+		}
 	}
 		
     function checkForm(){
@@ -60,7 +112,6 @@
         $("#hdn_weekprice").val(weekprice);
         
         //设置广告位上的广告是否需要审核的选项
-        //$("#hdn_needauditing").val(getNeedAuditing());
         if ($("#weekprice_period").attr("checked") && $("#hdn_needauditing").val() == "") {
             alert("请选择是否需要审核买家广告！");
             return false;
@@ -92,15 +143,15 @@
         //设置广告内容
         var calcMediatype = function(){
             if ($("#mediatype_text").attr("checked") && $("#mediatype_picture").attr("checked")) {
-				return "3";
+				return "7";
 			}
 			else {
 				if ($("#mediatype_text").attr("checked")) {
-					return "1";
+					return "2";
 				}
 				else {
 					if ($("#mediatype_picture").attr("checked")) {
-						return "2";
+						return "5";
 					}
 					else {
 						return "";
@@ -164,8 +215,10 @@
         }
     }
     
-    function setZoneSize(zonesize, sizenum){
+    //设置隐藏变量的值
+    function setZoneSize(zonesize, sizeid){
         $("#hdn_zonesize").val(zonesize);
+        $("#hdn_sizeid").val(sizeid);
     }
     </script>
 
@@ -187,19 +240,19 @@
                         <dt>广告内容：</dt>
                         <dd>
                             <label>
-                                <input id="mediatype_text" type="checkbox" value="2" checked="checked" name="mediatype_text" />文字广告</label>
+                                <input id="mediatype_text" type="checkbox" value="2" checked="checked" name="mediatype" />文字广告</label>
                             <label style="margin-left: 10px">
-                                <input id="mediatype_picture" type="checkbox" value="5" checked="checked" name="mediatype_picture" />图片/flash广告</label>
+                                <input id="mediatype_picture" type="checkbox" value="5" checked="checked" name="mediatype" />图片/flash广告</label>
                             <span class="red">为了增加您的广告收益，建议保留文字广告形式。</span>
                         </dd>
                         <dt>广告所在位置：</dt>
                         <dd>
                             <label>
                                 <input id="infirstpage_yes" type="radio" onclick="javascript:$('#hdn_infirstpage').val(this.value);"
-                                    value="0" name="infirstpage_yes" />在首页</label>
+                                    value="0" name="infirstpage" />在首页</label>
                             <label>
                                 <input id="infirstpage_no" type="radio" onclick="javascript:$('#hdn_infirstpage').val(this.value);"
-                                    checked="checked" value="1" name="infirstpage_no" />
+                                    checked="checked" value="1" name="infirstpage" />
                                 不在首页</label>
                         </dd>
                         <dt>选择广告位尺寸：</dt>
@@ -207,89 +260,89 @@
                             <div id="zonesizes" style="display: block;">
                                 <p class="group-cb">
                                     <label class="label-cr x_gg_pre" gg_size="760x90">
-                                        <input id="zonesize11" type="radio" onclick='setZoneSize("760x90", "11");' value="760x90"
-                                            name="zonesize11" />
+                                        <input id="zonesize11" type="radio" onclick='setZoneSize("760x90", "1");' value="760x90"
+                                            name="zonesize" />
                                         横幅广告 <span>760x90</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="468x60">
-                                        <input id="zonesize12" type="radio" onclick='setZoneSize("468x60", "12");' value="468x60"
-                                            name="zonesize12" />
+                                        <input id="zonesize12" type="radio" onclick='setZoneSize("468x60", "2");' value="468x60"
+                                            name="zonesize" />
                                         横幅广告 <span>468x60</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="250x60">
-                                        <input id="zonesize13" type="radio" onclick='setZoneSize("250x60", "13");' value="250x60"
-                                            name="zonesize13" />
+                                        <input id="zonesize13" type="radio" onclick='setZoneSize("250x60", "3");' value="250x60"
+                                            name="zonesize" />
                                         横幅广告 <span>250x60</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="728x90">
-                                        <input id="zonesize14" type="radio" onclick='setZoneSize("728x90", "14");' value="728x90"
-                                            name="zonesize14" />
+                                        <input id="zonesize14" type="radio" onclick='setZoneSize("728x90", "4");' value="728x90"
+                                            name="zonesize" />
                                         横幅广告 <span>728x90</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="950x90">
-                                        <input id="zonesize15" type="radio" onclick='setZoneSize("950x90", "15");' value="950x90"
-                                            name="zonesize15" />
+                                        <input id="zonesize15" type="radio" onclick='setZoneSize("950x90", "5");' value="950x90"
+                                            name="zonesize" />
                                         横幅广告 <span>950x90</span>
                                     </label>
                                 </p>
                                 <p class="group-cb">
                                     <label class="label-cr x_gg_pre" gg_size="120x600">
-                                        <input id="zonesize21" type="radio" onclick='setZoneSize("120x600", "21");' value="120x600"
-                                            name="zonesize21" />
+                                        <input id="zonesize21" type="radio" onclick='setZoneSize("120x600", "6");' value="120x600"
+                                            name="zonesize" />
                                         垂直广告 <span>120x600</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="120x240">
-                                        <input id="zonesize22" type="radio" onclick='setZoneSize("120x240", "22");' value="120x240"
-                                            name="zonesize22" />
+                                        <input id="zonesize22" type="radio" onclick='setZoneSize("120x240", "7");' value="120x240"
+                                            name="zonesize" />
                                         垂直广告 <span>120x240</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="160x600">
-                                        <input id="zonesize23" type="radio" onclick='setZoneSize("160x600", "23");' value="160x600"
-                                            name="zonesize23" />
+                                        <input id="zonesize23" type="radio" onclick='setZoneSize("160x600", "8");' value="160x600"
+                                            name="zonesize" />
                                         垂直广告 <span>160x600</span>
                                     </label>
                                 </p>
                                 <p class="group-cb">
                                     <label class="label-cr x_gg_pre" gg_size="180x250">
-                                        <input id="zonesize31" type="radio" onclick='setZoneSize("180x250", "31");' value="180x250"
-                                            name="zonesize31" />
+                                        <input id="zonesize31" type="radio" onclick='setZoneSize("180x250", "9");' value="180x250"
+                                            name="zonesize" />
                                         巨幅广告 <span>180x250</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="250x300">
-                                        <input id="zonesize32" type="radio" onclick='setZoneSize("250x300", "32");' value="250x300"
-                                            name="zonesize32" />
+                                        <input id="zonesize32" type="radio" onclick='setZoneSize("250x300", "10");' value="250x300"
+                                            name="zonesize" />
                                         巨幅广告 <span>250x300</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="360x190">
-                                        <input id="zonesize33" type="radio" onclick='setZoneSize("360x190", "33");' value="360x190"
-                                            name="zonesize33" />
+                                        <input id="zonesize33" type="radio" onclick='setZoneSize("360x190", "11");' value="360x190"
+                                            name="zonesize" />
                                         巨幅广告 <span>360x190</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="250x250">
-                                        <input id="zonesize34" type="radio" onclick='setZoneSize("250x250", "34");' value="250x250"
-                                            name="zonesize34" />
+                                        <input id="zonesize34" type="radio" onclick='setZoneSize("250x250", "12");' value="250x250"
+                                            name="zonesize" />
                                         巨幅广告 <span>250x250</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="200x200">
-                                        <input id="zonesize35" type="radio" onclick='setZoneSize("200x200", "35");' value="200x200"
-                                            name="zonesize35" />
+                                        <input id="zonesize35" type="radio" onclick='setZoneSize("200x200", "13");' value="200x200"
+                                            name="zonesize" />
                                         巨幅广告 <span>200x200</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="336x280">
-                                        <input id="zonesize36" type="radio" onclick='setZoneSize("336x280", "36");' value="336x280"
-                                            name="zonesize36" />
+                                        <input id="zonesize36" type="radio" onclick='setZoneSize("336x280", "14");' value="336x280"
+                                            name="zonesize" />
                                         巨幅广告 <span>336x280</span>
                                     </label>
                                     <label class="label-cr x_gg_pre" gg_size="300x250">
-                                        <input id="zonesize37" type="radio" onclick='setZoneSize("300x250", "37");' value="300x250"
-                                            name="zonesize37" />
+                                        <input id="zonesize37" type="radio" onclick='setZoneSize("300x250", "15");' value="300x250"
+                                            name="zonesize" />
                                         巨幅广告 <span>300x250</span>
                                     </label>
                                 </p>
                                 <p class="group-cb">
                                     <label class="label-cr x_gg_pre" gg_size="120x60">
-                                        <input id="zonesize41" type="radio" onclick='setZoneSize("120x60", "41");' value="120x60"
-                                            name="zonesize41" />
+                                        <input id="zonesize41" type="radio" onclick='setZoneSize("120x60", "16");' value="120x60"
+                                            name="zonesize" />
                                         小幅广告 <span>120x60</span>
                                     </label>
                                 </p>
@@ -302,11 +355,11 @@
                         <dd>
                         	<label>
                                 <input id="transtype_click" type="radio" onclick='javascript:$("#hdn_transtype").val(this.value);'
-                                    checked="checked" value="2" name="transtype_click" />
+                                    checked="checked" value="2" name="transtype" />
                                 按点击计费</label>
                             <label>
                                 <input id="transtype_period" type="radio" onclick='javascript:$("#hdn_transtype").val(this.value);'
-                                    value="5" name="transtype_period" />按时长计费</label>
+                                    value="5" name="transtype" />按时长计费</label>
                             <input id="weekprice" type="text" onkeyup="return chkNum(this)" size="11" value="0"
                                 name="weekprice" />
                             <span class="red">元/周</span>
@@ -314,10 +367,10 @@
                             <div style="display: none">
                                 <label>
                                     是否需要审核卖家广告：<input id="needAuditing_yes" type="radio" onclick="javascript:$('#hdn_needauditing').val(this.value);"
-                                        value="1" name="needAuditing_yes" />
+                                        value="1" name="needAuditing" />
                                     需要审核
                                     <input id="needAuditing_no" type="radio" onclick="javascript:$('#hdn_needauditing').val(this.value);"
-                                        value="0" name="needAuditing_no" checked="" />
+                                        value="0" name="needAuditing" checked="" />
                                     不需要审核
                                 </label>
                             </div>
@@ -344,9 +397,9 @@
         <input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />
         <input id="hdn_sitename" type="hidden" value="" name="hdn_sitename" runat="server" />
         <input id="hdn_siteurl" type="hidden" value="" name="hdn_siteurl" runat="server" />
-        <input id="hdn_zonecatids" type="hidden" value="" name="hdn_classids" runat="server" />
         <input id="hdn_mediatype" type="hidden" value="" name="hdn_mediatype" runat="server" />
         <input id="hdn_transtype" type="hidden" value="" name="hdn_transtype" runat="server" />
+        <input id="hdn_sizeid" type="hidden" value="" name="hdn_sizeid" runat="server" />
         <input id="hdn_zonesize" type="hidden" value="" name="hdn_zonesize" runat="server" />
         <input id="hdn_zoneid" type="hidden" value="" name="hdn_zoneid" runat="server" />
         <input id="hdn_zonename" type="hidden" value="" name="hdn_zonename" runat="server" />
@@ -359,54 +412,5 @@
         <input id="hdn_needauditing" type="hidden" value="" name="hdn_needauditing" runat="server" />
         <input id="hdn_classids" type="hidden" value="" name="hdn_classids" runat="server" />
     </form>
-	
-	<script type="text/javascript">
-		$("#zonename").val($("#hdn_zonename").val());
-		//mediatype
-		var last_mediatype = $("#hdn_mediatype").val();
-		if(last_mediatype == 7){
-			$("#mediatype_text").attr("checked", "checked");
-			$("#mediatype_picture").attr("checked", "checked");
-		} else if(last_mediatype == 5){
-			$("#mediatype_picture").attr("checked", "checked");
-		} else{
-			$("#mediatype_text").attr("checked", "checked");
-		}
-		//transtype
-		var last_transtype = $("#hdn_transtype").val();
-		if (last_transtype == 7) {
-			$("#transtype_period").attr("checked", "checked");
-			$("#transtype_click").attr("checked", "checked");
-		}
-		else 
-			if (last_transtype == 5) {
-				$("#transtype_period").attr("checked", "checked");
-			}
-			else {
-				$("#transtype_click").attr("checked", "checked");
-			}
-		//zonesize
-		if($("#hdn_zonesize").val() != "") {
-		    $("input[@value=" + $("#hdn_zonesize").val() +"]").attr("checked", "checked");
-		}
-		//weekprice
-		$("#weekprice").val($("#hdn_weekprice").val());
-		//zonedesp
-		$("#zonedesp").val($("#hdn_zonedesp").val());
-		//needauditing
-		var last_needauditing = $("#hdn_needauditing").val();
-		if (last_needauditing == 0) {
-			$("#needauditing_no").attr("checked", "checked");
-		} else if(last_needauditing == 1) {
-			$("#needauditing_yes").attr("checked", "checked");
-		}
-		//infirstpage
-		var last_infirstpage = $("#hdn_infirstpage").val();
-		if(last_infirstpage == 1){
-			$("#infirstpage_yes").attr("checked", "checked");
-		} else{
-			$("#infirstpage_no").attr("checked", "checked");
-		}
-	</script>
 </body>
 </html>

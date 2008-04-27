@@ -34,7 +34,7 @@ GO
 --时间：2008/4/13 1:33:05
 ------------------------------------
 CREATE PROCEDURE UP_AL_Site_ADD
-@SiteId uniqueidentifier,
+@SiteId uniqueidentifier output,		--yicone
 @UserId uniqueidentifier,
 @SiteName nvarchar(64),
 @SiteUrl nvarchar(256),
@@ -47,7 +47,7 @@ CREATE PROCEDURE UP_AL_Site_ADD
 @AuditState tinyint
 
  AS 
-	SET @SiteId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)	-------------------------手动添加！
+	SET @SiteId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)	-------------------------yicone！
 	
 	INSERT INTO AL_Site(
 	[SiteId],[UserId],[SiteName],[SiteUrl],[SiteClass],[SexType],[AgeType],[Employments],[Taste],[Description],[AuditState]
