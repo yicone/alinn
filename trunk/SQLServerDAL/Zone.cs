@@ -52,22 +52,16 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@TransType", SqlDbType.TinyInt,1),
 					new SqlParameter("@ClassIds", SqlDbType.NVarChar,7),
 					new SqlParameter("@Keywords", SqlDbType.NVarChar,136),
-					new SqlParameter("@TitleColor", SqlDbType.VarChar,6),
-					new SqlParameter("@DescriptionColor", SqlDbType.NVarChar,6),
-					new SqlParameter("@LinkColor", SqlDbType.VarChar,6),
-					new SqlParameter("@BorderColor", SqlDbType.VarChar,6),
-					new SqlParameter("@BgColor", SqlDbType.VarChar,6),
-					new SqlParameter("@Grounding", SqlDbType.VarChar,6),
-					new SqlParameter("@BgImg", SqlDbType.NVarChar,50),
-					new SqlParameter("@CornerImg", SqlDbType.NVarChar,50),
 					new SqlParameter("@NeedAuditing", SqlDbType.TinyInt,1),
 					new SqlParameter("@AllowAdultAd", SqlDbType.TinyInt,1),
 					new SqlParameter("@Description", SqlDbType.NText),
 					new SqlParameter("@ZoneCode", SqlDbType.NText),
 					new SqlParameter("@WeekPrice", SqlDbType.Decimal,9),
 					new SqlParameter("@RecommendWeekPrice", SqlDbType.Decimal,9),
-					new SqlParameter("@ZoneState", SqlDbType.TinyInt,1)};
-            parameters[0].Value = model.ZoneId;
+					new SqlParameter("@ZoneState", SqlDbType.TinyInt,1),
+                    new SqlParameter("@ZoneStyle", SqlDbType.VarChar, 100)};
+            //yicone
+            parameters[0].Direction = ParameterDirection.Output;
             parameters[1].Value = model.UserId;
             parameters[2].Value = model.ZoneName;
             parameters[3].Value = model.SiteId;
@@ -77,23 +71,18 @@ namespace HOT.SQLServerDAL
             parameters[7].Value = model.TransType;
             parameters[8].Value = model.ClassIds;
             parameters[9].Value = model.Keywords;
-            parameters[10].Value = model.TitleColor;
-            parameters[11].Value = model.DescriptionColor;
-            parameters[12].Value = model.LinkColor;
-            parameters[13].Value = model.BorderColor;
-            parameters[14].Value = model.BgColor;
-            parameters[15].Value = model.Grounding;
-            parameters[16].Value = model.BgImg;
-            parameters[17].Value = model.CornerImg;
-            parameters[18].Value = model.NeedAuditing;
-            parameters[19].Value = model.AllowAdultAd;
-            parameters[20].Value = model.Description;
-            parameters[21].Value = model.ZoneCode;
-            parameters[22].Value = model.WeekPrice;
-            parameters[23].Value = model.RecommendWeekPrice;
-            parameters[24].Value = model.ZoneState;
+            parameters[10].Value = model.NeedAuditing;
+            parameters[11].Value = model.AllowAdultAd;
+            parameters[12].Value = model.Description;
+            parameters[13].Value = model.ZoneCode;
+            parameters[14].Value = model.WeekPrice;
+            parameters[15].Value = model.RecommendWeekPrice;
+            parameters[16].Value = model.ZoneState;
+            parameters[17].Value = model.ZoneStyle;
 
             DbHelperSQL.RunProcedure("UP_AL_Zone_ADD", parameters, out rowsAffected);
+            //yicone
+            model.ZoneId = new Guid(parameters[0].Value.ToString());
         }
 
         /// <summary>
@@ -103,7 +92,7 @@ namespace HOT.SQLServerDAL
         {
             int rowsAffected;
             SqlParameter[] parameters = {
-					new SqlParameter("@ZoneId", SqlDbType.UniqueIdentifier,16),
+                    new SqlParameter("@ZoneId", SqlDbType.UniqueIdentifier,16),       
 					new SqlParameter("@UserId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ZoneName", SqlDbType.NVarChar,50),
 					new SqlParameter("@SiteId", SqlDbType.UniqueIdentifier,16),
@@ -113,21 +102,14 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@TransType", SqlDbType.TinyInt,1),
 					new SqlParameter("@ClassIds", SqlDbType.NVarChar,7),
 					new SqlParameter("@Keywords", SqlDbType.NVarChar,136),
-					new SqlParameter("@TitleColor", SqlDbType.VarChar,6),
-					new SqlParameter("@DescriptionColor", SqlDbType.NVarChar,6),
-					new SqlParameter("@LinkColor", SqlDbType.VarChar,6),
-					new SqlParameter("@BorderColor", SqlDbType.VarChar,6),
-					new SqlParameter("@BgColor", SqlDbType.VarChar,6),
-					new SqlParameter("@Grounding", SqlDbType.VarChar,6),
-					new SqlParameter("@BgImg", SqlDbType.NVarChar,50),
-					new SqlParameter("@CornerImg", SqlDbType.NVarChar,50),
 					new SqlParameter("@NeedAuditing", SqlDbType.TinyInt,1),
 					new SqlParameter("@AllowAdultAd", SqlDbType.TinyInt,1),
 					new SqlParameter("@Description", SqlDbType.NText),
 					new SqlParameter("@ZoneCode", SqlDbType.NText),
 					new SqlParameter("@WeekPrice", SqlDbType.Decimal,9),
 					new SqlParameter("@RecommendWeekPrice", SqlDbType.Decimal,9),
-					new SqlParameter("@ZoneState", SqlDbType.TinyInt,1)};
+					new SqlParameter("@ZoneState", SqlDbType.TinyInt,1),
+                    new SqlParameter("@ZoneStyle", SqlDbType.VarChar, 100)};
             parameters[0].Value = model.ZoneId;
             parameters[1].Value = model.UserId;
             parameters[2].Value = model.ZoneName;
@@ -138,21 +120,15 @@ namespace HOT.SQLServerDAL
             parameters[7].Value = model.TransType;
             parameters[8].Value = model.ClassIds;
             parameters[9].Value = model.Keywords;
-            parameters[10].Value = model.TitleColor;
-            parameters[11].Value = model.DescriptionColor;
-            parameters[12].Value = model.LinkColor;
-            parameters[13].Value = model.BorderColor;
-            parameters[14].Value = model.BgColor;
-            parameters[15].Value = model.Grounding;
-            parameters[16].Value = model.BgImg;
-            parameters[17].Value = model.CornerImg;
-            parameters[18].Value = model.NeedAuditing;
-            parameters[19].Value = model.AllowAdultAd;
-            parameters[20].Value = model.Description;
-            parameters[21].Value = model.ZoneCode;
-            parameters[22].Value = model.WeekPrice;
-            parameters[23].Value = model.RecommendWeekPrice;
-            parameters[24].Value = model.ZoneState;
+            parameters[10].Value = model.NeedAuditing;
+            parameters[11].Value = model.AllowAdultAd;
+            parameters[12].Value = model.Description;
+            parameters[13].Value = model.ZoneCode;
+            parameters[14].Value = model.WeekPrice;
+            parameters[15].Value = model.RecommendWeekPrice;
+            parameters[16].Value = model.ZoneState;
+            parameters[17].Value = model.ZoneStyle;
+
 
             DbHelperSQL.RunProcedure("UP_AL_Zone_Update", parameters, out rowsAffected);
         }
@@ -214,14 +190,6 @@ namespace HOT.SQLServerDAL
                 }
                 model.ClassIds = ds.Tables[0].Rows[0]["ClassIds"].ToString();
                 model.Keywords = ds.Tables[0].Rows[0]["Keywords"].ToString();
-                model.TitleColor = ds.Tables[0].Rows[0]["TitleColor"].ToString();
-                model.DescriptionColor = ds.Tables[0].Rows[0]["DescriptionColor"].ToString();
-                model.LinkColor = ds.Tables[0].Rows[0]["LinkColor"].ToString();
-                model.BorderColor = ds.Tables[0].Rows[0]["BorderColor"].ToString();
-                model.BgColor = ds.Tables[0].Rows[0]["BgColor"].ToString();
-                model.Grounding = ds.Tables[0].Rows[0]["Grounding"].ToString();
-                model.BgImg = ds.Tables[0].Rows[0]["BgImg"].ToString();
-                model.CornerImg = ds.Tables[0].Rows[0]["CornerImg"].ToString();
                 if (ds.Tables[0].Rows[0]["NeedAuditing"].ToString() != "")
                 {
                     model.NeedAuditing = int.Parse(ds.Tables[0].Rows[0]["NeedAuditing"].ToString());
@@ -244,6 +212,7 @@ namespace HOT.SQLServerDAL
                 {
                     model.ZoneState = int.Parse(ds.Tables[0].Rows[0]["ZoneState"].ToString());
                 }
+                model.ZoneStyle = ds.Tables[0].Rows[0]["ZoneStyle"].ToString();
                 return model;
             }
             else
@@ -258,7 +227,7 @@ namespace HOT.SQLServerDAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,TitleColor,DescriptionColor,LinkColor,BorderColor,BgColor,Grounding,BgImg,CornerImg,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState ");
+            strSql.Append("select ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState,ZoneStyle ");
             strSql.Append(" FROM AL_Zone ");
             if (strWhere.Trim() != "")
             {
