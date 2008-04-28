@@ -241,12 +241,14 @@ namespace HOT.SQLServerDAL
         /// </summary>
         /// <param name="strWhere">²éÑ¯Ìõ¼þ</param>
         /// <returns>dataset</returns>
-        public DataSet GetList(int startIndex,int endIndex)
+        public DataSet GetList(int startIndex,int endIndex,int doCount)
         {
             SqlParameter[] parameters = { new SqlParameter("@startIndex", SqlDbType.Int,4),
-                                          new SqlParameter("@endIndex",SqlDbType.Int,4)};
+                                          new SqlParameter("@endIndex",SqlDbType.Int,4),
+                                          new SqlParameter("@docount",SqlDbType.TinyInt)};
             parameters[0].Value =startIndex;
             parameters[1].Value = endIndex;
+            parameters[2].Value = doCount;
             return DbHelperSQL.RunProcedure("MY_AL_ZonePage", parameters, "ds");
         }
         /*
