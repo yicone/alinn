@@ -78,6 +78,7 @@ DROP TABLE [AL_Ad]
 CREATE TABLE [dbo].[AL_Ad] (
 	[AdId] [uniqueidentifier]  Primary key NOT NULL ,
 	[AdGroupId] [uniqueidentifier] null,--广告组ID
+	[IsText] tinyint null,--是否是文字广告，1为文字，0为图片
 	[Title]	[nvarchar] (40) null,--文字广告
 	[Content] [nvarchar](120) null,--广告内容(如果是图片广告就是图片说明）
 	[Url] [nvarchar] (1024) null,--链接网址（包括图片的链接网址）
@@ -188,7 +189,14 @@ CREATE TABLE [dbo].[AL_ZoneClass] (
 )
 
 GO
-
+--邮件系统
+Create Table [dbo].[AL_EmailInfo](
+	[InfoId] [uniqueidentifier]  Primary key NOT NULL ,
+	[EmailSender]	[nvarchar] (200) COLLATE Chinese_PRC_CI_AS NULL ,--同时做为登录用户名
+	[EmailReceiver][nvarchar] (200) COLLATE Chinese_PRC_CI_AS NULL ,
+	[EmailSubject][nvarchar] (200),
+	[EmailContent] ntext null,
+	[EmailIsErgency] [tenyint] null)--是否紧急
 
 -------test
 create table students

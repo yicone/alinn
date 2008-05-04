@@ -35,7 +35,30 @@ namespace HOT.SQLServerDAL
                 return false;
             }
         }
-
+        /// <summary>
+        /// 判断同一个广告组内是否有某一大小的广告
+        /// </summary>
+        /// <param name="size">广告大小ID</param>
+        /// <param name="adGroupId">广告组ID</param>
+        /// <returns></returns>
+        public bool Exists(int? sizeId,Guid adGroupId)
+        {
+            int rowsAffected;
+            SqlParameter[] parameters = {
+                    new SqlParameter("@sizeId",SqlDbType.Int,4),
+					new SqlParameter("@adGroupId", SqlDbType.UniqueIdentifier)};
+            parameters[0].Value = sizeId;
+            parameters[1].Value = adGroupId;
+            int result = DbHelperSQL.RunProcedure("MY_AL_Ad_ExistsBySizeAndGroupId", parameters, out rowsAffected);
+            if (result == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /// <summary>
         ///  增加一条数据
         /// </summary>
@@ -45,20 +68,22 @@ namespace HOT.SQLServerDAL
             SqlParameter[] parameters = {
 					new SqlParameter("@AdId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@AdGroupId", SqlDbType.UniqueIdentifier,16),
+					new SqlParameter("@IsText", SqlDbType.TinyInt,1),
 					new SqlParameter("@Title", SqlDbType.NVarChar,40),
 					new SqlParameter("@Content", SqlDbType.NVarChar,120),
 					new SqlParameter("@Url", SqlDbType.NVarChar,1024),
 					new SqlParameter("@UrlText", SqlDbType.NVarChar,256),
 					new SqlParameter("@SizeId", SqlDbType.Int,4),
-					new SqlParameter("@Img", SqlDbType.NVarChar,50)};
+					new SqlParameter("@Img", SqlDbType.NVarChar,100)};
             parameters[0].Value = model.AdId;
             parameters[1].Value = model.AdGroupId;
-            parameters[2].Value = model.Title;
-            parameters[3].Value = model.Content;
-            parameters[4].Value = model.Url;
-            parameters[5].Value = model.UrlText;
-            parameters[6].Value = model.SizeId;
-            parameters[7].Value = model.Img;
+            parameters[2].Value = model.IsText;
+            parameters[3].Value = model.Title;
+            parameters[4].Value = model.Content;
+            parameters[5].Value = model.Url;
+            parameters[6].Value = model.UrlText;
+            parameters[7].Value = model.SizeId;
+            parameters[8].Value = model.Img;
 
             DbHelperSQL.RunProcedure("UP_AL_Ad_ADD", parameters, out rowsAffected);
         }
@@ -71,7 +96,6 @@ namespace HOT.SQLServerDAL
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@AdId", SqlDbType.UniqueIdentifier,16),
-					new SqlParameter("@AdGroupId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@Title", SqlDbType.NVarChar,40),
 					new SqlParameter("@Content", SqlDbType.NVarChar,120),
 					new SqlParameter("@Url", SqlDbType.NVarChar,1024),
@@ -80,14 +104,13 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@AuditState", SqlDbType.TinyInt,1),
 					new SqlParameter("@Img", SqlDbType.NVarChar,50)};
             parameters[0].Value = model.AdId;
-            parameters[1].Value = model.AdGroupId;
-            parameters[2].Value = model.Title;
-            parameters[3].Value = model.Content;
-            parameters[4].Value = model.Url;
-            parameters[5].Value = model.UrlText;
-            parameters[6].Value = model.SizeId;
-            parameters[7].Value = model.AuditState;
-            parameters[8].Value = model.Img;
+            parameters[1].Value = model.Title;
+            parameters[2].Value = model.Content;
+            parameters[3].Value = model.Url;
+            parameters[4].Value = model.UrlText;
+            parameters[5].Value = model.SizeId;
+            parameters[6].Value = model.AuditState;
+            parameters[7].Value = model.Img;
 
             DbHelperSQL.RunProcedure("UP_AL_Ad_Update", parameters, out rowsAffected);
         }
@@ -136,6 +159,10 @@ namespace HOT.SQLServerDAL
                 {
                     model.AdGroupId = new Guid(ds.Tables[0].Rows[0]["AdGroupId"].ToString());
                 }
+                if (ds.Tables[0].Rows[0]["IsText"].ToString() != "")
+                {
+                    model.IsText = int.Parse(ds.Tables[0].Rows[0]["IsText"].ToString());
+                }
                 model.Title = ds.Tables[0].Rows[0]["Title"].ToString();
                 model.Content = ds.Tables[0].Rows[0]["Content"].ToString();
                 model.Url = ds.Tables[0].Rows[0]["Url"].ToString();
@@ -156,7 +183,54 @@ namespace HOT.SQLServerDAL
                 return null;
             }
         }
+        /// <summary>
+        /// 在where条件下得到一个实体select top1* from table where strWhere
+        /// powered by FZF 20080425
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public HOT.Model.Ad GetModel(string strWhere)
+        {
+            SqlParameter[] parameters = {
+					new SqlParameter("@strWhere", SqlDbType.VarChar,500)};
+            parameters[0].Value = strWhere;
 
+            HOT.Model.Ad model = new HOT.Model.Ad();
+            DataSet ds = DbHelperSQL.RunProcedure("MY_AL_Ad_GetModelByWhere", parameters, "ds");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                if (ds.Tables[0].Rows[0]["AdId"].ToString() != "")
+                {
+                    model.AdId = new Guid(ds.Tables[0].Rows[0]["AdId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["AdGroupId"].ToString() != "")
+                {
+                    model.AdGroupId = new Guid(ds.Tables[0].Rows[0]["AdGroupId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["IsText"].ToString() != "")
+                {
+                    model.IsText = int.Parse(ds.Tables[0].Rows[0]["IsText"].ToString());
+                }
+                model.Title = ds.Tables[0].Rows[0]["Title"].ToString();
+                model.Content = ds.Tables[0].Rows[0]["Content"].ToString();
+                model.Url = ds.Tables[0].Rows[0]["Url"].ToString();
+                model.UrlText = ds.Tables[0].Rows[0]["UrlText"].ToString();
+                if (ds.Tables[0].Rows[0]["SizeId"].ToString() != "")
+                {
+                    model.SizeId = int.Parse(ds.Tables[0].Rows[0]["SizeId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["AuditState"].ToString() != "")
+                {
+                    model.AuditState = int.Parse(ds.Tables[0].Rows[0]["AuditState"].ToString());
+                }
+                model.Img = ds.Tables[0].Rows[0]["Img"].ToString();
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
         /// <summary>
         /// 获得数据列表
         /// powered by FZF

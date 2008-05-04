@@ -44,7 +44,7 @@ namespace HOT.Web.Controls
                     AccountsPrincipal user = new AccountsPrincipal(Context.User.Identity.Name);
                     if (Session["UserInfo"] == null)
                     {
-                        LTP.Accounts.Bus.User currentUser = new LTP.Accounts.Bus.User(user);
+                        HOT.Accounts.Bus.User currentUser = new HOT.Accounts.Bus.User(user);
                         Session["UserInfo"] = currentUser;
                         Session["Style"] = currentUser.Style;
                         Response.Write("<script defer>location.reload();</script>");

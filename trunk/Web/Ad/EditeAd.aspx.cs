@@ -18,7 +18,10 @@ namespace Web.Ad
         protected void Page_Load(object sender, EventArgs e)
         {
             Guid guid = new Guid(this.Request.QueryString["AdId"].ToString());
-            ShowInfo(guid);
+            if (!IsPostBack)
+            {
+                ShowInfo(guid);
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -47,15 +50,6 @@ namespace Web.Ad
     //{
     //    strErr+="SizeId不是数字！\\n";	
     //}
-	if(!PageValidate.IsNumber(txtAuditState.Text))
-	{
-		strErr+="AuditState不是数字！\\n";	
-	}
-	if(this.txtImg.Text =="")
-	{
-		strErr+="Img不能为空！\\n";	
-	}
-
 	if(strErr!="")
 	{
 		MessageBox.Show(this,strErr);
@@ -65,9 +59,8 @@ namespace Web.Ad
 	string Content=this.txtContent.Text;
 	string Url=this.txtUrl.Text;
 	string UrlText=this.txtUrlText.Text;
-	int SizeId=int.Parse(this.txtSizeId.Text);
-	int AuditState=int.Parse(this.txtAuditState.Text);
-	string Img=this.txtImg.Text;
+	int SizeId=int.Parse(this.rblSize.SelectedValue);
+    string Img = this.labImgInfo.Text;
 
 
 	HOT.Model.Ad model=new HOT.Model.Ad();
@@ -76,10 +69,13 @@ namespace Web.Ad
 	model.Url=Url;
 	model.UrlText=UrlText;
 	model.SizeId=SizeId;
-	model.AuditState=AuditState;
-	model.Img=Img;
+	model.AuditState=0;
+    model.Img = Img;
 	HOT.BLL.Ad bll=new HOT.BLL.Ad();
 	bll.Update(model);
+    //提示添加成功，并且转向上一页面
+    string name = Request.UrlReferrer.ToString();
+    MessageBox.ShowAndRedirect(this.Page, "修改成功", name);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -94,15 +90,63 @@ namespace Web.Ad
             this.txtContent.Text = model.Content;
             this.txtUrl.Text = model.Url;
             this.txtUrlText.Text = model.UrlText;
-            this.txtSizeId.Text = model.SizeId.ToString();
-            if (model.AuditState == 0)
-            { this.labAuditState.Text = "未审核状态！"; }
-            if (model.AuditState == 1)
-            { this.labAuditState.Text = "已审核状态！"; }
-            else
-            { this.labAuditState.Text = "未知状态！"; }
-            this.txtImg.Text = model.Img;
+            this.rblSize.SelectedIndex = int.Parse(model.SizeId.ToString())-11;
+            switch (model.AuditState)
+            {
+                case 0:
+                    this.labAuditState.Text= "未审核状态！";
+                    break;
+                case 1:
+                    this.labAuditState.Text = "已审核状态！";
+                    break;
+                default:
+                    this.labAuditState.Text = "未知状态！";
+                    break;
+            }
+            switch (model.IsText)
+            { 
+                case 0:
+                    this.fuImg.Enabled = true;
+                    this.btnUpload.Enabled = true;
+                    break;
+                default:
+                    this.fuImg.Enabled = false;
+                    this.btnUpload.Enabled = false;
+                    break;
+            }
 
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            if (this.fuImg.FileContent != null)
+            {
+                string path = "~/Ad/uploadImages/";
+                string datePath = DateTime.Now.ToString("yyyyMMdd");
+                string type = fuImg.FileName.Substring(fuImg.FileName.LastIndexOf(".")).Trim().ToLower();
+                if (HOT.Common.Picture.CheckValidExt(type))
+                {
+                    //判断文件大小
+                    int fileSize = 0;
+                    fileSize = fuImg.PostedFile.ContentLength / 1024;
+                    if (fileSize > 2048)
+                    {
+                        MessageBox.Show(this.Page, "文件太大了！");
+                        return;
+                    }
+                    else
+                    {
+                        Random ran = new Random();
+                        string fileName = DateTime.Now.ToString("yyyyMMddhhmmss") + Convert.ToString(ran.Next(100001, 999999)) + type;
+                        if (HOT.Common.Fill.CreateDirectory(path + datePath))
+                        {
+                            fuImg.SaveAs(HttpContext.Current.Server.MapPath(path + datePath + "/" + fileName));
+                            MessageBox.Show(this.Page, "上传成功");
+                            this.labImgInfo.Text = datePath + "/" + fileName;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -41,16 +41,18 @@ namespace Web.User
             
         }
 
-//二级datalist数据绑定
+//二级datalist数据绑定，包括广告组的相关信息显示
         protected void dlAdGroup_ItemDataBound(object sender, DataListItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 DataList dataList = (DataList)e.Item.FindControl("dlAD");
                 DataRowView rowv = (DataRowView)e.Item.DataItem;
+                //获取广告组ID
                 Guid guid=new Guid(rowv["AdGroupId"].ToString());
                 HOT.BLL.AdGroup adgBLL = new HOT.BLL.AdGroup();
                 HOT.Model.AdGroup adgModel = new HOT.Model.AdGroup();
+                //取得广告组相关信息
                 adgModel = adgBLL.GetModel(guid);
                 HOT.BLL.ZoneClass acBLL = new HOT.BLL.ZoneClass();
                 HOT.Model.ZoneClass zcModel = new HOT.Model.ZoneClass();
@@ -64,6 +66,7 @@ namespace Web.User
                 if (guid.ToString().Length > 0)
                 {
                     HOT.BLL.Ad adBLL = new HOT.BLL.Ad();
+                    //获得广告组下所有广告列表。
                     DataSet ds = adBLL.GetList(guid.ToString());
                     if (ds != null)
                     {
@@ -96,13 +99,13 @@ namespace Web.User
             }
             if (e.CommandName == "AddAd")
             {
-                Response.Redirect("NewAd.aspx?AdGruopId=" + guid.ToString());
+                Response.Redirect("NewAd.aspx?AdGroupId=" + guid.ToString(),true);
             }
         }
 
         protected void btnAddGroup_Click(object sender, EventArgs e)
         {
-            Response.Redirect("NewGroup.aspx");
+            Server.Transfer("NewGroup.aspx");
         }
 
         protected void dlAD_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -134,7 +137,10 @@ namespace Web.User
         {
             //DataList dlAD = new DataList();
             //dlAD = (DataList)e.Item.FindControl("dlAD");
-            Guid guid = new Guid(dlAD.DataKeys[e.Item.ItemIndex].ToString());
+            DataList dl = new DataList();
+            dl=(DataList)source;
+            //Guid guid = new Guid(dlAD.DataKeys[e.Item.ItemIndex].ToString());
+            Guid guid = new Guid(dl.DataKeys[e.Item.ItemIndex].ToString());
             if (e.CommandName == "EditeAd")
             {
                 Response.Redirect("EditeAd.aspx?AdId=" + guid.ToString());
@@ -144,7 +150,8 @@ namespace Web.User
                 HOT.BLL.Ad adBLL = new HOT.BLL.Ad();
                 adBLL.Delete(guid);
                 this.dlAdGroup.DataBind();
-                this.dlAD.DataBind();
+                //this.dlAD.DataBind();
+                dl.DataBind();
             }
         }
     }

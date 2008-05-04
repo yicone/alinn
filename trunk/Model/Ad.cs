@@ -11,6 +11,7 @@ namespace HOT.Model
         #region Model
         private Guid _adid;
         private Guid _adgroupid;
+        private int? _istext;
         private string _title;
         private string _content;
         private string _url;
@@ -33,6 +34,14 @@ namespace HOT.Model
         {
             set { _adgroupid = value; }
             get { return _adgroupid; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? IsText
+        {
+            set { _istext = value; }
+            get { return _istext; }
         }
         /// <summary>
         /// 

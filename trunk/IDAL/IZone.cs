@@ -32,7 +32,7 @@ namespace HOT.IDAL
 		/// 获得数据列表
 		/// </summary>
 		DataSet GetList(string strWhere);
-        DataSet GetList(int startIndex, int endIndex, int doCount);
+        DataSet GetList(int startIndex, int endIndex, int doCount, string strWhere);
 		/// <summary>
 		/// 根据分页获得数据列表
 		/// </summary>

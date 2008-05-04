@@ -20,6 +20,24 @@ namespace Web.User {
     public partial class NewAd {
         
         /// <summary>
+        /// rblAdType 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblAdType;
+        
+        /// <summary>
+        /// rblSize 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblSize;
+        
+        /// <summary>
         /// txtTitle 控件。
         /// </summary>
         /// <remarks>
@@ -56,13 +74,31 @@ namespace Web.User {
         protected global::System.Web.UI.WebControls.TextBox txtUrlText;
         
         /// <summary>
-        /// txtImg 控件。
+        /// fuImg 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImg;
+        protected global::System.Web.UI.WebControls.FileUpload fuImg;
+        
+        /// <summary>
+        /// btnUpload 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload;
+        
+        /// <summary>
+        /// labImgInfo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labImgInfo;
         
         /// <summary>
         /// btnAdd 控件。
