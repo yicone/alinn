@@ -22,7 +22,16 @@ namespace HOT.BLL
 		{
 			return dal.Exists(AdId);
 		}
-
+        /// <summary>
+        /// 判断同一个广告组内是否有某一大小的广告
+        /// </summary>
+        /// <param name="size">广告大小ID</param>
+        /// <param name="adGroupId">广告组ID</param>
+        /// <returns></returns>
+        public bool Exists(int? sizeId, Guid adGroupId)
+        {
+            return dal.Exists(sizeId, adGroupId);
+        }
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
@@ -61,7 +70,16 @@ namespace HOT.BLL
 		{
 			return dal.GetModel(AdId);
 		}
-
+        /// <summary>
+        /// 在where条件下得到一个实体select top1* from table where strWhere
+        /// powered by FZF 20080425
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public HOT.Model.Ad GetModel(string strWhere)
+        {
+            return dal.GetModel(strWhere);
+        }
 		/// <summary>
 		/// 得到一个对象实体，从缓存中。
 		/// </summary>

@@ -100,9 +100,9 @@ namespace HOT.BLL
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
         /// <returns></returns>
-        public DataSet GetList(int startIndex, int endIndex, int doCount)
+        public DataSet GetList(int startIndex, int endIndex, int doCount, string strWhere)
         {
-            return dal.GetList(startIndex, endIndex,doCount);
+            return dal.GetList(startIndex, endIndex,doCount,strWhere);
         }
 		/// <summary>
 		/// 获得数据列表

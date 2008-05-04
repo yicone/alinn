@@ -99,9 +99,9 @@ namespace HOT.BLL
         /// </summary>
         /// <param name="strWhere">查询条件</param>
         /// <returns>dataset</returns>
-        public DataSet GetList(int startIndex, int endIndex,string userId)
+        public DataSet GetList(int startIndex, int endIndex,int doCount,string userId)
         {
-            return dal.GetList(startIndex, endIndex,userId);
+            return dal.GetList(startIndex, endIndex,doCount,userId);
         }
 		/// <summary>
 		/// 获得数据列表
