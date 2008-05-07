@@ -47,12 +47,18 @@ CREATE TABLE [AL_Zone] (
 [ZoneCode] [ntext]  NULL,		--生成的广告位程序代码
 [WeekPrice] [decimal]  (10,2) NULL,	--按时长付费的价格
 [RecommendWeekPrice] [decimal]  (10,2) NULL,	--系统推荐的按时长付费价格
-[ZoneState] [tinyint]  NULL),		--广告位的状态：上架、下架、未激活、拒绝
-[ZoneStyle] [nvarchar](100) NULL
+[ZoneState] [tinyint]  NULL,		--广告位的状态：上架、下架、未激活、拒绝
+[ZoneStyle] [nvarchar](100) NULL)
 
 ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
-
+--广告位缩略图
+CREATE TABLE [AL_ZonePic] (
+[PicId] [uniqueidentifier]  NOT NULL,
+[ZonePic] varchar(200) null
+)		
+ALTER TABLE [AL_ZonePic] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZonePic] PRIMARY KEY  NONCLUSTERED ( [PicId] )
+GO
 --广告组(广告主用来分类自己要投放广告的组）
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_AdGroup]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [AL_AdGroup]
