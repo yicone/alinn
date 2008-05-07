@@ -40,22 +40,15 @@ CREATE TABLE [AL_Zone] (
 [SizeId] [int]  NULL,			--广告位规格对应的编号
 [TransType] [tinyint]  NULL,	--计费类型：按点击、按时长
 [ClassIds] [nvarchar]  (14) NULL,	--所属种类的编号序列
-[Keywords] [nvarchar]  (272) NULL,
-[TitleColor] [varchar]  (6) NULL,
-[DescriptionColor] [nvarchar]  (12) NULL,
-[LinkColor] [varchar]  (6) NULL,
-[BorderColor] [varchar]  (6) NULL,
-[BgColor] [varchar]  (6) NULL,
-[Grounding] [varchar]  (6) NULL,
-[BgImg] [nvarchar]  (100) NULL,
-[CornerImg] [nvarchar]  (100) NULL,
+[Keywords] [nvarchar]  (272) NULL,	
 [NeedAuditing] [tinyint]  NULL,	--是否需要审核广告
 [AllowAdultAd] [tinyint]  NULL,	
 [Description] [ntext]  NULL,	--广告位描述
 [ZoneCode] [ntext]  NULL,		--生成的广告位程序代码
 [WeekPrice] [decimal]  (10,2) NULL,	--按时长付费的价格
 [RecommendWeekPrice] [decimal]  (10,2) NULL,	--系统推荐的按时长付费价格
-[ZoneState] [tinyint]  NULL)		--广告位的状态：上架、下架、未激活、拒绝
+[ZoneState] [tinyint]  NULL),		--广告位的状态：上架、下架、未激活、拒绝
+[ZoneStyle] [nvarchar](100) NULL
 
 ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
