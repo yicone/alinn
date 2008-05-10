@@ -93,13 +93,13 @@ DROP TABLE [AL_Order]
 
 CREATE TABLE [dbo].[AL_Order] (
 	[OrderId] [uniqueidentifier]  Primary key NOT NULL ,
-	[OrderName] [nvarchar] null,--订单名称，用来帮助广告主区分
+	[OrderName] [nvarchar](200) null,--订单名称，用来帮助广告主区分
 	[UserId][uniqueidentifier]  ,--购买广告用户
 	[AdId] [uniqueidentifier] not null,--广告牌ID
 	[ZoneId][uniqueidentifier]  NOT NULL,--广告位ID
 	[StartDate] datetime null,--开始时间（200804151003）（只针对包周广告）
 	[EndDate] datetime null,--结束时间（200804151003）（只针对包周广告）
-	[AuditState] [tinyint] null,--审核状态
+	[AuditState] [tinyint] null,--审核状态，0为未审核，1为审核通过，2为审核拒绝，3为过期
 	[PerPoint] [decimal] null,--每次点击费用，不得少于0.08元。
 	[EverydayPrice] [decimal] null,--每天点击的费用限额
 	[Price] [decimal] null,--需要支付费用（当为包周时为包周费用，为点击方式时为投入的费用）
