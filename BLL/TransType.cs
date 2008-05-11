@@ -10,14 +10,6 @@ namespace HOT.BLL
         [EnumItemDescription("按点击计费")]
         ByClick = 2,
         [EnumItemDescription("按时长计费")]
-        ByPeriod = 5,
-    }
-
-    public enum MeidaType
-    {
-        [EnumItemDescription("按点击计费")]
-        ByClick = 2,
-        [EnumItemDescription("按时长计费")]
-        ByPeriod = 5,
+        ByPeriod = 5
     }
 }

@@ -20,6 +20,9 @@
     query = query + "&iconimage=" + alinn_iconimage;
     query = query + "&sizecode=" + alinn_sizecode;
     query = query + "&layouttype=" + alinn_layouttype;
+    
+    query = query + "&zoneid=" + alinn_pid;
+    query = query + "&zonehref=" + location.href;
 	
 	var dframe = document.createElement("IFRAME");
 	var jframe = $(dframe);
@@ -27,12 +30,44 @@
 	jframe.attr("id", "");
 	jframe.attr("scrolling", "no");
 	jframe.attr("frameborder", "0");
-	jframe.attr("style", "width:1000px;height:800px;");
+	jframe.attr("style", "width:760px;height:90px;");
 	jframe.attr("marginheight", "0");
 	jframe.attr("marginwidth", "0");
-	jframe.attr("border", "0");
-	jframe.attr("src", "http://localhost:2189/Zone/ZoneOutput.aspx?" + query);
+	//jframe.attr("border", "0");
+	jframe.attr("src", "../Zone/ZoneOutput.aspx?" + query);
 	$("body").append(jframe);
+	//alert("hi");
 }
 
-generateIFrame();
+$(document).ready(generateIFrame);
+//	            $(document).mouseover(handleEvent);
+//                $(document).mousemove(handleEvent);
+//                $(document).mouseout(handleEvent);
+//                $(document).blur(handleEvent);
+	
+	function handleEvent(oEvent){
+                //if (oEvent.target.tagName == 'IFRAME'){// &&
+//                oEvent.pageX == -1 &&
+//                oEvent.pageY == -1){// &&
+                //oEvent.fromElement == '[object]') {
+                    // 假如需要向其他页面提交
+                    //document.adform.submit();
+                    //var num = parseInt(shownum.innerHTML);
+                    //shownum.innerHTML = num + 1;
+                    
+                    alert("hi");
+                    
+                    var kvp = {
+                        zoneid: alinn_pid,
+                        url: location.href,
+                        host: location.host
+                    }
+                    
+                    alert(location.href);
+                    alert(location.host);
+                    $.post("ZoneStat.aspx", kvp, success = function(){
+                        alert("统计信息已发送！");
+                    });
+                //}
+                return false;
+            }

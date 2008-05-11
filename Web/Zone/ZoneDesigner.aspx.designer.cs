@@ -11,12 +11,6 @@
 namespace Web {
     
     
-    /// <summary>
-    /// ZoneDesigner class.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated class.
-    /// </remarks>
     public partial class ZoneDesigner {
         
         /// <summary>

@@ -52,7 +52,7 @@
                     <ItemTemplate>
                         <tr class="tlist-item">
                             <td class="first" style="width: 95px; text-align: center;">
-                                <a target="_blank" href='<%# "/Zone/ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                <a target="_blank" href='<%# "ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
                                     <%# Eval("ZoneName") %>
                                 </a>
                                 <br />
@@ -76,13 +76,13 @@
                             </td>
                             <td class="actions" width="315px">
                                 <ul>
-                                    <li><a target="_blank" href='<%# "/Report/ZoneSellDetail.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                    <li><a target="_blank" href='<%# "../Report/ZoneSellDetail.aspx?zoneid=" + Eval("ZoneId") %>'>
                                         查看报表    </a> </li>
                                     <li>&nbsp;</li>
-                                    <li><a target="_blank" href='<%# "/Zone/ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                    <li><a target="_blank" href='<%# "ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
                                         修改    </a> </li>
                                     <li>&nbsp;</li>
-                                    <li><a target="_blank" href='<%# "/Zone/ZoneDesigner.aspx?zoneid=" + Eval("ZoneId") %>'>
+                                    <li><a target="_blank" href='<%# "ZoneDesigner.aspx?zoneid=" + Eval("ZoneId") %>'>
                                         获取代码    </a> </li>
                                     <li>&nbsp;</li>
                                     <li><a onclick="dojobcooperate('delete','2021776','953317','')" href="#">
