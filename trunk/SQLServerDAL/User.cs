@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.SqlClient;
 using HOT.IDAL;
 using HOT.DBUtility;//请先添加引用
+using System.Collections;
 namespace HOT.SQLServerDAL
 {
     /// <summary>
@@ -18,22 +19,31 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string UserID)
+        public bool Exists(string email)
         {
-            int rowsAffected;
-            SqlParameter[] parameters = {
-					new SqlParameter("@UserID", SqlDbType.VarChar,50)};
-            parameters[0].Value = UserID;
+            //int rowsAffected;
+            //SqlParameter[] parameters = {
+            //        new SqlParameter("@Email", SqlDbType.VarChar,50)};
+            //parameters[0].Value = email;
 
-            int result = DbHelperSQL.RunProcedure("UP_AL_User_Exists", parameters, out rowsAffected);
-            if (result == 1)
-            {
+            //int result = DbHelperSQL.RunProcedure("UP_AL_User_Exists", parameters, out rowsAffected);
+            //if (result == 1)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+            string sql = "select * from AL_UserTemp where email='@email' select * from AL_User  where  email='@email' ";
+
+            SqlParameter[] parameters = {new SqlParameter("@email",SqlDbType.VarChar, 50)};
+            parameters[0].Value = email;
+
+            if (DbHelperSQL.ExecuteSql(sql, parameters) == 1)
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
 
         /// <summary>
@@ -43,11 +53,11 @@ namespace HOT.SQLServerDAL
         {
             int rowsAffected;
             SqlParameter[] parameters = {
-					new SqlParameter("@UserID", SqlDbType.VarChar,16),
+					//new SqlParameter("@UserID", SqlDbType.VarChar,16),
 					new SqlParameter("@RoleID", SqlDbType.Int,4),
 					new SqlParameter("@Email", SqlDbType.NVarChar,50),
 					new SqlParameter("@NickName", SqlDbType.NVarChar,50),
-					new SqlParameter("@UserPassword", SqlDbType.NVarChar,16),
+					new SqlParameter("@UserPassword", SqlDbType.NVarChar,50),
 					new SqlParameter("@CompanyName", SqlDbType.NVarChar,200),
 					new SqlParameter("@CompanyAddress", SqlDbType.NVarChar,500),
 					new SqlParameter("@LinkMan", SqlDbType.NVarChar,8),
@@ -82,7 +92,48 @@ namespace HOT.SQLServerDAL
             parameters[17].Value = model.ActiveCode;
             parameters[18].Value = model.RegTime;
 
-            DbHelperSQL.RunProcedure("UP_AL_User_ADD", parameters, out rowsAffected);
+            string sql = "insert into AL_User(UserID,RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,LastLoginTime,LastLoginIP,LoginTimes,IsLocked,ActiveCode,RegTime) values(newid(),@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@LastLoginTime,@LastLoginIP,@LoginTimes,@IsLocked,@ActiveCode,@RegTime)";
+            //DbHelperSQL.RunProcedure("UP_AL_User_ADD", parameters, out rowsAffected);
+
+            DbHelperSQL.ExecuteSql(sql, parameters);
+        }
+
+        public void Add(HOT.Model.UserTemp model)
+        {
+            string sql = "insert into AL_UserTemp(RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,ActiveCode) values(@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@ActiveCode)";
+
+            SqlParameter[] parameters = {
+					
+					new SqlParameter("@RoleID", SqlDbType.Int,4),
+					new SqlParameter("@Email", SqlDbType.NVarChar,50),
+					new SqlParameter("@NickName", SqlDbType.NVarChar,50),
+					new SqlParameter("@UserPassword", SqlDbType.NVarChar,50),
+					new SqlParameter("@CompanyName", SqlDbType.NVarChar,200),
+					new SqlParameter("@CompanyAddress", SqlDbType.NVarChar,500),
+					new SqlParameter("@LinkMan", SqlDbType.NVarChar,8),
+					new SqlParameter("@Telephone", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mobile", SqlDbType.NVarChar,50),
+					new SqlParameter("@QQ", SqlDbType.NVarChar,50),
+					new SqlParameter("@Msn", SqlDbType.NVarChar,50),
+					new SqlParameter("@Introducer", SqlDbType.VarChar,16),
+					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16)};
+            
+            parameters[0].Value = model.RoleID;
+            parameters[1].Value = model.Email;
+            parameters[2].Value = model.NickName;
+            parameters[3].Value = model.UserPassword;
+            parameters[4].Value = model.CompanyName;
+            parameters[5].Value = model.CompanyAddress;
+            parameters[6].Value = model.LinkMan;
+            parameters[7].Value = model.Telephone;
+            parameters[8].Value = model.Mobile;
+            parameters[9].Value = model.Mobile;
+            parameters[10].Value = model.Msn;
+            parameters[11].Value = model.Introducer;
+            parameters[12].Value = model.ActiveCode;
+
+            DbHelperSQL.ExecuteSql(sql, parameters);
+           
         }
 
         /// <summary>
@@ -92,11 +143,11 @@ namespace HOT.SQLServerDAL
         {
             int rowsAffected;
             SqlParameter[] parameters = {
-					new SqlParameter("@UserID", SqlDbType.VarChar,16),
+					//new SqlParameter("@UserID", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@RoleID", SqlDbType.Int,4),
 					new SqlParameter("@Email", SqlDbType.NVarChar,50),
 					new SqlParameter("@NickName", SqlDbType.NVarChar,50),
-					new SqlParameter("@UserPassword", SqlDbType.NVarChar,16),
+					new SqlParameter("@UserPassword", SqlDbType.NVarChar,50),
 					new SqlParameter("@CompanyName", SqlDbType.NVarChar,200),
 					new SqlParameter("@CompanyAddress", SqlDbType.NVarChar,500),
 					new SqlParameter("@LinkMan", SqlDbType.NVarChar,8),
@@ -111,25 +162,43 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@IsLocked", SqlDbType.TinyInt,1),
 					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16),
 					new SqlParameter("@RegTime", SqlDbType.DateTime)};
-            parameters[0].Value = model.UserID;
-            parameters[1].Value = model.RoleID;
-            parameters[2].Value = model.Email;
-            parameters[3].Value = model.NickName;
-            parameters[4].Value = model.UserPassword;
-            parameters[5].Value = model.CompanyName;
-            parameters[6].Value = model.CompanyAddress;
-            parameters[7].Value = model.LinkMan;
-            parameters[8].Value = model.Telephone;
-            parameters[9].Value = model.Mobile;
-            parameters[10].Value = model.QQ;
-            parameters[11].Value = model.Msn;
-            parameters[12].Value = model.Introducer;
-            parameters[13].Value = model.LastLoginTime;
-            parameters[14].Value = model.LastLoginIP;
-            parameters[15].Value = model.LoginTimes;
-            parameters[16].Value = model.IsLocked;
-            parameters[17].Value = model.ActiveCode;
-            parameters[18].Value = model.RegTime;
+            //parameters[0].Value = model.UserID;
+            //parameters[1].Value = model.RoleID;
+            //parameters[2].Value = model.Email;
+            //parameters[3].Value = model.NickName;
+            //parameters[4].Value = model.UserPassword;
+            //parameters[5].Value = model.CompanyName;
+            //parameters[6].Value = model.CompanyAddress;
+            //parameters[7].Value = model.LinkMan;
+            //parameters[8].Value = model.Telephone;
+            //parameters[9].Value = model.Mobile;
+            //parameters[10].Value = model.QQ;
+            //parameters[11].Value = model.Msn;
+            //parameters[12].Value = model.Introducer;
+            //parameters[13].Value = model.LastLoginTime;
+            //parameters[14].Value = model.LastLoginIP;
+            //parameters[15].Value = model.LoginTimes;
+            //parameters[16].Value = model.IsLocked;
+            //parameters[17].Value = model.ActiveCode;
+            //parameters[18].Value = model.RegTime;
+            parameters[0].Value = model.RoleID;
+            parameters[1].Value = model.Email;
+            parameters[2].Value = model.NickName;
+            parameters[3].Value = model.UserPassword;
+            parameters[4].Value = model.CompanyName;
+            parameters[5].Value = model.CompanyAddress;
+            parameters[6].Value = model.LinkMan;
+            parameters[7].Value = model.Telephone;
+            parameters[8].Value = model.Mobile;
+            parameters[9].Value = model.QQ;
+            parameters[10].Value = model.Msn;
+            parameters[11].Value = model.Introducer;
+            parameters[12].Value = model.LastLoginTime;
+            parameters[13].Value = model.LastLoginIP;
+            parameters[14].Value = model.LoginTimes;
+            parameters[15].Value = model.IsLocked;
+            parameters[16].Value = model.ActiveCode;
+            parameters[17].Value = model.RegTime;
 
             DbHelperSQL.RunProcedure("UP_AL_User_Update", parameters, out rowsAffected);
         }
@@ -152,12 +221,14 @@ namespace HOT.SQLServerDAL
         /// </summary>
         public HOT.Model.User GetModel(string UserID)
         {
+            string sql = "select * from AL_User where email=@UserID";
             SqlParameter[] parameters = {
 					new SqlParameter("@UserID", SqlDbType.VarChar,50)};
             parameters[0].Value = UserID;
 
             HOT.Model.User model = new HOT.Model.User();
-            DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
+            DataSet ds = DbHelperSQL.Query(sql, parameters);
+            //DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 model.UserID = ds.Tables[0].Rows[0]["UserID"].ToString();
@@ -202,6 +273,10 @@ namespace HOT.SQLServerDAL
             }
         }
 
+        
+
+
+
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -241,6 +316,134 @@ namespace HOT.SQLServerDAL
             parameters[6].Value = strWhere;	
             return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
         }*/
+
+        /// <summary>
+        /// 是否存在记录
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="passWord"></param>
+        /// <returns></returns>
+        public bool Exists(string email, string passWord)
+        {
+            string sql = "select * from AL_User where email='@email' and userpassword='@passWord'";
+            SqlParameter[] parameters = {
+                new SqlParameter("@email",SqlDbType.NVarChar,50),
+                new SqlParameter("@passWord",SqlDbType.NVarChar,50)
+            };
+            parameters[0].Value = email;
+            parameters[1].Value = passWord;
+
+            if (DbHelperSQL.ExecuteSql(sql, parameters) > 0)
+                return true;
+
+            return false;
+        }
+
+        public HOT.Model.User GetModel(string UserID, string ActiveCode)
+        {
+            string sql = "select * from AL_User where email=@email and activecode=@activecode";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@email",SqlDbType.VarChar,50),
+                new SqlParameter("@activecode",SqlDbType.VarChar,16)};
+
+            parameters[0].Value = UserID;
+            parameters[1].Value = ActiveCode;
+
+            DataSet ds = DbHelperSQL.Query(sql, parameters);
+            HOT.Model.User model = new HOT.Model.User();
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                //model.UserID = ds.Tables[0].Rows[0]["UserID"].ToString();
+                if (ds.Tables[0].Rows[0]["RoleID"].ToString() != "")
+                {
+                    model.RoleID = int.Parse(ds.Tables[0].Rows[0]["RoleID"].ToString());
+                }
+                model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                model.NickName = ds.Tables[0].Rows[0]["NickName"].ToString();
+                model.UserPassword = ds.Tables[0].Rows[0]["UserPassword"].ToString();
+                model.CompanyName = ds.Tables[0].Rows[0]["CompanyName"].ToString();
+                model.CompanyAddress = ds.Tables[0].Rows[0]["CompanyAddress"].ToString();
+                model.LinkMan = ds.Tables[0].Rows[0]["LinkMan"].ToString();
+                model.Telephone = ds.Tables[0].Rows[0]["Telephone"].ToString();
+                model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
+                model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
+                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                model.ActiveCode = ds.Tables[0].Rows[0]["ActiveCode"].ToString();
+                if (ds.Tables[0].Rows[0]["RegTime"].ToString() != "")
+                {
+                    model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
+                }
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public HOT.Model.UserTemp GetModelTemp(string UserID)
+        {
+            SqlParameter[] parameters = {
+					new SqlParameter("@email", SqlDbType.VarChar,50)};
+            parameters[0].Value = UserID;
+
+            HOT.Model.UserTemp model = new HOT.Model.UserTemp();
+            //DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
+            string sql = "select * from AL_UserTemp where email=@email";
+            DataSet ds = DbHelperSQL.Query(sql, parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                //model.UserID = ds.Tables[0].Rows[0]["UserID"].ToString();
+                if (ds.Tables[0].Rows[0]["RoleID"].ToString() != "")
+                {
+                    model.RoleID = int.Parse(ds.Tables[0].Rows[0]["RoleID"].ToString());
+                }
+                model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                model.NickName = ds.Tables[0].Rows[0]["NickName"].ToString();
+                model.UserPassword = ds.Tables[0].Rows[0]["UserPassword"].ToString();
+                model.CompanyName = ds.Tables[0].Rows[0]["CompanyName"].ToString();
+                model.CompanyAddress = ds.Tables[0].Rows[0]["CompanyAddress"].ToString();
+                model.LinkMan = ds.Tables[0].Rows[0]["LinkMan"].ToString();
+                model.Telephone = ds.Tables[0].Rows[0]["Telephone"].ToString();
+                model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
+                model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
+                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                model.ActiveCode = ds.Tables[0].Rows[0]["ActiveCode"].ToString();
+                if (ds.Tables[0].Rows[0]["RegTime"].ToString() != "")
+                {
+                    model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
+                }
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获取该用户推荐的人
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <returns></returns>
+        public IList GetIntroducer(string UserID)
+        {
+            return null;
+        }
+
+
+        public bool ExsitsIP(string userIP,DateTime dateTime)
+        {
+            string sql = string.Format("select * from AL_UserTemp where RegTime={0} and RegIP='{1}'", dateTime.ToShortDateString(), userIP);
+
+            if (DbHelperSQL.ExecuteSql(sql) == 1)
+                return true;
+            else
+                return false;
+        }
 
         #endregion  成员方法
     }
