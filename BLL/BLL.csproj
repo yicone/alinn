@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -89,6 +89,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
@@ -100,6 +101,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="InFirstpage.cs" />
+    <Compile Include="MediaType.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />
@@ -108,6 +111,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TextZone.cs" />
+    <Compile Include="TransType.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneAgeType.cs" />
