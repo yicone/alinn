@@ -35,7 +35,7 @@ namespace HOT.SQLServerDAL
             //{
             //    return false;
             //}
-            string sql = "select * from AL_UserTemp where email='@email' select * from AL_User  where  email='@email' ";
+            string sql = "select * from AL_UserTemp where email=@email select * from AL_User  where  email=@email ";
 
             SqlParameter[] parameters = {new SqlParameter("@email",SqlDbType.VarChar, 50)};
             parameters[0].Value = email;
@@ -72,25 +72,25 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@IsLocked", SqlDbType.TinyInt,1),
 					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16),
 					new SqlParameter("@RegTime", SqlDbType.DateTime)};
-            parameters[0].Value = model.UserID;
-            parameters[1].Value = model.RoleID;
-            parameters[2].Value = model.Email;
-            parameters[3].Value = model.NickName;
-            parameters[4].Value = model.UserPassword;
-            parameters[5].Value = model.CompanyName;
-            parameters[6].Value = model.CompanyAddress;
-            parameters[7].Value = model.LinkMan;
-            parameters[8].Value = model.Telephone;
-            parameters[9].Value = model.Mobile;
-            parameters[10].Value = model.QQ;
-            parameters[11].Value = model.Msn;
-            parameters[12].Value = model.Introducer;
-            parameters[13].Value = model.LastLoginTime;
-            parameters[14].Value = model.LastLoginIP;
-            parameters[15].Value = model.LoginTimes;
-            parameters[16].Value = model.IsLocked;
-            parameters[17].Value = model.ActiveCode;
-            parameters[18].Value = model.RegTime;
+            //parameters[0].Value = model.UserID;
+            parameters[0].Value = model.RoleID;
+            parameters[1].Value = model.Email;
+            parameters[2].Value = model.NickName;
+            parameters[3].Value = model.UserPassword;
+            parameters[4].Value = model.CompanyName;
+            parameters[5].Value = model.CompanyAddress;
+            parameters[6].Value = model.LinkMan;
+            parameters[7].Value = model.Telephone;
+            parameters[8].Value = model.Mobile;
+            parameters[9].Value = model.QQ;
+            parameters[10].Value = model.Msn;
+            parameters[11].Value = model.Introducer;
+            parameters[12].Value = model.LastLoginTime;
+            parameters[13].Value = model.LastLoginIP;
+            parameters[14].Value = model.LoginTimes;
+            parameters[15].Value = model.IsLocked;
+            parameters[16].Value = model.ActiveCode;
+            parameters[17].Value = model.RegTime;
 
             string sql = "insert into AL_User(UserID,RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,LastLoginTime,LastLoginIP,LoginTimes,IsLocked,ActiveCode,RegTime) values(newid(),@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@LastLoginTime,@LastLoginIP,@LoginTimes,@IsLocked,@ActiveCode,@RegTime)";
             //DbHelperSQL.RunProcedure("UP_AL_User_ADD", parameters, out rowsAffected);
@@ -325,7 +325,7 @@ namespace HOT.SQLServerDAL
         /// <returns></returns>
         public bool Exists(string email, string passWord)
         {
-            string sql = "select * from AL_User where email='@email' and userpassword='@passWord'";
+            string sql = "select * from AL_User where email=@email and userpassword=@passWord";
             SqlParameter[] parameters = {
                 new SqlParameter("@email",SqlDbType.NVarChar,50),
                 new SqlParameter("@passWord",SqlDbType.NVarChar,50)
