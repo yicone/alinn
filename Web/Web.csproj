@@ -56,11 +56,33 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Register.aspx.cs">
+    <Compile Include="User\BuildImageCode.aspx.cs">
+      <DependentUpon>BuildImageCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\BuildImageCode.aspx.designer.cs">
+      <DependentUpon>BuildImageCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Common.cs" />
+    <Compile Include="User\GetPassWord.aspx.cs">
+      <DependentUpon>GetPassWord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\GetPassWord.aspx.designer.cs">
+      <DependentUpon>GetPassWord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
+    <Compile Include="User\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.cs">
@@ -69,6 +91,27 @@
     </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.designer.cs">
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\seccess.aspx.cs">
+      <DependentUpon>seccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\seccess.aspx.designer.cs">
+      <DependentUpon>seccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\Zone.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -293,12 +336,18 @@
     <Content Include="App_Themes\js\jquery\jquery.js" />
     <Content Include="App_Themes\TextZoneStyle.js" />
     <Content Include="App_Themes\ZoneDesigner.css" />
+    <Content Include="User\BuildImageCode.aspx" />
+    <Content Include="User\GetPassWord.aspx" />
     <Content Include="images\icon\ico_lights.gif" />
+    <Content Include="User\Login.aspx" />
     <Content Include="MasterPage\UserCommon.Master" />
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
-    <Content Include="Register.aspx" />
+    <Content Include="User\Register.aspx" />
+    <Content Include="User\ResetPassword.aspx" />
+    <Content Include="User\seccess.aspx" />
+    <Content Include="User\UserInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
     <Content Include="Zone\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />
@@ -309,12 +358,12 @@
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
+    <None Include="database\user.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controls\" />
-    <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
