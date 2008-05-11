@@ -283,7 +283,7 @@ div#txt_board_preview {
                 var layoutType = "1";
                 //init textzone
                 var textZone = new TextZone(document.window, size, layoutType);
-                textZone.initZone();
+                textZone.initZone(null, null, null, "true");
                 textZone.setStyle(_currentStyle);
                 textZone.applyStyle(true);
                 generateCode($("#hdn_zoneid").val(), _currentStyle, size, layoutType);

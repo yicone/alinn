@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5B535162-10C2-4238-BC56-193B968E1834}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -10,6 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Web</RootNamespace>
     <AssemblyName>Web</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -174,6 +179,13 @@
     <Compile Include="Zone\ZoneOutput.aspx.designer.cs">
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Zone\ZoneStat.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ZoneStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ZoneStat.aspx.designer.cs">
+      <DependentUpon>ZoneStat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Zone\ZoneView.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneView.aspx</DependentUpon>
@@ -279,9 +291,11 @@
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="Zone\images\btn_copycode_big.jpg" />
     <Content Include="Zone\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />
     <Content Include="Zone\ZoneOutput.aspx" />
+    <Content Include="Zone\ZoneStat.aspx" />
     <Content Include="Zone\ZoneView.aspx" />
     <None Include="database\sp_AL_ZoneSize.sql" />
     <None Include="database\sp_yicone.sql" />
@@ -295,7 +309,7 @@
     <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -309,11 +323,12 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2189</DevelopmentServerPort>
+          <DevelopmentServerPort>5877</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

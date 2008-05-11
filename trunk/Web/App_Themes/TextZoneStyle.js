@@ -1,18 +1,14 @@
 ﻿//定义TextZone对象
 function TextZone(wd, zoneSize, layoutType){
-	alert("gou zao textzone");
     alert(this instanceof TextZone);
     this.window = wd;
     this.zoneSize = zoneSize;
     this.layoutType = layoutType;
     
     this.preDiv = $("#pre", wd);
-    alert(this.preDiv.attr("id"));
     //this.bgimgDiv = $("#bgimg", this.wd);
     this.outerDiv = $("#outer", wd);
-    alert(this.outerDiv.attr("id"));
     this.mainDiv = $("#main", this.window);
-    alert(this.mainDiv.attr("id"));
     this.maininnerDiv = $("#main_inner", this.window);
     alert(this.maininnerDiv.attr("id"));
     this.maintitleDiv;
@@ -42,16 +38,16 @@ function TextZone(wd, zoneSize, layoutType){
                 
                 //this.bgimgDiv.css("display", "none");
                 this.preDiv.css("display", "");
-                this.preDiv.css("border", "1px solid #" + this.Style.border$color);
+                //this.preDiv.css("border", "1px solid #" + this.Style.border$color);
                 
-                if (this.Style.background$image == 0) {//不带背景
-                    this.preDiv.css("background-color", "#" + this.Style.background$color);
-                    this.preDiv.css("backgroundImage", "");
-                }
-                else {//带背景
-                    this.preDiv.css("background-color", "#" + this.Style.background$color);
-                    //this.preDiv.css("backgroundImage", "url('"+imgHome+"/adzone/bg"+s.bgi+".gif')");
-                }
+//                if (this.Style.background$image == 0) {//不带背景
+//                    this.preDiv.css("background-color", "#" + this.Style.background$color);
+//                    this.preDiv.css("background-image", "");
+//                }
+//                else {//带背景
+//                    this.preDiv.css("background-color", "#" + this.Style.background$color);
+//                    //this.preDiv.css("backgroundImage", "url('"+imgHome+"/adzone/bg"+s.bgi+".gif')");
+//                }
                 
                 //将样式同步到设计器
                 if (isSyncToDesinger) {
@@ -65,9 +61,15 @@ function TextZone(wd, zoneSize, layoutType){
         };
         
         //设置广告位的大小和对应大小的容器样式
-        TextZone.prototype.initZone = function(){
+        TextZone.prototype.initZone = function(title, link, text, isDefaultZone){
             var w = parseInt(this.zoneSize.split("x")[0]);
             var h = parseInt(this.zoneSize.split("x")[1]);
+            if(isDefaultZone == "true")
+            {
+            title = "阿里奶奶：好产品更需要好广告";
+            text = "我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!";
+            link = "www.alimama.com";
+            }
             
             //修改文字广告牌
             var outerDiv = this.outerDiv;
@@ -82,10 +84,10 @@ function TextZone(wd, zoneSize, layoutType){
             this.changeDivSize(this.preDiv, w - 2, h - 2);
             
             if (this.layoutType == "1") {
-                this.maininnerDiv.html("<tr><td id='main_title_outer' class='t" + this.zoneSize + "' nowrap><div id='main_title'>阿里奶奶：好产品更需要好广告</div><div id='main_link_outer' class='l" + this.zoneSize + "'><div id='main_link'>www.alinn.com</div></div></td><td id='main_text_outer' class='d" + this.zoneSize + "'><div id='main_text'>我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!</div></td></tr>");
+                this.maininnerDiv.html("<tr><td id='main_title_outer' class='t" + this.zoneSize + "' nowrap><div id='main_title'>" + title + "</div><div id='main_link_outer' class='l" + this.zoneSize + "'><div id='main_link'>" + link + "</div></div></td><td id='main_text_outer' class='d" + this.zoneSize + "'><div id='main_text'>" + text + "</div></td></tr>");
             }
             else {
-                this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>阿里妈妈：好产品更需要好广告</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>www.alimama.com</div></div></td></tr>");
+                this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>"+link+"/div></div></td></tr>");
             }
             //在构造完整的广告位之后，取得对应三个文字区域的JQuery对象
             this.maintitleDiv = $("#main_title", this.window);
