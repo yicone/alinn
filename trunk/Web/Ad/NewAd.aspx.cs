@@ -19,11 +19,11 @@ namespace Web.User
         {
             //if (!IsPostBack)
             //{
-                if (Request.UrlReferrer != null)  //
-                {
-                    ViewState["UrlReferrer"] = Request.UrlReferrer.ToString();
-                    //string str = this.Request.Url.AbsolutePath.ToString();
-                }
+                //if (Request.UrlReferrer != null)  //
+                //{
+                //    ViewState["UrlReferrer"] = Request.UrlReferrer.ToString();
+                //    //string str = this.Request.Url.AbsolutePath.ToString();
+                //}
             //}
 
             if (this.rblAdType.SelectedValue == "1")
@@ -89,8 +89,8 @@ namespace Web.User
             HOT.BLL.Ad bll = new HOT.BLL.Ad();
             bll.Add(model);
             //提示添加成功，并且转向上一页面
-            string name = ViewState["UrlReferrer"].ToString();
-            MessageBox.ShowAndRedirect(this.Page, "添加成功", name + "?AdGroupId=" + this.Request.QueryString["AdGroupId"].ToString());
+            string name = Request.UrlReferrer.ToString();
+            Response.Write("<script>alert('添加新广告成功');location='ManageAdGroup.aspx';</script>");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

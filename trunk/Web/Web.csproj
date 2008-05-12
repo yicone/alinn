@@ -46,6 +46,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Extensions\1.0.61025.0__31bf3856ad364e35\System.Web.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -56,6 +57,65 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AD\EditeAd.aspx.cs">
+      <DependentUpon>EditeAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AD\EditeAd.aspx.designer.cs">
+      <DependentUpon>EditeAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AD\ManageAd.aspx.cs">
+      <DependentUpon>ManageAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AD\ManageAd.aspx.designer.cs">
+      <DependentUpon>ManageAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GetPic\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GetPic\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GetPic\GetImage.cs" />
+    <Compile Include="Admin\GetPic\Snap.aspx.cs">
+      <DependentUpon>Snap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GetPic\Snap.aspx.designer.cs">
+      <DependentUpon>Snap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LeftMenu.aspx.cs">
+      <DependentUpon>LeftMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\top.aspx.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\EditeZone.aspx.cs">
+      <DependentUpon>EditeZone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\EditeZone.aspx.designer.cs">
+      <DependentUpon>EditeZone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Zone\ManageZone.aspx.cs">
+      <DependentUpon>ManageZone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\ManageZone.aspx.designer.cs">
+      <DependentUpon>ManageZone.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -63,12 +123,47 @@
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage\AdCommon.Master.cs">
+      <DependentUpon>AdCommon.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\AdCommon.Master.designer.cs">
+      <DependentUpon>AdCommon.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\BuyCommon.Master.cs">
+      <DependentUpon>BuyCommon.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\BuyCommon.Master.designer.cs">
+      <DependentUpon>BuyCommon.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\ShowZone.Master.cs">
+      <DependentUpon>ShowZone.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\ShowZone.Master.designer.cs">
+      <DependentUpon>ShowZone.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderInfo.aspx.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\OrderInfo.aspx.designer.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.designer.cs">
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\ShowZone.aspx.cs">
+      <DependentUpon>ShowZone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Zone\ShowZone.aspx.designer.cs">
+      <DependentUpon>ShowZone.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\Zone.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -206,8 +301,6 @@
     <Content Include="App_Themes\common.js" />
     <Content Include="App_Themes\jquery.js" />
     <Content Include="App_Themes\myalinn.css" />
-    <Content Include="database\sp_AL_ZoneClass_log.LDF">
-    </Content>
     <Content Include="Report\ZoneSellDetail.aspx" />
     <Content Include="Zone\images\bg_sidebar.jpg" />
     <Content Include="Zone\Zone.aspx" />
@@ -262,14 +355,80 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Admin\images\Thumbs.db" />
+    <None Include="Admin\images\time\Thumbs.db" />
+    <None Include="Admin\images\复件 top_an_1.psd" />
+    <None Include="App_Themes\skin1\images\Thumbs.db" />
+    <Content Include="App_Themes\skin1\Skin.skin" />
+    <None Include="database\MY_AL_Ad.sql" />
+    <None Include="database\MY_AL_AdGroup.sql" />
+    <None Include="database\MY_AL_Order.sql" />
+    <None Include="database\MY_AL_Zone.sql" />
     <None Include="database\sp_AL_Ad.sql" />
     <None Include="database\sp_AL_AdGroup.sql" />
+    <None Include="database\sp_AL_Order.sql" />
     <None Include="database\sp_AL_Zone.sql" />
     <None Include="database\sp_AL_ZoneClass.sql" />
     <None Include="database\database.sql" />
     <None Include="database\sp_AL_Employment.sql" />
     <None Include="database\sp_AL_Site.sql" />
     <None Include="database\sp_AL_SiteClass.sql" />
+    <Content Include="Admin\AD\EditeAd.aspx" />
+    <Content Include="Admin\AD\ManageAd.aspx" />
+    <Content Include="Admin\GetPic\Default.aspx" />
+    <Content Include="Admin\GetPic\Snap.aspx" />
+    <Content Include="Admin\images\admin_leftmenu_header.gif" />
+    <Content Include="Admin\images\admin_leftmenu_title.gif" />
+    <Content Include="Admin\images\admin_leftmenu_title_quit.gif" />
+    <Content Include="Admin\images\admin_top_close.gif" />
+    <Content Include="Admin\images\admin_top_open.gif" />
+    <Content Include="Admin\images\boy.gif" />
+    <Content Include="Admin\images\calendar.gif" />
+    <Content Include="Admin\images\default.gif" />
+    <Content Include="Admin\images\girl.gif" />
+    <Content Include="Admin\images\login.jpg" />
+    <Content Include="Admin\images\mydocuments.gif" />
+    <Content Include="Admin\images\StyleSheet.css" />
+    <Content Include="Admin\images\time\dg0.gif" />
+    <Content Include="Admin\images\time\dg1.gif" />
+    <Content Include="Admin\images\time\dg2.gif" />
+    <Content Include="Admin\images\time\dg3.gif" />
+    <Content Include="Admin\images\time\dg4.gif" />
+    <Content Include="Admin\images\time\dg5.gif" />
+    <Content Include="Admin\images\time\dg6.gif" />
+    <Content Include="Admin\images\time\dg7.gif" />
+    <Content Include="Admin\images\time\dg8.gif" />
+    <Content Include="Admin\images\time\dg9.gif" />
+    <Content Include="Admin\images\time\dgam.gif" />
+    <Content Include="Admin\images\time\dgoff.gif" />
+    <Content Include="Admin\images\time\dgon.gif" />
+    <Content Include="Admin\images\time\dgpm.gif" />
+    <Content Include="Admin\images\time\space.gif" />
+    <Content Include="Admin\images\titlebg1.gif" />
+    <Content Include="Admin\images\titlebg2.gif" />
+    <Content Include="Admin\images\titlebg3.gif" />
+    <Content Include="Admin\images\titlebg4.gif" />
+    <Content Include="Admin\images\top_an_1.gif" />
+    <Content Include="Admin\images\top_an_2.gif" />
+    <Content Include="Admin\images\top_an_4.gif" />
+    <Content Include="Admin\images\top_an_5.gif" />
+    <Content Include="Admin\images\top_an_5111.gif" />
+    <Content Include="Admin\images\top_an_6.gif" />
+    <Content Include="Admin\images\tree_folder.gif" />
+    <Content Include="Admin\images\tree_folder3.gif" />
+    <Content Include="Admin\images\tree_folder4.gif" />
+    <Content Include="Admin\images\tree_line1.gif" />
+    <Content Include="Admin\images\tree_line2.gif" />
+    <Content Include="Admin\images\tree_line3.GIF" />
+    <Content Include="Admin\images\tree_line4.gif" />
+    <Content Include="Admin\images\VerifyCodeBack.Gif" />
+    <Content Include="Admin\images\复件 top_an_1.gif" />
+    <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\LeftMenu.aspx" />
+    <Content Include="Admin\Main.aspx" />
+    <Content Include="Admin\top.aspx" />
+    <Content Include="Admin\Zone\EditeZone.aspx" />
+    <Content Include="Admin\Zone\ManageZone.aspx" />
     <Content Include="Ad\EditeAd.aspx" />
     <Content Include="App_Themes\inf.js" />
     <Content Include="App_Themes\js\images\color_indic.gif" />
@@ -291,6 +450,12 @@
     <Content Include="App_Themes\js\jquery\islider.js" />
     <Content Include="App_Themes\js\jquery\iutil.js" />
     <Content Include="App_Themes\js\jquery\jquery.js" />
+    <Content Include="App_Themes\skin1\images\bottombg.jpg" />
+    <Content Include="App_Themes\skin1\images\logo.jpg" />
+    <Content Include="App_Themes\skin1\images\menubg.gif" />
+    <Content Include="App_Themes\skin1\images\menubg2.gif" />
+    <Content Include="App_Themes\skin1\images\searchbg.jpg" />
+    <Content Include="App_Themes\skin1\style.css" />
     <Content Include="App_Themes\TextZoneStyle.js" />
     <Content Include="App_Themes\ZoneDesigner.css" />
     <None Include="database\DataChecker.sql" />
@@ -300,7 +465,9 @@
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="Order\OrderInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
+    <Content Include="Zone\ShowZone.aspx" />
     <Content Include="Zone\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />
     <Content Include="Zone\ZoneOutput.aspx" />
@@ -310,12 +477,13 @@
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
-    <None Include="database\user.sql" />
+    <Content Include="MasterPage\BuyCommon.Master" />
+    <Content Include="MasterPage\ShowZone.Master" />
+    <Content Include="MasterPage\AdCommon.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />

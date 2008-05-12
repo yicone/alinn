@@ -8,45 +8,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.User {
+namespace Web.Ad {
     
     
-    public partial class ManageAdGroup {
+    public partial class AdList {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// rblInFirst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblInFirst;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// ddlPricePerK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPricePerK;
         
         /// <summary>
-        /// btnAddGroup control.
+        /// dlZone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddGroup;
+        protected global::System.Web.UI.WebControls.DataList dlZone;
         
         /// <summary>
-        /// dlAdGroup control.
+        /// AspNetPager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlAdGroup;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
     }
 }

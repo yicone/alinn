@@ -13,6 +13,7 @@ namespace HOT.Model
         private string _ordername;
         private Guid _userid;
         private Guid _adid;
+        private string _title;
         private Guid _zoneid;
         private DateTime? _startdate;
         private DateTime? _enddate;
@@ -53,6 +54,11 @@ namespace HOT.Model
         {
             set { _adid = value; }
             get { return _adid; }
+        }
+        public string Title
+        {
+            set { _title = value; }
+            get { return _title; }
         }
         /// <summary>
         /// 

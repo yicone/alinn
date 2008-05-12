@@ -8,99 +8,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.User {
+namespace Web.Order {
     
     
-    public partial class NewGroup {
+    public partial class OrderInfo {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// lblOrderId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label lblOrderId;
         
         /// <summary>
-        /// txtGroupName control.
+        /// lblOrderName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGroupName;
+        protected global::System.Web.UI.WebControls.Label lblOrderName;
         
         /// <summary>
-        /// ddlClass1 control.
+        /// lblUserId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClass1;
+        protected global::System.Web.UI.WebControls.Label lblUserId;
         
         /// <summary>
-        /// sdsClass1 control.
+        /// lblAdId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsClass1;
+        protected global::System.Web.UI.WebControls.Label lblAdId;
         
         /// <summary>
-        /// ddlClass2 control.
+        /// lblZoneId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClass2;
+        protected global::System.Web.UI.WebControls.Label lblZoneId;
         
         /// <summary>
-        /// sdsClass2 control.
+        /// lblStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsClass2;
+        protected global::System.Web.UI.WebControls.Label lblStartDate;
         
         /// <summary>
-        /// txtKeyWords control.
+        /// lblEndDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKeyWords;
+        protected global::System.Web.UI.WebControls.Label lblEndDate;
         
         /// <summary>
-        /// btnAdd control.
+        /// lblAuditState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label lblAuditState;
         
         /// <summary>
-        /// btnCancel control.
+        /// lblPerPoint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Label lblPerPoint;
+        
+        /// <summary>
+        /// lblEverydayPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEverydayPrice;
+        
+        /// <summary>
+        /// lblPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrice;
+        
+        /// <summary>
+        /// lblPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPayment;
+        
+        /// <summary>
+        /// lblCreateDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateDate;
     }
 }

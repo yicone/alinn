@@ -187,6 +187,77 @@ namespace HOT.SQLServerDAL
                 return null;
             }
         }
+        /// <summary>
+        /// 得到一个对象实体BY UserId
+        /// powered by fzf 20080511
+        /// </summary>
+        public HOT.Model.Order GetModelByUserId(Guid UserId)
+        {
+            SqlParameter[] parameters = {
+					new SqlParameter("@UserId", SqlDbType.UniqueIdentifier)};
+            parameters[0].Value = UserId;
+
+            HOT.Model.Order model = new HOT.Model.Order();
+            DataSet ds = DbHelperSQL.RunProcedure("MY_AL_ShowOrderByUserId", parameters, "ds");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                if (ds.Tables[0].Rows[0]["OrderId"].ToString() != "")
+                {
+                    model.OrderId = new Guid(ds.Tables[0].Rows[0]["OrderId"].ToString());
+                }
+                model.OrderName = ds.Tables[0].Rows[0]["OrderName"].ToString();
+                if (ds.Tables[0].Rows[0]["UserId"].ToString() != "")
+                {
+                    model.UserId = new Guid(ds.Tables[0].Rows[0]["UserId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["AdId"].ToString() != "")
+                {
+                    model.AdId = new Guid(ds.Tables[0].Rows[0]["AdId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["ZoneId"].ToString() != "")
+                {
+                    model.ZoneId = new Guid(ds.Tables[0].Rows[0]["ZoneId"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["StartDate"].ToString() != "")
+                {
+                    model.StartDate = DateTime.Parse(ds.Tables[0].Rows[0]["StartDate"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["EndDate"].ToString() != "")
+                {
+                    model.EndDate = DateTime.Parse(ds.Tables[0].Rows[0]["EndDate"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["AuditState"].ToString() != "")
+                {
+                    model.AuditState = int.Parse(ds.Tables[0].Rows[0]["AuditState"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["PerPoint"].ToString() != "")
+                {
+                    model.PerPoint = decimal.Parse(ds.Tables[0].Rows[0]["PerPoint"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["EverydayPrice"].ToString() != "")
+                {
+                    model.EverydayPrice = decimal.Parse(ds.Tables[0].Rows[0]["EverydayPrice"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["Price"].ToString() != "")
+                {
+                    model.Price = decimal.Parse(ds.Tables[0].Rows[0]["Price"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["Payment"].ToString() != "")
+                {
+                    model.Payment = int.Parse(ds.Tables[0].Rows[0]["Payment"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["CreateDate"].ToString() != "")
+                {
+                    model.CreateDate = DateTime.Parse(ds.Tables[0].Rows[0]["CreateDate"].ToString());
+                }
+                    model.Title = ds.Tables[0].Rows[0]["Title"].ToString();
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         /// <summary>
         /// 获得数据列表

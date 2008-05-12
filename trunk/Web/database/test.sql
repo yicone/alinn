@@ -46,7 +46,7 @@ SET IDENTITY_INSERT [AL_ZoneSize] OFF
 
 --向广告位表加入数据
 insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
-values('aF0A638B-43E1-1EFA-ADAB-9A8200C07659','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
+values('aF0A638B-43E1-1EFA-ADAB-9A8200C17659','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告2','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
 insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
 values('aF0A638B-43E1-1EFA-ADAB-9A8200C07658','936DA01F-9ABD-4D9D-80C7-02AF85C822A7','当客首页广告1','936DA01F-9ABD-4D9D-80C7-02AF85C822A8',1,1,1,1,1|2,'这是关键字',1,'这是介绍')
 insert into AL_Zone(ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,sizeid,transtype,classids,keywords,ZoneState,Description)
