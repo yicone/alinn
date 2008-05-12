@@ -14,17 +14,18 @@
 	        float:left;
         }
     </style>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
 	$(document).ready(function(){
 	    var iframe = $("iframe", parent.document);
-	    alert(iframe.css("height"));
+	    alert(iframe.attr("height"));
 	   iframe.css("height", $(document.body).attr("scrollHeight") + 30);	
 	   alert(iframe.css("height"));			
 	});
-    </script>
+    </script>--%>
 </head>
 <body>
     <div style="width: 100%; height: 100%">
+        <form runat="server">
         <table class="tlists" cellspacing="1" cellpadding="0" border="0" width="800px">
             <thead class="tcaption">
                 <tr>
@@ -48,13 +49,12 @@
                 </tr>
             </thead>
             <tbody>
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding">
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
+                    onitemcommand="DataList1_ItemCommand">
                     <ItemTemplate>
                         <tr class="tlist-item">
                             <td class="first" style="width: 95px; text-align: center;">
-                                <a target="_blank" href='<%# "ZoneView.aspx?zoneid=" + Eval("ZoneId") %>'>
-                                    <%# Eval("ZoneName") %>
-                                </a>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="ToZoneView"><%# Eval("ZoneName") %></asp:LinkButton>
                                 <br />
                                 <span class="gray">
                                     <%# Eval("SizeCode") %>
@@ -94,6 +94,7 @@
                         </tr>
                     </ItemTemplate>
                 </asp:DataList></tbody></table>
+                </form>
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="UP_GetZoneInfoExtForSiteManager" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
