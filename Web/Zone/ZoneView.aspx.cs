@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.Text;
 using HOT.Common;
 using HOT.BLL;
+using System.Diagnostics;
 
 namespace Web
 {
@@ -20,23 +21,17 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Request.QueryString["zoneid"]))
+            Guid zoneId;
+            if (Session["ZoneId"] == null || !GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
             {
-                MessageBox.Show(this, "错误的请求");
-                if (Request.UrlReferrer != null)
-                {
-                    Response.Redirect(Request.UrlReferrer.AbsolutePath, true);
-                }
-                else
-                {
-                    Response.Redirect("localhost:2189");
-                }
+                //throw new ArgumentNullException("ZoneId", "无效的页面请求！ZoneId='" + Session["ZoneId"].ToString() + "'");
             }
         }
 
         protected void FormView1_DataBound(object sender, EventArgs e)
         {
             FormViewRow row = FormView1.Row;
+            Debug.Assert(row != null, "DataChecker.sql,zone+site");
             DataRow dr = ((DataRowView)FormView1.DataItem).Row;
 
             //广告位信息
@@ -151,6 +146,12 @@ namespace Web
             int length = sb.Length;
             zoneClassString = (length > 0) ? sb.Remove(length - 1, 1).ToString() : "";
             return zoneClassString;
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+            Debug.Assert(Session["ZoneId"] != null, "请检查Page_Load中对参数的验证逻辑");
+            e.Command.Parameters[0].Value = Session["ZoneId"];
         }
     }
 }

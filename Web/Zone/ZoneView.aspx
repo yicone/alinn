@@ -39,9 +39,12 @@
 				</dl>
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource runat="server" id="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="UP_GetZoneInfoExtForZoneView" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource runat="server" id="SqlDataSource1" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="UP_GetZoneInfoExtForZoneView" 
+            SelectCommandType="StoredProcedure" onselecting="SqlDataSource1_Selecting">
             <SelectParameters>
-                <asp:QueryStringParameter Name="ZoneId" QueryStringField="zoneid" />
+                <asp:Parameter Name="ZoneId" />
             </SelectParameters>
         </asp:SqlDataSource>
         &nbsp;&nbsp;

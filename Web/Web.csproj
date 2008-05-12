@@ -56,6 +56,13 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\BuildImageCode.aspx.cs">
       <DependentUpon>BuildImageCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -336,6 +343,8 @@
     <Content Include="App_Themes\js\jquery\jquery.js" />
     <Content Include="App_Themes\TextZoneStyle.js" />
     <Content Include="App_Themes\ZoneDesigner.css" />
+    <None Include="database\DataChecker.sql" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="User\BuildImageCode.aspx" />
     <Content Include="User\GetPassWord.aspx" />
     <Content Include="images\icon\ico_lights.gif" />
@@ -379,8 +388,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5877</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>16384</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

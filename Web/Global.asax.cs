@@ -214,7 +214,7 @@ namespace HOT.Web
  
 		protected void Session_Start(Object sender, EventArgs e)
 		{
-			Session["Style"]=1;
+            //Session["Style"]=1;
 
             //实现动态域名切换，根据不同域名访问不同页面
             //string tempStr = Request.ServerVariables["SERVER_NAME"];
@@ -252,41 +252,37 @@ namespace HOT.Web
 		}
 		protected void Application_Error(Object sender, EventArgs e)
 		{
-			#region
-
-
-//			Exception ex=Server.GetLastError();		
-////			bool LogInFile=bool.Parse(ConfigurationManager.AppSettings.Get("LogInFile"));
-////			bool LogInDB=bool.Parse(ConfigurationManager.AppSettings.Get("LogInDB"));
-//			string LogLastDays=ConfigurationManager.AppSettings.Get("LogLastDays");
-//			string errmsg="";
-//			string Particular="";
-//			if(ex.InnerException!=null)
-//			{
-//				errmsg=ex.InnerException.Message;
-//				Particular=ex.InnerException.StackTrace;					
-//			}
-//			else
-//			{
-//				errmsg=ex.Message;
-//				Particular=ex.StackTrace;
-//			}
-////			if(LogInFile)
-////			{
-////				string filename=Server.MapPath("~/ErrorMessage.txt");					
-////				string strTime=DateTime.Now.ToString();
-////				StreamWriter sw=new StreamWriter(filename,true);
-////				sw.WriteLine(strTime+"："+errmsg+Particular);
-////				sw.Close();
-////			}			
-////			if(LogInDB)
-////			{				
-//				Assistant.AddLog(errmsg,Particular);
-//				Assistant.DelOverdueLog(LogLastDays);
-////			}
-//			Server.Transfer("ErrorMsg.aspx");
-
-
+			#region 保存错误日志
+            Exception ex = Server.GetLastError();
+            bool LogInFile = bool.Parse(ConfigurationManager.AppSettings.Get("LogInFile"));
+            //bool LogInDB=bool.Parse(ConfigurationManager.AppSettings.Get("LogInDB"));
+            //string LogLastDays = ConfigurationManager.AppSettings.Get("LogLastDays");
+            string errmsg = "";
+            string Particular = "";
+            if (ex.InnerException != null)
+            {
+                errmsg = ex.InnerException.Message;
+                Particular = ex.InnerException.StackTrace;
+            }
+            else
+            {
+                errmsg = ex.Message;
+                Particular = ex.StackTrace;
+            }
+            if (LogInFile)
+            {
+                string filename = Server.MapPath("~/ErrorMessage.txt");
+                string strTime = DateTime.Now.ToString();
+                StreamWriter sw = new StreamWriter(filename, true);
+                sw.WriteLine(strTime + "：" + errmsg + Particular);
+                sw.Close();
+            }			
+            //			if(LogInDB)
+            //			{				
+            //Assistant.AddLog(errmsg, Particular);
+            //Assistant.DelOverdueLog(LogLastDays);
+            //			}
+            //Server.Transfer("ErrorPage.aspx");
 			#endregion
 		}
 		protected void Session_End(Object sender, EventArgs e)
