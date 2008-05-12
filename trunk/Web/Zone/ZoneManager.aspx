@@ -49,12 +49,12 @@
                 </tr>
             </thead>
             <tbody>
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
-                    onitemcommand="DataList1_ItemCommand">
+                <asp:DataList ID="DataList1" runat="server" 
+                    OnItemCommand="DataList1_ItemCommand">
                     <ItemTemplate>
                         <tr class="tlist-item">
                             <td class="first" style="width: 95px; text-align: center;">
-                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="ToZoneView"><%# Eval("ZoneName") %></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="ToZoneView" CommandArgument='<%# Eval("ZoneId") %>'><%# Eval("ZoneName") %></asp:LinkButton>
                                 <br />
                                 <span class="gray">
                                     <%# Eval("SizeCode") %>

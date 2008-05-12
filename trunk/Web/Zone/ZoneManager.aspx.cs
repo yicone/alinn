@@ -17,6 +17,11 @@ namespace Web
         protected void Page_Load(object sender, EventArgs e)
         {
             ViewState["SiteId"] = Request.QueryString["siteid"];
+            if (!this.IsPostBack)
+            {
+                DataList1.DataSource = SqlDataSource1;
+                DataList1.DataBind();
+            }
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -34,12 +39,8 @@ namespace Web
                 LinkButton lb = e.Item.FindControl("LinkButton1") as LinkButton;
                 if (lb != null)
                 {
-                    if (e.Item.DataItem as DataRowView != null)
-                    {
-                        DataRow dr = (e.Item.DataItem as DataRowView).Row;
-                        Session["ZoneId"] = dr["ZoneId"].ToString();
-                        Server.Transfer("ZoneView.aspx", false);
-                    }
+                    Session["ZoneId"] = lb.CommandArgument;
+                    Server.Transfer("ZoneView.aspx", false);
                 }
             }
         }

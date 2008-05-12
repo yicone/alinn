@@ -1,6 +1,5 @@
 ﻿//定义TextZone对象
 function TextZone(wd, zoneSize, layoutType){
-    alert(this instanceof TextZone);
     this.window = wd;
     this.zoneSize = zoneSize;
     this.layoutType = layoutType;
@@ -10,7 +9,6 @@ function TextZone(wd, zoneSize, layoutType){
     this.outerDiv = $("#outer", wd);
     this.mainDiv = $("#main", this.window);
     this.maininnerDiv = $("#main_inner", this.window);
-    alert(this.maininnerDiv.attr("id"));
     this.maintitleDiv;
     this.maintextDiv;
     this.mainlinkDiv;
@@ -73,7 +71,6 @@ function TextZone(wd, zoneSize, layoutType){
             
             //修改文字广告牌
             var outerDiv = this.outerDiv;
-            alert(outerDiv.attr("id"));
             var mainDiv = this.mainDiv;
             this.changeDivSize(outerDiv, w, h);
             this.changeDivSize(mainDiv, w - 10, h - 10);
