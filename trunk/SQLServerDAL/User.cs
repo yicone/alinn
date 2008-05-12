@@ -20,7 +20,7 @@ namespace HOT.SQLServerDAL
         /// 是否存在该记录
         /// </summary>
         public bool Exists(string email)
-        {
+        {   
             //int rowsAffected;
             //SqlParameter[] parameters = {
             //        new SqlParameter("@Email", SqlDbType.VarChar,50)};
@@ -51,7 +51,7 @@ namespace HOT.SQLServerDAL
         /// </summary>
         public void Add(HOT.Model.User model)
         {
-            int rowsAffected;
+            //int rowsAffected;
             SqlParameter[] parameters = {
 					//new SqlParameter("@UserID", SqlDbType.VarChar,16),
 					new SqlParameter("@RoleID", SqlDbType.Int,4),
