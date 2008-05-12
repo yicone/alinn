@@ -1,0 +1,307 @@
+﻿
+
+/* ----------公用类-begin------*/
+
+body 
+{
+	font-size:12px;
+	MARGIN: 0px; 		
+	MARGIN-TOP: 0px; 	
+	SCROLLBAR-FACE-COLOR: #799ae1;
+	SCROLLBAR-HIGHLIGHT-COLOR: #799ae1; 
+	SCROLLBAR-SHADOW-COLOR: #799ae1;
+	SCROLLBAR-3DLIGHT-COLOR: #799ae1;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #aabfec;
+	SCROLLBAR-DARKSHADOW-COLOR: #799ae1;
+	width:100%; 	
+}
+
+
+td
+{
+	font-size:12px
+}
+
+
+a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #1639A9;
+	text-decoration: underline;
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+
+
+input {
+	font-size: 12px;
+	color: #333333;
+	padding-left: 3px;
+	padding-right: 3px;
+    padding-bottom:0px;
+}
+
+img
+{
+	border:none
+}
+
+.align_center
+{
+	 text-align:center;
+}
+
+.body1
+{
+	 text-align:center;   MARGIN: 0px; width:100%; padding:0px;
+}
+
+.body2
+
+{
+	 text-align:left;width:99%;
+}
+
+
+.border
+{
+    border: 1px solid #799ae1;
+}
+
+.topbg /*　标题背景单元格定义，白字深蓝底 */
+{
+    background:#799ae1;color:#FFFFFF; height:30px;
+/*  font-weight:bold;text-align: centen; */
+}
+
+.title
+{
+    background:#799ae1;
+    color: #ffffff;
+    font-weight: normal;
+}
+.title3{
+    width:80px;
+    background:url('titlebg4.gif');
+    line-height: 120%;
+    padding-top:2px;
+    cursor:hand;
+}
+.title4
+{
+    width:80px;
+    background:url('titlebg3.gif');
+    color: #ffffff;
+    font-weight: normal;
+    padding-top:2px;
+    cursor:hand;
+}
+
+.title5
+{
+    width:80px;
+    background:url('titlebg2.gif');
+    background-repeat:no-repeat;
+    line-height: 120%;
+    padding-top:2px;
+    cursor:hand;
+    border:0px;   
+}
+
+.title6
+{
+    width:80px;
+    background:url('titlebg1.gif');
+    background-repeat:no-repeat;
+    color: #ffffff;
+    font-weight: normal;
+    padding-top:2px;
+    cursor:hand;
+    border:0px;
+}
+.menu_title {
+	FONT-WEIGHT: bold;  COLOR: #0f42a6;  
+}
+.menu_title SPAN {
+	FONT-WEIGHT: bold; COLOR: #0f42a6; 
+}
+.menu_title2 {
+	FONT-WEIGHT: bold;  COLOR: #cc0000; 
+}
+.menu_title2 SPAN {
+	FONT-WEIGHT: bold;  COLOR: #cc0000; 
+}
+.menu_title A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+
+
+.menu_title2 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+
+
+.tdbg
+{
+    background:#f0f0f0;
+    line-height: 120%;
+}
+
+.tdbg5
+{
+    background:#E0EEF5;
+    line-height: 120%;
+}
+
+
+.tdbgmouseover
+{
+    background:#BFDFFF;
+    line-height: 120%;
+}
+.tdbgmouseout1
+{
+    background:#ffffff;
+    line-height: 120%;
+}
+.tdbgmouseout2
+{
+    background:#F3F3F3;
+    line-height: 120%;
+}
+
+.separator14pxWithClearBoth { height:14px; clear:both   }
+.separator4pxWithoutClear { height:4px   }
+
+
+/* ----------公用类-end-----------*/
+
+/*----------网页总体布局-------*/
+
+/* ===========Admin Begin====================*/
+
+/* ----------admin_leftMenu begin----------*/
+
+
+.admin_leftMenu_body
+{
+	BACKGROUND: #799ae1; MARGIN: 0px; 		
+	MARGIN-TOP: 0px; 	
+	SCROLLBAR-FACE-COLOR: #799ae1;
+	SCROLLBAR-HIGHLIGHT-COLOR: #799ae1; 
+	SCROLLBAR-SHADOW-COLOR: #799ae1;
+	SCROLLBAR-3DLIGHT-COLOR: #799ae1;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #aabfec;
+	SCROLLBAR-DARKSHADOW-COLOR: #799ae1;
+	text-align:center;
+	width:100%; 	
+     
+}
+
+
+.admin_leftMenu
+{
+	width:160px; text-align:center; text-align:center;
+}
+
+.admin_leftMenu_header
+{
+	width:100%; height:43px; background-image:url(admin_leftmenu_header.gif); background-repeat:no-repeat;
+}
+.admin_leftMenu_tilte
+{
+	width:100%;background-image:url(admin_leftmenu_title.gif);  border-top-style:solid; font-weight:bolder
+}
+.admin_leftMenu_tilte_quit
+{
+	width:100%;background-image:url(admin_leftmenu_title_quit.gif);  border-top-style:solid; font-weight:bolder
+}
+
+.admin_leftMenu_td
+{
+	width:100%;background-color:#FAFCFC; 
+}
+
+.admin_leftMenu_mouseOut
+{
+}
+.admin_leftMenu_mouseOver
+{
+	background-color:#E3EEEE
+}
+
+.admin_leftMenu_footer
+{
+	width:100%;
+	background-color: #d6dff7;
+
+}
+/* ----------admin_leftmenu-end----------*/
+
+/* ----------admin_top-end----------*/
+.admin_top_body
+{
+	 text-align:center;   MARGIN: 0px; 
+
+}
+.admin_top
+{
+	 text-align:center;  MARGIN: 0px; width:100%; background: #799ae1;
+
+}
+.admin_top_table
+{
+	 text-align:center;  MARGIN: 0px; width:100%; background: #799ae1; height:59.8px;
+}
+/* ----------admin_top-end----------*/
+
+
+/* ----------admin_begin-end----------*/
+
+
+.admin_main_body
+{
+	MARGIN: 0px; 		
+	MARGIN-TOP: 0px; 	
+	SCROLLBAR-FACE-COLOR: #799ae1;
+	SCROLLBAR-HIGHLIGHT-COLOR: #799ae1; 
+	SCROLLBAR-SHADOW-COLOR: #799ae1;
+	SCROLLBAR-3DLIGHT-COLOR: #799ae1;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #aabfec;
+	SCROLLBAR-DARKSHADOW-COLOR: #799ae1;
+	width:100%; 	
+}
+/* ----------admin_main-end----------*/
+
+
+
+
+
+/* ----------admin_User_AddUser-begin----------*/
+.Admin_User_AddUser
+{
+	 text-align:center;   MARGIN: 0px; width:100% ; border:5px; 
+}
+.Admin_User_AddUser_regMultiView
+{
+	 text-align:center; border:1px;width:100% ; 
+}
+/* ----------admin_User_AddUser-end----------*/
+
+/* ----------admin_User_UserManage-begin----------*/
+/* ----------admin_User_UserManage-end----------*/
+
+/* ----------shop_order_index----------*/
+.admin_shop_order_index_order_totalTable
+{
+	  background-color:#EFF3FB
+}
+
+/*===========Admin End===================*/
