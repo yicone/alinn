@@ -11,12 +11,6 @@
 namespace Web {
     
     
-    /// <summary>
-    /// ZoneManager class.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated class.
-    /// </remarks>
     public partial class ZoneManager {
         
         /// <summary>
