@@ -11,12 +11,6 @@
 namespace Web {
     
     
-    /// <summary>
-    /// Site class.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated class.
-    /// </remarks>
     public partial class Site {
         
         /// <summary>

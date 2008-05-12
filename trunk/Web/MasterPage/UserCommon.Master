@@ -11,6 +11,8 @@
     <script type="text/javascript" src="../App_Themes/common.js"></script>
     <link type="text/css" href="../App_Themes/alinn.css" />
     <link type="text/css" href="../App_Themes/myalinn.css" />
+    <asp:ContentPlaceHolder ID="_headContent" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -45,7 +47,7 @@
 <div class="help">［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
 </div>
 <div id="main">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <asp:ContentPlaceHolder ID="_mainContent" runat="server">
         </asp:ContentPlaceHolder>
 </div>
 <div id="bottom">

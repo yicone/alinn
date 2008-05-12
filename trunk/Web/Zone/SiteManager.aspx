@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager" masterpagefile="../MasterPage/UserCommon.Master" title="Untitled Page" %>
-<asp:Content id="Content1" runat="Server" contentplaceholderid="ContentPlaceHolder1">
+<asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div>
         <ul id="treelist">
             <li>

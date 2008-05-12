@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="ZoneView.aspx.cs" Inherits="Web.ZoneView"
     MasterPageFile="../MasterPage/UserCommon.Master" %>
-<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="ContentPlaceHolder1">
+<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
 	<div>
         <asp:FormView ID="FormView1" runat="server" Width="950px" DataSourceID="SqlDataSource1" OnDataBound="FormView1_DataBound">
             <ItemTemplate>

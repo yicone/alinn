@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Site.aspx.cs" Inherits="Web.Site" masterpagefile="../MasterPage/UserCommon.Master" %>
-<asp:Content id="Content1" runat="Server" contentplaceholderid="ContentPlaceHolder1">
+<asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div>
          <!--******************************增加页面代码********************************-->
 
