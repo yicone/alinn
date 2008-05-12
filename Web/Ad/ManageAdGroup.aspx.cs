@@ -58,9 +58,18 @@ namespace Web.User
                 HOT.Model.ZoneClass zcModel = new HOT.Model.ZoneClass();
                 HOT.Model.ZoneClass zcParentModel = new HOT.Model.ZoneClass();
                 zcModel = acBLL.GetModel(adgModel.Class);
-                zcParentModel = acBLL.GetModel(zcModel.ParentId);
+
                 Label labZoneClass = (Label)e.Item.FindControl("labZoneClass");
-                labZoneClass.Text = zcParentModel.ClassName.ToString() + " > " + zcModel.ClassName.ToString();
+                if (zcModel.ParentId == 0)
+                { 
+                    labZoneClass.Text = zcModel.ClassName.ToString(); 
+                }
+                else
+                {
+                    zcParentModel = acBLL.GetModel(zcModel.ParentId);
+                    labZoneClass.Text = zcParentModel.ClassName.ToString() + " > " + zcModel.ClassName.ToString();
+                }
+                
                 Label labKeyWords = (Label)e.Item.FindControl("labKeyWords");
                 labKeyWords.Text = adgModel.KeyWords.ToString();
                 if (guid.ToString().Length > 0)
@@ -118,9 +127,9 @@ namespace Web.User
                 imgImg.Visible = false;
                 labTitle.Visible = false;
                 labContent.Visible = false;
-                if (imgImg.ImageUrl.Length<=0)
+                if (imgImg.ImageUrl==null)
                 {
-                    imgImg.Visible = false;
+                    //imgImg.Visible = false;
                     labTitle.Visible = true;
                     labContent.Visible = true;
                 }

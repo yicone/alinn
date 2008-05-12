@@ -55,7 +55,6 @@ CREATE PROCEDURE UP_AL_Ad_ADD
 	)
 
 GO
-
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Ad_Update]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [dbo].[UP_AL_Ad_Update]
 GO

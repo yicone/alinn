@@ -28,6 +28,11 @@ namespace HOT.IDAL
 		/// 得到一个对象实体
 		/// </summary>
 		HOT.Model.Order GetModel(Guid OrderId);
+        /// <summary>
+        /// 得到一个对象实体BY UserId
+        /// powered by fzf 20080511
+        /// </summary>
+        HOT.Model.Order GetModelByUserId(Guid UserId);
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

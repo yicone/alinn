@@ -77,7 +77,14 @@ namespace HOT.BLL
 			}
 			return (HOT.Model.Order)objModel;
 		}
-
+        /// <summary>
+        /// 得到一个对象实体BY UserId
+        /// powered by fzf 20080511
+        /// </summary>
+        public HOT.Model.Order GetModelByUserId(Guid UserId)
+        {
+            return dal.GetModelByUserId(UserId);
+        }
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

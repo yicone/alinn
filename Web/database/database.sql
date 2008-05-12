@@ -53,11 +53,13 @@ CREATE TABLE [AL_Zone] (
 ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
 --广告位缩略图
+if exists (select * from sysobjects where id = OBJECT_ID('[AL_ZonePic]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [AL_ZonePic]
 CREATE TABLE [AL_ZonePic] (
-[PicId] [uniqueidentifier]  NOT NULL,
+[ZoneId] [uniqueidentifier] NOT NULL,
 [ZonePic] varchar(200) null
 )		
-ALTER TABLE [AL_ZonePic] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZonePic] PRIMARY KEY  NONCLUSTERED ( [PicId] )
+ALTER TABLE [AL_ZonePic] WITH NOCHECK ADD  CONSTRAINT [PK_AL_ZonePic] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )
 GO
 --广告组(广告主用来分类自己要投放广告的组）
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_AdGroup]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 

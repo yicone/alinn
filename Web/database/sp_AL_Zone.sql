@@ -62,6 +62,9 @@ CREATE PROCEDURE UP_AL_Zone_ADD
 	)VALUES(
 	@ZoneId,@UserId,@ZoneName,@SiteId,@MediaType,@InFirst,@SizeId,@TransType,@ClassIds,@Keywords,@NeedAuditing,@AllowAdultAd,@Description,@ZoneCode,@WeekPrice,@RecommendWeekPrice,@ZoneState, @ZoneStyle
 	)
+	---Powered by fzf 2008.05.12 01:52
+	Insert INTO AL_ZonePic(ZoneId,ZonePic)
+	values(@ZoneId,'images/nopic.jpg')
 
 GO
 

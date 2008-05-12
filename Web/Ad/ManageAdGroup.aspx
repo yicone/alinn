@@ -3,6 +3,9 @@
     &nbsp;<asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <Triggers> 
+<asp:PostBackTrigger ControlID="btnAddGroup" /> 
+</Triggers> 
         <ContentTemplate>
     <asp:Button ID="btnAddGroup" runat="server" Text="新增广告组" OnClick="btnAddGroup_Click" />
     <asp:DataList ID="dlAdGroup" runat="server" Width="100%" OnItemDataBound="dlAdGroup_ItemDataBound" OnItemCommand="dlAdGroup_ItemCommand" DataKeyField="AdGroupId">
@@ -35,12 +38,12 @@
                                     </tr>
                                     <tr>
                                         <td style="width: 100px">
-                                <asp:Label ID="labContent" runat="server" Text='<%# Bind("Content") %>' Width="100%"></asp:Label>
-                                <asp:Image ID="imgImg" ImageUrl='<%# Bind("Img") %>' runat="server" Height="20px" Width="100%" /></td>
+                                <asp:Label ID="labContent" runat="server" Text='<%# Bind("Content") %>' Width="100%" 
+                                                Height="19px"></asp:Label>
+                                <asp:Image ID="imgImg"  ImageUrl='<%# "~/AD/uploadimages/" + Eval("Img") %>' runat="server" 
+                                                Height="20px" Width="100%" />
+</td>
                                     </tr>
-                                    <tr>
-                                        <td style="width: 100px; height: 20px;">
-                                </td>
                                     </tr>
                                 </table>
                                 <asp:Button ID="btnDeleteAd" runat="server" Text="删除" CommandName="DeleteAd" />
