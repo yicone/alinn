@@ -1,0 +1,34 @@
+/* CSS Document */
+
+body,p,td,input,option,textarea,select{color:#333333;font:12px "Verdana"}
+body,form,ul,li,p,ol{margin:0;padding:0}
+body{background:#FFFFFF;text-align:center; margin-top:5px;}
+img{border:0}
+ul{list-style-type:none}
+table{text-align:left; border:solid 1px #669999;}
+#content{width:100%; height:auto; border-width:0px; background-color:#FFFFFF; text-align:center;}
+#top{height:60px; border-bottom-width:0px; width:1024px;}
+#logo{width:262px; height:60px; background-image:url(images/logo.jpg); margin-left:0px; float:left;}
+#topright{ width:762px;height:60px; background-color:#FFFFFF; margin-left:0px; float:left;}
+#login{width:600px; height:32px; float:right; margin-left:30px;}
+#login .login{height:20px; width:150px; float:left;margin-left:50px; margin-top:5px; text-align:left;}
+#login .profile{height:20px; width:400px;float:left;margin-left:0px; margin-top:5px;}
+#login .profile ul{float:left; margin-left:20px;}
+#login .profile ul li{float:left; width:75px; background-image:url(images/menubg.gif);}
+#menu{ width:500px; height:28px; float:left;}
+#menu ul{float:left;margin-left:0px; width:300px; margin-left:50px;}
+#menu ul li{ height:22px;float:left; margin-left:0px;width:50px; background-image:url(images/menubg.gif); padding-top:5px; border:  #669999 solid; border-width:1px;}
+#menu ul li:hover{ background-image:url(images/menubg2.gif);}
+
+#search{width:100%; height:44px; background-image:url(images/searchbg.jpg); margin-top:0px;}
+#search .search{width:300px;height:44px;float:left;}
+#search .help{width:200px;height:14px;float:left; margin-top:13px;}
+#search .help a{color:#FFFFFF; text-decoration:none;}
+/*网页中部内容部分开始*/
+#main{ text-align:left; width:1024px; clear:both;}
+/*网页底部定义开始*/
+#bottom{width:100%; height:169px;float:left; background-image:url(images/bottombg.jpg);}
+#bottom .about{float:left;}
+#bottom ul{ text-align:center; float:left; margin-left:300px; margin-top:20px; clear:both;}
+#bottom ul li{ float:left; width:80px;}
+#bottom .copyright{ clear:both; margin-top:10px;  margin-left:400px; float:left; width:200px;}
