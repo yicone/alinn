@@ -333,7 +333,7 @@ namespace HOT.SQLServerDAL
             parameters[0].Value = email;
             parameters[1].Value = passWord;
 
-            if (DbHelperSQL.ExecuteSql(sql, parameters) > 0)
+            if (DbHelperSQL.GetSingle(sql, parameters) != null)
                 return true;
 
             return false;
