@@ -116,6 +116,20 @@
     <Compile Include="Admin\Zone\ManageZone.aspx.designer.cs">
       <DependentUpon>ManageZone.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ad\AdList.aspx.cs">
+      <DependentUpon>AdList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ad\AdList.aspx.designer.cs">
+      <DependentUpon>AdList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ad\BuyAd.aspx.cs">
+      <DependentUpon>BuyAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ad\BuyAd.aspx.designer.cs">
+      <DependentUpon>BuyAd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,6 +373,8 @@
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
     <None Include="App_Themes\skin1\images\Thumbs.db" />
+    <Content Include="Ad\AdList.aspx" />
+    <Content Include="Ad\BuyAd.aspx" />
     <Content Include="App_Themes\skin1\Skin.skin" />
     <None Include="database\MY_AL_Ad.sql" />
     <None Include="database\MY_AL_AdGroup.sql" />
