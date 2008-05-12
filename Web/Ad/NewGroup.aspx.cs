@@ -49,7 +49,6 @@ namespace Web.User
                 return;
             }
             string GroupName = this.txtGroupName.Text;
-            string UserId = "";
             int Class = int.Parse(this.ddlClass2.SelectedValue);
             string KeyWords = this.txtKeyWords.Text;
 
