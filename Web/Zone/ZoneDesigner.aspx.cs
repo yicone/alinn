@@ -51,8 +51,8 @@ namespace Web
                 }
                 else
                 {
-                    Debug.Assert(Request.UrlReferrer != null);
-                    string lastPageUrl = Request.UrlReferrer.AbsolutePath;
+                    //Debug.Assert(Request.UrlReferrer != null);
+                    //string lastPageUrl = Request.UrlReferrer.AbsolutePath;
 
                     Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
                     string[] hiddenInputIds = new string[] { 

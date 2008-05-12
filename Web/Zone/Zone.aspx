@@ -1,9 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="Zone.aspx.cs" Inherits="Web.Zone" EnableViewStateMac="false"  %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Untitled Page</title>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="Zone.aspx.cs" Inherits="Web.Zone" EnableViewStateMac="false" masterpagefile="../MasterPage/UserCommon.Master" title="Untitled Page"  %>
+<asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <link type="text/css" href="../App_Themes/alinn.css" rel="stylesheet" />
     <link type="text/css" href="../App_Themes/myalinn.css" rel="stylesheet" />
     <script type="text/javascript" src="../App_Themes/common.js"></script>
@@ -20,8 +16,6 @@
         width:170px;
     }
     </style>
-</head>
-<body>
 
     <script type="text/javascript">
     $(document).ready(initForm);
@@ -222,7 +216,6 @@
     }
     </script>
 
-    <form id="form1" name="form1" method="post" action="ZoneCategory.aspx">
         <div class="content" style="margin: 20px auto; width: 950px;">
             <div class="sellbox">
                 <div class="form-section2">
@@ -411,6 +404,5 @@
         <input id="hdn_recommendweekprice" type="hidden" value="" name="hdn_recommendweekprice" runat="server" />
         <input id="hdn_needauditing" type="hidden" value="" name="hdn_needauditing" runat="server" />
         <input id="hdn_classids" type="hidden" value="" name="hdn_classids" runat="server" />
-    </form>
-</body>
-</html>
+    
+</asp:Content>
