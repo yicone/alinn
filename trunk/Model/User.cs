@@ -28,6 +28,7 @@ namespace HOT.Model
         private int? _islocked;
         private string _activecode;
         private DateTime? _regtime;
+        
         /// <summary>
         /// 
         /// </summary>
@@ -36,6 +37,8 @@ namespace HOT.Model
             set { _userid = value; }
             get { return _userid; }
         }
+
+        
         /// <summary>
         /// 
         /// </summary>
@@ -206,8 +209,8 @@ namespace HOT.Model
         private string _msn;
         private string _introducer;
         private string _activecode;
-        private DateTime _regtime;
-        
+        private string _regtime;
+        private string regIP;
         /// <summary>
         /// 
         /// </summary>
@@ -215,6 +218,12 @@ namespace HOT.Model
         {
             set { _userid = value; }
             get { return _userid; }
+        }
+
+        public string RegIP
+        {
+            set { regIP = value; }
+            get { return regIP; }
         }
         /// <summary>
         /// 
@@ -321,7 +330,7 @@ namespace HOT.Model
             get { return _activecode; }
         }
 
-        public DateTime RegTime
+        public string RegTime
         {
             get { return this._regtime; }
             set { _regtime = value; }

@@ -20,7 +20,7 @@ namespace HOT.SQLServerDAL
         /// 是否存在该记录
         /// </summary>
         public bool Exists(string email)
-        {   
+        {
             //int rowsAffected;
             //SqlParameter[] parameters = {
             //        new SqlParameter("@Email", SqlDbType.VarChar,50)};
@@ -37,10 +37,10 @@ namespace HOT.SQLServerDAL
             //}
             string sql = "select * from AL_UserTemp where email=@email select * from AL_User  where  email=@email ";
 
-            SqlParameter[] parameters = {new SqlParameter("@email",SqlDbType.VarChar, 50)};
+            SqlParameter[] parameters = { new SqlParameter("@email", SqlDbType.VarChar, 50) };
             parameters[0].Value = email;
 
-            if (DbHelperSQL.ExecuteSql(sql, parameters) == 1)
+            if (DbHelperSQL.GetSingle(sql, parameters) != null)
                 return true;
             else
                 return false;
@@ -100,7 +100,7 @@ namespace HOT.SQLServerDAL
 
         public void Add(HOT.Model.UserTemp model)
         {
-            string sql = "insert into AL_UserTemp(RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,ActiveCode) values(@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@ActiveCode)";
+            string sql = "insert into AL_UserTemp(RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,ActiveCode,RegIP,RegTime) values(@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@ActiveCode,@RegIP,@RegTime)";
 
             SqlParameter[] parameters = {
 					
@@ -116,8 +116,10 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@QQ", SqlDbType.NVarChar,50),
 					new SqlParameter("@Msn", SqlDbType.NVarChar,50),
 					new SqlParameter("@Introducer", SqlDbType.VarChar,16),
-					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16)};
-            
+					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16),
+                    new SqlParameter("@RegIP", SqlDbType.VarChar,16),
+                    new SqlParameter("@RegTime", SqlDbType.VarChar,16)};
+
             parameters[0].Value = model.RoleID;
             parameters[1].Value = model.Email;
             parameters[2].Value = model.NickName;
@@ -127,13 +129,15 @@ namespace HOT.SQLServerDAL
             parameters[6].Value = model.LinkMan;
             parameters[7].Value = model.Telephone;
             parameters[8].Value = model.Mobile;
-            parameters[9].Value = model.Mobile;
+            parameters[9].Value = model.QQ;
             parameters[10].Value = model.Msn;
             parameters[11].Value = model.Introducer;
             parameters[12].Value = model.ActiveCode;
+            parameters[13].Value = model.RegIP;
+            parameters[14].Value = model.RegTime;
 
             DbHelperSQL.ExecuteSql(sql, parameters);
-           
+
         }
 
         /// <summary>
@@ -273,7 +277,7 @@ namespace HOT.SQLServerDAL
             }
         }
 
-        
+
 
 
 
@@ -414,7 +418,7 @@ namespace HOT.SQLServerDAL
                 model.ActiveCode = ds.Tables[0].Rows[0]["ActiveCode"].ToString();
                 if (ds.Tables[0].Rows[0]["RegTime"].ToString() != "")
                 {
-                    model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
+                    model.RegTime = ds.Tables[0].Rows[0]["RegTime"].ToString();
                 }
                 return model;
             }
@@ -435,11 +439,11 @@ namespace HOT.SQLServerDAL
         }
 
 
-        public bool ExsitsIP(string userIP,DateTime dateTime)
+        public bool ExsitsIP(string userIP, DateTime dateTime)
         {
-            string sql = string.Format("select * from AL_UserTemp where RegTime={0} and RegIP='{1}'", dateTime.ToShortDateString(), userIP);
+            string sql = string.Format("select * from AL_UserTemp where RegTime='{0}' and RegIP='{1}'", dateTime.ToShortDateString(), userIP);
 
-            if (DbHelperSQL.ExecuteSql(sql) == 1)
+            if (DbHelperSQL.GetSingle(sql) != null)
                 return true;
             else
                 return false;
