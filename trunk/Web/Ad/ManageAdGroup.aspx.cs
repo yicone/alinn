@@ -125,18 +125,15 @@ namespace Web.User
                 Label labTitle = (Label)e.Item.FindControl("labTitle");
                 Label labContent = (Label)e.Item.FindControl("labContent");
                 imgImg.Visible = false;
-                labTitle.Visible = false;
                 labContent.Visible = false;
-                if (imgImg.ImageUrl==null)
+                if (imgImg.ImageUrl.Length<28)
                 {
-                    //imgImg.Visible = false;
-                    labTitle.Visible = true;
+                    imgImg.Visible = false;
                     labContent.Visible = true;
                 }
                 else
                 {
                     imgImg.Visible = true;
-                    labTitle.Visible = false;
                     labContent.Visible = false;
                 }
             }
@@ -162,6 +159,32 @@ namespace Web.User
                 //this.dlAD.DataBind();
                 dl.DataBind();
             }
+        }
+        /// <summary>
+        /// ·µ»Ø×´Ì¬ÐÅÏ¢
+        /// powered by fzf 22080513 00:59
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public static string adState(int i)
+        { 
+            string state="";
+            switch(i)
+            {
+                case 0:
+                    state="Î´ÉóºË";
+                    break;
+                case 1:
+                    state = "ÉóºËÍ¨¹ý";
+                    break;
+                case 2:
+                    state = "ÉóºË¾Ü¾ø";
+                    break;
+                default:
+                    state = "Î´Öª×´Ì¬";
+                    break;
+            }
+            return state;
         }
     }
 }

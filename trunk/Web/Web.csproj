@@ -134,6 +134,13 @@
     <Compile Include="Ad\BuyAd.aspx.designer.cs">
       <DependentUpon>BuyAd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ad\EditeGroup.aspx.cs">
+      <DependentUpon>EditeGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ad\EditeGroup.aspx.designer.cs">
+      <DependentUpon>EditeGroup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,6 +386,7 @@
     <None Include="App_Themes\skin1\images\Thumbs.db" />
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
+    <Content Include="Ad\EditeGroup.aspx" />
     <Content Include="App_Themes\skin1\Skin.skin" />
     <None Include="database\MY_AL_Ad.sql" />
     <None Include="database\MY_AL_AdGroup.sql" />

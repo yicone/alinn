@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/UserCommon.Master" AutoEventWireup="true" CodeBehind="ManageAdGroup.aspx.cs" Inherits="Web.User.ManageAdGroup" Title="无标题页" EnableEventValidation="false"%>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    &nbsp;<asp:ScriptManager ID="ScriptManager1" runat="server">
+<asp:Content ID="_mainContent" ContentPlaceHolderID="_mainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <Triggers> 
@@ -25,7 +25,8 @@
                         <table width="100%">
                             <tr>
                                 <td style="width: 800px; height: 39px;">
-                                    类目：<asp:Label ID="labZoneClass" runat="server" Text="Label" Width="150px"></asp:Label>，关键字：<asp:Label
+                                    类目：<asp:Label ID="labZoneClass" runat="server" Text="Label" Width="150px"></asp:Label>
+                                    关键字：<asp:Label
                                         ID="labKeyWords" runat="server" Width="300px"></asp:Label></td>
                             </tr>
                         </table>
@@ -34,7 +35,14 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td style="width: 100px; height: 21px">
-                                <asp:Label ID="labTitle" runat="server" Text='<%# Bind("TiTle") %>' Width="100%"></asp:Label></td>
+                                            <asp:Label ID="labState" runat="server" ForeColor="Red" Width="100%" Text=' <%# adState(Convert.ToInt32(Eval("AuditState")))%>'></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100px; height: 21px">
+                                            <asp:Label ID="labTitle" runat="server" Text='<%# Bind("TiTle") %>' 
+                                                Width="100%"></asp:Label>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="width: 100px">
@@ -44,6 +52,11 @@
                                                 Height="20px" Width="100%" />
 </td>
                                     </tr>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100px">
+                                            <asp:Label ID="labSize" runat="server" Width="100%" Text='<%# Eval("SizeCode") %>'></asp:Label>
+                                        </td>
                                     </tr>
                                 </table>
                                 <asp:Button ID="btnDeleteAd" runat="server" Text="删除" CommandName="DeleteAd" />
