@@ -6,7 +6,7 @@
     <link type="text/css" href="../App_Themes/myalinn.css" rel="stylesheet" />
 
     <script type="text/javascript" src="../App_Themes/jquery.js"></script>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
     <div>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -25,27 +25,60 @@
             </SelectParameters>
         </asp:SqlDataSource>
         <p />
-        <div style="width: 800px;">
-            <div>
-                <asp:DropDownList ID="ddlParentCategory" runat="server" DataSourceID="SqlDataSource1"
+                <br />
+                <br />
+                
+                <table width="100%" border="0">
+                  <tr>
+                    <td width="20%">&nbsp;</td>
+                    <td colspan="2"><br />
+					<asp:DropDownList ID="ddlParentCategory" runat="server" DataSourceID="SqlDataSource1"
                     DataTextField="ClassName" DataValueField="ClassId" Width="166px" AutoPostBack="True">
                 </asp:DropDownList>
-            </div>
-            <div>
-                <asp:ListBox ID="lbUnselect" runat="server" DataSourceID="SqlDataSource2" DataTextField="ClassName"
-                    DataValueField="ClassId" Height="196px" Width="170px"></asp:ListBox>
-            </div>
-        </div>
-        <div>
-            <asp:ListBox ID="lbSelected" runat="server" Height="195px" Width="176px"></asp:ListBox>
-            <asp:Button ID="btnSelect" runat="server" Text="btnSelect" OnClick="btnSelect_Click" />
-            设置广告位关键字：<asp:TextBox ID="txtKeywords" runat="server"></asp:TextBox><p />
-            <asp:Button ID="btnUnselect" runat="server" Text="btnUnselect" OnClick="btnUnselect_Click" />
-        </div>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        <input id="Button3" type="button" value="上一步" onclick="return doCheckAndBack();" />
-        <input id="Button2" type="button" value="下一步：获取广告位代码" onclick="return doCheckAndSubmit('none');" />
+                        <br />
+                <br />
+                </td>
+                    <td width="20%">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>
+					<asp:ListBox ID="lbUnselect" runat="server" DataSourceID="SqlDataSource2" DataTextField="ClassName"
+                    DataValueField="ClassId" Height="196px" Width="170px"></asp:ListBox> <asp:ListBox ID="lbSelected" runat="server" Height="195px" Width="176px"></asp:ListBox>
+                        <br />
+                      </td>
+                    <td> &nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><asp:Button ID="btnSelect" runat="server" Text="选择分类" OnClick="btnSelect_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnUnselect" runat="server" Text="取消选择" OnClick="btnUnselect_Click" />
+                        <br />
+                      </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+				   <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <br />
+                        设置广告位关键字：<asp:TextBox ID="txtKeywords" runat="server" Width="350px"></asp:TextBox>
+                        <br />
+                       </td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                  </tr>
+				  	<tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <br />
+                        <input id="Button3" type="button" value="上一步" onclick="return doCheckAndBack();" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="Button2" type="button" value="下一步：获取广告位代码" onclick="return doCheckAndSubmit('none');" /><br />
+                        <br />
+                        </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
     </div>
     <input id="returnzoneview" type="hidden" value="" name="returnzoneview" runat="server" />
     <input id="actioncontrol" type="hidden" value="addzone" name="actioncontrol" runat="server" />
