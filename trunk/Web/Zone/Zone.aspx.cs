@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using HOT.DBUtility;
 using System.Collections.Generic;
 using System.Diagnostics;
+using HOT.Common;
 
 //此页面需要添加的字段
 //广告位名称、广告内容、广告所在位置、选择广告位尺寸、选择计费类型、广告位描述
@@ -24,7 +25,11 @@ namespace Web
         {
             if (!Page.IsPostBack)
             {
-                Debug.Assert(Request.UrlReferrer != null);
+                Debug.Assert(Request.UrlReferrer != null, "ZoneView.aspx页面不允许直接访问！");
+
+                if (Request.UrlReferrer == null) 
+                    Response.Redirect("SiteManager.aspx", true);
+
                 string lastPageUrl = Request.UrlReferrer.AbsolutePath;
 
                 Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
@@ -44,6 +49,9 @@ namespace Web
 
                 if (lastPageUrl.Contains("ZoneCategory.aspx"))
                 {
+                    //修改未添加到数据库的Zone基本信息
+                    Debug.Assert(hdn_dbaction.Value == "new");
+
                     #region 实现数据在向导各页面中的连贯和一致性
                     //从ZoneCategory.aspx返回
                     foreach (KeyValuePair<string, HtmlInputHidden> kvp in dict)
@@ -62,12 +70,17 @@ namespace Web
                 }
                 else if (lastPageUrl.Contains("ZoneView.aspx"))
                 {
-                    //从ZoneView.aspx进入
+                    //修改Zone基本信息
                     if (!string.IsNullOrEmpty(Request.QueryString["zoneid"]))
                     {
+                        hdn_dbaction.Value = "update";
+
                         SqlParameter[] parameters = {
                         new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier) };
-                        parameters[0].Value = new Guid(Request.QueryString["zoneid"]);
+
+                        Guid zoneId;
+                        GuidHelper.TryParse(Session["ZoneId"].ToString(),  out zoneId);
+                        parameters[0].Value = zoneId;
                         SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);
                         while (sdr.Read())
                         {
@@ -81,17 +94,33 @@ namespace Web
                         }
                     }//end if
                 }//end if
-                else {
-                    Debug.Assert(false);
+                else if (lastPageUrl.Contains("SiteManager.aspx"))
+                {
+                    //新增广告位
+                    string action = Request.QueryString["action"];
+                    string strSiteId;
+                    if (action == "new")
+                    {
+                        hdn_dbaction.Value = "new";
+
+                        strSiteId = Request.QueryString["siteid"];
+                        hdn_siteid.Value = strSiteId;
+                    }
+                }
+                else
+                {
+                    Debug.Assert(false, "从未知页面请求Zone.aspx！");
                 }
             }
         }
 
         private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
         {
+            Control contentPlaceHolder = this.Master.FindControl("_mainContent");
+            
             foreach (string id in hiddenInputIds)
             {
-                Debug.Assert(FindControl(id) != null);
+                Debug.Assert(contentPlaceHolder.FindControl(id) != null, id + "尚不存在于页面中！");
 
                 dict.Add(id, FindControl(id) as HtmlInputHidden);
             }

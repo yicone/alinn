@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneDesigner.aspx.cs" Inherits="Web.ZoneDesigner"
-    EnableViewStateMac="false" MasterPageFile="../MasterPage/UserCommon.Master" Title="Untitled Page" %>
+    EnableViewStateMac="false" MasterPageFile="../MasterPage/UserCommon.Master" Title="设计广告位" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_headContent">
 
@@ -25,27 +25,11 @@
 
     <link href="../App_Themes/js/jquery/color_picker/color_picker.css" rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet" href="js/jquery/color_picker/color_picker-ie6.css" type="text/css" />
-    <link rel="stylesheet" href="js/jquery/color_picker/color_picker-ie7.css" type="text/css" />
+    <link rel="stylesheet" href="../App_Themes/js/jquery/color_picker/color_picker-ie6.css"
+        type="text/css" />
+    <link rel="stylesheet" href="../App_Themes/js/jquery/color_picker/color_picker-ie7.css"
+        type="text/css" />
     <link type="text/css" href="../App_Themes/ZoneDesigner.css" rel="stylesheet" />
-
-    <script type="text/javascript">
-            var _defaultStyle = new TextZoneStyle('["0000FF","000000","008000","E6E6E6","FFFFFF","FFFFFF",0,0,0]');
-            var _currentStyle = _defaultStyle;
-            
-function doCheckAndSubmit(){
-    //保存广告位信息
-		var kvp = {
-		    requestpage: "ZoneDesigner",
-		    zoneid: $("#hdn_zoneid").val(),
-		    zonestyle: _currentStyle.toJson()
-		}
-		
-		$.post("ZoneInfoSaver.aspx", kvp, function(result){
-			alert(result);
-		})
-}
-    </script>
 
     <style type="text/css">
         div.codess
@@ -263,6 +247,22 @@ function doCheckAndSubmit(){
     <input id="hdn_zonestyle" type="hidden" value="" name="hdn_zonestyle" runat="server" />
 
     <script type="text/javascript">
+            var _defaultStyle = new TextZoneStyle('["0000FF","000000","008000","E6E6E6","FFFFFF","FFFFFF",0,0,0]');
+            var _currentStyle = _defaultStyle;
+            
+            //保存广告位信息
+            function doCheckAndSubmit(){
+                    alert('修改的广告位Id' + $("#hdn_zoneid").val());
+		            var kvp = {
+		                requestpage: "ZoneDesigner",
+		                zoneid: $("#hdn_zoneid").val(),
+		                zonestyle: _currentStyle.toJson()
+		            }
+            		
+		            $.post("ZoneInfoSaver.aspx", kvp, function(result){
+			            alert(result);
+		            })
+            }
                             
             function myokfunc(field, color){
                 switch(field){

@@ -21,12 +21,12 @@ namespace Web
         {
             if (!Page.IsPostBack)
             {
-                string oper = Request.QueryString["oper"]; 
-                //hdn_returnpage.Value = Request.QueryString["returnpage"];
-                if (!String.IsNullOrEmpty(oper) && oper.ToLower() == "edit")
-                {
+                //string oper = Request.QueryString["oper"]; 
+                ////hdn_returnpage.Value = Request.QueryString["returnpage"];
+                //if (!String.IsNullOrEmpty(oper) && oper.ToLower() == "edit")
+                //{
                     //UNDONE: 参数验证交由客户端脚本处理
-                    hdn_zoneid.Value = Request.QueryString["zoneid"];
+                    hdn_zoneid.Value = Session["ZoneId"].ToString();
                     Guid zoneId = new Guid(hdn_zoneid.Value);
                    
                     SqlParameter[] parameters = {
@@ -48,27 +48,27 @@ namespace Web
                             hdn_zonesize.Value = zoneSize;
                         }
                     }
-                }
-                else
-                {
-                    //Debug.Assert(Request.UrlReferrer != null);
-                    //string lastPageUrl = Request.UrlReferrer.AbsolutePath;
+                //}
+                //else
+                //{
+                //    //Debug.Assert(Request.UrlReferrer != null);
+                //    //string lastPageUrl = Request.UrlReferrer.AbsolutePath;
 
-                    Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
-                    string[] hiddenInputIds = new string[] { 
-                        "hdn_zoneid", "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
-                        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
-                        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
+                //    Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
+                //    string[] hiddenInputIds = new string[] { 
+                //        "hdn_zoneid", "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
+                //        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
+                //        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
 
-                    string[] dbFields = new string[] { 
-                        "ZoneId", "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
-                        "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
-                        "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
+                //    string[] dbFields = new string[] { 
+                //        "ZoneId", "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
+                //        "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
+                //        "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
 
-                    Debug.Assert(hiddenInputIds.Length == dbFields.Length);
+                //    Debug.Assert(hiddenInputIds.Length == dbFields.Length);
 
-                    InitHiddenParamDict(hiddenInputIds, dict);
-                }
+                //    //InitHiddenParamDict(hiddenInputIds, dict);
+                //}
             }
         }
 
@@ -76,7 +76,7 @@ namespace Web
         {
             foreach (string id in hiddenInputIds)
             {
-                Debug.Assert(FindControl(id) != null);
+                Debug.Assert(FindControl(id) != null, id);
 
                 dict.Add(id, FindControl(id) as HtmlInputHidden);
             }
