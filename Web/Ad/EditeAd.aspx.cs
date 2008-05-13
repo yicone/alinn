@@ -71,11 +71,11 @@ namespace Web.Ad
 	model.SizeId=SizeId;
 	model.AuditState=0;
     model.Img = Img;
+    model.AdId = new Guid(this.Request.QueryString["AdId"].ToString());
 	HOT.BLL.Ad bll=new HOT.BLL.Ad();
 	bll.Update(model);
     //提示添加成功，并且转向上一页面
-    string name = Request.UrlReferrer.ToString();
-    MessageBox.ShowAndRedirect(this.Page, "修改成功", name);
+    MessageBox.ShowAndRedirect(this.Page, "修改成功", "ManageAdGroup.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ create procedure MY_AL_ZonePage
 @docount bit,
 @strWhere  NVarChar(500))
 as
-declare @sql varchar(1000)
+declare @sql varchar(2000)
 if(@docount=1)
 set @sql='
 select count(AL_Zone.ZoneId) from AL_Zone left join AL_ZonePic on AL_ZonePic.ZoneId=AL_Zone.ZoneId
@@ -18,7 +18,7 @@ else
 set @sql='
 begin
  with temptbl as (
-SELECT ROW_NUMBER() OVER (ORDER BY ZoneId desc)AS Row,AL_Zone.ZoneId,AL_Zone.ZoneName,AL_Zone.SiteId,AL_Zone.UserId
+SELECT ROW_NUMBER() OVER (Order by AL_Zone.ZoneId) AS Row,AL_Zone.ZoneId,AL_Zone.ZoneName,AL_Zone.SiteId,AL_Zone.UserId
 ,AL_Zone.MediaType,AL_Zone.InFirst,AL_Zone.SizeId,AL_Zone.TransType,AL_Zone.ClassIds,AL_Zone.Keywords
 ,AL_Zone.NeedAuditing,AL_Zone.AllowAdultAd,AL_Zone.Description,AL_Zone.RecommendWeekPrice,AL_Zone.WeekPrice,AL_Site.SiteName,AL_ZonePic.ZonePic
 ,AL_User.QQ
@@ -33,7 +33,7 @@ left join AL_ZoneSize on AL_ZoneSize.SizeId=AL_Zone.SizeId
  SELECT * FROM temptbl where Row between '+cast(@startIndex as varchar(10))+' and '+cast(@endIndex as varchar(10))+
 ' end'
 exec(@sql)
-
+exec MY_AL_ZonePage 1,10,0,' Where AL_Zone.ZoneState=1'
 
 
 --实现对广告合法性的验证并更改验证字段值
@@ -51,4 +51,5 @@ begin
 	if((select inserted.EndDate from inserted)<getdate())
 		update AL_Order set AuditState=3 where OrderId=(select Inserted.OrderId from Inserted)
 end
+
 
