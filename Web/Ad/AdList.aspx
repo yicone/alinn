@@ -4,12 +4,12 @@
    <div>
        <table width="100%">
            <tr>
-               <td style="width: 30%">
+               <td style="width: 30%; text-align: center;">
        <asp:RadioButtonList ID="rblInFirst" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
            <asp:ListItem Value=" And AL_Zone.InFirst=1">在首页</asp:ListItem>
            <asp:ListItem Value=" ">不要求</asp:ListItem>
        </asp:RadioButtonList></td>
-               <td style="width: 100px">
+               <td style="width: 50px">
                    <asp:DropDownList ID="ddlPricePerK" runat="server" AutoPostBack="True" Width="144px">
                        <asp:ListItem Selected="True" Value=" ">千人访问成本</asp:ListItem>
                        <asp:ListItem Value=" and ((AL_Zone.WeekPrice*7000)/AL_Site.VistersNum)&lt;2">2元以下</asp:ListItem>
@@ -19,7 +19,18 @@
                        <asp:ListItem Value=" and ((AL_Zone.WeekPrice*7000)/AL_Site.VistersNum)&gt;20">大于20元</asp:ListItem>
                    </asp:DropDownList></td>
                <td style="width: 100px">
-               </td>
+                       <asp:DropDownList ID="ddlVisteNumPerDay" runat="server" AutoPostBack="True" Width="144px">
+                       <asp:ListItem Selected="True" Value=" ">日均访问人数</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&lt;100">100以下</asp:ListItem>
+                       <asp:ListItem Value="and VistersNum&gt;=100 and VistersNum&lt;200">100-200人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;=200 and VistersNum&lt;500">200－500人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;=500 and VistersNum&lt;=1000">500－1000人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;1000 and VistersNum&lt;=1000">1000－3000人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;3000 and VistersNum&lt;=10000">3000－10000人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;10000 and VistersNum&lt;=100000">10000－100000人</asp:ListItem>
+                       <asp:ListItem Value=" and VistersNum&gt;100000">100000以上</asp:ListItem>
+                   </asp:DropDownList>
+                   </td>
                <td style="width: 100px">
                </td>
            </tr>

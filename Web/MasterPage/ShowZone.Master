@@ -8,10 +8,63 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div id="content">
+<div id="top">
+<div id="top1">
+<div id="logo"></div>
+<div id="topright">
+<div id="login">
+<div class="login">欢迎您！ [<a href="#" target="_blank">登录</a>]或[<a href="#" target="_blank">注册</a>]</div>
+<div class="profile">
+<ul>
+<li>我的阿里妈妈</li>
+<li>QQ</li>
+<li>财富通</li>
+</ul>
+</div>
+</div>
+<div id="menu">
+<ul>
+<li>买广告</li>
+<li>卖广告</li>
+<li>网站推广</li>
+<li>社区</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="search">
+<div class="search">搜索框</div>
+<div class="help">［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
+</div>
+<div id="main">
+        <asp:ContentPlaceHolder ID="_mainContent" runat="server">
         </asp:ContentPlaceHolder>
+</div>
+<div id="bottom">
+<div class="about">
+    <ul>
+        <li><a href="#" target="_blank">
+            关于我们</a> </li>
+        <li><a href="#" 
+                target="_blank">客户中心</a> </li>
+        <li><a href="http://www.alimama.com/membersvc/about/join-3-1.htm" target="_blank">
+            诚征英才</a> </li>
+        <li><a href="#" 
+                target="_blank">联系我们</a> </li>
+        <li><a href="#" target="_blank">
+            版权说明</a> </li>
+    </ul>
     </div>
+    <div class="copyright">
+        Copyright 2007-2008, 版权所有 alinainai.com.cn.
+        <br />
+    </div>
+
+</div>
+</div>
     </form>
 </body>
 </html>
+
