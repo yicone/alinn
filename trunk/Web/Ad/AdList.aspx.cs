@@ -17,7 +17,8 @@ namespace Web.Ad
         string Where = " Where AL_Zone.ZoneState=1";
         protected void Page_Load(object sender, EventArgs e)
         {
-            Where += this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString();
+            this.Page.Title = "广告列表";
+            Where += this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString()+this.ddlVisteNumPerDay.SelectedValue.ToString();
             HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
             //if (!IsPostBack)
             //{

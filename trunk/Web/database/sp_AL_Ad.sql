@@ -169,6 +169,9 @@ CREATE PROCEDURE UP_AL_Ad_GetListWhere
 @strWhere nvarchar (300)
  AS 
 DECLARE @sql nvarchar(1000)
-set @sql='SELECT AdId,AdGroupId,IsText,Title,Content,Url,UrlText,SizeId,AuditState,Img FROM AL_Ad WHERE AdGroupId='''+@strWhere +''''
+set @sql='SELECT AL_Ad.AdId,AL_Ad.AdGroupId,AL_Ad.IsText,AL_Ad.Title,AL_Ad.Content,AL_Ad.Url,AL_Ad.UrlText,AL_Ad.AuditState,AL_Ad.Img,AL_ZoneSize.SizeCode FROM AL_Ad Left join AL_ZoneSize on AL_ZoneSize.SizeId=AL_Ad.SizeId WHERE AL_Ad.AdGroupId='''+@strWhere +''''
 exec(@sql)
 GO
+
+
+select * from al_ad

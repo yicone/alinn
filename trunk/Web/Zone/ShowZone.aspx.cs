@@ -15,7 +15,9 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
+            Guid zoneId = new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
+            ShowZoneInfo(zoneId);
         }
 
         protected void btnBuyAd_Click(object sender, EventArgs e)
@@ -23,5 +25,13 @@ namespace Web
             Guid guid =new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
             Response.Redirect("../Ad/BuyAd.aspx?ZoneId=" + guid.ToString());
         }
+        protected void ShowZoneInfo(Guid zoneId)
+        {
+            HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+            HOT.Model.Zone zModel = new HOT.Model.Zone();
+            zModel = zBLL.GetModel(zoneId);
+            this.labZoneName.Text = zModel.ZoneName;
+        }
+
     }
 }

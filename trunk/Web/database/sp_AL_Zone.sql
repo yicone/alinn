@@ -133,7 +133,8 @@ CREATE PROCEDURE UP_AL_Zone_GetModel
 @ZoneId uniqueidentifier
  AS 
 	SELECT 
-	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState,ZoneStyle
+	AL_Zone.ZoneId,AL_Zone.UserId,AL_Zone.ZoneName,AL_Zone.SiteId,AL_Zone.MediaType,AL_Zone.InFirst,AL_Zone.SizeId,AL_Zone.TransType,AL_Zone.ClassIds,AL_Zone.Keywords,AL_Zone.NeedAuditing,AL_Zone.AllowAdultAd,AL_Zone.Description,AL_Zone.ZoneCode,AL_Zone.WeekPrice,AL_Zone.RecommendWeekPrice,AL_Zone.ZoneState,AL_Zone.ZoneStyle
+	
 	 FROM AL_Zone
 	 WHERE ZoneId=@ZoneId 
 
