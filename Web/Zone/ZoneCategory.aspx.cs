@@ -153,9 +153,11 @@ namespace Web
 
         private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
         {
+            Control contentPlaceHolder = this.Master.FindControl("_mainContent");
+
             foreach (string id in hiddenInputIds)
             {
-                Debug.Assert(FindControl(id) != null);
+                Debug.Assert(contentPlaceHolder.FindControl(id) != null, id + "尚不存在于页面中！");
 
                 dict.Add(id, FindControl(id) as HtmlInputHidden);
             }

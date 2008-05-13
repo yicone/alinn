@@ -17,11 +17,6 @@ namespace Web
         protected void Page_Load(object sender, EventArgs e)
         {
             ViewState["SiteId"] = Request.QueryString["siteid"];
-            if (!this.IsPostBack)
-            {
-                DataList1.DataSource = SqlDataSource1;
-                DataList1.DataBind();
-            }
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -34,14 +29,50 @@ namespace Web
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            if (e.CommandName == "ToZoneView")
+            switch (e.CommandName)
             {
-                LinkButton lb = e.Item.FindControl("LinkButton1") as LinkButton;
-                if (lb != null)
-                {
-                    Session["ZoneId"] = lb.CommandArgument;
-                    Server.Transfer("ZoneView.aspx", false);
-                }
+                case "ToZoneView1":
+                    {
+                        LinkButton lb = e.Item.FindControl("LinkButton1") as LinkButton;
+                        if (lb != null)
+                        {
+                            Session["ZoneId"] = lb.CommandArgument;
+                            Response.Write("<script>window.open('ZoneView.aspx','_top');</script>");
+                        }
+                        break;
+                    }
+                case "ToZoneView2":
+                    {
+                        LinkButton lb = e.Item.FindControl("LinkButton3") as LinkButton;
+                        if (lb != null)
+                        {
+                            Session["ZoneId"] = lb.CommandArgument;
+                            Response.Write("<script>window.open('ZoneView.aspx','_top');</script>");
+                        }
+                        break;
+                    }
+                case "ToZoneDesigner":
+                    {
+                        LinkButton lb = e.Item.FindControl("LinkButton4") as LinkButton;
+                        if (lb != null)
+                        {
+                            Session["ZoneId"] = lb.CommandArgument;
+                            Response.Write("<script>window.open('ZoneDesigner.aspx','_top');</script>");
+                        }
+                        break;
+                    }
+                case "ToZoneSellDetail":
+                    {
+                        LinkButton lb = e.Item.FindControl("LinkButton2") as LinkButton;
+                        if (lb != null)
+                        {
+                            Session["ZoneId"] = lb.CommandArgument;
+                            Response.Write("<script>window.open('../Report/ZoneSellDetail.aspx','_top');</script>");
+                        }
+                        break;
+                    }
+                default:
+                    break;
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Web
             Guid zoneId;
             if (Session["ZoneId"] == null || !GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
             {
-                //throw new ArgumentNullException("ZoneId", "无效的页面请求！ZoneId='" + Session["ZoneId"].ToString() + "'");
+                throw new ArgumentNullException("ZoneId", "无效的页面请求！ZoneId='" + Session["ZoneId"] + "'");
             }
         }
 

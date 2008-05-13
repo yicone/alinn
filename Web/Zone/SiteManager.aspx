@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager" masterpagefile="../MasterPage/UserCommon.Master" title="Untitled Page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager" masterpagefile="../MasterPage/UserCommon.Master" title="网站管理" %>
 <asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div>
         <ul id="treelist">
@@ -8,7 +8,11 @@
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding">
                     <ItemTemplate>
                         <div class="title-bar" style="width: 950px">
-                            <asp:LinkButton Text="阿斯" runat="server" ID="df">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton></p>
+                            <asp:LinkButton runat="server" ID="lbViewSite">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
+                            <span style="width:400px" ></span><asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "~/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>' >在此网站下新增广告位</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "~/Zone/Site.aspx?action=change&siteid=" + Eval("SiteId")%>' >修改</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/Zone/Site.aspx?action=del&siteid=" + Eval("SiteId")%>' >删除</asp:LinkButton>
+                            </p>
                         </div>
                         <iframe id='<%# "siteiframe" + Eval("SiteId") %>' onload="frameResize(this.id);" width="100%" scrolling="no" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
                             <!--读取广告位列表-->

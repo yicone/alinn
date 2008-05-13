@@ -9,8 +9,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="../App_Themes/jquery.js"></script>
     <script type="text/javascript" src="../App_Themes/common.js"></script>
-    <link type="text/css" href="../App_Themes/alinn.css" />
-    <link type="text/css" href="../App_Themes/myalinn.css" />
+    <link type="text/css" href="../App_Themes/alinn.css" rel="Stylesheet" />
+    <link type="text/css" href="../App_Themes/myalinn.css"  rel="Stylesheet" />
     <asp:ContentPlaceHolder ID="_headContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
