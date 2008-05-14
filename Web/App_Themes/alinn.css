@@ -1108,3 +1108,9 @@ body {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+.clearing
+{
+    border-top: 1px solid transparent !important;
+    clear: both;
+    visibility: hidden;
+}

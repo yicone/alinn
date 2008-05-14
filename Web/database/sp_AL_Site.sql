@@ -68,7 +68,7 @@ GO
 ------------------------------------
 CREATE PROCEDURE UP_AL_Site_Update
 @SiteId uniqueidentifier,
-@UserId varchar(16),
+@UserId uniqueidentifier,
 @SiteName nvarchar(64),
 @SiteUrl nvarchar(256),
 @SiteClass int,

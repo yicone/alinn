@@ -21,21 +21,21 @@ namespace Web
             Debug.Assert(Request.UrlReferrer != null, "不能获取向此页发送POST的页面名称！");
 
             string lastPageUrl = Request.UrlReferrer.AbsolutePath;
-
-            Guid zoneId = new Guid();
-            Debug.Assert(Session["ZoneId"] != null, "没有从Session中得到ZoneId！");
-
-            bool correct = GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId);
-            Debug.Assert(correct && zoneId != Guid.Empty, "来自Session的ZoneId格式异常！");
-
+            HOT.BLL.Zone zoneManager = new HOT.BLL.Zone();
+            HOT.Model.Zone model;
+            Guid zoneId;
             string dbAction = Request.Form["dbaction"];
 
-            HOT.BLL.Zone zoneManager = new HOT.BLL.Zone();
-            HOT.Model.Zone model = (dbAction != "new") ? zoneManager.GetModel(zoneId) : new HOT.Model.Zone();
+            //NOTE!解决ZoneCategory提交修改时的问题
+            if (dbAction == "new" && Session["ZoneId"] != null && GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId) && zoneId != Guid.Empty)
+            {
+                dbAction = "update";
+            }
 
             if (dbAction == "new")
             {
                 Debug.Assert(lastPageUrl.Contains("ZoneCategory.aspx"));
+                model = new HOT.Model.Zone();
 
                 model.UserId = Guid.NewGuid();              //UNDONE:!!!从cookie中取
                 model.SiteId = new Guid(Request.Form["siteid"]);
@@ -58,12 +58,20 @@ namespace Web
                 zoneManager.Add(model);
                 #endregion
                 zoneId = model.ZoneId;
+                //note!
+                Session["ZoneId"] = zoneId.ToString();
 
                 Response.Write(zoneId.ToString());
                 Response.End(); 
             }
             else if (dbAction == "update")
             {
+                Debug.Assert(Session["ZoneId"] != null, "没有从Session中得到ZoneId！");
+
+                bool correct = GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId);
+                Debug.Assert(correct && zoneId != Guid.Empty, "来自Session的ZoneId格式异常！");
+
+                model = zoneManager.GetModel(zoneId);
                 //zonestate不在此处修改
                 //allowadultad, recommendweekprice暂时不用
 
@@ -118,6 +126,11 @@ namespace Web
             }
             else if (dbAction == "del")
             {
+                Debug.Assert(Session["ZoneId"] != null, "没有从Session中得到ZoneId！");
+
+                bool correct = GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId);
+                Debug.Assert(correct && zoneId != Guid.Empty, "来自Session的ZoneId格式异常！");
+
                 zoneManager.Delete(zoneId);
 
                 Response.Write(zoneId.ToString());

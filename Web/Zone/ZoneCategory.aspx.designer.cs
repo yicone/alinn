@@ -95,22 +95,13 @@ namespace Web {
         protected global::System.Web.UI.WebControls.TextBox txtKeywords;
         
         /// <summary>
-        /// returnzoneview control.
+        /// hdn_dbaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden returnzoneview;
-        
-        /// <summary>
-        /// actioncontrol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden actioncontrol;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_dbaction;
         
         /// <summary>
         /// hdn_siteid control.
@@ -174,15 +165,6 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_zonesize;
-        
-        /// <summary>
-        /// hdn_zoneid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_zoneid;
         
         /// <summary>
         /// hdn_zonename control.

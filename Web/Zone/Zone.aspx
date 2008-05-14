@@ -263,7 +263,7 @@
 		}
 		
 		if($("#<%= hdn_dbaction.ClientID %>").val() == "update"){
-		    $("#btnCheck < span").text("提交");
+		    $("#btnCheck > span").text("提交");
 		}
 	}
 		
@@ -406,7 +406,6 @@
             if (checkForm()) {
                 //保存广告位信息
 		        var kvp = {
-		            zoneid: $("#<%= hdn_zoneid.ClientID %>").val(),
 			        zonename: $("#<%= hdn_zonename.ClientID %>").val(),
 			        siteid: $("#<%= hdn_siteid.ClientID %>").val(),
 			        mediatype: $("#<%= hdn_mediatype.ClientID %>").val(),
@@ -417,7 +416,8 @@
     //			    keywords: $("#<%= hdn_keywords.ClientID %>").val(),
 			        needauditing: $("#<%= hdn_needauditing.ClientID %>").val(),
 			        zonedesp: $("#<%= hdn_zonedesp.ClientID %>").val(),
-			        weekprice: $("#<%= hdn_weekprice.ClientID %>").val()
+			        weekprice: $("#<%= hdn_weekprice.ClientID %>").val(),
+			        dbaction: $("#<%= hdn_dbaction.ClientID %>").val()
 		        }
         		
 		        var zoneId;
@@ -432,7 +432,7 @@
 		        });
     		    
 		        //如果修改成功
-		        document.location = "SiteManager.aspx";
+		        document.location = "ZoneView.aspx";
 		        return true;
 		    } else {
 		        return false;

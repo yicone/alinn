@@ -18,13 +18,15 @@ namespace Web
         {
             //TODO:remove test code here
 
-
-            Page.DataBind();
+            if (!Page.IsPostBack)
+            {
+                DataList1.DataBind();
+            }
         }
 
         protected void btnAddSite_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Site.aspx");
+            Response.Redirect("Site.aspx?action=new");
         }
 
         private int _zoneCount = 1;
@@ -63,6 +65,17 @@ namespace Web
                     return "审核未通过";
                 default:
                     return "";
+            }
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "DelSite")
+            {
+                string strSiteId = e.CommandArgument.ToString();
+                HOT.BLL.Site siteManager = new HOT.BLL.Site();
+                siteManager.Delete(new Guid(strSiteId));
+                DataList1.DataBind();
             }
         }
     }

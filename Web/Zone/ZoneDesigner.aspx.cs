@@ -12,6 +12,7 @@ using HOT.DBUtility;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Diagnostics;
+using HOT.Common;
 
 namespace Web
 {
@@ -19,16 +20,24 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            #region MyRegion
+            Debug.Assert(Session["ZoneId"] != null);
+
+            if (Session["ZoneId"] == null)
+                Response.Redirect("SiteManager.aspx");
+            #endregion
+
             if (!Page.IsPostBack)
             {
-                //string oper = Request.QueryString["oper"]; 
-                ////hdn_returnpage.Value = Request.QueryString["returnpage"];
-                //if (!String.IsNullOrEmpty(oper) && oper.ToLower() == "edit")
-                //{
-                    //UNDONE: 参数验证交由客户端脚本处理
-                    hdn_zoneid.Value = Session["ZoneId"].ToString();
-                    Guid zoneId = new Guid(hdn_zoneid.Value);
-                   
+                //将ZoneId传递给JS使用（降低了安全性）
+                hdn_zoneid.Value = Session["ZoneId"].ToString();
+
+                hdn_dbaction.Value = "update";
+                //UNDONE: 参数验证交由客户端脚本处理
+                
+                Guid zoneId;
+                if (GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
+                {
                     SqlParameter[] parameters = {
                         new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier)
                     };
@@ -39,7 +48,7 @@ namespace Web
                         string zoneStyle = sdr["zonestyle"].ToString();
                         string zoneSize = sdr["sizecode"].ToString();
 
-                        if(zoneStyle != "")
+                        if (zoneStyle != "")
                         {
                             hdn_zonestyle.Value = zoneStyle;
                         }
@@ -48,38 +57,8 @@ namespace Web
                             hdn_zonesize.Value = zoneSize;
                         }
                     }
-                //}
-                //else
-                //{
-                //    //Debug.Assert(Request.UrlReferrer != null);
-                //    //string lastPageUrl = Request.UrlReferrer.AbsolutePath;
-
-                //    Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
-                //    string[] hiddenInputIds = new string[] { 
-                //        "hdn_zoneid", "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
-                //        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
-                //        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
-
-                //    string[] dbFields = new string[] { 
-                //        "ZoneId", "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
-                //        "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
-                //        "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
-
-                //    Debug.Assert(hiddenInputIds.Length == dbFields.Length);
-
-                //    //InitHiddenParamDict(hiddenInputIds, dict);
-                //}
-            }
-        }
-
-        private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
-        {
-            foreach (string id in hiddenInputIds)
-            {
-                Debug.Assert(FindControl(id) != null, id);
-
-                dict.Add(id, FindControl(id) as HtmlInputHidden);
-            }
+                }//end if
+            }//end if
         }
     }
 }

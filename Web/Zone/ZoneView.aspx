@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="ZoneView.aspx.cs" Inherits="Web.ZoneView"
+﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="ZoneView.aspx.cs" Inherits="Web.ZoneView" EnableViewStateMac="false" 
     MasterPageFile="../MasterPage/UserCommon.Master" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
 	<div>

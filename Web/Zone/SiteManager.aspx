@@ -5,16 +5,17 @@
             <li>
                 <asp:Button ID="btnAddSite" runat="server" Text="新增网站" OnClick="btnAddSite_Click" /></li>
             <li>
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding">
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
+                    OnDataBinding="DataList1_DataBinding" onitemcommand="DataList1_ItemCommand">
                     <ItemTemplate>
                         <div class="title-bar" style="width: 950px">
                             <asp:LinkButton runat="server" ID="lbViewSite">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
                             <span style="width:400px" ></span><asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "~/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>' >在此网站下新增广告位</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "~/Zone/Site.aspx?action=change&siteid=" + Eval("SiteId")%>' >修改</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/Zone/Site.aspx?action=del&siteid=" + Eval("SiteId")%>' >删除</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "~/Zone/Site.aspx?action=update&siteid=" + Eval("SiteId")%>' >修改</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" CommandName="DelSite" CommandArgument='<%# Eval("SiteId") %>'>删除</asp:LinkButton>
                             </p>
                         </div>
-                        <iframe id='<%# "siteiframe" + Eval("SiteId") %>' onload="frameResize(this.id);" width="100%" scrolling="no" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
+                        <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
                             <!--读取广告位列表-->
                         </iframe>
                     </ItemTemplate>
@@ -37,6 +38,18 @@
 	    var scrollHeight = innerDoc.body.scrollHeight;
 	    $("#" + frameId).css("height", scrollHeight + 35);
 	}
+	
+	$('iframe').load(function()
+    {
+        try {
+            this.style.height =
+            this.contentWindow.document.body.offsetHeight + 35 + 'px';
+        } catch (exception) {
+            this.contentWindow.location.reload();
+        }
+    }
+);
+
     </script>
 
 
