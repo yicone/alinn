@@ -23,21 +23,23 @@ namespace Web.User
 
             string activecode = Common.GetActiveCode();
 
-            HOT.Model.User mUser = bUser.GetModel(email.Text);
+            HOT.Model.User mUser = bUser.GetModel(email.Text.Trim());
             if (mUser == null)
                 return;
             mUser.ActiveCode = activecode;
             bUser.Update(mUser);
 
 
-            bUser.SendMail(email.Text, "您已经申请在广告天下找回密码", RenderMailDetail(mUser.UserId, activecode));
+            bUser.SendMail(email.Text, "您已经申请在广告天下找回密码", RenderMailDetail(email.Text.Trim(), activecode));
+
+            this.Response.Redirect("register.htm");
         }
 
-        public string RenderMailDetail(Guid UserId, string num)
+        public string RenderMailDetail(string email, string num)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-            sb.AppendFormat("请点击下面的链接 <a href='http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}</a> ", UserId.ToString(), num);
+            sb.AppendFormat("请点击下面的链接 <a href='http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}</a> ", email, num);
 
             return sb.ToString();
         }

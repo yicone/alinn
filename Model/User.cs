@@ -28,6 +28,8 @@ namespace HOT.Model
         private int? _islocked;
         private string _activecode;
         private DateTime? _regtime;
+        private string _school;
+        private string _proxy;
         
         /// <summary>
         /// 
@@ -36,6 +38,24 @@ namespace HOT.Model
         {
             set { _userid = value; }
             get { return _userid; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string School
+        {
+            set { _school = value; }
+            get { return _school; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Proxy
+        {
+            set { _proxy = value; }
+            get { return _proxy; }
         }
 
         
@@ -211,9 +231,28 @@ namespace HOT.Model
         private string _activecode;
         private string _regtime;
         private string regIP;
+        private string _school;
+        private string _proxy;
+
+
         /// <summary>
         /// 
         /// </summary>
+        public string School
+        {
+            set { _school = value; }
+            get { return _school; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Proxy
+        {
+            set { _proxy = value; }
+            get { return _proxy; }
+        }
+
         public Guid UserId
         {
             set { _userid = value; }

@@ -30,19 +30,19 @@ namespace Web.User
                 HOT.BLL.User bUser = new HOT.BLL.User();
 
                 //email唯一  IP当天没注册
-                if (bUser.Exists(this.email.Text) || bUser.ExsitsIP(Request.UserHostAddress))
+                if (bUser.Exists(this.email.Text.Trim()) || bUser.ExsitsIP(Request.UserHostAddress))
                     return;
                 else
                 {
                     HOT.Model.UserTemp mUser = new HOT.Model.UserTemp();
 
-                    mUser.Email = email.Text;
-                    mUser.UserPassword = passWord.Text;
-                    mUser.NickName = nickName.Text;
-                    mUser.QQ = qqNumber.Text;
-                    mUser.Msn = msnAddress.Text;
-                    mUser.Mobile = mobile.Text;
-                    mUser.Telephone = telephone.Text;
+                    mUser.Email = email.Text.Trim();
+                    mUser.UserPassword = HOT.Common.MakeMd5.MakeMd5Pwd(passWord.Text.Trim());
+                    mUser.NickName = nickName.Text.Trim();
+                    mUser.QQ = qqNumber.Text.Trim();
+                    mUser.Msn = msnAddress.Text.Trim();
+                    mUser.Mobile = mobile.Text.Trim();
+                    mUser.Telephone = telephone.Text.Trim();
                     mUser.RegTime = System.DateTime.Now.ToShortDateString();
                     mUser.RoleID = 0;
                     mUser.Introducer = bUser.GetIntroducer();
@@ -52,9 +52,9 @@ namespace Web.User
 
                     if (this.C.Checked)//企业用户
                     {
-                        mUser.CompanyName = comName.Text;
-                        mUser.CompanyAddress = comAddress.Text;
-                        mUser.LinkMan = comLinkMan.Text;
+                        mUser.CompanyName = comName.Text.Trim();
+                        mUser.CompanyAddress = comAddress.Text.Trim();
+                        mUser.LinkMan = comLinkMan.Text.Trim();
                         mUser.RoleID = 1;
                     }
                     else
@@ -71,7 +71,7 @@ namespace Web.User
 
 
 
-                    this.Response.Redirect("Login.aspx", true);
+                    this.Response.Redirect("register.htm", true);
                 }
             }
 

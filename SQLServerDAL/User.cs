@@ -166,7 +166,9 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@LoginTimes", SqlDbType.Int,4),
 					new SqlParameter("@IsLocked", SqlDbType.TinyInt,1),
 					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16),
-					new SqlParameter("@RegTime", SqlDbType.DateTime)};
+					new SqlParameter("@RegTime", SqlDbType.DateTime),
+                    new SqlParameter("@School", SqlDbType.NVarChar,50),
+                    new SqlParameter("@Proxy", SqlDbType.NVarChar,50)};
             //parameters[0].Value = model.UserID;
             //parameters[1].Value = model.RoleID;
             //parameters[2].Value = model.Email;
@@ -204,6 +206,8 @@ namespace HOT.SQLServerDAL
             parameters[15].Value = model.IsLocked;
             parameters[16].Value = model.ActiveCode;
             parameters[17].Value = model.RegTime;
+            parameters[18].Value = model.School;
+            parameters[19].Value = model.Proxy;
 
             DbHelperSQL.RunProcedure("UP_AL_User_Update", parameters, out rowsAffected);
         }
@@ -276,6 +280,8 @@ namespace HOT.SQLServerDAL
                 {
                     model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
                 }
+                model.School = ds.Tables[0].Rows[0]["School"].ToString();
+                model.Proxy = ds.Tables[0].Rows[0]["Proxy"].ToString();
                 return model;
             }
             else
@@ -292,7 +298,7 @@ namespace HOT.SQLServerDAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select UserID,RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,LastLoginTime,LastLoginIP,LoginTimes,IsLocked,ActiveCode,RegTime ");
+            strSql.Append("select UserID,RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,LastLoginTime,LastLoginIP,LoginTimes,IsLocked,ActiveCode,RegTime,School,Proxy ");
             strSql.Append(" FROM AL_User ");
             if (strWhere.Trim() != "")
             {
@@ -394,6 +400,9 @@ namespace HOT.SQLServerDAL
                 {
                     model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
                 }
+                model.School = ds.Tables[0].Rows[0]["School"].ToString();
+                model.Proxy = ds.Tables[0].Rows[0]["Proxy"].ToString();
+
                 return model;
             }
             else
@@ -435,6 +444,8 @@ namespace HOT.SQLServerDAL
                 {
                     model.RegTime = ds.Tables[0].Rows[0]["RegTime"].ToString();
                 }
+                model.School = ds.Tables[0].Rows[0]["School"].ToString();
+                model.Proxy = ds.Tables[0].Rows[0]["Proxy"].ToString();
                 return model;
             }
             else

@@ -32,7 +32,7 @@ namespace Web.User
                     return;
 
                 mUser.ActiveCode = "";
-                mUser.UserPassword = password.Text;
+                mUser.UserPassword = HOT.Common.MakeMd5.MakeMd5Pwd(password.Text.Trim());
 
                 bUser.Update(mUser);
 

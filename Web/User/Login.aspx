@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>用户登录</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,7 +14,7 @@
             ErrorMessage="用户名不能为空"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email"
             ErrorMessage="格式不规范" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator><br />
-        密 &nbsp; &nbsp;码：<asp:TextBox ID="passWord" runat="server" MaxLength="16"></asp:TextBox>
+        密 &nbsp; &nbsp;码：<asp:TextBox ID="passWord" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passWord"
             ErrorMessage="密码不能为空"></asp:RequiredFieldValidator><br />
         <br />

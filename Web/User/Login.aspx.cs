@@ -27,16 +27,16 @@ namespace Web.User
             if (this.IsValid)
             {
                 HOT.BLL.User bUser = new HOT.BLL.User();
-                if (bUser.Exists(email.Text, passWord.Text))
+                if (bUser.Login(email.Text.Trim(), HOT.Common.MakeMd5.MakeMd5Pwd(passWord.Text.Trim())))
                 {
-                    HOT.Model.User mUser = bUser.GetModel(email.Text);
+                    HOT.Model.User mUser = bUser.GetModel(email.Text.Trim());
                     mUser.LastLoginIP = Request.UserHostAddress;
                     mUser.LastLoginTime = DateTime.Now.Date;
                     mUser.LoginTimes = mUser.LoginTimes + 1;
 
 
                     Session["UserId"] = mUser.UserId;
-                    this.Response.Redirect("default.aspx", true);
+                    this.Response.Redirect("../zone/zone.aspx", true);
                 }
                 else
                     this.Label1.Text = "用户名或密码错误";
