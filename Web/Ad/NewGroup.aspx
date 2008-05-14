@@ -7,19 +7,31 @@
 <asp:PostBackTrigger ControlID="btnAdd" /> 
 </Triggers> 
         <ContentTemplate>
-<table cellSpacing="0" cellPadding="0" width="600" border="0">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
-	<td height="25" align="right" style="width: 25%">
-		广告组名字：
-	</td>
-	<td height="25" width="*" align="left" style="width: 75%">
+	<td height="25" align="right" class="style3">
+		</td>
+	    <td align="right" height="25" style="width: 15%" class="style2">
+            广告组名字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+	<td height="25" align="left">
 		<asp:TextBox id="txtGroupName" runat="server" Width="249px"></asp:TextBox>
-        最多40个字符，20个汉字</td></tr>
+        最多40个字符，20个汉字<br />
+        </td>
+        <td align="left" height="25" width="200px">
+            </td>
+    </tr>
 	<tr>
-	<td height="25" align="right" style="width: 23%">
-		分类：
-	</td>
-	<td height="25" width="*" align="left" style="width: 75%">
+	<td height="25" align="right" class="style3">
+		&nbsp;</td>
+	    <td align="right" height="25" style="width: 23%" class="style2">
+            分类：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        </td>
+	<td height="25" align="left">
      <asp:DropDownList ID="ddlClass1" runat="server" Width="101px" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="sdsClass1" DataTextField="ClassName" DataValueField="ClassId" OnSelectedIndexChanged="Page_Load">
         </asp:DropDownList>
         <asp:SqlDataSource ID="sdsClass1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
@@ -39,22 +51,56 @@
                     Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <br />
         </td>
+        <td align="left" height="25" width="*">
+            &nbsp;</td>
         </tr>
 	<tr>
-	<td height="25" align="right" style="width: 25%">
-		关键字：
-	</td>
-	<td height="25" width="*" align="left" style="width: 75%">
+	<td height="25" align="right" class="style3">
+		&nbsp;</td>
+	    <td align="right" height="25" style="width: 25%" class="style2">
+            关键字：&nbsp;&nbsp;&nbsp; 
+        </td>
+	<td height="25" align="left">
+		<br />
 		<asp:TextBox id="txtKeyWords" runat="server" Width="228px"></asp:TextBox>
-        最多136个字符，68个汉字,添加关键字可以增加您广告被找到的机率</td></tr>
+        <br />
+        <br />
+        </td>
+        <td align="left" height="25" style="width: 75%" width="*">
+            最多136个字符，68个汉字,添加关键字可以增加您广告被找到的机率</td>
+    </tr>
 	<tr>
-	<td height="25" colspan="2"><div align="center">
-		<asp:Button ID="btnAdd" runat="server" Text="· 提交 ·" OnClick="btnAdd_Click" ></asp:Button>
-		<asp:Button ID="btnCancel" runat="server" Text="· 重填 ·" OnClick="btnCancel_Click" ></asp:Button>
-	</div></td></tr>
+	<td height="25" class="style3">&nbsp;</td>
+        <td colspan="2" height="25" class="style2">
+                <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="· 提交 ·" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" 
+                    Text="· 重填 ·" />
+                <br />
+                <br />
+        </td>
+        <td height="25">
+            &nbsp;</td>
+    </tr>
 </table>
         </ContentTemplate>
     </asp:UpdatePanel>
 
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="_headContent">
+
+    <style type="text/css">
+        .style2
+        {
+            text-align: right;
+        }
+        .style3
+        {
+            width: 44%;
+        }
+    </style>
+
+</asp:Content>
+

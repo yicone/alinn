@@ -14,24 +14,6 @@ namespace Web.Order {
     public partial class OrderInfo {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// lblOrderId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrderId;
-        
-        /// <summary>
         /// lblOrderName control.
         /// </summary>
         /// <remarks>
@@ -41,31 +23,22 @@ namespace Web.Order {
         protected global::System.Web.UI.WebControls.Label lblOrderName;
         
         /// <summary>
-        /// lblUserId control.
+        /// lblAdTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserId;
+        protected global::System.Web.UI.WebControls.Label lblAdTitle;
         
         /// <summary>
-        /// lblAdId control.
+        /// lblZoneName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdId;
-        
-        /// <summary>
-        /// lblZoneId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblZoneId;
+        protected global::System.Web.UI.WebControls.Label lblZoneName;
         
         /// <summary>
         /// lblStartDate control.
@@ -138,5 +111,14 @@ namespace Web.Order {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCreateDate;
+        
+        /// <summary>
+        /// ibtnPay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibtnPay;
     }
 }

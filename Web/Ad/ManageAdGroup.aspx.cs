@@ -19,6 +19,7 @@ namespace Web.User
         public DataList dlAD = new DataList();
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Page.Title = "广告组管理";
             Session["UserId"]="936DA01F-9ABD-4D9D-80C7-02AF85C822A7";
             //if (!IsPostBack)
             //{
@@ -108,6 +109,7 @@ namespace Web.User
             }
             if (e.CommandName == "AddAd")
             {
+                Session["AdGroupIdToBeAdd"] = guid;
                 Response.Redirect("NewAd.aspx?AdGroupId=" + guid.ToString(),true);
             }
         }
@@ -149,6 +151,7 @@ namespace Web.User
             Guid guid = new Guid(dl.DataKeys[e.Item.ItemIndex].ToString());
             if (e.CommandName == "EditeAd")
             {
+                Session["AdIdToBeEdited"] = guid;
                 Response.Redirect("EditeAd.aspx?AdId=" + guid.ToString());
             }
             if (e.CommandName == "DeleteAd")

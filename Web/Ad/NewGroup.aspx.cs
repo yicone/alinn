@@ -32,11 +32,7 @@ namespace Web.User
             string strErr = "";
             if (this.txtGroupName.Text == "")
             {
-                strErr += "GroupName不能为空！\\n";
-            }
-            if (this.txtKeyWords.Text == "")
-            {
-                strErr += "KeyWords不能为空！\\n";
+                strErr += "广告组名称不能为空！\\n";
             }
 
             if (strErr != "")

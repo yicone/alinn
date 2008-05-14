@@ -15,21 +15,18 @@ namespace Web.Ad
 {
     public partial class BuyAd : System.Web.UI.Page
     {
-        Guid temp = new Guid();
-        Guid tempadGroupId = new Guid();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Page.IsPostBack)
+            {
             Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
             Guid userId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");
             HOT.BLL.AdGroup adgBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
             ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex, 1, userId.ToString());
             AspNetPager1.RecordCount = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
-
-                temp = userId; 
-            if (!Page.IsPostBack)
-            {
-                dlAdGroupDataBind(userId.ToString());
+            dlAdGroupDataBind(userId.ToString());
             }
         }
         protected void lbtnAddGroup_Click(object sender, EventArgs e)
@@ -49,7 +46,7 @@ namespace Web.Ad
 
         protected void AspNetPager1_PageChanged(object sender, EventArgs e)
         {
-            dlAdGroupDataBind(temp.ToString());
+            dlAdGroupDataBind("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");
         }
 
         protected void dlAdGroup_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -73,6 +70,7 @@ namespace Web.Ad
         protected void dlAdGroup_ItemCommand(object source, DataListCommandEventArgs e)
         {
             Guid adGroupId = new Guid(dlAdGroup.DataKeys[e.Item.ItemIndex].ToString());
+            Session["tempAdGroupId"] = adGroupId;
             if (e.CommandName=="Buy")
             {
                 Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
@@ -85,15 +83,20 @@ namespace Web.Ad
                 {
                     HOT.BLL.Order oBLL = new HOT.BLL.Order();
                     HOT.Model.Order oModel = new HOT.Model.Order();
-                    oModel.AdId = adGroupId;//不对，不是对应adGroupId,
-                    oModel.AuditState = 0;
+                    //取得相同大小广告的Model edited by fzf 20080514
+                    HOT.Model.Ad aModel = new HOT.Model.Ad();
+                    aModel = aBLL.GetModel(" AdGroupId=" + adGroupId.ToString() + " And SizeId=" + zModel.SiteId.ToString() + " And IsText=0");
+                    //end
+                    oModel.AdId = aModel.AdId;//不对，不是对应adGroupId,
+
+                    oModel.AuditState = CheckAuditState(zModel.ZoneId);
                     oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
                     oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
                     oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
                     oModel.ZoneId = zoneId;
                     int week = 1;//需要传入值
                     oModel.Price = zModel.WeekPrice * week;
-                    oModel.UserId = temp;//需要传入值
+                    oModel.UserId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");//需要传入值
                     oBLL.Add(oModel);
                 }
                 else
@@ -103,37 +106,69 @@ namespace Web.Ad
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
+        protected int CheckAuditState(Guid guid)
+        {
+            int checkAuditState=0;
+            HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+            HOT.Model.Zone zModel = new HOT.Model.Zone();
+            zModel = zBLL.GetModel(guid);
+            switch (zModel.NeedAuditing)
+            { 
+                case 0:
+                    checkAuditState=1;
+                    break;
+                case 1:
+                    checkAuditState = 0;
+                    break;
+            }
+            return checkAuditState;
 
+        }
         protected void btnAddTextAd_Click(object sender, EventArgs e)
         {
             HOT.BLL.Ad adBLL = new HOT.BLL.Ad();
             HOT.Model.Ad adModel = new HOT.Model.Ad();
-            adModel = adBLL.GetModel("AdGroupId='"+tempadGroupId.ToString()+"' and istext=1");
-            //判断广告组下是否有文字广告
-            if (adModel==null)
+            if (Session["tempAdGroupId"] != null)
             {
-                MessageBox.ShowAndRedirect(this.Page, "此广告组下没有文字广告！请添加文件广告", "NewAd.aspx?AdGroupId=" + tempadGroupId.ToString());
+                adModel = adBLL.GetModel("AdGroupId='" + Session["tempAdGroupId"].ToString() + "' and istext=1");
+                //判断广告组下是否有文字广告
+                if (adModel == null)
+                {
+                    MessageBox.ShowAndRedirect(this.Page, "此广告组下没有文字广告！请添加文件广告", "NewAd.aspx?AdGroupId=" + Session["tempAdGroupId"].ToString());
+                }
+                else
+                {
+                    HOT.BLL.Order oBLL = new HOT.BLL.Order();
+                    HOT.Model.Order oModel = new HOT.Model.Order();
+                    oModel.AdId = adModel.AdId;
+                    oModel.AuditState = CheckAuditState(zModel.ZoneId);
+                    oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
+                    oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
+
+                    Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
+                    HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+                    HOT.Model.Zone zModel = new HOT.Model.Zone();
+                    zModel = zBLL.GetModel(zoneId);
+                    oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
+                    oModel.ZoneId = zoneId;
+                    int week = 1;//需要传入值
+                    oModel.Price = zModel.WeekPrice * week;
+                    oModel.UserId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");//需要传入值
+                    oBLL.Add(oModel);
+                    oModel = null;
+                    oModel = oBLL.GetModelByUserId(new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7"));
+                    //Session["OrderIdBeShow"] = oModel.OrderId;
+                    Response.Redirect("../Order/OrderInfo.aspx?OrderId="+oModel.OrderId.ToString());
+                }
             }
             else
             {
-                HOT.BLL.Order oBLL = new HOT.BLL.Order();
-                HOT.Model.Order oModel = new HOT.Model.Order();
-                oModel.AdId = adModel.AdId;
-                oModel.AuditState = 0;
-                oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
-                oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
-
-                Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
-                HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
-                HOT.Model.Zone zModel = new HOT.Model.Zone();
-                zModel = zBLL.GetModel(zoneId);
-                oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
-                oModel.ZoneId = zoneId;
-                int week = 1;//需要传入值
-                oModel.Price = zModel.WeekPrice * week;
-                oModel.UserId = temp;//需要传入值
-                oBLL.Add(oModel);
-                Response.Redirect("../Order/OrderInfo.aspx");
+                Response.Write("<script>alert('操作超时！');history.go(-1);</script>");
             }
         }
     }

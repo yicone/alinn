@@ -23,3 +23,6 @@ set @agetype = 1
 set @siteclass = 2
 set @employments = 2
 update al_site set sextype=@sextype, siteclass=@siteclass, agetype=@agetype, employments=@employments where (sextype is null) or (siteclass is null) or (agetype is null)
+
+
+

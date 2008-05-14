@@ -17,7 +17,10 @@ namespace Web
         {
             //Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
             Guid zoneId = new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
-            ShowZoneInfo(zoneId);
+            if (!IsPostBack)
+            {
+                ShowZoneInfo(zoneId);
+            }
         }
 
         protected void btnBuyAd_Click(object sender, EventArgs e)

@@ -67,7 +67,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@AdGroupId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@GroupName", SqlDbType.NVarChar,40),
 					new SqlParameter("@UserId", SqlDbType.UniqueIdentifier,16),
-					new SqlParameter("@Class", SqlDbType.Int,4),
+					new SqlParameter("@Class",SqlDbType.Int,4),
 					new SqlParameter("@KeyWords", SqlDbType.NVarChar,136)};
 			parameters[0].Value = model.AdGroupId;
 			parameters[1].Value = model.GroupName;
@@ -109,13 +109,13 @@ namespace HOT.SQLServerDAL
 					model.AdGroupId=new Guid(ds.Tables[0].Rows[0]["AdGroupId"].ToString());
 				}
 				model.GroupName=ds.Tables[0].Rows[0]["GroupName"].ToString();
+                if (ds.Tables[0].Rows[0]["Class"].ToString() != "")
+                {
+                    model.Class = int.Parse(ds.Tables[0].Rows[0]["Class"].ToString());
+                }
 				if(ds.Tables[0].Rows[0]["UserId"].ToString()!="")
 				{
 					model.UserId=new Guid(ds.Tables[0].Rows[0]["UserId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Class"].ToString()!="")
-				{
-					model.Class=int.Parse(ds.Tables[0].Rows[0]["Class"].ToString());
 				}
 				model.KeyWords=ds.Tables[0].Rows[0]["KeyWords"].ToString();
 				return model;

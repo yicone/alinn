@@ -27,7 +27,9 @@
                                 <td style="width: 800px; height: 39px;">
                                     类目：<asp:Label ID="labZoneClass" runat="server" Text="Label" Width="150px"></asp:Label>
                                     关键字：<asp:Label
-                                        ID="labKeyWords" runat="server" Width="300px"></asp:Label></td>
+                                        ID="labKeyWords" runat="server" Width="300px"></asp:Label>
+                                    <asp:HyperLink ID="hlEdite" runat="server">修改分类和关键字</asp:HyperLink>
+                                </td>
                             </tr>
                         </table>
                         <asp:DataList ID="dlAD" runat="server" RepeatColumns="6" RepeatDirection="Horizontal" OnItemDataBound="dlAD_ItemDataBound" DataKeyField="AdId" OnItemCommand="dlAD_ItemCommand">

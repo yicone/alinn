@@ -493,6 +493,9 @@
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="Order\images\tenpay_button_02_l.gif" />
+    <Content Include="Order\images\tenpay_button_02_m.gif" />
+    <Content Include="Order\images\tenpay_button_02_s.gif" />
     <Content Include="Order\OrderInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
     <Content Include="Zone\ShowZone.aspx" />
