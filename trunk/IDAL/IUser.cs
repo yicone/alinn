@@ -12,7 +12,8 @@ namespace HOT.IDAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        bool Exists(string UserID);
+        bool Exists(Guid UserId);
+        bool Exists(string emial);
         /// <summary>
         /// 增加一条数据
         /// </summary>
@@ -26,13 +27,13 @@ namespace HOT.IDAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        void Delete(string UserID);
+        void Delete(Guid UserId);
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        HOT.Model.User GetModel(string UserID);
+        HOT.Model.User GetModel(Guid UserId);
 
-
+        HOT.Model.User GetModel(string email);
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -52,14 +53,13 @@ namespace HOT.IDAL
         /// <param name="UserID"></param>
         /// <param name="PassWord"></param>
         /// <returns></returns>
-        bool Exists(string UserID, string PassWord);
-
+        bool Exists(string email, string password);
         /// <summary>
         /// 获取该用户推荐的人
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        IList GetIntroducer(string UserID);
+        IList GetIntroducer(Guid UserId);
 
         /// <summary>
         /// 该IP在日期内是否存在
@@ -69,9 +69,9 @@ namespace HOT.IDAL
         /// <returns></returns>
         bool ExsitsIP(string userIP, DateTime dateTime);
 
-        HOT.Model.User GetModel(string UserID, string activecode);
+        HOT.Model.User GetModel(string email, string activeCode);
 
-        HOT.Model.UserTemp GetModelTemp(string UserID);
+        HOT.Model.UserTemp GetModelTemp(string email);
 
         void Add(HOT.Model.UserTemp model);
 

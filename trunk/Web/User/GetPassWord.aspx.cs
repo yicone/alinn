@@ -30,14 +30,14 @@ namespace Web.User
             bUser.Update(mUser);
 
 
-            bUser.SendMail(email.Text, "您已经申请在广告天下找回密码", RenderMailDetail(email.Text, activecode));
+            bUser.SendMail(email.Text, "您已经申请在广告天下找回密码", RenderMailDetail(mUser.UserId, activecode));
         }
 
-        public string RenderMailDetail(string userID, string num)
+        public string RenderMailDetail(Guid UserId, string num)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-            sb.AppendFormat("请点击下面的链接 <a href='http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}</a> ", userID, num);
+            sb.AppendFormat("请点击下面的链接 <a href='http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}</a> ", UserId.ToString(), num);
 
             return sb.ToString();
         }

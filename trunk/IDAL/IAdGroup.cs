@@ -38,7 +38,7 @@ namespace HOT.IDAL
         /// </summary>
         /// <param name="strWhere">查询条件</param>
         /// <returns>dataset</returns>
-        DataSet GetList(int startIndex, int endIndex,int doCount,string userId);
+        DataSet GetList(int startIndex, int endIndex,int doCount,Guid UserId);
 		/// <summary>
 		/// 根据分页获得数据列表
 		/// </summary>

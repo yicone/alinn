@@ -35,7 +35,7 @@ namespace Web.User
                     mUser.LoginTimes = mUser.LoginTimes + 1;
 
 
-
+                    Session["UserId"] = mUser.UserId;
                     this.Response.Redirect("default.aspx", true);
                 }
                 else

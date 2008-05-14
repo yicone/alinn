@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using HOT.IDAL;
 using HOT.DBUtility;//请先添加引用
 using System.Collections;
+using System.Diagnostics;
 namespace HOT.SQLServerDAL
 {
     /// <summary>
@@ -210,12 +211,12 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public void Delete(string UserID)
+        public void Delete(Guid UserId)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@UserID", SqlDbType.VarChar,50)};
-            parameters[0].Value = UserID;
+            parameters[0].Value = UserId;
 
             DbHelperSQL.RunProcedure("UP_AL_User_Delete", parameters, out rowsAffected);
         }
@@ -223,19 +224,25 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public HOT.Model.User GetModel(string UserID)
+        public HOT.Model.User GetModel(Guid UserId)
         {
-            string sql = "select * from AL_User where email=@UserID";
+            Debug.Assert(false, "由于改写，请重新运行代码生成工具，补全此部分！");
+            return null;
+        }
+
+        public HOT.Model.User GetModel(string email)
+        {
+            string sql = "select * from AL_User where email=@email";
             SqlParameter[] parameters = {
-					new SqlParameter("@UserID", SqlDbType.VarChar,50)};
-            parameters[0].Value = UserID;
+					new SqlParameter("@email", SqlDbType.VarChar,50)};
+            parameters[0].Value = email;
 
             HOT.Model.User model = new HOT.Model.User();
             DataSet ds = DbHelperSQL.Query(sql, parameters);
             //DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
             if (ds.Tables[0].Rows.Count > 0)
             {
-                model.UserID = ds.Tables[0].Rows[0]["UserID"].ToString();
+                model.UserId = new Guid(ds.Tables[0].Rows[0]["UserID"].ToString());
                 if (ds.Tables[0].Rows[0]["RoleID"].ToString() != "")
                 {
                     model.RoleID = int.Parse(ds.Tables[0].Rows[0]["RoleID"].ToString());
@@ -276,8 +283,6 @@ namespace HOT.SQLServerDAL
                 return null;
             }
         }
-
-
 
 
 
@@ -343,7 +348,17 @@ namespace HOT.SQLServerDAL
             return false;
         }
 
-        public HOT.Model.User GetModel(string UserID, string ActiveCode)
+        public bool Exists(Guid userId, string passWord)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Exists(Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public HOT.Model.User GetModel(string email, string ActiveCode)
         {
             string sql = "select * from AL_User where email=@email and activecode=@activecode";
 
@@ -351,7 +366,7 @@ namespace HOT.SQLServerDAL
                 new SqlParameter("@email",SqlDbType.VarChar,50),
                 new SqlParameter("@activecode",SqlDbType.VarChar,16)};
 
-            parameters[0].Value = UserID;
+            parameters[0].Value = email;
             parameters[1].Value = ActiveCode;
 
             DataSet ds = DbHelperSQL.Query(sql, parameters);
@@ -387,11 +402,11 @@ namespace HOT.SQLServerDAL
             }
         }
 
-        public HOT.Model.UserTemp GetModelTemp(string UserID)
+        public HOT.Model.UserTemp GetModelTemp(string email)
         {
             SqlParameter[] parameters = {
 					new SqlParameter("@email", SqlDbType.VarChar,50)};
-            parameters[0].Value = UserID;
+            parameters[0].Value = email;
 
             HOT.Model.UserTemp model = new HOT.Model.UserTemp();
             //DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
@@ -433,7 +448,7 @@ namespace HOT.SQLServerDAL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        public IList GetIntroducer(string UserID)
+        public IList GetIntroducer(Guid UserId)
         {
             return null;
         }

@@ -132,16 +132,16 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.ISiteClass)objType;
         }
-        ///// <summary>
-        ///// 创建AL_User数据层接口
-        ///// </summary>
-        //public static HOT.IDAL.IUser CreateUser()
-        //{
+        /// <summary>
+        /// 创建AL_User数据层接口
+        /// </summary>
+        public static HOT.IDAL.IUser CreateUser()
+        {
 
-        //    string CacheKey = path + ".User";
-        //    object objType = CreateObject(path, CacheKey);
-        //    return (HOT.IDAL.IUser)objType;
-        //}
+            string CacheKey = path + ".User";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IUser)objType;
+        }
         /// <summary>
         /// 创建AL_Zone数据层接口
         /// </summary>
