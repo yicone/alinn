@@ -107,6 +107,13 @@
       <DependentUpon>top.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Admin\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Zone\EditeZone.aspx.cs">
       <DependentUpon>EditeZone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +442,7 @@
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
     <None Include="App_Themes\skin1\images\Thumbs.db" />
+    <Content Include="Admin\UserInfo.aspx" />
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
@@ -548,6 +556,7 @@
     <Content Include="User\GetPassWord.aspx" />
     <Content Include="User\Login.aspx" />
     <Content Include="User\Register.aspx" />
+    <Content Include="User\Register.htm" />
     <Content Include="User\ResetPassword.aspx" />
     <Content Include="User\seccess.aspx" />
     <Content Include="User\UserInfo.aspx" />

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>Untitled Page</title>
+    <title>用户注册</title>
     <link charset="gb2312" />
     <script language="javascript" type="text/javascript">
     

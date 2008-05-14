@@ -124,13 +124,10 @@ namespace HOT.BLL
         //return dal.GetList(PageSize,PageIndex,strWhere);
         //}
 
-
         #endregion  成员方法
-
         #region Add by F
 
         #region 邮件相关
-
         /// <summary>
         /// 发送邮件
         /// </summary>
@@ -196,7 +193,7 @@ namespace HOT.BLL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        public bool IsUserOnline(Guid UserId)
+        public bool IsUserOnline(string UserID)
         {
             return false;
         }
@@ -217,11 +214,8 @@ namespace HOT.BLL
         public void FormsAuthen(Guid UserId)
         {
             string RoleID = GetModelByCache(UserId).RoleID.ToString();
-
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(0, UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(30), false, RoleID);
-
             string strticket = FormsAuthentication.Encrypt(ticket);
-
             HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, strticket);
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
@@ -238,7 +232,6 @@ namespace HOT.BLL
         public void SetIntroducer()
         {
             string introducerID = HttpContext.Current.Request.QueryString["introducer"];
-
             SetIntroducer(introducerID);
         }
 
@@ -265,7 +258,26 @@ namespace HOT.BLL
 
         #endregion
 
+        public bool Login(string UserID, string PassWord)
+        {
+            if (Exists(UserID, PassWord))
+            {
+                SetLoginState(UserID);
 
+                return true;
+            }
+
+            return false;
+        }
+
+        public string GetLoginUser()
+        {
+            return HttpContext.Current.Session["LoginUser"] == null ? null : HttpContext.Current.Session["LoginUser"].ToString();
+        }
+
+        public void SetLoginState(string UserID)
+        {
+            HttpContext.Current.Session["LoginUser"] = UserID;
+        }
     }
 }
-
