@@ -146,7 +146,7 @@ namespace Web.Ad
                     HOT.BLL.Order oBLL = new HOT.BLL.Order();
                     HOT.Model.Order oModel = new HOT.Model.Order();
                     oModel.AdId = adModel.AdId;
-                    oModel.AuditState = CheckAuditState(zModel.ZoneId);
+                    
                     oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
                     oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
 
@@ -154,6 +154,7 @@ namespace Web.Ad
                     HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
                     HOT.Model.Zone zModel = new HOT.Model.Zone();
                     zModel = zBLL.GetModel(zoneId);
+                    oModel.AuditState = CheckAuditState(zModel.ZoneId);
                     oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
                     oModel.ZoneId = zoneId;
                     int week = 1;//需要传入值
