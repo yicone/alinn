@@ -165,16 +165,16 @@ namespace HOT.SQLServerDAL
         /// </summary>
         /// <param name="strWhere">²éÑ¯Ìõ¼þ</param>
         /// <returns>dataset</returns>
-        public DataSet GetList(int startIndex, int endIndex,int doCount,string userId)
+        public DataSet GetList(int startIndex, int endIndex,int doCount,Guid UserId)
         {
             SqlParameter[] parameters = { new SqlParameter("@startIndex", SqlDbType.Int,4),
                                           new SqlParameter("@endIndex",SqlDbType.Int,4),
                                           new SqlParameter("@doCount",SqlDbType.TinyInt),
-                                          new SqlParameter("@userId",SqlDbType.VarChar,300)};
+                                          new SqlParameter("@userId",SqlDbType.UniqueIdentifier)};
             parameters[0].Value = startIndex;
             parameters[1].Value = endIndex;
             parameters[2].Value = doCount;
-            parameters[3].Value = userId;
+            parameters[3].Value = UserId;
             return DbHelperSQL.RunProcedure("MY_AL_AdGroupPage", parameters, "ds");
         }
 		/*

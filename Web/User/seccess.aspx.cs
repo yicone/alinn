@@ -17,7 +17,8 @@ namespace Web.User
         {
             HOT.BLL.User bUser = new HOT.BLL.User();
 
-            HOT.Model.UserTemp mUserTemp = bUser.GetModelTemp(Request.QueryString["userID"]);
+            string email = Request.QueryString["email"];
+            HOT.Model.UserTemp mUserTemp = bUser.GetModelTemp(email);
 
             if (mUserTemp.ActiveCode == Request.QueryString["num"])
             {

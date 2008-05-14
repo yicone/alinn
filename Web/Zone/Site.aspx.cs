@@ -65,10 +65,6 @@ namespace Web
         {
             #region 参数验证
             string strErr = "";
-            //if (this.txtUserId.Text == "")
-            //{
-            //    strErr += "UserId不能为空！\\n";
-            //}
             if (this.txtSiteName.Text == "")
             {
                 strErr += "请输入站点名称！\\n";
@@ -108,7 +104,7 @@ namespace Web
                 MessageBox.Show(this, strErr);
                 return;
             }
-            string userId = this.txtUserId.Text;
+            
             string siteName = this.txtSiteName.Text;
             string siteUrl = this.txtSiteUrl.Text;
             int siteClass = int.Parse(this.rblSiteClass.Text);
@@ -145,7 +141,7 @@ namespace Web
                     throw new ArgumentException("传入页面的参数不正确！", "SiteId");
             }
 
-            //model.UserId = userId;    //TODO:userId替换为登录用户的ID
+            model.UserId = new Guid(Session["UserId"].ToString());    //TODO:userId替换为登录用户的ID
             model.SiteName = siteName;
             model.SiteUrl = siteUrl;
             model.SiteClass = siteClass;

@@ -41,8 +41,8 @@ namespace Web.User
                 return;
             }
             string GroupName = this.txtGroupName.Text;
-            //string UserId = Session["UserId"].ToString();
-            string UserId = "936DA01F-9ABD-4D9D-80C7-02AF85C822A7";
+            //Guid UserId = Session["UserId"].ToString();
+            
             int Class = 0;
             if (this.ddlClass2.SelectedValue.Length == 0)
             {
@@ -57,8 +57,7 @@ namespace Web.User
 
             HOT.Model.AdGroup model = new HOT.Model.AdGroup();
             model.GroupName = GroupName;
-            Guid userId = new Guid(UserId);
-            model.UserId = userId;
+            model.UserId = new Guid(Session["UserId"].ToString());
             model.Class = Class;
             model.KeyWords = KeyWords;
             HOT.BLL.AdGroup bll = new HOT.BLL.AdGroup();

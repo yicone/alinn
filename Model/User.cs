@@ -9,7 +9,7 @@ namespace HOT.Model
         public User()
         { }
         #region Model
-        private string _userid;
+        private Guid _userid;
         private int? _roleid;
         private string _email;
         private string _nickname;
@@ -32,7 +32,7 @@ namespace HOT.Model
         /// <summary>
         /// 
         /// </summary>
-        public string UserID
+        public Guid UserId
         {
             set { _userid = value; }
             get { return _userid; }
@@ -195,7 +195,7 @@ namespace HOT.Model
         public UserTemp()
         { }
         #region Model
-        private string _userid;
+        private Guid _userid;
         private int? _roleid;
         private string _email;
         private string _nickname;
@@ -214,7 +214,7 @@ namespace HOT.Model
         /// <summary>
         /// 
         /// </summary>
-        public string UserID
+        public Guid UserId
         {
             set { _userid = value; }
             get { return _userid; }

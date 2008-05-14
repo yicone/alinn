@@ -21,12 +21,12 @@ namespace Web.Ad
             if (!Page.IsPostBack)
             {
             Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
-            Guid userId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");
+            Guid userId = new Guid(Session["UserId"].ToString());
             HOT.BLL.AdGroup adgBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
-            ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex, 1, userId.ToString());
+            ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex, 1, userId);
             AspNetPager1.RecordCount = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
-            dlAdGroupDataBind(userId.ToString());
+            dlAdGroupDataBind(userId);
             }
         }
         protected void lbtnAddGroup_Click(object sender, EventArgs e)
@@ -34,19 +34,20 @@ namespace Web.Ad
             Response.Redirect("NewGroup.aspx");
         }
 
-        private void dlAdGroupDataBind(string userId)
+        private void dlAdGroupDataBind(Guid UserId)
         {
             HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
             HOT.BLL.AdGroup adgBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
-            ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex,0,userId);
+            ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex, 0, UserId);
             this.dlAdGroup.DataSource = ds;
             this.dlAdGroup.DataBind();
         }
 
         protected void AspNetPager1_PageChanged(object sender, EventArgs e)
         {
-            dlAdGroupDataBind("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");
+            Guid userId = new Guid(Session["UserId"].ToString());
+            dlAdGroupDataBind(userId);
         }
 
         protected void dlAdGroup_ItemDataBound(object sender, DataListItemEventArgs e)
