@@ -25,7 +25,10 @@ namespace Web.User
                 //    //string str = this.Request.Url.AbsolutePath.ToString();
                 //}
             //}
-
+            if (Session["AdGroupIdToBeAdd"] == null)
+            {
+                Response.Write("<script>alert('广告组ID不能为空！');history.go(-2);</script>");
+            }
             if (this.rblAdType.SelectedValue == "1")
             {
                 this.fuImg.Enabled = false;
@@ -43,21 +46,24 @@ namespace Web.User
             string strErr = "";
             if (this.txtTitle.Text == "")
             {
-                strErr += "Title不能为空！\\n";
+                strErr += "标题不能为空！\\n";
             }
             if (this.txtContent.Text == "")
             {
-                strErr += "Content不能为空！\\n";
+                strErr += "广告内容不能为空！\\n";
             }
             if (this.txtUrl.Text == "")
             {
-                strErr += "Url不能为空！\\n";
+                strErr += "链接不能为空！\\n";
             }
             if (this.txtUrlText.Text == "")
             {
-                strErr += "UrlText不能为空！\\n";
+                strErr += "链接内容不能为空！\\n";
             }
-
+            if (this.rblSize.SelectedValue == "")
+            {
+                strErr += "广告大小必须选择！";
+            }
             if (strErr != "")
             {
                 MessageBox.Show(this, strErr);
@@ -67,10 +73,10 @@ namespace Web.User
             string Content = this.txtContent.Text;
             string Url = this.txtUrl.Text;
             string UrlText = this.txtUrlText.Text;
-
+            int SizeId = int.Parse(this.rblSize.SelectedValue);
 
             HOT.Model.Ad model = new HOT.Model.Ad();
-            model.AdGroupId = new Guid(this.Request.QueryString["AdGroupId"].ToString());
+            model.AdGroupId = new Guid(Session["AdGroupIdToBeAdd"].ToString());
             model.Title = Title;
             model.Content = Content;
             model.Url = Url;
@@ -85,9 +91,10 @@ namespace Web.User
                 model.Img = this.labImgInfo.Text;
                 model.IsText = 0;
             }
-            model.SizeId = int.Parse(this.rblSize.SelectedValue);
+            model.SizeId =SizeId ;
             HOT.BLL.Ad bll = new HOT.BLL.Ad();
             bll.Add(model);
+            Session["AdGroupIdToBeAdd"] = null;
             //提示添加成功，并且转向上一页面
             string name = Request.UrlReferrer.ToString();
             Response.Write("<script>alert('添加新广告成功');location='ManageAdGroup.aspx';</script>");

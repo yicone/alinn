@@ -41,7 +41,7 @@ CREATE TABLE [AL_Zone] (
 [TransType] [tinyint]  NULL,	--计费类型：按点击、按时长
 [ClassIds] [nvarchar]  (14) NULL,	--所属种类的编号序列
 [Keywords] [nvarchar]  (272) NULL,	
-[NeedAuditing] [tinyint]  NULL,	--是否需要审核广告
+[NeedAuditing] [tinyint]  NULL,	--是否需要审核广告,1是需要，0是不需要
 [AllowAdultAd] [tinyint]  NULL,	
 [Description] [ntext]  NULL,	--广告位描述
 [ZoneCode] [ntext]  NULL,		--生成的广告位程序代码
@@ -69,7 +69,7 @@ CREATE TABLE [dbo].[AL_AdGroup] (
 	[AdGroupId] [uniqueidentifier]  Primary key NOT NULL ,
 	[GroupName] [nvarchar] (40) null,--广告组标题
 	[UserId]  [uniqueidentifier] null,--用户ID
-	[Class] [int] null,--广告分类
+	[Class]  [nvarchar]  (14) NULL,--广告分类
 	[KeyWords] [nvarchar](136) null--关键字
 )
 --广告主要投放的广告牌

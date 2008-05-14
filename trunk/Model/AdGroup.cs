@@ -12,7 +12,7 @@ namespace HOT.Model
 		private Guid _adgroupid;
 		private string _groupname;
 		private Guid _userid;
-		private int? _class;
+		private int _class;
 		private string _keywords;
 		/// <summary>
 		/// 
@@ -41,7 +41,7 @@ namespace HOT.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? Class
+		public int Class
 		{
 			set{ _class=value;}
 			get{return _class;}

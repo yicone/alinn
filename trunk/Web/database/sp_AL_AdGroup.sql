@@ -38,7 +38,7 @@ CREATE PROCEDURE UP_AL_AdGroup_ADD
 @AdGroupId uniqueidentifier,
 @GroupName nvarchar(80),
 @UserId uniqueidentifier,
-@Class int,
+@Class nvarchar(14),
 @KeyWords nvarchar(272)
 
  AS 
@@ -64,7 +64,7 @@ CREATE PROCEDURE UP_AL_AdGroup_Update
 @AdGroupId uniqueidentifier,
 @GroupName nvarchar(80),
 @UserId uniqueidentifier,
-@Class int,
+@Class nvarchar(14),
 @KeyWords nvarchar(272)
  AS 
 	UPDATE AL_AdGroup SET 

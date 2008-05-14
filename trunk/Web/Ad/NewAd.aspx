@@ -1,8 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/UserCommon.Master" AutoEventWireup="true" CodeBehind="NewAd.aspx.cs" Inherits="Web.User.NewAd" Title="无标题页" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
+    <br />
+    <br />
+    <br />
+    <br />
 <table cellSpacing="0" cellPadding="0" width="100%" border="0">
     <tr>
-        <td align="right" height="25" width="30%">
+        <td align="right" height="25" width="30%" class="style1">
             广告类型：</td>
         <td align="left" height="25" width="*">
             <asp:RadioButtonList ID="rblAdType" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
@@ -11,7 +15,7 @@
             </asp:RadioButtonList></td>
     </tr>
     <tr>
-        <td align="right" height="25" width="30%">
+        <td align="right" height="25" width="30%" class="style1">
             广告大小：</td>
         <td align="left" height="25" width="*">
             <asp:RadioButtonList ID="rblSize" runat="server" AutoPostBack="True" RepeatColumns="4"
@@ -38,31 +42,31 @@
             </asp:RadioButtonList></td>
     </tr>
 	<tr>
-	<td height="25" width="30%" align="right">
+	<td height="25" width="30%" align="right" class="style1">
         广告标题：&nbsp;</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtTitle" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
-	<td height="25" width="30%" align="right">
+	<td height="25" width="30%" align="right" class="style1">
         广告内容：&nbsp;</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtContent" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
-	<td height="25" width="30%" align="right">
+	<td height="25" width="30%" align="right" class="style1">
         广告链接：&nbsp;</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtUrl" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
-	<td height="25" width="30%" align="right">
+	<td height="25" width="30%" align="right" class="style1">
         链接内容：&nbsp;</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtUrlText" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
     <tr>
-        <td align="right" style="height: 25px" width="30%">
+        <td align="right" style="height: 25px" width="30%" class="style1">
             图片：</td>
         <td align="left" style="height: 25px" width="*">
             <asp:FileUpload ID="fuImg" runat="server" />
@@ -70,9 +74,20 @@
             <asp:Label ID="labImgInfo" runat="server" BorderWidth="0px" Height="0px" Width="0px"></asp:Label></td>
     </tr>
 	<tr>
-	<td height="25" colspan="2"><div align="center">
+	<td height="25" colspan="2" class="style1"><div align="center">
 		<asp:Button ID="btnAdd" runat="server" Text="· 提交 ·" OnClick="btnAdd_Click" ></asp:Button>
 		<asp:Button ID="btnCancel" runat="server" Text="· 重填 ·" OnClick="btnCancel_Click" ></asp:Button>
 	</div></td></tr>
 </table>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="_headContent">
+
+    <style type="text/css">
+        .style1
+        {
+            text-align: right;
+        }
+    </style>
+
+</asp:Content>
+

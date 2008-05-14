@@ -18,6 +18,10 @@ namespace Web.Ad
         protected void Page_Load(object sender, EventArgs e)
         {
             Guid guid = new Guid(this.Request.QueryString["AdId"].ToString());
+            if (Session["AdIdToBeEdited"] == null)
+            {
+                Response.Write("<script>alert('广告ID不能为空');history.go(-2);</script>");
+            }
             if (!IsPostBack)
             {
                 ShowInfo(guid);
@@ -71,9 +75,10 @@ namespace Web.Ad
 	model.SizeId=SizeId;
 	model.AuditState=0;
     model.Img = Img;
-    model.AdId = new Guid(this.Request.QueryString["AdId"].ToString());
+    model.AdId = new Guid(Session["AdIdToBeEdited"].ToString());
 	HOT.BLL.Ad bll=new HOT.BLL.Ad();
 	bll.Update(model);
+    Session["AdIdToBeEdited"] = null;
     //提示添加成功，并且转向上一页面
     MessageBox.ShowAndRedirect(this.Page, "修改成功", "ManageAdGroup.aspx");
         }
@@ -129,9 +134,9 @@ namespace Web.Ad
                     //判断文件大小
                     int fileSize = 0;
                     fileSize = fuImg.PostedFile.ContentLength / 1024;
-                    if (fileSize > 2048)
+                    if (fileSize > 500)
                     {
-                        MessageBox.Show(this.Page, "文件太大了！");
+                        MessageBox.Show(this.Page, "文件太大了！只可以上传500K以下的文件");
                         return;
                     }
                     else

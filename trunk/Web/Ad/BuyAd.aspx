@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/BuyCommon.Master" AutoEventWireup="true" EnableEventValidation="false"  CodeBehind="BuyAd.aspx.cs" Inherits="Web.Ad.BuyAd" Title="无标题页" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
 <script type="text/javascript" src="../App_Themes/jquery.js"></script>
 <script language="javascript" type="text/javascript">
 function addAd()
