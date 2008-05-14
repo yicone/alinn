@@ -92,9 +92,9 @@
                                             <asp:LinkButton ID="LinkButton4" runat="server"
                                                 CommandName="ToZoneDesigner" CommandArgument='<%# Eval("ZoneId") %>'>获取代码</asp:LinkButton></li>
                                         <li>&nbsp;</li>
-                                        <li><a onclick="dojobcooperate('delete','2021776','953317','')" href="#">
-                                            <img width="16" height="16" align="absmiddle" src="http://img.alimama.cn/images/adzone/alimama_070609_06.gif" />
-                                            删除 </a></li>
+                                        <li><asp:LinkButton ID="LinkButton5" runat="server"
+                                                CommandName="DelZone" CommandArgument='<%# Eval("ZoneId") %>'><img width="16" height="16" align="absmiddle" src="http://img.alimama.cn/images/adzone/alimama_070609_06.gif" />删除</asp:LinkButton>
+                                        </li>
                                         <li>&nbsp;</li>
                                     </ul>
                                 </td>

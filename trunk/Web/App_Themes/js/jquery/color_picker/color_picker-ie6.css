@@ -3,7 +3,7 @@
 
 	background-image : none;
     filter           : progid:DXImageTransform.Microsoft.AlphaImageLoader
-                       (src='images/pickerbg.png', sizingMethod='scale'); /* changer le chemin si necessaire */
+                       (src='../App_Themes/js/jquery/color_picker/images/pickerbg.png', sizingMethod='scale'); /* changer le chemin si necessaire */
 }
 
 #cPhue
@@ -11,7 +11,7 @@
 
 	background-image : none;
     filter           : progid:DXImageTransform.Microsoft.AlphaImageLoader
-                       (src='images/hue.png', sizingMethod='scale'); /* changer le chemin si necessaire */
+                       (src='../App_Themes/js/jquery/color_picker/images/hue.png', sizingMethod='scale'); /* changer le chemin si necessaire */
 }
 
 

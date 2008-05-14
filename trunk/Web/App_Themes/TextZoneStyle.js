@@ -1,20 +1,19 @@
 ﻿//定义TextZone对象
-function TextZone(wd, zoneSize, layoutType){
-    this.window = wd;
+function TextZone(zoneSize, layoutType){
     this.zoneSize = zoneSize;
     this.layoutType = layoutType;
     
-    this.preDiv = $("#pre", wd);
-    //this.bgimgDiv = $("#bgimg", this.wd);
-    this.outerDiv = $("#outer", wd);
-    this.mainDiv = $("#main", this.window);
-    this.maininnerDiv = $("#main_inner", this.window);
+    this.preDiv = $("#pre");
+    //this.bgimgDiv = $("#bgimg");
+    this.outerDiv = $("#outer");
+    this.mainDiv = $("#main");
+    this.maininnerDiv = $("#main_inner");
     this.maintitleDiv;
     this.maintextDiv;
     this.mainlinkDiv;
-    //this.iconDiv = $("#icon", this.window);
+    //this.iconDiv = $("#icon");
     this.Style;
-    this.Designer = new TextZoneDesigner(this.window);
+    this.Designer = new TextZoneDesigner();
     
     if (typeof TextZone._initialized == "undefined") {
         //设置对象的“样式”属性
@@ -29,10 +28,11 @@ function TextZone(wd, zoneSize, layoutType){
             //	                assert(false, "广告位样式未定义");
             //		            $w._currentStyle = defaultStyle;
             //	            }
-            if (this.Style != "undefined") {
-                this.maintitleDiv.css("color", this.Style.title$color);
-                this.maintextDiv.css("color", this.Style.text$color);
-                this.mainlinkDiv.css("color", this.Style.link$color);
+            if (this.Style != undefined) {
+                var titlecolor = this.Style.title$color;
+                this.maintitleDiv.css("color", "#" + titlecolor);
+                this.maintextDiv.css("color", "#" + this.Style.text$color);
+                this.mainlinkDiv.css("color", "#" + this.Style.link$color);
                 
                 //this.bgimgDiv.css("display", "none");
                 this.preDiv.css("display", "");
@@ -87,9 +87,9 @@ function TextZone(wd, zoneSize, layoutType){
                 this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>"+link+"/div></div></td></tr>");
             }
             //在构造完整的广告位之后，取得对应三个文字区域的JQuery对象
-            this.maintitleDiv = $("#main_title", this.window);
-            this.maintextDiv = $("#main_text", this.window);
-            this.mainlinkDiv = $("#main_link", this.window);
+            this.maintitleDiv = $("#main_title");
+            this.maintextDiv = $("#main_text");
+            this.mainlinkDiv = $("#main_link"); 
         };
         
         TextZone._initialized = true;
@@ -98,13 +98,12 @@ function TextZone(wd, zoneSize, layoutType){
 
 
 //定义TextZoneDesigner对象
-function TextZoneDesigner(wd){
-    this.wd = wd;
+function TextZoneDesigner(){
     
     if (typeof TextZoneDesigner._initialized == "undefined") {
         TextZoneDesigner.prototype.setField = function(field, color){
-            $("#colorfield-" + field, this.wd).val(color);
-            $("#colorsample-" + field, this.wd).css("background-color", "#" + color);
+            $("#colorfield-" + field).val(color);
+            $("#colorsample-" + field).css("background-color", "#" + color);
         }
         TextZoneDesigner.prototype.init = function(style){
             this.setField("title", style.title$color);

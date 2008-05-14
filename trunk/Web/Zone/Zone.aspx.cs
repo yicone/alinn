@@ -23,27 +23,43 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            #region MyRegion
+#if DEBUG
+            if(Request.QueryString["action"] == "update")
+                Debug.Assert(Session["ZoneId"] != null);
+            else
+                Debug.Assert(Session["ZoneId"] == null);
+#endif
+
+            if (Session["ZoneId"] == null && Request.QueryString["action"] == "update")
+                Response.Redirect("SiteManager.aspx");
+            #endregion
+
             if (!Page.IsPostBack)
             {
+                #region MyRegion
                 Debug.Assert(Request.UrlReferrer != null, "ZoneView.aspx页面不允许直接访问！");
 
-                if (Request.UrlReferrer == null) 
-                    Response.Redirect("SiteManager.aspx", true);
+                if (Request.UrlReferrer == null)
+                    Response.Redirect("SiteManager.aspx", true); 
+                #endregion
 
                 string lastPageUrl = Request.UrlReferrer.AbsolutePath;
 
+                #region MyRegion
                 Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
                 string[] hiddenInputIds = new string[] { 
-                        "hdn_zoneid", "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
+                        "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
                         "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
                         "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
 
                 string[] dbFields = new string[] { 
-                        "ZoneId", "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
+                        "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
                         "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
                         "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
 
-                Debug.Assert(hiddenInputIds.Length == dbFields.Length);
+                Debug.Assert(hiddenInputIds.Length == dbFields.Length); 
+                #endregion
 
                 InitHiddenParamDict(hiddenInputIds, dict);
 
@@ -70,16 +86,14 @@ namespace Web
                 }
                 else if (lastPageUrl.Contains("ZoneView.aspx"))
                 {
+                    hdn_dbaction.Value = "update";
                     //修改Zone基本信息
-                    if (!string.IsNullOrEmpty(Request.QueryString["zoneid"]))
+                    Guid zoneId;
+                    if (GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
                     {
-                        hdn_dbaction.Value = "update";
-
                         SqlParameter[] parameters = {
                         new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier) };
 
-                        Guid zoneId;
-                        GuidHelper.TryParse(Session["ZoneId"].ToString(),  out zoneId);
                         parameters[0].Value = zoneId;
                         SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);
                         while (sdr.Read())
@@ -97,15 +111,12 @@ namespace Web
                 else if (lastPageUrl.Contains("SiteManager.aspx"))
                 {
                     //新增广告位
-                    string action = Request.QueryString["action"];
-                    string strSiteId;
-                    if (action == "new")
-                    {
-                        hdn_dbaction.Value = "new";
+                    Debug.Assert(Request.QueryString["action"] == "new");
 
-                        strSiteId = Request.QueryString["siteid"];
-                        hdn_siteid.Value = strSiteId;
-                    }
+                    hdn_dbaction.Value = "new";
+                    hdn_siteid.Value = Request.QueryString["siteid"];
+                    //!NOTE!
+                    Session.Remove("ZoneId");
                 }
                 else
                 {
@@ -122,7 +133,7 @@ namespace Web
             {
                 Debug.Assert(contentPlaceHolder.FindControl(id) != null, id + "尚不存在于页面中！");
 
-                dict.Add(id, FindControl(id) as HtmlInputHidden);
+                dict.Add(id, contentPlaceHolder.FindControl(id) as HtmlInputHidden);
             }
         }
     }

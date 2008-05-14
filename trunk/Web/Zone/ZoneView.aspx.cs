@@ -21,11 +21,12 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid zoneId;
-            if (Session["ZoneId"] == null || !GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
-            {
-                throw new ArgumentNullException("ZoneId", "无效的页面请求！ZoneId='" + Session["ZoneId"] + "'");
-            }
+            #region MyRegion
+            Debug.Assert(Session["ZoneId"] != null);
+
+            if (Session["ZoneId"] == null)
+                Response.Redirect("SiteManager.aspx");
+            #endregion
         }
 
         protected void FormView1_DataBound(object sender, EventArgs e)
@@ -101,13 +102,13 @@ namespace Web
 
             //修改链接
             HyperLink linkEditZoneInfo = (HyperLink)row.FindControl("linkEditZoneInfo");
-            linkEditZoneInfo.NavigateUrl = "Zone.aspx?zoneid=" + dr["ZoneId"];
+            linkEditZoneInfo.NavigateUrl = "Zone.aspx?action=update&zoneid=" + dr["ZoneId"];
 
             HyperLink linkEditZoneClass = (HyperLink)row.FindControl("linkEditZoneClass");
-            linkEditZoneClass.NavigateUrl = "ZoneCategory.aspx?zoneid=" + dr["ZoneId"];
+            linkEditZoneClass.NavigateUrl = "ZoneCategory.aspx?action=update&zoneid=" + dr["ZoneId"];
 
             HyperLink linkEditSiteInfo = (HyperLink)row.FindControl("linkEditSiteInfo");
-            linkEditSiteInfo.NavigateUrl = "Site.aspx?siteid=" + dr["SiteId"];
+            linkEditSiteInfo.NavigateUrl = "Site.aspx?action=update&siteid=" + dr["SiteId"];
         }
 
         private string GetSiteEmploymentTypeString(string employmentIds)
@@ -150,7 +151,6 @@ namespace Web
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            Debug.Assert(Session["ZoneId"] != null, "请检查Page_Load中对参数的验证逻辑");
             e.Command.Parameters[0].Value = Session["ZoneId"];
         }
     }

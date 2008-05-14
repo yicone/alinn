@@ -32,11 +32,38 @@ namespace Web
                 cblEmployments.DataTextField = "EmploymentName";
                 cblEmployments.DataValueField = "EmploymentID";
                 cblEmployments.DataBind();
+
+                if (Request.QueryString["action"] == "update")
+                {
+                    HOT.BLL.Site siteManager = new HOT.BLL.Site();
+                    Guid siteId;
+                    if (GuidHelper.TryParse(Request.QueryString["siteid"], out siteId))
+                    {
+                        HOT.Model.Site site = siteManager.GetModel(siteId);
+
+                        txtSiteName.Text = site.SiteName;
+                        txtSiteUrl.Text = site.SiteUrl;
+                        rblSiteClass.SelectedIndex = site.SiteClass.Value - 1;
+                        rblSexType.SelectedIndex = site.SexType.Value;
+                        rblAgeType.SelectedIndex = site.AgeType.Value;
+
+                        string[] employments = site.Employments.Split(',');
+                        foreach (string str in employments)
+                        {
+                            int index = int.Parse(str) - 1;
+                            cblEmployments.Items[index].Selected = true;
+                        }
+
+                        txtTaste.Text = site.Taste;
+                        txtDescription.Text = site.Description;
+                    }//end if
+                }
             }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            #region 参数验证
             string strErr = "";
             //if (this.txtUserId.Text == "")
             //{
@@ -89,7 +116,7 @@ namespace Web
             int ageType = int.Parse(this.rblAgeType.Text);
             //将多选项序列化为如"0,2,3,5"的格式
             StringBuilder sbEmployments = new StringBuilder();
-            foreach(ListItem li in this.cblEmployments.Items)
+            foreach (ListItem li in this.cblEmployments.Items)
             {
                 if (li.Selected)
                 {
@@ -98,11 +125,26 @@ namespace Web
                 }
             }
             string employments = (sbEmployments.Length > 0) ? (sbEmployments.Remove(sbEmployments.Length - 1, 1).ToString()) : string.Empty;
-            string taste = this.txtTaste.Text; 
-            string description = this.txtDescription.Text;
-
+            string taste = this.txtTaste.Text;
+            string description = this.txtDescription.Text; 
+            #endregion
 
             HOT.Model.Site model = new HOT.Model.Site();
+            HOT.BLL.Site siteManager = new HOT.BLL.Site() ;
+
+            bool updateFlag = (Request.QueryString["action"] == "update");
+            
+            if(updateFlag)
+            {
+                Guid siteId;
+                if (GuidHelper.TryParse(Request.QueryString["siteid"], out siteId))
+                {
+                    model = siteManager.GetModel(siteId);
+                }
+                else
+                    throw new ArgumentException("传入页面的参数不正确！", "SiteId");
+            }
+
             //model.UserId = userId;    //TODO:userId替换为登录用户的ID
             model.SiteName = siteName;
             model.SiteUrl = siteUrl;
@@ -113,8 +155,13 @@ namespace Web
             model.Taste = taste;
             model.Description = description;
             model.AuditState = 0;   //TODO:替换为枚举值 0：未提交审核
-            HOT.BLL.Site bll = new HOT.BLL.Site();
-            bll.Add(model);
+
+            if (updateFlag)
+                siteManager.Update(model);
+            else
+                siteManager.Add(model);
+
+            Response.Redirect("SiteManager.aspx", true);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

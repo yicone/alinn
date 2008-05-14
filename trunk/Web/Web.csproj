@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -141,6 +142,7 @@
     <Compile Include="Ad\EditeGroup.aspx.designer.cs">
       <DependentUpon>EditeGroup.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\Common.cs" />
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,10 +334,10 @@
     <Content Include="Admin\Employment.aspx" />
     <Content Include="Admin\SiteClass.aspx" />
     <Content Include="Admin\ZoneCategory.aspx" />
-    <Content Include="App_Themes\niftyCorners.css" />
-    <Content Include="App_Themes\niftycube.js" />
-    <Content Include="App_Themes\NiftyLayout.css" />
-    <Content Include="App_Themes\niftyLayout.js" />
+    <Content Include="App_Themes\js\jquery\nifty\niftyCorners.css" />
+    <Content Include="App_Themes\js\jquery\nifty\niftycube.js" />
+    <Content Include="App_Themes\js\jquery\nifty\NiftyLayout.css" />
+    <Content Include="App_Themes\js\jquery\nifty\niftyLayout.js" />
     <Content Include="Zone\Site.aspx" />
     <Content Include="Web.config" />
     <Content Include="Zone\ZoneCategory.aspx" />
@@ -459,10 +461,6 @@
     <Content Include="Admin\Zone\ManageZone.aspx" />
     <Content Include="Ad\EditeAd.aspx" />
     <Content Include="App_Themes\inf.js" />
-    <Content Include="App_Themes\js\images\color_indic.gif" />
-    <Content Include="App_Themes\js\images\hue.png" />
-    <Content Include="App_Themes\js\images\pickerbg.png" />
-    <Content Include="App_Themes\js\images\select.gif" />
     <Content Include="App_Themes\js\jquery\color_picker\color_picker-ie6.css" />
     <Content Include="App_Themes\js\jquery\color_picker\color_picker-ie7.css" />
     <Content Include="App_Themes\js\jquery\color_picker\color_picker.css" />
@@ -513,7 +511,6 @@
     <Content Include="MasterPage\AdCommon.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Pay\" />
   </ItemGroup>

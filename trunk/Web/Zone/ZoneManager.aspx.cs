@@ -71,6 +71,21 @@ namespace Web
                         }
                         break;
                     }
+                case "DelZone":
+                    {
+                        LinkButton lb = e.Item.FindControl("LinkButton2") as LinkButton;
+                        if (lb != null)
+                        {
+                            Guid zoneId;
+                            if (GuidHelper.TryParse(lb.CommandArgument, out zoneId))
+                            {
+                                HOT.BLL.Zone zoneManager = new HOT.BLL.Zone();
+                                zoneManager.Delete(zoneId);
+                                Response.Write("<script>window.open('SiteManager.aspx','_top');</script>");
+                            }
+                        }
+                        break;
+                    }
                 default:
                     break;
             }
