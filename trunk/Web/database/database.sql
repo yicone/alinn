@@ -1,5 +1,7 @@
 USE [Alinn]
-
+update AL_Zone set mediatype=1
+delete  from al_zone where zoneid='00000000-0000-0000-0000-000000000000'
+select * from al_zone
 --用户表
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_User]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [AL_User]
@@ -47,7 +49,7 @@ CREATE TABLE [AL_Zone] (
 [ZoneCode] [ntext]  NULL,		--生成的广告位程序代码
 [WeekPrice] [decimal]  (10,2) NULL,	--按时长付费的价格
 [RecommendWeekPrice] [decimal]  (10,2) NULL,	--系统推荐的按时长付费价格
-[ZoneState] [tinyint]  NULL,		--广告位的状态：上架、下架、未激活、拒绝
+[ZoneState] [tinyint]  NULL,		--广告位的状态：1上架、2下架、0未激活、3拒绝
 [ZoneStyle] [nvarchar](100) NULL)
 
 ALTER TABLE [AL_Zone] WITH NOCHECK ADD  CONSTRAINT [PK_AL_Zone] PRIMARY KEY  NONCLUSTERED ( [ZoneId] )

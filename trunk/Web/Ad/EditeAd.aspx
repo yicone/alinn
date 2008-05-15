@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/UserCommon.Master" AutoEventWireup="true" CodeBehind="EditeAd.aspx.cs" Inherits="Web.Ad.EditeAd" Title="无标题页" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+<asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
+    <table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
         <td align="left" colspan="2" height="25" style="text-align: center" width="*">
             广告信息修改 &nbsp;</td>
