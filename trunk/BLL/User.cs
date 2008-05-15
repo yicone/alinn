@@ -33,7 +33,7 @@ namespace HOT.BLL
         /// <param name="email"></param>
         /// <param name="PassWord"></param>
         /// <returns></returns>
-        public bool Exists(string email, string passWord)
+        public Guid Exists(string email, string passWord)
         {
             return dal.Exists(email, passWord);
         }
@@ -260,9 +260,10 @@ namespace HOT.BLL
 
         public bool Login(string UserID, string PassWord)
         {
-            if (Exists(UserID, PassWord))
+            Guid guid = Exists(UserID, PassWord);
+            if (guid != null)
             {
-                SetLoginState(UserID);
+                SetLoginState(guid);
 
                 return true;
             }
@@ -270,12 +271,16 @@ namespace HOT.BLL
             return false;
         }
 
-        public string GetLoginUser()
+        public Guid GetLoginUser()
         {
-            return HttpContext.Current.Session["LoginUser"] == null ? null : HttpContext.Current.Session["LoginUser"].ToString();
+            object o = HttpContext.Current.Session["LoginUser"];
+            if (o == null)
+                return Guid.Empty;
+            return (Guid)o;
+            
         }
 
-        public void SetLoginState(string UserID)
+        public void SetLoginState(Guid UserID)
         {
             HttpContext.Current.Session["LoginUser"] = UserID;
         }
