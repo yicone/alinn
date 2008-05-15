@@ -38,7 +38,7 @@
                     </div>
                     <div id="menu">
                         <ul>
-                            <li>买广告</li>
+                            <li><a href="../Ad/AdList.aspx">买广告</a></li>
                             <li>卖广告</li>
                             <li>网站推广</li>
                             <li>社区</li>

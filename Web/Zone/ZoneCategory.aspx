@@ -46,7 +46,8 @@
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><asp:Button ID="btnSelect" runat="server" Text="选择分类" OnClick="btnSelect_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnUnselect" runat="server" Text="取消选择" OnClick="btnUnselect_Click" />
+                    <td><asp:Button ID="btnSelect" runat="server" Text="选择分类" OnClick="btnSelect_Click" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnUnselect" runat="server" Text="取消选择" OnClick="btnUnselect_Click" />
                         <br />
                       </td>
                     <td>&nbsp;</td>
