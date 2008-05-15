@@ -53,7 +53,7 @@ namespace HOT.IDAL
         /// <param name="UserID"></param>
         /// <param name="PassWord"></param>
         /// <returns></returns>
-        bool Exists(string email, string password);
+        Guid Exists(string email, string password);
         /// <summary>
         /// 获取该用户推荐的人
         /// </summary>

@@ -31,20 +31,25 @@ namespace Web.User
         public void BindUserInfo()
         {
             bUser = new HOT.BLL.User();
-            string userID = bUser.GetLoginUser();
+            Guid userID = bUser.GetLoginUser();
 
-            HOT.Model.User mUser = bUser.GetModel(userID);
+            DataSet ds = bUser.GetList(string.Format(" userid='{0}'", userID));
 
-            comName.Text = mUser.CompanyName;
-            comAddress.Text = mUser.CompanyAddress;
-            comLinkMan.Text = mUser.LinkMan;
+            if (ds.Tables[0].Rows.Count == 0)
+                Response.Redirect("login.aspx");
 
-            mobile.Text = mUser.Mobile;
-            telephone.Text = mUser.Telephone;
-            qqNumber.Text = mUser.QQ;
-            msnAddress.Text = mUser.Msn;
-            school.Text = mUser.School;
-            proxy.Text = mUser.Proxy;
+
+            comName.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(5).ToString();
+            comAddress.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(6).ToString();
+            comLinkMan.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(7).ToString();
+
+            mobile.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(9).ToString();
+            telephone.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(8).ToString();
+            qqNumber.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(10).ToString();
+            msnAddress.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(11).ToString();
+            school.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(19).ToString();
+            proxy.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(20).ToString();
+            
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -53,7 +58,7 @@ namespace Web.User
             {
                 bUser = new HOT.BLL.User();
 
-                HOT.Model.User mUser = new HOT.Model.User();
+                HOT.Model.User mUser = bUser.GetModel(bUser.GetLoginUser());
 
 
 
@@ -66,7 +71,7 @@ namespace Web.User
                 mUser.CompanyAddress = comAddress.Text.Trim();
                 mUser.LinkMan = comLinkMan.Text.Trim();
                 mUser.School = school.Text.Trim();
-                mUser.Proxy = school.Text.Trim();
+                mUser.Proxy = proxy.Text.Trim();
 
                 bUser.Update(mUser);
             }

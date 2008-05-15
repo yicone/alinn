@@ -230,8 +230,60 @@ namespace HOT.SQLServerDAL
         /// </summary>
         public HOT.Model.User GetModel(Guid UserId)
         {
-            Debug.Assert(false, "由于改写，请重新运行代码生成工具，补全此部分！");
-            return null;
+            //Debug.Assert(false, "由于改写，请重新运行代码生成工具，补全此部分！");
+            //return null;
+            string sql = "select * from AL_User where userid=@userid";
+            SqlParameter[] parameters = {
+					new SqlParameter("@userid", SqlDbType.UniqueIdentifier)};
+            parameters[0].Value = UserId;
+
+            HOT.Model.User model = new HOT.Model.User();
+            DataSet ds = DbHelperSQL.Query(sql, parameters);
+            //DataSet ds = DbHelperSQL.RunProcedure("UP_AL_User_GetModel", parameters, "ds");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                model.UserId = UserId;
+                if (ds.Tables[0].Rows[0]["RoleID"].ToString() != "")
+                {
+                    model.RoleID = int.Parse(ds.Tables[0].Rows[0]["RoleID"].ToString());
+                }
+                model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                model.NickName = ds.Tables[0].Rows[0]["NickName"].ToString();
+                model.UserPassword = ds.Tables[0].Rows[0]["UserPassword"].ToString();
+                model.CompanyName = ds.Tables[0].Rows[0]["CompanyName"].ToString();
+                model.CompanyAddress = ds.Tables[0].Rows[0]["CompanyAddress"].ToString();
+                model.LinkMan = ds.Tables[0].Rows[0]["LinkMan"].ToString();
+                model.Telephone = ds.Tables[0].Rows[0]["Telephone"].ToString();
+                model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
+                model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
+                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                if (ds.Tables[0].Rows[0]["LastLoginTime"].ToString() != "")
+                {
+                    model.LastLoginTime = DateTime.Parse(ds.Tables[0].Rows[0]["LastLoginTime"].ToString());
+                }
+                model.LastLoginIP = ds.Tables[0].Rows[0]["LastLoginIP"].ToString();
+                if (ds.Tables[0].Rows[0]["LoginTimes"].ToString() != "")
+                {
+                    model.LoginTimes = int.Parse(ds.Tables[0].Rows[0]["LoginTimes"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["IsLocked"].ToString() != "")
+                {
+                    model.IsLocked = int.Parse(ds.Tables[0].Rows[0]["IsLocked"].ToString());
+                }
+                model.ActiveCode = ds.Tables[0].Rows[0]["ActiveCode"].ToString();
+                if (ds.Tables[0].Rows[0]["RegTime"].ToString() != "")
+                {
+                    model.RegTime = DateTime.Parse(ds.Tables[0].Rows[0]["RegTime"].ToString());
+                }
+                model.School = ds.Tables[0].Rows[0]["School"].ToString();
+                model.Proxy = ds.Tables[0].Rows[0]["Proxy"].ToString();
+                return model;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public HOT.Model.User GetModel(string email)
@@ -338,9 +390,9 @@ namespace HOT.SQLServerDAL
         /// <param name="email"></param>
         /// <param name="passWord"></param>
         /// <returns></returns>
-        public bool Exists(string email, string passWord)
+        public Guid Exists(string email, string passWord)
         {
-            string sql = "select * from AL_User where email=@email and userpassword=@passWord";
+            string sql = "select userid from AL_User where email=@email and userpassword=@passWord";
             SqlParameter[] parameters = {
                 new SqlParameter("@email",SqlDbType.NVarChar,50),
                 new SqlParameter("@passWord",SqlDbType.NVarChar,50)
@@ -348,10 +400,13 @@ namespace HOT.SQLServerDAL
             parameters[0].Value = email;
             parameters[1].Value = passWord;
 
-            if (DbHelperSQL.GetSingle(sql, parameters) != null)
-                return true;
+            object o = DbHelperSQL.GetSingle(sql, parameters);
 
-            return false;
+            if (o == null)
+                return Guid.Empty;
+            return (Guid)o;
+
+            
         }
 
         public bool Exists(Guid userId, string passWord)
