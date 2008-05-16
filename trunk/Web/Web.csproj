@@ -142,6 +142,13 @@
     <Compile Include="Ad\EditeGroup.aspx.designer.cs">
       <DependentUpon>EditeGroup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +169,13 @@
     </Compile>
     <Compile Include="MasterPage\BuyCommon.Master.designer.cs">
       <DependentUpon>BuyCommon.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\ShowZone.Master.cs">
       <DependentUpon>ShowZone.Master</DependentUpon>
@@ -438,7 +452,11 @@
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
+    <Content Include="flash\flash.swf" />
+    <Content Include="App_Themes\skin1\js\js.js" />
     <Content Include="App_Themes\skin1\Skin.skin" />
+    <None Include="App_Themes\skin1\js\.svn\entries" />
+    <None Include="App_Themes\skin1\js\.svn\format" />
     <None Include="database\MY_AL_Ad.sql" />
     <None Include="database\MY_AL_AdGroup.sql" />
     <None Include="database\MY_AL_Order.sql" />
@@ -534,7 +552,17 @@
     <Content Include="App_Themes\TextZoneStyle.js" />
     <Content Include="App_Themes\ZoneDesigner.css" />
     <None Include="database\DataChecker.sql" />
+    <Content Include="Default.aspx" />
     <Content Include="ErrorPage.aspx" />
+    <Content Include="images\01.jpg" />
+    <Content Include="images\02.jpg" />
+    <Content Include="images\03.jpg" />
+    <Content Include="images\04.jpg" />
+    <Content Include="images\05.jpg" />
+    <Content Include="images\06.jpg" />
+    <Content Include="images\button_1.jpg" />
+    <Content Include="images\button_2.jpg" />
+    <Content Include="images\button_3.jpg" />
     <Content Include="images\icon\ico_lights.gif" />
     <Content Include="MasterPage\UserCommon.Master" />
     <Content Include="Ad\ManageAdGroup.aspx" />
@@ -563,6 +591,7 @@
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
+    <Content Include="MasterPage\Default.Master" />
     <Content Include="MasterPage\BuyCommon.Master" />
     <Content Include="MasterPage\ShowZone.Master" />
     <Content Include="MasterPage\AdCommon.Master" />
@@ -570,6 +599,12 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\skin1\js\.svn\prop-base\" />
+    <Folder Include="App_Themes\skin1\js\.svn\props\" />
+    <Folder Include="App_Themes\skin1\js\.svn\text-base\" />
+    <Folder Include="App_Themes\skin1\js\.svn\tmp\prop-base\" />
+    <Folder Include="App_Themes\skin1\js\.svn\tmp\props\" />
+    <Folder Include="App_Themes\skin1\js\.svn\tmp\text-base\" />
     <Folder Include="Pay\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
