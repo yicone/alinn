@@ -1,0 +1,345 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Web.MasterPage.Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <script src="../App_Themes/skin1/js/js.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="maincontent">
+<div id="top">
+<div id="top1">
+<div id="logo"></div>
+<div id="topright">
+<div id="login">
+<div class="login">欢迎您！ [<a href="#" target="_blank">登录</a>]或[<a href="#" target="_blank">注册</a>]</div>
+<div class="profile">
+<ul>
+<li>我的阿里妈妈</li>
+<li>QQ</li>
+<li>财富通</li>
+</ul>
+</div>
+</div>
+<div id="menu">
+<ul>
+<li>买广告</li>
+<li>卖广告</li>
+<li>网站推广</li>
+<li>社区</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="search">
+<div class="search">搜索框</div>
+<div class="help">［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
+</div>
+<div id="searchbottom">
+<div class="searchbottomleft"></div>
+<div class="tags">
+<div class="tagscontent">
+热门搜索：娱乐 电影 电视 音乐 广告 开发
+</div>
+</div>
+<div class="searchbottomright"></div>
+</div>
+
+<div id="main">
+<div class="main1">
+<div class="left">
+<div class="notice">
+<div class="title">
+<div class="titlecontent">活动与公告</div>
+<div class="more">更多>></div>
+</div>
+<div class="partcontent">
+   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <p>&gt;&gt;新闻1 2323232323  </p>
+  <p>&gt;&gt;新闻2遥遥 热热然</p>
+    <p>&gt;&gt;新闻1 2323232323  </p>
+  <p>&gt;&gt;新闻2遥遥 热热然</p>
+    <p>&gt;&gt;新闻1 2323232323  </p>
+  <p>&gt;&gt;新闻2遥遥 热热然</p>
+    <p>&gt;&gt;新闻1 2323232323  </p>
+  <p>&gt;&gt;新闻2遥遥 热热然</p>      
+        </asp:ContentPlaceHolder>
+
+</div>
+</div>
+<div class="webtools">
+<div class="title">
+<div class="titlecontent">站长工具</div>
+<div class="more">更多>></div>
+</div>
+<div class="partcontent">
+<br />
+<span><a href="#">站长工具一</a></span>
+<span><a href="#">站长工具一</a></span>
+<br/>
+<span><a href="#">站长工具一</a></span>
+<span><a href="#">站长工具一</a></span>
+<br/>
+<span><a href="#">站长工具一</a></span>
+<span><a href="#">站长工具一</a></span>
+<br/>
+<span><a href="#">站长工具一</a></span>
+<span><a href="#">站长工具一</a></span>
+<br/>
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="middle">
+<div id="flash">
+<script type="text/javascript">
+// <![CDATA[
+var arr1 = new Array;
+var arr2 = new Array;
+var arr3 = new Array;
+
+arr1.push("images/01.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("“中国建站");
+ arr1.push("images/02.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("“中国建站");
+ arr1.push("images/03.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("中国建站");
+ arr1.push("images/04.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("中国建站");
+ arr1.push("images/05.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("中国建站");
+ arr1.push("images/06.jpg");
+arr2.push("http://www.jz123.cn/");
+arr3.push("中国建站");
+ 
+
+var pics = arr1.join("|");
+var mylinks = arr2.join("|");
+var texts = arr3.join("|");
+
+oFlash1 = new sFlash("flash/flash.swf","js","540","200","6","#ffffff");
+oFlash1.addParam("quality", "high");
+oFlash1.addParam("wmode", "opaque")
+oFlash1.addParam("salign", "t");
+oFlash1.addVariable("p",pics);	
+oFlash1.addVariable("l",mylinks);
+oFlash1.addVariable("icon",texts);
+oFlash1.write("flash");
+// ]]>
+</script>
+</div>
+<div class="Recommend">
+<SCRIPT language=javascript>
+			function openAdView(url) {
+				window.open(url);
+			}
+			function openNewWindDowAdView(id) {
+				window.open('adZoneView_&#039;+id+&#039;.html');
+			}
+			//搜索
+			function search(formId) {
+				var form = document.getElementById(formId);
+				if(form.keyword.value == '例如:旅游 教育 招商 医疗 购物'){
+					form.keyword.value = "";
+				}
+				form.action='/dirAdZoneSearch.do';
+				form.submit();
+			}
+			//注册
+			function reg(){
+				window.location='/userRegEdit.do';
+			}
+			<!--
+			/*精品推荐播放*/
+			var scrollEcCt=1;
+			var EcpauseTime=6*1000;
+			var timerEc;
+			function hideAllEcClips() {
+				for (i=1; i<7; i++){
+					var allEcBoxs="ecBox"+i;
+					var ecNavNum="ecNav"+i;
+					document.getElementById(allEcBoxs).style.display="none";
+					document.getElementById(ecNavNum).className="topnavoff";
+				}
+			}
+			function ecNavOn(n,flag) {
+				var curEcBox="ecBox"+n;
+				var curEcNavNum="ecNav"+n;
+				hideAllEcClips();
+				document.getElementById(curEcBox).style.display="block";
+				document.getElementById(curEcNavNum).className="topnavon";
+				scrollEcCt=n;
+				if(flag=="scroll"){ //表示通过循环滚动执行
+					  
+				}
+				else{  //通过鼠标定位
+				   pause();
+				}
+			}
+			function ecNavTrOver() {
+				stopEcScroll();
+			}
+			function ecNavTrOut() {
+				timerEc=setTimeout("fecScroll()",EcpauseTime);
+			}
+			function fecScroll() {
+				stopEcScroll();
+				ecNavOn(scrollEcCt,"scroll");
+				scrollEcCt+=1;
+				if (scrollEcCt==7) {
+					scrollEcCt=1;
+				}
+				timerEc=setTimeout("fecScroll()",EcpauseTime);
+			}
+			function stopEcScroll() {   
+				clearTimeout(timerEc);	
+			}
+			function pause(){
+				clearTimeout(timerEc);
+			}
+			-->
+		</SCRIPT>
+<!--滑动菜单JS-->
+<SCRIPT type=text/javascript>
+			function nTabs(thisObj,Num) {
+				if(thisObj.className == "active")return;
+				var tabObj = thisObj.parentNode.id;
+				var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+				for(i=0; i <tabList.length; i++) {
+					if (i == Num) {
+						thisObj.className = "active"; 
+				    	document.getElementById(tabObj+"_Content"+i).style.display = "block";
+					}else{
+						tabList[i].className = "normal"; 
+						document.getElementById(tabObj+"_Content"+i).style.display = "none";
+					}
+				} 
+			}
+			function showandhide(flag){
+				if(flag=='1') {
+					document.getElementById("gonggao").style.display="block";
+					document.getElementById("baodao").style.display="none";
+					//alert("active");
+				}
+				if(flag=='2'){
+					//alert("normal");
+					document.getElementById("gonggao").style.display="none";
+					document.getElementById("baodao").style.display="block";
+				}
+			}
+		</SCRIPT>
+<!--精品推荐 最新广告位-->
+<!--精品推荐-->
+<DIV 
+style="BACKGROUND: url(images/index/jptj_pic_left.jpg) no-repeat; FLOAT: left; WIDTH: 94px; PADDING-TOP: 10px; HEIGHT: 162px; border-left:#b1dceb 1px solid;border-top:#b1dceb 1px solid;border-bottom:#b1dceb 1px solid;margin-top:2px;margin-left:2px;">
+<DIV class=topnavon id=ecNav1 onMouseOver="ecNavOn(1,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>旅游度假 </DIV>
+<DIV class=topnavoff id=ecNav2 onMouseOver="ecNavOn(2,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>医疗健康 </DIV>
+<DIV class=topnavoff id=ecNav3 onMouseOver="ecNavOn(3,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>网络服务 </DIV>
+<DIV class=topnavoff id=ecNav4 onMouseOver="ecNavOn(4,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>教育招聘 </DIV>
+<DIV class=topnavoff id=ecNav5 onMouseOver="ecNavOn(5,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>招商项目 </DIV>
+<DIV class=topnavoff id=ecNav6 onMouseOver="ecNavOn(6,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>网站自荐 </DIV>
+<DIV style="CLEAR: both"></DIV></DIV><!-- 旅游度假 -->
+<DIV id=ecBox1 
+style="DISPLAY: block; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">1</DIV><!--旅游度假结束-->
+<!--医疗健康-->
+<DIV id=ecBox2 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">2</DIV><!--医疗健康结束-->
+<!--招商加盟-->
+<DIV id=ecBox3 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">3
+</DIV><!--招商加盟结束-->
+<!--教育招聘-->
+<DIV id=ecBox4 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">4</DIV>
+<!--教育招聘结束-->
+<!--消费购物-->
+<DIV id=ecBox5 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">5</DIV>
+<!--消费购物结束-->
+<!--站长自荐-->
+<DIV id=ecBox6 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">6</DIV>
+<!--站长自荐结束-->
+<SCRIPT language=javascript>fecScroll();</SCRIPT>
+<!--精品推荐结束-->
+</div>
+</div>
+<div class="right">
+<div class="help">
+  <div><a href="/landing.do" target="_blank"><img src="images/button_1.jpg" alt="1" width="189" height="27" border="0" /> </a></div>
+  <div>按时长计费   精准定向 安全省钱 </div>
+  <div><a href="/landing.do" target="_blank"><img src="images/button_2.jpg" alt="2" width="189" height="27" border="0" align="middle" /> </a></div>
+  <div>按效果计费   覆盖面广 管理灵活 </div>
+  <div><a href="/landing.do" target="_blank"><img src="images/button_3.jpg" alt="3" width="189" height="27" border="0" /> </a></div>
+  <div>提升广告价值   高额分成 快捷支付 </div>
+</div>
+<div class="superstar">
+<div class="title">
+<div class="titlecontent">超人气网站</div>
+<div class="more">更多>></div>
+</div>
+<div class="partcontent">
+</div>
+</div>
+</div>
+</div>
+<div class="ad1024"></div>
+<div id="classes">2222
+</div>
+<div class="main2">
+<div class="partner">
+<div class="title">合作伙伴</div>
+<div class="partcontent"></div>
+</div>
+<div class="buyers">
+<div class="title">合作伙伴</div>
+<div class="partcontent"></div>
+</div> 
+</div>
+</div>
+<div id="bottom">
+<div class="about">
+    <ul>
+        <li><a href="#" target="_blank">
+            关于我们</a> </li>
+        <li><a href="#" 
+                target="_blank">客户中心</a> </li>
+        <li><a href="http://www.alimama.com/membersvc/about/join-3-1.htm" target="_blank">
+            诚征英才</a> </li>
+        <li><a href="#" 
+                target="_blank">联系我们</a> </li>
+        <li><a href="#" target="_blank">
+            版权说明</a> </li>
+    </ul>
+    </div>
+    <div class="copyright">
+        Copyright 2007-2008, 版权所有 alinainai.com.cn.
+        <br />
+    </div>
+
+</div>
+</div>
+</form>
+</body>
+</html>
+
