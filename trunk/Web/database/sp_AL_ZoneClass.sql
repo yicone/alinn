@@ -23,7 +23,6 @@ AS
 		RETURN 1
 
 GO
-
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneClass_ADD]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [dbo].[UP_AL_ZoneClass_ADD]
 GO
@@ -40,9 +39,9 @@ CREATE PROCEDURE UP_AL_ZoneClass_ADD
 
  AS 
 	INSERT INTO AL_ZoneClass(
-	[ClassId],[ClassName],[ParentId]
+	[ClassName],[ParentId]
 	)VALUES(
-	@ClassId,@ClassName,@ParentId
+	@ClassName,@ParentId
 	)
 	SET @ClassId = @@IDENTITY
 

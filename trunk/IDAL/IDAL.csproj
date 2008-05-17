@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B0706FA2-977C-4523-B093-F57804756498}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -98,6 +98,8 @@
     <Compile Include="IAd.cs" />
     <Compile Include="IAdGroup.cs" />
     <Compile Include="IEmployment.cs" />
+    <Compile Include="INews.cs" />
+    <Compile Include="INewsClass.cs" />
     <Compile Include="IOrder.cs" />
     <Compile Include="IOrderReport.cs" />
     <Compile Include="ISite.cs" />

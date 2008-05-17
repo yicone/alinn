@@ -29,7 +29,6 @@ namespace HOT.Common
         /// <returns></returns>
         public static string CutString(string inputString, int len)
         {
-
             ASCIIEncoding ascii = new ASCIIEncoding();
             int tempLen = 0;
             string tempString = "";

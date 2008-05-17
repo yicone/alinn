@@ -103,6 +103,13 @@
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Admin\News\AdNews.aspx.cs">
+      <DependentUpon>AdNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\News\AdNews.aspx.designer.cs">
+      <DependentUpon>AdNews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\top.aspx.cs">
       <DependentUpon>top.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -120,6 +127,13 @@
     </Compile>
     <Compile Include="Admin\Zone\ManageZone.aspx.designer.cs">
       <DependentUpon>ManageZone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Zone\ManageZoneClass.aspx.cs">
+      <DependentUpon>ManageZoneClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\ManageZoneClass.aspx.designer.cs">
+      <DependentUpon>ManageZoneClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ad\AdList.aspx.cs">
       <DependentUpon>AdList.aspx</DependentUpon>
@@ -183,6 +197,13 @@
     </Compile>
     <Compile Include="MasterPage\ShowZone.Master.designer.cs">
       <DependentUpon>ShowZone.Master</DependentUpon>
+    </Compile>
+    <Compile Include="News\ShowNews.aspx.cs">
+      <DependentUpon>ShowNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\ShowNews.aspx.designer.cs">
+      <DependentUpon>ShowNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="My.aspx.cs">
       <DependentUpon>My.aspx</DependentUpon>
@@ -470,6 +491,8 @@
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
     <None Include="App_Themes\skin1\images\Thumbs.db" />
+    <Content Include="Admin\News\AdNews.aspx" />
+    <Content Include="Admin\Zone\ManageZoneClass.aspx" />
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
@@ -601,6 +624,7 @@
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="News\ShowNews.aspx" />
     <Content Include="My.aspx" />
     <Content Include="MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />

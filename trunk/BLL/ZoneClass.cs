@@ -94,13 +94,19 @@ namespace HOT.BLL
 		{
 			return dal.GetList(strWhere);
 		}
-
+        /// <summary>
+        /// 获得前N条数据列表
+        /// </summary>
+        public DataSet GetList(int topN, string strWhere)
+        {
+            return dal.GetList(topN, strWhere);
+        }
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
 		public DataSet GetAllList()
 		{
-			return GetList("");
+			return dal.GetList("");
 		}
 
 		/// <summary>

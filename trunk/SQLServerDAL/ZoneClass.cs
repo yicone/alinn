@@ -136,7 +136,22 @@ namespace HOT.SQLServerDAL
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
-
+        /// <summary>
+        /// 获得前N条数据列表
+        /// </summary>
+        public DataSet GetList(int topN,string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select top ");
+            strSql.Append(topN.ToString());
+            strSql.Append(" ClassId,ClassName,ParentId ");
+            strSql.Append(" FROM AL_ZoneClass ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return DbHelperSQL.Query(strSql.ToString());
+        }
 		/*
 		/// <summary>
 		/// 分页获取数据列表

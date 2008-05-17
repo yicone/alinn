@@ -21,6 +21,10 @@ insert into AL_AD(AdId,AdGroupId,Title) values('CF0A638B-43E0-3EFA-ADAB-9A8200C0
 
 insert into AL_Adgroup(groupname,userid,class,keywords,adgroupId)
 values('dfdsf','936DA01F-9ABD-4D9D-80C7-02AF85C822A7',5,'4444','9363D71F-9ABD-4D9D-80C7-02AF85C822A7')
+--新闻分类数据
+insert into AL_NewsClass(ClassName) values('公告')
+insert into AL_NewsClass(ClassName) values('活动')
+insert into AL_NewsClass(ClassName) values('新闻')
 
 --广告位规格（数据已全）
 SET IDENTITY_INSERT [AL_ZoneSize] ON
