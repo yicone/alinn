@@ -1,35 +1,49 @@
-Ôªø<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager" masterpagefile="../MasterPage/UserCommon.Master" title="ÁΩëÁ´ôÁÆ°ÁêÜ" %>
-<asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
-    <div>
-        <ul id="treelist">
-            <li>
-                <asp:Button ID="btnAddSite" runat="server" Text="Êñ∞Â¢ûÁΩëÁ´ô" OnClick="btnAddSite_Click" /></li>
-            <li>
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
-                    OnDataBinding="DataList1_DataBinding" onitemcommand="DataList1_ItemCommand">
-                    <ItemTemplate>
-                        <div class="title-bar" style="width: 950px">
-                            <asp:LinkButton runat="server" ID="lbViewSite">ÁΩëÁ´ôÂêçÁß∞Ôºö<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(ÂÖ±<%# Eval("ZoneCount") %>‰∏™ÂπøÂëä‰Ωç)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
-                            <span style="width:400px" ></span><asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "~/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>' >Âú®Ê≠§ÁΩëÁ´ô‰∏ãÊñ∞Â¢ûÂπøÂëä‰Ωç</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "~/Zone/Site.aspx?action=update&siteid=" + Eval("SiteId")%>' >‰øÆÊîπ</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" CommandName="DelSite" CommandArgument='<%# Eval("SiteId") %>'>Âà†Èô§</asp:LinkButton>
-                            </p>
-                        </div>
-                        <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" frameborder="0" src='<%# "ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
-                            <!--ËØªÂèñÂπøÂëä‰ΩçÂàóË°®-->
-                        </iframe>
-                    </ItemTemplate>
-                </asp:DataList>
-            </li>
-        </ul>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager"
+    MasterPageFile="../MasterPage/UserCommon.Master" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="_headContent">
+
+    <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+
+</asp:Content>
+<asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
+    <div id="maincontent">
+        <div>
+            <ul id="treelist">
+                <li>
+                    <asp:Button ID="btnAddSite" runat="server" Text="–¬‘ˆÕ¯’æ" OnClick="btnAddSite_Click" /></li>
+                <li>
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding"
+                        OnItemCommand="DataList1_ItemCommand">
+                        <ItemTemplate>
+                            <div class="title-bar" style="width: 950px">
+                                <asp:LinkButton runat="server" ID="lbViewSite">Õ¯’æ√˚≥∆£∫<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(π≤<%# Eval("ZoneCount") %>∏ˆπ„∏ÊŒª)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
+                                <span style="width: 400px"></span>
+                                <asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "~/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>'>‘⁄¥ÀÕ¯’æœ¬–¬‘ˆπ„∏ÊŒª</asp:LinkButton>
+                                &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "~/Zone/Site.aspx?action=update&siteid=" + Eval("SiteId")%>'>–ﬁ∏ƒ</asp:LinkButton>
+                                &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" CommandName="DelSite"
+                                    CommandArgument='<%# Eval("SiteId") %>'>…æ≥˝</asp:LinkButton>
+                                </p>
+                            </div>
+                            <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" frameborder="0"
+                                src='<%# "/Zone/ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
+                                <!--∂¡»°π„∏ÊŒª¡–±Ì-->
+                            </iframe>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </li>
+            </ul>
+        </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+            SelectCommand="UP_GetSiteInfoExtForSiteManager" SelectCommandType="StoredProcedure"
+            OnSelecting="SqlDataSource1_Selecting">
+            <SelectParameters>
+                <asp:Parameter Name="UserId" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        SelectCommand="UP_GetSiteInfoExtForSiteManager" SelectCommandType="StoredProcedure"
-        OnSelecting="SqlDataSource1_Selecting">
-        <SelectParameters>
-            <asp:Parameter Name="UserId" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+</asp:Content>
+<asp:Content ID="Content3" runat="server" ContentPlaceHolderID="_scriptContent">
 
     <script type="text/javascript">
 	function frameResize(frameId){
@@ -39,18 +53,15 @@
 	    $("#" + frameId).css("height", scrollHeight + 35);
 	}
 	
-	$('iframe').load(function()
-    {
+	$('iframe').load(function(){
         try {
             this.style.height =
             this.contentWindow.document.body.offsetHeight + 35 + 'px';
         } catch (exception) {
             this.contentWindow.location.reload();
         }
-    }
-);
+    });
 
     </script>
-
 
 </asp:Content>

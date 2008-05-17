@@ -37,7 +37,7 @@ namespace Web
                 Debug.Assert(lastPageUrl.Contains("ZoneCategory.aspx"));
                 model = new HOT.Model.Zone();
 
-                model.UserId = Guid.NewGuid();              //UNDONE:!!!从cookie中取
+                model.UserId = new Guid(Session["UserId"].ToString());
                 model.SiteId = new Guid(Request.Form["siteid"]);
                 #region 添加广告位
                 model.ZoneName = Request.Form["zonename"];
