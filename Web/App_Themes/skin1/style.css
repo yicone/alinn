@@ -5,9 +5,9 @@ body,form,ul,li,p,ol{margin:0;padding:0}
 body{background:#FFFFFF;text-align:center; margin-top:5px;}
 img{border:0}
 ul{list-style-type:none}
-a:link{ text-decoration:none;}
+a:link{ text-decoration:none; color:WindowText;}
 a:hover{color:#FF6633;}
-table{text-align:left; border:solid 1px #669999;}
+table{text-align:left; border:solid 0px #669999;}
 #maincontent{width:100%; height:auto; border-width:0px; background-color:#FFFFFF; text-align:center; clear:both;}
 #top{height:60px; border-bottom-width:0px; width:1024px;}
 #logo{width:262px; height:60px; background-image:url(images/logo.jpg); margin-left:0px; float:left;}
@@ -39,11 +39,12 @@ table{text-align:left; border:solid 1px #669999;}
 .title{width:250px; height:22px; float:left; border:0px;}
 .title .titlecontent{width:150px; height:18px; float:left; margin-top:8px; margin-left:10px;}
 .title .more{width:80px; height:18px; float:left; margin-left:10px; margin-top:8px; text-align:right;}
-.partcontent{width:250px; height:auto; float:left; border-top:dotted 1px; margin-top:10px;}
+.partcontent{width:100%; height:auto; float:left; border-top:dotted 1px; margin-top:10px;margin-left:0px; text-align:center; padding-top:10px;}
 .partcontent span{width:100px; height:18px; float:left; margin-left:15px;}
 #main .main1 .webtools{width:248px; height:168px; float:left; margin-left:0px; border:#b1dceb 1px solid; margin-top:1px; background-image:url(images/webtoolsbg.gif);}
 #main .main1 .middle{width:570px;height:350px;float:left;}
 #main .main1 .middle .flash{margin-left:0px; text-align:left; padding:0px;}
+#main .main1 .middel .Recommend{ height:200px;}
 #main .main1 .right{width:200px; height:350px;float:left;}
 #main .main1 .right .help{width:200px; height:180px;float:left;border:#b1dceb 1px solid;}
 #main .main1 .right .help div{margin-left:5px; margin-top:8px;}
@@ -57,7 +58,7 @@ table{text-align:left; border:solid 1px #669999;}
 .topnavoff {  background-color:#999999; MARGIN-BOTTOM: 2px; WIDTH: 81px; COLOR: #ffffff; LINE-HEIGHT: 22px; HEIGHT: 22px; TEXT-ALIGN: center
 }
 .ad1024{width:1024px;height:80px;border:#b1dceb 1px solid; margin-top:0px; background-image:url(images/ad1024.jpg);}
-#classes{width:1024px; height:800px;border:#b1dceb 1px solid;}
+#classes{width:1024px; height:auto;border:#b1dceb 1px solid;}
 #main .main2{width:1024px; height:auto;}
 #main .main2 .partner{ width:495px; height:150px;float:left; margin-left:0px;border:#eba34e thin solid; }
 #main .main2 .partner .title{width:98%; height:20px; float:left;}

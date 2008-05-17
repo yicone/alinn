@@ -108,6 +108,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="NewsClass.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />

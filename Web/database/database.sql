@@ -1,7 +1,4 @@
 USE [Alinn]
-update AL_Zone set mediatype=1
-delete  from al_zone where zoneid='00000000-0000-0000-0000-000000000000'
-select * from al_zone
 --用户表
 if exists (select * from sysobjects where id = OBJECT_ID('[AL_User]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [AL_User]
@@ -190,7 +187,19 @@ CREATE TABLE [dbo].[AL_ZoneClass] (
 	[ClassName] [nvarchar](50) null,--分类名称
 	[ParentId] [int] null--父类ID
 )
-
+--新闻系统
+CREATE TABLE [dbo].[AL_News](
+	[NewsId] int identity(1,1) primary key not null,
+	[ClassId] int null,
+	[Title] nvarchar(200) null,
+	[Content] ntext null,
+	[CreateDate] datetime default(getdate())
+)
+--新闻分类
+CREATE TABLE [dbo].[AL_NewsClass](
+	[ClassId]  int identity(1,1) primary key not null,
+	[ClassName] nvarchar(20) null
+)
 GO
 --邮件系统
 Create Table [dbo].[AL_EmailInfo](

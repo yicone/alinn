@@ -36,6 +36,10 @@ namespace HOT.IDAL
 		/// 获得数据列表
 		/// </summary>
 		DataSet GetList(string strWhere);
+                /// <summary>
+        /// 获得前N条数据列表
+        /// </summary>
+        DataSet GetList(int topN, string strWhere);
 		/// <summary>
 		/// 根据分页获得数据列表
 		/// </summary>

@@ -60,17 +60,8 @@
 <div class="more">更多>></div>
 </div>
 <div class="partcontent">
-   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-    <p>&gt;&gt;新闻1 2323232323  </p>
-  <p>&gt;&gt;新闻2遥遥 热热然</p>
-    <p>&gt;&gt;新闻1 2323232323  </p>
-  <p>&gt;&gt;新闻2遥遥 热热然</p>
-    <p>&gt;&gt;新闻1 2323232323  </p>
-  <p>&gt;&gt;新闻2遥遥 热热然</p>
-    <p>&gt;&gt;新闻1 2323232323  </p>
-  <p>&gt;&gt;新闻2遥遥 热热然</p>      
-        </asp:ContentPlaceHolder>
-
+   <asp:ContentPlaceHolder ID="notice" runat="server">
+   </asp:ContentPlaceHolder>
 </div>
 </div>
 <div class="webtools">
@@ -108,23 +99,23 @@ var arr2 = new Array;
 var arr3 = new Array;
 
 arr1.push("images/01.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("“中国建站");
+arr2.push("http://www.hotbook.cn/");
+arr3.push("“热点图书");
  arr1.push("images/02.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("“中国建站");
+arr2.push("http://www.downke.cn/");
+arr3.push("“当客网");
  arr1.push("images/03.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("中国建站");
+arr2.push("http://www.hotbook.cn/");
+arr3.push("热点图书");
  arr1.push("images/04.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("中国建站");
+arr2.push("http://www.downke.cn/");
+arr3.push("当客网");
  arr1.push("images/05.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("中国建站");
+arr2.push("http://www.hotbook.cn/");
+arr3.push("热点图书");
  arr1.push("images/06.jpg");
-arr2.push("http://www.jz123.cn/");
-arr3.push("中国建站");
+arr2.push("http://www.downke.cn/");
+arr3.push("当客网");
  
 
 var pics = arr1.join("|");
@@ -143,7 +134,7 @@ oFlash1.write("flash");
 </script>
 </div>
 <div class="Recommend">
-<SCRIPT language=javascript>
+<Script language="javascript">
 			function openAdView(url) {
 				window.open(url);
 			}
@@ -212,7 +203,7 @@ oFlash1.write("flash");
 				clearTimeout(timerEc);
 			}
 			-->
-		</SCRIPT>
+		</Script>
 <!--滑动菜单JS-->
 <SCRIPT type=text/javascript>
 			function nTabs(thisObj,Num) {
@@ -244,41 +235,44 @@ oFlash1.write("flash");
 		</SCRIPT>
 <!--精品推荐 最新广告位-->
 <!--精品推荐-->
-<DIV 
+<div 
 style="BACKGROUND: url(images/index/jptj_pic_left.jpg) no-repeat; FLOAT: left; WIDTH: 94px; PADDING-TOP: 10px; HEIGHT: 162px; border-left:#b1dceb 1px solid;border-top:#b1dceb 1px solid;border-bottom:#b1dceb 1px solid;margin-top:2px;margin-left:2px;">
-<DIV class=topnavon id=ecNav1 onMouseOver="ecNavOn(1,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>旅游度假 </DIV>
-<DIV class=topnavoff id=ecNav2 onMouseOver="ecNavOn(2,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>医疗健康 </DIV>
-<DIV class=topnavoff id=ecNav3 onMouseOver="ecNavOn(3,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>网络服务 </DIV>
-<DIV class=topnavoff id=ecNav4 onMouseOver="ecNavOn(4,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>教育招聘 </DIV>
-<DIV class=topnavoff id=ecNav5 onMouseOver="ecNavOn(5,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>招商项目 </DIV>
-<DIV class=topnavoff id=ecNav6 onMouseOver="ecNavOn(6,'mouse')" 
-style="FLOAT: right" onmouseout=ecNavTrOut()>网站自荐 </DIV>
-<DIV style="CLEAR: both"></DIV></DIV><!-- 旅游度假 -->
-<DIV id=ecBox1 
-style="DISPLAY: block; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">1</DIV><!--旅游度假结束-->
+<div class=topnavon id=ecNav1 onMouseOver="ecNavOn(1,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>旅游度假 </div>
+<div class=topnavoff id=ecNav2 onMouseOver="ecNavOn(2,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>医疗健康 </div>
+<div class=topnavoff id=ecNav3 onMouseOver="ecNavOn(3,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>网络服务 </div>
+<div class=topnavoff id=ecNav4 onMouseOver="ecNavOn(4,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>教育招聘 </div>
+<div class=topnavoff id=ecNav5 onMouseOver="ecNavOn(5,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>招商项目 </div>
+<div class=topnavoff id=ecNav6 onMouseOver="ecNavOn(6,'mouse')" 
+style="FLOAT: right" onmouseout=ecNavTrOut()>网站自荐 </div>
+<div style="CLEAR: both"></div></div><!-- 旅游度假 -->
+<div id=ecBox1 
+style="DISPLAY: block; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 465px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px; padding-left:5px; padding-top:5px;">
+    <asp:ContentPlaceHolder ID="ecBox1" runat="server">
+    </asp:ContentPlaceHolder>
+    </div><!--旅游度假结束-->
 <!--医疗健康-->
-<DIV id=ecBox2 
-style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">2</DIV><!--医疗健康结束-->
+<div id=ecBox2 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">2</div><!--医疗健康结束-->
 <!--招商加盟-->
-<DIV id=ecBox3 
+<div id=ecBox3 
 style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">3
-</DIV><!--招商加盟结束-->
+</div><!--招商加盟结束-->
 <!--教育招聘-->
-<DIV id=ecBox4 
-style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">4</DIV>
+<div id=ecBox4 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">4</div>
 <!--教育招聘结束-->
 <!--消费购物-->
-<DIV id=ecBox5 
-style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">5</DIV>
+<div id=ecBox5 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">5</div>
 <!--消费购物结束-->
 <!--站长自荐-->
-<DIV id=ecBox6 
-style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">6</DIV>
+<div id=ecBox6 
+style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat; FLOAT: left; OVERFLOW: hidden; WIDTH: 470px; HEIGHT: 200px;border:#b1dceb 1px solid; margin-top:2px;">6</div>
 <!--站长自荐结束-->
 <SCRIPT language=javascript>fecScroll();</SCRIPT>
 <!--精品推荐结束-->
@@ -304,7 +298,9 @@ style="DISPLAY: none; BACKGROUND: url(images/index/jptj_pic_right.jpg) no-repeat
 </div>
 </div>
 <div class="ad1024"></div>
-<div id="classes">2222
+<div id="classes">
+<asp:ContentPlaceHolder ID="classes" runat="server">
+    </asp:ContentPlaceHolder>
 </div>
 <div class="main2">
 <div class="partner">

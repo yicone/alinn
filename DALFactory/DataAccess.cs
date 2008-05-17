@@ -172,6 +172,27 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.IZoneSize)objType;
         }
+        /// <summary>
+        /// 创建News数据层接口
+        /// </summary>
+        public static HOT.IDAL.INews CreateNews()
+        {
+
+            string CacheKey = path + ".News";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.INews)objType;
+        }
+
+        /// <summary>
+        /// 创建NewsClass数据层接口
+        /// </summary>
+        public static HOT.IDAL.INewsClass CreateNewsClass()
+        {
+
+            string CacheKey = path + ".NewsClass";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.INewsClass)objType;
+        }
 
 
 }

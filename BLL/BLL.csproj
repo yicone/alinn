@@ -105,6 +105,8 @@
     <Compile Include="Employment.cs" />
     <Compile Include="InFirstpage.cs" />
     <Compile Include="MediaType.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="NewsClass.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />
