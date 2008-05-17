@@ -26,7 +26,7 @@ namespace Web
 
         protected void btnAddSite_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Site.aspx?action=new");
+            Response.Redirect("~/Zone/Site.aspx?action=new");
         }
 
         private int _zoneCount = 1;

@@ -1,95 +1,678 @@
-﻿.gray {
-	color: gray;
+﻿.for-yesterday .top, .for-yesterday .bottom, .userinfo .alipay-bind i, #maincontent .side-block h3, #maincontent .side-block h3 span i, #maincontent .userinfo .attrs li label i, #maincontent .userinfo .alipay strong i, #maincontent .alias h5, #maincontent .alias ul li, #maincontent .alias ul li i, #system_msgs .alert, #system_msgs .lc, #system_msgs .rc, #system_msgs .alert i.icon, #maincontent h1.summary-title, #maincontent h1.summary-title .lc, #maincontent h1.summary-title .rc, #maincontent h1.summary-title i, .role-summary .sections h3 i, .sections .ad-types .type cite i, .sections .ad-types .type .more a, .for-yesterday .arrow, .plans-intro li, .plans-intro li a, .plans-intro li a cite i, .publish-steps li.step, .publish-steps li.step a, .publish-steps li.step cite i, .publish-steps li.arrow i, #maincontent .role-summary-footer, #maincontent .role-summary-footer .lc, #maincontent .role-summary-footer .rc, .publish-steps li.step .number {
+	background-image: url(http://img.alimama.cn/images/bg/myalimama_bg.png);
 }
-.red {
-	color: red;
+#maincontent .side-block {
+	background-color: #EBF4FB;
+	border: 1px solid #DCEAF7;
 }
-.green {
-	color: green;
+#maincontent .side-block h3 {
+	background-position: left -282px;
+	background-repeat: repeat-x;
+	color: #FFFFFF;
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px;
+	padding: 0pt 10px;
 }
-.inotice1 {
-	color: gray;
-	margin: 0.33em 0pt !important;
-}
-.inotice3 {
-	background: #FFFFFF url(../images/icon/ico_lights.gif) no-repeat scroll 3px 5px;
-	border: 1px solid #EFEFEF;
-	color: #999999;
-	font-weight: normal;
-	line-height: 1.5em;
-	margin: 0.67em 0pt 0pt 15px;
-	padding: 0.67em 0.67em 0.67em 36px;
-	text-align: left;
-	width: 100px;
-}
-.sellbox {
-	border: 1px solid #CBDDF1;
-	margin: 0.5em 0pt;
-	padding: 0.5em 0pt 0pt;
-}
-.form-section2 {
-	background: transparent url(../zone/images/bg_sidebar.jpg) repeat-y scroll left top;
-}
-.sec-toggler {
+#maincontent .side-block h3 span {
 	display: block;
 	float: left;
-	width: 30px;
+	overflow: hidden;
+	padding: 0pt 15px 0pt 0pt;
+	width: 76px;
 }
-.form-section2 h3 {
-	background-color: #E5EDF8;
-	color: #5F98C5;
-	font-size: 14px;
-	height: 2.5em;
-	line-height: 2.5em;
-	margin-bottom: 1em;
+#maincontent .side-block h3 span.open i, #maincontent h1.summary-title i {
+	background-position: -34px -229px;
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+	height: 6px;
+	margin: -16px 0pt 0pt;
+	overflow: hidden;
+	width: 11px;
 }
-.form-section2 h3 span {
+#maincontent .side-block h3 a.edit {
+	color: #FFFFFF;
+	float: right;
 	font-size: 12px;
 	font-weight: normal;
+	text-decoration: underline;
 }
-.form-section2 dl {
-	clear: both;
+#maincontent .userinfo .ava-and-nick {
+	height: 48px;
+	margin: 5px 10px 10px;
 }
-.form-section2 dl dt {
-	clear: both;
+#maincontent .userinfo .ava-and-nick cite img {
+	height: 36px;
+	width: 36px;
+}
+#maincontent .userinfo .ava-and-nick cite {
+	background-color: #FFFFFF;
+	border: 1px solid #E9E9E9;
 	float: left;
-	font-weight: bold;
-	text-align: right;
-	width: 160px;
+	margin: 0pt 5px;
+	padding: 6px;
 }
-.form-section2 dl dd {
-	margin: 0pt 0pt 1.5em 180px;
+#maincontent .userinfo .ava-and-nick .user {
+	float: left;
+	margin: 0pt 0pt 0pt 10px;
+	padding: 10px 0pt 0pt;
 }
-.form-section2 dd.seper {
-	border-bottom: 1px dotted #CCDEF2;
+#maincontent .userinfo .ava-and-nick .user p {
+	margin: 4px 0pt;
+}
+#maincontent .userinfo .ava-and-nick .user p.nickname {
+	color: #666666;
+}
+#maincontent .userinfo .ava-and-nick .user p.regdate {
+	color: #999999;
+}
+#maincontent .userinfo .attrs {
 	clear: both;
-	height: 1px;
-	line-height: 1px;
-	margin: -1em 0pt 1.2em !important;
+	padding: 0pt 10px;
 }
-.sellbox .sellbox-bottom {
-	background-color: #E7EDF8;
-	border-top: 1px solid #CBDDF1;
-	padding: 1.5em 0.8em;
+#maincontent .userinfo .attrs li {
+	border-bottom: 1px dotted #CCCCCE;
+	height: 25px;
+	line-height: 25px;
 }
-
-
-.form-section2 .label-cr {
-display:block;
-float:left;
-margin:0pt 0.5em 0pt 0pt;
+#maincontent .userinfo .attrs a {
+	text-decoration: underline;
 }
-.form-section2 p.group-cb .label-cr {
-margin-bottom:0.67em;
-width:200px;
+#maincontent .userinfo .attrs li label {
+	float: left;
+	width: 110px;
 }
-.form-section2 p.group-cb2 .label-cr {
-margin:0pt 0pt 0.67em 1em;
-overflow:hidden;
-width:150px;
+#maincontent .userinfo .attrs li label i, #maincontent .userinfo .alipay strong i, #maincontent .alias ul li i {
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 17px;
+	margin: 5px 4px 0pt 5px;
+	overflow: hidden;
+	width: 17px;
 }
-.form-section2 p.group-cb .label-cr span {
-color:#0099FF;
-font-size:14px;
-margin-left:0.5em;
+#maincontent .userinfo .attrs li label i.pm {
+	background-position: -130px -196px;
+}
+#maincontent .userinfo .attrs li label i.wangwang {
+	background-position: -184px -196px;
+}
+#maincontent .userinfo .attrs li label i.score {
+	background-position: -148px -196px;
+}
+#maincontent .userinfo .alipay strong i {
+	background-position: -165px -196px;
+	margin: 10px 0pt 0pt;
+}
+#maincontent .userinfo .attrs .value a {
+	margin-right: 3px;
+}
+#maincontent .userinfo .alipay {
+	line-height: 17px;
+	margin: 10px 8px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 234px;
+}
+#maincontent .userinfo .alipay strong {
+	display: block;
+}
+#maincontent .userinfo .alipay strong i {
+	margin: 0pt 4px 10px 5px;
+}
+#maincontent .userinfo .alipay span {
+	margin-left: 3px;
+}
+.userinfo .alipay-bind {
+	background-color: #FFFFFF;
+	border: 1px solid #BCD1DC;
+	height: 30px;
+	line-height: 230%;
+	margin: 10px auto;
+	padding: 10px 5px;
+	width: 225px;
+}
+.userinfo .alipay-bind i {
+	background-position: -27px -1249px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 33px;
+	margin: 0pt 5px 0pt 0pt;
+	width: 28px;
+}
+#maincontent .alias .buyer {
+	float: left;
+	margin: 15px 0pt 10px 8px;
+}
+#maincontent .alias .seller {
+	float: right;
+	margin: 15px 8px 10px 0pt;
+}
+#maincontent .alias h5 {
+	background-repeat: no-repeat;
+	height: 19px;
+	width: 112px;
+}
+#maincontent .alias h5 span {
+	display: none;
+}
+#maincontent .alias .buyer h5 {
+	background-position: left -310px;
+}
+#maincontent .alias .seller h5 {
+	background-position: -118px -310px;
+}
+#maincontent .alias ul {
+	margin: 2px 0pt 0pt;
+}
+#maincontent .alias ul li {
+	background-position: left -329px;
+	background-repeat: no-repeat;
+	height: 31px;
+	line-height: 31px;
+	margin: 0pt 0pt 10px;
+	overflow: hidden;
+	width: 111px;
+}
+#maincontent .alias ul li i {
+	margin: 7px 4px 0pt 8px;
+}
+#maincontent .alias ul li i.new-gg-plan {
+	background-position: -212px -197px;
+}
+#maincontent .alias ul li i.manage-gg-group {
+	background-position: -206px -216px;
+}
+#maincontent .alias ul li i.manage-trans-buyer {
+	background-position: -187px -214px;
+}
+#maincontent .alias ul li i.new-gg-board {
+	background-position: -130px -214px;
+}
+#maincontent .alias ul li i.manage-trans-seller {
+	background-position: -149px -214px;
+}
+#maincontent .alias ul li i.view-income {
+	background-position: -168px -214px;
+}
+#maincontent .alias ul li i.incomes {
+	background-position: -138px -709px;
+}
+#maincontent .news cite {
+	float: left;
+	margin: 15px 12px;
+}
+#maincontent .news .news-list {
+	float: left;
+	margin: 12px 10px 15px 0pt;
+	overflow: hidden;
+	width: 130px;
+}
+#maincontent .news .news-list li {
+	padding: 2px 0pt;
+}
+#system_msgs {
+	margin: 0pt 0pt 17px;
+}
+#system_msgs .alert {
+	background-position: left -166px;
+	background-repeat: repeat-x;
+	height: 30px;
+	line-height: 30px;
+}
+#system_msgs .lc, #system_msgs .rc {
+	background-repeat: no-repeat;
+	height: 30px;
+	overflow: hidden;
+	width: 3px;
+}
+#system_msgs .alert .lc {
+	background-position: left -136px;
+}
+#system_msgs .alert .rc {
+	background-position: -227px -136px;
+	margin: -30px 0pt 0pt;
+}
+#system_msgs .alert .mc {
+	padding: 0pt 0pt 0pt 50px;
+	position: relative;
+}
+#system_msgs .alert i.icon {
+	background-position: left -196px;
+	background-repeat: no-repeat;
+	display: block;
+	height: 40px;
+	left: 5px;
+	position: absolute;
+	top: -11px;
+	width: 34px;
+}
+#maincontent h1.summary-title {
+	background-position: left -660px;
+	color: #006599;
+	font-size: 16px;
+	height: 37px;
+	line-height: 32px;
+	position: relative;
+}
+#maincontent h1.summary-title .lc, #maincontent h1.summary-title .rc, #maincontent .role-summary-footer .lc, #maincontent .role-summary-footer .rc {
+	background-repeat: no-repeat;
+	height: 37px;
+	overflow: hidden;
+	width: 5px;
+}
+#maincontent .role-summary-footer .lc, #maincontent .role-summary-footer .rc {
+	height: 11px;
+}
+#maincontent .role-summary-footer .lc {
+	background-position: left -698px;
+}
+#maincontent .role-summary-footer .rc {
+	background-position: -225px -698px;
+}
+#maincontent h1.summary-title .lc {
+	background-position: left -622px;
+}
+#maincontent h1.summary-title .rc {
+	background-position: -225px -622px;
+	margin: -32px 0pt 0pt;
+}
+#maincontent h1.summary-title .mc {
+	overflow: hidden;
+	padding-left: 10px;
+	width: 105px;
+}
+#maincontent .role-summary-footer {
+	background-position: left -845px;
+	background-repeat: repeat-x;
+	clear: both;
+	height: 11px;
+	margin: 0pt 0pt 17px;
+	position: relative;
+}
+#maincontent .role-summary {
+	border-left: 1px solid #DCEAF7;
+	border-right: 1px solid #DCEAF7;
+	padding: 7px 20px;
+}
+.role-summary .cpa {
+	border-top: 1px dotted #CCCCCC;
+	padding: 20px 0pt 10px;
+}
+.role-summary .cpa div.text {
+	color: #666666;
+	float: left;
+	line-height: 40px;
+	margin-right: 40px;
+}
+#maincontent h1.summary-title i {
+	background-position: -34px -223px;
+	margin: -20px 0pt 0pt;
+}
+#maincontent .role-summary .finance-bar {
+	background-color: #E8F1FF;
+	border: 1px solid #C5E1F7;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	position: relative;
+}
+#maincontent .role-summary .finance-bar li.action {
+	display: block;
+	padding: 0pt 10px;
+	position: absolute;
+	right: 0pt;
+	top: 5px;
+}
+#maincontent .role-summary .finance-bar li {
+	border-right: 1px solid #CCCCCC;
+	display: inline;
+	padding: 0pt 10px;
+}
+#maincontent .role-summary .finance-bar li.no-border {
+	border: 0pt none;
+}
+#maincontent .role-summary .finance-bar li span {
+	margin: 0pt 5px 0pt 0pt;
+}
+.role-summary .sections {
+	margin: 15px 0pt 5px;
+}
+.role-summary .sections h3 {
+	border-bottom: 1px dotted #CDCDCD;
+	font-size: 12px;
+	margin-bottom: 7px;
+	padding-bottom: 6px;
+}
+.role-summary .sections h3 span, .role-summary .sections a {
+	font-weight: normal;
+}
+.role-summary .sections h3 i {
+	background-position: -34px -212px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 11px;
+	margin: 2px 5px 0pt 0pt;
+	overflow: hidden;
+	width: 6px;
+}
+.role-summary .sections h3 span a {
+	margin: 0pt 2px;
+}
+.role-summary .sections h3 .highlight {
+	color: red;
+}
+.role-summary .sections h3 span, .role-summary .sections h3 .view-all {
+	margin-left: 10px;
+}
+.role-summary .sections h3 span.small-margin {
+	margin-left: 2px;
+}
+.sections li.hover {
+	background: transparent url(http://img.alimama.cn/images/bg/myalimama_section_item.png) no-repeat scroll left top;
+}
+.sections .wait-for-rate, .sections .trans {
+	margin: 0pt 5px;
+}
+.sections .wait-for-rate li, .sections .trans li {
+	clear: both;
+	height: 18px;
+	padding: 3px 0pt 3px 8px;
+}
+.sections .wait-for-rate li .title, .sections .trans li .title {
+	float: left;
+	overflow: hidden;
+	width: 350px;
+}
+.sections li .title a:link, .sections li .title a:visited {
+	color: #666666;
+}
+.sections li .title a:hover {
+	text-decoration: underline;
+}
+.sections .trans li .pay-status {
+	float: left;
+	width: 60px;
+}
+.sections .trans li .actions {
+	float: left;
+	width: 80px;
+}
+.sections .trans li .view-more {
+	float: left;
+}
+.sections .ad-types {
+	margin: 15px 0pt 5px;
+}
+.sections .ad-types .type {
+	border-left: 1px solid #C5E1F7;
+	clear: both;
+	height: 46px;
+	margin: 0pt 0pt 10px;
+	overflow: hidden;
+	width: 630px;
+}
+.sections .ad-types .type cite {
+	border-color: #C5E1F7 rgb(197, 225, 247) rgb(197, 225, 247) -moz-use-text-color;
+	border-style: solid solid solid none;
+	border-width: 1px 1px 1px 0pt;
+	float: left;
+	height: 44px;
+	width: 110px;
+}
+.sections .ad-types .type cite i {
+	background-position: -50px -196px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 37px;
+	margin: 4px 4px 0pt 5px;
+	overflow: hidden;
+	width: 39px;
+}
+.sections .ad-types .type cite.cpc i {
+	background-position: -90px -196px;
+}
+.sections .ad-types .type cite em {
+	color: #666666;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 44px;
+}
+.sections .ad-types .type .plans {
+	border-color: #C5E1F7 rgb(197, 225, 247) rgb(197, 225, 247) -moz-use-text-color;
+	border-style: solid solid solid none;
+	border-width: 1px 1px 1px 0pt;
+	float: left;
+	height: 44px;
+	width: 435px;
+}
+.sections .ad-types .types .plans li {
+	clear: both;
+}
+.sections .ad-types .type .more {
+	float: left;
+	width: 83px;
+}
+.sections .ad-types .type .more a {
+	background-position: -147px -236px;
+	background-repeat: no-repeat;
+	display: block;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+}
+.ad-types .type .plans .title, .ad-types .type .plans .price, .ad-types .type .plans .hits, .ad-types .type .plans .views {
+	float: left;
+	line-height: 21px;
+	text-align: center;
+}
+.ad-types .type .plans .title {
+	padding: 0pt 0pt 0pt 10px;
+	text-align: left;
+	width: 125px;
+}
+.ad-types .type .plans .price {
+	width: 95px;
+}
+.ad-types .type .plans .hits {
+	width: 93px;
+}
+.ad-types .type .plans .views {
+	width: 112px;
+}
+.ad-types .type .plans .captions {
+	background-color: #EEF5FB;
+	border-bottom: 1px solid #C5E1F7;
+	color: #999A9C;
+	height: 21px;
+	line-height: 21px;
+}
+.ad-types .type .plans .captions .title {
+	padding: 0pt 0pt 0pt 35px;
+	width: 100px;
+}
+.desc-for-bar {
+	margin: 7px 0pt 0pt;
+}
+.desc-for-bar .for-yesterday {
+	float: left;
+	position: relative;
+	width: 239px;
+}
+.for-yesterday .arrow {
+	background-position: -194px -329px;
+	background-repeat: no-repeat;
+	height: 19px;
+	left: 100px;
+	overflow: hidden;
+	position: absolute;
+	top: -18px;
+	width: 36px;
+}
+.for-yesterday .top {
+	background-position: left -360px;
+	background-repeat: no-repeat;
+	height: 7px;
+	width: 239px;
+}
+.for-yesterday .body {
+	border-left: 1px solid #CCCCCC;
+	border-right: 3px solid #CCCCCC;
+	width: 226px;
+}
+.for-yesterday .bottom {
+	background-position: left -481px;
+	background-repeat: no-repeat;
+	height: 10px;
+	overflow: hidden;
+	width: 239px;
+}
+.for-yesterday ul {
+	color: #999999;
+	margin: 0pt 15px;
+}
+.for-yesterday li {
+	font-size: 12px;
+	padding: 3px 0pt;
+}
+.for-yesterday li span {
+	margin: 0pt 4px 0pt 2px;
+}
+.desc-for-bar .action-points {
+	float: left;
+	padding: 25px 0pt 0pt 50px;
+}
+.desc-for-bar .action-points li {
+	border-bottom: 1px dotted #999999;
+	color: #333333;
+	font-size: 14px;
+	padding: 8px 0pt;
+}
+.desc-for-bar .action-points li em {
+	color: #FE9900;
+}
+.plans-intro, .publish-steps {
+	margin: 15px 0pt;
+}
+.plans-intro a:hover, .publish-steps a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+.plans-intro li, .publish-steps li.step {
+	background-position: -131px -746px;
+	float: left;
+	height: 99px;
+	margin: 0pt 25px 0pt 0pt;
+	overflow: hidden;
+	padding: 0pt 9px 0pt 0pt;
+	width: 90px;
+}
+.publish-steps li.step {
+	margin: 0pt 15px 0pt 0pt;
+	overflow: visible;
+	position: relative;
+}
+.publish-steps li.imm-publish {
+	padding-top: 5px;
+}
+.publish-steps li.imm-publish p {
+	color: #666666;
+	margin: 5px 0pt;
+}
+.publish-steps li.imm-publish .common-button2 {
+	margin: 10px auto;
+	width: 150px;
+}
+.publish-steps li.arrow {
+	float: left;
+	height: 99px;
+	margin: 0pt 10px 0pt 0pt;
+	overflow: hidden;
+	width: 11px;
+}
+.plans-intro li a, .publish-steps li.step a {
+	background-position: left -746px;
+	display: block;
+	float: left;
+	height: 99px;
+	text-align: center;
+	text-indent: 9px;
+	width: 90px;
+}
+.plans-intro li a .intro {
+	display: none;
+}
+.plans-intro li a cite, .publish-steps li a cite {
+	font-style: normal;
+}
+.plans-intro li a cite i, .publish-steps li.step a cite i, .publish-steps li.arrow i {
+	background-repeat: no-repeat;
+	display: block;
+	height: 37px;
+	margin: 15px 0pt 2px 29px;
+	overflow: hidden;
+	width: 39px;
+}
+.publish-steps li.arrow i {
+	background-position: -219px -709px;
+	height: 21px;
+	margin: 35px 0pt;
+	width: 11px;
+}
+.publish-steps li.step a cite i {
+	height: 32px;
+	margin: 22px 0pt 5px 34px;
+	width: 32px;
+}
+.publish-steps li.step a cite span {
+	color: #666666;
+}
+.publish-steps li.step1 a cite i {
+	background-position: -40px -709px;
+}
+.publish-steps li.step2 a cite i {
+	background-position: -73px -709px;
+}
+.publish-steps li.step3 a cite i {
+	background-position: -106px -709px;
+}
+.plans-intro li.cpt a cite i {
+	background-position: -50px -197px;
+}
+.plans-intro li.cpm a cite i {
+	background-position: left -709px;
+}
+.plans-intro li.cpc a cite i {
+	background-position: -90px -197px;
+}
+.plans-intro li span.gray, .publish-steps li span.gray {
+	line-height: 20px;
+	margin: 0pt 0pt 0pt 3px;
+}
+.plans-intro li h5 {
+	font-size: 12px;
+}
+.publish-steps li.step .number {
+	background-repeat: no-repeat;
+	display: block;
+	height: 20px;
+	left: -5px;
+	overflow: hidden;
+	position: absolute;
+	top: -5px;
+	width: 20px;
+}
+.publish-steps li.step1 .number {
+	background-position: -127px -329px;
+}
+.publish-steps li.step2 .number {
+	background-position: -148px -329px;
+}
+.publish-steps li.step3 .number {
+	background-position: -169px -329px;
 }

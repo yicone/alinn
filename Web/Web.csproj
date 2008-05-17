@@ -184,6 +184,20 @@
     <Compile Include="MasterPage\ShowZone.Master.designer.cs">
       <DependentUpon>ShowZone.Master</DependentUpon>
     </Compile>
+    <Compile Include="My.aspx.cs">
+      <DependentUpon>My.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My.aspx.designer.cs">
+      <DependentUpon>My.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyAlinn.aspx.cs">
+      <DependentUpon>MyAlinn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAlinn.aspx.designer.cs">
+      <DependentUpon>MyAlinn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Order\OrderInfo.aspx.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,6 +261,13 @@
     </Compile>
     <Compile Include="User\UserInfo.aspx.designer.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zone\OrderManager.aspx.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Zone\OrderManager.aspx.designer.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\ShowZone.aspx.cs">
       <DependentUpon>ShowZone.aspx</DependentUpon>
@@ -454,6 +475,18 @@
     <Content Include="Ad\EditeGroup.aspx" />
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\skin1\js\js.js" />
+    <Content Include="App_Themes\js\jquery\flora.css" />
+    <Content Include="App_Themes\js\jquery\flora.tabs.css" />
+    <Content Include="App_Themes\js\jquery\loading.gif" />
+    <Content Include="App_Themes\js\jquery\tab.png" />
+    <Content Include="App_Themes\js\jquery\tabs.png" />
+    <Content Include="App_Themes\js\jquery\tabs\jquery.tabs.css" />
+    <Content Include="App_Themes\js\jquery\tabs\jquery.tabs.js" />
+    <Content Include="App_Themes\js\jquery\tabs\loading.gif" />
+    <Content Include="App_Themes\js\jquery\tabs\tab.png" />
+    <Content Include="App_Themes\js\jquery\ui.core.js" />
+    <Content Include="App_Themes\js\jquery\ui.tabs.css" />
+    <Content Include="App_Themes\js\jquery\ui.tabs.js" />
     <Content Include="App_Themes\skin1\Skin.skin" />
     <None Include="App_Themes\skin1\js\.svn\entries" />
     <None Include="App_Themes\skin1\js\.svn\format" />
@@ -568,6 +601,8 @@
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
+    <Content Include="My.aspx" />
+    <Content Include="MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />
     <Content Include="Order\images\tenpay_button_02_m.gif" />
     <Content Include="Order\images\tenpay_button_02_s.gif" />
@@ -581,6 +616,7 @@
     <Content Include="User\seccess.aspx" />
     <Content Include="User\UserInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
+    <Content Include="Zone\OrderManager.aspx" />
     <Content Include="Zone\ShowZone.aspx" />
     <Content Include="Zone\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />

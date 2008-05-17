@@ -1,0 +1,92 @@
+﻿/* hacks for ie6 and ie7 */
+div#navigation .rc {
+}
+div#navigation .mc li a span {
+	*margin: 9px 0;
+}
+#maincontent .side-block h3 span.open i {
+	_width: 11px;
+	_margin: -18px 0 0 0;
+}
+.plans-intro li a cite i, .publish-steps li.step a cite i {
+	*margin: 15px 0 2px 8px;
+}
+.common-list .filters-and-actions {
+	_height: 40px;
+	_overflow: hidden;
+}
+.common-list .gray-border {
+	*margin-top: -1px;
+}
+.common-list .lists {
+	_position: relative;
+	_background-color: transparent;
+	_line-height: 21px;
+	_margin-top: 32px;
+}
+.site-ads .lists {
+	_margin-top: 0;
+}
+.common-list .lists .lc {
+	_margin-top: -32px;
+	_margin-bottom: -33px;
+}
+.common-list .lists .rc {
+	_position: absolute;
+	_right: 0;
+	_top: 0;
+}
+.common-list .list-body .batch-actions i {
+	_margin: 12px 3px 0 3px;
+}
+.common-list .list-body .batch-actions .check-all {
+	_margin: 3px 10px 0 2px;
+}
+.common-list .list-body .bottom-batch .check-all {
+	_margin: 6px 10px 0 2px;
+}
+.common-list .list-body .bottom-batch i {
+	_margin: 4px 3px 0 3px;
+}
+#maincontent .simple-list .opened .rel {
+	_position: absolute;
+	_left: -20px;
+	_top: -10px;
+}
+#maincontent .simple-list .opened .view-detail {
+	_position: relative;
+}
+.opened .ajax-lists {
+	_margin-top: 2px;
+}
+.opened .clearing {
+	_clear: none;
+	_display: none;
+}
+.opened .sponsor .action-bar {
+	_margin-bottom: 20px;
+}
+.ajax-list .ajax-list-item .ad-info .info li .labelc {
+	_float: left;
+}
+.common-button a span {
+}
+#maincontent .summary-title-fix {
+	_border-left: 1px solid #DCEAF7;
+	_border-right: 1px solid #DCEAF7;
+}
+#maincontent .role-summary-footer-fix {
+	_border-left: 1px solid #DCEAF7;
+	_border-right: 1px solid #DCEAF7;
+}
+.view-cpc-fieldsets .groups .txt-board {
+	_height: 72px;
+}
+.view-cpc-fieldsets .groups .txt-board p {
+	margin: 3px 0 3px 10px;
+}
+.view-cpc-fieldsets .groups .txt-board p.title {
+	color: #0044DD;
+	font-size: 14px;
+	margin-top: 6px;
+}

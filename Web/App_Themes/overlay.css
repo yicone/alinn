@@ -1,0 +1,1684 @@
+﻿.warning, .attention, .tips, .success {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.3em;
+	padding: 0.67em 1em 0.67em 2.5em;
+	text-align: left;
+}
+.success {
+	background: #DDFFDD url(http://img.alimama.cn/images/icon/ico_success_16.gif) no-repeat scroll 0.5em 0.67em;
+	border: 1px solid #009900;
+	color: #009900;
+}
+.warning {
+	background: #FFE9C8 url(http://img.alimama.cn/images/icon/tips_warning_16.gif) no-repeat scroll 0.5em 0.67em;
+	border: 1px solid #FF0000;
+	color: #FF0000;
+}
+.tips {
+	background: #E8F1FF url(http://img.alimama.cn/images/icon/ico_tips_16.gif) no-repeat scroll 0.5em 0.67em;
+	border: 1px solid #C5E1F7;
+	color: #4B79CF;
+}
+.tips ul, .tips ul li {
+	font-size: 12px;
+	font-weight: normal;
+	list-style-type: square;
+}
+.tips ul {
+	margin: 0.5em 1em;
+	padding: 0pt;
+}
+.attention {
+	background: #FFFFCC url(http://img.alimama.cn/images/icon/ico_attention_16.gif) no-repeat scroll 0.5em 0.67em;
+	border: 1px solid #FFCC00;
+	color: #FF9900;
+}
+.classic-blue {
+	color: #0065FF;
+}
+.large-orange, .large-green {
+	color: #FE9900;
+	font-size: 14px;
+	font-weight: bold;
+}
+.large-green {
+	color: #009900;
+}
+.orange {
+	color: #FE9900;
+}
+.title-blue {
+	color: #006599;
+}
+.brown {
+	color: #CC6601;
+}
+.blue {
+	color: #0166FF;
+}
+.underline {
+	text-decoration: underline;
+}
+.black {
+	color: #000000;
+}
+body.markets {
+	padding: 0pt 10px;
+}
+.wrapper-950 {
+	margin: 0pt auto;
+	width: 950px;
+}
+.orange-bgc {
+	background-color: #FFFFCC;
+}
+.or-bgc {
+	background-color: #FFF1E8;
+}
+.classic-border {
+	border: 1px solid #CCCCCC;
+}
+.double-orange-border {
+	border: 2px solid #FF9966;
+}
+.light-tips {
+	background: transparent url(http://img.alimama.cn/images/icon/light.gif) no-repeat scroll 3px 5px;
+	padding: 4px 4px 4px 45px;
+}
+.large-success {
+	background: transparent url(http://img.alimama.cn/images/icon/ico_success_48.gif) no-repeat scroll 3px 5px;
+	color: green;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 48px;
+	margin: 20px auto 30px;
+	padding: 4px 4px 4px 65px;
+	width: 250px;
+}
+.large-success-border {
+	background-color: #F1FFF0;
+	background-position: 120px 20px;
+	border: 1px solid #AFEE79;
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 30px;
+	padding: 20px 10px 20px 190px;
+	width: auto;
+}
+.large-success-border li {
+	list-style-type: square;
+	margin-left: 17px;
+}
+.large-button a, .large-button a span, .simple-list .tlist-item .actions a.del, .post-opinion .details .arrow, .simple-list .batch-actions i, .common-button i.icon, .common-list .tlists thead, .common-list .list-body .batch-actions i, .new-icon i, div#navigation, div#navigation .lc, div#navigation .rc, div#navigation .mc li.current a, div#navigation .mc li.current a span, .paginate .pages li a span i, .flow-steps li i, .flow-steps li.arrow, #header #guider li.member i, #header #guider li.help i, #header #guider li.nav a, #header #guider li.nav a span {
+	background-image: url(http://img.alimama.cn/images/bg/myalimama_bg.png);
+}
+.common-list .tlists thead.tcaption, .simple-list .list-footer, .simple-list .tlists thead, .common-list .list-footer .rc, .common-list .list-footer .lc, .common-list .list-footer, .small-button a, .small-button a span, .im-publish a, .im-publish a span, div#sub_nav ul li a:hover, div#sub_nav ul li a:hover span, #maincontent .role-summary .finance-bar li.action a, #maincontent .role-summary .finance-bar li.action a span, div#sub_nav, div#sub_nav li.current a, div#sub_nav li.current a span, .common-list .tabs li a, .common-list .tabs li a span, .common-list .filters-and-actions .rc, .common-list .filters-and-actions .lc, .filters-and-actions .lc .filters li.current a, .filters-and-actions .lc .filters li.current a span, .filters-and-actions .lc .actions li.new-plan a, .filters-and-actions .lc .actions li.new-plan a span, .common-list .lists .caption, .paginate .lc, .paginate .mc, .paginate .rc, .quicklooks .cpm .ql-content p.new-plan a, .quicklooks .cpm .ql-content p.new-plan a span, .ad-groups .new-group a, .ad-groups .new-group a span, .common-button a, .common-button a span, .simple-list .caption, .are-u-ok ul li a, .are-u-ok ul li a span, .list-item .view-detail a, .list-item .view-detail a span, .paginate .pages li a, .paginate .pages li a span, .paginate .paginate_more .tc, .paginate .paginate_more .bc, .paginate .paginate_more .more-pages li a, .paginate .paginate_more .more-pages li a span, div#navigation .mc li, div#navigation .mc li a:hover, div#navigation .mc li a:hover span {
+	background-image: url(http://img.alimama.cn/images/bg/sale_bg.png);
+}
+.lc {
+	float: left;
+}
+.rc {
+	float: right;
+}
+div.next2 {
+	background: transparent url(http://img.alimama.cn/images/tab_next3.gif) no-repeat scroll left top;
+	float: left;
+	height: 28px;
+	margin-right: 2px;
+	min-height: 28px;
+	padding: 0pt;
+}
+div.next2 a {
+	background: transparent url(http://img.alimama.cn/images/tab_next4.gif) no-repeat scroll right top;
+	color: #333333;
+	display: block;
+	line-height: 28px;
+	padding: 0pt 26px 0pt 15px;
+	white-space: nowrap;
+}
+div.next2 a:link, div.next2 a:visited {
+	color: #FFFFFF;
+	font-size: 14px;
+	text-decoration: none;
+}
+div.next2 a:hover, div.next2 a:active {
+	color: #FCFF00;
+	font-size: 14px;
+	text-decoration: none;
+}
+div#navigation {
+	background-position: left top;
+	background-repeat: repeat-x;
+	height: 34px;
+	min-width: 950px;
+	overflow: hidden;
+	position: relative;
+}
+div#navigation .lc, div#navigation .rc {
+	background-repeat: no-repeat;
+	height: 34px;
+	overflow: hidden;
+	position: absolute;
+	width: 5px;
+}
+div#navigation .mc {
+	margin: 0pt auto;
+	width: 940px;
+}
+div#navigation .mc li {
+	background-position: right -778px;
+	background-repeat: no-repeat;
+	float: left;
+	padding: 0pt 5px;
+}
+div#navigation .mc li a {
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+}
+div#navigation .mc li a span {
+	cursor: pointer;
+	display: block;
+	margin-top: 6px;
+	padding: 2px 20px 0pt;
+}
+div#navigation .mc li a:hover {
+	background-position: right -812px;
+	background-repeat: no-repeat;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	margin: 4px 0pt 0pt;
+	padding: 0pt 4px 2px 0pt;
+	text-decoration: none;
+}
+div#navigation .mc li a:hover span {
+	background-position: left -812px;
+	background-repeat: no-repeat;
+	float: left;
+	margin: 0px;
+	padding: 2px 16px 0pt 20px;
+}
+div#navigation .mc li.current a, div#navigation .mc li.current a:hover {
+	background-image: url(http://img.alimama.cn/images/bg/myalimama_bg.png);
+	background-position: right -68px;
+	background-repeat: no-repeat;
+	border: 0pt none;
+	float: left;
+	height: 34px;
+	line-height: 40px;
+	margin: 0px;
+	padding: 0pt 20px 0pt 0pt;
+}
+div#navigation .mc li.current a span, div#navigation .mc li.current a:hover span {
+	background-image: url(http://img.alimama.cn/images/bg/myalimama_bg.png);
+	background-position: left -68px;
+	background-repeat: no-repeat;
+	float: none;
+	line-height: 40px;
+	margin: 0px;
+	padding: 0pt 8px 0pt 28px;
+}
+div#navigation .mc li a:link, div#navigation .mc li a:visited {
+	color: #FFFFFF;
+}
+div#navigation .mc li.current a:link, div#navigation .mc li.current a:visited {
+	color: #666666;
+}
+div#sub_nav ul {
+	height: 34px;
+	margin: 0px auto;
+	width: 950px;
+}
+div#sub_nav ul li {
+	float: left;
+	margin: 6px 0pt 0pt;
+	padding: 0pt 4px;
+}
+div#sub_nav ul li a span {
+	height: 19px;
+	line-height: 19px;
+	padding: 0pt 8px;
+}
+div#sub_nav ul li a:hover, div#sub_nav ul li a:hover span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin: 0px;
+	text-decoration: none;
+}
+div#sub_nav ul li a:hover {
+	background-position: right -852px;
+	margin: 0px;
+	padding: 0pt 4px 0pt 0pt;
+}
+div#sub_nav ul li a:hover span {
+	background-position: left -852px;
+	padding: 0pt 4px 0pt 8px;
+}
+div#sub_nav ul li.current {
+	border-left: 0pt none;
+	margin: 6px 0pt 7px -3px;
+}
+div#sub_nav ul li.current a, div#sub_nav ul li.current a:hover {
+	background-position: right -99px;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	margin: 0px;
+	padding: 0pt 3px 0pt 0pt;
+	text-decoration: none;
+}
+div#sub_nav ul li.current a span {
+	background-position: left -99px;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	height: 19px;
+	margin: 0px;
+	padding: 0pt 3px 0pt 6px;
+}
+div#sub_nav ul li.current a:hover span {
+	background-position: left -99px;
+	background-repeat: no-repeat;
+	color: #FFFF00;
+	display: block;
+	float: left;
+	height: 19px;
+	margin: 0px;
+	padding: 0pt 3px 0pt 6px;
+}
+.common-list {
+	position: relative;
+}
+.common-list .tabs {
+	left: 0pt;
+	position: absolute;
+	top: 0pt;
+	z-index: 0;
+}
+.common-list .tabs li {
+	float: left;
+	margin-right: 3px;
+}
+.common-list .tabs li a, .common-list .tabs li a span {
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+.common-list .tabs li a:hover {
+	text-decoration: none;
+}
+.common-list .tabs li.current {
+	height: 34px;
+}
+.common-list .tabs li.current a {
+	background-position: right -35px;
+	background-repeat: no-repeat;
+	color: #006599;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0pt 16px 0pt 0pt;
+}
+.common-list .tabs li.current a span {
+	background-position: left -35px;
+	background-repeat: no-repeat;
+	height: 34px;
+	line-height: 34px;
+	padding: 0pt 0px 0pt 16px;
+}
+.common-list .tabs li.quick-search {
+	height: 30px;
+}
+.common-list .tabs li.quick-search a {
+	background-position: right -69px;
+	background-repeat: no-repeat;
+	color: #666666;
+	margin: 1px 0pt 0pt;
+	padding: 0pt 5px 0pt 0pt;
+}
+.common-list .tabs li.quick-search a span {
+	background-position: left -69px;
+	background-repeat: no-repeat;
+	height: 30px;
+	line-height: 30px;
+	padding: 0pt 5px 0pt 10px;
+}
+.common-list .tabs li.quick-search a span i {
+}
+.common-list .filters-and-actions {
+	height: 40px;
+	margin-top: 32px;
+}
+.common-list .filters-and-actions .lc {
+	background-position: left -162px;
+	background-repeat: repeat-x;
+	border-left: 1px solid #CCCCCC;
+	height: 40px;
+	width: 942px;
+}
+.common-list .filters-and-actions .rc {
+	background-position: -173px -234px;
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 7px;
+}
+.filters-and-actions .lc .filters {
+	float: left;
+	margin: 0pt 0pt 0pt 5px;
+}
+.filters-and-actions .lc .actions {
+	float: right;
+	margin: 0pt 10px 0pt 0pt;
+	width: 200px;
+}
+.filters-and-actions .lc .filters li {
+	float: left;
+	line-height: 19px;
+	margin: 11px 0pt;
+	padding: 0pt 10px;
+}
+.filters-and-actions .lc .filters li em {
+	color: red;
+	font-style: normal;
+}
+.filters-and-actions .lc .filters li.current em {
+	color: #FFFFFF;
+}
+.filters-and-actions .lc .filters li.current a:hover {
+	color: #FFFF00;
+}
+.im-publish a, .im-publish a span, #maincontent .role-summary .finance-bar li.action a, #maincontent .role-summary .finance-bar li.action a span, .filters-and-actions .lc .filters li.current a, .filters-and-actions .lc .filters li.current a span, .filters-and-actions .lc .actions li.new-plan a, .filters-and-actions .lc .actions li.new-plan a span, .quicklooks .cpm .ql-content p.new-plan a, .quicklooks .cpm .ql-content p.new-plan a span, .ad-groups .new-group a, .ad-groups .new-group a span, .common-button a, .common-button a span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+.filters-and-actions .lc .filters li.current a {
+	background-position: right -118px;
+	color: #FFFFFF;
+	padding: 0pt 6px 0pt 0pt;
+}
+.filters-and-actions .lc .filters li.current a span {
+	background-position: left -118px;
+	height: 19px;
+	line-height: 19px;
+	padding: 0pt 6px 0pt 12px;
+}
+.filters-and-actions .lc .actions li {
+	float: right;
+	margin: 7px 0pt;
+}
+.filters-and-actions .lc .actions li a {
+	color: #666666;
+}
+.im-publish a, .filters-and-actions .lc .actions li.new-plan a, .quicklooks .cpm .ql-content p.new-plan a, .ad-groups .new-group a, .common-button a, #maincontent .role-summary .finance-bar li.action a {
+	background-position: right -137px;
+	padding: 0pt 5px 0pt 0pt;
+}
+.im-publish a span, .filters-and-actions .lc .actions li.new-plan a span, .quicklooks .cpm .ql-content p.new-plan a span, .ad-groups .new-group a span, .common-button a span, #maincontent .role-summary .finance-bar li.action a span {
+	background-position: left -137px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0pt 5px 0pt 10px;
+}
+.common-list .lists {
+	background-color: #DEDEDE;
+	clear: both;
+}
+.common-list .lists .lc {
+	background-color: #FFFFFF;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	width: 945px;
+}
+.common-list .lists .rc {
+	background-color: #DEDEDE;
+	overflow: hidden;
+	width: 3px;
+}
+.common-list .lists .list-item {
+	border-bottom: 1px dotted #CDCDCD;
+	height: 70px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.common-list .lists .list-itemtemp {
+	border-bottom: 1px dotted #CDCDCD;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.common-list .lists .caption {
+	background-position: left -202px;
+	background-repeat: repeat-x;
+	color: #FFFFFF;
+	height: 32px;
+	line-height: 32px;
+}
+.common-list .lists .list-item #status {
+}
+.paginate {
+	clear: both;
+	margin-top: 10px;
+	position: relative;
+}
+.paginate .lc, .paginate .mc, .paginate .rc {
+	background-repeat: repeat-x;
+	height: 35px;
+}
+.paginate .lc {
+	background-position: left -275px;
+	width: 6px;
+}
+.paginate .mc {
+	background-position: left -339px;
+	float: left;
+	width: 938px;
+}
+.paginate .mc ul {
+	float: right;
+	margin: 7px 10px 0pt 0pt;
+}
+.paginate .mc ul li {
+	float: left;
+}
+.paginate .mc ul li.current {
+	background-color: #156CCB;
+	border: 0pt none;
+	color: #FFFFFF;
+}
+.paginate .mc ul li.current a {
+	color: #FFFFFF;
+}
+.paginate .rc {
+	background-position: right -275px;
+	width: 6px;
+}
+.paginate .pages {
+	float: right;
+}
+.paginate .pages li {
+	float: left;
+	margin: 0pt 5px 0pt 0pt;
+}
+.paginate .pages li a, .paginate .pages li a span, .paginate .paginate_more .more-pages li a, .paginate .paginate_more .more-pages li a span {
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+}
+.paginate .pages li a, .paginate .paginate_more .more-pages li a {
+	background-position: right -630px;
+	color: #6479B0;
+	padding: 0pt 4px 0pt 0pt;
+	text-decoration: none;
+}
+.paginate .paginate_more .more-pages li a {
+	font-size: 10px;
+}
+.paginate .pages li a span, .paginate .paginate_more .more-pages li a span {
+	background-position: left -630px;
+	cursor: pointer;
+	height: 20px;
+	line-height: 20px;
+	padding: 0pt 4px 0pt 8px;
+}
+.paginate .pages li a:hover, .paginate .paginate_more .more-pages li a:hover {
+	background-position: right -670px;
+}
+.paginate .pages li a:hover span, .paginate .paginate_more .more-pages li a:hover span {
+	background-position: left -670px;
+}
+.paginate .pages li.current a, .paginate .pages li.current a:hover {
+	background-position: right -650px;
+	color: #FFFFFF;
+}
+.paginate .pages li.current a span, .paginate .pages li.current a:hover span {
+	background-position: left -650px;
+}
+.paginate .pages li.prev span i, .paginate .pages li.next span i, .paginate .pages li.more span i {
+	background-repeat: no-repeat;
+	display: block;
+	height: 11px;
+	margin: 4px 0pt 0pt;
+	overflow: hidden;
+	width: 6px;
+	z-index: 999;
+}
+.paginate .pages li.prev span i {
+	background-position: -158px -709px;
+	float: left;
+	margin-right: 3px;
+}
+.paginate .pages li.next span, .paginate .pages li.more span {
+	padding: 0pt 12px 0pt 8px;
+	position: relative;
+}
+.paginate .pages li.next span i {
+	background-position: -174px -709px;
+	position: absolute;
+	right: 2px;
+	top: 0pt;
+}
+.paginate .pages li.more span i {
+	background-position: -165px -709px;
+	display: none;
+	height: 4px;
+	margin: 8px 0pt 0pt;
+	position: absolute;
+	right: 2px;
+	top: 0pt;
+	width: 8px;
+}
+.paginate .paginate_more {
+	display: none;
+	position: absolute;
+}
+.paginate .paginate_more .tc, .paginate .paginate_more .bc {
+	background-repeat: no-repeat;
+	height: 3px;
+	overflow: hidden;
+	width: 140px;
+}
+.paginate .paginate_more .tc {
+	background-position: left -690px;
+}
+.paginate .paginate_more .bc {
+	background-position: left -693px;
+}
+.paginate .paginate_more .more-pages {
+	background-color: #F8F8F8;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	line-height: 20px;
+	overflow: hidden;
+	padding: 3px 0pt 0pt 3px;
+	width: 135px;
+}
+.paginate .paginate_more .more-pages li {
+	float: left;
+	margin: 0pt 3px 3px 0pt;
+}
+.paginate .paginate_more .more-pages li span {
+	text-align: center;
+	width: 48px;
+}
+.wur {
+	background: transparent url(http://img.alimama.cn/images/bg/where_u_are.png) repeat-x scroll left top;
+}
+.wur .tree {
+	color: #676767;
+	height: 38px;
+	line-height: 38px;
+	margin: 0pt auto;
+	width: 950px;
+}
+.wur .title {
+	font-size: 14px;
+	height: 36px;
+	line-height: 36px;
+	margin: 0pt auto;
+	width: 950px;
+}
+.wur .u-are-here {
+	background: transparent url(http://img.alimama.cn/images/bg/arrow_blue_down.png) no-repeat scroll left center;
+	color: #016597;
+	float: left;
+	font-weight: bold;
+	padding-left: 23px;
+}
+.wur .back {
+	background: transparent url(http://img.alimama.cn/images/bg/up_level.png) no-repeat scroll left center;
+	float: right;
+	padding-left: 20px;
+}
+div.page-title {
+	background-color: #F7F8FA;
+	border-bottom: 2px solid #E9E9E9;
+}
+div.page-title h1 {
+	color: #999999;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	margin: 0pt auto;
+	width: 950px;
+}
+div.page-title .title-blue {
+	margin: 0pt 5px;
+}
+div.page-title .title-blue span.gray {
+	font-size: 12px;
+	font-weight: normal;
+}
+div.page-title .where-are-u {
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+	margin: -35px 0pt 0pt;
+}
+.title-blue a {
+	font-weight: normal;
+	margin: 0pt 0pt 0pt 5px;
+	text-decoration: underline;
+}
+.actions-bar ul {
+	float: right;
+}
+.simple-list {
+	border: 1px solid #CCCCCC;
+	margin: 10px 0pt 0pt;
+}
+.simple-list .list-item .seller-info, .simple-list .list-item .ad-info, .simple-list .list-item .tranid-and-date, .simple-list .list-item .target, .simple-list .list-item .url, .simple-list .list-item .comments, .simple-list .list-item .earningamount, .simple-list .list-item .taxamount, .simple-list .list-item .total-30-expend, .simple-list .list-item .yd-expend, .simple-list .list-item .limit-per-day, .simple-list .list-item .click-price, .simple-list .list-item .alexa, .simple-list .list-item .pr, .simple-list .list-item .yahoo, .simple-list .list-item .adb-title, .simple-list .list-item .site, .simple-list .list-item .submit-date, .simple-list .list-item .expend, .simple-list .list-item .click-rate, .simple-list .list-item .click, .simple-list .list-item .ip, .simple-list .list-item .pv, .simple-list .list-item .group-title, .simple-list .list-item .sum, .simple-list .list-item .date, .simple-list .list-item .scheme-title, .simple-list .list-item .price, .simple-list .list-item .thumbnail, .simple-list .list-item .desc, .simple-list .list-item .promotion-title, .simple-list .list-item .checkbox, .simple-list .list-item .channel-title, .simple-list .list-item .ydpv-and-avgpv, .simple-list .list-item .ydhits-and-avghits, .simple-list .list-item .income, .simple-list .list-item .status, .simple-list .list-item .actions {
+	float: left;
+	margin: 25px 0pt 0pt;
+	overflow: hidden;
+	text-align: center;
+}
+.simple-list .list-item .seller-info {
+	width: 150px;
+}
+.simple-list .list-item .ad-info {
+	width: 370px;
+}
+.simple-list .list-item .tranid-and-date {
+	width: 110px;
+}
+.simple-list .list-item .target {
+	width: 160px;
+}
+.simple-list .list-item .url {
+	width: 190px;
+}
+.simple-list .list-item .comments {
+	overflow: hidden;
+	text-align: left;
+	width: 190px;
+}
+.simple-list .list-item .taxamount, .simple-list .list-item .earningamount {
+	width: 120px;
+}
+.simple-list .list-item .total-30-expend {
+	width: 130px;
+}
+.simple-list .list-item .yd-expend {
+	width: 100px;
+}
+.simple-list .list-item .limit-per-day {
+	width: 100px;
+}
+.simple-list .list-item .click-price {
+	width: 100px;
+}
+.simple-list .list-item .expend {
+	width: 175px;
+}
+.simple-list .list-item .click-rate {
+	width: 145px;
+}
+.simple-list .list-item .click {
+	width: 125px;
+}
+.simple-list .list-item .ip {
+	width: 115px;
+}
+.simple-list .list-item .pv {
+	width: 145px;
+}
+.simple-list .list-item .group-title {
+	width: 230px;
+}
+.simple-list .list-item {
+	border-bottom: 1px dotted #CDCDCD;
+	clear: both;
+	height: 75px;
+	overflow: hidden;
+}
+.simple-list .list-item .scheme-title {
+	width: 170px;
+}
+.simple-list .list-item .date {
+	width: 220px;
+}
+.simple-list .list-item .sum {
+	width: 215px;
+}
+.simple-list .list-item .checkbox {
+	width: 35px;
+}
+.simple-list .list-item .promotion-title {
+	width: 120px;
+}
+.simple-list .list-item .desc {
+	width: 198px;
+}
+.simple-list .list-item .thumbnail {
+	width: 325px;
+}
+.simple-list .list-item .price {
+	width: 65px;
+}
+.simple-list .list-item .channel-title {
+	width: 200px;
+}
+.simple-list .list-item .ydpv-and-avgpv {
+	width: 150px;
+}
+.simple-list .list-item .ydhits-and-avghits {
+	width: 130px;
+}
+.simple-list .list-item .income {
+	width: 130px;
+}
+.simple-list .list-item .status {
+	width: 120px;
+}
+.simple-list .list-item .actions {
+	text-align: left;
+	width: 160px;
+}
+.simple-list .list-item .actions li {
+	float: left;
+	margin-right: 10px;
+}
+.simple-list .caption {
+	background-position: left -374px;
+	background-repeat: repeat-x;
+	height: 30px;
+	line-height: 30px;
+}
+#maincontent .simple-list .caption div {
+	margin: 0pt;
+}
+.common-form {
+}
+.common-form .form-area {
+	float: left;
+	width: 670px;
+}
+.common-form .form-desc {
+	background-color: #F8F8F8;
+	border: 1px solid #E9E9E9;
+	color: #999999;
+	float: right;
+	font-size: 12px;
+	line-height: 150%;
+	padding: 5px 10px;
+	width: 210px;
+}
+.common-form .form-desc p {
+	margin: 5px 0pt;
+}
+.form-area ul li {
+	clear: both;
+	line-height: 25px;
+	padding: 10px 0pt;
+}
+.form-area ul li label {
+	float: left;
+	margin: 0pt 10px 0pt 0pt;
+	text-align: right;
+	width: 170px;
+}
+.form-area ul li .input-wrapper {
+	float: left;
+	overflow: hidden;
+	width: 500px;
+}
+.form-area ul li.submit-wrapper {
+	margin: 15px 0pt 0pt 180px;
+}
+.form-area ul li.submit-wrapper input {
+	margin: 0pt 15px 0pt 0pt;
+}
+.form-area .form-tips {
+	margin: 0pt 0pt 0pt 30px;
+}
+.are-u-ok {
+	background-color: #F7F8FA;
+	border-top: 1px solid #E9E9E9;
+	height: 65px;
+	margin: 18px 0pt 0pt;
+}
+.are-u-ok ul {
+	margin: 0pt 0pt 0pt 150px;
+}
+.are-u-ok ul li {
+	float: left;
+	margin: 15px 30px 0pt 0pt;
+}
+.are-u-ok ul li a, .are-u-ok ul li a span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+.are-u-ok ul li a {
+	background-position: right -449px;
+	padding: 0pt 14px 0pt 0pt;
+}
+.are-u-ok ul li a:link, .are-u-ok ul li a:visited {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.are-u-ok ul li a span {
+	background-position: left -449px;
+	height: 24px;
+	line-height: 24px;
+	padding: 0pt 0pt 0pt 14px;
+}
+.simple-warning {
+	color: #FE9900;
+}
+.flow-steps {
+	height: 50px;
+	margin: 0pt 0pt 5px;
+}
+.flow-steps li {
+	float: left;
+	line-height: 24px;
+	margin: 0pt 15px 0pt 0pt;
+}
+.flow-steps li i {
+	background-position: -25px -1203px;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	font-style: normal;
+	font-weight: bold;
+	height: 24px;
+	line-height: 24px;
+	margin: 0pt 6px 0pt 0pt;
+	text-align: center;
+	width: 24px;
+}
+.flow-steps li.current i {
+	background-position: left -1203px;
+}
+.flow-steps li.virtual i {
+	background-position: -50px -1203px;
+	color: #9A9A9A;
+}
+.flow-steps li.arrow {
+	background-position: -75px -1203px;
+	background-repeat: no-repeat;
+	height: 9px;
+	margin: 8px 15px 0pt 0pt;
+	width: 13px;
+}
+#header #logo {
+	float: left;
+	height: 65px;
+	width: 350px;
+}
+#header #logo a {
+	background: transparent url(http://img.alimama.cn/images/logo/last_logo_bt.gif) no-repeat scroll center;
+	display: block;
+	height: 42px;
+	margin: 10px 0pt 0pt 1px;
+	width: 291px;
+}
+#header #logo a span {
+	display: none;
+}
+#header #guider {
+	float: right;
+	margin: 20px 3px 0pt 0pt;
+}
+#header #guider li {
+	float: left;
+	line-height: 21px;
+	margin: 0pt 12px 0pt 0pt;
+}
+#header #guider li.nav {
+	margin-right: 4px;
+}
+#header #guider li.help {
+	margin: 0pt 0pt 0pt 10px;
+}
+#header #guider li.member i, #header #guider li.help i {
+	background-position: -89px -1203px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 16px;
+	margin: 3px 2px 0pt 0pt;
+	width: 16px;
+}
+#header #guider li.help i {
+	background-position: -106px -1203px;
+	height: 14px;
+	width: 14px;
+}
+#header #guider li.nav a, #header #guider li.nav a span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+#header #guider li.nav a {
+	background-position: right -1228px;
+	padding: 0pt 3px 0pt 0pt;
+}
+#header #guider li.nav a span {
+	background-position: left -1228px;
+	height: 21px;
+	line-height: 21px;
+	padding: 0pt 3px 0pt 6px;
+}
+#header #guider li.nav a:link, #header #guider li.nav a:visited {
+	color: #666666;
+}
+#header #guider li.nav a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+.income em {
+	font-style: normal;
+	font-weight: bold;
+}
+.loading {
+	color: #FF6600;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	margin: 0pt auto;
+	text-align: center;
+	width: 100px;
+}
+.new-icon i {
+	background-position: -77px -1249px;
+	display: block;
+	float: left;
+	height: 12px;
+	margin: 7px 4px 0pt 0pt;
+	overflow: hidden;
+	width: 12px;
+}
+.help-cursor {
+	cursor: help;
+}
+.sw {
+	background-color: #F8F8F8;
+}
+.common-list .gray-border {
+	background-color: #DEDEDE;
+	margin-top: -1px;
+	width: 950px;
+}
+.common-list .gray-border .list-body {
+	background-color: #FFFFFF;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	float: left;
+	width: 945px;
+}
+.common-list .list-body .batch-actions, .simple-list .batch-actions {
+	background-color: #ECF5FC;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+	height: 30px;
+	margin: 0pt;
+	overflow: hidden;
+}
+.common-list .list-body .batch-actions i, .simple-list .batch-actions i {
+	background-position: -103px -1249px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 14px;
+	margin: 12px 6px 0pt;
+	width: 14px;
+}
+.common-list .list-body .bottom-batch i, .simple-list .bottom-batch i {
+	background-position: -118px -1249px;
+	margin: 4px 6px 0pt;
+}
+.common-list .list-body .batch-actions .check-all, .simple-list .batch-actions .check-all {
+	float: left;
+	margin: 6px 10px 0pt 2px;
+}
+.common-list .list-body .bottom-batch .check-all, .simple-list .bottom-batch .check-all {
+	margin: 8px 10px 0pt 2px;
+}
+.common-list .list-body .batch-actions ul, .simple-list .batch-actions ul {
+	float: left;
+	margin: 5px 4px 0pt 0pt;
+}
+.common-list .list-body .batch-actions ul li, .simple-list .batch-actions ul li {
+	float: left;
+	margin: 0pt 3px 0pt 0pt;
+}
+.small-button a, .small-button a span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-size: 12px;
+}
+.small-button a {
+	background-position: right -896px;
+	padding: 0pt 3px 0pt 0pt;
+}
+.small-button a span {
+	background-position: left -896px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0pt 3px 0pt 6px;
+}
+.small-button a:link, .small-button a:visited {
+	color: #666666;
+}
+.small-button a:hover {
+	color: #FF5500;
+	text-decoration: none;
+}
+.common-list .tlists {
+	width: 100%;
+}
+.common-list .tlists thead {
+	background-position: left -282px;
+	background-repeat: repeat-x;
+	color: #FFFFFF;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+}
+.common-list .tlists thead.tcaption {
+	background-position: left -696px;
+	background-repeat: repeat-x;
+	color: #029900;
+	font-weight: normal;
+}
+.common-list .tlists thead th {
+	font-weight: normal;
+}
+.common-list .tlists thead th.actions {
+	padding-left: 3px;
+	text-align: left;
+}
+.common-list .tlists .tlist-item td {
+	border-bottom: 1px dotted #CCCCCC;
+	line-height: 21px;
+	padding: 8px 0pt;
+	text-align: center;
+}
+.common-list .tlists .tlist-item td em {
+	display: block;
+	font-style: normal;
+}
+.tlist-item td.first, .tlist-item td.last {
+	padding: 0pt 3px;
+}
+.tlist-item td.last a {
+	margin: 0pt 5px;
+}
+.tlist-item td.actions {
+	padding: 0pt 3px;
+	text-align: left;
+}
+.common-list .tlists .tlist-item td.actions ul li {
+	float: left;
+	margin: 0pt 6px 0pt 0pt;
+}
+.common-list .tlists .tsw td, .simple-list .tlists .tsw td {
+	background-color: #F8F8F8;
+}
+.common-list .tlists .sum td, .simple-list .tlists .sum td {
+	background-color: #FDFFCD;
+	color: #000000;
+	font-weight: bold;
+	padding: 2px 0pt;
+}
+.common-list .tlists .alarm td, .simple-list .tlists .alarm td {
+	background-color: #FDFFCD;
+	color: #000000;
+	padding: 2px 0pt;
+}
+.common-list .tlists .tlist-item td.align-left, .simple-list .tlists .tlist-item td.align-left {
+	padding: 5px 10px;
+	text-align: left;
+}
+.common-list .tlists .sum td.title, .simple-list .tlists .sum td.title {
+	padding-right: 7px;
+	text-align: right;
+}
+.common-list .list-footer, .simple-list .list-footer {
+	background-position: left -953px;
+	background-repeat: repeat-x;
+	height: 35px;
+	overflow: hidden;
+}
+.common-list .list-footer .lc {
+	background-position: left -917px;
+	background-repeat: no-repeat;
+	height: 35px;
+	width: 6px;
+}
+.common-list .list-footer .rc {
+	background-position: right -917px;
+	background-repeat: no-repeat;
+	height: 35px;
+	margin-top: -36px;
+	width: 10px;
+}
+.common-list .list-footer .mc {
+	margin: 0pt 10px 0pt 0pt;
+}
+.common-list .list-footer .large-mc {
+	width: 934px;
+}
+.common-list .list-footer .mc .left-hand, .simple-list .list-footer .left-hand {
+	color: #999999;
+	float: left;
+	line-height: 35px;
+	padding-left: 10px;
+}
+.common-list .list-footer .mc .right-hand, .simple-list .list-footer .right-hand {
+	float: right;
+	width: 480px;
+}
+.common-list .list-footer .mc .right-hand .paginate, .simple-list .list-footer .right-hand .paginate {
+	margin-top: 7px;
+}
+fieldset.list-filters {
+	border: 2px solid #F1F4F6;
+	margin: 0pt 0pt 20px;
+	padding: 5px 20px;
+}
+fieldset.list-filters legend {
+	color: #0099FF;
+	padding: 0pt 5px;
+}
+fieldset.list-filters ul.filters {
+	margin: 7px 0pt;
+}
+fieldset.list-filters ul.filters li {
+	float: left;
+	line-height: 25px;
+	width: 350px;
+}
+fieldset.small-list-filters ul.filters li {
+	width: 190px;
+}
+.float-left {
+	float: left;
+}
+fieldset.list-filters ul.filters li label {
+	float: left;
+	line-height: 25px;
+	width: 110px;
+}
+fieldset.small-list-filters ul.filters li label {
+	width: 70px;
+}
+fieldset.list-filters ul.filters li .input-wrapper {
+	float: left;
+}
+fieldset.list-filters ul.filters li .input-wrapper .submitter {
+	float: left;
+	margin: -3px 0pt 0pt 10px;
+}
+fieldset.list-filters ul.filters li.submit-wrapper {
+	margin-top: -3px;
+}
+fieldset.list-filters ul.filters li.submitter-wrapper {
+	width: 150px;
+}
+.common-button i.icon {
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 16px;
+	margin: 5px 4px 0pt 0pt;
+	padding: 0px;
+	width: 16px;
+}
+.common-button i.query {
+	background-position: -133px -1249px;
+}
+.common-button i.import {
+	background-position: -150px -1249px;
+}
+.common-button a span {
+	font-weight: normal;
+}
+.plan-intro {
+	margin: 0pt 0pt 20px;
+}
+.plan-intro .col {
+	color: #666666;
+	float: left;
+	font-size: 14px;
+	margin: 0pt 26px 0pt 0pt;
+	overflow: hidden;
+	width: 330px;
+}
+.plan-intro .freecol {
+	width: 200px;
+}
+.plan-intro .longcol {
+	width: 630px;
+}
+.plan-intro .col li {
+	border-bottom: 1px dotted #CCCCCC;
+	line-height: 21px;
+	padding: 3px 0pt;
+}
+.plan-intro .col li.solid-border {
+	border-bottom: 1px solid #999999;
+}
+.plan-intro .col li.no-border {
+	border: 0pt none;
+}
+.plan-intro .freecol li {
+	border-bottom: 0pt none;
+}
+.plan-intro .col label {
+	color: #999999;
+	float: left;
+	text-align: left;
+	width: 130px;
+}
+.plan-intro .freecol label {
+	width: 10px;
+}
+.plan-intro .col .labelc {
+	float: left;
+	text-align: right;
+}
+.plan-intro .freecol .labelc {
+	width: 180px;
+}
+.plan-intro .longcol {
+	width: 500px;
+}
+.plan-intro .longcol .labelc {
+	text-align: left;
+}
+.simple-list .list-caption {
+	color: #666666;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+.simple-list .bottom-batch {
+	border-top: 0pt none;
+}
+.simple-list .list-caption .actions {
+	float: right;
+	margin: -33px 10px 0pt 0pt;
+}
+.simple-list .tlists, .common-list .tlists {
+	background-color: #FFFFFF;
+	width: 100%;
+}
+.simple-list .tlists {
+	border-top: 1px solid #CCCCCC;
+}
+.simple-list .tlists thead {
+	background-position: left -988px;
+	background-repeat: repeat-x;
+	height: 28px;
+	line-height: 28px;
+}
+.simple-list .tlists thead th {
+	border-bottom: 1px solid #CCCCCC;
+	color: #999999;
+	font-weight: normal;
+	text-align: center;
+}
+.simple-list .tlists thead th.actions {
+	padding: 0pt 3px;
+}
+.simple-list .tlists tbody td {
+	background-color: #FFFFFF;
+	border-bottom: 1px dotted #CCCCCC;
+	line-height: 21px;
+	padding: 8px 0pt;
+	text-align: center;
+}
+.simple-list .tlists tbody td.actions {
+	padding: 8px 3px;
+	text-align: left;
+}
+.simple-list .tlists tbody td.first, .simple-list .tlists tbody th.first {
+	padding: 0pt 0pt 0pt 3px;
+}
+.simple-list .tlists tbody td.actions ul li {
+	float: left;
+	margin-right: 8px;
+}
+.simple-list .list-footer {
+	height: 34px;
+}
+.post-opinion .choose {
+	float: left;
+	margin: 7px 20px;
+}
+.post-opinion .choose ul li {
+	font-size: 14px;
+	padding: 8px 0pt;
+}
+.post-opinion .details {
+	background-color: #F1F1F1;
+	float: left;
+	padding: 5px 20px;
+	position: relative;
+	width: 730px;
+}
+.post-opinion .details .lc ul li {
+	padding: 5px 0pt;
+}
+.post-opinion .details .lc ul li label {
+	float: left;
+	width: 130px;
+}
+.post-opinion .details .lc ul li .input-wrapper {
+	float: left;
+}
+.post-opinion .details .lc ul li .input-wrapper input {
+	margin: 0pt 5px 0pt 15px;
+}
+.post-opinion .details .rc textarea {
+	margin: 3px 0pt 0pt;
+}
+.post-opinion .details .arrow {
+	background-position: -184px -1249px;
+	background-repeat: no-repeat;
+	height: 30px;
+	left: -15px;
+	position: absolute;
+	top: 11px;
+	width: 15px;
+}
+#maincontent .align-left {
+	text-align: left;
+}
+.simple-list .tlist-item .actions a.del span {
+	display: none;
+}
+.simple-list .tlist-item .actions a.del {
+	background-position: -204px -1249px;
+	background-repeat: no-repeat;
+	display: block;
+	height: 16px;
+	margin-top: 2px;
+	width: 16px;
+}
+#maincontent .plan-intro .has-actions {
+	text-align: left;
+}
+.plan-intro .has-actions .actions {
+	float: right;
+	margin: -20px 0pt 0pt;
+}
+#maincontent .plan-intro .full {
+	float: none;
+	width: 910px;
+}
+#maincontent .plan-intro .full .labelc {
+	width: auto;
+}
+#maincontent .plan-intro .full .has-actions {
+	width: 778px;
+}
+#maincontent .plan-intro .half {
+	width: 442px;
+}
+#maincontent .plan-intro .half .labelc {
+	width: 310px;
+}
+.common-list .tlists .tlist-item td.actions ul.list li, .simple-list .tlist-item td.actions ul.list li {
+	float: none;
+}
+#maincontent .plan-intro .align-left li .labelc {
+	text-align: left;
+}
+.simple-list .no-data, .common-list .no-data {
+	color: #5C5C5C;
+	font-size: 14px;
+	padding: 10px 0pt;
+	text-align: center;
+}
+.simple-list .no-data span, .common-list .no-data span {
+	background: transparent url(http://img.alimama.cn/images/icon/ico_tips_16.gif) no-repeat scroll left center;
+	padding-left: 23px;
+}
+.common-icon-link a, .common-icon-link a i {
+	display: block;
+}
+.common-icon-link a i {
+	background-image: url(http://img.alimama.cn/images/bg/myalimama_bg.png);
+	background-position: -214px -1269px;
+	float: left;
+	height: 16px;
+	margin: 2px 1px 0pt 0pt;
+	overflow: hidden;
+	width: 16px;
+}
+.common-icon-link a i.d-filters {
+	background-position: -197px -1269px;
+}
+.common-list .more-filters {
+	background-color: #ECF5FC;
+	padding: 5px 10px;
+	width: 100%;
+}
+.common-list .more-filters td {
+	padding: 3px 0pt;
+}
+.common-list .more-filters .do-search {
+	border-left: 1px solid #DDDDDD;
+	padding-left: 15px;
+}
+input.calendar {
+	background: transparent url(http://img.alimama.cn/images/bg/input_calendar.png) no-repeat scroll 2px center;
+	height: 15px;
+	padding: 1px 0pt 0pt 19px;
+	width: 68px;
+}
+a.need-notice {
+	background: transparent url(http://img.alimama.cn/images/bg/ico_need_notice.png) no-repeat scroll left center;
+	padding: 0pt 0pt 0pt 19px;
+}
+.bg-header, #top_nav_bar li a, #top_nav_bar li a span {
+	background-image: url(http://img.alimama.cn/images/bg/new_header2.png);
+}
+#header #logo {
+	height: 60px;
+	width: 293px;
+}
+#header #logo a {
+	background: transparent none repeat scroll 0%;
+}
+#header #top_nav {
+	background-position: -290px top;
+	background-repeat: no-repeat;
+	height: 60px;
+	overflow: hidden;
+}
+#quick_links {
+	border-bottom: 1px solid #E0E0E0;
+	height: 22px;
+	margin: 0pt 0pt 0pt 3px;
+}
+#quick_links ul {
+	float: right;
+}
+#quick_links li {
+	border-left: 1px solid #E0E0E0;
+	float: left;
+	line-height: 14px;
+	margin: 4px 0pt 0pt;
+	padding: 0pt 7px;
+}
+#quick_links li a:link, #quick_links li a:visited {
+	color: #0245DC;
+}
+#quick_links li a:hover {
+	color: #FF5500;
+}
+#quick_links li.myalimama {
+	margin: 3px 0pt 0pt;
+}
+#quick_links li.myalimama a, #quick_links li.myalimama a span, #quick_links li.myalimama a span i {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+#quick_links li.myalimama a span i {
+	background: transparent url(http://img.alimama.cn/images/icon/bag.gif) no-repeat scroll left center;
+	height: 16px;
+	margin: 0pt 2px 0pt 0pt;
+	width: 16px;
+}
+#quick_links li.myalimama a {
+	background-position: right -69px;
+	padding: 0pt 4px 0pt 0pt;
+}
+#quick_links li.myalimama a span {
+	background-position: left -69px;
+	height: 17px;
+	line-height: 16px;
+	padding: 0pt 4px 0pt 8px;
+}
+#quick_links li.today, #quick_links li.member, #quick_links li.myalimama {
+	border: 0pt none;
+	color: #666666;
+}
+#quick_nav {
+	margin: 4px 0pt;
+	padding-right: 20px;
+}
+#quick_nav ul {
+	float: right;
+}
+#quick_nav li {
+	float: left;
+	margin: 0pt 1px;
+}
+#quick_nav li a {
+	background: transparent url(http://img.alimama.cn/images/bg/new_club_nav.png) no-repeat scroll right top;
+	display: block;
+}
+#quick_nav li a span {
+	background: transparent url(http://img.alimama.cn/images/bg/new_club_nav.png) no-repeat scroll left top;
+	color: #4B6486;
+	cursor: pointer;
+	display: block;
+	line-height: 27px;
+	margin-right: 5px;
+	padding: 0pt 10px 0pt 15px;
+}
+#quick_nav li a:hover {
+	background-position: right -60px;
+	text-decoration: none;
+}
+#quick_nav li a:hover span {
+	background-position: left -60px;
+}
+#quick_nav li.current a {
+	background-position: right -30px;
+}
+#quick_nav li.current a span {
+	background-position: left -30px;
+}
+#header {
+	margin: 0pt auto;
+	width: 950px;
+}
+div#navigation {
+	margin: 10px 1px 0pt;
+}
+#maincontent {
+	margin: 15px auto;
+	width: 950px;
+}
+body.markets #maincontent {
+	margin: 5px auto;
+}
+#maincontent .lcol1 {
+	float: left;
+	width: 685px;
+}
+#maincontent .lcol3 {
+	float: right;
+	overflow: hidden;
+	width: 250px;
+}
+#maincontent .sidenav {
+	background-color: #F7F8FA;
+	border: 1px solid #E7E7E7;
+	height: 300px;
+	margin-right: 10px;
+	width: 140px;
+}
+#maincontent .sidenav .links {
+	margin: 10px 7px;
+}
+#maincontent .sidenav .links li {
+	padding: 5px 0pt 5px 24px;
+}
+#maincontent .sidenav .links li.current {
+	background: #FFFFDF url(../images/bg/sidenav_current.png) no-repeat scroll 10px center;
+	border: 1px solid #EAEAEA;
+}
+#maincontent .sidenav .myshop {
+	margin: 0pt auto;
+	width: 100px;
+}
+#maincontent .navbody {
+	float: left;
+}
+#maincontent .navbody label {
+	color: #2068BA;
+	font-size: 14px;
+	width: 100px;
+}
+#maincontent .common-list .tlists tr.hover td, .simple-list .tlists tr.hover td {
+	background-color: #FFFFCC;
+}
+.alarm_two .t_1 {
+	border-top: 1px solid #FFCC66;
+	height: 0pt;
+	margin: 0pt 2px;
+	overflow: hidden;
+}
+.alarm_two .t_2 {
+	border-color: #FFCC66;
+	border-style: solid;
+	border-width: 0pt 1px;
+	font-size: 0pt;
+	height: 1px;
+	line-height: 0pt;
+	margin: 0pt 1px;
+	position: relative;
+}
+.alarm_two .t_2 a.close {
+	background: transparent url(http://img.alimama.cn/images/bg/myalimama_bg.png) no-repeat scroll -34px -196px;
+	border: 1px solid #FFD010;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 4px;
+	width: 16px;
+}
+.alarm_two .t_body {
+	background: #FFFFCC url(http://img.alimama.cn/images/icon/light.gif) no-repeat scroll 20px 50%;
+	border-color: #FFCC66;
+	border-style: solid;
+	border-width: 0pt 1px;
+	color: #666666;
+	line-height: 18px;
+	padding: 8px 0pt 8px 60px;
+}
