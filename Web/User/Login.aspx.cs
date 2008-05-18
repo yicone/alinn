@@ -27,7 +27,8 @@ namespace Web.User
             if (this.IsValid)
             {
                 HOT.BLL.User bUser = new HOT.BLL.User();
-                if (bUser.Login(email.Text.Trim(), HOT.Common.MakeMd5.MakeMd5Pwd(passWord.Text.Trim())))
+                //Edited by FZF 2008.05.18
+                if (bUser.Login(email.Text.Trim().ToLower(), HOT.Common.MakeMd5.MakeMd5Pwd(passWord.Text.Trim())))
                 {
                     HOT.Model.User mUser = bUser.GetModel(email.Text.Trim());
                     mUser.LastLoginIP = Request.UserHostAddress;
