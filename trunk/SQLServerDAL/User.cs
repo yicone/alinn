@@ -513,10 +513,24 @@ namespace HOT.SQLServerDAL
         /// 获取该用户推荐的人
         /// </summary>
         /// <param name="UserID"></param>
-        /// <returns></returns>
-        public IList GetIntroducer(Guid UserId)
+        /// <returns>逗号分隔的ID串</returns>
+        public string GetIntroducer(Guid UserId)
         {
-            return null;
+            System.Text.StringBuilder sb = new StringBuilder();
+
+            string sql = string.Format("select introducer from AL_User where introducer='{0}'", UserId);
+            DataSet ds = DbHelperSQL.Query(sql);
+            DataRowCollection rowlist = ds.Tables[0].Rows;
+            for (int i = 0; i < rowlist.Count; i++)
+            {
+                sb.AppendFormat(",{0}", rowlist[i].ItemArray.GetValue(0).ToString());
+            }
+
+            string sbstr = sb.ToString();
+
+            if (sbstr.Length == 0)
+                return null;
+            return sbstr.Substring(1, sbstr.Length - 1);
         }
 
 
