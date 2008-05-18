@@ -125,8 +125,10 @@
         <script language="javascript" type="text/javascript">
     function f()
     {
-        
-        document.getElementById("test").innerHTML = "<A href=\"javascript:f()\">看不清?</A><br><IMG id=\"ival\" height=\"40\" src=\"BuildImageCode.aspx\" width=\"105\" align=\"absMiddle\"border=\"0\"  >";
+       var img = document.getElementById('ival');
+       img.src = "BuildImageCode.aspx?"+Math.random();
+       
+        //document.getElementById("test").innerHTML = "<A href=\"javascript:f()\">看不清?</A><br><IMG id=\"ival\" height=\"40\" src=\"BuildImageCode.aspx\" width=\"105\" align=\"absMiddle\"border=\"0\"  >";
     }
 </script>
     </form>
