@@ -11,7 +11,7 @@
 namespace Web.Controls {
     
     
-    public partial class search {
+    public partial class Search {
         
         /// <summary>
         /// txtKeyWord control.

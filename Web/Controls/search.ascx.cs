@@ -11,7 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 
 namespace Web.Controls
 {
-    public partial class search : System.Web.UI.UserControl
+    public partial class Search : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

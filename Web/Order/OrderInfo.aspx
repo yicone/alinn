@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/MasterPage/BuyCommon.Master" AutoEventWireup="true" CodeBehind="OrderInfo.aspx.cs" Inherits="Web.Order.OrderInfo" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="OrderInfo.aspx.cs" Inherits="Web.Order.OrderInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <table cellSpacing="0" cellPadding="0" width="100%" border="0">

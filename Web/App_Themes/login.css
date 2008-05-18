@@ -1,0 +1,244 @@
+﻿body {
+	background: #FFFFFF none repeat scroll 0%;
+	color: #000000;
+	font-size: 12px;
+	text-align: left;
+}
+* {
+	margin: 0pt;
+	padding: 0pt;
+}
+img {
+	border: 0pt none;
+}
+a:link, a:visited {
+	color: #0065FF;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF5500;
+}
+ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+.clearing {
+	border-top: 1px solid transparent !important;
+	clear: both;
+	visibility: hidden;
+}
+.bg-header {
+	background-image: url(http://img.alimama.cn/images/bg/new_header2.png);
+}
+#header {
+	margin: 0pt auto;
+	width: 760px;
+}
+#header #logo a {
+	display: block;
+	height: 42px;
+	margin: 10px 0pt 0pt 1px;
+	width: 291px;
+}
+#header #logo a span {
+	display: none;
+}
+body.market #header #logo {
+	background-position: -35px top;
+	float: left;
+	height: 60px;
+	overflow: hidden;
+	width: 258px;
+}
+body.market #header #logo a {
+	background: transparent none repeat scroll 0%;
+}
+body.market #header #top_nav {
+	background-position: -290px top;
+	background-repeat: no-repeat;
+	height: 60px;
+	overflow: hidden;
+}
+#quick_links {
+	border-bottom: 1px solid #E0E0E0;
+	height: 22px;
+	margin: 0pt 0pt 0pt 3px;
+}
+#quick_links ul {
+	float: right;
+}
+#quick_links li {
+	border-left: 1px solid #E0E0E0;
+	float: left;
+	line-height: 14px;
+	margin: 4px 0pt 0pt;
+	padding: 0pt 7px;
+}
+#quick_links li a:link, #quick_links li a:visited {
+	color: #0245DC;
+}
+#quick_links li a:hover {
+	color: #FF5500;
+}
+#quick_links li.myalimama {
+	margin: 3px 0pt 0pt;
+}
+#quick_links li.myalimama a, #quick_links li.myalimama a span, #quick_links li.myalimama a span i, #top_nav_bar li a, #top_nav_bar li a span {
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+#quick_links li.myalimama a span {
+	background-position: left -69px;
+	height: 17px;
+	line-height: 16px;
+	padding: 0pt 4px 0pt 8px;
+}
+#quick_links li.today, #quick_links li.member, #quick_links li.myalimama {
+	border: 0pt none;
+	color: #666666;
+}
+#main_login {
+	background: transparent url(http://img.alimama.cn/images/bg/login_bg.jpg) no-repeat scroll left 50px;
+	color: #868686;
+	margin: 10px auto auto;
+	width: 760px;
+}
+#main_login .lc {
+	float: left;
+	margin-top: 180px;
+}
+#main_login .lc dt, #main_login .lc dd, #main_login .login_head, #main_login .login_body, #main_login .login_bottom, #main_login .login_sub, .l_desc a, #main_login .login_top, .login_body2 h3, #wrongshow {
+	background-image: url(http://img.alimama.cn/images/bg/login_bg2.gif);
+	background-repeat: no-repeat;
+}
+#main_login .lc dt {
+	height: 36px;
+	width: 150px;
+}
+#main_login .lc .buy {
+	background-position: left top;
+}
+#main_login .lc .buy {
+	background-position: left -40px;
+}
+#main_login .lc dl {
+	border-bottom: 1px dotted #999999;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+#main_login .lc dd {
+	background-position: -220px 6px;
+	margin: 6px 0pt;
+	padding-left: 10px;
+}
+#main_login .rc {
+	float: right;
+	margin-right: 20px;
+}
+#main_login .login_div {
+	width: 276px;
+}
+#main_login .login_head {
+	background-position: left -160px;
+	color: #000000;
+	font-size: 14px;
+	font-weight: bolder;
+	line-height: 24px;
+	padding-left: 30px;
+	padding-top: 6px;
+}
+#main_login .login_right {
+	background: transparent url(http://img.alimama.cn/images/bg/login_right_bg.png) repeat-y scroll right top;
+	border-left: 1px solid #F6D897;
+	padding-right: 5px;
+}
+#main_login .login_body {
+	background-position: left -240px;
+	background-repeat: repeat-x;
+}
+#main_login .login_bottom {
+	background-position: left -220px;
+	height: 15px;
+}
+#main_login .login_top {
+	background-position: left -200px;
+	font-size: 0px;
+	height: 8px;
+	line-height: 0px;
+}
+#main_login .login_dl {
+	padding-top: 20px;
+}
+#main_login .login_dl dt {
+	float: left;
+	margin-bottom: 16px;
+	padding-top: 4px;
+	text-align: right;
+	width: 100px;
+}
+#main_login .login_dl dd {
+	margin: 0px 0pt 16px 100px;
+}
+#main_login .login_dl dd .text {
+	width: 140px;
+}
+#main_login .login_sub {
+	background-color: transparent;
+	background-position: left -80px;
+	border: 0pt none;
+	cursor: pointer;
+	height: 37px;
+	margin: 0pt 0pt -2px;
+	padding: 0pt;
+	width: 89px;
+}
+#main_login .forget_password {
+	font-size: 14px;
+}
+.l_desc {
+	border-top: 1px dotted #FAB984;
+	margin: 10px 10px 0pt;
+	padding: 10px 0pt;
+	text-align: center;
+}
+#main_login .l_desc a {
+	background-position: left -120px;
+	color: #000000;
+	display: block;
+	font-size: 14px;
+	height: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding-top: 6px;
+	width: 160px;
+}
+.l_desc a:hover {
+	text-decoration: none;
+}
+.login_body2 {
+	line-height: 20px;
+	padding: 10px 20px;
+}
+.login_body2 h3 {
+	background-position: -220px -80px;
+	font-size: 20px;
+	line-height: 34px;
+	margin: 0pt;
+	padding: 0px 0pt 0pt 50px;
+}
+#main_login .login_dl dd#wrongTip {
+	margin-bottom: 0pt;
+	margin-left: 30px;
+}
+#wrongshow {
+	background-position: -220px -36px;
+	color: #FF0000;
+	font-size: 14px;
+	line-height: 28px;
+	margin-bottom: 10px;
+	padding-left: 26px;
+}

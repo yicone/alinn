@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="search.ascx.cs" Inherits="Web.Controls.search" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="Web.Controls.Search" %>
 <asp:TextBox ID="txtKeyWord" runat="server" Width="200px"></asp:TextBox>
 &nbsp;&nbsp;
 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 

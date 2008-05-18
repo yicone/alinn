@@ -11,7 +11,7 @@
 namespace Web.User {
     
     
-    public partial class seccess {
+    public partial class Seccess {
         
         /// <summary>
         /// form1 control.

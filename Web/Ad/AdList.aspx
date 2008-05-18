@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/AdCommon.Master" AutoEventWireup="true" CodeBehind="AdList.aspx.cs" Inherits="Web.Ad.AdList" Title="无标题页" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="AdList.aspx.cs" Inherits="Web.Ad.AdList" Title="无标题页" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
    <div>

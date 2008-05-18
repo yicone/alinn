@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Zone.aspx.cs" Inherits="Web.Zone"
-    EnableViewStateMac="false" MasterPageFile="../MasterPage/UserCommon.Master" Title="广告位基本信息" %>
+    EnableViewStateMac="false" MasterPageFile="../MasterPage/Member.Master" Title="广告位基本信息" %>
 
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_headContent">
     <style type="text/css">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/UserCommon.Master" AutoEventWireup="true" CodeBehind="NewAd.aspx.cs" Inherits="Web.User.NewAd" Title="无标题页" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="NewAd.aspx.cs" Inherits="Web.User.NewAd" Title="无标题页" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <br />
     <br />

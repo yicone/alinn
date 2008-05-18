@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager"
+﻿<%--此页面较为特殊--%>
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager"
     Title="广告位管理" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

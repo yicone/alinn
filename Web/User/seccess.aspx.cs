@@ -8,10 +8,11 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using System.Diagnostics;
 
 namespace Web.User
 {
-    public partial class seccess : System.Web.UI.Page
+    public partial class Seccess : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +20,7 @@ namespace Web.User
 
             string email = Request.QueryString["email"];
             HOT.Model.UserTemp mUserTemp = bUser.GetModelTemp(email);
+            Debug.Assert(mUserTemp != null, "不存在此用户或者该页面得到未注册用户的请求！");
 
             if (mUserTemp.ActiveCode == Request.QueryString["num"])
             {
@@ -40,11 +42,11 @@ namespace Web.User
 
                 bUser.Add(mUser);
 
-                this.Response.Redirect("Login.aspx");
+                this.Response.Redirect("/User/Login.aspx");
             }
             else
             {
-                this.Response.Redirect("register.aspx", true);
+                this.Response.Redirect("/User/Register.aspx", true);
             }
         }
     }

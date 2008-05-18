@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneDesigner.aspx.cs" Inherits="Web.ZoneDesigner"
-    EnableViewStateMac="false" Title="设计广告位" masterpagefile="../MasterPage/UserCommon.Master" %>
+    EnableViewStateMac="false" Title="设计广告位" masterpagefile="../MasterPage/Member.Master" %>
 <asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div class="clearing"></div>
     <div id="code-wrapper">
