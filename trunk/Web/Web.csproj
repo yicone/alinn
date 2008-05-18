@@ -156,12 +156,26 @@
     <Compile Include="Ad\EditeGroup.aspx.designer.cs">
       <DependentUpon>EditeGroup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\search.ascx.cs">
-      <DependentUpon>search.ascx</DependentUpon>
+    <Compile Include="Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\search.ascx.designer.cs">
-      <DependentUpon>search.ascx</DependentUpon>
+    <Compile Include="Controls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -177,19 +191,12 @@
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage\AdCommon.Master.cs">
-      <DependentUpon>AdCommon.Master</DependentUpon>
+    <Compile Include="MasterPage\Global.Master.cs">
+      <DependentUpon>Global.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterPage\AdCommon.Master.designer.cs">
-      <DependentUpon>AdCommon.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage\BuyCommon.Master.cs">
-      <DependentUpon>BuyCommon.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\BuyCommon.Master.designer.cs">
-      <DependentUpon>BuyCommon.Master</DependentUpon>
+    <Compile Include="MasterPage\Global.Master.designer.cs">
+      <DependentUpon>Global.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
@@ -197,13 +204,6 @@
     </Compile>
     <Compile Include="MasterPage\Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage\ShowZone.Master.cs">
-      <DependentUpon>ShowZone.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\ShowZone.Master.designer.cs">
-      <DependentUpon>ShowZone.Master</DependentUpon>
     </Compile>
     <Compile Include="News\ShowNews.aspx.cs">
       <DependentUpon>ShowNews.aspx</DependentUpon>
@@ -286,12 +286,12 @@
     <Compile Include="User\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\seccess.aspx.cs">
-      <DependentUpon>seccess.aspx</DependentUpon>
+    <Compile Include="User\Seccess.aspx.cs">
+      <DependentUpon>Seccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\seccess.aspx.designer.cs">
-      <DependentUpon>seccess.aspx</DependentUpon>
+    <Compile Include="User\Seccess.aspx.designer.cs">
+      <DependentUpon>Seccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\UserInfo.aspx.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
@@ -345,12 +345,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage\UserCommon.Master.cs">
-      <DependentUpon>UserCommon.Master</DependentUpon>
+    <Compile Include="MasterPage\Member.Master.cs">
+      <DependentUpon>Member.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterPage\UserCommon.Master.designer.cs">
-      <DependentUpon>UserCommon.Master</DependentUpon>
+    <Compile Include="MasterPage\Member.Master.designer.cs">
+      <DependentUpon>Member.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zone\Site.aspx.cs">
@@ -465,18 +465,6 @@
       <DependentUpon>Global.asax.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pay\md5_pay.aspx.resx">
-      <DependentUpon>md5_pay.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pay\md5_query.aspx.resx">
-      <DependentUpon>md5_query.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pay\payresult.aspx.resx">
-      <DependentUpon>payresult.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pay\queryresult.aspx.resx">
-      <DependentUpon>queryresult.aspx.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -512,13 +500,16 @@
     <None Include="Admin\images\Thumbs.db" />
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
-    <None Include="App_Themes\skin1\images\Thumbs.db" />
     <Content Include="Admin\News\AdNews.aspx" />
     <Content Include="Admin\Zone\ManageZoneClass.aspx" />
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
-    <Content Include="Controls\search.ascx" />
+    <Content Include="App_Themes\ie_hacks.css" />
+    <Content Include="App_Themes\overlay.css" />
+    <Content Include="Controls\Footer.ascx" />
+    <Content Include="Controls\Header.ascx" />
+    <Content Include="Controls\Search.ascx" />
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\skin1\js\js.js" />
     <Content Include="App_Themes\js\jquery\flora.css" />
@@ -534,8 +525,6 @@
     <Content Include="App_Themes\js\jquery\ui.tabs.css" />
     <Content Include="App_Themes\js\jquery\ui.tabs.js" />
     <Content Include="App_Themes\skin1\Skin.skin" />
-    <None Include="App_Themes\skin1\js\.svn\entries" />
-    <None Include="App_Themes\skin1\js\.svn\format" />
     <None Include="database\MY_AL_Ad.sql" />
     <None Include="database\MY_AL_AdGroup.sql" />
     <None Include="database\MY_AL_Order.sql" />
@@ -643,7 +632,7 @@
     <Content Include="images\button_2.jpg" />
     <Content Include="images\button_3.jpg" />
     <Content Include="images\icon\ico_lights.gif" />
-    <Content Include="MasterPage\UserCommon.Master" />
+    <Content Include="MasterPage\Member.Master" />
     <Content Include="Ad\ManageAdGroup.aspx" />
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
@@ -661,9 +650,8 @@
     <Content Include="User\GetPassWord.aspx" />
     <Content Include="User\Login.aspx" />
     <Content Include="User\Register.aspx" />
-    <Content Include="User\Register.htm" />
     <Content Include="User\ResetPassword.aspx" />
-    <Content Include="User\seccess.aspx" />
+    <Content Include="User\Seccess.aspx" />
     <Content Include="User\UserInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
     <Content Include="Zone\ShowZone.aspx" />
@@ -676,20 +664,12 @@
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
+    <Content Include="MasterPage\Global.Master" />
     <Content Include="MasterPage\Default.Master" />
-    <Content Include="MasterPage\BuyCommon.Master" />
-    <Content Include="MasterPage\ShowZone.Master" />
-    <Content Include="MasterPage\AdCommon.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="App_Themes\skin1\js\.svn\prop-base\" />
-    <Folder Include="App_Themes\skin1\js\.svn\props\" />
-    <Folder Include="App_Themes\skin1\js\.svn\text-base\" />
-    <Folder Include="App_Themes\skin1\js\.svn\tmp\prop-base\" />
-    <Folder Include="App_Themes\skin1\js\.svn\tmp\props\" />
-    <Folder Include="App_Themes\skin1\js\.svn\tmp\text-base\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />

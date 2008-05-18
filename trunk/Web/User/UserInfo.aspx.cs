@@ -21,7 +21,7 @@ namespace Web.User
             {
                 bUser = new HOT.BLL.User();
                 if (bUser.GetLoginUser() == null)
-                    this.Response.Redirect("Login.aspx");
+                    this.Response.Redirect("/User/Login.aspx");
 
 
                 BindUserInfo();
@@ -36,7 +36,7 @@ namespace Web.User
             DataSet ds = bUser.GetList(string.Format(" userid='{0}'", userID));
 
             if (ds.Tables[0].Rows.Count == 0)
-                Response.Redirect("login.aspx");
+                Response.Redirect("/User/Login.aspx");
 
 
             comName.Text = ds.Tables[0].Rows[0].ItemArray.GetValue(5).ToString();

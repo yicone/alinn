@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneCategory.aspx.cs" Inherits="Web.ZoneCategory"
-    EnableViewStateMac="false" MasterPageFile="../MasterPage/UserCommon.Master" Title="广告位分类" %>
+    EnableViewStateMac="false" MasterPageFile="../MasterPage/Member.Master" Title="广告位分类" %>
 
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
     <div>

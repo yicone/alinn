@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/ShowZone.Master" AutoEventWireup="true" CodeBehind="ShowNews.aspx.cs" Inherits="Web.News.ShowNews" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="ShowNews.aspx.cs" Inherits="Web.News.ShowNews" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
   <!--******************************显示页面代码********************************-->
 

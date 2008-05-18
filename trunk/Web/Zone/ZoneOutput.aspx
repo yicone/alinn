@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneOutput.aspx.cs" Inherits="Web.ZoneOutput"
-    MasterPageFile="../MasterPage/UserCommon.Master" Title="Untitled Page" %>
+    Title="Zone输出服务" %>
 
-<asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_headContent">
+<html>
+<head>
     <link type="text/css" href="../App_Themes/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
         #main_inner
@@ -37,8 +38,8 @@
     <script src="../App_Themes/TextZoneStyle.js" type="text/javascript">
     </script>
 
-</asp:Content>
-<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
+</head>
+<body>
     <div id="outer">
         <div id="pre">
         </div>
@@ -103,4 +104,5 @@
             }
     </script>
 
-</asp:Content>
+</body>
+</html>

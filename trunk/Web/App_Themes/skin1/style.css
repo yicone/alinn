@@ -11,6 +11,7 @@ table{text-align:left; border:solid 0px #669999;}
 #maincontent{width:100%; height:auto; border-width:0px; background-color:#FFFFFF; text-align:center; clear:both;}
 #top{height:60px; border-bottom-width:0px; width:1024px;}
 #logo{width:262px; height:60px; background-image:url(images/logo.jpg); margin-left:0px; float:left;}
+#logo a {display:block; height:42px; margin:10px 0pt 0pt 1px; width:291px; }
 #topright{ width:762px;height:60px; background-color:#FFFFFF; margin-left:0px; float:left;}
 #login{width:600px; height:32px; float:right; margin-left:30px;}
 #login .login{height:20px; width:150px; float:left;margin-left:50px; margin-top:5px; text-align:left;}
@@ -21,7 +22,7 @@ table{text-align:left; border:solid 0px #669999;}
 #menu ul{float:left;margin-left:0px; width:300px; margin-left:50px;}
 #menu ul li{ height:22px;float:left; margin-left:0px;width:50px; background-image:url(images/menubg.gif); padding-top:5px; border:  #669999 solid; border-width:1px;}
 #menu ul li:hover{ background-image:url(images/menubg2.gif);}
-/*ËÑË÷¿ªÊ¼*/
+/*æœç´¢å¼€å§‹*/
 #search{width:100%; height:44px; background-image:url(images/searchbg.jpg); margin-top:0px;}
 #search .search{width:500px;height:24px;float:left; margin-left:100px; margin-top:8px;}
 #search .help{width:200px;height:14px;float:left; margin-top:13px; margin-left:0px;}
@@ -31,7 +32,7 @@ table{text-align:left; border:solid 0px #669999;}
 #searchbottom .tags{ width:900px; height:32px;margin-left:50px; float:left;}
 #searchbottom .tags .tagscontent{ width:500px; height:18px; margin-left:20px; margin-top:8px; float:left;}
 #searchbottom .searchbottomright{width:27px; height:32px; float:right; margin-left:0px; background-image:url(images/searchbottomright.jpg);}
-/*ÍøÒ³ÖĞ²¿ÄÚÈİ²¿·Ö¿ªÊ¼*/
+/*ç½‘é¡µä¸­éƒ¨å†…å®¹éƒ¨åˆ†å¼€å§‹*/
 #main{ text-align:left; width:1024px; height:auto; clear:both;}
 #main .main1{width:1024px; height:auto; float:left;}
 #main .main1 .left{width:250px; height:auto; float:left; border:0px; margin-left:0px;}
@@ -66,9 +67,10 @@ table{text-align:left; border:solid 0px #669999;}
 #main .main2 .buyers{ width:495px; height:150px;float:left; margin-left:26px;border:#eba34e thin solid;}
 #main .main2 .buyers .title{width:98%; height:20px; float:left;}
 #main .main2 .buyers .partcontent{width:98%; height:auto; float:right;}
-/*ÍøÒ³µ×²¿¶¨Òå¿ªÊ¼*/
+/*ç½‘é¡µåº•éƒ¨å®šä¹‰å¼€å§‹*/
 #bottom{width:100%; height:169px;float:left; background-image:url(images/bottombg.jpg); margin-top:3px;}
 #bottom .about{float:left;width:100%;}
 #bottom ul{ text-align:center; float:left; margin-left:300px; margin-top:20px; clear:both;}
 #bottom ul li{ float:left; width:80px;}
 #bottom .copyright{ clear:both; margin-top:10px;  margin-left:400px; float:left; width:200px;}
+.Validator { text-align:left;display:none}

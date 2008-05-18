@@ -1,0 +1,42 @@
+﻿<%--此母板页定义为根母板页--%>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global.Master.cs"
+    Inherits="Web.MasterPage.Common" %>
+
+<%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="../Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>我的阿里奶奶</title>
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%--在此行上方增加全局的META标签--%>
+    <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+    <script type="text/javascript" src="../App_Themes/common.js"></script>
+    <%--在此行上方增加全局的JS引用--%>
+    <link type="text/css" href="../App_Themes/alinn.css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/myalinn.css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/ie_hacks.css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/overlay.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/skin1/style.css" />
+    <%--在此行上方增加全局的样式表引用--%>
+    <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
+    <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
+    <%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <uc3:Header ID="Header1" runat="server" />
+        <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="_mainContent" runat="server">
+        <%--此处由子母板页添加ContentPlaceHolder，或内容页添加内容 （“子母板页”，使用此页作为母板的母板页:) ）--%>
+        </asp:ContentPlaceHolder>
+            </form>
+    <uc2:Footer ID="Footer1" runat="server" />
+    <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
+    <%--此处添加JS代码和函数--%>
+    </asp:ContentPlaceHolder>
+</body>
+</html>

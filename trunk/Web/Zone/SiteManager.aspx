@@ -1,5 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager"
-    MasterPageFile="../MasterPage/UserCommon.Master" Title="Untitled Page" %>
+    MasterPageFile="../MasterPage/Member.Master" Title="Untitled Page" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="_headContent">
 

@@ -47,7 +47,7 @@ namespace Web.MasterPage {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Web.Controls.search search1;
+        protected global::Web.Controls.Search Search1;
         
         /// <summary>
         /// notice control.
