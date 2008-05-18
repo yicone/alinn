@@ -59,7 +59,7 @@ namespace HOT.IDAL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        IList GetIntroducer(Guid UserId);
+        string GetIntroducer(Guid UserId);
 
         /// <summary>
         /// 该IP在日期内是否存在
