@@ -30,13 +30,14 @@ namespace Web.User
                 HOT.BLL.User bUser = new HOT.BLL.User();
 
                 //email唯一  IP当天没注册
-                if (bUser.Exists(this.email.Text.Trim()) || bUser.ExsitsIP(Request.UserHostAddress))
+                //Edited by fzf 20080518
+                if (bUser.Exists(this.email.Text.Trim().ToLower()) || bUser.ExsitsIP(Request.UserHostAddress))
                     return;
                 else
                 {
                     HOT.Model.UserTemp mUser = new HOT.Model.UserTemp();
 
-                    mUser.Email = email.Text.Trim();
+                    mUser.Email = email.Text.Trim().ToLower();
                     mUser.UserPassword = HOT.Common.MakeMd5.MakeMd5Pwd(passWord.Text.Trim());
                     mUser.NickName = nickName.Text.Trim();
                     mUser.QQ = qqNumber.Text.Trim();
