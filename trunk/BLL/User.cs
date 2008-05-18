@@ -251,7 +251,7 @@ namespace HOT.BLL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        public IList GetIntroducer(Guid UserId)
+        public string GetIntroducer(Guid UserId)
         {
             return dal.GetIntroducer(UserId);
         }
@@ -261,7 +261,7 @@ namespace HOT.BLL
         public bool Login(string UserID, string PassWord)
         {
             Guid guid = Exists(UserID, PassWord);
-            if (guid != null)
+            if (guid != Guid.Empty)
             {
                 SetLoginState(guid);
 
