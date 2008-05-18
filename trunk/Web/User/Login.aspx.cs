@@ -40,7 +40,8 @@ namespace Web.User
                     this.Response.Redirect("../zone/zone.aspx", true);
                 }
                 else
-                    this.Label1.Text = "用户名或密码错误";
+                    this.Response.Write("<script>alert('用户名或密码错误')</script>");
+                    //this.Label1.Text = "用户名或密码错误";
             }
         }
     }
