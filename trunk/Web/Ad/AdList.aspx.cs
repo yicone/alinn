@@ -19,6 +19,7 @@ namespace Web.Ad
         {
             this.Page.Title = "广告列表";
             string inClass = "";
+            string key = "";
             if (this.Request.QueryString["ClassId"] != null)
             {
                 int parentId = int.Parse(this.Request.QueryString["ClassId"].ToString());
@@ -33,7 +34,11 @@ namespace Web.Ad
                     inClass = " and classids like '%," + parentId.ToString() + "' or classids like '" + parentId.ToString() + ",%' or classids like '%," + parentId.ToString() + ",%'";
                 }
             }
-            Where += this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString()+this.ddlVisteNumPerDay.SelectedValue.ToString()+inClass;
+            if (this.Request.QueryString["Key"] != null)
+            {
+                key = " and keywords like '%" + this.Request.QueryString["Key"] + "%'";
+            }
+            Where += this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString()+this.ddlVisteNumPerDay.SelectedValue.ToString()+inClass+key;
             HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
             //if (!IsPostBack)
             //{

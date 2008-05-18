@@ -23,8 +23,8 @@ table{text-align:left; border:solid 0px #669999;}
 #menu ul li:hover{ background-image:url(images/menubg2.gif);}
 /*ËÑË÷¿ªÊ¼*/
 #search{width:100%; height:44px; background-image:url(images/searchbg.jpg); margin-top:0px;}
-#search .search{width:300px;height:44px;float:left;}
-#search .help{width:200px;height:14px;float:left; margin-top:13px;}
+#search .search{width:500px;height:24px;float:left; margin-left:100px; margin-top:8px;}
+#search .help{width:200px;height:14px;float:left; margin-top:13px; margin-left:0px;}
 #search .help a{color:#FFFFFF; text-decoration:none;}
 #searchbottom{ width:1024px; height:32px; background-image:url(images/searchbottombg.jpg);}
 #searchbottom .searchbottomleft{width:27px; height:32px; float:left; margin-left:0px; background-image:url(images/searchbottomleft.jpg);}
