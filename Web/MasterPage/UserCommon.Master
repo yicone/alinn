@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserCommon.master.cs"
     Inherits="Web.MasterPage.UserCommon" %>
 
+<%@ Register src="../Controls/search.ascx" tagname="search" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -51,11 +53,14 @@
         </div>
         <div id="search">
             <div class="search">
-                搜索框</div>
+                <asp:ContentPlaceHolder ID="searchcontent" runat="server">
+                                <uc1:search ID="search1" runat="server" />
+                </asp:ContentPlaceHolder>
+               </div>
             <div class="help">
                 ［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
         </div>
-        <div id="menu">
+        <div id="submenu">
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="/MyAlinn.aspx" Text="我的阿里奶奶" Value="我的阿里奶奶"></asp:MenuItem>
@@ -84,6 +89,7 @@
         </div>
         <div id="maincontent">
             <asp:ContentPlaceHolder ID="_mainContent" runat="server">
+
             </asp:ContentPlaceHolder>
         </div>
         <div id="bottom">
@@ -103,8 +109,8 @@
             </div>
         </div>
     </div>
-    </form>
     <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
     </asp:ContentPlaceHolder>
-</body>
+    </form>
+    </body>
 </html>

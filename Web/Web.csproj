@@ -156,6 +156,13 @@
     <Compile Include="Ad\EditeGroup.aspx.designer.cs">
       <DependentUpon>EditeGroup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\search.ascx.cs">
+      <DependentUpon>search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\search.ascx.designer.cs">
+      <DependentUpon>search.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,13 +211,6 @@
     </Compile>
     <Compile Include="News\ShowNews.aspx.designer.cs">
       <DependentUpon>ShowNews.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="My.aspx.cs">
-      <DependentUpon>My.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="My.aspx.designer.cs">
-      <DependentUpon>My.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyAlinn.aspx.cs">
       <DependentUpon>MyAlinn.aspx</DependentUpon>
@@ -282,13 +282,6 @@
     </Compile>
     <Compile Include="User\UserInfo.aspx.designer.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Zone\OrderManager.aspx.cs">
-      <DependentUpon>OrderManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Zone\OrderManager.aspx.designer.cs">
-      <DependentUpon>OrderManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\ShowZone.aspx.cs">
       <DependentUpon>ShowZone.aspx</DependentUpon>
@@ -496,6 +489,7 @@
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
+    <Content Include="Controls\search.ascx" />
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\skin1\js\js.js" />
     <Content Include="App_Themes\js\jquery\flora.css" />
@@ -625,7 +619,6 @@
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
-    <Content Include="My.aspx" />
     <Content Include="MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />
     <Content Include="Order\images\tenpay_button_02_m.gif" />
@@ -640,7 +633,6 @@
     <Content Include="User\seccess.aspx" />
     <Content Include="User\UserInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
-    <Content Include="Zone\OrderManager.aspx" />
     <Content Include="Zone\ShowZone.aspx" />
     <Content Include="Zone\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />

@@ -14,6 +14,15 @@ namespace Web.MasterPage {
     public partial class ShowZone {
         
         /// <summary>
+        /// _headContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder _headContent;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -21,6 +30,24 @@ namespace Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// searchcontent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder searchcontent;
+        
+        /// <summary>
+        /// search1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Web.Controls.search search1;
         
         /// <summary>
         /// _mainContent control.
