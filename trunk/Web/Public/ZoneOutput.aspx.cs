@@ -12,6 +12,7 @@ using HOT.Model;
 using HOT.BLL;
 using System.Diagnostics;
 using HOT.Common;
+using System.Data.SqlClient;
 
 namespace Web
 {
@@ -47,6 +48,7 @@ namespace Web
                     {
                         Guid adId = order.AdId;
                         RenderZone(adId);
+                        return;
                     }
                 }
 
@@ -74,7 +76,30 @@ namespace Web
             //是否订单已被网站主通过审核
             //0:未审核，1审核通过，2审核拒绝，3过期
             //select * from al_order where auditastate == 1 and zoneid = ' + zoneid
-            return null;
+            HOT.Model.Order order = null;
+            HOT.BLL.Order orderManager = new HOT.BLL.Order();
+
+            Guid orderId = Guid.Empty;
+            #region 数据库中取值
+            SqlParameter[] parameters = {
+                        new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier)
+                    };
+            Debug.Assert(hdn_zoneid.Value != "");
+            parameters[0].Value = new Guid(hdn_zoneid.Value);
+            SqlDataReader sdr = HOT.DBUtility.DbHelperSQL.RunProcedure("UP_GetActiveOrder", parameters);
+            while (sdr.Read())
+            {
+                orderId = sdr.GetGuid(0);
+                break;
+            } 
+
+            #endregion
+
+            if (orderId != Guid.Empty)
+            {
+                order = orderManager.GetModel(orderId);
+            }
+            return order;
         }
 
         private HOT.Model.Ad GetAd(Guid adId)
@@ -112,7 +137,7 @@ namespace Web
         private void RenderDefaultZone(object zoneId)
         {
             hdn_isdefaultzone.Value = "true";
-            throw new Exception("The method or operation is not implemented.");
+            //throw new Exception("The method or operation is not implemented.");
             //TODO;根据广告位创建时选择的MediaType显示不同的默认广告
             //文字和图片多选时，选择图片？
         }

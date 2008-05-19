@@ -37,22 +37,22 @@
                         <dl class="login_dl">
                             <dt>Email： </dt>
                             <dd style="_margin-bottom: 18px">
-                                <asp:TextBox ID="email" runat="server" MaxLength="50" CssClass="text"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" runat="server" MaxLength="50" CssClass="text"></asp:TextBox>
                                 <br />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="email"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail"
                                     ErrorMessage="用户名不能为空" CssClass="Validator" Display="Dynamic">
                                 </asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email"
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail"
                                     ErrorMessage="格式不规范" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                                     CssClass="Validator" Display="Dynamic">
                                 </asp:RegularExpressionValidator>
                             </dd>
                             <dt>登录密码： </dt>
                             <dd>
-                                <asp:TextBox ID="passWord" runat="server" MaxLength="16" TextMode="Password" CssClass="text"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" MaxLength="16" TextMode="Password" CssClass="text"></asp:TextBox>
                                 <br />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passWord"
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword"
                                     ErrorMessage="密码不能为空" CssClass="Validator" Display="Dynamic">
                                 </asp:RequiredFieldValidator>
                                 <input id="_fmm.l._0.lo" type="hidden" name="_fmm.l._0.lo" value="" />
@@ -67,7 +67,7 @@
                             <dd>
                                 <!--input class="login_sub" onfocus="this.blur()" onclick="return checkinput();" type="submit" name="dologin" value="" /-->
                                 <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="login_sub" />
-                                <asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="~/User/GetPassWord.aspx"
+                                <asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/User/GetPassWord.aspx"
                                     CssClass="forget_password">忘记密码？
                                 </asp:HyperLink>
                                 <asp:Label ID="Label1" runat="server" Width="100px" ForeColor="Red"></asp:Label>

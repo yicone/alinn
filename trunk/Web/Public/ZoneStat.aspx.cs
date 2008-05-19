@@ -20,16 +20,16 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strZoneId = Request.QueryString["zoneid"];
-            string zoneHref = Request.QueryString["zonehref"];
-            string action = Request.QueryString["action"];
+            string strZoneId = Request.Form["zoneid"];
+            string zoneHref = Request.Form["zonehref"];
+            string action = Request.Form["action"];
 
             #region 参数验证
             if (string.IsNullOrEmpty(strZoneId) || string.IsNullOrEmpty(zoneHref) || string.IsNullOrEmpty(action)) return;
 
             Guid zoneId;
             if (!GuidHelper.TryParse(strZoneId, out zoneId)) return;
-            if (action != "click" || action != "refresh") return; 
+            if (action != "click" && action != "refresh") return; 
             #endregion
 
             #region 防作弊算法
