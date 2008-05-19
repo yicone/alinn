@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using HOT.Web;
 using System.Web.Security;
+using System.Security.Principal;
 //using HOT.Accounts.Bus;
 namespace HOT.Web 
 {
@@ -249,6 +250,16 @@ namespace HOT.Web
 		}
 		protected void Application_AuthenticateRequest(Object sender, EventArgs e)
 		{
+            HttpApplication app = (HttpApplication)sender;
+            HttpContext context = app.Context; //获取本次Http请求相关的HttpContext对象 
+            if (context.Request.IsAuthenticated == true) //验证过的用户才进行role的处理 
+            {
+                FormsIdentity identity = (FormsIdentity)context.User.Identity;
+                HttpCookie cookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(cookie.Value); //取得身份验证票 
+                string[] roles = ticket.UserData.Split(','); //将身份验证票中的role数据转成字符串数组 
+                context.User = new GenericPrincipal(identity, roles); //将原有的Identity加上角色信息新建一个GenericPrincipal表示当前用户,这样当前用户就拥有了role信息 
+            } 
 		}
 		protected void Application_Error(Object sender, EventArgs e)
 		{

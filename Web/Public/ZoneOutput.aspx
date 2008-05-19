@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <title>我的阿里奶奶</title>
     <link type="text/css" href="../App_Themes/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
         #main_inner
@@ -66,7 +67,7 @@
                 var sizecode = $("#hdn_sizecode").val();
                 var layouttype = $("#hdn_layouttype").val();
                 var currentStyle = new TextZoneStyle(jsonStyle);
-                var oTextZone = new TextZone(document.window, sizecode, layouttype);
+                var oTextZone = new TextZone(sizecode, layouttype);
                 oTextZone.initZone($("#hdn_title").val(), $("#hdn_text").val(), $("#hdn_link").val(), $("#hdn_isdefaultzone").val());           //修改文字广告的内容，或图片广告的背景图
                 oTextZone.setStyle(currentStyle);
                 oTextZone.applyStyle(false);
@@ -82,8 +83,8 @@
                         action:"click"
                     }
                     
-                    alert(location.href);
-                    alert(location.host);
+                    //alert(location.href);
+                    //alert(location.host);
                     $.post("ZoneStat.aspx", kvp, success = function(){
                         alert("点击信息已发送！");
                     });
@@ -96,8 +97,8 @@
                         action:"refresh"
                     }
                     
-                    alert(location.href);
-                    alert(location.host);
+                    //alert(location.href);
+                    //alert(location.host);
                     $.post("ZoneStat.aspx", kvp, success = function(){
                         alert("刷新信息已发送！");
                     });

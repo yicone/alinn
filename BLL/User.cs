@@ -258,6 +258,12 @@ namespace HOT.BLL
 
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <param name="PassWord">¼ÓÃÜºóµÄÃÜÂë</param>
+        /// <returns></returns>
         public bool Login(string UserID, string PassWord)
         {
             Guid guid = Exists(UserID, PassWord);

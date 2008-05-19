@@ -99,6 +99,13 @@
       <DependentUpon>LeftMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,11 +191,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ErrorPage.aspx.cs">
+    <Compile Include="Public\ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ErrorPage.aspx.designer.cs">
+    <Compile Include="Public\ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\Global.Master.cs">
@@ -212,11 +219,11 @@
     <Compile Include="News\ShowNews.aspx.designer.cs">
       <DependentUpon>ShowNews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyAlinn.aspx.cs">
+    <Compile Include="User\MyAlinn.aspx.cs">
       <DependentUpon>MyAlinn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyAlinn.aspx.designer.cs">
+    <Compile Include="User\MyAlinn.aspx.designer.cs">
       <DependentUpon>MyAlinn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Order\OrderInfo.aspx.cs">
@@ -250,33 +257,33 @@
     <Compile Include="Report\ZoneSellDetail.aspx.designer.cs">
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\BuildImageCode.aspx.cs">
+    <Compile Include="Public\BuildImageCode.aspx.cs">
       <DependentUpon>BuildImageCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\BuildImageCode.aspx.designer.cs">
+    <Compile Include="Public\BuildImageCode.aspx.designer.cs">
       <DependentUpon>BuildImageCode.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Common.cs" />
-    <Compile Include="User\GetPassWord.aspx.cs">
+    <Compile Include="Public\GetPassWord.aspx.cs">
       <DependentUpon>GetPassWord.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\GetPassWord.aspx.designer.cs">
+    <Compile Include="Public\GetPassWord.aspx.designer.cs">
       <DependentUpon>GetPassWord.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Login.aspx.cs">
+    <Compile Include="Public\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\Login.aspx.designer.cs">
+    <Compile Include="Public\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Register.aspx.cs">
+    <Compile Include="Public\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\Register.aspx.designer.cs">
+    <Compile Include="Public\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\ResetPassword.aspx.cs">
@@ -300,11 +307,11 @@
     <Compile Include="User\UserInfo.aspx.designer.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zone\ShowZone.aspx.cs">
+    <Compile Include="Public\ShowZone.aspx.cs">
       <DependentUpon>ShowZone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Zone\ShowZone.aspx.designer.cs">
+    <Compile Include="Public\ShowZone.aspx.designer.cs">
       <DependentUpon>ShowZone.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\Zone.aspx.cs">
@@ -416,18 +423,18 @@
     <Compile Include="Zone\SiteManager.aspx.designer.cs">
       <DependentUpon>SiteManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zone\ZoneOutput.aspx.cs">
+    <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zone\ZoneOutput.aspx.designer.cs">
+    <Compile Include="Public\ZoneOutput.aspx.designer.cs">
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zone\ZoneStat.aspx.cs">
+    <Compile Include="Public\ZoneStat.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneStat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zone\ZoneStat.aspx.designer.cs">
+    <Compile Include="Public\ZoneStat.aspx.designer.cs">
       <DependentUpon>ZoneStat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zone\ZoneView.aspx.cs">
@@ -500,6 +507,7 @@
     <None Include="Admin\images\Thumbs.db" />
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
+    <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\News\AdNews.aspx" />
     <Content Include="Admin\Zone\ManageZoneClass.aspx" />
     <Content Include="Ad\AdList.aspx" />
@@ -621,7 +629,7 @@
     <Content Include="App_Themes\ZoneDesigner.css" />
     <None Include="database\DataChecker.sql" />
     <Content Include="Default.aspx" />
-    <Content Include="ErrorPage.aspx" />
+    <Content Include="Public\ErrorPage.aspx" />
     <Content Include="images\01.jpg" />
     <Content Include="images\02.jpg" />
     <Content Include="images\03.jpg" />
@@ -637,7 +645,7 @@
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
-    <Content Include="MyAlinn.aspx" />
+    <Content Include="User\MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />
     <Content Include="Order\images\tenpay_button_02_m.gif" />
     <Content Include="Order\images\tenpay_button_02_s.gif" />
@@ -646,19 +654,19 @@
     <Content Include="Pay\md5_query.aspx" />
     <Content Include="Pay\payresult.aspx" />
     <Content Include="Pay\queryresult.aspx" />
-    <Content Include="User\BuildImageCode.aspx" />
-    <Content Include="User\GetPassWord.aspx" />
-    <Content Include="User\Login.aspx" />
-    <Content Include="User\Register.aspx" />
+    <Content Include="Public\BuildImageCode.aspx" />
+    <Content Include="Public\GetPassWord.aspx" />
+    <Content Include="Public\Login.aspx" />
+    <Content Include="Public\Register.aspx" />
     <Content Include="User\ResetPassword.aspx" />
     <Content Include="User\Seccess.aspx" />
     <Content Include="User\UserInfo.aspx" />
     <Content Include="Zone\images\btn_copycode_big.jpg" />
-    <Content Include="Zone\ShowZone.aspx" />
-    <Content Include="Zone\testZone.html" />
+    <Content Include="Public\ShowZone.aspx" />
+    <Content Include="Public\testZone.html" />
     <Content Include="Zone\ZoneInfoSaver.aspx" />
-    <Content Include="Zone\ZoneOutput.aspx" />
-    <Content Include="Zone\ZoneStat.aspx" />
+    <Content Include="Public\ZoneOutput.aspx" />
+    <Content Include="Public\ZoneStat.aspx" />
     <Content Include="Zone\ZoneView.aspx" />
     <None Include="database\sp_AL_ZoneSize.sql" />
     <None Include="database\sp_yicone.sql" />

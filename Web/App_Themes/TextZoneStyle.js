@@ -66,7 +66,7 @@ function TextZone(zoneSize, layoutType){
             {
             title = "阿里奶奶：好产品更需要好广告";
             text = "我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!";
-            link = "www.alimama.com";
+            link = "www.alinn.com";
             }
             
             //修改文字广告牌
@@ -207,7 +207,7 @@ function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     sbJs.append('"; \n');
 	
 	sbJs.append('<\/script> \n');
-	sbJs.append('<script src="http://a.alimama.cn/inf.js" type=text/javascript> \n');
+	sbJs.append('<script src="http://a.alinn.cn/App_Themes/inf.js" type=text/javascript> \n');
 	sbJs.append('<\/script>');
 	
 	$("#genjstxt").val(sbJs.toString());

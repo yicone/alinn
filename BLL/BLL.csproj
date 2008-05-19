@@ -109,6 +109,7 @@
     <Compile Include="NewsClass.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderReport.cs" />
+    <Compile Include="SiteRole.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="SiteClass.cs" />
     <Compile Include="SysManage.cs">

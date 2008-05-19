@@ -124,3 +124,24 @@ BEGIN
 	select al_zone.sizeid as sizeid, sizecode, zonestyle from al_zone join al_zonesize on al_zone.sizeid = al_zonesize.sizeid
 	where zoneid = @zoneid
 END
+
+
+USE [Alinn]
+GO
+/****** Object:  StoredProcedure [dbo].[UP_GetActiveOrder]    ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		yicone
+-- Create date: 20080425
+-- Description:	获取活跃的订单
+-- =============================================
+
+CREATE PROCEDURE [dbo].[UP_GetActiveOrder]
+	@ZoneId uniqueidentifier
+AS
+BEGIN
+	select * from al_order where auditstate = 1 and zoneid = @zoneid
+END

@@ -34,7 +34,7 @@
 	jframe.attr("marginheight", "0");
 	jframe.attr("marginwidth", "0");
 	//jframe.attr("border", "0");
-	jframe.attr("src", "../Zone/ZoneOutput.aspx?" + query);
+	jframe.attr("src", "../Public/ZoneOutput.aspx?" + query);
 	$("body").append(jframe);
 	//alert("hi");
 }
