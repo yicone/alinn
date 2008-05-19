@@ -12,6 +12,7 @@ using HOT.Common;
 using HOT.DBUtility;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Net;
 
 namespace Web
 {
@@ -76,6 +77,40 @@ namespace Web
                 dbResult = DbHelperSQL.RunProcedure("UP_CountPV", paramters, out  rowAffected);
                 Debug.Assert(rowAffected == 1);
             }
+        }
+
+        /// <summary>
+        /// 取得域名的IP(d)
+        /// </summary>
+        /// <param name="hostName"></param>
+        /// <returns></returns>
+        private static IPAddress[] HostName2IP(string hostName)
+        {
+            IPAddress[] addresses;
+
+            IPHostEntry iphost = Dns.GetHostEntry(hostName);
+            addresses = iphost.AddressList;
+
+            return addresses;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strIP"></param>
+        /// <returns></returns>
+        private static string IP2HostName(string strIP)
+        {
+            string hostName = null;
+            IPAddress ip;
+            bool formatCorrect = IPAddress.TryParse(strIP, out ip);
+            if(formatCorrect)
+            {
+                IPHostEntry iphost = Dns.GetHostEntry(ip);
+                hostName = iphost.HostName;
+            }
+
+            return hostName;
         }
     }
 }

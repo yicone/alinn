@@ -11,7 +11,7 @@
 namespace Web.MasterPage {
     
     
-    public partial class Common {
+    public partial class Global {
         
         /// <summary>
         /// _headContent control.

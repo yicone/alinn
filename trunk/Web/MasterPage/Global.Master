@@ -1,7 +1,7 @@
 ﻿<%--此母板页定义为根母板页--%>
 
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global.Master.cs"
-    Inherits="Web.MasterPage.Common" %>
+    Inherits="Web.MasterPage.Global" %>
 
 <%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
 <%@ Register Src="../Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
