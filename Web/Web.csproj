@@ -219,11 +219,11 @@
     <Compile Include="News\ShowNews.aspx.designer.cs">
       <DependentUpon>ShowNews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\MyAlinn.aspx.cs">
+    <Compile Include="Public\MyAlinn.aspx.cs">
       <DependentUpon>MyAlinn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\MyAlinn.aspx.designer.cs">
+    <Compile Include="Public\MyAlinn.aspx.designer.cs">
       <DependentUpon>MyAlinn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Order\OrderInfo.aspx.cs">
@@ -645,7 +645,7 @@
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
-    <Content Include="User\MyAlinn.aspx" />
+    <Content Include="Public\MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />
     <Content Include="Order\images\tenpay_button_02_m.gif" />
     <Content Include="Order\images\tenpay_button_02_s.gif" />
