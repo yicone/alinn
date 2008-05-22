@@ -21,7 +21,7 @@ namespace Web.User
         {
             if (!IsVaildCode(Request.Form["code"]))
             {
-                this.Response.Write("<script>alert('验证码不正确')</script>");
+                this.Response.Write("<script>javascript:alert('验证码不正确');</script>");
                 return;
             }
 
@@ -31,7 +31,7 @@ namespace Web.User
 
                 //email唯一  IP当天没注册
                 //Edited by fzf 20080518
-                if (bUser.Exists(this.email.Text.Trim().ToLower()) || bUser.ExsitsIP(Request.UserHostAddress))
+                if (bUser.Exists(this.email.Text.Trim().ToLower()) || bUser.ExsitsTempUser(Request.UserHostAddress))
                     return;
                 else
                 {
@@ -68,7 +68,7 @@ namespace Web.User
                     bUser.SendMail(this.email.Text, "欢迎注册广告天下", RenderMailDetail(email.Text, activecode));
 
                     //临时表比用户表多1个activecode字段
-                    bUser.Add(mUser);//写入临时表,所以此时的bUser对象是不准确的
+                    bUser.AddTempUser(mUser);//写入临时表,所以此时的bUser对象是不准确的
 
 
 

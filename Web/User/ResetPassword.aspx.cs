@@ -27,14 +27,14 @@ namespace Web.User
 
                 HOT.BLL.User bUser = new HOT.BLL.User();
 
-                HOT.Model.User mUser = bUser.GetModel(email, num);
+                HOT.Model.User mUser = bUser.GetUser(email, num);
                 if (mUser == null)
                     return;
 
                 mUser.ActiveCode = "";
                 mUser.UserPassword = HOT.Common.MakeMd5.MakeMd5Pwd(password.Text.Trim());
 
-                bUser.Update(mUser);
+                bUser.UpdateUser(mUser);
 
                 this.Response.Redirect("Login.aspx");
             }

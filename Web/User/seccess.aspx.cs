@@ -19,7 +19,7 @@ namespace Web.User
             HOT.BLL.User bUser = new HOT.BLL.User();
 
             string email = Request.QueryString["email"];
-            HOT.Model.UserTemp mUserTemp = bUser.GetModelTemp(email);
+            HOT.Model.UserTemp mUserTemp = bUser.GetTempUser(email);
             Debug.Assert(mUserTemp != null, "不存在此用户或者该页面得到未注册用户的请求！");
 
             if (mUserTemp.ActiveCode == Request.QueryString["num"])
@@ -40,7 +40,7 @@ namespace Web.User
                 mUser.UserPassword = mUserTemp.UserPassword;
                 mUser.RegTime = DateTime.Now.Date;
 
-                bUser.Add(mUser);
+                bUser.AddUser(mUser);
 
                 this.Response.Redirect("/User/Login.aspx");
             }

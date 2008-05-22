@@ -35,7 +35,7 @@ GO
 --Ê±¼ä£º2008-5-15 1:22:44
 ------------------------------------
 CREATE PROCEDURE UP_AL_User_ADD
-@UserID uniqueidentifier,
+@UserID uniqueidentifier output,	--yicone
 @RoleID int,
 @Email nvarchar(100),
 @NickName nvarchar(100),
@@ -56,10 +56,12 @@ CREATE PROCEDURE UP_AL_User_ADD
 @RegTime datetime
 
  AS 
+	SET @UserId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)	-------------------------yicone£¡
+	
 	INSERT INTO AL_User(
-	[UserID],[RoleID],[Email],[NickName],[UserPassword],[CompanyName],[CompanyAddress],[LinkMan],[Telephone],[Mobile],[QQ],[Msn],[Introducer],[LastLoginTime],[LastLoginIP],[LoginTimes],[IsLocked],[ActiveCode],[RegTime]
+	[RoleID],[Email],[NickName],[UserPassword],[CompanyName],[CompanyAddress],[LinkMan],[Telephone],[Mobile],[QQ],[Msn],[Introducer],[LastLoginTime],[LastLoginIP],[LoginTimes],[IsLocked],[ActiveCode],[RegTime]
 	)VALUES(
-	@UserID,@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@LastLoginTime,@LastLoginIP,@LoginTimes,@IsLocked,@ActiveCode,@RegTime
+	@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@LastLoginTime,@LastLoginIP,@LoginTimes,@IsLocked,@ActiveCode,@RegTime
 	)
 
 GO

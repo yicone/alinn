@@ -2,7 +2,6 @@
     MasterPageFile="../MasterPage/Member.Master" Title="用户信息" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <form id="form1" runat="server">
     <div style="text-align: center">
         <table>
             <tr id="cname_tr">
@@ -96,7 +95,6 @@
     <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="提交修改" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnReset" runat="server" Text="重置" OnClick="btnReset_Click" />
-    </form>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>

@@ -99,6 +99,13 @@
       <DependentUpon>LeftMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +190,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
     </Compile>
     <Compile Include="Public\ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
@@ -530,6 +540,7 @@
     <None Include="Admin\images\Thumbs.db" />
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
+    <Content Include="AdminLogin.aspx" />
     <Content Include="Admin\News\AdNews.aspx" />
     <Content Include="Admin\Zone\ManageZoneClass.aspx" />
     <Content Include="Ad\AdList.aspx" />
@@ -696,6 +707,7 @@
     <None Include="database\sp_yicone.sql" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
+    <Content Include="Login.ashx" />
     <Content Include="MasterPage\Global.Master" />
     <Content Include="MasterPage\Default.Master" />
   </ItemGroup>

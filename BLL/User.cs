@@ -24,7 +24,7 @@ namespace HOT.BLL
         /// </summary>
         public bool Exists(string email)
         {
-            return dal.Exists(email);
+            return dal.ExistsUserOrTempUser(email);
         }
 
         /// <summary>
@@ -33,9 +33,9 @@ namespace HOT.BLL
         /// <param name="email"></param>
         /// <param name="PassWord"></param>
         /// <returns></returns>
-        public Guid Exists(string email, string passWord)
+        public Guid ExistsUser(string email, string passWord)
         {
-            return dal.Exists(email, passWord);
+            return dal.ExistsUser(email, passWord);
         }
 
 
@@ -43,52 +43,52 @@ namespace HOT.BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(HOT.Model.User model)
+        public void AddUser(HOT.Model.User model)
         {
-            dal.Add(model);
+            dal.AddUser(model);
         }
 
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public void Update(HOT.Model.User model)
+        public void UpdateUser(HOT.Model.User model)
         {
-            dal.Update(model);
+            dal.UpdateUser(model);
         }
 
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public void Delete(Guid UserId)
+        public void DeleteUser(Guid UserId)
         {
-            dal.Delete(UserId);
+            dal.DeleteUser(UserId);
         }
 
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public HOT.Model.User GetModel(Guid UserId)
+        public HOT.Model.User GetUser(Guid UserId)
         {
-            return dal.GetModel(UserId);
+            return dal.GetUser(UserId);
         }
 
-        public HOT.Model.User GetModel(string email)
+        public HOT.Model.User GetUser(string email)
         {
-            return dal.GetModel(email);
+            return dal.GetUser(email);
         }
 
         /// <summary>
         /// 得到一个对象实体，从缓存中。
         /// </summary>
-        public HOT.Model.User GetModelByCache(Guid UserId)
+        public HOT.Model.User GetUserByCache(Guid userId)
         {
-            string CacheKey = "UserModel-" + UserId;
+            string CacheKey = "UserModel-" + userId;
             object objModel = HOT.Common.DataCache.GetCache(CacheKey);
             if (objModel == null)
             {
                 try
                 {
-                    objModel = dal.GetModel(UserId);
+                    objModel = dal.GetUser(userId);
                     if (objModel != null)
                     {
                         int ModelCache = HOT.Common.ConfigHelper.GetConfigInt("ModelCache");
@@ -128,6 +128,7 @@ namespace HOT.BLL
         #region Add by F
 
         #region 邮件相关
+
         /// <summary>
         /// 发送邮件
         /// </summary>
@@ -159,33 +160,39 @@ namespace HOT.BLL
 
         #endregion
 
-        public HOT.Model.User GetModel(string email, string activeCode)
+        public HOT.Model.User GetUser(string email, string activeCode)
         {
-            return dal.GetModel(email, activeCode);
+            return dal.GetUser(email, activeCode);
         }
 
-        public HOT.Model.UserTemp GetModelTemp(string email)
+        public HOT.Model.UserTemp GetTempUser(string email)
         {
-            return dal.GetModelTemp(email);
+            return dal.GetTempUser(email);
         }
 
         /// <summary>
-        /// 此IP当天是否已存在
+        /// 当日内是否有通过指定IP注册的临时用户
         /// </summary>
         /// <returns></returns>
-        public bool ExsitsIP(string userIP)
+        public bool ExsitsTempUser(string userIP)
         {
-            return dal.ExsitsIP(userIP, DateTime.Now.Date);
+            return dal.ExsitsTempUser(userIP, DateTime.Now.Date);
         }
 
-        public bool ExsitsIP(string userIP, DateTime dateTime)
+        /// <summary>
+        /// 某日内是否有通过指定IP注册的临时用户
+        /// </summary>
+        /// <param name="userIP"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public bool ExsitsTempUser(string userIP, DateTime dateTime)
         {
-            return dal.ExsitsIP(userIP, dateTime);
+            return dal.ExsitsTempUser(userIP, dateTime);
         }
 
-        public void Add(HOT.Model.UserTemp mUser)
+        public void AddTempUser(HOT.Model.UserTemp mUser)
         {
-            dal.Add(mUser);
+            dal.AddTempUser(mUser);
         }
 
         /// <summary>
@@ -193,31 +200,9 @@ namespace HOT.BLL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        public bool IsUserOnline(string UserID)
+        public bool IsOnline(string UserID)
         {
             return false;
-        }
-
-        /// <summary>
-        /// 用户注销
-        /// </summary>
-        /// <param name="UserID"></param>
-        public void SignOut()
-        {
-            FormsAuthentication.SignOut();
-        }
-
-        /// <summary>
-        /// 写入票据验证
-        /// </summary>
-        /// <param name="UserID"></param>
-        public void FormsAuthen(Guid UserId)
-        {
-            string RoleID = GetModelByCache(UserId).RoleID.ToString();
-            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(0, UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(30), false, RoleID);
-            string strticket = FormsAuthentication.Encrypt(ticket);
-            HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, strticket);
-            HttpContext.Current.Response.Cookies.Add(cookie);
         }
 
         /// <summary>
@@ -253,42 +238,18 @@ namespace HOT.BLL
         /// <returns></returns>
         public string GetIntroducer(Guid UserId)
         {
-            return dal.GetIntroducer(UserId);
+            return dal.GetIntroducerOfUser(UserId);
         }
 
         #endregion
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="UserID"></param>
-        /// <param name="PassWord">加密后的密码</param>
-        /// <returns></returns>
-        public bool Login(string UserID, string PassWord)
-        {
-            Guid guid = Exists(UserID, PassWord);
-            if (guid != Guid.Empty)
-            {
-                SetLoginState(guid);
-
-                return true;
-            }
-
-            return false;
-        }
-
         public Guid GetLoginUser()
         {
-            object o = HttpContext.Current.Session["LoginUser"];
-            if (o == null)
-                return Guid.Empty;
-            return (Guid)o;
-            
-        }
-
-        public void SetLoginState(Guid UserID)
-        {
-            HttpContext.Current.Session["LoginUser"] = UserID;
+            //object o = HttpContext.Current.Session["LoginUser"];
+            //if (o == null)
+            //    return Guid.Empty;
+            //return (Guid)o;
+            return new Guid(HttpContext.Current.User.Identity.Name);
         }
     }
 }
