@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections;
 using System.Configuration;
 using System.Data;
@@ -8,10 +8,9 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
-using HOT.BLL;
 using System.Diagnostics;
 
-namespace Web.User
+namespace Web.Admin
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -20,10 +19,6 @@ namespace Web.User
 
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            this.Response.Redirect("Register.aspx", true);
-        }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (this.IsValid)
@@ -31,7 +26,7 @@ namespace Web.User
                 string email = txtEmail.Text.Trim().ToLower();
                 string password = HOT.Common.MakeMd5.MakeMd5Pwd(txtPassword.Text.Trim());
                 HOT.BLL.User bUser = new HOT.BLL.User();
-                //Edited by FZF 2008.05.18
+
                 Guid userId = bUser.ExistsUser(email, password);
                 if (userId != Guid.Empty)
                 {
@@ -43,8 +38,13 @@ namespace Web.User
                     int? roleId = bUser.GetUserByCache(userId).RoleID;
                     Debug.Assert(roleId.HasValue,
                         string.Format("User表中RoleId字段必须有值！UserId={0}", userId.ToString()));
-                    string strRoleId = roleId.ToString();
+                    if (roleId != 3)
+                    {
+                        Label1.Text = "您尚未具有管理员权限！";
+                        return;
+                    }
 
+                    string strRoleId = roleId.ToString();
                     #region Forms 验证机制 之 写Cookie部分
                     //cookie的有效期暂定为30分
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, strRoleId, DateTime.Now, DateTime.Now.AddMinutes(30), false, strRoleId, "/"); //建立身份验证票对象 
@@ -56,8 +56,6 @@ namespace Web.User
                     #endregion
 
                     Session["NickName"] = mUser.NickName;
-                    //Session["UserId"] = mUser.UserId;
-                    //this.Response.Redirect("../zone/zone.aspx", true);
                 }
                 else
                     this.Label1.Text = "用户名或密码错误";

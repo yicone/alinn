@@ -23,11 +23,11 @@ namespace Web.User
 
             string activecode = Common.GetActiveCode();
 
-            HOT.Model.User mUser = bUser.GetModel(email.Text.Trim());
+            HOT.Model.User mUser = bUser.GetUser(email.Text.Trim());
             if (mUser == null)
                 return;
             mUser.ActiveCode = activecode;
-            bUser.Update(mUser);
+            bUser.UpdateUser(mUser);
 
 
             bUser.SendMail(email.Text, "您已经申请在广告天下找回密码", RenderMailDetail(email.Text.Trim(), activecode));

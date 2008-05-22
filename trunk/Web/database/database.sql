@@ -5,7 +5,7 @@ DROP TABLE [AL_User]
 
 CREATE TABLE [dbo].[AL_User] (
 	[UserID] [uniqueidentifier] Primary key NOT NULL ,
-	[RoleID] [int] default(0) NULL ,--角色ID比如：个人会员、企业会员等，默认为0表示为个人会员
+	[RoleID] [int] default(0) NULL ,--角色ID 默认为0:为个人会员,1:企业会员,2:系统管理员,3:客服人员
 	[Email] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,--同时做为登录用户名
 	[NickName] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,--昵称
 	[UserPassword] [nvarchar] (16) COLLATE Chinese_PRC_CI_AS NULL ,--密码（MD5加密）16位

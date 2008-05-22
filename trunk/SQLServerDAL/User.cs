@@ -20,7 +20,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string email)
+        public bool ExistsUserOrTempUser(string email)
         {
             //int rowsAffected;
             //SqlParameter[] parameters = {
@@ -47,10 +47,7 @@ namespace HOT.SQLServerDAL
                 return false;
         }
 
-        /// <summary>
-        ///  增加一条数据
-        /// </summary>
-        public void Add(HOT.Model.User model)
+        public void AddUser(HOT.Model.User model)
         {
             //int rowsAffected;
             SqlParameter[] parameters = {
@@ -99,7 +96,7 @@ namespace HOT.SQLServerDAL
             DbHelperSQL.ExecuteSql(sql, parameters);
         }
 
-        public void Add(HOT.Model.UserTemp model)
+        public void AddTempUser(HOT.Model.UserTemp model)
         {
             string sql = "insert into AL_UserTemp(RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,ActiveCode,RegIP,RegTime) values(@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@ActiveCode,@RegIP,@RegTime)";
 
@@ -144,7 +141,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         ///  更新一条数据
         /// </summary>
-        public void Update(HOT.Model.User model)
+        public void UpdateUser(HOT.Model.User model)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
@@ -215,7 +212,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public void Delete(Guid UserId)
+        public void DeleteUser(Guid UserId)
         {
             int rowsAffected;
             SqlParameter[] parameters = {
@@ -228,7 +225,7 @@ namespace HOT.SQLServerDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public HOT.Model.User GetModel(Guid UserId)
+        public HOT.Model.User GetUser(Guid UserId)
         {
             //Debug.Assert(false, "由于改写，请重新运行代码生成工具，补全此部分！");
             //return null;
@@ -286,7 +283,7 @@ namespace HOT.SQLServerDAL
             }
         }
 
-        public HOT.Model.User GetModel(string email)
+        public HOT.Model.User GetUser(string email)
         {
             string sql = "select * from AL_User where email=@email";
             SqlParameter[] parameters = {
@@ -342,8 +339,6 @@ namespace HOT.SQLServerDAL
             }
         }
 
-
-
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -386,11 +381,12 @@ namespace HOT.SQLServerDAL
 
         /// <summary>
         /// 是否存在记录
+        /// 如果存在，就返回UserId
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="passWord"></param>
-        /// <returns></returns>
-        public Guid Exists(string email, string passWord)
+        /// <param name="passWord">加密后</param>
+        /// <returns>UserId</returns>
+        public Guid ExistsUser(string email, string passWord)
         {
             string sql = "select userid from AL_User where email=@email and userpassword=@passWord";
             SqlParameter[] parameters = {
@@ -409,17 +405,18 @@ namespace HOT.SQLServerDAL
             
         }
 
-        public bool Exists(Guid userId, string passWord)
+        public bool ExistsUser(Guid userId, string passWord)
         {
             throw new NotImplementedException();
         }
 
-        public bool Exists(Guid userId)
+        public bool ExistsUser(Guid userId)
         {
             throw new NotImplementedException();
         }
 
-        public HOT.Model.User GetModel(string email, string ActiveCode)
+        //TODO:?
+        public HOT.Model.User GetUser(string email, string ActiveCode)
         {
             string sql = "select * from AL_User where email=@email and activecode=@activecode";
 
@@ -466,7 +463,39 @@ namespace HOT.SQLServerDAL
             }
         }
 
-        public HOT.Model.UserTemp GetModelTemp(string email)
+        /// <summary>
+        /// 获取该用户推荐的人
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <returns>逗号分隔的ID串</returns>
+        public string GetIntroducerOfUser(Guid UserId)
+        {
+            System.Text.StringBuilder sb = new StringBuilder();
+
+            string sql = string.Format("select introducer from AL_User where introducer='{0}'", UserId);
+            DataSet ds = DbHelperSQL.Query(sql);
+            DataRowCollection rowlist = ds.Tables[0].Rows;
+            for (int i = 0; i < rowlist.Count; i++)
+            {
+                sb.AppendFormat(",{0}", rowlist[i].ItemArray.GetValue(0).ToString());
+            }
+
+            string sbstr = sb.ToString();
+
+            if (sbstr.Length == 0)
+                return null;
+            return sbstr.Substring(1, sbstr.Length - 1);
+        }
+
+
+
+        #endregion  成员方法
+
+        #region TempUser表
+
+
+
+        public HOT.Model.UserTemp GetTempUser(string email)
         {
             SqlParameter[] parameters = {
 					new SqlParameter("@email", SqlDbType.VarChar,50)};
@@ -510,31 +539,12 @@ namespace HOT.SQLServerDAL
         }
 
         /// <summary>
-        /// 获取该用户推荐的人
+        /// 某日内是否有通过指定IP注册的临时用户
         /// </summary>
-        /// <param name="UserID"></param>
-        /// <returns>逗号分隔的ID串</returns>
-        public string GetIntroducer(Guid UserId)
-        {
-            System.Text.StringBuilder sb = new StringBuilder();
-
-            string sql = string.Format("select introducer from AL_User where introducer='{0}'", UserId);
-            DataSet ds = DbHelperSQL.Query(sql);
-            DataRowCollection rowlist = ds.Tables[0].Rows;
-            for (int i = 0; i < rowlist.Count; i++)
-            {
-                sb.AppendFormat(",{0}", rowlist[i].ItemArray.GetValue(0).ToString());
-            }
-
-            string sbstr = sb.ToString();
-
-            if (sbstr.Length == 0)
-                return null;
-            return sbstr.Substring(1, sbstr.Length - 1);
-        }
-
-
-        public bool ExsitsIP(string userIP, DateTime dateTime)
+        /// <param name="userIP"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public bool ExsitsTempUser (string userIP, DateTime dateTime)
         {
             string sql = string.Format("select * from AL_UserTemp where RegTime='{0}' and RegIP='{1}'", dateTime.ToShortDateString(), userIP);
 
@@ -543,8 +553,7 @@ namespace HOT.SQLServerDAL
             else
                 return false;
         }
-
-        #endregion  成员方法
+        #endregion
     }
 }
 

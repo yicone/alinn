@@ -2,12 +2,15 @@
 <div id="top">
     <div id="top1">
         <div id="logo">
-            <a href="/"><span style="display:none">阿里奶奶 alinn.com</span></a>
+            <a href="/"><span style="display: none">阿里奶奶 alinn.com</span></a>
         </div>
         <div id="topright">
             <div id="login">
                 <div class="login">
-                    欢迎您！ [<a href="/User/Login.aspx" target="_self">登录</a>]或[<a href="/User/Register.aspx" target="_self">注册</a>]</div>
+                    欢迎您！
+                    <asp:HyperLink ID="hlLogin" runat="server" >[登录]</asp:HyperLink>或
+                    <asp:LinkButton ID="lbRegister" runat="server" OnClick="LinkButton1_Click">[注册]</asp:LinkButton>
+                </div>
                 <div class="profile">
                     <ul>
                         <li><a href="/MyAlinn.aspx">我的阿里奶奶</a></li>

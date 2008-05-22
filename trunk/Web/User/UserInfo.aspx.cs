@@ -58,7 +58,7 @@ namespace Web.User
             {
                 bUser = new HOT.BLL.User();
 
-                HOT.Model.User mUser = bUser.GetModel(bUser.GetLoginUser());
+                HOT.Model.User mUser = bUser.GetUser(bUser.GetLoginUser());
 
 
 
@@ -73,7 +73,7 @@ namespace Web.User
                 mUser.School = school.Text.Trim();
                 mUser.Proxy = proxy.Text.Trim();
 
-                bUser.Update(mUser);
+                bUser.UpdateUser(mUser);
             }
         }
 

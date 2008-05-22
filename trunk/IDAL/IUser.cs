@@ -12,28 +12,28 @@ namespace HOT.IDAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        bool Exists(Guid UserId);
-        bool Exists(string emial);
+        bool ExistsUser(Guid UserId);
+        bool ExistsUserOrTempUser(string emial);
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        void Add(HOT.Model.User model);
+        void AddUser(HOT.Model.User model);
 
 
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        void Update(HOT.Model.User model);
+        void UpdateUser(HOT.Model.User model);
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        void Delete(Guid UserId);
+        void DeleteUser(Guid UserId);
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        HOT.Model.User GetModel(Guid UserId);
+        HOT.Model.User GetUser(Guid UserId);
 
-        HOT.Model.User GetModel(string email);
+        HOT.Model.User GetUser(string email);
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -53,27 +53,27 @@ namespace HOT.IDAL
         /// <param name="UserID"></param>
         /// <param name="PassWord"></param>
         /// <returns></returns>
-        Guid Exists(string email, string password);
+        Guid ExistsUser(string email, string password);
         /// <summary>
         /// 获取该用户推荐的人
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        string GetIntroducer(Guid UserId);
+        string GetIntroducerOfUser(Guid UserId);
 
         /// <summary>
-        /// 该IP在日期内是否存在
+        /// 某日内是否有通过指定IP注册的临时用户
         /// </summary>
         /// <param name="userIP"></param>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        bool ExsitsIP(string userIP, DateTime dateTime);
+        bool ExsitsTempUser(string userIP, DateTime dateTime);
 
-        HOT.Model.User GetModel(string email, string activeCode);
+        HOT.Model.User GetUser(string email, string activeCode);
 
-        HOT.Model.UserTemp GetModelTemp(string email);
+        HOT.Model.UserTemp GetTempUser(string email);
 
-        void Add(HOT.Model.UserTemp model);
+        void AddTempUser(HOT.Model.UserTemp model);
 
         #endregion
 
