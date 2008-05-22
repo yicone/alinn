@@ -188,7 +188,7 @@
                         <span>广告主</span></h5>
                     <ul>
                         <li><i class="new-gg-plan"></i><a href="#">新建广告计划</a> </li>
-                        <li><i class="manage-gg-group"></i><a href="/Ad/ManageAdGroup.aspx">
+                        <li><i class="manage-gg-group"></i><a href="/Member/Ad/ManageAdGroup.aspx">
 						广告组管理</a> </li>
                         <li><i class="manage-trans-buyer"></i><a href="#">广告计划管理</a> </li>
                         <li><i class="incomes"></i><a href="#">消费账户</a> </li>
@@ -198,9 +198,9 @@
                     <h5>
                         <span>网站主</span></h5>
                     <ul>
-                        <li><i class="new-gg-board"></i><a href="/Zone/Zone.aspx?action=new">
+                        <li><i class="new-gg-board"></i><a href="/Member/Zone/Zone.aspx?action=new">
 						发布广告位</a> </li>
-                        <li><i class="view-income"></i><a href="/Zone/SiteManager.aspx">
+                        <li><i class="view-income"></i><a href="/Member/Zone/SiteManager.aspx">
 						广告位管理</a> </li>
                         <li><i class="manage-trans-seller"></i><a href="#">
 						交易管理(卖)</a> </li>

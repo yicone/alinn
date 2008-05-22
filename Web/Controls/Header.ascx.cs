@@ -20,7 +20,7 @@ namespace Web.Controls
             {
                 Debug.Assert(Session["NickName"] != null);
                 hlLogin.Text = Session["NickName"].ToString();
-                hlLogin.NavigateUrl = "/User/UserInfo.aspx";
+                hlLogin.NavigateUrl = "/Member/User/UserInfo.aspx";
                 lbRegister.Text = "[注销]";
                 lbRegister.OnClientClick = null;
             }
