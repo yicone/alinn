@@ -38,7 +38,10 @@ namespace Web.Controls
             if (lbRegister.Text == "[注销]")
             {
                 FormsAuthentication.SignOut();
-                Session.Remove("NickName");
+                if (Session["NickName"] != null)
+                {
+                    Session.Remove("NickName");
+                }
                 Response.Redirect("/Public/Login.aspx");
             }
         }
