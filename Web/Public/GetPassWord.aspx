@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetPassWord.aspx.cs" Inherits="Web.User.GetPassWord"
-    MasterPageFile="../MasterPage/Global.Master" Title="找回密码" %>
+    MasterPageFile="~/MasterPage/Global.Master" Title="找回密码" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div style="text-align: center">

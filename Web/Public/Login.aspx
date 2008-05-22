@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.User.Login" masterpagefile="../MasterPage/Global.Master" title="用户登录" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.User.Login" masterpagefile="~/MasterPage/Global.Master" title="用户登录" %>
 
 <asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div id="main_login">

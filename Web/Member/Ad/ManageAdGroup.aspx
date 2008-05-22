@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAdGroup.aspx.cs"
     Inherits="Web.User.ManageAdGroup" Title="无标题页" EnableEventValidation="false"
-    MasterPageFile="../MasterPage/Member.Master" %>
+    MasterPageFile="~/MasterPage/Member.Master" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div id="maincontent">

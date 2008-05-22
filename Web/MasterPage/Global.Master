@@ -2,8 +2,8 @@
 
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global.Master.cs" Inherits="Web.MasterPage.Global" %>
 
-<%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
-<%@ Register Src="../Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
+<%@ Register Src="/Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="/Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -12,16 +12,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%--在此行上方增加全局的META标签--%>
 
-    <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+    <script type="text/javascript" src="/App_Themes/jquery.js"></script>
 
-    <script type="text/javascript" src="../App_Themes/common.js"></script>
+    <script type="text/javascript" src="/App_Themes/common.js"></script>
 
     <%--在此行上方增加全局的JS引用--%>
-    <link type="text/css" href="../App_Themes/alinn.css" rel="stylesheet" />
-    <link type="text/css" href="../App_Themes/myalinn.css" rel="stylesheet" />
-    <link type="text/css" href="../App_Themes/ie_hacks.css" rel="stylesheet" />
-    <link type="text/css" href="../App_Themes/overlay.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../App_Themes/skin1/style.css" />
+    <link type="text/css" href="/App_Themes/alinn.css" rel="stylesheet" />
+    <link type="text/css" href="/App_Themes/myalinn.css" rel="stylesheet" />
+    <link type="text/css" href="/App_Themes/ie_hacks.css" rel="stylesheet" />
+    <link type="text/css" href="/App_Themes/overlay.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/App_Themes/skin1/style.css" />
     <%--在此行上方增加全局的样式表引用--%>
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
         <%--此处添加MEAT标签、JS脚本和样式表的引用--%>

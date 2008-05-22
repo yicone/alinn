@@ -22,24 +22,24 @@
         <div id="submenu">
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
-                    <asp:MenuItem NavigateUrl="/MyAlinn.aspx" Text="我的阿里奶奶" Value="我的阿里奶奶"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/MyAlinn.aspx" Text="我的阿里奶奶" Value="我的阿里奶奶"></asp:MenuItem>
                     <asp:MenuItem Text="广告主" Value="广告主">
                         <asp:MenuItem Enabled="False" Text="广告计划管理" Value="广告计划管理"></asp:MenuItem>
                         <asp:MenuItem Text="消费账户" Value="消费账户"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="/Ad/ManageAdGroup.aspx" Text="广告组管理" Value="广告组管理"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Member/Ad/ManageAdGroup.aspx" Text="广告组管理" Value="广告组管理"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="数据报表" Value="数据报表"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="收藏夹管理" Value="收藏夹管理"></asp:MenuItem>
                     </asp:MenuItem>
                     <asp:MenuItem Text="网站主" Value="网站主">
-                        <asp:MenuItem NavigateUrl="/Zone/SiteManager.aspx" Text="广告位管理" Value="广告位管理"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Member/Zone/SiteManager.aspx" Text="广告位管理" Value="广告位管理"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="收入账户" Value="收入账户"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="交易管理" Value="交易管理"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="效果报表" Value="效果报表"></asp:MenuItem>
-                        <asp:MenuItem Text="我的推广" Value="我的推广"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Member/Zone/MyRecommendation.aspx" Text="我的推广" Value="我的推广"></asp:MenuItem>
                     </asp:MenuItem>
                     <asp:MenuItem Text="用户信息" Value="用户信息">
-                        <asp:MenuItem NavigateUrl="/User/UserInfo.aspx" Text="基本信息" Value="基本信息"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="/User/ResetPassword.aspx" Text="修改密码" Value="修改密码"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Member/User/UserInfo.aspx" Text="基本信息" Value="基本信息"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Member/User/ResetPassword.aspx" Text="修改密码" Value="修改密码"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="信用评价管理" Value="信用评价管理"></asp:MenuItem>
                         <asp:MenuItem Enabled="False" Text="管理财富通账户" Value="管理财富通账户"></asp:MenuItem>
                     </asp:MenuItem>

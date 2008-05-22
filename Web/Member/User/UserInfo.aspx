@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfo.aspx.cs" Inherits="Web.User.UserInfo"
-    MasterPageFile="../MasterPage/Member.Master" Title="用户信息" %>
+    MasterPageFile="~/MasterPage/Member.Master" Title="用户信息" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div style="text-align: center">

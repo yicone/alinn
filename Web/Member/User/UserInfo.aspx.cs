@@ -31,7 +31,7 @@ namespace Web.User
         public void BindUserInfo()
         {
             bUser = new HOT.BLL.User();
-            Guid userID = bUser.GetLoginUser();
+            Guid userID = HOT.BLL.User.GetLoginUser();
 
             DataSet ds = bUser.GetList(string.Format(" userid='{0}'", userID));
 
@@ -58,7 +58,7 @@ namespace Web.User
             {
                 bUser = new HOT.BLL.User();
 
-                HOT.Model.User mUser = bUser.GetUser(bUser.GetLoginUser());
+                HOT.Model.User mUser = bUser.GetUser(HOT.BLL.User.GetLoginUser());
 
 
 

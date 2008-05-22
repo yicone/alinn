@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Language" content="zh-cn" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+    <script type="text/javascript" src="/App_Themes/jquery.js"></script>
 
     <%--    <script type="text/javascript" src="../App_Themes/common.js"></script>
 
