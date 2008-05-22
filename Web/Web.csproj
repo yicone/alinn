@@ -91,8 +91,8 @@
     <Compile Include="Admin\GetPic\Snap.aspx.designer.cs">
       <DependentUpon>Snap.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\LeftMenu.aspx.cs">
@@ -105,6 +105,13 @@
     </Compile>
     <Compile Include="AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -128,6 +135,13 @@
     <Compile Include="Admin\Zone\EditeZone.aspx.designer.cs">
       <DependentUpon>EditeZone.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Zone\Employment.aspx.cs">
+      <DependentUpon>Employment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\Employment.aspx.designer.cs">
+      <DependentUpon>Employment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Zone\ManageZone.aspx.cs">
       <DependentUpon>ManageZone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +155,20 @@
     </Compile>
     <Compile Include="Admin\Zone\ManageZoneClass.aspx.designer.cs">
       <DependentUpon>ManageZoneClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Zone\SiteClass.aspx.cs">
+      <DependentUpon>SiteClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\SiteClass.aspx.designer.cs">
+      <DependentUpon>SiteClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Zone\ZoneCategory.aspx.cs">
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
+      <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ad\AdList.aspx.cs">
       <DependentUpon>AdList.aspx</DependentUpon>
@@ -253,20 +281,6 @@
       <DependentUpon>queryresult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pay\testa.aspx.cs">
-      <DependentUpon>testa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pay\testa.aspx.designer.cs">
-      <DependentUpon>testa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pay\testb.aspx.cs">
-      <DependentUpon>testb.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pay\testb.aspx.designer.cs">
-      <DependentUpon>testb.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
@@ -338,33 +352,12 @@
     <Compile Include="Zone\Zone.aspx.designer.cs">
       <DependentUpon>Zone.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Zone\Employment.aspx.cs">
-      <DependentUpon>Employment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Zone\Employment.aspx.designer.cs">
-      <DependentUpon>Employment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Zone\SiteClass.aspx.cs">
-      <DependentUpon>SiteClass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Zone\SiteClass.aspx.designer.cs">
-      <DependentUpon>SiteClass.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ad\EditeAd.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>EditeAd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ad\EditeAd.aspx.designer.cs">
       <DependentUpon>EditeAd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Zone\ZoneCategory.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>ZoneCategory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
-      <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -541,8 +534,12 @@
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
     <Content Include="AdminLogin.aspx" />
+    <Content Include="Admin\Logout.aspx" />
     <Content Include="Admin\News\AdNews.aspx" />
+    <Content Include="Admin\Zone\Employment.aspx" />
     <Content Include="Admin\Zone\ManageZoneClass.aspx" />
+    <Content Include="Admin\Zone\SiteClass.aspx" />
+    <Content Include="Admin\Zone\ZoneCategory.aspx" />
     <Content Include="Ad\AdList.aspx" />
     <Content Include="Ad\BuyAd.aspx" />
     <Content Include="Ad\EditeGroup.aspx" />
@@ -629,7 +626,7 @@
     <Content Include="Admin\images\tree_line4.gif" />
     <Content Include="Admin\images\VerifyCodeBack.Gif" />
     <Content Include="Admin\images\复件 top_an_1.gif" />
-    <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\LeftMenu.aspx" />
     <Content Include="Admin\Main.aspx" />
     <Content Include="Admin\top.aspx" />
@@ -690,8 +687,6 @@
     <Content Include="Pay\md5_query.aspx" />
     <Content Include="Pay\payresult.aspx" />
     <Content Include="Pay\queryresult.aspx" />
-    <Content Include="Pay\testa.aspx" />
-    <Content Include="Pay\testb.aspx" />
     <Content Include="Public\Register.aspx" />
     <Content Include="User\ResetPassword.aspx" />
     <Content Include="User\Seccess.aspx" />

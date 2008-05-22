@@ -29,7 +29,7 @@ namespace Web
                 string loginUrl;
                 string returnUrl = context.Request.Params["returnUrl"];
 
-                if(returnUrl.Contains("/Admin/"))
+                if(returnUrl.ToLower().Contains("/admin/"))
                 {
                     loginUrl = "/AdminLogin.aspx";
                 }

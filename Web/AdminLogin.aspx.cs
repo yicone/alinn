@@ -38,7 +38,7 @@ namespace Web.Admin
                     int? roleId = bUser.GetUserByCache(userId).RoleID;
                     Debug.Assert(roleId.HasValue,
                         string.Format("User表中RoleId字段必须有值！UserId={0}", userId.ToString()));
-                    if (roleId != 3)
+                    if (roleId != 2)
                     {
                         Label1.Text = "您尚未具有管理员权限！";
                         return;

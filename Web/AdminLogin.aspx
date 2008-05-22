@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>管理员登录</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,7 +26,7 @@
         <input id="remember_password" type="checkbox" name="remember_password" value="true" />
         <label for="remember_password">
             在此计算机上记住密码</label>
-        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="login_sub" />
+        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="登录" CssClass="login_sub" />
         <asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/User/GetPassWord.aspx"
             CssClass="forget_password">忘记密码？
         </asp:HyperLink><br />
