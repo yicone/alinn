@@ -13,7 +13,7 @@
                 </div>
                 <div class="profile">
                     <ul>
-                        <li><a href="/MyAlinn.aspx">我的阿里奶奶</a></li>
+                        <li><a href="/Member/MyAlinn.aspx">我的阿里奶奶</a></li>
                         <li><a href="#" target="_blank">QQ</a></li>
                         <li><a href="#" target="_blank">财富通</a></li>
                     </ul>
@@ -21,7 +21,7 @@
             </div>
             <div id="menu">
                 <ul>
-                    <li><a href="/Ad/AdList.aspx" target="_self">买广告</a></li>
+                    <li><a href="/Member/Ad/AdList.aspx" target="_self">买广告</a></li>
                     <li><a href="#" target="_self">卖广告</a></li>
                     <li><a href="#" target="_self">网站推广</a></li>
                     <li><a href="#" target="_self">社区</a></li>
