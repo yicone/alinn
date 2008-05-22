@@ -243,7 +243,7 @@ namespace HOT.BLL
 
         #endregion
 
-        public Guid GetLoginUser()
+        public static Guid GetLoginUser()
         {
             //object o = HttpContext.Current.Session["LoginUser"];
             //if (o == null)

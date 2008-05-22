@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Site.aspx.cs" Inherits="Web.Site" masterpagefile="../MasterPage/Member.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Site.aspx.cs" Inherits="Web.Site" masterpagefile="~/MasterPage/Member.Master" %>
 <asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
     <div>
          <!--******************************增加页面代码********************************-->

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="Web.User.ResetPassword" masterpagefile="../MasterPage/Member.Master" title="修改密码" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="Web.User.ResetPassword" masterpagefile="~/MasterPage/Member.Master" title="修改密码" %>
 <asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
    <div style="text-align: center">
         输入新密码：<asp:TextBox ID="password" runat="server"></asp:TextBox>

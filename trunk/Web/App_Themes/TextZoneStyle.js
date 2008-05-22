@@ -155,9 +155,9 @@ function TextZoneStyle(jsonString){
 
 function copyCode(jscode){
     if (window.clipboardData) {
-        window.clipboardData.setData("Text", jscode)
+        window.clipboardData.setData("Text", jscode);
+        alert('已成功复制到剪贴板！您可以将代码加入到您的网站页面里了！\n\n请不要修改代码，否则会导致无法激活。');
     }
-    alert('已成功复制到剪贴板！您可以将代码加入到您的网站页面里了！\n\n请不要修改代码，否则会导致无法激活。');
 }
 
 function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){

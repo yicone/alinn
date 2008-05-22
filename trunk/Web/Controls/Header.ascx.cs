@@ -19,7 +19,7 @@ namespace Web.Controls
             if (Page.User.Identity.IsAuthenticated)
             {
                 Debug.Assert(Session["NickName"] != null);
-                hlLogin.Text = Session["NickName"].ToString();
+                //hlLogin.Text = Session["NickName"].ToString();
                 hlLogin.NavigateUrl = "/Member/User/UserInfo.aspx";
                 lbRegister.Text = "[注销]";
                 lbRegister.OnClientClick = null;

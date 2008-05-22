@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Zone.aspx.cs" Inherits="Web.Zone"
-    EnableViewStateMac="false" MasterPageFile="../MasterPage/Member.Master" Title="广告位基本信息" %>
+    EnableViewStateMac="false" MasterPageFile="/MasterPage/Member.Master" Title="广告位基本信息" %>
 
-<asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_headContent">
+<asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <style type="text/css">
         p.group-cb
         {
@@ -205,8 +205,9 @@
         runat="server" />
     <input id="hdn_needauditing" type="hidden" value="" name="hdn_needauditing" runat="server" />
     <input id="hdn_classids" type="hidden" value="" name="hdn_classids" runat="server" />
-
-    <script type="text/javascript">
+</asp:Content>
+<asp:Content ID="Content3" runat="Server" ContentPlaceHolderID="_scriptContent">
+<script type="text/javascript">
     $(document).ready(initForm);
 
 	function initForm(){
@@ -446,5 +447,4 @@
         $("#<%= hdn_sizeid.ClientID %>").val(sizeid);
     }    
     </script>
-
 </asp:Content>

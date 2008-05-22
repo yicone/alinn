@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>我的阿里奶奶</title>
-    <link type="text/css" href="../App_Themes/ZoneDesigner.css" rel="stylesheet" />
+    <link type="text/css" href="/App_Themes/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
         #main_inner
         {
@@ -33,10 +33,10 @@
         }
     </style>
 
-    <script src="../App_Themes/jquery.js" type="text/javascript">
+    <script src="/App_Themes/jquery.js" type="text/javascript">
     </script>
 
-    <script src="../App_Themes/TextZoneStyle.js" type="text/javascript">
+    <script src="/App_Themes/TextZoneStyle.js" type="text/javascript">
     </script>
 
 </head>

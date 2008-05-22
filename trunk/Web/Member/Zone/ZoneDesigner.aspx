@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneDesigner.aspx.cs" Inherits="Web.ZoneDesigner"
-    EnableViewStateMac="false" Title="设计广告位" masterpagefile="../MasterPage/Member.Master" %>
-<asp:Content id="Content1" runat="Server" contentplaceholderid="_mainContent">
-    <div class="clearing"></div>
+    EnableViewStateMac="false" Title="设计广告位" MasterPageFile="/MasterPage/Member.Master" %>
+
+<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
+    <div class="clearing">
+    </div>
     <div id="code-wrapper">
         <h3>
             <span id="sec1" class="sec-toggler"></span>代码复制<span class="red">(一个网页限制最多发布6个广告位)</span></h3>
@@ -120,105 +122,37 @@
     <!--end copy-->
     <input id="hdn_zonestyle" type="hidden" value="" name="hdn_zonestyle" runat="server" />
     <input id="hdn_zonesize" type="hidden" value="" name="hdn_zonesize" runat="server" />
-
-    <script type="text/javascript">
-            var _defaultStyle = new TextZoneStyle('["0000FF","000000","008000","E6E6E6","FFFFFF","FFFFFF",0,0,0]');
-            var _currentStyle = _defaultStyle;
-            
-            //保存广告位信息
-            function doCheckAndSubmit(){
-                    alert('修改的广告位Id' + $("#<%= hdn_zoneid.ClientID %>").val());
-		            var kvp = {
-		                requestpage: "ZoneDesigner",
-		                zonestyle: _currentStyle.toJson(),
-		                dbaction: "update"
-		            }
-            		
-		            $.post("/Public/ZoneInfoSaver.aspx", kvp, function(result){
-			            alert(result);
-		            })
-		            
-		            document.location = "/Member/Zone/SiteManager.aspx";
-            }
-                            
-            function myokfunc(field, color){
-                switch(field){
-                    case "border":
-                        $("#pre").css("border-color", "#" + color);
-                        break;
-                    default:
-                        $("#main_" + field).css("color", "#" + color);
-                 }
-                 
-                 eval("_currentStyle." + field + "$color = '" + color + "';");
-                 generateCode($("#<%= hdn_zoneid.ClientID %>").val(), _currentStyle, $("#<%= hdn_zonesize.ClientID %>").val(), 1);  //todo:计算layoutType
-	        }
-	        
-	        function init(){
-	            //init colorpicker
-                $.ColorPicker.init();
-                
-                var zoneStyle = $("#<%= hdn_zonestyle.ClientID %>").val();
-                if(zoneStyle != ""){
-                    _currentStyle = new TextZoneStyle(zoneStyle);
-                }
-            
-                var size = $("#<%= hdn_zonesize.ClientID %>").val();
-                var layoutType = "2";
-                //init textzone
-                var textZone = new TextZone(size, layoutType);
-                textZone.initZone(null, null, null, "true");
-                textZone.setStyle(_currentStyle);
-                textZone.applyStyle(true);
-                generateCode($("#<%= hdn_zoneid.ClientID %>").val(), _currentStyle, size, layoutType);
-	        }
-                
-            $(document).ready(init);
-            
-//            function(){
-//                $("#Select1").change(function(){
-//                    var size = $(":selected").text();
-//                    var layoutType = $(":selected").val();
-//                    alert(size, layoutType);
-//                    
-//                    switchZoneCoreHtml(size, sizetype);
-//                    //changeTextZoneSize(size);
-//                });
-//             })
-    </script>
-
-
 </asp:Content>
-<asp:Content id="Content2" runat="server" contentplaceholderid="_headContent">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
 
-    <script type="text/javascript" src="../App_Themes/common.js"></script>
+    <script type="text/javascript" src="/App_Themes/common.js"></script>
 
-    <script type="text/javascript" src="../App_Themes/TextZoneStyle.js"></script>
+    <script type="text/javascript" src="/App_Themes/TextZoneStyle.js"></script>
 
-    <script src="../App_Themes/js/jquery/jquery.js" type="text/javascript"></script>
+<%--    <script src="/App_Themes/js/jquery/jquery.js" type="text/javascript"></script>--%>
 
-    <script src="../App_Themes/js/jquery/ifx.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/ifx.js" type="text/javascript"></script>
 
-    <script src="../App_Themes/js/jquery/idrop.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/idrop.js" type="text/javascript"></script>
 
-    <script src="../App_Themes/js/jquery/idrag.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/idrag.js" type="text/javascript"></script>
 
-    <script src="../App_Themes/js/jquery/iutil.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/iutil.js" type="text/javascript"></script>
 
-    <script src="../App_Themes/js/jquery/islider.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/islider.js" type="text/javascript"></script>
 
-    <script src="../App_Themes/js/jquery/color_picker/color_picker.js" type="text/javascript"></script>
+    <script src="/App_Themes/js/jquery/color_picker/color_picker.js" type="text/javascript"></script>
 
-    <link href="../App_Themes/js/jquery/color_picker/color_picker.css" rel="stylesheet" type="text/css">
-	<!-- compliance patch for microsoft browsers -->
+    <link href="/App_Themes/js/jquery/color_picker/color_picker.css" rel="stylesheet"
+        type="text/css">
+    <!-- compliance patch for microsoft browsers -->
     <!--[if lt IE 7]>
 	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie6.css" type="text/css">
     <![endif]-->
     <!--[if gte IE 7]>
 	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie6.css" type="text/css">
     <![endif]-->
-
-    <link type="text/css" href="../App_Themes/ZoneDesigner.css" rel="stylesheet" />
+    <link type="text/css" href="/App_Themes/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
         div.codess
         {
@@ -289,5 +223,73 @@
             padding: 0.5em 0pt 0pt;
         }
     </style>
+</asp:Content>
+<asp:Content ID="Content3" runat="Server" ContentPlaceHolderID="_scriptContent">
+
+    <script type="text/javascript">
+            var _defaultStyle = new TextZoneStyle('["0000FF","000000","008000","E6E6E6","FFFFFF","FFFFFF",0,0,0]');
+            var _currentStyle = _defaultStyle;
+            
+            //保存广告位信息
+            function doCheckAndSubmit(){
+                    alert('修改的广告位Id' + $("#<%= hdn_zoneid.ClientID %>").val());
+		            var kvp = {
+		                requestpage: "ZoneDesigner",
+		                zonestyle: _currentStyle.toJson(),
+		                dbaction: "update"
+		            }
+            		
+		            $.post("/Public/ZoneInfoSaver.aspx", kvp, function(result){
+			            alert(result);
+		            })
+		            
+		            document.location = "/Member/Zone/SiteManager.aspx";
+            }
+                            
+            function myokfunc(field, color){
+                switch(field){
+                    case "border":
+                        $("#pre").css("border-color", "#" + color);
+                        break;
+                    default:
+                        $("#main_" + field).css("color", "#" + color);
+                 }
+                 
+                 eval("_currentStyle." + field + "$color = '" + color + "';");
+                 generateCode($("#<%= hdn_zoneid.ClientID %>").val(), _currentStyle, $("#<%= hdn_zonesize.ClientID %>").val(), 1);  //todo:计算layoutType
+	        }
+	        
+	        function init(){
+	            //init colorpicker
+                $.ColorPicker.init();
+                
+                var zoneStyle = $("#<%= hdn_zonestyle.ClientID %>").val();
+                if(zoneStyle != ""){
+                    _currentStyle = new TextZoneStyle(zoneStyle);
+                }
+            
+                var size = $("#<%= hdn_zonesize.ClientID %>").val();
+                var layoutType = "2";
+                //init textzone
+                var textZone = new TextZone(size, layoutType);
+                textZone.initZone(null, null, null, "true");
+                textZone.setStyle(_currentStyle);
+                textZone.applyStyle(true);
+                generateCode($("#<%= hdn_zoneid.ClientID %>").val(), _currentStyle, size, layoutType);
+	        }
+                
+            $(document).ready(init);
+            
+//            function(){
+//                $("#Select1").change(function(){
+//                    var size = $(":selected").text();
+//                    var layoutType = $(":selected").val();
+//                    alert(size, layoutType);
+//                    
+//                    switchZoneCoreHtml(size, sizetype);
+//                    //changeTextZoneSize(size);
+//                });
+//             })
+    </script>
 
 </asp:Content>
