@@ -344,11 +344,19 @@
 				<table  class="admin_leftMenu_td"  border="0" cellpadding="4" cellspacing="0"  >
 				  <tr>
 					<td  class="admin_leftMenu_td"     onmouseover="this.className='admin_leftMenu_mouseOver'" onmouseout="this.className='admin_leftMenu_mouseOut'" style="height: 18px">
-					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="GuestBook/index.aspx?action=show"target="main">广告组审核</a> </td>
+					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="Zone/ManageZone.aspx"target="main">广告组审核</a> </td>
+				  </tr>
+				  <tr>
+					<td  class="admin_leftMenu_td"     onmouseover="this.className='admin_leftMenu_mouseOver'" onmouseout="this.className='admin_leftMenu_mouseOut'" style="height: 18px">
+					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="Zone/ManageZoneClass.aspx"target="main">广告组分类</a> </td>
+				  </tr>
+				  <tr>
+					<td  class="admin_leftMenu_td"     onmouseover="this.className='admin_leftMenu_mouseOver'" onmouseout="this.className='admin_leftMenu_mouseOut'" style="height: 18px">
+					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="Zone/SiteClass.aspx"target="main">网站分类</a> </td>
 				  </tr>
 				  <tr>
 					<td  class="admin_leftMenu_td"    onmouseover="this.className='admin_leftMenu_mouseOver'" onmouseout="this.className='admin_leftMenu_mouseOut'">
-					   <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="GuestBook/index.aspx?action=showtoday" target="main">今天留言</a> </td>
+					   <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="Zone/Employment.aspx" target="main">添加职业</a> </td>
 				  </tr>	    
 				</table>        
 			</div>      	
@@ -356,7 +364,7 @@
 			
           <table class="admin_leftMenu_tilte"     border="0" cellpadding="4" cellspacing="0">	  
 	          <tr align="left">
-		        <td   onclick="ShowMenu(6,28,1)"  class="menu_title"   onmouseover="this.className='menu_title2';"  onmouseout="this.className='menu_title'"  >&nbsp;&nbsp;&nbsp;&nbsp;调查管理
+		        <td   onclick="ShowMenu(6,28,1)"  class="menu_title"   onmouseover="this.className='menu_title2';"  onmouseout="this.className='menu_title'"  >&nbsp;&nbsp;&nbsp;&nbsp;新闻管理
 		        </td>
 	          </tr>				
 	        </table>
@@ -365,7 +373,7 @@
 				<table  class="admin_leftMenu_td"  border="0" cellpadding="4" cellspacing="0"  >
 				  <tr>
 					<td  class="admin_leftMenu_td"     onmouseover="this.className='admin_leftMenu_mouseOver'" onmouseout="this.className='admin_leftMenu_mouseOut'" style="height: 18px">
-					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="SystemConfig/vote.aspx"target="main">调查管理</a> </td>
+					  <img src="images/mydocuments.gif"   alt=""   />&nbsp;&nbsp;<a href="News/AdNews.aspx"target="main">添加新闻</a> </td>
 				  </tr>
 				</table>        
 			</div>      	
