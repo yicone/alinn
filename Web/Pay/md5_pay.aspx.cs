@@ -25,7 +25,7 @@ namespace tenpaymd5
 			Md5Pay md5pay = new Md5Pay();
 
 			//商品名称
-			md5pay.Desc ="商品QQ";
+            md5pay.Desc = Session["OrderName"].ToString();
 			
 			//支付日期
 			md5pay.Date = DateTime.Now.ToString("yyyyMMdd");			

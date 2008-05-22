@@ -15,7 +15,7 @@
                 <asp:ContentPlaceHolder ID="_searchcontent" runat="server">
                     <uc1:Search ID="Search1" runat="server" />
                 </asp:ContentPlaceHolder>
-            </div
+            </div>
             <div class="help">
                 £Û<a href="#">¸ß¼¶ËÑË÷</a>£Ý£Û<a href="#">°ïÖú</a>£Ý</div>
         </div>

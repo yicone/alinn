@@ -27,6 +27,7 @@ namespace Web.Order
             HOT.BLL.Order bll = new HOT.BLL.Order();
             HOT.Model.Order model = bll.GetModelByUserId(UserId);
             this.lblOrderName.Text = model.OrderName;
+            Session["OrderName"] = model.OrderName;
             this.lblStartDate.Text = model.StartDate.ToString();
             this.lblEndDate.Text = model.EndDate.ToString();
             this.lblAuditState.Text =ShowCheck(model.AuditState);

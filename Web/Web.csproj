@@ -99,13 +99,6 @@
       <DependentUpon>LeftMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +243,20 @@
       <DependentUpon>queryresult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pay\testa.aspx.cs">
+      <DependentUpon>testa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pay\testa.aspx.designer.cs">
+      <DependentUpon>testa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pay\testb.aspx.cs">
+      <DependentUpon>testb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pay\testb.aspx.designer.cs">
+      <DependentUpon>testb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Report\ZoneSellDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneSellDetail.aspx</DependentUpon>
@@ -321,18 +328,18 @@
     <Compile Include="Zone\Zone.aspx.designer.cs">
       <DependentUpon>Zone.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Employment.aspx.cs">
+    <Compile Include="Admin\Zone\Employment.aspx.cs">
       <DependentUpon>Employment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Employment.aspx.designer.cs">
+    <Compile Include="Admin\Zone\Employment.aspx.designer.cs">
       <DependentUpon>Employment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\SiteClass.aspx.cs">
+    <Compile Include="Admin\Zone\SiteClass.aspx.cs">
       <DependentUpon>SiteClass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SiteClass.aspx.designer.cs">
+    <Compile Include="Admin\Zone\SiteClass.aspx.designer.cs">
       <DependentUpon>SiteClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ad\EditeAd.aspx.cs">
@@ -342,11 +349,11 @@
     <Compile Include="Ad\EditeAd.aspx.designer.cs">
       <DependentUpon>EditeAd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ZoneCategory.aspx.cs">
+    <Compile Include="Admin\Zone\ZoneCategory.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ZoneCategory.aspx.designer.cs">
+    <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -453,9 +460,9 @@
     <Content Include="Report\ZoneSellDetail.aspx" />
     <Content Include="Zone\images\bg_sidebar.jpg" />
     <Content Include="Zone\Zone.aspx" />
-    <Content Include="Admin\Employment.aspx" />
-    <Content Include="Admin\SiteClass.aspx" />
-    <Content Include="Admin\ZoneCategory.aspx" />
+    <Content Include="Admin\Zone\Employment.aspx" />
+    <Content Include="Admin\Zone\SiteClass.aspx" />
+    <Content Include="Admin\Zone\ZoneCategory.aspx" />
     <Content Include="App_Themes\js\jquery\nifty\niftyCorners.css" />
     <Content Include="App_Themes\js\jquery\nifty\niftycube.js" />
     <Content Include="App_Themes\js\jquery\nifty\NiftyLayout.css" />
@@ -470,6 +477,22 @@
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
       <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\md5_pay.aspx.resx">
+      <DependentUpon>md5_pay.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\md5_query.aspx.resx">
+      <DependentUpon>md5_query.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\payresult.aspx.resx">
+      <DependentUpon>payresult.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\queryresult.aspx.resx">
+      <DependentUpon>queryresult.aspx.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -507,7 +530,6 @@
     <None Include="Admin\images\Thumbs.db" />
     <None Include="Admin\images\time\Thumbs.db" />
     <None Include="Admin\images\复件 top_an_1.psd" />
-    <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\News\AdNews.aspx" />
     <Content Include="Admin\Zone\ManageZoneClass.aspx" />
     <Content Include="Ad\AdList.aspx" />
@@ -629,6 +651,7 @@
     <Content Include="App_Themes\ZoneDesigner.css" />
     <None Include="database\DataChecker.sql" />
     <Content Include="Default.aspx" />
+    <Content Include="Public\BuildImageCode.aspx" />
     <Content Include="Public\ErrorPage.aspx" />
     <Content Include="images\01.jpg" />
     <Content Include="images\02.jpg" />
@@ -645,6 +668,8 @@
     <Content Include="Ad\NewAd.aspx" />
     <Content Include="Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
+    <Content Include="Public\GetPassWord.aspx" />
+    <Content Include="Public\Login.aspx" />
     <Content Include="Public\MyAlinn.aspx" />
     <Content Include="Order\images\tenpay_button_02_l.gif" />
     <Content Include="Order\images\tenpay_button_02_m.gif" />
@@ -654,9 +679,8 @@
     <Content Include="Pay\md5_query.aspx" />
     <Content Include="Pay\payresult.aspx" />
     <Content Include="Pay\queryresult.aspx" />
-    <Content Include="Public\BuildImageCode.aspx" />
-    <Content Include="Public\GetPassWord.aspx" />
-    <Content Include="Public\Login.aspx" />
+    <Content Include="Pay\testa.aspx" />
+    <Content Include="Pay\testb.aspx" />
     <Content Include="Public\Register.aspx" />
     <Content Include="User\ResetPassword.aspx" />
     <Content Include="User\Seccess.aspx" />
