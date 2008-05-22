@@ -33,30 +33,37 @@ namespace tenpaymd5
 		{
 			if(!IsPostBack)
 			{
+                string errmsg = "";
 				//出于安全考虑,可以校验一下请求URL的机器是否为财付通服务器.
+                if (Request.Url.AbsolutePath == "")
+                {
 
-				string errmsg = "";
 
-				Md5Pay md5pay = new Md5Pay();
-				if(!md5pay.GetQueryValueFromUrl(Request.QueryString,out errmsg))
-				{
-					labErrmsg.Text = Server.HtmlEncode(errmsg);
-				}
-				else
-				{
-					labTransid.Text = md5pay.Transaction_id;
-					labAttach.Text = Server.HtmlEncode(md5pay.Attach);
-					labBillno.Text = md5pay.Sp_billno.ToString();
-					labTotalFee.Text = md5pay.Total_fee.ToString();//总金额,以分为单位.
-					labResult.Text = md5pay.PayResultStr;
+                    Md5Pay md5pay = new Md5Pay();
+                    if (!md5pay.GetQueryValueFromUrl(Request.QueryString, out errmsg))
+                    {
+                        labErrmsg.Text = Server.HtmlEncode(errmsg);
+                    }
+                    else
+                    {
+                        labTransid.Text = md5pay.Transaction_id;
+                        labAttach.Text = Server.HtmlEncode(md5pay.Attach);
+                        labBillno.Text = md5pay.Sp_billno.ToString();
+                        labTotalFee.Text = md5pay.Total_fee.ToString();//总金额,以分为单位.
+                        labResult.Text = md5pay.PayResultStr;
 
-					if(md5pay.PayResult == Md5Pay.PAYERROR)
-					{
-						labResult.Text += md5pay.PayErrMsg;
-					}
+                        if (md5pay.PayResult == Md5Pay.PAYERROR)
+                        {
+                            labResult.Text += md5pay.PayErrMsg;
+                        }
 
-					//在这里可以根据支付结果进行相应的处理,比如更新订单为成功或失败.
-				}
+                        //在这里可以根据支付结果进行相应的处理,比如更新订单为成功或失败.
+                    }
+                }
+                else
+                {
+                    labResult.Text = "传入地址错误";
+                }
 			}
 		}
 

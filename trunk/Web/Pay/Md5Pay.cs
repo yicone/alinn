@@ -18,12 +18,12 @@ namespace tenpaymd5
 		/// <summary>
 		/// 商户号（替换为自已的商户号）
 		/// </summary>
-		private const string bargainor_id = "1201949101";
+        private const string bargainor_id = "1202752601";
 
 		/// <summary>
 		/// 商户KEY（替换为自已的KEY）
 		/// </summary>
-		private const string key = "b56de9c2036fa8737e646532339c4836";
+        private const string key = "a95818b08e81054205f0ee9f1179cb7b";
 
 		/// <summary>
 		/// 财付通支付网关URL

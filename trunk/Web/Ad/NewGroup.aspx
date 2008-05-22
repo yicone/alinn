@@ -89,7 +89,7 @@
     </asp:UpdatePanel>
 
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="_headContent">
+<asp:Content ID="Content2" runat="server" contentplaceholderid="_htmlHeadContent">
 
     <style type="text/css">
         .style2
