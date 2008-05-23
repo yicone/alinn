@@ -1,4 +1,4 @@
-#团队规范：数据库命名
+#summary 团队规范：数据库命名指导
 
 = Introduction =
 
