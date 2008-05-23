@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary 团队规范：javascript命名规范
 
 = Introduction =
 
