@@ -20,6 +20,7 @@ namespace HOT.Model
         private string _taste;
         private string _description;
         private int? _auditState;
+        private DateTime _regDate;
 
         /// <summary>
         /// 
@@ -109,8 +110,14 @@ namespace HOT.Model
             get { return _auditState; }
             set { _auditState = value; }
         }
-        #endregion Model
 
+        public DateTime RegDate
+        {
+            get { return _regDate; }
+            set { _regDate = value; }
+        }
+
+        #endregion Model
     }
 }
 

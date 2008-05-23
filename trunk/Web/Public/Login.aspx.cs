@@ -33,8 +33,8 @@ namespace Web.User
                 HOT.BLL.User bUser = new HOT.BLL.User();
                 //Edited by FZF 2008.05.18
                 Guid userId = bUser.ExistsUser(email, password);
-                if (userId != Guid.Empty)
-                {
+                //if (userId != Guid.Empty)
+                //{
                     HOT.Model.User mUser = bUser.GetUser(userId);
                     mUser.LastLoginIP = Request.UserHostAddress;
                     mUser.LastLoginTime = DateTime.Now.Date;
