@@ -1,7 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs"
     Inherits="Web.MasterPage.Member" MasterPageFile="~/MasterPage/Global.Master" %>
 
-<%@ Register Src="~/Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
+<%@ Register Src="../Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
@@ -19,8 +19,8 @@
             <div class="help">
                 ［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
         </div>
-        <div id="submenu">
-            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+        <div id="SampleMenu">
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" SkinID="MenuHorizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="/Member/MyAlinn.aspx" Text="我的阿里奶奶" Value="我的阿里奶奶"></asp:MenuItem>
                     <asp:MenuItem Text="广告主" Value="广告主">

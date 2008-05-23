@@ -1,6 +1,107 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneDesigner.aspx.cs" Inherits="Web.ZoneDesigner"
     EnableViewStateMac="false" Title="设计广告位" MasterPageFile="/MasterPage/Member.Master" %>
 
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
+
+    <script type="text/javascript" src="/JavaScript/common.js"></script>
+
+    <script type="text/javascript" src="/JavaScript/TextZoneStyle.js"></script>
+
+    <%--    <script src="/JavaScript/jquery/jquery.js" type="text/javascript"></script>--%>
+    <script src="/JavaScript/jquery.js" type="text/javascript"></script>
+
+    <script src="/JavaScript/jquery/ifx.js" type="text/javascript"></script>
+
+    <script src="/JavaScript/jquery/idrop.js" type="text/javascript"></script>
+
+    <script src="/JavaScript/jquery/idrag.js" type="text/javascript"></script>
+
+    <script src="/JavaScripts/jquery/iutil.js" type="text/javascript"></script>
+
+    <script src="/JavaScript/jquery/islider.js" type="text/javascript"></script>
+
+    <script src="/JavaScript/jquery/color_picker/color_picker.js" type="text/javascript"></script>
+
+    <link href="/JavaScript/jquery/color_picker/color_picker.css" rel="stylesheet" type="text/css">
+    <!-- compliance patch for microsoft browsers -->
+    <!--[if lt IE 7]>
+	    <link rel="stylesheet" href="/JavaScript/jquery/color_picker/color_picker-ie6.css" type="text/css">
+    <![endif]-->
+    <!--[if gte IE 7]>
+	    <link rel="stylesheet" href="/JavaScript/jquery/color_picker/color_picker-ie6.css" type="text/css">
+    <![endif]-->
+    <link type="text/css" href="/CSS/ZoneDesigner.css" rel="stylesheet" />
+    <style type="text/css">
+        div.codess
+        {
+            float: left;
+        }
+        div.codess textarea
+        {
+            height: 142px;
+            width: 563px;
+            padding: 3px;
+        }
+        #main_inner
+        {
+            overflow: hidden;
+            padding: 6px 3px 2px 6px;
+        }
+        #outer
+        {
+        }
+        #pre
+        {
+            border: 1px none;
+        }
+        #main
+        {
+            left: 0px;
+            margin: 0px;
+            padding: 5px;
+            position: absolute;
+            top: 0px;
+            z-index: 100;
+        }
+        .outer-and-preview .outer-wrapper
+        {
+            width: 480px;
+        }
+        .ad_top
+        {
+            border-bottom: 1px solid #CCCCCC;
+            border-left: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+        }
+        .ad_content
+        {
+            border-right: 1px solid #CCCCCC;
+            float: left;
+            height: 100px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            margin: 10px 0pt 10px 0px;
+            padding: 0px;
+        }
+        .ad_div
+        {
+            margin: 20px;
+        }
+        div#txt_board_preview
+        {
+            padding: 1.5em 20px 2em;
+            width: auto;
+        }
+        .sellbox
+        {
+            background: transparent url(http://img.alimama.cn/images/bg/sellbox_top_bg.gif) repeat-x scroll left top;
+            border: 1px solid #CBDDF1;
+            margin: 0.5em 0pt;
+            padding: 0.5em 0pt 0pt;
+        }
+    </style>
+</asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div class="clearing">
     </div>
@@ -122,107 +223,6 @@
     <!--end copy-->
     <input id="hdn_zonestyle" type="hidden" value="" name="hdn_zonestyle" runat="server" />
     <input id="hdn_zonesize" type="hidden" value="" name="hdn_zonesize" runat="server" />
-</asp:Content>
-<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
-
-    <script type="text/javascript" src="/App_Themes/common.js"></script>
-
-    <script type="text/javascript" src="/App_Themes/TextZoneStyle.js"></script>
-
-<%--    <script src="/App_Themes/js/jquery/jquery.js" type="text/javascript"></script>--%>
-
-    <script src="/App_Themes/js/jquery/ifx.js" type="text/javascript"></script>
-
-    <script src="/App_Themes/js/jquery/idrop.js" type="text/javascript"></script>
-
-    <script src="/App_Themes/js/jquery/idrag.js" type="text/javascript"></script>
-
-    <script src="/App_Themes/js/jquery/iutil.js" type="text/javascript"></script>
-
-    <script src="/App_Themes/js/jquery/islider.js" type="text/javascript"></script>
-
-    <script src="/App_Themes/js/jquery/color_picker/color_picker.js" type="text/javascript"></script>
-
-    <link href="/App_Themes/js/jquery/color_picker/color_picker.css" rel="stylesheet"
-        type="text/css">
-    <!-- compliance patch for microsoft browsers -->
-    <!--[if lt IE 7]>
-	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie6.css" type="text/css">
-    <![endif]-->
-    <!--[if gte IE 7]>
-	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie6.css" type="text/css">
-    <![endif]-->
-    <link type="text/css" href="/App_Themes/ZoneDesigner.css" rel="stylesheet" />
-    <style type="text/css">
-        div.codess
-        {
-            float: left;
-        }
-        div.codess textarea
-        {
-            height: 142px;
-            width: 563px;
-            padding: 3px;
-        }
-        #main_inner
-        {
-            overflow: hidden;
-            padding: 6px 3px 2px 6px;
-        }
-        #outer
-        {
-        }
-        #pre
-        {
-            border: 1px none;
-        }
-        #main
-        {
-            left: 0px;
-            margin: 0px;
-            padding: 5px;
-            position: absolute;
-            top: 0px;
-            z-index: 100;
-        }
-        .outer-and-preview .outer-wrapper
-        {
-            width: 480px;
-        }
-        .ad_top
-        {
-            border-bottom: 1px solid #CCCCCC;
-            border-left: 1px solid #CCCCCC;
-            border-right: 1px solid #CCCCCC;
-        }
-        .ad_content
-        {
-            border-right: 1px solid #CCCCCC;
-            float: left;
-            height: 100px;
-            list-style-image: none;
-            list-style-position: outside;
-            list-style-type: none;
-            margin: 10px 0pt 10px 0px;
-            padding: 0px;
-        }
-        .ad_div
-        {
-            margin: 20px;
-        }
-        div#txt_board_preview
-        {
-            padding: 1.5em 20px 2em;
-            width: auto;
-        }
-        .sellbox
-        {
-            background: transparent url(http://img.alimama.cn/images/bg/sellbox_top_bg.gif) repeat-x scroll left top;
-            border: 1px solid #CBDDF1;
-            margin: 0.5em 0pt;
-            padding: 0.5em 0pt 0pt;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content3" runat="Server" ContentPlaceHolderID="_scriptContent">
 

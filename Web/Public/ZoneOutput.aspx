@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>我的阿里奶奶</title>
-    <link type="text/css" href="/App_Themes/ZoneDesigner.css" rel="stylesheet" />
+    <link type="text/css" href="/CSS/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
         #main_inner
         {
@@ -33,10 +33,10 @@
         }
     </style>
 
-    <script src="/App_Themes/jquery.js" type="text/javascript">
+    <script src="/JavaScript/jquery.js" type="text/javascript">
     </script>
 
-    <script src="/App_Themes/TextZoneStyle.js" type="text/javascript">
+    <script src="/JavaScript/TextZoneStyle.js" type="text/javascript">
     </script>
 
 </head>
@@ -85,7 +85,7 @@
                     
                     //alert(location.href);
                     //alert(location.host);
-                    $.post("ZoneStat.aspx", kvp, success = function(){
+                    $.post("/Public/ZoneStat.aspx", kvp, success = function(){
                         alert("点击信息已发送！");
                     });
             }
@@ -99,7 +99,7 @@
                     
                     //alert(location.href);
                     //alert(location.host);
-                    $.post("ZoneStat.aspx", kvp, success = function(){
+                    $.post("/Public/ZoneStat.aspx", kvp, success = function(){
                         alert("刷新信息已发送！");
                     });
             }

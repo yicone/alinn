@@ -2,6 +2,9 @@
     EnableViewStateMac="false" MasterPageFile="/MasterPage/Member.Master" Title="广告位基本信息" %>
 
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
+
+    <script type="text/javascript" src="/JavaScript/jquery.js"></script>
+
     <style type="text/css">
         p.group-cb
         {
@@ -207,7 +210,8 @@
     <input id="hdn_classids" type="hidden" value="" name="hdn_classids" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" runat="Server" ContentPlaceHolderID="_scriptContent">
-<script type="text/javascript">
+
+    <script type="text/javascript">
     $(document).ready(initForm);
 
 	function initForm(){
@@ -447,4 +451,5 @@
         $("#<%= hdn_sizeid.ClientID %>").val(sizeid);
     }    
     </script>
+
 </asp:Content>
