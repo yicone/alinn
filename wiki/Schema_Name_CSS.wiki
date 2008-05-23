@@ -1,4 +1,4 @@
-#CSS Named Screma
+#summary 团队规范：CSS命名指导
 
 = Introduction =
 
