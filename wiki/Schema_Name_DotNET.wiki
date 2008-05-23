@@ -1,4 +1,4 @@
-#summary .NET命名规范
+#summary 团队规范：.NET命名规范
 
 = Introduction =
 
