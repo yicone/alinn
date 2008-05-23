@@ -159,6 +159,7 @@ namespace HOT.SQLServerDAL
                 {
                     model.AuditState = int.Parse(ds.Tables[0].Rows[0]["AuditState"].ToString());
                 }
+                model.RegDate = DateTime.Parse(ds.Tables[0].Rows[0]["RegDate"].ToString());
                 return model;
             }
             else
@@ -173,7 +174,7 @@ namespace HOT.SQLServerDAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState ");
+            strSql.Append("select SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState,RegDate ");
             strSql.Append(" FROM AL_Site ");
             if (strWhere.Trim() != "")
             {
