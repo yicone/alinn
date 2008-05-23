@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true" CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone" Title="无标题页" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true" CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone" Title="广告位" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
     <br />

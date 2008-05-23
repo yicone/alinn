@@ -1,9 +1,9 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SiteManager.aspx.cs" Inherits="Web.SiteManager"
-    MasterPageFile="/MasterPage/Member.Master" Title="广告位管理" %>
+    MasterPageFile="~/MasterPage/Member.Master" Title="广告位管理" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="_htmlHeadContent">
 
-    <script type="text/javascript" src="/App_Themes/jquery.js"></script>
+    <script type="text/javascript" src="/JavaScript/jquery.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">

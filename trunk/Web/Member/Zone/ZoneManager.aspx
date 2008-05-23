@@ -1,6 +1,4 @@
-﻿<%--此页面较为特殊--%>
-
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneManager.aspx.cs" Inherits="Web.ZoneManager"
     Title="广告位管理" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,12 +8,8 @@
     <meta http-equiv="Content-Language" content="zh-cn" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <script type="text/javascript" src="/App_Themes/jquery.js"></script>
+    <script type="text/javascript" src="/JavaScript/jquery.js"></script>
 
-    <%--    <script type="text/javascript" src="../App_Themes/common.js"></script>
-
-    <link type="text/css" href="../App_Themes/alinn.css" />
-    <link type="text/css" href="../App_Themes/myalinn.css" />--%>
     <style type="text/css">
         ul, li
         {

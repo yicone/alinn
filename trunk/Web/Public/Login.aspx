@@ -102,6 +102,6 @@
     </div>
 </asp:Content>
 <asp:Content id="Content2" runat="server" contentplaceholderid="_htmlHeadContent">
-    <link rel="stylesheet" type="text/css" href="../App_Themes/login.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/login.css" />
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%><%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%>
 </asp:Content>
