@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#团队规范：数据库命名
 
 = Introduction =
 
@@ -8,6 +8,8 @@ Add your content here.
 = Details =
 
 Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Table Name
+  * Field Name
+  * Store Procedure Name
+  * Trigger Name
+  * View Name
