@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyAlinn.aspx.cs" Inherits="Web.MyAlinn"
-    MasterPageFile="/MasterPage/Member.Master" Title="我的阿里奶奶" %>
+    MasterPageFile="~/MasterPage/Member.Master" Title="我的阿里奶奶" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-	<div id="maincontent">
+    <div id="maincontent">
         <div class="lcol1">
             <!-- system messeges -->
             <!-- 网站主概况 -->

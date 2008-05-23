@@ -1,7 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs"
-    Inherits="Web.MasterPage.Member" MasterPageFile="Global.Master" %>
+    Inherits="Web.MasterPage.Member" MasterPageFile="~/MasterPage/Global.Master" %>
 
-<%@ Register Src="../Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
+<%@ Register Src="~/Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>

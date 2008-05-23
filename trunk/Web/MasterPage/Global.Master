@@ -1,9 +1,9 @@
-﻿<%--此母板页定义为根母板页--%>
+﻿<%@ Register Src="~/Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="~/Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
 
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global.Master.cs" Inherits="Web.MasterPage.Global" %>
 
-<%@ Register Src="/Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
-<%@ Register Src="/Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -30,14 +30,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <uc3:Header ID="Header1" runat="server" />
+    <uc3:Header ID="Header2" runat="server" />
     <asp:ContentPlaceHolder ID="_mainContent" runat="server">
         <%--此处由子母板页添加ContentPlaceHolder，或内容页添加内容 （“子母板页”，使用此页作为母板的母板页:) ）--%>
     </asp:ContentPlaceHolder>
-    </form>
-    <uc2:Footer ID="Footer1" runat="server" />
+    <uc2:Footer ID="Footer2" runat="server" />
     <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
         <%--此处添加JS代码和函数--%>
     </asp:ContentPlaceHolder>
-</body>
+    </form>
+    </body>
 </html>
