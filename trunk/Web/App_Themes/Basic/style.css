@@ -8,7 +8,7 @@ ul{list-style-type:none}
 a:link{ text-decoration:none; color:WindowText;}
 a:hover{color:#FF6633;}
 table{text-align:left; border:solid 0px #669999;}
-#maincontent{width:100%; height:auto; border-width:0px; background-color:#FFFFFF; text-align:center; clear:both;}
+#maincontent{width:100%; height:auto; border-width:0px; background-color:#FFFFFF; text-align:center;clear:both;}
 #top{height:60px; border-bottom-width:0px; width:1024px;}
 #logo{width:262px; height:60px; background-image:url(images/logo.jpg); margin-left:0px; float:left;}
 #logo a {display:block; height:42px; margin:10px 0pt 0pt 1px; width:291px; }

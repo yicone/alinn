@@ -7,8 +7,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="_searchcontent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
-    <div style="text-align: center; width: 100%">
-        <div style="width: 915px; margin-left: auto; margin-right: auto">
             <div style="width: 100%; height: 80px; background-image: url('images/bg_recommendlink.png')">
                 <div style="float: left; margin-left: 50px; margin-top: 20px">
                     推广链接：<span id="txtRecommendLink">http://www.alinn.com?introducer=<%= HOT.BLL.User.GetLoginUser().ToString() %></span><input
@@ -28,7 +26,6 @@
                 </asp:DataList>
             </div>
         </div>
-    </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="UP_GetIntroducerInfoExtForMyRecommendation" SelectCommandType="StoredProcedure"
         OnSelecting="SqlDataSource1_Selecting">

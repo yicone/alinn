@@ -6,7 +6,7 @@ function TextZone(zoneSize, layoutType){
     this.preDiv = $("#pre");
     //this.bgimgDiv = $("#bgimg");
     this.outerDiv = $("#outer");
-    this.mainDiv = $("#main");
+    this.zoneDiv = $("#zone");
     this.maininnerDiv = $("#main_inner");
     this.maintitleDiv;
     this.maintextDiv;
@@ -71,9 +71,9 @@ function TextZone(zoneSize, layoutType){
             
             //修改文字广告牌
             var outerDiv = this.outerDiv;
-            var mainDiv = this.mainDiv;
+            var zoneDiv = this.zoneDiv;
             this.changeDivSize(outerDiv, w, h);
-            this.changeDivSize(mainDiv, w - 10, h - 10);
+            this.changeDivSize(zoneDiv, w - 10, h - 10);
             //changeSize(this.iconDiv, iconWidth, iconHeight); //TODO:iconWidith,iconHeight未定！
             //p_icon.css("left", (w - iconWidth -1));
             //p_icon.css("top", (h - iconHeight));
