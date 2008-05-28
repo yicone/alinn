@@ -20,6 +20,8 @@ namespace Web
             if (!IsPostBack)
             {
                 ShowZoneInfo(zoneId);
+                dlSiteOwerInfoDataBind();
+                dlSiteInfoDataBind();
             }
         }
 
@@ -34,7 +36,48 @@ namespace Web
             HOT.Model.Zone zModel = new HOT.Model.Zone();
             zModel = zBLL.GetModel(zoneId);
             this.labZoneName.Text = zModel.ZoneName;
+            this.labWeekPrice.Text = zModel.WeekPrice.ToString();
         }
+        protected void dlSiteOwerInfoDataBind()
+        {
+            string sql = "";
+            sql = "select AL_User.NickName,AL_User.RegTime,AL_User.QQ from AL_Zone left join AL_User on AL_Zone.UserId=AL_User.UserId  where AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString()+"'";
+            DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
+            this.dlSiteOwerInfo.DataSource = ds;
+            this.dlSiteOwerInfo.DataBind();
+        }
+        protected void dlSiteInfoDataBind()
+        {
+            string sql = "";
+            sql = "select AL_ZonePic.ZonePic,AL_Site.SiteName,AL_Site.SiteUrl,AL_Zone.ZoneName,AL_Zone.SizeId,AL_Zone.MediaType,AL_Zone.Infirst from AL_Zone left join AL_ZonePic on AL_ZonePic.ZoneId=AL_Zone.ZoneId left join AL_Site on AL_Site.SiteId=AL_Zone.SiteId where  AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString() + "'";
+            DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
+            this.dlSiteInfo.DataSource = ds;
+            this.dlSiteInfo.DataBind();
+        }
+        protected string getSize(int sizeId)
+        {
+            string size = "";
+            switch (sizeId)
+            { 
+                case 1:
+                    size = "";
+                    break;
+                default:
+                    size = "";
+                    break;
+            }
+            return size;
+        }
+        protected void showInfo()
+        {
+            Guid zoneId = new Guid(this.Request.QueryString["ZoneId"]);
 
+            //得到Zone实体
+            HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+            HOT.Model.Zone zModel = new HOT.Model.Zone();
+            zModel = zBLL.GetModel(zoneId);
+
+            
+        }
     }
 }
