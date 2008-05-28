@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZoneDesigner.aspx.cs" Inherits="Web.ZoneDesigner"
-    EnableViewStateMac="false" Title="设计广告位" MasterPageFile="/MasterPage/Member.Master" %>
+    EnableViewStateMac="false" Title="设计广告位" MasterPageFile="~/MasterPage/Member.Master" %>
 
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
 
@@ -7,31 +7,30 @@
 
     <script type="text/javascript" src="/JavaScript/TextZoneStyle.js"></script>
 
-    <%--    <script src="/JavaScript/jquery/jquery.js" type="text/javascript"></script>--%>
-    <script src="/JavaScript/jquery.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/jquery.js" type="text/javascript"></script>
 
-    <script src="/JavaScript/jquery/ifx.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/ifx.js" type="text/javascript"></script>
 
-    <script src="/JavaScript/jquery/idrop.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/idrop.js" type="text/javascript"></script>
 
-    <script src="/JavaScript/jquery/idrag.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/idrag.js" type="text/javascript"></script>
 
-    <script src="/JavaScripts/jquery/iutil.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/iutil.js" type="text/javascript"></script>
 
-    <script src="/JavaScript/jquery/islider.js" type="text/javascript"></script>
+    <script src="/JavaScript/jquery/color_picker/islider.js" type="text/javascript"></script>
 
     <script src="/JavaScript/jquery/color_picker/color_picker.js" type="text/javascript"></script>
 
-    <link href="/JavaScript/jquery/color_picker/color_picker.css" rel="stylesheet" type="text/css">
+    <link href="/JavaScript/jquery/color_picker/color_picker.css" rel="stylesheet" type="text/css" />
     <!-- compliance patch for microsoft browsers -->
     <!--[if lt IE 7]>
-	    <link rel="stylesheet" href="/JavaScript/jquery/color_picker/color_picker-ie6.css" type="text/css">
+	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie6.css" type="text/css">
     <![endif]-->
     <!--[if gte IE 7]>
-	    <link rel="stylesheet" href="/JavaScript/jquery/color_picker/color_picker-ie6.css" type="text/css">
+	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie7.css" type="text/css">
     <![endif]-->
     <link type="text/css" href="/CSS/ZoneDesigner.css" rel="stylesheet" />
-    <style type="text/css">
+        <style type="text/css">
         div.codess
         {
             float: left;
@@ -54,7 +53,7 @@
         {
             border: 1px none;
         }
-        #main
+        #zone
         {
             left: 0px;
             margin: 0px;
@@ -92,6 +91,7 @@
         {
             padding: 1.5em 20px 2em;
             width: auto;
+            text-align:left
         }
         .sellbox
         {
@@ -100,13 +100,12 @@
             margin: 0.5em 0pt;
             padding: 0.5em 0pt 0pt;
         }
-    </style>
-</asp:Content>
+    </style></asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <div class="clearing">
+	<div class="clearing">
     </div>
     <div id="code-wrapper">
-        <h3>
+        <h3 style="text-align: left">
             <span id="sec1" class="sec-toggler"></span>代码复制<span class="red">(一个网页限制最多发布6个广告位)</span></h3>
         <div class="codess">
             <textarea id="genjstxt" readonly="readonly" style="text-align: left" name="genjstxt"
@@ -127,7 +126,7 @@
                     <div id="pre" style="border: 1px solid rgb(230, 230, 230); height: 88px; width: 758px;
                         background-color: rgb(255, 255, 255);">
                     </div>
-                    <div id="main" style="height: 80px; width: 750px;">
+                    <div id="zone" style="height: 80px; width: 750px;">
                         <table id="main_inner" cellspacing="0" cellpadding="0" border="0" align="center">
                             <tr>
                                 <td id="main_title_outer" class="t&quot; + size + &quot;" nowrap="nowrap">
@@ -206,12 +205,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div id="controlPanel" class="ad_content" style="width: 160px">
-                <select id="Select1">
-                    <option selected="selected" value="1">760x90</option>
-                    <option value="4">120x60</option>
-                    <option value="3">336x280</option>
-                </select>
+            <div id="controlPanel" class="ad_content" style="width: 160px; text-align: center">
                 <button id="Button1" type="button" onclick="javascript:return doCheckAndSubmit()">
                     保存设置</button></div>
             <div class="clearing">

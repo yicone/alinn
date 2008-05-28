@@ -1,10 +1,11 @@
 ﻿#SampleMenu .Menu-Skin-Horizontal
 {
-    position:absolute;
     left: 9.5em;
     top: 0;
-    width: 45em;
+    width: 36.5em;
     z-index: 300;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #SampleMenu .Menu-Skin-Vertical
@@ -17,11 +18,13 @@
 
 #SampleMenu .Menu-Skin-StaticItem
 {
-    background:#7795BD url(bg_nav.gif) repeat-x;
+    background:#5A8FC1 url(images/bg_nav.jpg) repeat-x;
+    padding-left:6px;
+    height:32px;
     font-size: small;
 }
 
 #SampleMenu .Menu-Skin-DynamicHover
 {
-    background:#7795BD;    
+    background:#8ECCE1;    
 }

@@ -6,10 +6,10 @@
 <head runat="server">
     <title>Untitled Page</title>
     <style type="text/css">
-    .center {
-    text-align:center
-	}
-}
+        .center
+        {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -18,19 +18,19 @@
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Width="100%">
             <HeaderTemplate>
                 <tr>
-                    <td style="width:120px;height: 32px;" class="center">
+                    <td style="width: 120px; height: 32px;" class="center">
                         网站名称
                     </td>
-                    <td style="width:120px" class="center">
+                    <td style="width: 120px" class="center">
                         添加时间
                     </td>
-                    <td style="width:120px" class="center">
+                    <td style="width: 120px" class="center">
                         我的提成
                     </td>
-                    <td style="width:auto" class="center">
+                    <td style="width: auto" class="center">
                         网站地址
                     </td>
-                    <td style="width:120px" class="center">
+                    <td style="width: 120px" class="center">
                         Alexa排名
                     </td>
                 </tr>
@@ -38,22 +38,26 @@
             <ItemTemplate>
                 <tr>
                     <td class="center">
-                        <a id="aSiteName" href='http://<%# Eval("SiteUrl") %>'><%# Eval("SiteName") %></a></td>
+                        <a id="aSiteName" href='http://<%# Eval("SiteUrl") %>'>
+                            <%# Eval("SiteName") %></a>
+                    </td>
                     <td class="center">
-                        <%# Eval("RegDate") %></td>
+                        <%# Eval("RegDate") %>
+                    </td>
                     <td class="center">
                         我的提成？
                     </td>
                     <td>
-                        <a id="a1" href='http://<%# Eval("SiteUrl") %>' target="_blank"><%# Eval("SiteUrl") %></a></td>
+                        <a id="a1" href='http://<%# Eval("SiteUrl") %>' target="_blank">
+                            <%# Eval("SiteUrl") %></a>
+                    </td>
                     <td class="center">
                         Alexa排名
                     </td>
                 </tr>
             </ItemTemplate>
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
             SelectCommand="SELECT SiteName, SiteUrl, RegDate FROM Al_Site WHERE UserId = @UserId">
             <SelectParameters>
                 <asp:Parameter Name="UserId" />

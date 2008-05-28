@@ -20,7 +20,7 @@ namespace Web
 
             if (!Page.IsPostBack)
             {
-                DataList1.DataBind();
+                //DataList1.DataBind();
             }
         }
 
@@ -44,7 +44,7 @@ namespace Web
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            e.Command.Parameters[0].Value = new Guid("00000000-0000-0000-0000-000000000000"); //UNDONE: JUST FOR TEST
+            e.Command.Parameters[0].Value = HOT.BLL.User.GetLoginUser();
 
         }
 
