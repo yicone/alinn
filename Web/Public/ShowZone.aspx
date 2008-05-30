@@ -11,7 +11,7 @@
             <td>
                 <table style="width: 100%">
                     <tr>
-                        <td style="width:20%">
+                        <td style="width:20%; text-align:left;">
                             <asp:DataList ID="dlSiteOwerInfo" runat="server">
                                 <ItemTemplate>
                                     <table cellpadding="0" cellspacing="0" width="100%">
@@ -56,15 +56,16 @@
                                 </ItemTemplate>
                             </asp:DataList>
                         </td>
-                        <td>
+                        <td style="width:60%; text-align:left;">
                             <br />
                             价格：<asp:Label ID="labWeekPrice" runat="server"></asp:Label>
                             元/周<br />
-                            请选择购买时段：<asp:Calendar ID="caldBuyDate" runat="server" SelectionMode="DayWeek" 
-                                Width="219px"></asp:Calendar>
+                            请选择购买时段：<br />
+                            <br />
+                            <br />
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
                         </td>
-                        <td style="width:20%">
+                        <td style="width:20%; text-align:left;">
                             <asp:DataList ID="dlSiteInfo" runat="server">
                                 <ItemTemplate>
                                     <table cellpadding="0" cellspacing="0" 
@@ -117,7 +118,8 @@
                     Text="广告位出现的网址" />
                 <asp:Button ID="btnOtherZone" runat="server" Text="该网站下其它广告位" 
         onclick="btnOtherZone_Click" />
-                <asp:Button ID="Button4" runat="server" Text="最近交易记录" />
+                <asp:Button ID="btnLatestOrder" runat="server" Text="最近交易记录" 
+        onclick="btnLatestOrder_Click" />
                 <asp:Button ID="Button5" runat="server" Text="交易评价" />
                 <asp:Button ID="Button6" runat="server" Text="相关广告位推荐" />
                 <asp:Button ID="Button7" runat="server" Text="留言" />
@@ -162,11 +164,53 @@
     </table>
         </asp:View>
         <asp:View ID="View2" runat="server">
-        2
+            2
         </asp:View>
         <asp:View ID="View3" runat="server">
             <asp:GridView ID="gvOtherZone" runat="server">
+                <Columns>
+                    <asp:BoundField DataField="ZoneName" />
+                </Columns>
             </asp:GridView>
+        </asp:View>
+        <asp:View ID="View4" runat="server">
+            <asp:GridView ID="gvLatestOrder" runat="server" AutoGenerateColumns="False" 
+                DataKeyNames="OrderId" DataSourceID="sdsLatestOrder">
+                <Columns>
+                    <asp:BoundField DataField="OrderId" HeaderText="OrderId" ReadOnly="True" 
+                        SortExpression="OrderId" />
+                    <asp:BoundField DataField="OrderName" HeaderText="OrderName" 
+                        SortExpression="OrderName" />
+                    <asp:BoundField DataField="UserId" HeaderText="UserId" 
+                        SortExpression="UserId" />
+                    <asp:BoundField DataField="AdId" HeaderText="AdId" SortExpression="AdId" />
+                    <asp:BoundField DataField="ZoneId" HeaderText="ZoneId" 
+                        SortExpression="ZoneId" />
+                    <asp:BoundField DataField="StartDate" HeaderText="StartDate" 
+                        SortExpression="StartDate" />
+                    <asp:BoundField DataField="EndDate" HeaderText="EndDate" 
+                        SortExpression="EndDate" />
+                    <asp:BoundField DataField="AuditState" HeaderText="AuditState" 
+                        SortExpression="AuditState" />
+                    <asp:BoundField DataField="PerPoint" HeaderText="PerPoint" 
+                        SortExpression="PerPoint" />
+                    <asp:BoundField DataField="EverydayPrice" HeaderText="EverydayPrice" 
+                        SortExpression="EverydayPrice" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                    <asp:BoundField DataField="Payment" HeaderText="Payment" 
+                        SortExpression="Payment" />
+                    <asp:BoundField DataField="CreateDate" HeaderText="CreateDate" 
+                        SortExpression="CreateDate" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="sdsLatestOrder" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT * FROM [AL_Order] WHERE ([ZoneId] = @ZoneId)">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="ZoneId" QueryStringField="ZoneId" 
+                        Type="Object" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </asp:View>
     </asp:MultiView>
 </asp:Content>

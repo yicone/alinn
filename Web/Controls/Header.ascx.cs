@@ -29,7 +29,8 @@ namespace Web.Controls
                 hlLogin.Text = "[登录]";
                 hlLogin.NavigateUrl = "/Public/Login.aspx";
                 lbRegister.Text = "[注册]";
-                lbRegister.OnClientClick = "javascript:location='/Public/Register.aspx';";
+                lbRegister.PostBackUrl = "/Public/Register.aspx";
+                //lbRegister.OnClientClick = "javascript:location='/Public/Register.aspx';";
             }
         }
 
