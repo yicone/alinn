@@ -12,7 +12,7 @@ using HOT.BLL;
 using HOT.Model;
 
 
-public partial class Default : System.Web.UI.Page
+public partial class Admin_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

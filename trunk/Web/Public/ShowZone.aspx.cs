@@ -15,14 +15,26 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
-            Guid zoneId = new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
-            if (!IsPostBack)
+
+            if (this.Request.QueryString["ZoneId"] == null)
+            {
+                HOT.Common.MessageBox.Show(this.Page, "参数错误");
+            }
+            else
+            {
+                //Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
+                Guid zoneId = new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
+                if (!IsPostBack)
             {
                 ShowZoneInfo(zoneId);
                 dlSiteOwerInfoDataBind();
                 dlSiteInfoDataBind();
+                this.mvZoneInfo.ActiveViewIndex = 0;
+                showInfo();
+                gvOtherZone.DataBind();
             }
+            }
+
         }
 
         protected void btnBuyAd_Click(object sender, EventArgs e)
@@ -77,7 +89,71 @@ namespace Web
             HOT.Model.Zone zModel = new HOT.Model.Zone();
             zModel = zBLL.GetModel(zoneId);
 
+            //得到ZoneClass实体
+            HOT.BLL.ZoneClass zcBLL = new HOT.BLL.ZoneClass();
+            HOT.Model.ZoneClass zcModel = new HOT.Model.ZoneClass();
+            string[] classes = HOT.Common.Strings.SplitString(zModel.ClassIds.ToString(), ",");
+
+            if (zModel.NeedAuditing == 0)
+            {
+                this.labCheck.Text = "不需要审核";
+            }
+            else
+            {
+                this.labCheck.Text = "需要审核";
+            }
+            if (zModel.InFirst == 0)
+            {
+                this.labInfirst.Text = "不在首页";
+            }
+            else
+            {
+                this.labInfirst.Text = "在首页";
+            }
+            this.labKeywords.Text = zModel.Keywords;
+            this.labDescription.Text = zModel.Description;
+            HOT.Model.ZoneClass zcParentModel = new HOT.Model.ZoneClass();
+
+            for (int i = 0; i < classes.Length; i++)
+            {
+                zcModel = zcBLL.GetModel(int.Parse(classes[i]));
+                if (zcModel.ParentId == 0)
+                {
+                    labZoneClass.Text += zcModel.ClassName.ToString()+";";
+                }
+                else
+                {
+                    zcParentModel = zcBLL.GetModel(zcModel.ParentId);
+                    labZoneClass.Text += zcParentModel.ClassName.ToString() + " > " + zcModel.ClassName.ToString()+";";
+                }
+            }
             
+        }
+        //绑定gvOtherZone，显示同一网站下的广告位
+        protected void gvOtherZoneDataBind()
+        {
+            HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+            HOT.Model.Zone zModel = new HOT.Model.Zone();
+            zModel = zBLL.GetModel(new Guid(this.Request.QueryString["ZoneId"]));
+            string sql = "select * from AL_Zone where siteId='"+ zModel.SiteId.ToString()+"'";
+            DataSet ds = new DataSet();
+            ds = HOT.DBUtility.DbHelperSQL.Query(sql);
+            this.gvOtherZone.DataSource = ds;
+            this.gvOtherZone.DataBind();
+        }
+        protected void btnZoneInfo_Click(object sender, EventArgs e)
+        {
+            this.mvZoneInfo.ActiveViewIndex = 0;
+        }
+
+        protected void btnZoneUrl_Click(object sender, EventArgs e)
+        {
+            this.mvZoneInfo.ActiveViewIndex = 1;
+        }
+
+        protected void btnOtherZone_Click(object sender, EventArgs e)
+        {
+            this.mvZoneInfo.ActiveViewIndex = 2;
         }
     }
 }
