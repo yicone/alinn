@@ -14,7 +14,7 @@ namespace Web.User {
     public partial class Login {
         
         /// <summary>
-        /// email control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -41,7 +41,7 @@ namespace Web.User {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// passWord control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -57,15 +57,6 @@ namespace Web.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// linkRegister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkRegister;
         
         /// <summary>
         /// btnLogin control.

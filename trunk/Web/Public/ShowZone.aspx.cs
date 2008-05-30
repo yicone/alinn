@@ -22,8 +22,7 @@ namespace Web
             }
             else
             {
-                //Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
-                Guid zoneId = new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
+                Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
                 if (!IsPostBack)
             {
                 ShowZoneInfo(zoneId);
@@ -39,7 +38,7 @@ namespace Web
 
         protected void btnBuyAd_Click(object sender, EventArgs e)
         {
-            Guid guid =new Guid("AF0A638B-43E1-1EFA-ADAB-9A8200C07657");
+            Guid guid = new Guid(this.Request.QueryString["ZoneId"].ToString());
             Response.Redirect("../Ad/BuyAd.aspx?ZoneId=" + guid.ToString());
         }
         protected void ShowZoneInfo(Guid zoneId)
@@ -154,6 +153,11 @@ namespace Web
         protected void btnOtherZone_Click(object sender, EventArgs e)
         {
             this.mvZoneInfo.ActiveViewIndex = 2;
+        }
+
+        protected void btnLatestOrder_Click(object sender, EventArgs e)
+        {
+            this.mvZoneInfo.ActiveViewIndex = 3;
         }
     }
 }

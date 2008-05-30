@@ -75,7 +75,7 @@
                         </dl>
                         <div class="l_desc">
                             还没有阿里妈妈帐号？你只需要1分钟<br />
-                            <a href="/User/Register.aspx">免费注册阿里奶奶</a>
+                            <a href="/Public/Register.aspx">免费注册阿里奶奶</a>
                         </div>
                     </div>
                 </div>

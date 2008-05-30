@@ -41,15 +41,6 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Label labWeekPrice;
         
         /// <summary>
-        /// caldBuyDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar caldBuyDate;
-        
-        /// <summary>
         /// btnBuyAd control.
         /// </summary>
         /// <remarks>
@@ -95,13 +86,13 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Button btnOtherZone;
         
         /// <summary>
-        /// Button4 control.
+        /// btnLatestOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button btnLatestOrder;
         
         /// <summary>
         /// Button5 control.
@@ -219,5 +210,32 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvOtherZone;
+        
+        /// <summary>
+        /// View4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View4;
+        
+        /// <summary>
+        /// gvLatestOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvLatestOrder;
+        
+        /// <summary>
+        /// sdsLatestOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsLatestOrder;
     }
 }
