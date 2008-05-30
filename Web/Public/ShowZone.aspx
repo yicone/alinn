@@ -111,20 +111,32 @@
         </tr>
     </table>
     <br />
-    <table class="style1">
+                    <asp:Button ID="btnZoneInfo" runat="server" onclick="btnZoneInfo_Click" 
+                    Text="广告位信息" />
+                <asp:Button ID="btnZoneUrl" runat="server" onclick="btnZoneUrl_Click" 
+                    Text="广告位出现的网址" />
+                <asp:Button ID="btnOtherZone" runat="server" Text="该网站下其它广告位" 
+        onclick="btnOtherZone_Click" />
+                <asp:Button ID="Button4" runat="server" Text="最近交易记录" />
+                <asp:Button ID="Button5" runat="server" Text="交易评价" />
+                <asp:Button ID="Button6" runat="server" Text="相关广告位推荐" />
+                <asp:Button ID="Button7" runat="server" Text="留言" />
+    <asp:MultiView ID="mvZoneInfo" runat="server">
+        <asp:View ID="View1" runat="server">
+            <table width="100%">
         <tr>
             <td>
-                &nbsp;</td>
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
             <td>
-                广告位类目：<asp:Label ID="labClass" runat="server"></asp:Label><br />
+                广告位类目：<asp:Label ID="labZoneClass" runat="server"></asp:Label><br />
                 是否需要审核：<asp:Label ID="labCheck" runat="server"></asp:Label><br />
                 是否在首页：<asp:Label ID="labInfirst" runat="server"></asp:Label><br />
                 关键字：<asp:Label ID="labKeywords" runat="server"></asp:Label><br />
-                网站描述：<asp:Label ID="Description" runat="server"></asp:Label><br />
+                网站描述：<asp:Label ID="labDescription" runat="server"></asp:Label><br />
             </td>
             <td>
                 &nbsp;</td>
@@ -148,15 +160,20 @@
                 &nbsp;</td>
         </tr>
     </table>
+        </asp:View>
+        <asp:View ID="View2" runat="server">
+        2
+        </asp:View>
+        <asp:View ID="View3" runat="server">
+            <asp:GridView ID="gvOtherZone" runat="server">
+            </asp:GridView>
+        </asp:View>
+    </asp:MultiView>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" 
     contentplaceholderid="_htmlHeadContent">
 
         <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
-        <%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%><style type="text/css">                                                      .style1
-                                                      {
-                                                          width: 100%;
-                                                      }
-                                                  </style>
+        <%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%> 
 </asp:Content>
 
