@@ -65,7 +65,8 @@
                             元/周<br />
                             请选择购买时段：<br />
                             <br />
-                            请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                            请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server" 
+                                ontextchanged="txtStartDate_TextChanged"></asp:TextBox>
                             ，请选择结束时间：<asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
                             <cc1:CalendarExtender ID="CalendarExtender1" runat="server" 
                                 TargetControlID="txtStartDate">
@@ -75,6 +76,8 @@
                             </cc1:CalendarExtender>
                             <br />
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="btnStore" runat="server" onclick="Button8_Click" Text="收藏广告位" />
                         </td>
                         <td style="width:20%; text-align:left;">
                             <asp:DataList ID="dlSiteInfo" runat="server">
