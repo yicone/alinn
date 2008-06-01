@@ -112,6 +112,7 @@
     <Compile Include="OrderReport.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="SiteClass.cs" />
+    <Compile Include="Store.cs" />
     <Compile Include="SysNode.cs">
       <SubType>Code</SubType>
     </Compile>

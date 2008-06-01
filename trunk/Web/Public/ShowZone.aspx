@@ -1,15 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true" CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone" Title="广告位" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <br />
     <table cellpadding="0" cellspacing="0" style="width: 100%">
         <tr>
             <td style="text-align: center">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
                 <asp:Label ID="labZoneName" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td>
-                <table style="width: 100%">
+            <td align="center">
+                <table style="width:1024px; border-width:1px;">
                     <tr>
                         <td style="width:20%; text-align:left;">
                             <asp:DataList ID="dlSiteOwerInfo" runat="server">
@@ -62,6 +65,14 @@
                             元/周<br />
                             请选择购买时段：<br />
                             <br />
+                            请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                            ，请选择结束时间：<asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
+                            <cc1:CalendarExtender ID="CalendarExtender1" runat="server" 
+                                TargetControlID="txtStartDate">
+                            </cc1:CalendarExtender>
+                            <cc1:CalendarExtender ID="CalendarExtender2" runat="server" 
+                                TargetControlID="txtEndDate">
+                            </cc1:CalendarExtender>
                             <br />
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
                         </td>
@@ -125,7 +136,7 @@
                 <asp:Button ID="Button7" runat="server" Text="留言" />
     <asp:MultiView ID="mvZoneInfo" runat="server">
         <asp:View ID="View1" runat="server">
-            <table width="100%">
+            <table  style="width:1024px; border-width:thin;">
         <tr>
             <td>
             </td>

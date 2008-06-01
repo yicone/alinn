@@ -2122,3 +2122,128 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_GetList]
 	ClassId,ClassName,ParentId
 	 FROM AL_ZoneClass
 GO
+/******************************************************************
+* 表名：AL_Store
+* 时间：2008-5-30 19:52:58
+******************************************************************/
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Exists]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_Exists]
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_Exists
+@StoreId uniqueidentifier
+AS
+	DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_Store WHERE StoreId=@StoreId 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_ADD]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_ADD]
+GO
+------------------------------------
+--用途：增加一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_ADD
+@StoreId uniqueidentifier,
+@ZoneId uniqueidentifier,
+@UserId uniqueidentifier,
+@Date datetime
+
+ AS 
+	INSERT INTO AL_Store(
+	[StoreId],[ZoneId],[UserId],[Date]
+	)VALUES(
+	@StoreId,@ZoneId,@UserId,@Date
+	)
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Update]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_Update]
+GO
+------------------------------------
+--用途：修改一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_Update
+@StoreId uniqueidentifier,
+@ZoneId uniqueidentifier,
+@UserId uniqueidentifier,
+@Date datetime
+ AS 
+	UPDATE AL_Store SET 
+	[ZoneId] = @ZoneId,[UserId] = @UserId,[Date] = @Date
+	WHERE StoreId=@StoreId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Delete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_Delete]
+GO
+------------------------------------
+--用途：删除一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_Delete
+@StoreId uniqueidentifier
+ AS 
+	DELETE AL_Store
+	 WHERE StoreId=@StoreId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_GetModel]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_GetModel]
+GO
+------------------------------------
+--用途：得到实体对象的详细信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_GetModel
+@StoreId uniqueidentifier
+ AS 
+	SELECT 
+	StoreId,ZoneId,UserId,Date
+	 FROM AL_Store
+	 WHERE StoreId=@StoreId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Store_GetList]
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE UP_AL_Store_GetList
+ AS 
+	SELECT 
+	StoreId,ZoneId,UserId,Date
+	 FROM AL_Store
+
+GO
+

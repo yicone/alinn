@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="AdList.aspx.cs" Inherits="Web.Ad.AdList" Title="无标题页" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
-   <div>
-       <table width="100%">
+    <div>
+       <table style="width:100%; border-width:thin;">
            <tr>
                <td style="width: 30%; text-align: center;">
        <asp:RadioButtonList ID="rblInFirst" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
@@ -36,12 +36,26 @@
            </tr>
        </table>
        <asp:DataList ID="dlZone" runat="server" Width="100%">
+           <HeaderTemplate>
+<table style="width:100%; border-width:thin; text-align:center;">
+  <tr>
+    <td style="width:100px;">广告缩略图</td>
+    <td style="width: 280px">广告详细信息</td>
+    <td style="width: 146px">最早购买时间</td>
+    <td style="width: 86px">周价格</td>
+    <td style="width: 86px">广告大小</td>
+    <td style="width: 86px">日均访问人数</td>
+    <td style="width: 86px">千人访问成本</td>
+  </tr>
+</table>
+
+           </HeaderTemplate>
            <ItemTemplate>
-<table width="100%" border="1">
+<table style="width:100%; border-width:thin;">
   <tr>
     <td style="width:100px;height:75px;"><a href="/Pulic/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
     <td>
-    <table width="100%" border="1">
+    <table width="100%" border="0">
   <tr style="width:100px;">
     <td style="width:70px; height: 40px;">网站名：</td>
     <td style="width: 139px; height: 40px"><a href="/Public/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><%# Eval("SiteName") %></a></td>
@@ -58,11 +72,11 @@
             <td colspan="2"><a href="tencent://message/?uin=<%# Eval("QQ") %>&Site=<%# Eval("SiteName") %>&Menu=yes" target="blank"><img src="http://wpa.qq.com/pa?p=1:1363036:7" alt="联系我吧？"></a><a href="/Member/Zone/ZoneSite.aspx?SiteId=<%# Eval("SiteId") %>">查看此网站下的更多广告位</a></td>
         </tr>
     </table></td>
-    <td style="width: 86px"><asp:Label ID="labTime" runat="server"></asp:Label></td>
-    <td style="width: 116px"><asp:Label ID="labWeekPrice" runat="server" Text='<%# Bind("WeekPrice") %>'></asp:Label></td>
-    <td>1111<asp:Label ID="labSize" runat="server" Text='<%# Bind("SizeCode") %>'></asp:Label></td>
-    <td>&nbsp;<asp:Label ID="labVistersNum" runat="server" Text='<%# Bind("VistersNum") %>'></asp:Label></td>
-    <td>&nbsp;<asp:Label ID="labPricePerK" runat="server" Text='<%# Eval("PricePerK") %>'></asp:Label></td>
+    <td style="width: 146px"><asp:Label ID="labTime" runat="server"></asp:Label></td>
+    <td style="width: 86px"><asp:Label ID="labWeekPrice" runat="server" Text='<%# Bind("WeekPrice") %>'></asp:Label></td>
+    <td style="width: 86px"><asp:Label ID="labSize" runat="server" Text='<%# Bind("SizeCode") %>'></asp:Label></td>
+    <td style="width: 86px"><asp:Label ID="labVistersNum" runat="server" Text='<%# Bind("VistersNum") %>'></asp:Label></td>
+    <td style="width: 86px"><asp:Label ID="labPricePerK" runat="server" Text='<%# Eval("PricePerK") %>'></asp:Label></td>
   </tr>
 </table>
 
