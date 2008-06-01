@@ -22,7 +22,7 @@
             <div id="menu">
                 <ul>
                     <li><a href="/Public/AdList.aspx" target="_self">买广告</a></li>
-                    <li><a href="/Member/Zone/ZoneCategory.aspx" target="_self">卖广告</a></li>
+                    <li><a href="/Member/Zone/SiteManager.aspx" target="_self">卖广告</a></li>
                     <li><a href="#" target="_self">网站推广</a></li>
                     <li><a href="#" target="_self">社区</a></li>
                 </ul>
