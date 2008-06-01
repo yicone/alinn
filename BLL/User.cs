@@ -146,7 +146,7 @@ namespace HOT.BLL
             mailMsg.IsBodyHtml = true;
 
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            client.Credentials = new System.Net.NetworkCredential("fuhaowen12@gmail.com", "kfgzfhw0p;/'[-");
+            client.Credentials = new System.Net.NetworkCredential("guanggaotianxia@gmail.com", "ggtxalinn");
             client.EnableSsl = true;
             try
             {
