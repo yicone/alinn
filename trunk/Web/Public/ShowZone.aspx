@@ -67,16 +67,18 @@
                             <br />
                             请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server" 
                                 ontextchanged="txtStartDate_TextChanged"></asp:TextBox>
-                            ，请选择结束时间：<asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
+                            ，请选择购买时长：<asp:DropDownList ID="ddlWeek" runat="server" AutoPostBack="True">
+                                <asp:ListItem Value="1">1周</asp:ListItem>
+                                <asp:ListItem Value="2">2周</asp:ListItem>
+                                <asp:ListItem Value="3">3周</asp:ListItem>
+                                <asp:ListItem Value="4">4周</asp:ListItem>
+                            </asp:DropDownList>
                             <cc1:CalendarExtender ID="CalendarExtender1" runat="server" 
                                 TargetControlID="txtStartDate">
                             </cc1:CalendarExtender>
-                            <cc1:CalendarExtender ID="CalendarExtender2" runat="server" 
-                                TargetControlID="txtEndDate">
-                            </cc1:CalendarExtender>
                             <br />
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnStore" runat="server" onclick="btnStore_Click" 
                                 Text="收藏广告位" />
                         </td>

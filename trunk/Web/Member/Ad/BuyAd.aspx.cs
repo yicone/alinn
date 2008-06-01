@@ -89,15 +89,15 @@ namespace Web.Ad
                     aModel = aBLL.GetModel(" AdGroupId=" + adGroupId.ToString() + " And SizeId=" + zModel.SiteId.ToString() + " And IsText=0");
                     //end
                     oModel.AdId = aModel.AdId;//不对，不是对应adGroupId,
-
+                    int week =int.Parse(this.Request.QueryString["Week"]);//需要传入值
                     oModel.AuditState = CheckAuditState(zModel.ZoneId);
-                    oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
-                    oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
-                    oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
+                    oModel.StartDate = Convert.ToDateTime(this.Request.QueryString["StartDate"]);//要传入值
+                    oModel.EndDate = Convert.ToDateTime(this.Request.QueryString["StartDate"]).AddDays(Convert.ToDouble(week*7));//要传入值
+                    oModel.OrderName = DateTime.Now.Date.ToString("yyyyMMddhhmmss") + "_" + zModel.ZoneName;
                     oModel.ZoneId = zoneId;
-                    int week = 1;//需要传入值
+
                     oModel.Price = zModel.WeekPrice * week;
-                    oModel.UserId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");//需要传入值
+                    oModel.UserId = HOT.BLL.User.GetLoginUser();
                     oBLL.Add(oModel);
                 }
                 else
@@ -107,6 +107,7 @@ namespace Web.Ad
                 }
             }
         }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -147,23 +148,23 @@ namespace Web.Ad
                     HOT.BLL.Order oBLL = new HOT.BLL.Order();
                     HOT.Model.Order oModel = new HOT.Model.Order();
                     oModel.AdId = adModel.AdId;
-                    
-                    oModel.StartDate = Convert.ToDateTime("2008-05-01");//要传入值
-                    oModel.EndDate = Convert.ToDateTime("2008-05-07");//要传入值
+                    int week = int.Parse(this.Request.QueryString["Week"]);//需要传入值
+                    oModel.StartDate = Convert.ToDateTime(this.Request.QueryString["StartDate"]);//要传入值
+                    oModel.EndDate = Convert.ToDateTime(this.Request.QueryString["StartDate"]).AddDays(Convert.ToDouble(week * 7));
 
                     Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
                     HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
                     HOT.Model.Zone zModel = new HOT.Model.Zone();
                     zModel = zBLL.GetModel(zoneId);
                     oModel.AuditState = CheckAuditState(zModel.ZoneId);
-                    oModel.OrderName = DateTime.Now.Date.ToString() + "_" + zModel.ZoneName;
+                    oModel.OrderName = DateTime.Now.Date.ToString("yyyyMMddhhmmss") + "_" + zModel.ZoneName;
                     oModel.ZoneId = zoneId;
-                    int week = 1;//需要传入值
+
                     oModel.Price = zModel.WeekPrice * week;
-                    oModel.UserId = new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7");//需要传入值
+                    oModel.UserId = HOT.BLL.User.GetLoginUser();//需要传入值
                     oBLL.Add(oModel);
                     oModel = null;
-                    oModel = oBLL.GetModelByUserId(new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7"));
+                    oModel = oBLL.GetModelByUserId(HOT.BLL.User.GetLoginUser());
                     //Session["OrderIdBeShow"] = oModel.OrderId;
                     Response.Redirect("/Member/Order/OrderInfo.aspx?OrderId=" + oModel.OrderId.ToString());
                 }
@@ -173,5 +174,6 @@ namespace Web.Ad
                 Response.Write("<script>alert('操作超时！');history.go(-1);</script>");
             }
         }
+        
     }
 }

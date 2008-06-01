@@ -1078,7 +1078,7 @@ GO
 ------------------------------------
 CREATE PROCEDURE [dbo].[UP_AL_Order_ADD]
 @OrderId uniqueidentifier,
-@OrderName nvarchar(2),
+@OrderName nvarchar(200),
 @UserId uniqueidentifier,
 @AdId uniqueidentifier,
 @ZoneId uniqueidentifier,

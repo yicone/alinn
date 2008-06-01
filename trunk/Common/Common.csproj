@@ -45,6 +45,7 @@
     <Compile Include="ClientDeal.cs" />
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="DataCache.cs" />
+    <Compile Include="Date.cs" />
     <Compile Include="EnumHelper.cs" />
     <Compile Include="Fill.cs" />
     <Compile Include="GuidHelper.cs" />

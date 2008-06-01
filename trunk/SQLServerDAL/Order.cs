@@ -43,7 +43,7 @@ namespace HOT.SQLServerDAL
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@OrderId", SqlDbType.UniqueIdentifier,16),
-					new SqlParameter("@OrderName", SqlDbType.NVarChar,1),
+					new SqlParameter("@OrderName", SqlDbType.NVarChar,200),
 					new SqlParameter("@UserId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@AdId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ZoneId", SqlDbType.UniqueIdentifier,16),
@@ -76,7 +76,7 @@ namespace HOT.SQLServerDAL
             int rowsAffected;
             SqlParameter[] parameters = {
 					new SqlParameter("@OrderId", SqlDbType.UniqueIdentifier,16),
-					new SqlParameter("@OrderName", SqlDbType.NVarChar,1),
+					new SqlParameter("@OrderName", SqlDbType.NVarChar,200),
 					new SqlParameter("@UserId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@AdId", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ZoneId", SqlDbType.UniqueIdentifier,16),
