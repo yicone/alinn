@@ -174,6 +174,20 @@
     <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Store\MyStore.aspx.cs">
+      <DependentUpon>MyStore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Store\MyStore.aspx.designer.cs">
+      <DependentUpon>MyStore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\AdList.aspx.cs">
+      <DependentUpon>AdList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\AdList.aspx.designer.cs">
+      <DependentUpon>AdList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Ad\BuyAd.aspx.cs">
       <DependentUpon>BuyAd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -451,13 +465,6 @@
     <Compile Include="Member\Ad\NewGroup.aspx.designer.cs">
       <DependentUpon>NewGroup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Public\Success.aspx.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Public\Success.aspx.designer.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
@@ -474,10 +481,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\alinn.css" />
-    <Content Include="JavaScript\common.js" />
-    <Content Include="JavaScript\jquery.js" />
-    <Content Include="CSS\myalinn.css" />
     <Content Include="Member\Report\ZoneSellDetail.aspx" />
     <Content Include="Admin\Zone\Employment.aspx" />
     <Content Include="Admin\Zone\SiteClass.aspx" />
@@ -554,6 +557,7 @@
     <Content Include="App_Themes\Basic\images\06.jpg" />
     <Content Include="App_Themes\Basic\images\ad1024.jpg" />
     <Content Include="App_Themes\Basic\images\bg_nav.gif" />
+    <Content Include="App_Themes\Basic\images\bg_nav.jpg" />
     <Content Include="App_Themes\Basic\images\bottombg.jpg" />
     <Content Include="App_Themes\Basic\images\button_1.jpg" />
     <Content Include="App_Themes\Basic\images\button_2.jpg" />
@@ -568,20 +572,28 @@
     <Content Include="App_Themes\Basic\images\webtoolsbg.gif" />
     <Content Include="App_Themes\Basic\Menu.css" />
     <Content Include="App_Themes\Basic\style.css" />
+    <Content Include="CSS\alinn.css" />
+    <Content Include="CSS\ie_hacks.css" />
     <Content Include="CSS\login.css" />
+    <Content Include="CSS\myalinn.css" />
+    <Content Include="CSS\overlay.css" />
+    <Content Include="CSS\ZoneDesigner.css" />
+    <Content Include="JavaScript\common.js" />
     <Content Include="JavaScript\flash.js" />
+    <Content Include="JavaScript\inf.js" />
+    <Content Include="JavaScript\jquery.js" />
     <Content Include="JavaScript\jquery\color_picker\color_picker-ie6.css" />
     <Content Include="JavaScript\jquery\color_picker\color_picker-ie7.css" />
     <Content Include="JavaScript\jquery\color_picker\color_picker.css" />
     <Content Include="JavaScript\jquery\color_picker\color_picker.js" />
     <Content Include="JavaScript\jquery\color_picker\howto_color_picker.txt" />
+    <Content Include="JavaScript\jquery\color_picker\idrag.js" />
+    <Content Include="JavaScript\jquery\color_picker\idrop.js" />
+    <Content Include="JavaScript\jquery\color_picker\ifx.js" />
     <Content Include="JavaScript\jquery\color_picker\images\color_indic.gif" />
     <Content Include="JavaScript\jquery\color_picker\images\hue.png" />
     <Content Include="JavaScript\jquery\color_picker\images\pickerbg.png" />
     <Content Include="JavaScript\jquery\color_picker\images\select.gif" />
-    <Content Include="JavaScript\jquery\color_picker\idrag.js" />
-    <Content Include="JavaScript\jquery\color_picker\idrop.js" />
-    <Content Include="JavaScript\jquery\color_picker\ifx.js" />
     <Content Include="JavaScript\jquery\color_picker\islider.js" />
     <Content Include="JavaScript\jquery\color_picker\iutil.js" />
     <Content Include="JavaScript\jquery\color_picker\jquery.js" />
@@ -596,10 +608,11 @@
     <Content Include="JavaScript\jquery\ui.core.js" />
     <Content Include="JavaScript\jquery\ui.tabs.css" />
     <Content Include="JavaScript\jquery\ui.tabs.js" />
+    <Content Include="JavaScript\TextZoneStyle.js" />
+    <Content Include="Member\Store\MyStore.aspx" />
+    <Content Include="Public\AdList.aspx" />
     <Content Include="Member\Ad\BuyAd.aspx" />
     <Content Include="Member\Ad\EditeGroup.aspx" />
-    <Content Include="CSS\ie_hacks.css" />
-    <Content Include="CSS\overlay.css" />
     <Content Include="Controls\Footer.ascx" />
     <Content Include="Controls\Header.ascx" />
     <Content Include="Controls\Search.ascx" />
@@ -666,12 +679,11 @@
     <Content Include="Admin\Zone\EditeZone.aspx" />
     <Content Include="Admin\Zone\ManageZone.aspx" />
     <Content Include="Member\Ad\EditeAd.aspx" />
-    <Content Include="JavaScript\inf.js" />
-    <Content Include="JavaScript\TextZoneStyle.js" />
-    <Content Include="CSS\ZoneDesigner.css" />
     <None Include="database\DataChecker.sql" />
     <Content Include="Default.aspx" />
-    <Content Include="Member\Zone\images\bg_recommendlink.png" />
+    <Content Include="Member\Order\images\tenpay_button_02_l.gif" />
+    <Content Include="Member\Order\images\tenpay_button_02_m.gif" />
+    <Content Include="Member\Order\images\tenpay_button_02_s.gif" />
     <Content Include="Member\Zone\images\bg_sidebar.jpg" />
     <Content Include="Member\Zone\images\btn_copycode_big.jpg" />
     <Content Include="Member\Zone\MyRecommendation.aspx" />
@@ -704,9 +716,6 @@
     <Content Include="Public\GetPassWord.aspx" />
     <Content Include="Public\Login.aspx" />
     <Content Include="Member\MyAlinn.aspx" />
-    <Content Include="Member\Order\images\tenpay_button_02_l.gif" />
-    <Content Include="Member\Order\images\tenpay_button_02_m.gif" />
-    <Content Include="Member\Order\images\tenpay_button_02_s.gif" />
     <Content Include="Member\Order\OrderInfo.aspx" />
     <Content Include="Member\Pay\md5_pay.aspx" />
     <Content Include="Member\Pay\md5_query.aspx" />
@@ -717,7 +726,6 @@
     <Content Include="Member\User\Seccess.aspx" />
     <Content Include="Member\User\UserInfo.aspx" />
     <Content Include="Public\ShowZone.aspx" />
-    <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />

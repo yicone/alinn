@@ -2165,10 +2165,11 @@ CREATE PROCEDURE UP_AL_Store_ADD
 @Date datetime
 
  AS 
+ 	SET @StoreId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)
 	INSERT INTO AL_Store(
-	[StoreId],[ZoneId],[UserId],[Date]
+	[StoreId],[ZoneId],[UserId]
 	)VALUES(
-	@StoreId,@ZoneId,@UserId,@Date
+	@StoreId,@ZoneId,@UserId
 	)
 
 GO

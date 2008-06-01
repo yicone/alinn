@@ -141,7 +141,7 @@ namespace Web
                     throw new ArgumentException("传入页面的参数不正确！", "SiteId");
             }
 
-            model.UserId = new Guid(Session["UserId"].ToString()); 
+            model.UserId = HOT.BLL.User.GetLoginUser();
             model.SiteName = siteName;
             model.SiteUrl = siteUrl;
             model.SiteClass = siteClass;

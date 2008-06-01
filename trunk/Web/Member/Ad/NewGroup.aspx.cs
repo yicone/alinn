@@ -57,7 +57,7 @@ namespace Web.User
 
             HOT.Model.AdGroup model = new HOT.Model.AdGroup();
             model.GroupName = GroupName;
-            model.UserId = new Guid(Session["UserId"].ToString());
+            model.UserId = HOT.BLL.User.GetLoginUser();
             model.Class = Class;
             model.KeyWords = KeyWords;
             HOT.BLL.AdGroup bll = new HOT.BLL.AdGroup();

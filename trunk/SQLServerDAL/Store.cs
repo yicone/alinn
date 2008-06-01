@@ -123,20 +123,17 @@ namespace HOT.SQLServerDAL
                 return null;
             }
         }
-
         /// <summary>
         /// 获得数据列表
+        /// powered by FZF
         /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
         public DataSet GetList(string strWhere)
         {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select StoreId,ZoneId,UserId,Date ");
-            strSql.Append(" FROM AL_Store ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            return DbHelperSQL.Query(strSql.ToString());
+            SqlParameter[] parameters = { new SqlParameter("@strWhere", SqlDbType.NVarChar, 300) };
+            parameters[0].Value = strWhere;
+            return DbHelperSQL.RunProcedure("UP_AL_Store_GetListWhere", parameters, "ds");
         }
 
         /*

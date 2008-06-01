@@ -77,7 +77,8 @@
                             <br />
     <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="btnStore" runat="server" onclick="Button8_Click" Text="收藏广告位" />
+                            <asp:Button ID="btnStore" runat="server" onclick="btnStore_Click" 
+                                Text="收藏广告位" />
                         </td>
                         <td style="width:20%; text-align:left;">
                             <asp:DataList ID="dlSiteInfo" runat="server">
