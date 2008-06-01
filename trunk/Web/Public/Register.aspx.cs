@@ -31,8 +31,16 @@ namespace Web.User
 
                 //email唯一  IP当天没注册
                 //Edited by fzf 20080518
-                if (bUser.Exists(this.email.Text.Trim().ToLower()) || bUser.ExsitsTempUser(Request.UserHostAddress))
+                if (bUser.Exists(this.email.Text.Trim().ToLower()))
+                {
+                    this.Response.Write("<script>alert('该邮箱已经注册，请换邮箱进行注册。')</script>");
                     return;
+                }
+                else if (bUser.ExsitsTempUser(Request.UserHostAddress))
+                {
+                    this.Response.Write("<script>alert('此IP今天已注册')</script>");
+                    return;
+                }
                 else
                 {
                     HOT.Model.UserTemp mUser = new HOT.Model.UserTemp();
@@ -72,7 +80,9 @@ namespace Web.User
 
 
 
-                    this.Response.Redirect("register.htm", true);
+                    //this.Response.Redirect("register.htm", true);
+
+                    Response.Write("<script>javascript:alert('已发送邮件，请注意查收，完成注册');</script>");
                 }
             }
 
@@ -101,9 +111,9 @@ namespace Web.User
 
             sb.Append("<tr><td bgcolor=\"#ffeacb\"><span style=\"font-size:14px;line-height:160%;\">亲爱的会员：<span style=\"color:#FF3300;\"></span>您好！<br />感谢您成功注册为广告天下会员！</span></td></tr>");
 
-            sb.AppendFormat("<tr><td><strong>您的登录名为：</strong>{0}<br><br>请<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.alinn.com/seccess.aspx?email={0}&num={1}\">点击这里，立即激活</a>您的会员帐户。<br>如果邮件无法正常显示，<br>请点击以下链接激活：<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.alinn.com/seccess.aspx?userid={0}&num={1}\">http://www.alinn.com/seccess.aspx?userid={0}&num={1}</a><br><br /><strong>会员帐户激活后，您就可以：</strong><br>* 发布您网站的广告位，让您的网站轻松赢利！<br>* 自主投放网络广告，把您的产品、公司推广出去！<br /></td></tr>", email, num);
+            sb.AppendFormat("<tr><td><strong>您的登录名为：</strong>{0}<br><br>请<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com/public/success.aspx?email={0}&num={1}\">点击这里，立即激活</a>您的会员帐户。<br>如果邮件无法正常显示，<br>请点击以下链接激活：<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com/public/success.aspx?userid={0}&num={1}\">http://www.aaaa0.com/public/success.aspx?userid={0}&num={1}</a><br><br /><strong>会员帐户激活后，您就可以：</strong><br>* 发布您网站的广告位，让您的网站轻松赢利！<br>* 自主投放网络广告，把您的产品、公司推广出去！<br /></td></tr>", email, num);
 
-            sb.Append("<tr><td height=\"80\" style=\"border-top:1px solid #CCCCCC;\"><span>广告天下——好产品，更需要好广告！ <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.alinn.com\">http://www.alinn.com</a></span><br><span style=\"color:#FF0000;font-size:12px;\">提示: 此信是系统自动发出, 请不要直接&quot;回复&quot;本邮件, 系统看不懂您的回信：）</span></td></tr>");
+            sb.Append("<tr><td height=\"80\" style=\"border-top:1px solid #CCCCCC;\"><span>广告天下——好产品，更需要好广告！ <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com\">http://www.aaaa0.com</a></span><br><span style=\"color:#FF0000;font-size:12px;\">提示: 此信是系统自动发出, 请不要直接&quot;回复&quot;本邮件, 系统看不懂您的回信：）</span></td></tr>");
 
             sb.Append("</table></td></tr>");
 

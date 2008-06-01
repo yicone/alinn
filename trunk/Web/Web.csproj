@@ -451,6 +451,13 @@
     <Compile Include="Member\Ad\NewGroup.aspx.designer.cs">
       <DependentUpon>NewGroup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Public\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
@@ -710,6 +717,7 @@
     <Content Include="Member\User\Seccess.aspx" />
     <Content Include="Member\User\UserInfo.aspx" />
     <Content Include="Public\ShowZone.aspx" />
+    <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
