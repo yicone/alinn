@@ -39,7 +39,7 @@ namespace Web
         protected void btnBuyAd_Click(object sender, EventArgs e)
         {
             Guid guid = new Guid(this.Request.QueryString["ZoneId"].ToString());
-            Response.Redirect("/Member/Ad/BuyAd.aspx?ZoneId=" + guid.ToString());
+            Response.Redirect("/Member/Ad/BuyAd.aspx?ZoneId=" + guid.ToString()+"&StartDate="+this.txtStartDate.Text+"&Week="+this.ddlWeek.SelectedValue);
         }
         protected void ShowZoneInfo(Guid zoneId)
         {

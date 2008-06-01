@@ -536,7 +536,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[AL_Order](
 	[OrderId] [uniqueidentifier] NOT NULL,
-	[OrderName] [nvarchar](1) NULL,
+	[OrderName] [nvarchar](200) NULL,
 	[UserId] [uniqueidentifier] NULL,
 	[AdId] [uniqueidentifier] NOT NULL,
 	[ZoneId] [uniqueidentifier] NOT NULL,
