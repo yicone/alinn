@@ -20,7 +20,6 @@ namespace Web.User
         protected void Page_Load(object sender, EventArgs e)
         {
             this.Page.Title = "广告组管理";
-            Session["UserId"]="936DA01F-9ABD-4D9D-80C7-02AF85C822A7";
             //if (!IsPostBack)
             //{
                 dlAdGroupDateBind();
@@ -31,7 +30,7 @@ namespace Web.User
         {
             HOT.BLL.AdGroup agBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
-            string strWhere = "UserId='936DA01F-9ABD-4D9D-80C7-02AF85C822A7'";
+            string strWhere = "UserId='"+Session["UserId"].ToString()+"'";
             ds=agBLL.GetList(strWhere);
             this.dlAdGroup.DataSource = ds;
             this.dlAdGroup.DataBind();
