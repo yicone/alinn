@@ -21,7 +21,7 @@ namespace Web.Ad
             if (!Page.IsPostBack)
             {
             Guid zoneId = new Guid(this.Request.QueryString["ZoneId"].ToString());
-            Guid userId = new Guid(Session["UserId"].ToString());
+            Guid userId = HOT.BLL.User.GetLoginUser();
             HOT.BLL.AdGroup adgBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
             ds = adgBLL.GetList(AspNetPager1.StartRecordIndex, AspNetPager1.EndRecordIndex, 1, userId);
@@ -46,7 +46,7 @@ namespace Web.Ad
 
         protected void AspNetPager1_PageChanged(object sender, EventArgs e)
         {
-            Guid userId = new Guid(Session["UserId"].ToString());
+            Guid userId = HOT.BLL.User.GetLoginUser();
             dlAdGroupDataBind(userId);
         }
 

@@ -28,7 +28,7 @@
                     <asp:MenuItem NavigateUrl="/Member/Ad/ManageAdGroup.aspx" Text="广告组管理" Value="广告组管理">
                     </asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="数据报表" Value="数据报表"></asp:MenuItem>
-                    <asp:MenuItem Enabled="False" Text="收藏夹管理" Value="收藏夹管理"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Store/MyStore.aspx" Text="收藏夹管理" Value="收藏夹管理"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="网站主" Value="网站主">
                     <asp:MenuItem NavigateUrl="/Member/Zone/SiteManager.aspx" Text="广告位管理" Value="广告位管理">

@@ -56,7 +56,7 @@ namespace Web.User
                     #endregion
 
                     Session["NickName"] = mUser.NickName;
-                    Session["UserId"] = mUser.UserId;
+                    //Session["UserId"] = mUser.UserId;
                     //this.Response.Redirect("../zone/zone.aspx", true);
                 }
                 else

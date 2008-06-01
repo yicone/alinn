@@ -30,7 +30,7 @@ namespace Web.User
         {
             HOT.BLL.AdGroup agBLL = new HOT.BLL.AdGroup();
             DataSet ds = new DataSet();
-            string strWhere = "UserId='"+Session["UserId"].ToString()+"'";
+            string strWhere = "UserId='"+HOT.BLL.User.GetLoginUser().ToString()+"'";
             ds=agBLL.GetList(strWhere);
             this.dlAdGroup.DataSource = ds;
             this.dlAdGroup.DataBind();

@@ -19,7 +19,7 @@ namespace Web.Order
             if (!IsPostBack)
             {
                 //ShowInfo(new Guid(Session["UserId"].ToString()));
-                ShowInfo(new Guid("936DA01F-9ABD-4D9D-80C7-02AF85C822A7"));
+                ShowInfo(HOT.BLL.User.GetLoginUser());
             }
         }
         private void ShowInfo(Guid UserId)

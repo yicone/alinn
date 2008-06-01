@@ -37,7 +37,7 @@ namespace Web
                 Debug.Assert(lastPageUrl.Contains("zonecategory.aspx"));
                 model = new HOT.Model.Zone();
 
-                model.UserId = new Guid(Session["UserId"].ToString());
+                model.UserId = HOT.BLL.User.GetLoginUser();
                 model.SiteId = new Guid(Request.Form["siteid"]);
                 #region 添加广告位
                 model.ZoneName = Request.Form["zonename"];

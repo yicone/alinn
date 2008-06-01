@@ -168,5 +168,17 @@ namespace Web
             }
         }
 
+        protected void btnStore_Click(object sender, EventArgs e)
+        {
+            HOT.Model.Store sModel = new HOT.Model.Store();
+            HOT.BLL.Store sBLL = new HOT.BLL.Store();
+
+            sModel.UserId = HOT.BLL.User.GetLoginUser();
+            sModel.ZoneId = new Guid(this.Request.QueryString["ZoneId"]);
+            sBLL.Add(sModel);
+            HOT.Common.MessageBox.Show(this.Page," ’≤ÿ≥…π¶");
+        }
+
+
     }
 }
