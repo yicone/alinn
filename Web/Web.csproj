@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="AspNetPager, Version=7.0.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\AspNetPager.dll</HintPath>
@@ -169,13 +173,6 @@
     </Compile>
     <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Member\Ad\AdList.aspx.cs">
-      <DependentUpon>AdList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Member\Ad\AdList.aspx.designer.cs">
-      <DependentUpon>AdList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Ad\BuyAd.aspx.cs">
       <DependentUpon>BuyAd.aspx</DependentUpon>
@@ -592,7 +589,6 @@
     <Content Include="JavaScript\jquery\ui.core.js" />
     <Content Include="JavaScript\jquery\ui.tabs.css" />
     <Content Include="JavaScript\jquery\ui.tabs.js" />
-    <Content Include="Member\Ad\AdList.aspx" />
     <Content Include="Member\Ad\BuyAd.aspx" />
     <Content Include="Member\Ad\EditeGroup.aspx" />
     <Content Include="CSS\ie_hacks.css" />
