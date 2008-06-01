@@ -29,11 +29,10 @@
     <form id="form1" runat="server">
     <uc3:Header ID="Header2" runat="server" />
     <div id="maincontent">
-        <div style="margin-left: auto; margin-right: auto">
-            <asp:ContentPlaceHolder ID="_mainContent" runat="server">
-                <%--此处由子母板页添加ContentPlaceHolder，或内容页添加内容 （“子母板页”，使用此页作为母板的母板页:) ）--%>
-            </asp:ContentPlaceHolder>
-        </div>
+    <div style="width: 915px; margin-left: auto; margin-right: auto; margin-top:50px">
+        <asp:ContentPlaceHolder ID="_mainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
     </div>
     <uc2:Footer ID="Footer2" runat="server" />
     <asp:ContentPlaceHolder ID="_scriptContent" runat="server">

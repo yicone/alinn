@@ -111,6 +111,7 @@
     <Compile Include="IZone.cs" />
     <Compile Include="IZoneClass.cs" />
     <Compile Include="IZoneSize.cs" />
+    <Compile Include="Store.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">

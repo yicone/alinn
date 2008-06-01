@@ -193,7 +193,16 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.INewsClass)objType;
         }
+        /// <summary>
+        /// 创建Store数据层接口
+        /// </summary>
+        public static HOT.IDAL.IStore CreateStore()
+        {
 
+            string CacheKey = path + ".Store";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IStore)objType;
+        }
 
 }
 }

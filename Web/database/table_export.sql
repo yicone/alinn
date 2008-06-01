@@ -596,6 +596,24 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻分类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_NewsClass'
 GO
+/****** Object:  Table [dbo].[AL_Store]    Script Date: 05/30/2008 13:42:09 By FZF ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AL_Store](
+	[StoreId] [uniqueidentifier] NOT NULL,
+	[ZoneId] [uniqueidentifier] NULL,
+	[UserId] [uniqueidentifier] NULL,
+	[Date] datetime default(getdate())
+PRIMARY KEY CLUSTERED 
+(
+	[StoreId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'广告位收藏表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Store'
+GO
 /****** Object:  Trigger [CheckOrder]    Script Date: 05/23/2008 13:42:11 ******/
 SET ANSI_NULLS ON
 GO
