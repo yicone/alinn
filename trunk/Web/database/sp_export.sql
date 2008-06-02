@@ -1180,6 +1180,29 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_GetList]
 	OrderId,OrderName,UserId,AdId,ZoneId,StartDate,EndDate,AuditState,PerPoint,EverydayPrice,Price,Payment,CreateDate
 	 FROM AL_Order
 GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetListWhere]    Script Date: 06/03/2008 12:40:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-4-24 15:29:37
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Order_GetListWhere]
+@strWhere nvarchar(2000)
+ AS 
+ declare @sql varchar(5000)
+ set @sql='
+	SELECT 
+	AL_Order.OrderId,AL_Order.OrderName,AL_Order.UserId,AL_Order.AdId,AL_Order.ZoneId,AL_Order.StartDate,AL_Order.EndDate,AL_Order.AuditState,AL_Order.PerPoint,AL_Order.EverydayPrice,AL_Order.Price,AL_Order.Payment,AL_Order.CreateDate
+	
+	 FROM AL_Order
+	 where AL_Order.AuditState=1 And AL_Order.Payment=1 '+@strWhere
+	 exec(@sql)
+GO
 /****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_ADD]    Script Date: 05/23/2008 12:40:12 ******/
 SET ANSI_NULLS ON
 GO

@@ -155,6 +155,10 @@ namespace HOT.BLL
             catch (Exception ex)
             {
                 //–¥»Î»’÷æ
+                System.IO.StreamWriter sw = new System.IO.StreamWriter("c:/debug.txt");
+
+                sw.WriteLine(ex.Message);
+                sw.Close();
             }
         }
 

@@ -174,6 +174,13 @@
     <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Order\OrderManager.aspx.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Order\OrderManager.aspx.designer.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Store\MyStore.aspx.cs">
       <DependentUpon>MyStore.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -616,6 +623,7 @@
     <Content Include="JavaScript\jquery\ui.tabs.css" />
     <Content Include="JavaScript\jquery\ui.tabs.js" />
     <Content Include="JavaScript\TextZoneStyle.js" />
+    <Content Include="Member\Order\OrderManager.aspx" />
     <Content Include="Member\Store\MyStore.aspx" />
     <Content Include="Public\AdList.aspx" />
     <Content Include="Member\Ad\BuyAd.aspx" />
