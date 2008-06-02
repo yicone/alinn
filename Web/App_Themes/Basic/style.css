@@ -13,9 +13,9 @@ table{text-align:left; border:solid 0px #669999;}
 #logo{width:262px; height:60px; background-image:url(images/logo.jpg); margin-left:0px; float:left;}
 #logo a {display:block; height:42px; margin:10px 0pt 0pt 1px; width:291px; }
 #topright{ width:762px;height:60px; background-color:#FFFFFF; margin-left:0px; float:left;}
-#login{width:600px; height:32px; float:right; margin-left:30px;}
-#login .login{height:20px; width:150px; float:left;margin-left:50px; margin-top:5px; text-align:left;}
-#login .profile{height:20px; width:400px;float:left;margin-left:0px; margin-top:5px;}
+#login{width:700px; height:32px; float:right; margin-left:30px;}
+#login .login{height:20px; width:250px; float:left;margin-left:50px; margin-top:5px; text-align:left;}
+#login .profile{height:20px; width:300px;float:left;margin-left:0px; margin-top:5px;}
 #login .profile ul{float:left; margin-left:20px;}
 #login .profile ul li{float:left; width:75px; background-color:#FFFFCC;}
 #menu{ width:500px; height:28px; float:left;}

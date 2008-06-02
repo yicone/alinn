@@ -261,19 +261,16 @@ namespace HOT.SQLServerDAL
 
         /// <summary>
         /// 获得数据列表
+        /// powered by FZF
         /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>dataset</returns>
         public DataSet GetList(string strWhere)
         {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select OrderId,OrderName,UserId,AdId,ZoneId,StartDate,EndDate,AuditState,PerPoint,EverydayPrice,Price,Payment,CreateDate ");
-            strSql.Append(" FROM AL_Order ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            return DbHelperSQL.Query(strSql.ToString());
+            SqlParameter[] parameters = { new SqlParameter("@strWhere", SqlDbType.NVarChar, 3000) };
+            parameters[0].Value = strWhere;
+            return DbHelperSQL.RunProcedure("UP_AL_Order_GetListWhere", parameters, "ds");
         }
-
         /*
         /// <summary>
         /// 分页获取数据列表

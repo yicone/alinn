@@ -8,36 +8,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.Controls {
+namespace Web.Member.Order {
     
     
-    public partial class Header {
+    public partial class OrderManger {
         
         /// <summary>
-        /// labNickName control.
+        /// btnTimeAd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labNickName;
+        protected global::System.Web.UI.WebControls.Button btnTimeAd;
         
         /// <summary>
-        /// hlLogin control.
+        /// btnPointAd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlLogin;
+        protected global::System.Web.UI.WebControls.Button btnPointAd;
         
         /// <summary>
-        /// lbRegister control.
+        /// mvOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbRegister;
+        protected global::System.Web.UI.WebControls.MultiView mvOrder;
+        
+        /// <summary>
+        /// View1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View1;
+        
+        /// <summary>
+        /// gvTimeOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvTimeOrder;
     }
 }

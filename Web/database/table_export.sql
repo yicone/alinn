@@ -614,6 +614,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'广告位收藏表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Store'
 GO
+
 /****** Object:  Trigger [CheckOrder]    Script Date: 05/23/2008 13:42:11 ******/
 SET ANSI_NULLS ON
 GO

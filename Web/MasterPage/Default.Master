@@ -218,7 +218,7 @@ oFlash1.write("flash");
 
                     <!--精品推荐 最新广告位-->
                     <!--精品推荐-->
-                    <div style="background: url(images/index/jptj_pic_left.jpg) no-repeat; float: left;
+                    <div style="float: left;
                         width: 94px; padding-top: 10px; height: 162px; border-left: #b1dceb 1px solid;
                         border-top: #b1dceb 1px solid; border-bottom: #b1dceb 1px solid; margin-top: 2px;
                         margin-left: 2px;">

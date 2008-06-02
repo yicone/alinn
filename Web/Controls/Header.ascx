@@ -7,7 +7,8 @@
         <div id="topright">
             <div id="login">
                 <div class="login">
-                    欢迎您！
+                    欢迎您！<asp:Label ID="labNickName" runat="server"></asp:Label>
+                    
                     <asp:HyperLink ID="hlLogin" runat="server" >[登录]</asp:HyperLink>或
                     <asp:LinkButton ID="lbRegister" runat="server" OnClick="LinkButton1_Click">[注册]</asp:LinkButton>
                 </div>
