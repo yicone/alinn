@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
 
     <script type="text/javascript" src="/JavaScript/jquery.js"></script>
-
+    <link rel="Stylesheet" type="text/css" href="http://static.alimama.com/css/instance/module/sell.css" />
     <style type="text/css">
         p.group-cb
         {
@@ -20,7 +20,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <div class="content" style="margin: 20px auto; width: 950px;">
+    <div class="content" style="margin: 20px auto; width: 950px;text-align:left">
         <div class="sellbox">
             <div class="form-section2">
                 <h3>
@@ -427,7 +427,7 @@
         		
 		        var zoneId;
 		        $.ajax({
-			        url: "/Public/ZoneInfoSaver.aspx",
+			        url: "/Member/Zone/ZoneInfoSaver.aspx",
 			        type: "POST",
 			        data: kvp,
 			        async: false,

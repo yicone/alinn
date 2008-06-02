@@ -47,20 +47,20 @@ namespace Web
 
                 #region MyRegion
                 Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
-                string[] hiddenInputIds = new string[] { 
-                        "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
-                        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
-                        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
+
+                HtmlInputHidden[] hiddens = new HtmlInputHidden[] { hdn_zonename, hdn_sizeid, hdn_zonesize, hdn_mediatype, hdn_transtype,
+                            hdn_weekprice, hdn_infirstpage, hdn_needauditing, hdn_zonedesp, hdn_classids,
+                            hdn_keywords, hdn_allowadultad, hdn_recommendweekprice, hdn_siteid };
+                InitHiddenParamDict(hiddens, dict);
 
                 string[] dbFields = new string[] { 
                         "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
                         "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
                         "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
 
-                Debug.Assert(hiddenInputIds.Length == dbFields.Length); 
-                #endregion
+                Debug.Assert(hiddens.Length == dbFields.Length);
 
-                InitHiddenParamDict(hiddenInputIds, dict);
+                #endregion
 
                 if (lastPageUrl.Contains("zone.aspx"))
                 {
@@ -121,9 +121,9 @@ namespace Web
                         SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);  
                         while (sdr.Read())
                         {
-                            for (int i = 0; i < hiddenInputIds.Length; i++)
+                            for (int i = 0; i < hiddens.Length; i++)
                             {
-                                string id = hiddenInputIds[i];
+                                string id = hiddens[i].ClientID;
                                 string dbFieldName = dbFields[i];
 
                                 dict[id].Value = sdr[dbFieldName].ToString();
@@ -212,15 +212,11 @@ namespace Web
             return categories;
         }
 
-        private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
+        private void InitHiddenParamDict(HtmlInputHidden[] hiddens, Dictionary<string, HtmlInputHidden> dict)
         {
-            Control contentPlaceHolder = this.Master.FindControl("_mainContent");
-
-            foreach (string id in hiddenInputIds)
+            foreach (HtmlInputHidden hdn in hiddens)
             {
-                Debug.Assert(contentPlaceHolder.FindControl(id) != null, id + "尚不存在于页面中！");
-
-                dict.Add(id, contentPlaceHolder.FindControl(id) as HtmlInputHidden);
+                dict.Add(hdn.ClientID, hdn);
             }
         }
     }

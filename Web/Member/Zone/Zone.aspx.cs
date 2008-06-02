@@ -44,26 +44,28 @@ namespace Web
                     Response.Redirect("/Member/Zone/SiteManager.aspx", true); 
                 #endregion
 
-                string lastPageUrl = Request.UrlReferrer.AbsolutePath.ToLower();
+                string lowerLastPageUrl = Request.UrlReferrer.AbsolutePath.ToLower();
 
                 #region MyRegion
                 Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
-                string[] hiddenInputIds = new string[] { 
-                        "hdn_zonename", "hdn_sizeid", "hdn_zonesize", "hdn_mediatype", "hdn_transtype", 
-                        "hdn_weekprice", "hdn_infirstpage", "hdn_needauditing", "hdn_zonedesp", "hdn_classids", 
-                        "hdn_keywords", "hdn_allowadultad", "hdn_recommendweekprice","hdn_siteid" };
+
+                HtmlInputHidden[] hiddens = new HtmlInputHidden[] { hdn_zonename, hdn_sizeid, hdn_zonesize, hdn_mediatype, hdn_transtype,
+                            hdn_weekprice, hdn_infirstpage, hdn_needauditing, hdn_zonedesp, hdn_classids,
+                            hdn_keywords, hdn_allowadultad, hdn_recommendweekprice, hdn_siteid }; 
+                InitHiddenParamDict(hiddens, dict);
 
                 string[] dbFields = new string[] { 
                         "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
                         "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
                         "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
 
-                Debug.Assert(hiddenInputIds.Length == dbFields.Length); 
+                Debug.Assert(hiddens.Length == dbFields.Length); 
+
                 #endregion
 
-                InitHiddenParamDict(hiddenInputIds, dict);
+                
 
-                if (lastPageUrl.Contains("zonecategory.aspx"))
+                if (lowerLastPageUrl.Contains("zonecategory.aspx"))
                 {
                     //修改未添加到数据库的Zone基本信息
                     Debug.Assert(hdn_dbaction.Value == "new");
@@ -84,7 +86,7 @@ namespace Web
                     }
                     #endregion
                 }
-                else if (lastPageUrl.Contains("zoneview.aspx"))
+                else if (lowerLastPageUrl.Contains("zoneview.aspx"))
                 {
                     hdn_dbaction.Value = "update";
                     //修改Zone基本信息
@@ -98,9 +100,9 @@ namespace Web
                         SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);
                         while (sdr.Read())
                         {
-                            for (int i = 0; i < hiddenInputIds.Length; i++)
+                            for (int i = 0; i < hiddens.Length; i++)
                             {
-                                string id = hiddenInputIds[i];
+                                string id = hiddens[i].ClientID;
                                 string dbFieldName = dbFields[i];
 
                                 dict[id].Value = sdr[dbFieldName].ToString();
@@ -108,7 +110,7 @@ namespace Web
                         }
                     }//end if
                 }//end if
-                else if (lastPageUrl.Contains("sitemanager.aspx"))
+                else if (lowerLastPageUrl.Contains("sitemanager.aspx"))
                 {
                     //新增广告位
                     Debug.Assert(Request.QueryString["action"] == "new");
@@ -125,15 +127,11 @@ namespace Web
             }
         }
 
-        private void InitHiddenParamDict(string[] hiddenInputIds, Dictionary<string, HtmlInputHidden> dict)
+        private void InitHiddenParamDict(HtmlInputHidden[] hiddens, Dictionary<string, HtmlInputHidden> dict)
         {
-            Control contentPlaceHolder = this.Master.FindControl("_mainContent");
-            
-            foreach (string id in hiddenInputIds)
+            foreach (HtmlInputHidden hdn in hiddens)
             {
-                Debug.Assert(contentPlaceHolder.FindControl(id) != null, id + "尚不存在于页面中！");
-
-                dict.Add(id, contentPlaceHolder.FindControl(id) as HtmlInputHidden);
+                dict.Add(hdn.ClientID, hdn);
             }
         }
     }
