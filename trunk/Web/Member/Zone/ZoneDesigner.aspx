@@ -233,7 +233,7 @@
 		                dbaction: "update"
 		            }
             		
-		            $.post("/Public/ZoneInfoSaver.aspx", kvp, function(result){
+		            $.post("/Member/Zone/ZoneInfoSaver.aspx", kvp, function(result){
 			            alert(result);
 		            })
 		            

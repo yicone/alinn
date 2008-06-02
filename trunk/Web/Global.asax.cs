@@ -265,6 +265,7 @@ namespace HOT.Web
 		{
 			#region 保存错误日志
             Exception ex = Server.GetLastError();
+
             bool LogInFile = bool.Parse(ConfigurationManager.AppSettings.Get("LogInFile"));
             //bool LogInDB=bool.Parse(ConfigurationManager.AppSettings.Get("LogInDB"));
             //string LogLastDays = ConfigurationManager.AppSettings.Get("LogLastDays");
@@ -280,12 +281,20 @@ namespace HOT.Web
                 errmsg = ex.Message;
                 Particular = ex.StackTrace;
             }
+
+            if (ex is HttpException && ex.Message.Contains("文件不存在"))
+            {
+                HttpRequest request = ((HttpApplication)sender).Context.Request;
+                string path = request.PhysicalPath;
+                errmsg += string.Format("{0}不存在\r\n", path);
+            }
+
             if (LogInFile)
             {
                 string filename = Server.MapPath("~/ErrorMessage.txt");
                 string strTime = DateTime.Now.ToString();
                 StreamWriter sw = new StreamWriter(filename, true);
-                sw.WriteLine(strTime + "：" + errmsg + Particular);
+                sw.WriteLine(strTime + "：" + errmsg + "\r\n" +  Particular);
                 sw.Close();
             }			
             //			if(LogInDB)

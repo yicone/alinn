@@ -185,7 +185,7 @@
         		
 		var zoneId;
 		$.ajax({
-		    url: "/Public/ZoneInfoSaver.aspx",
+		    url: "/Member/Zone/ZoneInfoSaver.aspx",
 		    type: "POST",
 		    data: kvp,
 		    async: false,
@@ -194,7 +194,7 @@
 		    }
 		});
         
-		alert(zoneId);
+//		alert(zoneId);
 		//如果添加/修改成功
         document.forms[0].submit();
         return false;
