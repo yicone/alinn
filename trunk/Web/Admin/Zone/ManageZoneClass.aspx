@@ -46,7 +46,8 @@
             
                             
                             
-                            SelectCommand="SELECT * FROM [AL_ZoneClass] WHERE ([ParentId] &lt;&gt; @ParentId) ORDER BY [ClassId]">
+                            
+                            SelectCommand="SELECT ClassId, ClassName, ParentId FROM AL_ZoneClass WHERE (ParentId = @ParentId) ORDER BY ClassId">
                             <SelectParameters>
                                 <asp:Parameter DefaultValue="0" Name="ParentId" 
                     Type="Int32" />
