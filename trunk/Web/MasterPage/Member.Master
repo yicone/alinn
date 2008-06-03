@@ -34,7 +34,7 @@
                     <asp:MenuItem NavigateUrl="/Member/Zone/SiteManager.aspx" Text="广告位管理" Value="广告位管理">
                     </asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="收入账户" Value="收入账户"></asp:MenuItem>
-                    <asp:MenuItem Enabled="False" Text="交易管理" Value="交易管理"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Zone/OrderViewer.aspx" Text="交易管理" Value="交易管理"></asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="效果报表" Value="效果报表"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="用户信息" Value="用户信息">
