@@ -15,10 +15,12 @@ namespace Web.Member.Order
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string where = " And UserId='" + HOT.BLL.User.GetLoginUser().ToString() + "'";
+            string where = " And UserId='" + HOT.BLL.User.GetLoginUser().ToString() + "'" + "And AL_Order.PerPoint is null" + getTimeWhere();
                 gvTimeOrderDateBind(where);
-                this.mvOrder.ActiveViewIndex = 0;
-            
+                if (!IsPostBack)
+                {
+                    this.mvOrder.ActiveViewIndex = 0;
+                }
         }
         protected void gvTimeOrderDateBind(string strWhere)
         {
@@ -37,6 +39,36 @@ namespace Web.Member.Order
         protected void btnPointAd_Click(object sender, EventArgs e)
         {
             this.mvOrder.ActiveViewIndex = 1;
+        }
+        protected string getTimeWhere()
+        {
+            string timeWhere = "";
+            double time = 0;
+            switch (this.ddlTime.SelectedValue)
+            { 
+                case "0":
+                    timeWhere = "";
+                    break;
+                case "1":
+                    time = -3;
+                    timeWhere = " And AL_Order.CreateDate>'" + DateTime.Now.AddDays(time).ToString()+"'";
+                    break;
+                case "2":
+                    time = -7;
+                    timeWhere = " And AL_Order.CreateDate>'" + DateTime.Now.AddDays(time).ToString() + "'";
+                    break;
+                case "3":
+                    timeWhere = " And AL_Order.CreateDate>'" + DateTime.Now.AddMonths(-1).ToString() + "'";
+                    break;
+                case "4":
+                    timeWhere = " And AL_Order.CreateDate>'" + DateTime.Now.AddMonths(-3).ToString() + "'";
+                    break;
+                default:
+                    timeWhere = "";
+                    break;
+
+            }
+            return timeWhere;
         }
     }
 }
