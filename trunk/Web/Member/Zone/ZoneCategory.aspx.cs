@@ -21,96 +21,41 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            #region MyRegion
-#if DEBUG
-            if (Request.QueryString["action"] == "update")
-                Debug.Assert(Session["ZoneId"] != null);
-            else
-                Debug.Assert(Session["ZoneId"] == null);
-#endif
-
-            if (Session["ZoneId"] == null && Request.QueryString["action"] == "update")
-                Response.Redirect("/Member/Zone/SiteManager.aspx");
-            #endregion
-
             if (!Page.IsPostBack)
             {
-                #region MyRegion
-                //如果是页面刷新，则断言会失败
-                Debug.Assert(Request.UrlReferrer != null, "ZoneCategory.aspx页面不允许直接访问！");
+                #region 输入参数检验
+                string lowerAction = Request.QueryString["action"];
+                object oZoneId = Session["ZoneId"]; //用于修改广告位
+                Uri requestUri = Request.UrlReferrer;
 
-                if (Request.UrlReferrer == null)
-                    Response.Redirect("/Member/Zone/SiteManager.aspx", true); 
+                if (string.IsNullOrEmpty(lowerAction) || (lowerAction != "update" && lowerAction != "new")
+                        || requestUri == null)
+                {
+
+                    Response.Redirect("/Member/Zone/SiteManager.aspx");
+                }
                 #endregion
 
-                string lastPageUrl = Request.UrlReferrer.AbsolutePath.ToLower();
-
-                #region MyRegion
-                Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
-
-                HtmlInputHidden[] hiddens = new HtmlInputHidden[] { hdn_zonename, hdn_sizeid, hdn_zonesize, hdn_mediatype, hdn_transtype,
-                            hdn_weekprice, hdn_infirstpage, hdn_needauditing, hdn_zonedesp, hdn_classids,
-                            hdn_keywords, hdn_allowadultad, hdn_recommendweekprice, hdn_siteid };
-                InitHiddenParamDict(hiddens, dict);
-
+                #region 初始化维护向导各页面状态的变量
                 string[] dbFields = new string[] { 
                         "ZoneName", "SizeId", "SizeCode", "MediaType", "TransType",
                         "WeekPrice", "InFirst", "NeedAuditing", "ZoneDesp", "ClassIds",
-                        "Keywords", "AllowAdultAd", "RecommendWeekPrice", "SiteId" };
+                        "Keywords", "AllowAdultAd", "RecommendWeekPrice" };
+                HtmlInputHidden[] hiddens = new HtmlInputHidden[] { hdn_zonename, hdn_sizeid, hdn_zonesize, hdn_mediatype, hdn_transtype,
+                            hdn_weekprice, hdn_infirstpage, hdn_needauditing, hdn_zonedesp, hdn_classids,
+                            hdn_keywords, hdn_allowadultad, hdn_recommendweekprice };
 
                 Debug.Assert(hiddens.Length == dbFields.Length);
-
+                Dictionary<string, HtmlInputHidden> dict = InitHiddenControlDict(hiddens); 
                 #endregion
 
-                if (lastPageUrl.Contains("zone.aspx"))
+
+                if (lowerAction == "update")
                 {
-                    Debug.Assert(Request.QueryString["action"] == "new");
-
-                    hdn_dbaction.Value = "new";
-
-                    #region 实现数据在向导各页面中的连贯和一致性
-                    //从ZoneCategory.aspx返回
-                    foreach (KeyValuePair<string, HtmlInputHidden> kvp in dict)
-                    {
-                        if (kvp.Value != null)
-                        {
-                            string paramValue = Request.Form[kvp.Key];
-                            if (!string.IsNullOrEmpty(paramValue))
-                            {
-                                //为隐藏控件赋值
-                                kvp.Value.Value = paramValue;
-                            }
-                        }
-                    }
-                    #endregion
-
-                    #region 恢复本页面的数据
-                    if (hdn_classids.Value != "")
-                    {
-                        SqlParameter[] parameters = {
-                        new SqlParameter("ClassIds", SqlDbType.NVarChar, 14)
-                    };
-                        parameters[0].Value = hdn_classids.Value;
-                        DataSet ds = HOT.DBUtility.DbHelperSQL.RunProcedure("UP_GetZoneClassListByClassIds", parameters, "ZoneClass");
-
-                        string text, value;
-                        foreach (DataRow dr in ds.Tables[0].Rows)
-                        {
-                            text = dr["ClassName"].ToString();
-                            value = dr["ClassId"].ToString();
-                            lbSelected.Items.Add(new ListItem(text, value));
-                        }
-                    }
-
-                    txtKeywords.Text = hdn_keywords.Value;
-                    #endregion
-                }
-                else if (lastPageUrl.Contains("zoneview.aspx"))
-                {
-                    Debug.Assert(Request.QueryString["action"] == "update");
+                    if (oZoneId == null)
+                        Response.Redirect("/Member/Zone/SiteManager.aspx");
 
                     hdn_dbaction.Value = "update";
-
                     //TODO:获取较少的数据（只需获取分类和关键字）!
                     Guid zoneId;
                     if (GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId))
@@ -118,7 +63,7 @@ namespace Web
                         SqlParameter[] parameters = {
                         new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier) };
                         parameters[0].Value = zoneId;
-                        SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);  
+                        SqlDataReader sdr = DbHelperSQL.RunProcedure("UP_GetZoneInfoExtForZone", parameters);
                         while (sdr.Read())
                         {
                             for (int i = 0; i < hiddens.Length; i++)
@@ -152,18 +97,52 @@ namespace Web
                     txtKeywords.Text = hdn_keywords.Value;
                     #endregion
                 }
-                else if (lastPageUrl.Contains("zonedesigner.aspx"))
-                {
-                    //情景：从ZoneDesigner.aspx点击浏览器的后退按钮可能进入此页面
-                    //IE7中点击后退时，默认将使用浏览器缓存；测试时可在ZoneDesigner.aspx页面中清空浏览器缓存，然后点击后退
-                    //TODO:firefox和IE6待测试
-                    Debug.Assert(false, "假设失败，应从数据库中重新读取数据并设置控件！");
-
-                    Debug.Assert(hdn_dbaction.Value == "update");
-                }
                 else
                 {
-                    Debug.Assert(false, "从未预计页面" +lastPageUrl + "请求本页面！");
+                    Debug.Assert(lowerAction == "new", "请检查此断言上部的参数验证是否完整！");
+
+                    string lowerLastPageUrl = requestUri.AbsolutePath.ToLower();
+                    if (lowerLastPageUrl.Contains("zone.aspx"))
+                    {
+                        hdn_dbaction.Value = "new";
+
+                        #region 实现数据在向导各页面中的连贯和一致性
+                        //从ZoneCategory.aspx返回
+                        foreach (KeyValuePair<string, HtmlInputHidden> kvp in dict)
+                        {
+                            string hiddenId = kvp.Key;
+                            HtmlInputHidden hidden = kvp.Value;
+                            string hiddenValue = Request.Form[kvp.Key];
+
+                            if (!string.IsNullOrEmpty(hiddenValue))
+                            {
+                                //为隐藏控件赋值
+                                hidden.Value = hiddenValue;
+                            }
+                        }
+                        #endregion
+
+                        #region 恢复本页面的数据
+                        if (hdn_classids.Value != "")
+                        {
+                            SqlParameter[] parameters = {
+                        new SqlParameter("ClassIds", SqlDbType.NVarChar, 14)
+                    };
+                            parameters[0].Value = hdn_classids.Value;
+                            DataSet ds = HOT.DBUtility.DbHelperSQL.RunProcedure("UP_GetZoneClassListByClassIds", parameters, "ZoneClass");
+
+                            string text, value;
+                            foreach (DataRow dr in ds.Tables[0].Rows)
+                            {
+                                text = dr["ClassName"].ToString();
+                                value = dr["ClassId"].ToString();
+                                lbSelected.Items.Add(new ListItem(text, value));
+                            }
+                        }
+
+                        txtKeywords.Text = hdn_keywords.Value;
+                        #endregion
+                    }
                 }
             }
         }
@@ -212,12 +191,16 @@ namespace Web
             return categories;
         }
 
-        private void InitHiddenParamDict(HtmlInputHidden[] hiddens, Dictionary<string, HtmlInputHidden> dict)
+        private Dictionary<string, HtmlInputHidden> InitHiddenControlDict(HtmlInputHidden[] hiddens)
         {
+            Dictionary<string, HtmlInputHidden> dict = new Dictionary<string, HtmlInputHidden>();
+
             foreach (HtmlInputHidden hdn in hiddens)
             {
                 dict.Add(hdn.ClientID, hdn);
             }
+
+            return dict;
         }
     }
 }

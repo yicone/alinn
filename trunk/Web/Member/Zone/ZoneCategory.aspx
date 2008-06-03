@@ -112,7 +112,6 @@
         </table>
     </div>
     <input id="hdn_dbaction" type="hidden" value="new" name="hdn_dbaction" runat="server" />
-    <input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />
     <input id="hdn_sitename" type="hidden" value="" name="hdn_sitename" runat="server" />
     <input id="hdn_siteurl" type="hidden" value="" name="hdn_siteurl" runat="server" />
     <input id="hdn_mediatype" type="hidden" value="" name="hdn_mediatype" runat="server" />
@@ -145,7 +144,7 @@
         //very important!
         $("#<%= hdn_classids.ClientID %>").val($("#<%= hdn_classids.ClientID %>").val());
 		
-        document.forms[0].action = "/Member/Zone/Zone.aspx";
+        document.forms[0].action = "/Member/Zone/Zone.aspx?action=new";
         document.forms[0].submit();
         return false;
     }
@@ -156,23 +155,22 @@
         $("#<%= hdn_classids.ClientID %>").val($("#<%= hdn_classids.ClientID %>").val());
         		
         if($("#<%= hdn_dbaction.ClientID %>").val() == "new"){
-		//保存广告位信息
-		var kvp = {
-		    zonename: $("#<%= hdn_zonename.ClientID %>").val(),
-		    siteid: $("#<%= hdn_siteid.ClientID %>").val(),
-		    mediatype: $("#<%= hdn_mediatype.ClientID %>").val(),
-		    infirstpage: $("#<%= hdn_infirstpage.ClientID %>").val(),
-		    sizeid: $("#<%= hdn_sizeid.ClientID %>").val(),
-		    transtype: $("#<%= hdn_transtype.ClientID %>").val(),
-		    classids: $("#<%= hdn_classids.ClientID %>").val(),
-		    keywords: $("#<%= hdn_keywords.ClientID %>").val(),
-		    needauditing: $("#<%= hdn_needauditing.ClientID %>").val(),
-		    zonedesp: $("#<%= hdn_zonedesp.ClientID %>").val(),
-		    weekprice: $("#<%= hdn_weekprice.ClientID %>").val(),
-		    dbaction: $("#<%= hdn_dbaction.ClientID %>").val()
-		}
-		
-		document.forms[0].action = "/Member/Zone/ZoneDesigner.aspx";
+		    //保存广告位信息
+		    var kvp = {
+		        zonename: $("#<%= hdn_zonename.ClientID %>").val(),
+		        mediatype: $("#<%= hdn_mediatype.ClientID %>").val(),
+		        infirstpage: $("#<%= hdn_infirstpage.ClientID %>").val(),
+		        sizeid: $("#<%= hdn_sizeid.ClientID %>").val(),
+		        transtype: $("#<%= hdn_transtype.ClientID %>").val(),
+		        classids: $("#<%= hdn_classids.ClientID %>").val(),
+		        keywords: $("#<%= hdn_keywords.ClientID %>").val(),
+		        needauditing: $("#<%= hdn_needauditing.ClientID %>").val(),
+		        zonedesp: $("#<%= hdn_zonedesp.ClientID %>").val(),
+		        weekprice: $("#<%= hdn_weekprice.ClientID %>").val(),
+		        dbaction: $("#<%= hdn_dbaction.ClientID %>").val()
+		    }
+    		
+		    document.forms[0].action = "/Member/Zone/ZoneDesigner.aspx";
 		} else {
 		   var kvp = {
 		       classids: $("#<%= hdn_classids.ClientID %>").val(),

@@ -632,6 +632,7 @@
     <Content Include="JavaScript\TextZoneStyle.js" />
     <Content Include="Member\Order\OrderManager.aspx" />
     <Content Include="Member\Store\MyStore.aspx" />
+    <Content Include="Member\Zone\images\bg_recommendlink.png" />
     <Content Include="Public\AdList.aspx" />
     <Content Include="Member\Ad\BuyAd.aspx" />
     <Content Include="Member\Ad\EditeGroup.aspx" />
@@ -709,7 +710,6 @@
     <Content Include="Member\Zone\images\bg_sidebar.jpg" />
     <Content Include="Member\Zone\images\btn_copycode_big.jpg" />
     <Content Include="Member\Zone\OrderViewer.aspx" />
-
     <Content Include="Member\Zone\MyRecommendation.aspx" />
     <Content Include="Member\Zone\RecommendationList.aspx" />
     <Content Include="Member\Zone\Site.aspx" />
