@@ -240,6 +240,13 @@
     <Compile Include="Login.ashx.cs">
       <DependentUpon>Login.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Zone\OrderViewer.aspx.cs">
+      <DependentUpon>OrderViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Zone\OrderViewer.aspx.designer.cs">
+      <DependentUpon>OrderViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Zone\MyRecommendation.aspx.cs">
       <DependentUpon>MyRecommendation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -701,6 +708,8 @@
     <Content Include="Member\Order\images\tenpay_button_02_s.gif" />
     <Content Include="Member\Zone\images\bg_sidebar.jpg" />
     <Content Include="Member\Zone\images\btn_copycode_big.jpg" />
+    <Content Include="Member\Zone\OrderViewer.aspx" />
+
     <Content Include="Member\Zone\MyRecommendation.aspx" />
     <Content Include="Member\Zone\RecommendationList.aspx" />
     <Content Include="Member\Zone\Site.aspx" />
