@@ -16,29 +16,38 @@ namespace Web.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.User.Identity.IsAuthenticated)
+            if (!Page.IsPostBack)
             {
-                Debug.Assert(Session["NickName"] != null);
-                //显示用户昵称
-                this.labNickName.Text = Session["NickName"].ToString();
-                //hlLogin.Text = Session["NickName"].ToString();
-                hlLogin.NavigateUrl = "/Member/User/UserInfo.aspx";
-                lbRegister.Text = "[注销]";
-                lbRegister.OnClientClick = null;
-            }
-            else
-            {
-                hlLogin.Text = "[登录]";
-                hlLogin.NavigateUrl = "/Public/Login.aspx";
-                lbRegister.Text = "[注册]";
-                lbRegister.PostBackUrl = "/Public/Register.aspx";
-                //lbRegister.OnClientClick = "javascript:location='/Public/Register.aspx';";
+                if (Page.User.Identity.IsAuthenticated)
+                {
+                    object oNickName = Session["NickName"];
+                    //显示用户昵称
+                    if (oNickName != null)
+                    {
+                        hlLogin.Text = oNickName.ToString();
+                    }
+                    else
+                    {
+                        hlLogin.Text = "丢失的昵称";
+                    }
+
+                    hlLogin.NavigateUrl = "/Member/User/UserInfo.aspx";
+                    lbRegister.Text = "注销";
+                    lbRegister.PostBackUrl = null;
+                }
+                else
+                {
+                    hlLogin.Text = "登录";
+                    hlLogin.NavigateUrl = "/Public/Login.aspx";
+                    lbRegister.Text = "注册";
+                    lbRegister.PostBackUrl = "/Public/Register.aspx";
+                }
             }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            if (lbRegister.Text == "[注销]")
+            if (lbRegister.Text == "注销")
             {
                 FormsAuthentication.SignOut();
                 if (Session["NickName"] != null)

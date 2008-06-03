@@ -190,7 +190,7 @@
         </div>
     </div>
     <input id="hdn_dbaction" type="hidden" value="new" name="hdn_dbaction" runat="server" />
-    <input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />
+    <%--<input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />--%>
     <input id="hdn_sitename" type="hidden" value="" name="hdn_sitename" runat="server" />
     <input id="hdn_siteurl" type="hidden" value="" name="hdn_siteurl" runat="server" />
     <input id="hdn_mediatype" type="hidden" value="" name="hdn_mediatype" runat="server" />
@@ -399,7 +399,7 @@
     
     function doCheckAndNext(){
         if($("#<%= hdn_dbaction.ClientID %>").val() == "new"){
-            document.forms[0].action ="/Member/Zone/ZoneCategory.aspx";
+            document.forms[0].action ="/Member/Zone/ZoneCategory.aspx?action=new";
             
             if (checkForm()) {
                 document.forms[0].submit();
@@ -412,7 +412,6 @@
                 //保存广告位信息
 		        var kvp = {
 			        zonename: $("#<%= hdn_zonename.ClientID %>").val(),
-			        siteid: $("#<%= hdn_siteid.ClientID %>").val(),
 			        mediatype: $("#<%= hdn_mediatype.ClientID %>").val(),
 			        infirstpage: $("#<%= hdn_infirstpage.ClientID %>").val(),
 			        sizeid: $("#<%= hdn_sizeid.ClientID %>").val(),

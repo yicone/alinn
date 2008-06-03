@@ -38,7 +38,9 @@ namespace Web
                 model = new HOT.Model.Zone();
 
                 model.UserId = HOT.BLL.User.GetLoginUser();
-                model.SiteId = new Guid(Request.Form["siteid"]);
+                object oSiteId = Session["SiteId"];
+                Debug.Assert(oSiteId != null, "没有从Session中得到SiteId，无法保存新增的广告位！");
+                model.SiteId = new Guid(oSiteId.ToString());
                 #region 添加广告位
                 model.ZoneName = Request.Form["zonename"];
                 model.MediaType = int.Parse(Request.Form["mediatype"]);
@@ -59,6 +61,7 @@ namespace Web
                 #endregion
                 zoneId = model.ZoneId;
                 //note!
+                Session.Remove("SiteId");
                 Session["ZoneId"] = zoneId.ToString();
 
                 Response.Write(zoneId.ToString());
@@ -66,7 +69,7 @@ namespace Web
             }
             else if (dbAction == "update")
             {
-                Debug.Assert(Session["ZoneId"] != null, "没有从Session中得到ZoneId！");
+                Debug.Assert(Session["ZoneId"] != null, "没有从Session中得到ZoneId，无法保存修改的广告位！");
 
                 bool correct = GuidHelper.TryParse(Session["ZoneId"].ToString(), out zoneId);
                 Debug.Assert(correct && zoneId != Guid.Empty, "来自Session的ZoneId格式异常！");

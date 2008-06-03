@@ -55,6 +55,7 @@ namespace Web.User
 
                     #endregion
 
+                    Debug.Assert(!string.IsNullOrEmpty(mUser.NickName), "出现用户昵称为空的错误数据！");
                     Session["NickName"] = mUser.NickName;
                     //Session["UserId"] = mUser.UserId;
                     //this.Response.Redirect("../zone/zone.aspx", true);
