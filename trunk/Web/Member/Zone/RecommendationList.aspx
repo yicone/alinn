@@ -14,56 +14,63 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Width="100%">
+    <div id="SampleDataList" style="text-align:left">
+        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" DataSourceID="SqlDataSource1"
+            Width="915px">
             <HeaderTemplate>
-                <tr>
-                    <td style="width: 120px; height: 32px;" class="center">
-                        网站名称
-                    </td>
-                    <td style="width: 120px" class="center">
-                        添加时间
-                    </td>
-                    <td style="width: 120px" class="center">
-                        我的提成
-                    </td>
-                    <td style="width: auto" class="center">
-                        网站地址
-                    </td>
-                    <td style="width: 120px" class="center">
-                        Alexa排名
-                    </td>
-                </tr>
+                <table>
+                    <tr>
+                        <td style="width: 120px; height: 32px;" class="center">
+                            网站名称
+                        </td>
+                        <td style="width: 120px" class="center">
+                            添加时间
+                        </td>
+                        <td style="width: 120px" class="center">
+                            我的提成
+                        </td>
+                        <td style="width: 435px" class="center">
+                            网站地址
+                        </td>
+                        <td style="width: 120px" class="center">
+                            Alexa排名
+                        </td>
+                    </tr>
+                </table>
             </HeaderTemplate>
             <ItemTemplate>
-                <tr>
-                    <td class="center">
-                        <a id="aSiteName" href='http://<%# Eval("SiteUrl") %>'>
-                            <%# Eval("SiteName") %></a>
-                    </td>
-                    <td class="center">
-                        <%# Eval("RegDate") %>
-                    </td>
-                    <td class="center">
-                        我的提成？
-                    </td>
-                    <td>
-                        <a id="a1" href='http://<%# Eval("SiteUrl") %>' target="_blank">
-                            <%# Eval("SiteUrl") %></a>
-                    </td>
-                    <td class="center">
-                        Alexa排名
-                    </td>
-                </tr>
+                <table>
+                    <tr>
+                        <td style="width: 120px;">
+                            <a id="aSiteName" href='http://<%# Eval("SiteUrl") %>'>
+                                <%# Eval("SiteName") %></a>
+                        </td>
+                        <td style="width: 120px" class="center">
+                            <%# Eval("RegDate") %>
+                        </td>
+                        <td style="width: 120px" class="center">
+                            我的提成？
+                        </td>
+                        <td style="width:435px" class="center">
+                            <a id="a1" href='http://<%# Eval("SiteUrl") %>' target="_blank">
+                                <%# Eval("SiteUrl") %></a>
+                        </td>
+                        <td style="width: 120px" class="center">
+                            Alexa排名
+                        </td>
+                    </tr>
+                </table>
             </ItemTemplate>
+            <FooterTemplate>
+            </FooterTemplate>
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-            SelectCommand="SELECT SiteName, SiteUrl, RegDate FROM Al_Site WHERE UserId = @UserId">
-            <SelectParameters>
-                <asp:Parameter Name="UserId" />
-            </SelectParameters>
-        </asp:SqlDataSource>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+        SelectCommand="SELECT SiteName, SiteUrl, RegDate FROM Al_Site WHERE UserId = @UserId">
+        <SelectParameters>
+            <asp:Parameter Name="UserId" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     </form>
 </body>
 </html>
