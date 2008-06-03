@@ -1,11 +1,11 @@
 --使用Microsoft SQL Server Management Studio Express	9.00.3042.00 "Generic Scripts..."创建
---上次导出时间：2008-5-23 12:48
+--注意：尽量使用上述工具全选导出，避免手动修改或添加变更部分！
 --上述内容请勿覆盖，导出新版本时注意修改导出时间！	yicone
 
 
 USE [Alinn]
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_Ad_GetModelByWhere]    Script Date: 05/23/2008 12:39:52 ******/
+/****** Object:  StoredProcedure [dbo].[MY_AL_Ad_GetModelByWhere]    Script Date: 06/03/2008 17:28:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23,7 +23,7 @@ DECLARE @sql nvarchar(1000)
 set @sql='SELECT Top 1 AdId,AdGroupId,IsText,Title,Content,Url,UrlText,SizeId,AuditState,Img FROM AL_Ad WHERE  '+@strWhere
 exec(@sql)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetEmploymentListByEmploymentIds]    Script Date: 05/23/2008 12:40:37 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetEmploymentListByEmploymentIds]    Script Date: 06/03/2008 17:29:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -40,7 +40,7 @@ BEGIN
 	exec('select * from AL_employment where employmentid in (' + @EmploymentIds + ')')
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Exists]    Script Date: 05/23/2008 12:40:22 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Exists]    Script Date: 06/03/2008 17:29:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +61,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_ADD]    Script Date: 05/23/2008 12:40:21 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_ADD]    Script Date: 06/03/2008 17:29:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -84,7 +84,7 @@ CREATE PROCEDURE [dbo].[UP_AL_SiteClass_ADD]
 	)
 	SET @ClassId = @@IDENTITY
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_Exists]    Script Date: 05/23/2008 12:40:25 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_Exists]    Script Date: 06/03/2008 17:29:07 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,7 +105,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Update]    Script Date: 05/23/2008 12:40:23 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Update]    Script Date: 06/03/2008 17:29:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -124,7 +124,7 @@ CREATE PROCEDURE [dbo].[UP_AL_SiteClass_Update]
 	[ClassName] = @ClassName
 	WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_ADD]    Script Date: 05/23/2008 12:40:25 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_ADD]    Script Date: 06/03/2008 17:29:07 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -165,7 +165,7 @@ CREATE PROCEDURE [dbo].[UP_AL_User_ADD]
 	@RoleID,@Email,@NickName,@UserPassword,@CompanyName,@CompanyAddress,@LinkMan,@Telephone,@Mobile,@QQ,@Msn,@Introducer,@LastLoginTime,@LastLoginIP,@LoginTimes,@IsLocked,@ActiveCode,@RegTime
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Delete]    Script Date: 05/23/2008 12:40:22 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_Delete]    Script Date: 06/03/2008 17:29:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -182,7 +182,7 @@ CREATE PROCEDURE [dbo].[UP_AL_SiteClass_Delete]
 	DELETE AL_SiteClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_GetModel]    Script Date: 05/23/2008 12:40:23 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_GetModel]    Script Date: 06/03/2008 17:29:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +201,7 @@ CREATE PROCEDURE [dbo].[UP_AL_SiteClass_GetModel]
 	 FROM AL_SiteClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_Delete]    Script Date: 05/23/2008 12:40:25 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_Delete]    Script Date: 06/03/2008 17:29:07 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -218,7 +218,7 @@ CREATE PROCEDURE [dbo].[UP_AL_User_Delete]
 	DELETE AL_User
 	 WHERE UserID=@UserID
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_GetList]    Script Date: 05/23/2008 12:40:22 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_SiteClass_GetList]    Script Date: 06/03/2008 17:29:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -235,7 +235,7 @@ CREATE PROCEDURE [dbo].[UP_AL_SiteClass_GetList]
 	ClassId,ClassName
 	 FROM AL_SiteClass
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_GetModel]    Script Date: 05/23/2008 12:40:26 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_GetModel]    Script Date: 06/03/2008 17:29:08 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -254,7 +254,7 @@ CREATE PROCEDURE [dbo].[UP_AL_User_GetModel]
 	 FROM AL_User
 	 WHERE UserID=@UserID
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_GetList]    Script Date: 05/23/2008 12:40:26 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_GetList]    Script Date: 06/03/2008 17:29:07 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -271,7 +271,7 @@ CREATE PROCEDURE [dbo].[UP_AL_User_GetList]
 	UserID,RoleID,Email,NickName,UserPassword,CompanyName,CompanyAddress,LinkMan,Telephone,Mobile,QQ,Msn,Introducer,LastLoginTime,LastLoginIP,LoginTimes,IsLocked,ActiveCode,RegTime
 	 FROM AL_User
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_AdGroupPage]    Script Date: 05/23/2008 12:39:53 ******/
+/****** Object:  StoredProcedure [dbo].[MY_AL_AdGroupPage]    Script Date: 06/03/2008 17:28:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -298,7 +298,7 @@ SELECT ROW_NUMBER() OVER (ORDER BY AdGroupId desc)AS Row, AdGroupId,GroupName,Ke
 SELECT * FROM temptbl where Row between @startIndex and @endIndex
 end
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Exists]    Script Date: 05/23/2008 12:40:08 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Exists]    Script Date: 06/03/2008 17:28:52 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -319,7 +319,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_ADD]    Script Date: 05/23/2008 12:40:07 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_ADD]    Script Date: 06/03/2008 17:28:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -342,7 +342,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Employment_ADD]
 	)
 	SET @EmploymentId = @@IDENTITY
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Update]    Script Date: 05/23/2008 12:40:09 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Update]    Script Date: 06/03/2008 17:28:52 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -361,7 +361,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Employment_Update]
 	[EmploymentName] = @EmploymentName
 	WHERE EmploymentId=@EmploymentId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Delete]    Script Date: 05/23/2008 12:40:08 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_Delete]    Script Date: 06/03/2008 17:28:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -378,7 +378,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Employment_Delete]
 	DELETE AL_Employment
 	 WHERE EmploymentId=@EmploymentId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_GetModel]    Script Date: 05/23/2008 12:40:09 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_GetModel]    Script Date: 06/03/2008 17:28:52 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -397,7 +397,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Employment_GetModel]
 	 FROM AL_Employment
 	 WHERE EmploymentId=@EmploymentId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_User_Update]    Script Date: 05/23/2008 12:40:28 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_User_Update]    Script Date: 06/03/2008 17:29:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -429,7 +429,7 @@ CREATE PROCEDURE [dbo].[UP_AL_User_Update]
 	[RoleID] = @RoleID,[Email] = @Email,[NickName] = @NickName,[UserPassword] = @UserPassword,[CompanyName] = @CompanyName,[CompanyAddress] = @CompanyAddress,[LinkMan] = @LinkMan,[Telephone] = @Telephone,[Mobile] = @Mobile,[QQ] = @QQ,[Msn] = @Msn,[Introducer] = @Introducer,[LastLoginTime] = @LastLoginTime,[LastLoginIP] = @LastLoginIP,[LoginTimes] = @LoginTimes,[IsLocked] = @IsLocked,[ActiveCode] = @ActiveCode,[RegTime] = @RegTime,[School]=@School,[Proxy]=@Proxy
 	WHERE email=@email
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_GetList]    Script Date: 05/23/2008 12:40:08 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Employment_GetList]    Script Date: 06/03/2008 17:28:52 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -446,7 +446,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Employment_GetList]
 	EmploymentId,EmploymentName
 	 FROM AL_Employment
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Exists]    Script Date: 05/23/2008 12:40:20 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Exists]    Script Date: 06/03/2008 17:29:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -467,7 +467,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Delete]    Script Date: 05/23/2008 12:40:19 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Delete]    Script Date: 06/03/2008 17:29:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -484,7 +484,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Site_Delete]
 	DELETE AL_Site
 	 WHERE SiteId=@SiteId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_GetList]    Script Date: 05/23/2008 12:40:20 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_GetList]    Script Date: 06/03/2008 17:29:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -501,7 +501,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Site_GetList]
 	SiteId,UserId,SiteName,SiteUrl,SiteClass,SexType,AgeType,Employments,Taste,Description,AuditState
 	 FROM AL_Site
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Exists]    Script Date: 05/23/2008 12:40:04 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Exists]    Script Date: 06/03/2008 17:28:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -522,7 +522,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_ADD]    Script Date: 05/23/2008 12:40:03 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_ADD]    Script Date: 06/03/2008 17:28:48 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -563,7 +563,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ads_ADD]
 	@AdId,@UserId,@SiteId,@IsWord,@IsImg,@Position,@Size,@Type,@Classes,@KeyWords,@TitleColor,@ContentColor,@UrlColor,@BorderColor,@BgColor,@Grounding,@BgImg,@Corner,@IsLocked,@NeedCheck,@Description
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Update]    Script Date: 05/23/2008 12:40:07 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Update]    Script Date: 06/03/2008 17:28:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -601,7 +601,30 @@ CREATE PROCEDURE [dbo].[UP_AL_Ads_Update]
 	[UserId] = @UserId,[SiteId] = @SiteId,[IsWord] = @IsWord,[IsImg] = @IsImg,[Position] = @Position,[Size] = @Size,[Type] = @Type,[Classes] = @Classes,[KeyWords] = @KeyWords,[TitleColor] = @TitleColor,[ContentColor] = @ContentColor,[UrlColor] = @UrlColor,[BorderColor] = @BorderColor,[BgColor] = @BgColor,[Grounding] = @Grounding,[BgImg] = @BgImg,[Corner] = @Corner,[IsLocked] = @IsLocked,[NeedCheck] = @NeedCheck,[Description] = @Description
 	WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Delete]    Script Date: 05/23/2008 12:40:04 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetListWhere]    Script Date: 06/03/2008 17:55:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-4-24 15:29:37
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Order_GetListWhere]
+@strWhere nvarchar(2000)
+ AS 
+ declare @sql varchar(5000)
+ set @sql='
+	SELECT 
+	AL_Order.OrderId,AL_Order.OrderName,AL_Order.UserId,AL_Order.AdId,AL_Order.ZoneId,AL_Order.StartDate,AL_Order.EndDate,AL_Order.AuditState,AL_Order.PerPoint,AL_Order.EverydayPrice,AL_Order.Price,AL_Order.Payment,AL_Order.CreateDate
+	
+	 FROM AL_Order
+	 where AL_Order.AuditState=1 And AL_Order.Payment=1 '+@strWhere
+	 exec(@sql)
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Delete]    Script Date: 06/03/2008 17:28:48 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -618,7 +641,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ads_Delete]
 	DELETE AL_Ads
 	 WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_GetModel]    Script Date: 05/23/2008 12:40:05 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_GetModel]    Script Date: 06/03/2008 17:28:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -637,7 +660,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ads_GetModel]
 	 FROM AL_Ads
 	 WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_GetList]    Script Date: 05/23/2008 12:40:04 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ads_GetList]    Script Date: 06/03/2008 17:28:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -654,7 +677,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ads_GetList]
 	AdId,UserId,SiteId,IsWord,IsImg,Position,Size,Type,Classes,KeyWords,TitleColor,ContentColor,UrlColor,BorderColor,BgColor,Grounding,BgImg,Corner,IsLocked,NeedCheck,Description
 	 FROM AL_Ads
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_DeleteWhere]    Script Date: 05/23/2008 12:39:55 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_DeleteWhere]    Script Date: 06/03/2008 17:28:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -673,7 +696,7 @@ declare @sql nvarchar(500)
 	 WHERE ' +@StrWhere
 exec(@sql)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_ZoneClass_GetZoneClassesByParentId]    Script Date: 05/23/2008 12:40:40 ******/
+/****** Object:  StoredProcedure [dbo].[UP_ZoneClass_GetZoneClassesByParentId]    Script Date: 06/03/2008 17:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -692,7 +715,7 @@ CREATE PROCEDURE [dbo].[UP_ZoneClass_GetZoneClassesByParentId]
 	 FROM AL_ZoneClass
 	 WHERE ParentId=@ParentId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetZoneClassesByParentId]    Script Date: 05/23/2008 12:40:35 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetZoneClassesByParentId]    Script Date: 06/03/2008 17:29:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -711,7 +734,7 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_GetZoneClassesByParentId]
 	 FROM AL_ZoneClass
 	 WHERE ParentId=@ParentId
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_ZonePage]    Script Date: 05/23/2008 12:39:54 ******/
+/****** Object:  StoredProcedure [dbo].[MY_AL_ZonePage]    Script Date: 06/03/2008 17:28:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -749,7 +772,7 @@ left join AL_ZoneSize on AL_ZoneSize.SizeId=AL_Zone.SizeId
 ' end'
 exec(@sql)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetListWhere]    Script Date: 05/23/2008 12:39:56 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetListWhere]    Script Date: 06/03/2008 17:28:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -767,7 +790,7 @@ DECLARE @sql nvarchar(1000)
 set @sql='SELECT AL_Ad.AdId,AL_Ad.AdGroupId,AL_Ad.IsText,AL_Ad.Title,AL_Ad.Content,AL_Ad.Url,AL_Ad.UrlText,AL_Ad.AuditState,AL_Ad.Img,AL_ZoneSize.SizeCode FROM AL_Ad Left join AL_ZoneSize on AL_ZoneSize.SizeId=AL_Ad.SizeId WHERE AL_Ad.AdGroupId='''+@strWhere +''''
 exec(@sql)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetListWhere]    Script Date: 05/23/2008 12:40:00 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetListWhere]    Script Date: 06/03/2008 17:28:46 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -785,7 +808,53 @@ DECLARE @sql nvarchar(1000)
 set @sql='SELECT AdGroupId,GroupName,UserId,Class,KeyWords FROM AL_AdGroup WHERE '+@strWhere
 exec(@sql)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetZoneClassListByClassIds]    Script Date: 05/23/2008 12:40:38 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_Exists]    Script Date: 06/03/2008 17:29:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_Exists]
+@StoreId uniqueidentifier
+AS
+	DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_Store WHERE StoreId=@StoreId 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_ADD]    Script Date: 06/03/2008 17:29:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：增加一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_ADD]
+@StoreId uniqueidentifier,
+@ZoneId uniqueidentifier,
+@UserId uniqueidentifier,
+@Date datetime
+
+ AS 
+ 	SET @StoreId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)
+	INSERT INTO AL_Store(
+	[StoreId],[ZoneId],[UserId]
+	)VALUES(
+	@StoreId,@ZoneId,@UserId
+	)
+GO
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneClassListByClassIds]    Script Date: 06/03/2008 17:29:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -802,7 +871,81 @@ BEGIN
 	exec('select * from AL_ZoneClass where classid in (' + @ClassIds + ')')
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForZoneView]    Script Date: 05/23/2008 12:40:39 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_Update]    Script Date: 06/03/2008 17:29:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：修改一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_Update]
+@StoreId uniqueidentifier,
+@ZoneId uniqueidentifier,
+@UserId uniqueidentifier,
+@Date datetime
+ AS 
+	UPDATE AL_Store SET 
+	[ZoneId] = @ZoneId,[UserId] = @UserId,[Date] = @Date
+	WHERE StoreId=@StoreId
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_Delete]    Script Date: 06/03/2008 17:29:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：删除一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_Delete]
+@StoreId uniqueidentifier
+ AS 
+	DELETE AL_Store
+	 WHERE StoreId=@StoreId
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_GetList]    Script Date: 06/03/2008 17:29:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_GetList]
+ AS 
+	SELECT 
+	StoreId,ZoneId,UserId,Date
+	 FROM AL_Store
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Store_GetModel]    Script Date: 06/03/2008 17:29:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：得到实体对象的详细信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-5-30 19:52:58
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_Store_GetModel]
+@StoreId uniqueidentifier
+ AS 
+	SELECT 
+	StoreId,ZoneId,UserId,Date
+	 FROM AL_Store
+	 WHERE StoreId=@StoreId
+GO
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForZoneView]    Script Date: 06/03/2008 17:29:18 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -842,7 +985,7 @@ where zoneid = @ZoneId
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_Ad_ExistsBySizeAndGroupId]    Script Date: 05/23/2008 12:39:51 ******/
+/****** Object:  StoredProcedure [dbo].[MY_AL_Ad_ExistsBySizeAndGroupId]    Script Date: 06/03/2008 17:28:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -860,7 +1003,7 @@ AS
 
 	SELECT top 1 AdId FROM AL_Ad WHERE AdGroupId=@adGroupId And SizeId=@sizeId And IsText=0
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Delete]    Script Date: 05/23/2008 12:39:55 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Delete]    Script Date: 06/03/2008 17:28:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -877,7 +1020,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ad_Delete]
 	DELETE AL_Ad
 	 WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_ADD]    Script Date: 05/23/2008 12:39:55 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_ADD]    Script Date: 06/03/2008 17:28:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -907,7 +1050,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ad_ADD]
 	@AdId,@AdGroupId,@IsText,@Title,@Content,@Url,@UrlText,@SizeId,@Img
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Update]    Script Date: 05/23/2008 12:39:58 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Update]    Script Date: 06/03/2008 17:28:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -937,7 +1080,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ad_Update]
 [Title] = @Title,[Content] = @Content,[Url] = @Url,[UrlText] = @UrlText,[SizeId]=@SizeId,AuditState=@AuditState,[Img] = @Img
 	WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Exists]    Script Date: 05/23/2008 12:39:56 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_Exists]    Script Date: 06/03/2008 17:28:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -958,7 +1101,55 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_ShowOrderByUserId]    Script Date: 05/23/2008 12:39:53 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_OrderViewer]    Script Date: 06/03/2008 17:29:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Dcyuan>
+-- Create date: <2008.5.23>
+-- Description:	<查看订单状况>
+-- =============================================
+CREATE PROCEDURE [dbo].[UP_AL_Zone_OrderViewer]
+	-- Add the parameters for the stored procedure here
+	@UserId uniqueidentifier,
+    @ZoneId uniqueidentifier,
+	@StartDate datetime,
+	@EndDate datetime
+AS
+
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	if @ZoneId = '00000000-0000-0000-0000-000000000000'
+		begin
+			SELECT     dbo.AL_Order.OrderId, dbo.AL_Order.CreateDate, dbo.AL_Order.StartDate, dbo.AL_Order.EndDate, dbo.AL_Order.AuditState, dbo.AL_Order.Price, 
+                      dbo.AL_User.NickName, dbo.AL_Ad.Title, dbo.AL_Site.SiteName, dbo.AL_Zone.ZoneName
+FROM         dbo.AL_User INNER JOIN
+                      dbo.AL_Site INNER JOIN
+                      dbo.AL_Zone INNER JOIN
+                      dbo.AL_Order ON dbo.AL_Zone.ZoneId = dbo.AL_Order.ZoneId ON dbo.AL_Site.SiteId = dbo.AL_Zone.SiteId INNER JOIN
+                      dbo.AL_Ad ON dbo.AL_Order.AdId = dbo.AL_Ad.AdId INNER JOIN
+                      dbo.AL_AdGroup ON dbo.AL_Ad.AdGroupId = dbo.AL_AdGroup.AdGroupId ON dbo.AL_User.UserID = dbo.AL_AdGroup.UserId
+Where dbo.AL_Order.UserId=@UserId
+		end
+    else
+		begin
+			SELECT     dbo.AL_Order.OrderId, dbo.AL_Order.CreateDate, dbo.AL_Order.StartDate, dbo.AL_Order.EndDate, dbo.AL_Order.AuditState, dbo.AL_Order.Price, 
+                      dbo.AL_User.NickName, dbo.AL_Ad.Title, dbo.AL_Site.SiteName, dbo.AL_Zone.ZoneName
+FROM         dbo.AL_User INNER JOIN
+                      dbo.AL_Site INNER JOIN
+                      dbo.AL_Zone INNER JOIN
+                      dbo.AL_Order ON dbo.AL_Zone.ZoneId = dbo.AL_Order.ZoneId ON dbo.AL_Site.SiteId = dbo.AL_Zone.SiteId INNER JOIN
+                      dbo.AL_Ad ON dbo.AL_Order.AdId = dbo.AL_Ad.AdId INNER JOIN
+                      dbo.AL_AdGroup ON dbo.AL_Ad.AdGroupId = dbo.AL_AdGroup.AdGroupId ON dbo.AL_User.UserID = dbo.AL_AdGroup.UserId
+WHERE    AL_Order.ZoneId=@ZoneId and AL_Order.StartDate>=@StartDate and AL_Order.EndDate <= @EndDate
+		end
+GO
+/****** Object:  StoredProcedure [dbo].[MY_AL_ShowOrderByUserId]    Script Date: 06/03/2008 17:28:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -970,7 +1161,7 @@ select top 1 AL_Order.OrderId,AL_Order.OrderName,AL_Order.UserId,AL_Order.AdId,A
 ,AL_Order.Payment,AL_Order.CreateDate,AL_Ad.Title
  from AL_Order left join AL_Ad on AL_Ad.AdId=AL_Order.AdId where AL_Order.UserId=@UserId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetModel]    Script Date: 05/23/2008 12:39:57 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetModel]    Script Date: 06/03/2008 17:28:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -989,7 +1180,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ad_GetModel]
 	 FROM AL_Ad
 	 WHERE AdId=@AdId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetList]    Script Date: 05/23/2008 12:39:56 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Ad_GetList]    Script Date: 06/03/2008 17:28:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1006,7 +1197,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Ad_GetList]
 	AdId,AdGroupId,IsText,Title,Content,Url,UrlText,AuditState,Img
 	 FROM AL_Ad
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetActiveOrder]    Script Date: 05/23/2008 12:40:37 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetActiveOrder]    Script Date: 06/03/2008 17:29:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1024,7 +1215,7 @@ BEGIN
 	select * from al_order where auditstate = 1 and zoneid = @zoneid
 END
 GO
-/****** Object:  StoredProcedure [dbo].[MY_AL_Order_GetNO]    Script Date: 05/23/2008 12:39:53 ******/
+/****** Object:  StoredProcedure [dbo].[MY_AL_Order_GetNO]    Script Date: 06/03/2008 17:28:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1044,7 +1235,7 @@ begin
 
 end
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Exists]    Script Date: 05/23/2008 12:40:15 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Exists]    Script Date: 06/03/2008 17:28:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1065,7 +1256,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_ADD]    Script Date: 05/23/2008 12:40:15 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_ADD]    Script Date: 06/03/2008 17:28:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1097,7 +1288,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_ADD]
 	@OrderId,@OrderName,@UserId,@AdId,@ZoneId,@StartDate,@EndDate,@AuditState,@PerPoint,@EverydayPrice,@Price
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Update]    Script Date: 05/23/2008 12:40:17 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Update]    Script Date: 06/03/2008 17:28:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1127,7 +1318,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_Update]
 	[OrderName] = @OrderName,[UserId] = @UserId,[AdId] = @AdId,[ZoneId] = @ZoneId,[StartDate] = @StartDate,[EndDate] = @EndDate,[AuditState] = @AuditState,[PerPoint] = @PerPoint,[EverydayPrice] = @EverydayPrice,[Price] = @Price,[Payment] = @Payment,[CreateDate] = @CreateDate
 	WHERE OrderId=@OrderId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Delete]    Script Date: 05/23/2008 12:40:15 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_Delete]    Script Date: 06/03/2008 17:28:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1144,7 +1335,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_Delete]
 	DELETE AL_Order
 	 WHERE OrderId=@OrderId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetModel]    Script Date: 05/23/2008 12:40:16 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetModel]    Script Date: 06/03/2008 17:28:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1163,7 +1354,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_GetModel]
 	 FROM AL_Order
 	 WHERE OrderId=@OrderId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetList]    Script Date: 05/23/2008 12:40:15 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetList]    Script Date: 06/03/2008 17:28:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1180,30 +1371,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_GetList]
 	OrderId,OrderName,UserId,AdId,ZoneId,StartDate,EndDate,AuditState,PerPoint,EverydayPrice,Price,Payment,CreateDate
 	 FROM AL_Order
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Order_GetListWhere]    Script Date: 06/03/2008 12:40:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-------------------------------------
---用途：查询记录信息 
---项目名称：Alinn
---说明：
---时间：2008-4-24 15:29:37
-------------------------------------
-CREATE PROCEDURE [dbo].[UP_AL_Order_GetListWhere]
-@strWhere nvarchar(2000)
- AS 
- declare @sql varchar(5000)
- set @sql='
-	SELECT 
-	AL_Order.OrderId,AL_Order.OrderName,AL_Order.UserId,AL_Order.AdId,AL_Order.ZoneId,AL_Order.StartDate,AL_Order.EndDate,AL_Order.AuditState,AL_Order.PerPoint,AL_Order.EverydayPrice,AL_Order.Price,AL_Order.Payment,AL_Order.CreateDate
-	
-	 FROM AL_Order
-	 where AL_Order.AuditState=1 And AL_Order.Payment=1 '+@strWhere
-	 exec(@sql)
-GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_ADD]    Script Date: 05/23/2008 12:40:12 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_ADD]    Script Date: 06/03/2008 17:28:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1226,7 +1394,7 @@ CREATE PROCEDURE [dbo].[UP_AL_NewsClass_ADD]
 	)
 	SET @ClassId = @@IDENTITY
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Update]    Script Date: 05/23/2008 12:40:14 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Update]    Script Date: 06/03/2008 17:28:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1245,7 +1413,7 @@ CREATE PROCEDURE [dbo].[UP_AL_NewsClass_Update]
 	[ClassName] = @ClassName
 	WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Delete]    Script Date: 05/23/2008 12:40:12 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Delete]    Script Date: 06/03/2008 17:28:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1262,7 +1430,7 @@ CREATE PROCEDURE [dbo].[UP_AL_NewsClass_Delete]
 	DELETE AL_NewsClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_GetModel]    Script Date: 05/23/2008 12:40:13 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_GetModel]    Script Date: 06/03/2008 17:28:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1281,7 +1449,7 @@ CREATE PROCEDURE [dbo].[UP_AL_NewsClass_GetModel]
 	 FROM AL_NewsClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_GetList]    Script Date: 05/23/2008 12:40:13 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_GetList]    Script Date: 06/03/2008 17:28:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1298,7 +1466,7 @@ CREATE PROCEDURE [dbo].[UP_AL_NewsClass_GetList]
 	ClassId,ClassName
 	 FROM AL_NewsClass
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Exists]    Script Date: 05/23/2008 12:40:13 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_NewsClass_Exists]    Script Date: 06/03/2008 17:28:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1319,7 +1487,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_ADD]    Script Date: 05/23/2008 12:40:30 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_ADD]    Script Date: 06/03/2008 17:29:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1362,7 +1530,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Zone_ADD]
 	Insert INTO AL_ZonePic(ZoneId,ZonePic)
 	values(@ZoneId,'images/nopic.jpg')
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_ADD]    Script Date: 05/23/2008 12:40:10 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_ADD]    Script Date: 06/03/2008 17:28:53 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1388,7 +1556,7 @@ CREATE PROCEDURE [dbo].[UP_AL_News_ADD]
 	)
 	SET @NewsId = @@IDENTITY
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_Exists]    Script Date: 05/23/2008 12:40:10 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_Exists]    Script Date: 06/03/2008 17:28:53 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1409,7 +1577,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_Delete]    Script Date: 05/23/2008 12:40:10 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_Delete]    Script Date: 06/03/2008 17:28:53 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1426,7 +1594,7 @@ CREATE PROCEDURE [dbo].[UP_AL_News_Delete]
 	DELETE AL_News
 	 WHERE NewsId=@NewsId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_Update]    Script Date: 05/23/2008 12:40:12 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_Update]    Script Date: 06/03/2008 17:28:54 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1448,7 +1616,7 @@ CREATE PROCEDURE [dbo].[UP_AL_News_Update]
 	[ClassId] = @ClassId,[Title] = @Title,[Content] = @Content,[CreateDate] = @CreateDate
 	WHERE NewsId=@NewsId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_GetModel]    Script Date: 05/23/2008 12:40:11 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_GetModel]    Script Date: 06/03/2008 17:28:54 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1467,7 +1635,7 @@ CREATE PROCEDURE [dbo].[UP_AL_News_GetModel]
 	 FROM AL_News
 	 WHERE NewsId=@NewsId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_News_GetList]    Script Date: 05/23/2008 12:40:11 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_News_GetList]    Script Date: 06/03/2008 17:28:54 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1484,7 +1652,7 @@ CREATE PROCEDURE [dbo].[UP_AL_News_GetList]
 	NewsId,ClassId,Title,Content,CreateDate
 	 FROM AL_News
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetIntroducerInfoExtForMyRecommendation]    Script Date: 05/23/2008 12:40:37 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetIntroducerInfoExtForMyRecommendation]    Script Date: 06/03/2008 17:29:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1524,7 +1692,7 @@ deallocate IntroducerId_cursor
 select * from #temp
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_GetModel]    Script Date: 05/23/2008 12:40:31 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_GetModel]    Script Date: 06/03/2008 17:29:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1544,7 +1712,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Zone_GetModel]
 	 FROM AL_Zone
 	 WHERE ZoneId=@ZoneId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForSiteManager]    Script Date: 05/23/2008 12:40:39 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForSiteManager]    Script Date: 06/03/2008 17:29:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1576,7 +1744,7 @@ join al_zonesize on al_zone.sizeid = al_zonesize.sizeid
 where al_zone.siteid = @SiteId
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Exists]    Script Date: 05/23/2008 12:40:31 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Exists]    Script Date: 06/03/2008 17:29:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1597,7 +1765,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Update]    Script Date: 05/23/2008 12:40:33 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Update]    Script Date: 06/03/2008 17:29:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1632,7 +1800,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Zone_Update]
 	[UserId] = @UserId,[ZoneName] = @ZoneName,[SiteId] = @SiteId,[MediaType] = @MediaType,[InFirst] = @InFirst,[SizeId] = @SizeId,[TransType] = @TransType,[ClassIds] = @ClassIds,[Keywords] = @Keywords,[NeedAuditing] = @NeedAuditing,[AllowAdultAd] = @AllowAdultAd,[Description] = @Description,[ZoneCode] = @ZoneCode,[WeekPrice] = @WeekPrice,[RecommendWeekPrice] = @RecommendWeekPrice,[ZoneState] = @ZoneState, [ZoneStyle] = @ZoneStyle
 	WHERE ZoneId=@ZoneId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Delete]    Script Date: 05/23/2008 12:40:30 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_Delete]    Script Date: 06/03/2008 17:29:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1649,7 +1817,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Zone_Delete]
 	DELETE AL_Zone
 	 WHERE ZoneId=@ZoneId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_GetList]    Script Date: 05/23/2008 12:40:31 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_GetList]    Script Date: 06/03/2008 17:29:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1666,7 +1834,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Zone_GetList]
 	ZoneId,UserId,ZoneName,SiteId,MediaType,InFirst,SizeId,TransType,ClassIds,Keywords,NeedAuditing,AllowAdultAd,Description,ZoneCode,WeekPrice,RecommendWeekPrice,ZoneState,ZoneStyle
 	 FROM AL_Zone
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetSiteInfoExtForSiteManager]    Script Date: 05/23/2008 12:40:38 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetSiteInfoExtForSiteManager]    Script Date: 06/03/2008 17:29:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1709,7 +1877,7 @@ BEGIN
 	select * from #temp
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetZoneStyle]    Script Date: 05/23/2008 12:40:40 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneStyle]    Script Date: 06/03/2008 17:29:18 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1727,7 +1895,7 @@ BEGIN
 	where zoneid = @zoneid
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForZone]    Script Date: 05/23/2008 12:40:39 ******/
+/****** Object:  StoredProcedure [dbo].[UP_GetZoneInfoExtForZone]    Script Date: 06/03/2008 17:29:18 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1758,7 +1926,7 @@ join al_zonesize on al_zone.sizeid = al_zonesize.sizeid
 where al_zone.zoneid = @ZoneId
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_CountClickTime]    Script Date: 05/23/2008 12:40:36 ******/
+/****** Object:  StoredProcedure [dbo].[UP_CountClickTime]    Script Date: 06/03/2008 17:29:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1790,7 +1958,7 @@ BEGIN
 		END 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_CountPV]    Script Date: 05/23/2008 12:40:37 ******/
+/****** Object:  StoredProcedure [dbo].[UP_CountPV]    Script Date: 06/03/2008 17:29:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1823,45 +1991,7 @@ BEGIN
 		END 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetList]    Script Date: 05/23/2008 12:40:00 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-------------------------------------
---用途：查询记录信息 
---项目名称：Alinn
---说明：
---时间：2008-4-18 11:02:49
-------------------------------------
-CREATE PROCEDURE [dbo].[UP_AL_AdGroup_GetList]
- AS 
-	SELECT 
-	AdGroupId,GroupName,UserId,Class,KeyWords
-	 FROM AL_AdGroup
-GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Exists]    Script Date: 05/23/2008 12:39:59 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-------------------------------------
---用途：是否已经存在 
---项目名称：Alinn
---说明：
---时间：2008-4-18 11:02:49
-------------------------------------
-CREATE PROCEDURE [dbo].[UP_AL_AdGroup_Exists]
-@AdGroupId uniqueidentifier
-AS
-	DECLARE @TempID int
-	SELECT @TempID = count(1) FROM AL_AdGroup WHERE AdGroupId=@AdGroupId 
-	IF @TempID = 0
-		RETURN 0
-	ELSE
-		RETURN 1
-GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_ADD]    Script Date: 05/23/2008 12:39:59 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_ADD]    Script Date: 06/03/2008 17:28:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1887,7 +2017,7 @@ CREATE PROCEDURE [dbo].[UP_AL_AdGroup_ADD]
 	@AdGroupId,@GroupName,@UserId,@Class,@KeyWords
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Update]    Script Date: 05/23/2008 12:40:01 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Update]    Script Date: 06/03/2008 17:28:46 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1909,7 +2039,7 @@ CREATE PROCEDURE [dbo].[UP_AL_AdGroup_Update]
 	[GroupName] = @GroupName,[UserId] = @UserId,[Class] = @Class,[KeyWords] = @KeyWords
 	WHERE AdGroupId=@AdGroupId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Delete]    Script Date: 05/23/2008 12:39:59 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Delete]    Script Date: 06/03/2008 17:28:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1926,7 +2056,7 @@ CREATE PROCEDURE [dbo].[UP_AL_AdGroup_Delete]
 	DELETE AL_AdGroup
 	 WHERE AdGroupId=@AdGroupId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetModel]    Script Date: 05/23/2008 12:40:00 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetModel]    Script Date: 06/03/2008 17:28:46 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1945,7 +2075,45 @@ CREATE PROCEDURE [dbo].[UP_AL_AdGroup_GetModel]
 	 FROM AL_AdGroup
 	 WHERE AdGroupId=@AdGroupId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_GetModel]    Script Date: 05/23/2008 12:40:20 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_Exists]    Script Date: 06/03/2008 17:28:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-4-18 11:02:49
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_AdGroup_Exists]
+@AdGroupId uniqueidentifier
+AS
+	DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_AdGroup WHERE AdGroupId=@AdGroupId 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_AdGroup_GetList]    Script Date: 06/03/2008 17:28:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-4-18 11:02:49
+------------------------------------
+CREATE PROCEDURE [dbo].[UP_AL_AdGroup_GetList]
+ AS 
+	SELECT 
+	AdGroupId,GroupName,UserId,Class,KeyWords
+	 FROM AL_AdGroup
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_GetModel]    Script Date: 06/03/2008 17:29:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1964,7 +2132,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Site_GetModel]
 	 FROM AL_Site
 	 WHERE SiteId=@SiteId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_ADD]    Script Date: 05/23/2008 12:40:19 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_ADD]    Script Date: 06/03/2008 17:29:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1999,7 +2167,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Site_ADD]
 	@SiteId,@UserId,@SiteName,@SiteUrl,@SiteClass,@SexType,@AgeType,@Employments,@Taste,@Description, @AuditState,@RegDate
 	)
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Update]    Script Date: 05/23/2008 12:40:21 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_Site_Update]    Script Date: 06/03/2008 17:29:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2027,7 +2195,7 @@ CREATE PROCEDURE [dbo].[UP_AL_Site_Update]
 	[UserId] = @UserId,[SiteName] = @SiteName,[SiteUrl] = @SiteUrl,[SiteClass] = @SiteClass,[SexType] = @SexType,[AgeType] = @AgeType,[Employments] = @Employments,[Taste] = @Taste,[Description] = @Description,[AuditState] = @AuditState
 	WHERE SiteId=@SiteId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Exists]    Script Date: 05/23/2008 12:40:34 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Exists]    Script Date: 06/03/2008 17:29:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2048,7 +2216,7 @@ AS
 	ELSE
 		RETURN 1
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_ADD]    Script Date: 05/23/2008 12:40:33 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_ADD]    Script Date: 06/03/2008 17:29:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2072,7 +2240,7 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_ADD]
 	)
 	SET @ClassId = @@IDENTITY
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Update]    Script Date: 05/23/2008 12:40:36 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Update]    Script Date: 06/03/2008 17:29:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2092,7 +2260,7 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_Update]
 	[ClassName] = @ClassName,[ParentId] = @ParentId
 	WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Delete]    Script Date: 05/23/2008 12:40:34 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_Delete]    Script Date: 06/03/2008 17:29:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2109,7 +2277,7 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_Delete]
 	DELETE AL_ZoneClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetModel]    Script Date: 05/23/2008 12:40:35 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetModel]    Script Date: 06/03/2008 17:29:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2128,7 +2296,7 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_GetModel]
 	 FROM AL_ZoneClass
 	 WHERE ClassId=@ClassId
 GO
-/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetList]    Script Date: 05/23/2008 12:40:34 ******/
+/****** Object:  StoredProcedure [dbo].[UP_AL_ZoneClass_GetList]    Script Date: 06/03/2008 17:29:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2145,129 +2313,3 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_GetList]
 	ClassId,ClassName,ParentId
 	 FROM AL_ZoneClass
 GO
-/******************************************************************
-* 表名：AL_Store
-* 时间：2008-5-30 19:52:58
-******************************************************************/
-
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Exists]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_Exists]
-GO
-------------------------------------
---用途：是否已经存在 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_Exists
-@StoreId uniqueidentifier
-AS
-	DECLARE @TempID int
-	SELECT @TempID = count(1) FROM AL_Store WHERE StoreId=@StoreId 
-	IF @TempID = 0
-		RETURN 0
-	ELSE
-		RETURN 1
-
-GO
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_ADD]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_ADD]
-GO
-------------------------------------
---用途：增加一条记录 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_ADD
-@StoreId uniqueidentifier,
-@ZoneId uniqueidentifier,
-@UserId uniqueidentifier,
-@Date datetime
-
- AS 
- 	SET @StoreId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)
-	INSERT INTO AL_Store(
-	[StoreId],[ZoneId],[UserId]
-	)VALUES(
-	@StoreId,@ZoneId,@UserId
-	)
-
-GO
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Update]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_Update]
-GO
-------------------------------------
---用途：修改一条记录 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_Update
-@StoreId uniqueidentifier,
-@ZoneId uniqueidentifier,
-@UserId uniqueidentifier,
-@Date datetime
- AS 
-	UPDATE AL_Store SET 
-	[ZoneId] = @ZoneId,[UserId] = @UserId,[Date] = @Date
-	WHERE StoreId=@StoreId 
-
-GO
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_Delete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_Delete]
-GO
-------------------------------------
---用途：删除一条记录 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_Delete
-@StoreId uniqueidentifier
- AS 
-	DELETE AL_Store
-	 WHERE StoreId=@StoreId 
-
-GO
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_GetModel]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_GetModel]
-GO
-------------------------------------
---用途：得到实体对象的详细信息 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_GetModel
-@StoreId uniqueidentifier
- AS 
-	SELECT 
-	StoreId,ZoneId,UserId,Date
-	 FROM AL_Store
-	 WHERE StoreId=@StoreId 
-
-GO
-
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Store_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].[UP_AL_Store_GetList]
-GO
-------------------------------------
---用途：查询记录信息 
---项目名称：Alinn
---说明：
---时间：2008-5-30 19:52:58
-------------------------------------
-CREATE PROCEDURE UP_AL_Store_GetList
- AS 
-	SELECT 
-	StoreId,ZoneId,UserId,Date
-	 FROM AL_Store
-
-GO
-

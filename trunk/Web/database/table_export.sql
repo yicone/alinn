@@ -1,11 +1,11 @@
 -- π”√Microsoft SQL Server Management Studio Express	9.00.3042.00 "Generic Scripts..."¥¥Ω®
---£®µº≥ˆ…Ë÷√∞¸∫¨¡À¥•∑¢∆˜£©
---…œ¥Œµº≥ˆ ±º‰£∫2008-5-23 13:36
+--£®µº≥ˆ…Ë÷√–Ë“™—°‘Ò∞¸∫¨¥•∑¢∆˜£©
+--◊¢“‚£∫æ°¡ø π”√…œ ˆπ§æﬂ»´—°µº≥ˆ£¨±‹√‚ ÷∂Ø–ﬁ∏ƒªÚÃÌº”±‰∏¸≤ø∑÷£°
 --…œ ˆƒ⁄»›«ÎŒ∏≤∏«£¨µº≥ˆ–¬∞Ê±æ ±◊¢“‚–ﬁ∏ƒµº≥ˆ ±º‰£°	yicone
 
 USE [Alinn]
 GO
-/****** Object:  Table [dbo].[AL_ZonePic]    Script Date: 05/23/2008 13:42:11 ******/
+/****** Object:  Table [dbo].[AL_ZonePic]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -25,7 +25,7 @@ SET ANSI_PADDING OFF
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª‘À––ΩÿÕº±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_ZonePic'
 GO
-/****** Object:  Table [dbo].[AL_News]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_News]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -44,7 +44,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'–¬Œ≈±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_News'
 GO
-/****** Object:  Table [dbo].[AL_User]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_User]    Script Date: 06/03/2008 18:06:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -115,7 +115,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'”√ªß◊¢≤· ±º‰' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'”√ªß±Ì£®“—º§ªÓ£©' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_User'
 GO
-/****** Object:  Table [dbo].[AL_Zone]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_Zone]    Script Date: 06/03/2008 18:06:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +171,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒªµƒÕ‚π€µƒ
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Zone'
 GO
-/****** Object:  Table [dbo].[AL_OrderReport]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_OrderReport]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -191,7 +191,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏Ê–ßπ˚±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_OrderReport'
 GO
-/****** Object:  Table [dbo].[AL_SitePic]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_SitePic]    Script Date: 06/03/2008 18:06:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -207,7 +207,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ¯’æΩÿÕº±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_SitePic'
 GO
-/****** Object:  Table [dbo].[AL_EmailInfo]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_EmailInfo]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,7 +231,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «∑ÒΩÙº±' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'” º˛œµÕ≥±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_EmailInfo'
 GO
-/****** Object:  Table [dbo].[AL_ZoneStat]    Script Date: 05/23/2008 13:42:11 ******/
+/****** Object:  Table [dbo].[AL_ZoneStat]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -250,7 +250,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª‘À––Õ≥º∆±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_ZoneStat'
 GO
-/****** Object:  Table [dbo].[AL_AdGroup]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_AdGroup]    Script Date: 06/03/2008 18:06:30 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,7 +277,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'πÿº¸◊÷' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏Ê◊È±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_AdGroup'
 GO
-/****** Object:  Table [dbo].[AL_Site]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_Site]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -337,7 +337,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’æµ„Ã·ΩªµΩœµÕ≥
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ¯’æ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Site'
 GO
-/****** Object:  Table [dbo].[AL_SiteClass]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_SiteClass]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -353,7 +353,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ¯’æ∑÷¿‡±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_SiteClass'
 GO
-/****** Object:  Table [dbo].[AL_Employment]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_Employment]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -369,7 +369,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'÷∞“µ∑÷≤º¿‡–Õ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Employment'
 GO
-/****** Object:  Table [dbo].[AL_ZoneSize]    Script Date: 05/23/2008 13:42:11 ******/
+/****** Object:  Table [dbo].[AL_ZoneSize]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -394,7 +394,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1£∫∫·∑˘ 2£∫∑«∫
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª≥ﬂ¥Á±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_ZoneSize'
 GO
-/****** Object:  Table [dbo].[AL_ZoneClass]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_ZoneClass]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -411,7 +411,25 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª∑÷¿‡±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_ZoneClass'
 GO
-/****** Object:  Table [dbo].[AL_AgeType]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_Store]    Script Date: 06/03/2008 18:06:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AL_Store](
+	[StoreId] [uniqueidentifier] NOT NULL,
+	[ZoneId] [uniqueidentifier] NULL,
+	[UserId] [uniqueidentifier] NULL,
+	[Date] [datetime] NULL DEFAULT (getdate()),
+PRIMARY KEY CLUSTERED 
+(
+	[StoreId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª ’≤ÿ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Store'
+GO
+/****** Object:  Table [dbo].[AL_AgeType]    Script Date: 06/03/2008 18:06:30 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -433,7 +451,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ƒÍ¡‰¿‡–Õ  0±Ì 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ƒÍ¡‰∑÷≤º¿‡–Õ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_AgeType'
 GO
-/****** Object:  Table [dbo].[AL_SexType]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_SexType]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -455,7 +473,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'–‘±¿‡–Õ£∫0±Ì 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'–‘±∑÷≤º¿‡–Õ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_SexType'
 GO
-/****** Object:  Table [dbo].[AL_UserTemp]    Script Date: 05/23/2008 13:42:10 ******/
+/****** Object:  Table [dbo].[AL_UserTemp]    Script Date: 06/03/2008 18:06:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -487,7 +505,7 @@ SET ANSI_PADDING OFF
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Œ¥º§ªÓ”√ªß±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_UserTemp'
 GO
-/****** Object:  Table [dbo].[AL_Ad]    Script Date: 05/23/2008 13:42:08 ******/
+/****** Object:  Table [dbo].[AL_Ad]    Script Date: 06/03/2008 18:06:30 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -529,7 +547,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õº∆¨µƒµÿ÷∑£®÷ª
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏Ê±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Ad'
 GO
-/****** Object:  Table [dbo].[AL_Order]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_Order]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -580,7 +598,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'∂©µ•Ã·Ωª ±º‰' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'∂©µ•±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order'
 GO
-/****** Object:  Table [dbo].[AL_NewsClass]    Script Date: 05/23/2008 13:42:09 ******/
+/****** Object:  Table [dbo].[AL_NewsClass]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -596,26 +614,7 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'–¬Œ≈∑÷¿‡±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_NewsClass'
 GO
-/****** Object:  Table [dbo].[AL_Store]    Script Date: 05/30/2008 13:42:09 By FZF ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[AL_Store](
-	[StoreId] [uniqueidentifier] NOT NULL,
-	[ZoneId] [uniqueidentifier] NULL,
-	[UserId] [uniqueidentifier] NULL,
-	[Date] datetime default(getdate())
-PRIMARY KEY CLUSTERED 
-(
-	[StoreId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'π„∏ÊŒª ’≤ÿ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Store'
-GO
-
-/****** Object:  Trigger [CheckOrder]    Script Date: 05/23/2008 13:42:11 ******/
+/****** Object:  Trigger [CheckOrder]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
