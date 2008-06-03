@@ -207,7 +207,7 @@ function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     sbJs.append('"; \n');
 	
 	sbJs.append('<\/script> \n');
-	sbJs.append('<script src="http://a.alinn.cn/App_Themes/inf.js" type=text/javascript> \n');
+	sbJs.append('<script src="http://www.aaaa0.com/JavaScript/inf.js" type=text/javascript> \n');
 	sbJs.append('<\/script>');
 	
 	$("#genjstxt").val(sbJs.toString());
