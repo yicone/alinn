@@ -56,5 +56,26 @@ namespace HOT.Common
                 return 28;
             }
         }
+        public static int GetDay(DateTime dateTime, int days)
+        {
+            int year = dateTime.Year;
+            int month = dateTime.Month;
+            int day = dateTime.Day;
+            int num=0;
+            int monthDaysCount=GetMonthDaysCount(year,month);
+            if(day+days>monthDaysCount)
+            {
+                num=day+days-monthDaysCount;
+            }
+            if (day + days < 0)
+            { 
+                num=GetMonthDaysCount(year,month-1)+day+days;
+            }
+            if(day+days>=0&&day+days<=monthDaysCount)
+            {
+                num = day + days;
+            }
+            return num;
+        }
     }
 }
