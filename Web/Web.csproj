@@ -195,6 +195,13 @@
     <Compile Include="Member\Store\MyStore.aspx.designer.cs">
       <DependentUpon>MyStore.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Zone\EffectReport.aspx.cs">
+      <DependentUpon>EffectReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Zone\EffectReport.aspx.designer.cs">
+      <DependentUpon>EffectReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\AdList.aspx.cs">
       <DependentUpon>AdList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -647,6 +654,7 @@
     <Content Include="JavaScript\TextZoneStyle.js" />
     <Content Include="Member\Order\OrderManager.aspx" />
     <Content Include="Member\Store\MyStore.aspx" />
+    <Content Include="Member\Zone\EffectReport.aspx" />
     <Content Include="Member\Zone\images\bg_recommendlink.png" />
     <Content Include="Public\AdList.aspx" />
     <Content Include="Member\Ad\BuyAd.aspx" />

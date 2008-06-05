@@ -11,31 +11,15 @@ using System.Web.UI.WebControls.WebParts;
 
 namespace Web.Member.Zone
 {
-    public partial class OrderViewer : System.Web.UI.Page
+    public partial class EffectReport : System.Web.UI.Page
     {
+        public static DateTime dt_today = DateTime.Today;
+        public static DateTime dt_lastmonthday = dt_today.AddMonths(-1);
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (!Page.IsPostBack)
-            {
-                //First initialize the page
-                //DataList1.DataBind();
-                //set the Date when first visit the page
-                DateTime dt_today = DateTime.Today;
-                DateTime dt_lastmonthday = dt_today.AddMonths(-1);
-                this.CalendarExtender2.SelectedDate = dt_today;
-                this.CalendarExtender1.SelectedDate = dt_lastmonthday;
-            }
-            else
-            {
-                //When post back\
-                DataList1.DataBind();
-            }
-        }
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-            //Creat a query about
+            this.CalendarExtender2.SelectedDate = dt_today;
+            this.CalendarExtender1.SelectedDate = dt_lastmonthday;
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -49,8 +33,8 @@ namespace Web.Member.Zone
             if (!Page.IsPostBack)
             {
                 e.Command.Parameters[1].Value = Guid.Empty;
-                e.Command.Parameters[2].Value = " ";
-                e.Command.Parameters[3].Value = " ";
+                e.Command.Parameters[2].Value = dt_lastmonthday.ToShortDateString();
+                e.Command.Parameters[3].Value = dt_today.ToShortDateString();
             }
             else
             {
@@ -58,6 +42,11 @@ namespace Web.Member.Zone
                 e.Command.Parameters[2].Value = this.TextBox1.Text;
                 e.Command.Parameters[3].Value = this.TextBox2.Text;
             }
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

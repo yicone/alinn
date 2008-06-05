@@ -9,10 +9,10 @@
 //------------------------------------------------------------------------------
 
 namespace Web.Member.Zone {
-
-
-    public partial class OrderViewer
-    {
+    
+    
+    public partial class EffectReport {
+        
         /// <summary>
         /// ScriptManager1 control.
         /// </summary>
