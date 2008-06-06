@@ -101,7 +101,7 @@ namespace Web.User
 
 
 
-            sb.Append("<table width=\"580\" border=\"0\" align=\"center\" cellpadding=\"2\" cellspacing=\"0\" style=\"font-size:12px;\"><tr><td height=\"10\"><a rel=\"nofollow\" target=\"_blank\" href=\"http://www.alinn.com/\"></a>广告天下邮件提醒!</td></tr></table>");
+            sb.Append("<table width=\"580\" border=\"0\" align=\"center\" cellpadding=\"2\" cellspacing=\"0\" style=\"font-size:12px;\"><tr><td height=\"10\"><a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com/\"></a>赢在广告邮件提醒!</td></tr></table>");
 
             sb.Append("<table width=\"580\" height=\"116\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border:0px;\">");
 
@@ -109,11 +109,11 @@ namespace Web.User
 
             sb.Append("<table width=\"100%\" border=\"0\" cellpadding=\"6\" cellspacing=\"0\" style=\"font-size:12px;line-height:180%;font-family:Arial, Helvetica, sans-serif;background:#FFFFFF;\">");
 
-            sb.Append("<tr><td bgcolor=\"#ffeacb\"><span style=\"font-size:14px;line-height:160%;\">亲爱的会员：<span style=\"color:#FF3300;\"></span>您好！<br />感谢您成功注册为广告天下会员！</span></td></tr>");
+            sb.Append("<tr><td bgcolor=\"#ffeacb\"><span style=\"font-size:14px;line-height:160%;\">亲爱的会员：<span style=\"color:#FF3300;\"></span>您好！<br />感谢您成功注册为赢在广告会员！</span></td></tr>");
 
             sb.AppendFormat("<tr><td><strong>您的登录名为：</strong>{0}<br><br>请<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com/public/success.aspx?email={0}&num={1}\">点击这里，立即激活</a>您的会员帐户。<br>如果邮件无法正常显示，<br>请点击以下链接激活：<a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com/public/success.aspx?userid={0}&num={1}\">http://www.aaaa0.com/public/success.aspx?userid={0}&num={1}</a><br><br /><strong>会员帐户激活后，您就可以：</strong><br>* 发布您网站的广告位，让您的网站轻松赢利！<br>* 自主投放网络广告，把您的产品、公司推广出去！<br /></td></tr>", email, num);
 
-            sb.Append("<tr><td height=\"80\" style=\"border-top:1px solid #CCCCCC;\"><span>广告天下——好产品，更需要好广告！ <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com\">http://www.aaaa0.com</a></span><br><span style=\"color:#FF0000;font-size:12px;\">提示: 此信是系统自动发出, 请不要直接&quot;回复&quot;本邮件, 系统看不懂您的回信：）</span></td></tr>");
+            sb.Append("<tr><td height=\"80\" style=\"border-top:1px solid #CCCCCC;\"><span>赢在广告——好产品，更需要好广告！ <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.aaaa0.com\">http://www.aaaa0.com</a></span><br><span style=\"color:#FF0000;font-size:12px;\">提示: 此信是系统自动发出, 请不要直接&quot;回复&quot;本邮件, 系统看不懂您的回信：）</span></td></tr>");
 
             sb.Append("</table></td></tr>");
 
