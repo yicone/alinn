@@ -84,7 +84,7 @@ function TextZone(zoneSize, layoutType){
                 this.maininnerDiv.html("<tr><td id='main_title_outer' class='t" + this.zoneSize + "' nowrap><div id='main_title'>" + title + "</div><div id='main_link_outer' class='l" + this.zoneSize + "'><div id='main_link'>" + link + "</div></div></td><td id='main_text_outer' class='d" + this.zoneSize + "'><div id='main_text'>" + text + "</div></td></tr>");
             }
             else {
-                this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>"+link+"/div></div></td></tr>");
+                this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>"+link+"</div></td></tr>");
             }
             //在构造完整的广告位之后，取得对应三个文字区域的JQuery对象
             this.maintitleDiv = $("#main_title");
