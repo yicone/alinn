@@ -174,13 +174,6 @@
     <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Calendar.ascx.cs">
-      <DependentUpon>Calendar.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\Calendar.ascx.designer.cs">
-      <DependentUpon>Calendar.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Member\Order\OrderManager.aspx.cs">
       <DependentUpon>OrderManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -500,13 +493,6 @@
     <Compile Include="Public\Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Public\text.aspx.cs">
-      <DependentUpon>text.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Public\text.aspx.designer.cs">
-      <DependentUpon>text.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
@@ -614,8 +600,8 @@
     <Content Include="App_Themes\Basic\images\webtoolsbg.gif" />
     <Content Include="App_Themes\Basic\Menu.css" />
     <Content Include="App_Themes\Basic\style.css" />
-    <Content Include="Controls\Calendar.ascx" />
     <Content Include="CSS\alinn.css" />
+    <Content Include="CSS\calander.css" />
     <Content Include="CSS\ie_hacks.css" />
     <Content Include="CSS\login.css" />
     <Content Include="CSS\myalinn.css" />
@@ -761,6 +747,9 @@
     <Content Include="Member\Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
     <Content Include="Public\GetPassWord.aspx" />
+    <Content Include="Public\images\calendar\blue_button_bg.jpg" />
+    <Content Include="Public\images\calendar\gray_button_bg.jpg" />
+    <Content Include="Public\images\calendar\red_button_bg.jpg" />
     <Content Include="Public\Login.aspx" />
     <Content Include="Member\MyAlinn.aspx" />
     <Content Include="Member\Order\OrderInfo.aspx" />
@@ -775,7 +764,6 @@
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
-    <Content Include="Public\text.aspx" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
     <None Include="database\test.sql" />
