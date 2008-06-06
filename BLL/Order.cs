@@ -108,7 +108,6 @@ namespace HOT.BLL
 		//{
 			//return dal.GetList(PageSize,PageIndex,strWhere);
 		//}
-
 		#endregion  成员方法
 	}
 }

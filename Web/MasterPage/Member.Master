@@ -23,8 +23,8 @@
             <Items>
                 <asp:MenuItem NavigateUrl="/Member/MyAlinn.aspx" Text="我的阿里奶奶" Value="我的阿里奶奶"></asp:MenuItem>
                 <asp:MenuItem Text="广告主" Value="广告主">
-                    <asp:MenuItem Enabled="False" Text="广告计划管理" Value="广告计划管理"></asp:MenuItem>
-                    <asp:MenuItem Text="消费账户" Value="消费账户"></asp:MenuItem>
+                    <asp:MenuItem  NavigateUrl="/Member/Order/OrderManager.aspx" Text="广告计划管理" Value="广告计划管理"></asp:MenuItem>
+                    <asp:MenuItem Text="消费账户" NavigateUrl="/Member/Zone/OrderViewer.aspx" Value="消费账户"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="/Member/Ad/ManageAdGroup.aspx" Text="广告组管理" Value="广告组管理">
                     </asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="数据报表" Value="数据报表"></asp:MenuItem>

@@ -15,22 +15,32 @@ namespace Web.Member.Order
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string where = " And UserId='" + HOT.BLL.User.GetLoginUser().ToString() + "'" + "And AL_Order.PerPoint is null" + getTimeWhere();
-                gvTimeOrderDateBind(where);
+
+            string whereTime = " And AL_Order.UserId='" + HOT.BLL.User.GetLoginUser().ToString() + "'" + "And AL_Order.PerPoint is null" + getTimeWhere();
+            dlTimeOrderDateBind(whereTime);
+            string wherePoint = " And AL_Order.UserId='" + HOT.BLL.User.GetLoginUser().ToString() + "'" + "And AL_Order.PerPoint is not null" + getTimeWhere();
+            dlPointOrderDateBind(wherePoint);
                 if (!IsPostBack)
                 {
                     this.mvOrder.ActiveViewIndex = 0;
                 }
         }
-        protected void gvTimeOrderDateBind(string strWhere)
+        protected void dlTimeOrderDateBind(string strWhere)
         {
             HOT.BLL.Order oBLL = new HOT.BLL.Order();
             DataSet ds = new DataSet();
             ds = oBLL.GetList(strWhere);
-            this.gvTimeOrder.DataSource = ds;
-            this.gvTimeOrder.DataBind();
+            this.dlTimeOrder.DataSource = ds;
+            this.dlTimeOrder.DataBind();
         }
-
+        protected void dlPointOrderDateBind(string strWhere)
+        {
+            HOT.BLL.Order oBLL = new HOT.BLL.Order();
+            DataSet ds = new DataSet();
+            ds = oBLL.GetList(strWhere);
+            this.dlPointOrder.DataSource = ds;
+            this.dlPointOrder.DataBind();
+        }
         protected void btnTimeAd_Click(object sender, EventArgs e)
         {
             this.mvOrder.ActiveViewIndex = 0;
@@ -69,6 +79,30 @@ namespace Web.Member.Order
 
             }
             return timeWhere;
+        }
+ 
+        public static string GetAuditStateMeaning(int? auditState)
+        {
+            string meaning = "";
+            switch (auditState)
+            {
+                case 0:
+                    meaning = "未通过网站主审核";
+                    break;
+                case 1:
+                    meaning = "定单有效";
+                    break;
+                case 2:
+                    meaning = "审核拒绝";
+                    break;
+                case 3:
+                    meaning = "定单过期";
+                    break;
+                default:
+                    meaning = "未知状态";
+                    break;
+            }
+            return meaning;
         }
     }
 }
