@@ -2,7 +2,7 @@
     Title="Zone输出服务" %>
 
 <html>
-<head>
+<head runat="server">
     <title>我的阿里奶奶</title>
     <link type="text/css" href="/CSS/ZoneDesigner.css" rel="stylesheet" />
     <style type="text/css">
@@ -18,7 +18,7 @@
         {
             border: 1px none;
         }
-        #main
+        #zone
         {
             left: 0px;
             margin: 0px;
@@ -44,7 +44,7 @@
     <div id="outer">
         <div id="pre">
         </div>
-        <div id="main">
+        <div id="zone">
             <table id="main_inner">
             </table>
         </div>

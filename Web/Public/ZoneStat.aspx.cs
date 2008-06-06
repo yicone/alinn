@@ -42,7 +42,9 @@ namespace Web
                 new SqlParameter("ZoneId", SqlDbType.UniqueIdentifier)
             };
             sqlParams[0].Value = zoneId;
-            string siteUrl = DbHelperSQL.GetSingle(sqlString, sqlParams).ToString();
+            object oSiteUrl = DbHelperSQL.GetSingle(sqlString, sqlParams);
+            if(oSiteUrl == DBNull.Value || oSiteUrl == null) return;
+            string siteUrl = oSiteUrl.ToString();
             if (!zoneHref.Contains(siteUrl)) return; 
             #endregion
 
