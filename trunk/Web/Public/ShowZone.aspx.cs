@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
+using System.Xml;
+
 namespace Web
 {
     public partial class ShowZone : System.Web.UI.Page
@@ -23,7 +25,7 @@ namespace Web
             else
             {
                 Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
-                if (!IsPostBack)
+              if (!IsPostBack)
             {
                 ShowZoneInfo(zoneId);
                 dlSiteOwerInfoDataBind();
@@ -31,6 +33,13 @@ namespace Web
                 this.mvZoneInfo.ActiveViewIndex = 0;
                 showInfo();
                 gvOtherZone.DataBind();
+                  HOT.BLL.Zone zBLL=new HOT.BLL.Zone();
+                  HOT.Model.Zone zModel=new HOT.Model.Zone();
+                  zModel=zBLL.GetModel(zoneId);
+                  HOT.BLL.Site sBLL=new HOT.BLL.Site();
+                  HOT.Model.Site sModel=new HOT.Model.Site();
+                  sModel=sBLL.GetModel(zModel.SiteId);
+                  this.labAlexa.Text = "Alexa" + GetAlexaInfo("www.hotbook.cn");
             }
             }
 
@@ -178,7 +187,34 @@ namespace Web
             sBLL.Add(sModel);
             HOT.Common.MessageBox.Show(this.Page,"收藏成功");
         }
-
+        private string GetAlexaInfo(string url)
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            XmlReader reader;
+            reader = XmlReader.Create("http://data.alexa.com/data/?cli=10&dat=snba&ver=7.0&url=" + url);
+            XmlDocument doc = new XmlDocument();
+            XmlNode node;
+            doc.Load(reader);
+            node = doc.SelectSingleNode("/ALEXA/SD/POPULARITY");
+            if (node != null)
+            {
+                sb.Append("世界排名："+node.Attributes[1].Value.ToString());
+            }
+            else
+            {
+                reader.Close();
+            }
+            node = doc.SelectSingleNode("/ALEXA/SD/REACH");
+            if (node != null)
+            {
+                sb.Append("<br/>下期排名：" + node.Attributes[0].Value.ToString());
+            }
+            else
+            {
+                reader.Close();
+            }
+            return sb.ToString();
+        }
 
     }
 }

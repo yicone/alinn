@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="_searchcontent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
-<div style="text-align:left;">
+    <div style="text-align:left;">
     <asp:Button ID="btnTimeAd" runat="server" onclick="btnTimeAd_Click" 
         Text="按时长计费广告" />
     <asp:Button ID="btnPointAd" runat="server" onclick="btnPointAd_Click" 

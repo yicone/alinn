@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
+using System.Xml;
+
 namespace Web.Member.Order
 {
     public partial class OrderManger : System.Web.UI.Page
