@@ -1,0 +1,175 @@
+﻿.rili_1224{
+	padding:5px;
+}
+
+.rilishuoming_1224{
+border-bottom:1px dashed #C1DEFB;
+color:#459BD3;
+font-size:14px;
+font-weight:bold;
+height:20px;
+line-height:20px;
+padding-bottom:5px;
+padding-left:15px;
+padding-top:5px;
+}
+
+.rilishuoming1224_1
+{
+    border-bottom:1px dashed #C1DEFB;
+line-height:150%;
+padding-bottom:5px;
+padding-top:5px;
+}
+
+#main_outer_1{
+	background:#FFFFFF none repeat scroll 0%;
+width:300px;
+}
+
+#cal_main {
+	background: #FFFFFF none repeat scroll 0%;
+	border: 1px solid #CCE5FF;
+	width: 100%;
+}
+
+#main_outer {background:#FFFFFF none repeat scroll 0%;
+width:300px;
+}
+
+.top {
+background:#E0EEFD none repeat scroll 0%;
+height:28px;
+padding-left:1px;
+padding-right:1px;
+padding-top:8px;
+}
+
+.input_txt {
+float:left;
+width:80px;
+}
+
+.input{
+	width:60px;
+}
+
+.top_txt{
+	color:#3C75AE;
+float:right;
+padding-right:5px;
+padding-top:0px !important;
+text-align:right;
+}
+
+.day{
+	height:20px;
+padding-left:2px;
+padding-right:2px;
+}
+
+.middle{
+	padding-bottom:1px;
+padding-left:1px;
+padding-right:1px;
+}
+
+.td {
+height:10px;
+line-height:10px;
+text-align:center;
+width:41px;
+}
+
+.td_1 {
+background:transparent url(/Public/images/calendar/blue_button_bg.jpg) repeat-x scroll 0%;
+height:10px;
+line-height:10px;
+text-align:center;
+}
+
+.gray_button{
+	background:transparent url(/Public/images/calendar/gray_button_bg.jpg) repeat-x scroll 0%;
+border:1px solid #FFFFFF;
+color:#CCCCCC;
+height:22px;
+line-height:22px;
+margin:1px;
+}
+
+.blue_button {
+background:transparent url(/Public/images/calendar/blue_button_bg.jpg) repeat-x scroll 0%;
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+height:22px;
+line-height:22px;
+margin:1px;
+text-align:center;
+}
+.red_button {
+background:transparent url(/Public/images/calendar/red_button_bg.jpg) repeat-x scroll 0%;
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+height:22px;
+line-height:22px;
+margin:1px;
+text-align:center;
+}
+.kuang_button {
+background:#FFFFFF none repeat scroll 0%;
+border:1px solid #CCCCCC;
+height:20px;
+line-height:20px;
+text-align:center;
+}
+.shuoming_1 {
+background:transparent url(/Public/images/calendar/gray_button_bg.jpg) repeat-x scroll 0%;
+float:left;
+width:20px;
+height:20px;
+}
+.shuoming_2 {
+background:transparent url(/Public/images/calendar/blue_button_bg.jpg) repeat-x scroll 0%;
+float:left;
+width:20px;
+height:20px;
+}
+.shuoming_3 {
+background:transparent url(/Public/images/calendar/red_button_bg.jpg) repeat-x scroll 0%;
+float:left;
+width:20px;
+height:20px;
+}
+
+* {font-size:12px;
+margin:0pt;
+padding:0pt;
+}
+
+.font_blue_normal {
+color:#3C75AE;
+font-weight:normal;
+}
+.font_black_narmal {
+color:#000000;
+font-weight:normal;
+}
+.font_blue {
+color:#3C75AE;
+font-weight:bold;
+}
+a.font_blue:hover {
+color:#3C75AE;
+font-weight:bold;
+text-decoration:underline;
+}
+.font_white {
+color:#FFFFFF;
+font-weight:bold;
+}
+a.font_white:hover {
+color:#FFFFFF;
+font-weight:bold;
+text-decoration:underline;
+}
+
