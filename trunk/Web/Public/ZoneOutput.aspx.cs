@@ -21,7 +21,6 @@ namespace Web
         protected void Page_Load(object sender, EventArgs e)
         {
             string json = "'[" + Request.QueryString["titlecolor"];
-            json += "," + Request.QueryString["titlecolor"];
             json += "," + Request.QueryString["textcolor"];
             json += "," + Request.QueryString["linkcolor"];
             json += "," + Request.QueryString["bordercolor"];

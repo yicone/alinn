@@ -30,7 +30,7 @@ function TextZone(zoneSize, layoutType){
             //	            }
             if (this.Style != undefined) {
                 var titlecolor = this.Style.title$color;
-                this.maintitleDiv.css("color", "#" + titlecolor);
+                this.maintitleDiv.css("color", "#" + this.Style.title$color);
                 this.maintextDiv.css("color", "#" + this.Style.text$color);
                 this.mainlinkDiv.css("color", "#" + this.Style.link$color);
                 
@@ -188,6 +188,10 @@ function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     
     sbJs.append('alinn_groundingcolor="');
     sbJs.append(oTextZoneStyle.grounding$color);
+    sbJs.append('"; \n');
+    
+    sbJs.append('alinn_cornerstyle="');
+    sbJs.append(oTextZoneStyle.corner&style);
     sbJs.append('"; \n');
 	
 	sbJs.append('alinn_backgroundimage="');

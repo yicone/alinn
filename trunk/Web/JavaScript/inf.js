@@ -13,18 +13,22 @@
     
     query = query + "&zoneid=" + alinn_pid;
     query = query + "&zonehref=" + location.href;
-	
+
 	var dframe = document.createElement("IFRAME");
 	var jframe = $(dframe);
-	jframe.attr("name", "");
+	jframe.attr("name", "a");
 	jframe.attr("id", "");
 	jframe.attr("scrolling", "no");
 	jframe.attr("frameborder", "0");
-	jframe.attr("style", "width:760px;height:90px;");
+	var size = alinn_sizecode.split("x");
+	var width = size[0];
+	var height = size[1];
+	jframe.attr("width", width);
+	jframe.attr("height", height);
 	jframe.attr("marginheight", "0");
 	jframe.attr("marginwidth", "0");
-	//jframe.attr("border", "0");
-	jframe.attr("src", "http://www.aaaa0.com/Public/ZoneOutput.aspx?" + query);
+	jframe.attr("border", "0");
+	jframe.attr("src", "http://localhost:2189/Public/ZoneOutput.aspx?" + query);
 	$("body").append(jframe);
 }
 
