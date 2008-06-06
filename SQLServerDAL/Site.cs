@@ -159,7 +159,10 @@ namespace HOT.SQLServerDAL
                 {
                     model.AuditState = int.Parse(ds.Tables[0].Rows[0]["AuditState"].ToString());
                 }
-                model.RegDate = DateTime.Parse(ds.Tables[0].Rows[0]["RegDate"].ToString());
+                if (ds.Tables[0].Rows[0]["RegDate"].ToString() != "")
+                {
+                    model.RegDate = DateTime.Parse(ds.Tables[0].Rows[0]["RegDate"].ToString());
+                }
                 return model;
             }
             else
