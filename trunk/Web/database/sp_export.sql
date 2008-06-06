@@ -619,11 +619,26 @@ CREATE PROCEDURE [dbo].[UP_AL_Order_GetListWhere]
  set @sql='
 	SELECT 
 	AL_Order.OrderId,AL_Order.OrderName,AL_Order.UserId,AL_Order.AdId,AL_Order.ZoneId,AL_Order.StartDate,AL_Order.EndDate,AL_Order.AuditState,AL_Order.PerPoint,AL_Order.EverydayPrice,AL_Order.Price,AL_Order.Payment,AL_Order.CreateDate
-	
-	 FROM AL_Order
-	 where AL_Order.AuditState=1 And AL_Order.Payment=1 '+@strWhere
+	,AL_Zone.ZoneName,AL_Zone.MediaType,AL_Zone.InFirst,AL_Zone.KeyWords,AL_Zone.Description
+	,AL_site.SiteName,AL_Site.SiteId,AL_Site.SiteUrl
+	,AL_AdGroup.GroupName
+	,AL_OrderReport.PV,AL_OrderReport.PointNum,AL_OrderReport.Price
+	FROM AL_Order
+	Left join AL_Zone
+	On AL_Zone.ZoneId=AL_Order.ZoneId
+	Left join AL_Site
+	on AL_Site.SiteId=AL_Zone.SiteId
+	Left join AL_Ad
+	on AL_Ad.AdId=AL_Order.AdId
+	Left join AL_AdGroup
+	on AL_AdGroup.AdGroupId=AL_Ad.AdGroupId
+	Left join AL_OrderReport
+	on AL_OrderReport.OrderId=AL_Order.OrderId
+	where AL_Order.AuditState!=0 And AL_Order.Payment=1 '+@strWhere
 	 exec(@sql)
 GO
+select * from AL_Order
+exec UP_AL_Order_GetListWhere ' And AL_Order.UserId=''edb4fa21-9cd4-459c-bda1-9aa4000f36f1''And AL_Order.PerPoint is null And AL_Order.CreateDate>''2008-5-29 18:36:01'''
 /****** Object:  StoredProcedure [dbo].[UP_AL_Ads_Delete]    Script Date: 06/03/2008 17:28:48 ******/
 SET ANSI_NULLS ON
 GO
