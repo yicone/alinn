@@ -28,7 +28,7 @@
 	jframe.attr("marginheight", "0");
 	jframe.attr("marginwidth", "0");
 	jframe.attr("border", "0");
-	jframe.attr("src", "http://localhost:2189/Public/ZoneOutput.aspx?" + query);
+	jframe.attr("src", "http://www.aaaa0.com/Public/ZoneOutput.aspx?" + query);
 	$("body").append(jframe);
 }
 
