@@ -75,7 +75,7 @@
                             <br />
                             价格：<asp:Label ID="labWeekPrice" runat="server"></asp:Label>
                             元/周<br />
-                            请选择购买时段：<br />
+                            <div>请选择购买时长：<select class="input" ><option value="7" onclick="changeDay(7)" selected="selected">一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div><br />
                             <br />
                             <%--请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server" OnTextChanged="txtStartDate_TextChanged"></asp:TextBox>
                             ，请选择购买时长：<asp:DropDownList ID="ddlWeek" runat="server" AutoPostBack="True">
@@ -479,7 +479,7 @@
 			adZoneId = 0;
 		}
 		// 动态读取可购买相应时长的日期
-		ajaxRequest('http://www.yigao.com/getDaysBeAbleToPutCampaignOn.do?adZoneId='+ adZoneId +'&year=' + SY +'&month=' + (parseInt(SM)+1) + '&during=' + during);
+		ajaxRequest('/Public/GetDayBeAbleToPutCampaignOn.aspx?zoneid='+ adZoneId +'&year=' + SY +'&month=' + (parseInt(SM)+1) + '&during=' + during);
 	}
 
 	function ajaxRequest(url) {
@@ -747,6 +747,8 @@
                                     </div>
                                     <input id="SDuring" type="hidden" name="SDuring" value="7" />
                                     <input id="adZoneId" type="hidden" value="16900" name="adZoneId" />
+                                    <input id="startDate" type="hidden" name="startDate" />
+                                    <input id="endDate" type="hidden" name="endDate" />
                                     <div id="main_outer">
                                         <div id="cal_main">
                                             <div class="top">
@@ -1029,4 +1031,39 @@
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
     <%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%>
     <link href="/CSS/calander.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+<asp:Content ID="Content3" runat="server" ContentPlaceHolderID="_scriptContent">
+
+    <script type="text/javascript">
+var countDay;
+// 时长选择
+function changeDay(day){
+//	// 选择日期变化
+//	var during = document.getElementById("divduring"+day);
+//	var duringradio = document.getElementById("during"+day);
+//	var durings = document.getElementsByName("during");
+//	for(i=0;i<durings.length;i++){
+//		document.getElementById('div'+durings[i].id).className = 'huadong1224_1';
+//	}
+//	duringradio.checked = true;// 选中单选按钮
+//	during.className = 'huadong1224_1_queding';// 选中时的css样式
+//	// 行为数据隐藏,日历显示
+//	var fixed = document.getElementById("fixed");
+//	var direct = document.getElementById("direct");
+//	fixed.style.display = 'none';
+//	direct.style.display = 'block';
+	// 日历变化
+	var SDuring = document.getElementById("SDuring");
+	SDuring.value = day;
+	changeCld_1();
+	// 提示购买信息 
+	var putOnDay = document.getElementById("putOnDay");
+	var putOnDayHtml = "";
+	putOnDayHtml += "<p>起始日期:--</p>";
+	putOnDayHtml += "<p>结束日期:--</p>";
+	putOnDayHtml += "<p>购买天数:--</p>";
+	putOnDay.innerHTML = putOnDayHtml;
+}
+
+</script>
 </asp:Content>
