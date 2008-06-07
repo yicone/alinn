@@ -25,7 +25,9 @@ namespace Web.Public
 
                 if (dict != null)
                 {
-                    test();
+                    //TODO:将test替换为从数据库返回的真实数据
+                    int[] test = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+                    ResponseToAJAX(test);
                     Response.End();
                 }
             }
@@ -48,7 +50,7 @@ namespace Web.Public
             return dict;
         }
 
-        private void test()
+        private void ResponseToAJAX(int[] days)
         {
             XmlDocument dom = new XmlDocument();;
             XmlNode nd = dom.CreateNode(XmlNodeType.XmlDeclaration, "<?xml version='1.0' encoding='UTF-8'?>", "");
@@ -57,17 +59,10 @@ namespace Web.Public
             XmlElement root = dom.CreateElement("putCampaignOn");
 
             XmlElement child;
-            for (int i = 1; i <= 10; i++)
+            for (int i = 0; i < days.Length; i++)
             {
                 child = dom.CreateElement("day_of_month");
-                child.InnerText = i.ToString();
-                root.AppendChild(child);
-            }
-
-            for (int i = 12; i <= 15; i++)
-            {
-                child = dom.CreateElement("day_of_month");
-                child.InnerText = i.ToString();
+                child.InnerText = days[i].ToString();
                 root.AppendChild(child);
             }
 
