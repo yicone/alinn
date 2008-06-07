@@ -398,6 +398,13 @@
       <DependentUpon>BuildImageCode.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\User\Common.cs" />
+    <Compile Include="Public\GetDayBeAbleToPutCampaignOn.aspx.cs">
+      <DependentUpon>GetDayBeAbleToPutCampaignOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\GetDayBeAbleToPutCampaignOn.aspx.designer.cs">
+      <DependentUpon>GetDayBeAbleToPutCampaignOn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\GetPassWord.aspx.cs">
       <DependentUpon>GetPassWord.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -746,6 +753,7 @@
     <Content Include="Member\Ad\NewAd.aspx" />
     <Content Include="Member\Ad\NewGroup.aspx" />
     <Content Include="News\ShowNews.aspx" />
+    <Content Include="Public\GetDayBeAbleToPutCampaignOn.aspx" />
     <Content Include="Public\GetPassWord.aspx" />
     <Content Include="Public\images\calendar\blue_button_bg.jpg" />
     <Content Include="Public\images\calendar\gray_button_bg.jpg" />
