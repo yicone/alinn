@@ -2328,3 +2328,45 @@ CREATE PROCEDURE [dbo].[UP_AL_ZoneClass_GetList]
 	ClassId,ClassName,ParentId
 	 FROM AL_ZoneClass
 GO
+
+USE [Alinn]
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_EffectReport]    Script Date: 06/12/2008 12:47:12 ******/
+DROP PROCEDURE [dbo].[UP_AL_Zone_EffectReport]
+GO
+/****** Object:  StoredProcedure [dbo].[UP_AL_Zone_EffectReport]    Script Date: 06/12/2008 12:47:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Dcyuan>
+-- Create date: <2008.6.4>
+-- Description:	<效果报表>
+-- =============================================
+Create PROCEDURE [dbo].[UP_AL_Zone_EffectReport]
+	-- Add the parameters for the stored procedure here
+	@UserId uniqueidentifier,
+    @ZoneId uniqueidentifier,
+	@StartDate datetime,
+	@EndDate datetime
+AS
+
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	if @ZoneId = '00000000-0000-0000-0000-000000000000'
+		begin
+			SELECT     dbo.AL_ZoneStat.Date, dbo.AL_ZoneStat.PV, dbo.AL_ZoneStat.ClickTime, dbo.AL_ZoneStat.ZoneStatId, dbo.AL_Zone.ZoneName
+FROM         dbo.AL_ZoneStat INNER JOIN
+                      dbo.AL_Zone ON dbo.AL_ZoneStat.ZoneId = dbo.AL_Zone.ZoneId and dbo.AL_Zone.UserId=@UserId and dbo.AL_ZoneStat.Date >= @StartDate and dbo.AL_ZoneStat.Date <= @EndDate
+		end
+    else
+		begin
+			SELECT     dbo.AL_ZoneStat.Date, dbo.AL_ZoneStat.PV, dbo.AL_ZoneStat.ClickTime, dbo.AL_ZoneStat.ZoneStatId, dbo.AL_Zone.ZoneName
+FROM         dbo.AL_ZoneStat INNER JOIN
+                      dbo.AL_Zone ON dbo.AL_ZoneStat.ZoneId = dbo.AL_Zone.ZoneId and dbo.AL_ZoneStat.ZoneId=@ZoneId and dbo.AL_ZoneStat.Date >= @StartDate and dbo.AL_ZoneStat.Date <= @EndDate
+		end
+GO
