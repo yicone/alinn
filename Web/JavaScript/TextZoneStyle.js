@@ -1,10 +1,12 @@
-﻿//定义TextZone对象
+﻿var imageHome = "/images";
+var defaultImagePath = "aaaa0_1.jpg";
+//定义TextZone对象
 function TextZone(zoneSize, layoutType){
     this.zoneSize = zoneSize;
     this.layoutType = layoutType;
     
     this.preDiv = $("#pre");
-    //this.bgimgDiv = $("#bgimg");
+    this.bgimgDiv = $("#bgimg");
     this.outerDiv = $("#outer");
     this.zoneDiv = $("#zone");
     this.maininnerDiv = $("#main_inner");
@@ -59,17 +61,11 @@ function TextZone(zoneSize, layoutType){
         };
         
         //设置广告位的大小和对应大小的容器样式
-        TextZone.prototype.initZone = function(title, link, text, isDefaultZone){
+        TextZone.prototype.initZone = function(title, link, text, imagePath, isDefaultZone, mediaType){
             var w = parseInt(this.zoneSize.split("x")[0]);
             var h = parseInt(this.zoneSize.split("x")[1]);
-            if(isDefaultZone == "true")
-            {
-            title = "阿里奶奶：好产品更需要好广告";
-            text = "我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!";
-            link = "www.alinn.com";
-            }
             
-            //修改文字广告牌
+            //修改广告牌大小
             var outerDiv = this.outerDiv;
             var zoneDiv = this.zoneDiv;
             this.changeDivSize(outerDiv, w, h);
@@ -77,19 +73,37 @@ function TextZone(zoneSize, layoutType){
             //changeSize(this.iconDiv, iconWidth, iconHeight); //TODO:iconWidith,iconHeight未定！
             //p_icon.css("left", (w - iconWidth -1));
             //p_icon.css("top", (h - iconHeight));
-            //changeDivSize(this.bgimgDiv, w, h);
+            this.changeDivSize(this.bgimgDiv, w - 2, h - 2);
             this.changeDivSize(this.preDiv, w - 2, h - 2);
+
+            if(mediaType == "text") {
+                if(isDefaultZone == "true"){
+                    title = "阿里奶奶：好产品更需要好广告";
+                    text = "我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!";
+                    link = "www.alinn.com";
+                }
+                
+                if (this.layoutType == "1") {
+                    this.maininnerDiv.html("<tr><td id='main_title_outer' class='t" + this.zoneSize + "' nowrap><div id='main_title' style='color: rgb(0, 0, 255);'>" + title + "</div><div id='main_link_outer' class='l" + this.zoneSize + "'><div id='main_link'><a href='http://" + link + "' style='color: rgb(0, 128, 0);'>" + link + "</a></div></div></td><td id='main_text_outer' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>" + text + "</div></td></tr>");
+                }
+                else {
+                    this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link'><a href='http://" + link + "' style='color: rgb(0, 128, 0);'>" + link + "</a></div></td></tr>");
+                }
+                //在构造完整的广告位之后，取得对应三个文字区域的JQuery对象"
+                this.maintitleDiv = $("#main_title");
+                this.maintextDiv = $("#main_text");
+                this.mainlinkDiv = $("#main_link"); 
+            } else {
+                if(isDefaultZone == "true"){
+                    imagePath = defaultImagePath;
+                }
+                this.bgimgDiv.css("background-image", "url('" + imageHome + "/" + imagePath + "')");
+                this.bgimgDiv.css("margin-top", -(h - 2));
+                this.bgimgDiv.css("display", "block");
+            }
+
             
-            if (this.layoutType == "1") {
-                this.maininnerDiv.html("<tr><td id='main_title_outer' class='t" + this.zoneSize + "' nowrap><div id='main_title'>" + title + "</div><div id='main_link_outer' class='l" + this.zoneSize + "'><div id='main_link'>" + link + "</div></div></td><td id='main_text_outer' class='d" + this.zoneSize + "'><div id='main_text'>" + text + "</div></td></tr>");
-            }
-            else {
-                this.maininnerDiv.html("<tr><td valign='middle'><div id='main_title_td' class='t" + this.zoneSize + "'><div id='main_title' style='color: rgb(0, 0, 255);'>"+title+"</div></div><div id='main_text_td' class='d" + this.zoneSize + "'><div id='main_text' style='color: rgb(0, 0, 0);'>"+text+"</div></div><div id='main_link_td' class='l" + this.zoneSize + "'><div id='main_link' style='color: rgb(0, 128, 0);'>"+link+"</div></td></tr>");
-            }
-            //在构造完整的广告位之后，取得对应三个文字区域的JQuery对象
-            this.maintitleDiv = $("#main_title");
-            this.maintextDiv = $("#main_text");
-            this.mainlinkDiv = $("#main_link"); 
+
         };
         
         TextZone._initialized = true;
