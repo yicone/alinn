@@ -191,7 +191,7 @@ function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     sbJs.append('"; \n');
     
     sbJs.append('alinn_cornerstyle="');
-    sbJs.append(oTextZoneStyle.corner&style);
+    sbJs.append(oTextZoneStyle.corner$style);
     sbJs.append('"; \n');
 	
 	sbJs.append('alinn_backgroundimage="');
