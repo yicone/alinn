@@ -30,7 +30,7 @@
 	    <link rel="stylesheet" href="/js/jquery/color_picker/color_picker-ie7.css" type="text/css">
     <![endif]-->
     <link type="text/css" href="/CSS/ZoneDesigner.css" rel="stylesheet" />
-        <style type="text/css">
+    <style type="text/css">
         div.codess
         {
             float: left;
@@ -45,13 +45,6 @@
         {
             overflow: hidden;
             padding: 6px 3px 2px 6px;
-        }
-        #outer
-        {
-        }
-        #pre
-        {
-            border: 1px none;
         }
         #zone
         {
@@ -91,7 +84,7 @@
         {
             padding: 1.5em 20px 2em;
             width: auto;
-            text-align:left
+            text-align: left;
         }
         .sellbox
         {
@@ -100,9 +93,10 @@
             margin: 0.5em 0pt;
             padding: 0.5em 0pt 0pt;
         }
-    </style></asp:Content>
+    </style>
+</asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-	<div class="clearing">
+    <div class="clearing">
     </div>
     <div id="code-wrapper">
         <h3 style="text-align: left">
@@ -126,27 +120,22 @@
                     <div id="pre" style="border: 1px solid rgb(230, 230, 230); height: 88px; width: 758px;
                         background-color: rgb(255, 255, 255);">
                     </div>
+                    <div id="bgimg" style="height: 90px; width: 760px; display: none;"> </div>
                     <div id="zone" style="height: 80px; width: 750px;">
                         <table id="main_inner" cellspacing="0" cellpadding="0" border="0" align="center">
-                            <tr>
-                                <td id="main_title_outer" class="t&quot; + size + &quot;" nowrap="nowrap">
-                                    <div id="main_title">
-                                        阿里奶奶：好产品更需要好广告</div>
-                                    <div id="main_link_outer" class="l&quot; + size + &quot;">
-                                        <div id="main_link">
-                                            www.alinn.com</div>
-                                    </div>
-                                </td>
-                                <td id="main_text_outer" class="d&quot; + size + &quot;">
-                                    <div id="main_text">
-                                        我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!</div>
-                                </td>
-                            </tr>
                         </table>
                     </div>
-                    <div>
-                        <a id="icon"></a>
-                    </div>
+                    <a id="icon" style="float: right; position: relative; margin-right: 0px; margin-top: -17px;
+                        background: transparent none no-repeat scroll 0% 50%; -moz-background-clip: -moz-initial;
+                        -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;
+                        z-index: 150; height: 17px; width: 90px;" href="http://www.aaaa0.com" target="_blank"><!-- another ZoneOutput -->
+                        <div style="position: relative; margin-right: 0px; margin-bottom: -17px; width: 90px;
+                            height: 17px; z-index: 2; background-image: url(http://img.alimama.cn/images/adzone/alimama0_b.png);">
+                        </div>
+                        <div style="position: relative; margin-right: 0px; margin-bottom: 0px; width: 90px;
+                            height: 17px; z-index: 1; background-color: rgb(230, 230, 230); opacity: 0.6;">
+                        </div>
+                    </a>
                     <div class="clearing">
                     </div>
                 </div>
@@ -266,7 +255,7 @@
                 var layoutType = "2";
                 //init textzone
                 var textZone = new TextZone(size, layoutType);
-                textZone.initZone(null, null, null, "true");
+                textZone.initZone(null, null, null, null, "true", "text");
                 textZone.setStyle(_currentStyle);
                 textZone.applyStyle(true);
                 generateCode($("#<%= hdn_zoneid.ClientID %>").val(), _currentStyle, size, layoutType);
