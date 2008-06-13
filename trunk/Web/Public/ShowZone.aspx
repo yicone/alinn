@@ -75,7 +75,8 @@
                             <br />
                             价格：<asp:Label ID="labWeekPrice" runat="server"></asp:Label>
                             元/周<br />
-                            <div>请选择购买时长：<select class="input" ><option value="7" onclick="changeDay(7)" selected="selected">一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div><br />
+                            <div>请选择购买时长：<select class="input" ><option value="7" onclick="changeDay(7)" selected="selected">
+                                一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div><br />
                             <br />
                             <%--请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server" OnTextChanged="txtStartDate_TextChanged"></asp:TextBox>
                             ，请选择购买时长：<asp:DropDownList ID="ddlWeek" runat="server" AutoPostBack="True">

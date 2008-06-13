@@ -1,7 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs" Inherits="Web.MasterPage.Member"
-    MasterPageFile="~/MasterPage/Global.Master" %>
-
-<%@ Register Src="../Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
+    MasterPageFile="~/MasterPage/Global1.Master" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
         <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
@@ -9,15 +7,9 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
-    <div id="search">
-        <div class="search">
             <asp:ContentPlaceHolder ID="_searchcontent" runat="server">
-                <uc1:Search ID="Search1" runat="server" />
+
             </asp:ContentPlaceHolder>
-        </div>
-        <div class="help">
-            ［<a href="#">高级搜索</a>］［<a href="#">帮助</a>］</div>
-    </div>
     <div id="SampleMenu">
         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" SkinID="MenuHorizontal">
             <Items>

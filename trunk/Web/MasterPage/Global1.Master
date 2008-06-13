@@ -1,9 +1,12 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global.Master.cs" Inherits="Web.MasterPage.Global" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Global1.master.cs" Inherits="Web.MasterPage.Global1" %>
 
-<%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
-<%@ Register Src="../Controls/Header.ascx" TagName="Header" TagPrefix="uc3" %>
+<%@ Register src="../Controls/Header.ascx" tagname="Header" tagprefix="uc1" %>
+
+<%@ Register src="../Controls/Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>我的阿里奶奶</title>
     <meta http-equiv="Content-Language" content="zh-cn" />
@@ -27,15 +30,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="text-align:center;">
-    <div style="text-align:center; width:984"><uc3:Header ID="Header2" runat="server" /></div>
-    <div id="maincontent">
-    <div style="width: 984px; margin-left: auto; margin-right: auto; margin-top:50px; text-align:left;">
+    <div style="text-align:center; width:100%;">
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+          <uc1:Header ID="Header1" runat="server" />
+        
+        </asp:ContentPlaceHolder>
+
         <asp:ContentPlaceHolder ID="_mainContent" runat="server">
         </asp:ContentPlaceHolder>
-    <uc2:Footer ID="Footer1" runat="server" />
-    </div>
-    </div>
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+          
+        
+          <uc2:Footer ID="Footer1" runat="server" />
+          
+        
+        </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
         <%--此处添加JS代码和函数--%>
     </asp:ContentPlaceHolder>

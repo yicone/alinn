@@ -36,6 +36,27 @@ namespace HOT.SQLServerDAL
             }
         }
         /// <summary>
+        /// 是否可以购买
+        /// </summary>
+        public bool Exists(Guid zoneId,DateTime date)
+        {
+            int rowsAffected;
+            SqlParameter[] parameters = {
+					new SqlParameter("@zoneId", SqlDbType.UniqueIdentifier),
+                    new SqlParameter("@date",SqlDbType.DateTime)};
+            parameters[0].Value = zoneId;
+            parameters[1].Value = date;
+            int result = DbHelperSQL.RunProcedure("MY_AL_Order_CouldBuy", parameters, out rowsAffected);
+            if (result == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        /// <summary>
         ///  增加一条数据
         /// </summary>
         public void Add(HOT.Model.Order model)
