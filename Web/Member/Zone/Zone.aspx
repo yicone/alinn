@@ -20,40 +20,71 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <div class="content" style="margin: 20px auto; width: 950px;text-align:left">
-        <div class="sellbox">
-            <div class="form-section2">
-                <h3>
-                    <span id="sec2" class="sec-toggler"></span>填写广告位信息 <span class="red">（以下为必填项）</span>
-                </h3>
-                <dl>
-                    <dt>广告位名称：</dt>
-                    <dd>
-                        <input id="zonename" type="text" maxlength="32" size="40" value="" name="zonename" />
+<table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="124" rowspan="2" background="/app_themes/new/images/ad.gif"></td>
+    <td width="860" height="16"></td>
+  </tr>
+  <tr>
+    <td width="860" height="9" background="/app_themes/new/images/adline.gif"></td>
+  </tr>
+</table>
+<table width="984" height="39" border="0" align="center" cellpadding="0" cellspacing="0" background="/app_themes/new/images/ad4.gif">
+  <tr>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="20" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="43" align="center" valign="middle" background="/app_themes/new/images/title2.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table width="984" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="242" height="30" align="right" valign="middle" class="tdblue">广告位名称： </td>
+        <td width="742" height="30" align="left" valign="middle" class="tdblue">
+                                <input id="zonename" type="text" maxlength="32" size="40" value="" name="zonename" />
                         （例如：xxx网站顶部广告位）
                         <div class="inotice1">
                             广告位名称将显示给买家，好的名称有助于买家快速理解广告位价值，请认真填写，并且长度不要超过16个汉字</div>
-                    </dd>
-                    <dt>广告内容：</dt>
-                    <dd>
-                        <label>
+        </td>
+      </tr>
+      <tr>
+        <td height="30" align="right" valign="middle" class="tdblue">广告内容： </td>
+        <td height="30" align="left" valign="middle" class="tdblue">                        <label>
                             <input id="mediatype_text" type="checkbox" value="2" checked="checked" name="mediatype" />文字广告</label>
                         <label style="margin-left: 10px">
                             <input id="mediatype_picture" type="checkbox" value="5" checked="checked" name="mediatype" />图片/flash广告</label>
-                        <span class="red">为了增加您的广告收益，建议保留文字广告形式。</span>
-                    </dd>
-                    <dt>广告所在位置：</dt>
-                    <dd>
-                        <label>
+                        <span class="red">为了增加您的广告收益，建议保留文字广告形式。</span></td>
+      </tr>
+      <tr>
+        <td height="30" align="right" valign="middle" class="tdblue">广告位所在位置： </td>
+        <td height="30" align="left" valign="middle" class="tdblue">
+        <label>
                             <input id="infirstpage_yes" type="radio" onclick="javascript:$('#<%= hdn_infirstpage.ClientID %>').val(this.value);"
                                 value="0" name="infirstpage" />在首页</label>
                         <label>
                             <input id="infirstpage_no" type="radio" onclick="javascript:$('#<%= hdn_infirstpage.ClientID %>').val(this.value);"
                                 checked="checked" value="1" name="infirstpage" />
                             不在首页</label>
-                    </dd>
-                    <dt>选择广告位尺寸：</dt>
-                    <dd>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" class="tdblue">选择广告位尺寸：</td>
+        <td align="left" valign="middle" class="tdblue">
                         <div id="zonesizes" style="display: block;">
                             <p class="group-cb">
                                 <label class="label-cr x_gg_pre" gg_size="760x90">
@@ -144,13 +175,13 @@
                                 </label>
                             </p>
                         </div>
-                        <div class="inotice3" style="margin-bottom: 0pt; margin-left: 3px; margin-right: 0pt;
-                            margin-top: 5px; width: 650px;">
-                            现在阿里奶奶平台只提供以上尺寸的广告代码，请选择合适的尺寸。另请注意，广告位需要完整显示才能通过系统的审核</div>
-                    </dd>
-                    <dt>选择计费类型：</dt>
-                    <dd>
-                        <label>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" class="tdblue">选择计费类型：</td>
+        <td align="left" valign="middle" class="tdblue"><table width="700" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="30" colspan="3">  <label>
                             <input id="transtype_click" type="radio" onclick='javascript:$("#<%= hdn_transtype.ClientID %>").val(this.value);'
                                 checked="checked" value="2" name="transtype" />
                             按点击计费</label>
@@ -172,7 +203,64 @@
                             </label>
                         </div>
                         <div class="red">
-                            小贴士：当您的广告位未按周售出时,阿里奶奶将为您的网站选择合适的广告。广告计费类型和广告主在您的网站上投放策略有关，您可以在收益报表看到收入详情。</div>
+                            小贴士：当您的广告位未按周售出时,阿里奶奶将为您的网站选择合适的广告。广告计费类型和广告主在您的网站上投放策略有关，您可以在收益报表看到</td>
+            </tr>
+          <tr>
+            <td width="207" height="30"></td>
+            <td height="30" colspan="2"></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="right" class="tdblue">广告位描述：</td>
+        <td align="left" valign="middle" class="tdblue"><textarea id="Textarea1" rows="10" name="textarea" style="width: 750px;"></textarea>
+                        <div class="inotice1">
+                            例如：广告位的位置，大小，以及该广告位可以在站内所有读帖页展现，访问人群是什么，适合投哪类广告！</div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="984" height="50" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#65BFEF">
+  <tr>
+    <td width="414" align="center" valign="middle">&nbsp;</td>
+    <td width="164" align="center" valign="middle"> <a id="btnCheck" class="button3" onclick="return doCheckAndNext();" href="#"><img src="/app_themes/new/images/nextif.gif" width="164" height="32" border="0" usemap="#Map" /></a></td>
+    <td width="406" align="center" valign="middle">&nbsp;</td>
+  </tr>
+</table>
+<map name="Map" id="Map">
+  <area shape="rect" coords="2,3,166,38" href="#" />
+</map>
+
+
+
+    <div class="content" style="margin: 20px auto; width: 950px;text-align:left">
+        <div class="sellbox">
+            <div class="form-section2">
+                <h3>
+                    <span id="sec2" class="sec-toggler"></span>填写广告位信息 <span class="red">（以下为必填项）</span>
+                </h3>
+                <dl>
+                    <dt>广告位名称：</dt>
+                    <dd>
+
+                    </dd>
+                    <dt>广告内容：</dt>
+                    <dd>
+
+                    </dd>
+                    <dt>广告所在位置：</dt>
+                    <dd>
+                        
+                    </dd>
+                    <dt>选择广告位尺寸：</dt>
+                    <dd>
+                        <div class="inotice3" style="margin-bottom: 0pt; margin-left: 3px; margin-right: 0pt;
+                            margin-top: 5px; width: 650px;">
+                            现在阿里奶奶平台只提供以上尺寸的广告代码，请选择合适的尺寸。另请注意，广告位需要完整显示才能通过系统的审核</div>
+                    </dd>
+                    <dt>选择计费类型：</dt>
+                    <dd>
+                       收入详情。</div>
                     </dd>
                     <dt>广告位描述：</dt>
                     <dd>
@@ -184,7 +272,7 @@
             </div>
             <div class="sellbox-bottom" style="text-align: right">
                 <div style="float: right">
-                    <a id="btnCheck" class="button3" onclick="return doCheckAndNext();" href="#"><span>为广告位选择分类</span></a>
+
                 </div>
             </div>
         </div>

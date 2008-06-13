@@ -70,5 +70,24 @@ namespace Web.Public
 
             dom.Save(Response.OutputStream);
         }
+        public ArrayList getCouldBuy(Guid zoneId)
+        {
+            int year = DateTime.Now.Year;
+            int month=DateTime.Now.Month;
+            int today = DateTime.Now.Day;
+            ArrayList arraylist = new ArrayList();
+           int daysCount=HOT.Common.Date.GetMonthDaysCount(year, month);
+           for (int i = 1; i <= daysCount; i++)
+           { 
+               int add=i-today;
+               DateTime datetime = DateTime.Now.AddDays(add);
+              HOT.BLL.Order oBLL = new HOT.BLL.Order();
+              if (oBLL.Exists(zoneId, datetime))
+              {
+                  arraylist.Add(datetime.Day);
+              }
+           }
+           return arraylist;
+        }
     }
 }

@@ -12,6 +12,10 @@ namespace HOT.IDAL
 		/// 是否存在该记录
 		/// </summary>
 		bool Exists(Guid OrderId);
+        /// <summary>
+        /// 是否可以购买
+        /// </summary>
+        bool Exists(Guid zoneId, DateTime date);
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>

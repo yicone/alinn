@@ -9,18 +9,13 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
-namespace Web.Controls
+namespace Web.MasterPage
 {
-    public partial class Search : System.Web.UI.UserControl
+    public partial class Global1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnSearch_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("/Ad/AdList.aspx?Key=" + this.txtKeyWord.Text);
         }
     }
 }

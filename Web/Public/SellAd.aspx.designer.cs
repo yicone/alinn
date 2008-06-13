@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.Controls {
+namespace Web.Public {
     
     
-    public partial class Footer {
+    public partial class SellAd {
     }
 }

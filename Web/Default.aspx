@@ -10,7 +10,7 @@
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    >><a href="News/ShowNews.aspx?NewsId=<%# Eval("NewsId") %>" target="_blank"><%# HOT.Common.Strings.CutString( Eval("Title").ToString(),18) %></a>
+                    &gt;&gt;<a href="News/ShowNews.aspx?NewsId=<%# Eval("NewsId") %>" target="_blank"><%# HOT.Common.Strings.CutString( Eval("Title").ToString(),18) %></a>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="CreateDate" DataFormatString="{0:d}" HeaderText="CreateDate"

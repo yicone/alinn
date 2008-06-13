@@ -1271,6 +1271,28 @@ AS
 	ELSE
 		RETURN 1
 GO
+/****** Object:  StoredProcedure [dbo].[MY_AL_Order_CouldBuy]    Script Date: 06/11/2008 17:28:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-11 15:29:37
+------------------------------------
+create proc MY_AL_Order_CouldBuy
+@Date DateTime,
+@ZoneId uniqueidentifier
+as
+DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_Order WHERE ZoneId=@ZoneId and AuditState=1 and StartDate<@Date and EndDate<@Date 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+GO
 /****** Object:  StoredProcedure [dbo].[UP_AL_Order_ADD]    Script Date: 06/03/2008 17:28:57 ******/
 SET ANSI_NULLS ON
 GO

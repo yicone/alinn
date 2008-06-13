@@ -53,19 +53,19 @@
         <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" OnItemCommand="DataList1_ItemCommand"
             DataSourceID="SqlDataSource1" Width="100%" Height="100%">
             <HeaderTemplate>
-                <table>
+           <table width="984" height="27" border="0" align="center" cellpadding="0" cellspacing="0" background="/app_themes/new/images/title4.gif">
                     <tr>
-                        <td class="first">
+                        <td class="baibiao">
                             广告位名称/尺寸
                         </td>
-                        <td class="second">
+                        <td class="baibiao">
                             按时长计费价格(元/周)
                         </td>
-                        <td class="cMediaType">
+                        <td class="baibiao">
                             支持广告类型
                         </td>
                         <td id="zonestate_header" style="width: 82px;text-align: center;">
-                            <select id="status" name="status">
+                            <select id="status" name="select">
                                 <option value="">状态</option>
                                 <option value="1">上架</option>
                                 <option value="0">未激活</option>
@@ -73,7 +73,7 @@
                                 <option value="3">拒绝</option>
                             </select>
                         </td>
-                        <td class="actions">
+                        <td class="baibiao">
                             操作
                         </td>
                     </tr>

@@ -24,11 +24,6 @@ namespace Web
             }
         }
 
-        protected void btnAddSite_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/Member/Zone/Site.aspx?action=new");
-        }
-
         private int _zoneCount = 1;
 
         public int ZoneCount
@@ -77,6 +72,16 @@ namespace Web
                 siteManager.Delete(new Guid(strSiteId));
                 DataList1.DataBind();
             }
+        }
+
+        protected void btnAddSite_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("/Member/Zone/Site.aspx?action=new");
+        }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

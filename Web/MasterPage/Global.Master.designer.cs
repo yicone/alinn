@@ -50,13 +50,13 @@ namespace Web.MasterPage {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContent;
         
         /// <summary>
-        /// Footer2 control.
+        /// Footer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Web.Controls.Footer Footer2;
+        protected global::Web.Controls.Footer Footer1;
         
         /// <summary>
         /// _scriptContent control.

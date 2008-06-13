@@ -48,7 +48,7 @@ namespace Web
         protected void btnBuyAd_Click(object sender, EventArgs e)
         {
             Guid guid = new Guid(this.Request.QueryString["ZoneId"].ToString());
-            Response.Redirect("/Member/Ad/BuyAd.aspx?ZoneId=" + guid.ToString()+"&StartDate="+this.txtStartDate.Text+"&Week="+this.ddlWeek.SelectedValue);
+            //Response.Redirect("/Member/Ad/BuyAd.aspx?ZoneId=" + guid.ToString()+"&StartDate="+this.txtStartDate.Text+"&Week="+this.ddlWeek.SelectedValue);
         }
         protected void ShowZoneInfo(Guid zoneId)
         {
@@ -171,10 +171,10 @@ namespace Web
 
         protected void txtStartDate_TextChanged(object sender, EventArgs e)
         {
-            if(Convert.ToDateTime(this.txtStartDate.Text)<DateTime.Now)
-            {
-                HOT.Common.MessageBox.Show(this.Page,"日期不能早于当前日期");
-            }
+            //if(Convert.ToDateTime(this.txtStartDate.Text)<DateTime.Now)
+            //{
+            //    HOT.Common.MessageBox.Show(this.Page,"日期不能早于当前日期");
+            //}
         }
 
         protected void btnStore_Click(object sender, EventArgs e)

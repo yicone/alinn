@@ -174,6 +174,34 @@
     <Compile Include="Admin\Zone\ZoneCategory.aspx.designer.cs">
       <DependentUpon>ZoneCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Calendar.ascx.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Calendar.ascx.designer.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Default1.Master.cs">
+      <DependentUpon>Default1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Default1.Master.designer.cs">
+      <DependentUpon>Default1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Global1.Master.cs">
+      <DependentUpon>Global1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Global1.Master.designer.cs">
+      <DependentUpon>Global1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Member1.Master.cs">
+      <DependentUpon>Member1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Member1.Master.designer.cs">
+      <DependentUpon>Member1.Master</DependentUpon>
+    </Compile>
     <Compile Include="Member\Order\OrderManager.aspx.cs">
       <DependentUpon>OrderManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,6 +475,13 @@
     <Compile Include="Member\User\UserInfo.aspx.designer.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Public\SellAd.aspx.cs">
+      <DependentUpon>SellAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SellAd.aspx.designer.cs">
+      <DependentUpon>SellAd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\ShowZone.aspx.cs">
       <DependentUpon>ShowZone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,6 +534,13 @@
     </Compile>
     <Compile Include="Public\Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\text.aspx.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\text.aspx.designer.cs">
+      <DependentUpon>text.aspx</DependentUpon>
     </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -607,6 +649,226 @@
     <Content Include="App_Themes\Basic\images\webtoolsbg.gif" />
     <Content Include="App_Themes\Basic\Menu.css" />
     <Content Include="App_Themes\Basic\style.css" />
+    <Content Include="App_Themes\new\css.css" />
+    <Content Include="App_Themes\new\images\001.jpg" />
+    <Content Include="App_Themes\new\images\001.swf" />
+    <Content Include="App_Themes\new\images\002.gif" />
+    <Content Include="App_Themes\new\images\002.jpg" />
+    <Content Include="App_Themes\new\images\003.gif" />
+    <Content Include="App_Themes\new\images\003.jpg" />
+    <Content Include="App_Themes\new\images\004.gif" />
+    <Content Include="App_Themes\new\images\004.jpg" />
+    <Content Include="App_Themes\new\images\005.gif" />
+    <Content Include="App_Themes\new\images\005.jpg" />
+    <Content Include="App_Themes\new\images\006.gif" />
+    <Content Include="App_Themes\new\images\006.jpg" />
+    <Content Include="App_Themes\new\images\007.gif" />
+    <Content Include="App_Themes\new\images\007.jpg" />
+    <Content Include="App_Themes\new\images\008.gif" />
+    <Content Include="App_Themes\new\images\008.jpg" />
+    <Content Include="App_Themes\new\images\009.gif" />
+    <Content Include="App_Themes\new\images\009.jpg" />
+    <Content Include="App_Themes\new\images\010.gif" />
+    <Content Include="App_Themes\new\images\010.jpg" />
+    <Content Include="App_Themes\new\images\011.jpg" />
+    <Content Include="App_Themes\new\images\012.jpg" />
+    <Content Include="App_Themes\new\images\013.jpg" />
+    <Content Include="App_Themes\new\images\014.jpg" />
+    <Content Include="App_Themes\new\images\015.jpg" />
+    <Content Include="App_Themes\new\images\016.jpg" />
+    <Content Include="App_Themes\new\images\017.jpg" />
+    <Content Include="App_Themes\new\images\018.jpg" />
+    <Content Include="App_Themes\new\images\0181.jpg" />
+    <Content Include="App_Themes\new\images\0182.jpg" />
+    <Content Include="App_Themes\new\images\0183.jpg" />
+    <Content Include="App_Themes\new\images\0184.jpg" />
+    <Content Include="App_Themes\new\images\0185.jpg" />
+    <Content Include="App_Themes\new\images\019.jpg" />
+    <Content Include="App_Themes\new\images\020.jpg" />
+    <Content Include="App_Themes\new\images\021.jpg" />
+    <Content Include="App_Themes\new\images\022.jpg" />
+    <Content Include="App_Themes\new\images\023.jpg" />
+    <Content Include="App_Themes\new\images\024.jpg" />
+    <Content Include="App_Themes\new\images\025.jpg" />
+    <Content Include="App_Themes\new\images\026.jpg" />
+    <Content Include="App_Themes\new\images\027.jpg" />
+    <Content Include="App_Themes\new\images\028.jpg" />
+    <Content Include="App_Themes\new\images\029.jpg" />
+    <Content Include="App_Themes\new\images\031.jpg" />
+    <Content Include="App_Themes\new\images\032.jpg" />
+    <Content Include="App_Themes\new\images\033.jpg" />
+    <Content Include="App_Themes\new\images\034.jpg" />
+    <Content Include="App_Themes\new\images\1.gif" />
+    <Content Include="App_Themes\new\images\1001.jpg" />
+    <Content Include="App_Themes\new\images\1002.jpg" />
+    <Content Include="App_Themes\new\images\1003.jpg" />
+    <Content Include="App_Themes\new\images\1004.jpg" />
+    <Content Include="App_Themes\new\images\1005.jpg" />
+    <Content Include="App_Themes\new\images\1712972.gif" />
+    <Content Include="App_Themes\new\images\2.gif" />
+    <Content Include="App_Themes\new\images\2001.jpg" />
+    <Content Include="App_Themes\new\images\2003.jpg" />
+    <Content Include="App_Themes\new\images\2004.jpg" />
+    <Content Include="App_Themes\new\images\20041.jpg" />
+    <Content Include="App_Themes\new\images\2005.jpg" />
+    <Content Include="App_Themes\new\images\2006.jpg" />
+    <Content Include="App_Themes\new\images\2007.jpg" />
+    <Content Include="App_Themes\new\images\20072.jpg" />
+    <Content Include="App_Themes\new\images\2008.jpg" />
+    <Content Include="App_Themes\new\images\20082.jpg" />
+    <Content Include="App_Themes\new\images\2009.jpg" />
+    <Content Include="App_Themes\new\images\20092.jpg" />
+    <Content Include="App_Themes\new\images\2010.jpg" />
+    <Content Include="App_Themes\new\images\20101.jpg" />
+    <Content Include="App_Themes\new\images\20102.jpg" />
+    <Content Include="App_Themes\new\images\2011.jpg" />
+    <Content Include="App_Themes\new\images\20111.jpg" />
+    <Content Include="App_Themes\new\images\20112.jpg" />
+    <Content Include="App_Themes\new\images\2012.jpg" />
+    <Content Include="App_Themes\new\images\2013.jpg" />
+    <Content Include="App_Themes\new\images\20131.jpg" />
+    <Content Include="App_Themes\new\images\3001.jpg" />
+    <Content Include="App_Themes\new\images\3002.jpg" />
+    <Content Include="App_Themes\new\images\3003.jpg" />
+    <Content Include="App_Themes\new\images\30031.jpg" />
+    <Content Include="App_Themes\new\images\30032.jpg" />
+    <Content Include="App_Themes\new\images\300321.jpg" />
+    <Content Include="App_Themes\new\images\300322.jpg" />
+    <Content Include="App_Themes\new\images\30033.jpg" />
+    <Content Include="App_Themes\new\images\30034.jpg" />
+    <Content Include="App_Themes\new\images\30035.jpg" />
+    <Content Include="App_Themes\new\images\30036.jpg" />
+    <Content Include="App_Themes\new\images\30037.jpg" />
+    <Content Include="App_Themes\new\images\30038.jpg" />
+    <Content Include="App_Themes\new\images\3004.jpg" />
+    <Content Include="App_Themes\new\images\35.jpg" />
+    <Content Include="App_Themes\new\images\4001.jpg" />
+    <Content Include="App_Themes\new\images\4002.jpg" />
+    <Content Include="App_Themes\new\images\4003.jpg" />
+    <Content Include="App_Themes\new\images\4004.jpg" />
+    <Content Include="App_Themes\new\images\4005.jpg" />
+    <Content Include="App_Themes\new\images\4006.jpg" />
+    <Content Include="App_Themes\new\images\a001.jpg" />
+    <Content Include="App_Themes\new\images\a002.jpg" />
+    <Content Include="App_Themes\new\images\a003.jpg" />
+    <Content Include="App_Themes\new\images\a004.jpg" />
+    <Content Include="App_Themes\new\images\a005.jpg" />
+    <Content Include="App_Themes\new\images\a006.jpg" />
+    <Content Include="App_Themes\new\images\a007.jpg" />
+    <Content Include="App_Themes\new\images\a008.jpg" />
+    <Content Include="App_Themes\new\images\a009.jpg" />
+    <Content Include="App_Themes\new\images\a010.jpg" />
+    <Content Include="App_Themes\new\images\a011.jpg" />
+    <Content Include="App_Themes\new\images\a012.jpg" />
+    <Content Include="App_Themes\new\images\a013.jpg" />
+    <Content Include="App_Themes\new\images\a014.jpg" />
+    <Content Include="App_Themes\new\images\a015.jpg" />
+    <Content Include="App_Themes\new\images\a016.jpg" />
+    <Content Include="App_Themes\new\images\a017.jpg" />
+    <Content Include="App_Themes\new\images\a018.jpg" />
+    <Content Include="App_Themes\new\images\a019.jpg" />
+    <Content Include="App_Themes\new\images\a020.jpg" />
+    <Content Include="App_Themes\new\images\a021.jpg" />
+    <Content Include="App_Themes\new\images\a022.jpg" />
+    <Content Include="App_Themes\new\images\a023.jpg" />
+    <Content Include="App_Themes\new\images\a024.jpg" />
+    <Content Include="App_Themes\new\images\a025.jpg" />
+    <Content Include="App_Themes\new\images\a026.jpg" />
+    <Content Include="App_Themes\new\images\a027.jpg" />
+    <Content Include="App_Themes\new\images\a028.jpg" />
+    <Content Include="App_Themes\new\images\a029.jpg" />
+    <Content Include="App_Themes\new\images\a030.jpg" />
+    <Content Include="App_Themes\new\images\a031.jpg" />
+    <Content Include="App_Themes\new\images\activationleft.gif" />
+    <Content Include="App_Themes\new\images\activationmid.gif" />
+    <Content Include="App_Themes\new\images\activationright.gif" />
+    <Content Include="App_Themes\new\images\ad.gif" />
+    <Content Include="App_Themes\new\images\ad4.gif" />
+    <Content Include="App_Themes\new\images\ad42.gif" />
+    <Content Include="App_Themes\new\images\adline.gif" />
+    <Content Include="App_Themes\new\images\ban.gif" />
+    <Content Include="App_Themes\new\images\banr.gif" />
+    <Content Include="App_Themes\new\images\banrleft.gif" />
+    <Content Include="App_Themes\new\images\banrright.gif" />
+    <Content Include="App_Themes\new\images\button.gif" />
+    <Content Include="App_Themes\new\images\buy.gif" />
+    <Content Include="App_Themes\new\images\buyad.gif" />
+    <Content Include="App_Themes\new\images\color.gif" />
+    <Content Include="App_Themes\new\images\colorleft.gif" />
+    <Content Include="App_Themes\new\images\colormid.gif" />
+    <Content Include="App_Themes\new\images\colorright.gif" />
+    <Content Include="App_Themes\new\images\copy.gif" />
+    <Content Include="App_Themes\new\images\date.gif" />
+    <Content Include="App_Themes\new\images\down.gif" />
+    <Content Include="App_Themes\new\images\down.jpg" />
+    <Content Include="App_Themes\new\images\effect.gif" />
+    <Content Include="App_Themes\new\images\empty.gif" />
+    <Content Include="App_Themes\new\images\fit.gif" />
+    <Content Include="App_Themes\new\images\fram.gif" />
+    <Content Include="App_Themes\new\images\framleft.gif" />
+    <Content Include="App_Themes\new\images\framlright.gif" />
+    <Content Include="App_Themes\new\images\frammid.gif" />
+    <Content Include="App_Themes\new\images\god.gif" />
+    <Content Include="App_Themes\new\images\grow.gif" />
+    <Content Include="App_Themes\new\images\happy.gif" />
+    <Content Include="App_Themes\new\images\javaframe.gif" />
+    <Content Include="App_Themes\new\images\javaframeleft.gif" />
+    <Content Include="App_Themes\new\images\javaframeright.gif" />
+    <Content Include="App_Themes\new\images\javascript.gif" />
+    <Content Include="App_Themes\new\images\jifei.gif" />
+    <Content Include="App_Themes\new\images\jifeishijian.gif" />
+    <Content Include="App_Themes\new\images\left.gif" />
+    <Content Include="App_Themes\new\images\line.gif" />
+    <Content Include="App_Themes\new\images\line1.gif" />
+    <Content Include="App_Themes\new\images\login.gif" />
+    <Content Include="App_Themes\new\images\login2.gif" />
+    <Content Include="App_Themes\new\images\logindown.gif" />
+    <Content Include="App_Themes\new\images\loginmid.gif" />
+    <Content Include="App_Themes\new\images\loginup.gif" />
+    <Content Include="App_Themes\new\images\logo.gif" />
+    <Content Include="App_Themes\new\images\measure.gif" />
+    <Content Include="App_Themes\new\images\menu.gif" />
+    <Content Include="App_Themes\new\images\menutwo.gif" />
+    <Content Include="App_Themes\new\images\menu_mr_bg.gif" />
+    <Content Include="App_Themes\new\images\menu_mr_y.gif" />
+    <Content Include="App_Themes\new\images\menu_mr_z.gif" />
+    <Content Include="App_Themes\new\images\mid.gif" />
+    <Content Include="App_Themes\new\images\mid2.gif" />
+    <Content Include="App_Themes\new\images\money.jpg" />
+    <Content Include="App_Themes\new\images\nextif.gif" />
+    <Content Include="App_Themes\new\images\over.gif" />
+    <Content Include="App_Themes\new\images\right.gif" />
+    <Content Include="App_Themes\new\images\sell.gif" />
+    <Content Include="App_Themes\new\images\sellad.gif" />
+    <Content Include="App_Themes\new\images\shutiao.gif" />
+    <Content Include="App_Themes\new\images\slidingMenu.gif" />
+    <Content Include="App_Themes\new\images\slidingMenuLine.gif" />
+    <Content Include="App_Themes\new\images\slidingTag1.gif" />
+    <Content Include="App_Themes\new\images\slidingTag2.gif" />
+    <Content Include="App_Themes\new\images\slidingTag3.gif" />
+    <Content Include="App_Themes\new\images\title.gif" />
+    <Content Include="App_Themes\new\images\title1.gif" />
+    <Content Include="App_Themes\new\images\title2.gif" />
+    <Content Include="App_Themes\new\images\title3.gif" />
+    <Content Include="App_Themes\new\images\title3right.gif" />
+    <Content Include="App_Themes\new\images\title4.gif" />
+    <Content Include="App_Themes\new\images\title5left.gif" />
+    <Content Include="App_Themes\new\images\title5mid.gif" />
+    <Content Include="App_Themes\new\images\title5right.gif" />
+    <Content Include="App_Themes\new\images\xiajiao.gif" />
+    <Content Include="App_Themes\new\images\xiangqi.gif" />
+    <Content Include="App_Themes\new\images\xiangqixia.gif" />
+    <Content Include="App_Themes\new\images\买广告.png" />
+    <Content Include="App_Themes\new\images\仿站完成.jpg" />
+    <Content Include="App_Themes\new\images\分隔符.gif" />
+    <Content Include="App_Themes\new\images\复件 018.jpg" />
+    <Content Include="App_Themes\new\images\新建 文本文档.txt" />
+    <Content Include="App_Themes\new\images\横线.gif" />
+    <Content Include="App_Themes\new\images\横线上.gif" />
+    <Content Include="App_Themes\new\images\横线下.gif" />
+    <Content Include="App_Themes\new\images\横线中.gif" />
+    <Content Include="App_Themes\new\images\购买时段.jpg" />
+    <Content Include="Controls\Calendar.ascx" />
     <Content Include="CSS\alinn.css" />
     <Content Include="CSS\calander.css" />
     <Content Include="CSS\ie_hacks.css" />
@@ -658,6 +920,7 @@
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\Basic\Basic.skin" />
     <None Include="App_Themes\Basic\images\Thumbs.db" />
+    <None Include="App_Themes\new\images\god.psd" />
     <None Include="database\table_export.sql" />
     <None Include="database\test_fzf.sql" />
     <None Include="database\sp_export.sql" />
@@ -769,13 +1032,18 @@
     <Content Include="Member\User\ResetPassword.aspx" />
     <Content Include="Member\User\Seccess.aspx" />
     <Content Include="Member\User\UserInfo.aspx" />
+    <Content Include="Public\SellAd.aspx" />
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
+    <Content Include="Public\text.aspx" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
+    <Content Include="MasterPage\Member1.Master" />
+    <Content Include="MasterPage\Global1.Master" />
+    <Content Include="MasterPage\Default1.Master" />
     <Content Include="Login.ashx" />
     <Content Include="MasterPage\Global.Master" />
     <Content Include="MasterPage\Default.Master" />

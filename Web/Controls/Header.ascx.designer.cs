@@ -14,15 +14,6 @@ namespace Web.Controls {
     public partial class Header {
         
         /// <summary>
-        /// labNickName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labNickName;
-        
-        /// <summary>
         /// hlLogin control.
         /// </summary>
         /// <remarks>
@@ -39,5 +30,14 @@ namespace Web.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRegister;
+        
+        /// <summary>
+        /// Search1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Web.Controls.Search Search1;
     }
 }

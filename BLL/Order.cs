@@ -22,7 +22,13 @@ namespace HOT.BLL
 		{
 			return dal.Exists(OrderId);
 		}
-
+        /// <summary>
+        /// 是否可以购买
+        /// </summary>
+        public bool Exists(Guid zoneId, DateTime date)
+        {
+            return dal.Exists(zoneId, date);
+        }
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
