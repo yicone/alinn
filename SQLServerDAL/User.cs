@@ -546,7 +546,7 @@ namespace HOT.SQLServerDAL
         /// <returns></returns>
         public bool ExsitsTempUser (string userIP, DateTime dateTime)
         {
-            string sql = string.Format("select * from AL_UserTemp where RegTime='{0}' and RegIP='{1}'", dateTime.ToShortDateString(), userIP);
+            string sql = string.Format("select * from ( select DATEDIFF(hour, RegTime, getdate()) as regtime from AL_UserTemp where RegTime='{0}' and RegIP='{1}' ) t where t.regtime between 0 and 4", dateTime.ToShortDateString(), userIP);
 
             if (DbHelperSQL.GetSingle(sql) != null)
                 return true;
