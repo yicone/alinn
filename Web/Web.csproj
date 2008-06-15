@@ -181,6 +181,13 @@
     <Compile Include="Controls\Calendar.ascx.designer.cs">
       <DependentUpon>Calendar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\Default1.Master.cs">
       <DependentUpon>Default1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -257,13 +264,6 @@
     </Compile>
     <Compile Include="Controls\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Search.ascx.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\Search.ascx.designer.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -658,6 +658,7 @@
     <Content Include="App_Themes\new\images\003.jpg" />
     <Content Include="App_Themes\new\images\004.gif" />
     <Content Include="App_Themes\new\images\004.jpg" />
+    <Content Include="App_Themes\new\images\004left.jpg" />
     <Content Include="App_Themes\new\images\005.gif" />
     <Content Include="App_Themes\new\images\005.jpg" />
     <Content Include="App_Themes\new\images\006.gif" />
@@ -743,8 +744,12 @@
     <Content Include="App_Themes\new\images\3004.jpg" />
     <Content Include="App_Themes\new\images\35.jpg" />
     <Content Include="App_Themes\new\images\4001.jpg" />
+    <Content Include="App_Themes\new\images\40011.jpg" />
+    <Content Include="App_Themes\new\images\40012.jpg" />
     <Content Include="App_Themes\new\images\4002.jpg" />
     <Content Include="App_Themes\new\images\4003.jpg" />
+    <Content Include="App_Themes\new\images\40031.jpg" />
+    <Content Include="App_Themes\new\images\40032.jpg" />
     <Content Include="App_Themes\new\images\4004.jpg" />
     <Content Include="App_Themes\new\images\4005.jpg" />
     <Content Include="App_Themes\new\images\4006.jpg" />
@@ -756,6 +761,10 @@
     <Content Include="App_Themes\new\images\a006.jpg" />
     <Content Include="App_Themes\new\images\a007.jpg" />
     <Content Include="App_Themes\new\images\a008.jpg" />
+    <Content Include="App_Themes\new\images\a008left.gif" />
+    <Content Include="App_Themes\new\images\a008lm.gif" />
+    <Content Include="App_Themes\new\images\a008mid.gif" />
+    <Content Include="App_Themes\new\images\a008right.gif" />
     <Content Include="App_Themes\new\images\a009.jpg" />
     <Content Include="App_Themes\new\images\a010.jpg" />
     <Content Include="App_Themes\new\images\a011.jpg" />
@@ -783,6 +792,9 @@
     <Content Include="App_Themes\new\images\activationmid.gif" />
     <Content Include="App_Themes\new\images\activationright.gif" />
     <Content Include="App_Themes\new\images\ad.gif" />
+    <Content Include="App_Themes\new\images\ad1.gif" />
+    <Content Include="App_Themes\new\images\ad2.gif" />
+    <Content Include="App_Themes\new\images\ad3.gif" />
     <Content Include="App_Themes\new\images\ad4.gif" />
     <Content Include="App_Themes\new\images\ad42.gif" />
     <Content Include="App_Themes\new\images\adline.gif" />
@@ -811,6 +823,39 @@
     <Content Include="App_Themes\new\images\god.gif" />
     <Content Include="App_Themes\new\images\grow.gif" />
     <Content Include="App_Themes\new\images\happy.gif" />
+    <Content Include="App_Themes\new\images\img\wl2_014.gif" />
+    <Content Include="App_Themes\new\images\img\两性.gif" />
+    <Content Include="App_Themes\new\images\img\两性.jpg" />
+    <Content Include="App_Themes\new\images\img\两性2.gif" />
+    <Content Include="App_Themes\new\images\img\互联网.gif" />
+    <Content Include="App_Themes\new\images\img\互联网2.gif" />
+    <Content Include="App_Themes\new\images\img\互联网3.gif" />
+    <Content Include="App_Themes\new\images\img\人文艺术.gif" />
+    <Content Include="App_Themes\new\images\img\人文艺术2.gif" />
+    <Content Include="App_Themes\new\images\img\体育运动.gif" />
+    <Content Include="App_Themes\new\images\img\化妆.gif" />
+    <Content Include="App_Themes\new\images\img\化妆2.gif" />
+    <Content Include="App_Themes\new\images\img\域名.gif" />
+    <Content Include="App_Themes\new\images\img\家居.gif" />
+    <Content Include="App_Themes\new\images\img\家居2.gif" />
+    <Content Include="App_Themes\new\images\img\数码硬件.bmp" />
+    <Content Include="App_Themes\new\images\img\数码硬件.gif" />
+    <Content Include="App_Themes\new\images\img\旅游.gif" />
+    <Content Include="App_Themes\new\images\img\旅游2.gif" />
+    <Content Include="App_Themes\new\images\img\旅游3.gif" />
+    <Content Include="App_Themes\new\images\img\时尚.gif" />
+    <Content Include="App_Themes\new\images\img\法律法规.gif" />
+    <Content Include="App_Themes\new\images\img\游戏.gif" />
+    <Content Include="App_Themes\new\images\img\游戏2.gif" />
+    <Content Include="App_Themes\new\images\img\游戏3.gif" />
+    <Content Include="App_Themes\new\images\img\爱好收藏.gif" />
+    <Content Include="App_Themes\new\images\img\理财.gif" />
+    <Content Include="App_Themes\new\images\img\理财2.gif" />
+    <Content Include="App_Themes\new\images\img\电影.gif" />
+    <Content Include="App_Themes\new\images\img\跑车.gif" />
+    <Content Include="App_Themes\new\images\img\跑车2.gif" />
+    <Content Include="App_Themes\new\images\img\门户.gif" />
+    <Content Include="App_Themes\new\images\img\黑客.gif" />
     <Content Include="App_Themes\new\images\javaframe.gif" />
     <Content Include="App_Themes\new\images\javaframeleft.gif" />
     <Content Include="App_Themes\new\images\javaframeright.gif" />
@@ -862,6 +907,7 @@
     <Content Include="App_Themes\new\images\仿站完成.jpg" />
     <Content Include="App_Themes\new\images\分隔符.gif" />
     <Content Include="App_Themes\new\images\复件 018.jpg" />
+    <Content Include="App_Themes\new\images\导航.jpg" />
     <Content Include="App_Themes\new\images\新建 文本文档.txt" />
     <Content Include="App_Themes\new\images\横线.gif" />
     <Content Include="App_Themes\new\images\横线上.gif" />
@@ -869,6 +915,7 @@
     <Content Include="App_Themes\new\images\横线中.gif" />
     <Content Include="App_Themes\new\images\购买时段.jpg" />
     <Content Include="Controls\Calendar.ascx" />
+    <Content Include="Controls\Search.ascx" />
     <Content Include="CSS\alinn.css" />
     <Content Include="CSS\calander.css" />
     <Content Include="CSS\ie_hacks.css" />
@@ -916,11 +963,11 @@
     <Content Include="Member\Ad\EditeGroup.aspx" />
     <Content Include="Controls\Footer.ascx" />
     <Content Include="Controls\Header.ascx" />
-    <Content Include="Controls\Search.ascx" />
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\Basic\Basic.skin" />
     <None Include="App_Themes\Basic\images\Thumbs.db" />
     <None Include="App_Themes\new\images\god.psd" />
+    <None Include="App_Themes\new\images\img\Thumbs.db" />
     <None Include="database\table_export.sql" />
     <None Include="database\test_fzf.sql" />
     <None Include="database\sp_export.sql" />

@@ -2,6 +2,49 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <div>
+    <table width="984" height="30" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#A7C8DA">
+  <tr>
+    <td bgcolor="#F3F7FF" class="a7">&nbsp;<img src="/app_themes/new/images/a027.jpg" />&nbsp;广告分类</td>
+  </tr>
+</table>
+<table width="984" height="8" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/app_themes/new/images/分隔符.gif" width="1" height="1" /></td>
+  </tr>
+</table>
+
+<table width="984" border="1"  align="center" cellpadding="0" cellspacing="0" style="border:sild thin ffcc00;">
+  <tr>
+    <td valign="top"><asp:DataList ID="dlClasses" runat="server" OnItemDataBound="dlClasses_ItemDataBound"
+        RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" Width="100%">
+        <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False"
+            Font-Underline="False" HorizontalAlign="Center" VerticalAlign="Top" />
+        <ItemTemplate>
+            <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Medium"
+                ForeColor="#FF3300"></asp:Label>
+            <br />
+            <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="4" RepeatDirection="Horizontal"
+                RepeatLayout="Flow" Width="100%">
+                <ItemTemplate>
+                    <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>">
+                        <%# Eval("ClassName") %></a>
+                </ItemTemplate>
+            </asp:DataList>
+        </ItemTemplate>
+    </asp:DataList></td>
+  </tr>
+</table>
+
+<table width="984" height="15" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/app_themes/new/images/分隔符.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<table width="984" height="32" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td background="/app_themes/new/images/1002.jpg">&nbsp;</td>
+  </tr>
+</table>
        <table style="width:100%; border-width:thin;">
            <tr>
                <td style="width: 30%; text-align: center;">
@@ -51,7 +94,7 @@
 
            </HeaderTemplate>
            <ItemTemplate>
-<table style="width:100%; border-width:thin;">
+<table style="width:100%; border-width:thin; background-image: url('/app_themes/new/images/004.gif');">
   <tr>
     <td style="width:100px;height:75px;"><a href="/Pulic/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
     <td>

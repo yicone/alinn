@@ -46,6 +46,10 @@ namespace Web.Ad
             AspNetPager1.RecordCount = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
             dlZoneDataBind(Where);
             //}
+            if (!IsPostBack)
+            {
+                dlClassesDataBind();
+            }
         }
         private void dlZoneDataBind(string strWhere)
         {
@@ -95,6 +99,34 @@ namespace Web.Ad
                 strWhere += "  and classids like '%," + classId + "' or classids like '" + classId + ",%' or classids like '%," + classId + ",%'";
             }
             return strWhere;
+        }
+        /// <summary>
+        ///一级目录绑定
+        ///powered by fzf 20080516
+        /// </summary>
+        protected void dlClassesDataBind()
+        {
+            HOT.BLL.ZoneClass zcBLL = new HOT.BLL.ZoneClass();
+            this.dlClasses.DataSource = zcBLL.GetList("ParentId=0");
+            this.dlClasses.DataBind();
+        }
+
+        protected void dlClasses_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                DataList dataList = (DataList)e.Item.FindControl("dlSonClasses");
+                DataRowView rowv = (DataRowView)e.Item.DataItem;
+                //获取广告组ID
+                dlSonClassesDataBind(int.Parse(rowv["ClassId"].ToString()), dataList);
+            }
+        }
+
+        protected void dlSonClassesDataBind(int? parentId, DataList dl)
+        {
+            HOT.BLL.ZoneClass zcBLL = new HOT.BLL.ZoneClass();
+            dl.DataSource = zcBLL.GetList("ParentId=" + parentId.ToString());
+            dl.DataBind();
         }
     }
 }

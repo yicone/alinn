@@ -104,15 +104,6 @@ namespace Web {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_dbaction;
         
         /// <summary>
-        /// hdn_siteid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdn_siteid;
-        
-        /// <summary>
         /// hdn_sitename control.
         /// </summary>
         /// <remarks>

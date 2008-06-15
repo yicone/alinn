@@ -81,5 +81,10 @@ namespace Web
             this.gvecBox1.DataSource = ds;
             this.gvecBox1.DataBind();
         }
+
+        protected void dlClasses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
