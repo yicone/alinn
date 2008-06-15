@@ -1,5 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs" Inherits="Web.MasterPage.Member"
-    MasterPageFile="~/MasterPage/Global1.Master" %>
+    MasterPageFile="~/MasterPage/Global.Master" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
         <%--此处添加MEAT标签、JS脚本和样式表的引用--%>

@@ -1,17 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Site.aspx.cs" Inherits="Web.Site"
     MasterPageFile="~/MasterPage/Member.Master" %>
-
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div>
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
-            <!--tr>
-	<td height="25" width="30%" align="right">
-		UserId
-	</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtUserId" runat="server" Width="260px"></asp:TextBox>
-	</td></tr-->
-            <tr>
+             <tr>
                 <td height="25" width="30%" align="right">
                     网站名称：
                 </td>
