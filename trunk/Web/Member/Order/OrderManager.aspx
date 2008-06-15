@@ -1,20 +1,25 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="OrderManager.aspx.cs" Inherits="Web.Member.Order.OrderManger" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_htmlHeadContent" runat="server">
-    <style type="text/css">
-        .style1
-        {
-            width: 1024px; border-width:thin;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="_searchcontent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
+
+<table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
+  </tr>
+</table>
     <div style="text-align:left;">
     <asp:Button ID="btnTimeAd" runat="server" onclick="btnTimeAd_Click" 
-        Text="按时长计费广告" />
+        Text="按时长计费广告" BackColor="#CCFFFF" />
     <asp:Button ID="btnPointAd" runat="server" onclick="btnPointAd_Click" 
-        Text="按点击计费广告" />
+        Text="按点击计费广告" BackColor="#CCFFFF" />
         </div>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
@@ -29,11 +34,11 @@
                 <asp:ListItem Value="4">最近三个月</asp:ListItem>
             </asp:DropDownList><br />
             <br /></div>
-            <asp:DataList ID="dlTimeOrder" runat="server">
+            <asp:DataList ID="dlTimeOrder" runat="server" Width="100%" ForeColor="#0066CC">
                 <ItemTemplate>
-                      <table cellpadding="0" cellspacing="0" class="style1">
+                      <table cellpadding="0" cellspacing="0" style="width:100%; color: #0066CC;">
                           <tr>
-                              <td style="width:25%">
+                              <td style="width:25%" align="left">
                                   站点：<asp:Label ID="labSite0" runat="server" Text='<%# Eval("SiteName") %>'></asp:Label>
                                   <br />
                                   广告位：<asp:Label ID="labZone0" runat="server" Text='<%# Eval("ZoneName") %>'></asp:Label>
@@ -66,7 +71,7 @@
                       </table>
                 </ItemTemplate>
                 <HeaderTemplate>
-                                        <table cellpadding="0" cellspacing="0" class="style1">
+                                        <table cellpadding="0" cellspacing="0" style="width:100%;color: #0066CC;">
                         <tr>
                             <td style="width:25%;">
 广告组详情</td>

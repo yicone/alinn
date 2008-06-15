@@ -96,6 +96,38 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
+<table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="124" rowspan="2" background="/app_themes/new/images/ad.gif"></td>
+    <td width="860" height="16"></td>
+  </tr>
+  <tr>
+    <td width="860" height="9" background="/app_themes/new/images/adline.gif"></td>
+  </tr>
+</table>
+<table width="984" height="39" border="0" align="center" cellpadding="0" cellspacing="0" background="images/ad4.gif">
+  <tr>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+    <td background="/app_themes/new/images/ad42.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="984" height="43" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td background="/app_themes/new/images/title2.gif">&nbsp;</td>
+  </tr>
+</table>
     <div class="clearing">
     </div>
     <div id="code-wrapper">
@@ -108,7 +140,7 @@
         </div>
         <div class="copytips">
             <a class="big-button" onclick="copyCode($('#genjstxt').val());return false;" href="#">
-                <img src="images/btn_copycode_big.jpg" /></a>
+                <img src="/App_Themes/new/images/copy.gif" height="50px" width="159px" /></a>
         </div>
         <div class="clearing">
         </div>

@@ -14,6 +14,15 @@ namespace Web.Ad {
     public partial class AdList {
         
         /// <summary>
+        /// dlClasses control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dlClasses;
+        
+        /// <summary>
         /// rblInFirst control.
         /// </summary>
         /// <remarks>

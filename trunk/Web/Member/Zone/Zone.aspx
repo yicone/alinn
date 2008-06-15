@@ -223,7 +223,7 @@
 <table width="984" height="50" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#65BFEF">
   <tr>
     <td width="414" align="center" valign="middle">&nbsp;</td>
-    <td width="164" align="center" valign="middle"> <a id="btnCheck" class="button3" onclick="return doCheckAndNext();" href="#"><img src="/app_themes/new/images/nextif.gif" width="164" height="32" border="0" usemap="#Map" /></a></td>
+    <td width="164" align="center" valign="middle"> <a id="btnCheck" onclick="return doCheckAndNext();" href="#"><img src="/app_themes/new/images/nextif.gif" width="164" height="32" border="0" usemap="#Map" /></a></td>
     <td width="406" align="center" valign="middle">&nbsp;</td>
   </tr>
 </table>
@@ -231,52 +231,6 @@
   <area shape="rect" coords="2,3,166,38" href="#" />
 </map>
 
-
-
-    <div class="content" style="margin: 20px auto; width: 950px;text-align:left">
-        <div class="sellbox">
-            <div class="form-section2">
-                <h3>
-                    <span id="sec2" class="sec-toggler"></span>填写广告位信息 <span class="red">（以下为必填项）</span>
-                </h3>
-                <dl>
-                    <dt>广告位名称：</dt>
-                    <dd>
-
-                    </dd>
-                    <dt>广告内容：</dt>
-                    <dd>
-
-                    </dd>
-                    <dt>广告所在位置：</dt>
-                    <dd>
-                        
-                    </dd>
-                    <dt>选择广告位尺寸：</dt>
-                    <dd>
-                        <div class="inotice3" style="margin-bottom: 0pt; margin-left: 3px; margin-right: 0pt;
-                            margin-top: 5px; width: 650px;">
-                            现在阿里奶奶平台只提供以上尺寸的广告代码，请选择合适的尺寸。另请注意，广告位需要完整显示才能通过系统的审核</div>
-                    </dd>
-                    <dt>选择计费类型：</dt>
-                    <dd>
-                       收入详情。</div>
-                    </dd>
-                    <dt>广告位描述：</dt>
-                    <dd>
-                        <textarea id="zonedesp" rows="10" name="textarea" style="width: 750px;"></textarea>
-                        <div class="inotice1">
-                            例如：广告位的位置，大小，以及该广告位可以在站内所有读帖页展现，访问人群是什么，适合投哪类广告！</div>
-                    </dd>
-                </dl>
-            </div>
-            <div class="sellbox-bottom" style="text-align: right">
-                <div style="float: right">
-
-                </div>
-            </div>
-        </div>
-    </div>
     <input id="hdn_dbaction" type="hidden" value="new" name="hdn_dbaction" runat="server" />
     <%--<input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />--%>
     <input id="hdn_sitename" type="hidden" value="" name="hdn_sitename" runat="server" />
