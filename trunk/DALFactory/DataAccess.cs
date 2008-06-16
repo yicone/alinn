@@ -203,6 +203,15 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.IStore)objType;
         }
+        /// <summary>
+        /// 创建ZoneLocation数据层接口
+        /// </summary>
+        public static HOT.IDAL.IZoneLocation CreateZoneLocation()
+        {
 
+            string CacheKey = path + ".ZoneLocation";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IZoneLocation)objType;
+        }
 }
 }

@@ -62,6 +62,9 @@ namespace Web
                 int rowAffected;
                 int dbResult;
                 dbResult = DbHelperSQL.RunProcedure("UP_CountClickTime", paramters, out  rowAffected);
+                //add by FZF 200806016(应该是不用再执行，个人意见）
+                //InsertUrl(zoneId);
+                //add end
                 Debug.Assert(rowAffected == 1);
                 Debug.Assert(dbResult == 0);
             }
@@ -77,6 +80,9 @@ namespace Web
                 int rowAffected;
                 int dbResult;
                 dbResult = DbHelperSQL.RunProcedure("UP_CountPV", paramters, out  rowAffected);
+                //add by FZF 200806016
+                InsertUrl(zoneId);
+                //add end
                 Debug.Assert(rowAffected == 1);
             }
 
@@ -124,6 +130,19 @@ namespace Web
         {
            string url= HttpContext.Current.Request.UrlReferrer.ToString();
            return url;
+        }
+        /// <summary>
+        /// 记录广告位投放的完整网址
+        /// powered by FZF 20080616
+        /// </summary>
+        /// <param name="zoneId"></param>
+        private void InsertUrl(Guid zoneId)
+        {
+            HOT.BLL.ZoneLocation zlBLL = new HOT.BLL.ZoneLocation();
+            HOT.Model.ZoneLocation zlModel = new HOT.Model.ZoneLocation();
+            zlModel.Url = GetUrl();
+            zlModel.ZoneId = zoneId;
+            zlBLL.Add(zlModel);
         }
     }
 }

@@ -514,6 +514,13 @@
     <Compile Include="Public\Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Public\text.aspx.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\text.aspx.designer.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
@@ -879,13 +886,16 @@
     <Content Include="App_Themes\new\images\仿站完成.jpg" />
     <Content Include="App_Themes\new\images\分隔符.gif" />
     <Content Include="App_Themes\new\images\复件 018.jpg" />
+    <Content Include="App_Themes\new\images\link.gif" />
     <Content Include="App_Themes\new\images\导航.jpg" />
     <Content Include="App_Themes\new\images\新建 文本文档.txt" />
     <Content Include="App_Themes\new\images\横线.gif" />
     <Content Include="App_Themes\new\images\横线上.gif" />
     <Content Include="App_Themes\new\images\横线下.gif" />
     <Content Include="App_Themes\new\images\横线中.gif" />
+    <Content Include="App_Themes\new\images\hover.gif" />
     <Content Include="App_Themes\new\images\购买时段.jpg" />
+    <Content Include="App_Themes\new\images\active.gif" />
     <Content Include="Controls\Calendar.ascx" />
     <Content Include="Controls\Search.ascx" />
     <Content Include="CSS\alinn.css" />
@@ -895,6 +905,21 @@
     <Content Include="CSS\myalinn.css" />
     <Content Include="CSS\overlay.css" />
     <Content Include="CSS\ZoneDesigner.css" />
+    <Content Include="images\defaultAd\120x240.gif" />
+    <Content Include="images\defaultAd\160x600.gif" />
+    <Content Include="images\defaultAd\180x250.gif" />
+    <Content Include="images\defaultAd\200x200.gif" />
+    <Content Include="images\defaultAd\250x250.gif" />
+    <Content Include="images\defaultAd\250x300.gif" />
+    <Content Include="images\defaultAd\250x60.gif" />
+    <Content Include="images\defaultAd\300X250.gif" />
+    <Content Include="images\defaultAd\336x280 .gif" />
+    <Content Include="images\defaultAd\360x190.gif" />
+    <Content Include="images\defaultAd\468x60.gif" />
+    <Content Include="images\defaultAd\60x120.gif" />
+    <Content Include="images\defaultAd\728x90.gif" />
+    <Content Include="images\defaultAd\760x60.gif" />
+    <Content Include="images\defaultAd\760x90.gif" />
     <Content Include="JavaScript\common.js" />
     <Content Include="JavaScript\flash.js" />
     <Content Include="JavaScript\inf.js" />
@@ -1040,13 +1065,13 @@
     <Content Include="Public\images\calendar\blue_button_bg.jpg" />
     <Content Include="Public\images\calendar\gray_button_bg.jpg" />
     <Content Include="Public\images\calendar\red_button_bg.jpg" />
-    <Content Include="Public\Login.aspx" />
     <Content Include="Member\MyAlinn.aspx" />
     <Content Include="Member\Order\OrderInfo.aspx" />
     <Content Include="Member\Pay\md5_pay.aspx" />
     <Content Include="Member\Pay\md5_query.aspx" />
     <Content Include="Member\Pay\payresult.aspx" />
     <Content Include="Member\Pay\queryresult.aspx" />
+    <Content Include="Public\Login.aspx" />
     <Content Include="Public\Register.aspx" />
     <Content Include="Member\User\ResetPassword.aspx" />
     <Content Include="Member\User\Seccess.aspx" />
@@ -1055,6 +1080,7 @@
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
+    <Content Include="Public\text.aspx" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
     <None Include="database\test.sql" />

@@ -59,7 +59,16 @@
             </asp:SqlDataSource>
         </asp:View>
         <asp:View ID="View2" runat="server">
-            <table cellpadding="0" cellspacing="0" class="style1">
+        
+        
+        <table width="100%" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="width:60%;">
+               <table cellpadding="0" cellspacing="0" class="style1">
                 <tr>
                     <td class="style3">
                         广告位：</td>
@@ -186,6 +195,14 @@
                     </td>
                 </tr>
             </table>
+    </td>
+    <td>22222222222</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
         </asp:View>
     </asp:MultiView>
     </form>
