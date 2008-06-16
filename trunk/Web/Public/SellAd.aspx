@@ -9,7 +9,7 @@
             <td width="606" rowspan="5" align="center" valign="middle">
                 <img src="/app_themes/new/images/god.gif" width="606" height="372" border="0" usemap="#Map" />
                 <map name="Map" id="Map">
-                    <area shape="rect" coords="470,319,588,358" href="#" />
+                    <area shape="rect" coords="470,319,588,358" href="http://www.aaaa0.com/Public/Register.aspx" />
                 </map>
             </td>
             <td width="10" rowspan="4" class="tdblue">

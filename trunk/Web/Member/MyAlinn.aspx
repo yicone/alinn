@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyAlinn.aspx.cs" Inherits="Web.MyAlinn"
-    MasterPageFile="~/MasterPage/Member.Master" Title="我的阿里奶奶" %>
+    MasterPageFile="~/MasterPage/Member.Master" Title="用户管理中心" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div id="maincontent">
@@ -131,9 +131,7 @@
                 </div>
             </div>
             <div class="my_sanbao_banner">
-                <a href="http://club.alimama.com/thread-98154-1-1.html" target="_blank">
-                    <img height="60" src="http://img.alimama.cn/cms/images/1210820555450.gif" width="658"
-                        border="0" /></a></div>
+                </div>
         </div>
         <div class="lcol3">
             <div class="side-block userinfo">

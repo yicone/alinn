@@ -115,5 +115,15 @@ namespace Web
 
             return hostName;
         }
+        /// <summary>
+        /// 得到来源的完整网址
+        /// powered by FZF 20080616
+        /// </summary>
+        /// <returns></returns>
+        private static string GetUrl()
+        {
+           string url= HttpContext.Current.Request.UrlReferrer.ToString();
+           return url;
+        }
     }
 }
