@@ -622,6 +622,7 @@
     <Content Include="App_Themes\Basic\Menu.css" />
     <Content Include="App_Themes\Basic\style.css" />
     <Content Include="App_Themes\new\css.css" />
+    <Content Include="App_Themes\new\DataList.css" />
     <Content Include="App_Themes\new\images\001.jpg" />
     <Content Include="App_Themes\new\images\001.swf" />
     <Content Include="App_Themes\new\images\002.gif" />
@@ -889,6 +890,7 @@
     <Content Include="App_Themes\new\images\hover.gif" />
     <Content Include="App_Themes\new\images\购买时段.jpg" />
     <Content Include="App_Themes\new\images\active.gif" />
+    <Content Include="App_Themes\new\Menu.css" />
     <Content Include="Controls\Calendar.ascx" />
     <Content Include="Controls\Search.ascx" />
     <Content Include="CSS\alinn.css" />
@@ -956,6 +958,7 @@
     <Content Include="flash\flash.swf" />
     <Content Include="App_Themes\Basic\Basic.skin" />
     <None Include="App_Themes\Basic\images\Thumbs.db" />
+    <Content Include="App_Themes\new\Basic.skin" />
     <None Include="App_Themes\new\images\god.psd" />
     <None Include="App_Themes\new\images\img\Thumbs.db" />
     <None Include="database\table_export.sql" />
