@@ -156,6 +156,7 @@ namespace Web.Admin.Zone
         protected void gv_Urls_SelectedIndexChanged(object sender, EventArgs e)
         {
             string url=this.gv_Urls.SelectedRow.Cells[0].Text.ToString();
+            
            Response.Redirect("../GetPic/Snap.aspx?url=" + url);
         }
     }
