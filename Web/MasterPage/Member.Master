@@ -1,5 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs" Inherits="Web.MasterPage.Member"
     MasterPageFile="~/MasterPage/Global.Master" %>
+
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
         <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
@@ -7,41 +8,45 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
-            <asp:ContentPlaceHolder ID="_searchcontent" runat="server">
-
-            </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="_searchcontent" runat="server">
+    </asp:ContentPlaceHolder>
     <div id="SampleMenu">
         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" SkinID="MenuHorizontal">
             <Items>
                 <asp:MenuItem NavigateUrl="/Member/MyAlinn.aspx" Text="我的广告" Value="我的广告"></asp:MenuItem>
                 <asp:MenuItem Text="广告主" Value="广告主">
-                    <asp:MenuItem  NavigateUrl="/Member/Order/OrderManager.aspx" Text="广告计划管理" Value="广告计划管理"></asp:MenuItem>
-                    <asp:MenuItem Text="消费账户" NavigateUrl="/Member/Zone/OrderViewer.aspx" Value="消费账户"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Order/OrderManager.aspx" Text="广告计划管理" Value="广告计划管理">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="消费账户" NavigateUrl="/Member/Zone/OrderViewer.aspx" Value="消费账户">
+                    </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="/Member/Ad/ManageAdGroup.aspx" Text="广告组管理" Value="广告组管理">
                     </asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="数据报表" Value="数据报表"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="/Member/Store/MyStore.aspx" Text="收藏夹管理" Value="收藏夹管理"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Store/MyStore.aspx" Text="收藏夹管理" Value="收藏夹管理">
+                    </asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="网站主" Value="网站主">
                     <asp:MenuItem NavigateUrl="/Member/Zone/SiteManager.aspx" Text="广告位管理" Value="广告位管理">
                     </asp:MenuItem>
-                    <asp:MenuItem Enabled="False" Text="收入账户" Value="收入账户"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="/Member/Zone/OrderViewer.aspx" Text="交易管理" Value="交易管理"></asp:MenuItem>
-                    <asp:MenuItem Enabled="False" Text="效果报表" Value="效果报表"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Zone/OrderViewer.aspx" Text="交易管理" Value="交易管理">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Zone/EffectReport.aspx" Text="效果报表" Value="效果报表">
+                    </asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="用户信息" Value="用户信息">
                     <asp:MenuItem NavigateUrl="/Member/User/UserInfo.aspx" Text="基本信息" Value="基本信息">
                     </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="/Member/User/ResetPassword.aspx" Text="修改密码" Value="修改密码">
                     </asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="/Member/Zone/MyRecommendation.aspx" Text="我的推广" Value="我的推广"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="/Member/Zone/MyRecommendation.aspx" Text="我的推广" Value="我的推广">
+                    </asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="信用评价管理" Value="信用评价管理"></asp:MenuItem>
                     <asp:MenuItem Enabled="False" Text="管理财富通账户" Value="管理财富通账户"></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
     </div>
-    <div style="width: 984px; margin-left: auto; margin-right: auto; margin-top:50px">
+    <div style="margin-top: 50px" class="center">
         <asp:ContentPlaceHolder ID="_mainContent" runat="server">
         </asp:ContentPlaceHolder>
     </div>

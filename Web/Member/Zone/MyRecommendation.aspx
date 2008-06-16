@@ -7,18 +7,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="_searchcontent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
-    <div style="width: 100%; height: 80px; background-image: url('images/bg_recommendlink.png')">
-        <div style="float: left; margin-left: 50px; margin-top: 20px">
-            推广链接：<span id="txtRecommendLink">http://www.alinn.com?introducer=<%= HOT.BLL.User.GetLoginUser().ToString() %></span><input
-                name="btnCopy" type="button" value="复制链接" onclick="javascript:copyLink();" style="margin-left: 60px" />
+        <div style="width: 919px; height: 80px; background-image: url('images/bg_recommendlink.png')" class="center">
+            <div style="float: left; margin-left: 50px; margin-top: 20px">
+                推广链接：<span id="txtRecommendLink">http://www.aaaa0.com?introducer=<%= HOT.BLL.User.GetLoginUser().ToString() %></span><input
+                    name="btnCopy" type="button" value="复制链接" onclick="javascript:copyLink();" style="margin-left: 60px" />
+            </div>
         </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div style="text-align: left">
-        <span>网站列表</span>
-        <div style="width: 100%">
+        <br />
+        <br />
+        <br />
+        <div style="width: 919px; text-align: left">
+            <h3>
+                网站列表</h3>
             <asp:DataList runat="server" ID="DataList1" Width="100%" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
                     <span style="float: left;">昵称：<%# Eval("NickName") %>（共<%# Eval("SiteCount") %>个网站）</span>
@@ -27,7 +27,6 @@
                 </ItemTemplate>
             </asp:DataList>
         </div>
-    </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="UP_GetIntroducerInfoExtForMyRecommendation" SelectCommandType="StoredProcedure"
         OnSelecting="SqlDataSource1_Selecting">

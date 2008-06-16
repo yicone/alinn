@@ -38,7 +38,7 @@
                         ErrorMessage="手机号码不能为空"></asp:RequiredFieldValidator>
                 </td>
                 <td style="height: 44px">
-                    <font color="red">*</font> 手机号码是阿里奶奶就付款、投放等重要问题和您保持联系的首选， 请认真填写
+                    <font color="red">*</font> 手机号码是赢在广告就付款、投放等重要问题和您保持联系的首选， 请认真填写
                 </td>
             </tr>
             <tr>

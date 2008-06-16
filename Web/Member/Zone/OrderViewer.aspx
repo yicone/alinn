@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OrderViewer.aspx.cs" Inherits="Web.Member.Zone.OrderViewer"
     Culture="auto" UICulture="auto" MasterPageFile="../../MasterPage/Member.Master"
-    Title="阿里奶奶交易管理" %>
+    Title="交易管理" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>我的阿里奶奶</title>
+    <title>我的赢在广告</title>
     <meta http-equiv="Content-Language" content="zh-cn" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -22,27 +22,26 @@
         .actions
         {
             text-align: center;
-            width: 500px;
+            width: 40%;
         }
         .cMediaType
         {
-            width: 123px;
+            width: 10%;
             text-align: center;
         }
         .cZoneState
         {
-            width: 82px;
+            width: 10%;
             text-align: center;
         }
         .second
         {
-            width: 119px;
+            width: 20%;
             text-align: center;
         }
         .first
         {
-            width: 95px;
-            height: 32px;
+            width: 20%;
             text-align: center;
         }
     </style>
@@ -51,20 +50,20 @@
     <form id="form1" runat="server">
     <div id="SampleDataList">
         <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" OnItemCommand="DataList1_ItemCommand"
-            DataSourceID="SqlDataSource1" Width="100%" Height="100%">
+            DataSourceID="SqlDataSource1">
             <HeaderTemplate>
-           <table width="984" height="27" border="0" align="center" cellpadding="0" cellspacing="0" background="/app_themes/new/images/title4.gif">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                        <td class="baibiao">
+                        <td class="baibiao first">
                             广告位名称/尺寸
                         </td>
-                        <td class="baibiao">
+                        <td class="baibiao second ">
                             按时长计费价格(元/周)
                         </td>
-                        <td class="baibiao">
+                        <td class="baibiao cMediaType">
                             支持广告类型
                         </td>
-                        <td id="zonestate_header" style="width: 82px;text-align: center;">
+                        <td id="zonestate_header" class="baibiao cZoneState">
                             <select id="status" name="select">
                                 <option value="">状态</option>
                                 <option value="1">上架</option>
@@ -73,15 +72,15 @@
                                 <option value="3">拒绝</option>
                             </select>
                         </td>
-                        <td class="baibiao">
+                        <td class="baibiao actions">
                             操作
                         </td>
                     </tr>
                 </table>
             </HeaderTemplate>
             <ItemTemplate>
-                <table>
-                    <tr class="tlist-item">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
                         <td class="first">
                             <asp:LinkButton ID="LinkButton1" runat="server" CommandName="ToZoneView1" CommandArgument='<%# Eval("ZoneId") %>'><%# Eval("ZoneName") %></asp:LinkButton>
                             <br />
@@ -108,7 +107,8 @@
                     </tr>
                 </table>
             </ItemTemplate>
-            <FooterTemplate></FooterTemplate>
+            <FooterTemplate>
+            </FooterTemplate>
         </asp:DataList>
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"

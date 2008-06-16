@@ -109,7 +109,7 @@ namespace Web.User
         {
             if (this.fuImg.FileContent != null)
             {
-                string path = "~/Ad/uploadImages/";
+                string path = "~/Member/Ad/uploadImages/";
                 string datePath=DateTime.Now.ToString("yyyyMMdd");
                 string type = fuImg.FileName.Substring(fuImg.FileName.LastIndexOf(".")).Trim().ToLower() ;
                 if (HOT.Common.Picture.CheckValidExt(type))

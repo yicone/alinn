@@ -1,34 +1,37 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EffectReport.aspx.cs" Inherits="Web.Member.Zone.EffectReport"
     Culture="auto" UICulture="auto" MasterPageFile="../../MasterPage/Member.Master"
-    Title="阿里奶奶交易管理" %>
+    Title="效果报表" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <div style="text-align: left">
+    <div>
         <div>
             选择广告位：
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" Width="120px"
-                DataTextField="ZoneName" DataValueField="ZoneID">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1"
+                Width="120px" DataTextField="ZoneName" DataValueField="ZoneID">
             </asp:DropDownList>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 交易时间
             <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox>
-            <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox1" Format="yyyy-MM-dd" SelectedDate="2008-01-01">
+            <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox1"
+                Format="yyyy-MM-dd" SelectedDate="2008-01-01">
             </cc1:CalendarExtender>
             &nbsp;&nbsp; 到
             <asp:TextBox ID="TextBox2" runat="server" ReadOnly="True"></asp:TextBox>
-            <cc1:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox2" Format="yyyy-MM-dd" SelectedDate="2008-02-01">
+            <cc1:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox2"
+                Format="yyyy-MM-dd" SelectedDate="2008-02-01">
             </cc1:CalendarExtender>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="查询" Width="40px" Height="20px" OnClick="ImageButton1_Click" />
+            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="查询" Width="40px"
+                Height="20px" OnClick="ImageButton1_Click" />
         </div>
-        <br />
-        <br />
-        <div>交易列表</div>
     </div>
-    <div id="SampleDataList">
-        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" Width="915px"
+    <br />
+    <br />
+    <div id="SampleDataList" style="text-align:left">
+        <h3>交易列表</h3>
+        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server"
             DataSourceID="SqlDataSource2">
             <HeaderTemplate>
                 <table>
