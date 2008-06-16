@@ -15,24 +15,23 @@
 <body>
     <form id="form1" runat="server">
     <div id="SampleDataList" style="text-align:left">
-        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" DataSourceID="SqlDataSource1"
-            Width="915px">
+        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" DataSourceID="SqlDataSource1">
             <HeaderTemplate>
                 <table>
                     <tr>
-                        <td style="width: 120px; height: 32px;" class="center">
+                        <td style="width: 120px" class="center baibiao">
                             网站名称
                         </td>
-                        <td style="width: 120px" class="center">
+                        <td style="width: 120px" class="center baibiao">
                             添加时间
                         </td>
-                        <td style="width: 120px" class="center">
+                        <td style="width: 120px" class="center baibiao">
                             我的提成
                         </td>
-                        <td style="width: 435px" class="center">
+                        <td style="width: 435px" class="center baibiao">
                             网站地址
                         </td>
-                        <td style="width: 120px" class="center">
+                        <td style="width: 120px" class="center baibiao">
                             Alexa排名
                         </td>
                     </tr>
