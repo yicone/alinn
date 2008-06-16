@@ -836,6 +836,7 @@ div.page-title .where-are-u {
 .form-area ul li.submit-wrapper input {
 	margin: 0pt 15px 0pt 0pt;
 }
+/*--------------------*/
 .form-area .form-tips {
 	margin: 0pt 0pt 0pt 30px;
 }
@@ -1207,6 +1208,7 @@ fieldset.list-filters ul.filters li {
 fieldset.small-list-filters ul.filters li {
 	width: 190px;
 }
+/*---------------------*/
 .float-left {
 	float: left;
 }
@@ -1357,6 +1359,7 @@ fieldset.list-filters ul.filters li.submitter-wrapper {
 	float: left;
 	margin-right: 8px;
 }
+/*++++++++++++++++++++++++++*/
 .simple-list .list-footer {
 	height: 34px;
 }
@@ -1521,6 +1524,7 @@ a.need-notice {
 	margin: 4px 0pt 0pt;
 	padding: 0pt 7px;
 }
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 #quick_links li a:link, #quick_links li a:visited {
 	color: #0245DC;
 }
@@ -1571,6 +1575,7 @@ a.need-notice {
 	background: transparent url(http://img.alimama.cn/images/bg/new_club_nav.png) no-repeat scroll right top;
 	display: block;
 }
+/*OOOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKK*/
 #quick_nav li a span {
 	background: transparent url(http://img.alimama.cn/images/bg/new_club_nav.png) no-repeat scroll left top;
 	color: #4B6486;
@@ -1587,12 +1592,14 @@ a.need-notice {
 #quick_nav li a:hover span {
 	background-position: left -60px;
 }
+/*OOOOOOOOOOOOOOOOOOOKKKKKKKKKKKKK*/
 #quick_nav li.current a {
 	background-position: right -30px;
 }
 #quick_nav li.current a span {
 	background-position: left -30px;
 }
+/*OOOOOOOOOOOO*/
 #header {
 	margin: 0pt auto;
 	width: 950px;
@@ -1601,12 +1608,14 @@ div#navigation {
 	margin: 10px 1px 0pt;
 }
 #maincontent {
-	margin: 15px auto;
-	width: 950px;
+	margin: 0px auto;
+	width: 984px;
 }
+/*OOOOOOOOOKKKKKKKKKK*/
 body.markets #maincontent {
 	margin: 5px auto;
 }
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 #maincontent .lcol1 {
 	float: left;
 	width: 685px;

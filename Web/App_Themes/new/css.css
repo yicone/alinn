@@ -260,3 +260,7 @@ list-style-type: none;
 #menu ul{float:left;margin-left:0px; width:300px; margin-left:50px;}
 #menu ul li{ height:22px;float:left; margin-left:0px;width:50px; background-image:url(images/menubg.gif); padding-top:5px; border:  #669999 solid; border-width:1px;}
 #menu ul li:hover{ background-image:url(images/menubg2.gif);}
+.topnavon { background-color:#0099CC; MARGIN-BOTTOM: 2px; WIDTH: 54px; CURSOR: pointer; COLOR: #000000; LINE-HEIGHT: 22px; HEIGHT: 22px; TEXT-ALIGN: center
+}
+.topnavoff {  background-color:#999999; MARGIN-BOTTOM: 2px; WIDTH: 54px; COLOR: #ffffff; LINE-HEIGHT: 22px; HEIGHT: 22px; TEXT-ALIGN: center
+}
