@@ -137,7 +137,7 @@ namespace HOT.BLL
         {
             MailMessage mailMsg = new MailMessage();
 
-            MailAddress mailAddress = new MailAddress("alinngroup@gmail.com");
+            MailAddress mailAddress = new MailAddress("lixiaowei521808@163.com");
             mailMsg.From = mailAddress;
             mailMsg.To.Add(email);
             mailMsg.Subject = Subject;
@@ -145,9 +145,9 @@ namespace HOT.BLL
             mailMsg.BodyEncoding = System.Text.Encoding.UTF8;
             mailMsg.IsBodyHtml = true;
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            client.Credentials = new System.Net.NetworkCredential("guanggaotianxia@gmail.com", "ggtxalinn");
-            client.EnableSsl = true;
+            SmtpClient client = new SmtpClient("smtp.163.com");
+            client.Credentials = new System.Net.NetworkCredential("lixiaowei521808@163.com", "834386");
+            //client.EnableSsl = true;
             try
             {
                 client.Send(mailMsg);
