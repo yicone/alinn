@@ -119,6 +119,7 @@
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneClass.cs" />
+    <Compile Include="ZoneLocation.cs" />
     <Compile Include="ZoneSize.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

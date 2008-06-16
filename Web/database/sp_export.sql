@@ -2392,3 +2392,128 @@ FROM         dbo.AL_ZoneStat INNER JOIN
                       dbo.AL_Zone ON dbo.AL_ZoneStat.ZoneId = dbo.AL_Zone.ZoneId and dbo.AL_ZoneStat.ZoneId=@ZoneId and dbo.AL_ZoneStat.Date >= @StartDate and dbo.AL_ZoneStat.Date <= @EndDate
 		end
 GO
+/******************************************************************
+* 表名：AL_ZoneLocation
+* 时间：2008-6-16 15:43:13
+******************************************************************/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_Exists]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_Exists]
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_Exists
+@UrlId int
+AS
+	DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_ZoneLocation WHERE UrlId=@UrlId 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_ADD]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_ADD]
+GO
+------------------------------------
+--用途：增加一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_ADD
+@UrlId int output,
+@Url nvarchar(2048),
+@ZoneId uniqueidentifier
+
+ AS 
+
+	INSERT INTO AL_ZoneLocation(
+	[Url],[ZoneId]
+	)VALUES(
+	@Url,@ZoneId
+	)
+	SET @UrlId = @@IDENTITY
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_Update]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_Update]
+GO
+------------------------------------
+--用途：修改一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_Update
+@UrlId int,
+@Url nvarchar(2048),
+@ZoneId uniqueidentifier,
+@CreateDate datetime
+ AS 
+	UPDATE AL_ZoneLocation SET 
+	[Url] = @Url,[ZoneId] = @ZoneId,[CreateDate] = @CreateDate
+	WHERE UrlId=@UrlId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_Delete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_Delete]
+GO
+------------------------------------
+--用途：删除一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_Delete
+@UrlId int
+ AS 
+	DELETE AL_ZoneLocation
+	 WHERE UrlId=@UrlId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_GetModel]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_GetModel]
+GO
+------------------------------------
+--用途：得到实体对象的详细信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_GetModel
+@UrlId int
+ AS 
+	SELECT 
+	UrlId,Url,ZoneId,CreateDate
+	 FROM AL_ZoneLocation
+	 WHERE UrlId=@UrlId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_ZoneLocation_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_ZoneLocation_GetList]
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-16 15:43:13
+------------------------------------
+CREATE PROCEDURE UP_AL_ZoneLocation_GetList
+ AS 
+	SELECT 
+	UrlId,Url,ZoneId,CreateDate
+	 FROM AL_ZoneLocation
+
+GO
+

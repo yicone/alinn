@@ -110,6 +110,7 @@
     <Compile Include="IUser.cs" />
     <Compile Include="IZone.cs" />
     <Compile Include="IZoneClass.cs" />
+    <Compile Include="IZoneLocation.cs" />
     <Compile Include="IZoneSize.cs" />
     <Compile Include="Store.cs" />
   </ItemGroup>

@@ -33,7 +33,7 @@ namespace Web.Admin.Zone
             HOT.Model.Zone zModel = new HOT.Model.Zone();
             zModel = zBLL.GetModel(zoneId);
             this.labZoneName.Text = zModel.ZoneName;
-            this.rblSize.SelectedIndex = int.Parse(zModel.SizeId.ToString()) - 11;
+            this.rblSize.SelectedIndex = int.Parse(zModel.SizeId.ToString());
             this.rblMediaType.SelectedIndex = getSelectedIndex(zModel.MediaType);
             this.rblInFirst.SelectedIndex =int.Parse( zModel.InFirst.ToString());
             this.rblTransType.SelectedIndex = getSelectedIndex(zModel.TransType);
@@ -137,6 +137,12 @@ namespace Web.Admin.Zone
             {
                 Response.Write("<script>alert('²Ù×÷³¬Ê±');history.go(-2);</script>");
             }
+        }
+        protected DataSet GetUrls(Guid zoneId)
+        {
+            HOT.BLL.ZoneLocation zlBLL = new HOT.BLL.ZoneLocation();
+            DataSet ds = new DataSet();
+            return ds;
         }
     }
 }

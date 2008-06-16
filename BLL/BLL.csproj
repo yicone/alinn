@@ -121,6 +121,7 @@
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneAgeType.cs" />
     <Compile Include="ZoneClass.cs" />
+    <Compile Include="ZoneLocation.cs" />
     <Compile Include="ZoneSize.cs" />
     <Compile Include="ZoneState.cs" />
   </ItemGroup>
