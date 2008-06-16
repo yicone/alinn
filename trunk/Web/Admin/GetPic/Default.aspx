@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        &nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="291px"></asp:TextBox><br /><br />
+        &nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="291px">http://www.51aspx.com</asp:TextBox><br /><br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Éú³ÉÍøÖ·ËõÂÔÍ¼" /></div>
     </form>
 </body>

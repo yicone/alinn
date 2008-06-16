@@ -104,7 +104,6 @@ namespace Snap
 
             Shot.GetIt();
             Bitmap Pic = Shot.DrawBitmap(this.ImageHeight, this.ImageWidth);
-            Pic.Save(@"1.gif", ImageFormat.Jpeg);
             return Pic;
         }
     }

@@ -23,7 +23,6 @@ namespace Snap
                 System.Drawing.Bitmap x = thumb.GetBitmap();
                 x.Save(Response.OutputStream, ImageFormat.Jpeg);
                 Response.ContentType = "image/jpeg";
-                x.Save(@"/Admin/getpic/1.jpg", ImageFormat.Jpeg);
             }
             catch
             {
