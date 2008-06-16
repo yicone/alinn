@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <div style="text-align: left">
+    <div class="center">
         <div>
             选择广告位：
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" Width="120px"
@@ -23,38 +23,38 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="查询" Width="40px" Height="20px" OnClick="ImageButton1_Click" />
         </div>
-        <br />
-        <br />
-        <div>交易列表</div>
     </div>
-    <div id="SampleDataList">
-        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server" Width="915px"
+    <br />
+    <br />
+    <div id="SampleDataList" style="text-align:left">
+        <h3>交易列表</h3>
+        <asp:DataList ID="DataList1" SkinID="SampleDataList" runat="server"
             DataSourceID="SqlDataSource2">
             <HeaderTemplate>
                 <table>
                     <tr>
-                        <td width="100" align="center">
+                        <td width="100" align="center" class="baibiao">
                             交易号/时间
                         </td>
-                        <td width="250" align="center">
+                        <td width="250" align="center" class="baibiao">
                             广告位名称/所属网站
                         </td>
-                        <td width="150" align="center">
+                        <td width="150" align="center" class="baibiao">
                             广告主信息
                         </td>
-                        <td width="150" align="center">
+                        <td width="150" align="center" class="baibiao">
                             成交价（元）
                         </td>
-                        <td width="150" align="center">
+                        <td width="150" align="center" class="baibiao">
                             购买时段
                         </td>
-                        <td width="100" align="center">
+                        <td width="100" align="center" class="baibiao">
                             投放广告
                         </td>
-                        <td width="100" align="center">
+                        <td width="100" align="center" class="baibiao">
                             投放效果
                         </td>
-                        <td width="50" align="center">
+                        <td width="50" align="center" class="baibiao">
                             <select id="status" name="status">
                                 <option value="">所有状态</option>
                                 <option value="NOTCANCELED">隐藏已取消交易</option>
@@ -70,7 +70,7 @@
                                 <option value="CANCELED">交易取消</option>
                             </select>
                         </td>
-                        <td width="100" align="center">
+                        <td width="100" align="center" class="baibiao">
                             操作
                         </td>
                     </tr>

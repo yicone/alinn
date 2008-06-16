@@ -36,16 +36,16 @@
             <HeaderTemplate>
                 <table>
                     <tr>
-                        <td width="200" align="center">
+                        <td width="200" align="center" class="baibiao">
                             日期
                         </td>
-                        <td width="250" align="center">
+                        <td width="250" align="center" class="baibiao">
                             广告位
                         </td>
-                        <td width="250" align="center">
+                        <td width="250" align="center" class="baibiao">
                             广告主信息
                         </td>
-                        <td width="250" align="center">
+                        <td width="250" align="center" class="baibiao">
                             成交价（元）
                         </td>
                     </tr>
