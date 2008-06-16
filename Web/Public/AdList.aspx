@@ -15,18 +15,19 @@
 
 <table width="984" border="1"  align="center" cellpadding="0" cellspacing="0" style="border:sild thin ffcc00;">
   <tr>
-    <td valign="top"><asp:DataList ID="dlClasses" runat="server" OnItemDataBound="dlClasses_ItemDataBound"
-        RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" Width="100%">
+    <td valign="top">
+        <asp:DataList ID="dlClasses" runat="server" OnItemDataBound="dlClasses_ItemDataBound"
+        RepeatColumns="7" RepeatDirection="Horizontal" ShowFooter="False" Width="100%">
         <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False"
             Font-Underline="False" HorizontalAlign="Center" VerticalAlign="Top" />
         <ItemTemplate>
-            <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Medium"
-                ForeColor="#FF3300"></asp:Label>
+            <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Small"
+                ForeColor="#33CCFF" Font-Bold="True"></asp:Label>
             <br />
-            <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="4" RepeatDirection="Horizontal"
-                RepeatLayout="Flow" Width="100%">
+            <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="1" RepeatDirection="Horizontal"
+                RepeatLayout="Flow" Width="100%" Font-Size="Small" ForeColor="#66CCFF">
                 <ItemTemplate>
-                    <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>">
+                    <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>" style="color:#33CCFF">
                         <%# Eval("ClassName") %></a>
                 </ItemTemplate>
             </asp:DataList>

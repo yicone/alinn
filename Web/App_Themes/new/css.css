@@ -256,11 +256,15 @@ list-style-type: none;
 }
 #login{width:700px; height:32px; float:right; margin-left:30px;}
 #login .login{height:20px; width:250px; float:left;margin-left:50px; margin-top:5px; text-align:left;}
-#menu{ width:500px; height:28px; float:left;}
-#menu ul{float:left;margin-left:0px; width:300px; margin-left:50px;}
-#menu ul li{ height:22px;float:left; margin-left:0px;width:50px; background-image:url(images/menubg.gif); padding-top:5px; border:  #669999 solid; border-width:1px;}
-#menu ul li:hover{ background-image:url(images/menubg2.gif);}
+#menu{ width:600px; height:28px; float:left; margin-top:30px;}
+#menu ul{float:left; width:600px; margin-left:50px; margin-bottom:0px;}
+#menu ul li{ height:17px; width:56px;float:left; margin-left:20px;background-image:url(images/link.gif); padding-top:8px; border:  #669999 solid; border-width:0px;}
+#menu ul li:hover{ background-image:url(images/active.gif);}
+#menu ul li:active{ background-image:url(images/active.gif);}
 .topnavon { background-color:#0099CC; MARGIN-BOTTOM: 2px; WIDTH: 54px; CURSOR: pointer; COLOR: #000000; LINE-HEIGHT: 22px; HEIGHT: 22px; TEXT-ALIGN: center
 }
 .topnavoff {  background-color:#999999; MARGIN-BOTTOM: 2px; WIDTH: 54px; COLOR: #ffffff; LINE-HEIGHT: 22px; HEIGHT: 22px; TEXT-ALIGN: center
 }
+.search{ height:35px; margin-left:200px;}
+.keywords{ float:left; margin-top:5px;}
+.btnsearch{ margin-top:1px; float:left;}

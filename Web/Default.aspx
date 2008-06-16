@@ -80,13 +80,13 @@
         <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False"
             Font-Underline="False" HorizontalAlign="Center" VerticalAlign="Top" />
         <ItemTemplate>
-            <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Medium"
-                ForeColor="#FF3300"></asp:Label>
+            <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Small"
+                ForeColor="#33CCFF" Font-Bold="True"></asp:Label>
             <br />
             <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="1" RepeatDirection="Horizontal"
                 RepeatLayout="Flow" Width="100%">
                 <ItemTemplate>
-                    <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>">
+                    <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>" style="color:#33CCFF;">
                         <%# Eval("ClassName") %></a>
                 </ItemTemplate>
             </asp:DataList>

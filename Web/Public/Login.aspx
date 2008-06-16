@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.User.Login"
-    MasterPageFile="~/MasterPage/Global.Master" Title="用户登录" %>
+    MasterPageFile="~/MasterPage/Global.Master" Title="用户登录" enableEventValidation="false"%>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">

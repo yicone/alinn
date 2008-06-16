@@ -20,6 +20,7 @@
     <td align="center">            
     <div id="menu">
                 <ul>
+                    <li><a href="/" target="_self">首页</a></li>
                     <li><a href="/Public/AdList.aspx" target="_self">买广告</a></li>
                     <li><a href="/public/sellad.aspx" target="_self">卖广告</a></li>
                     <li><a href="#" target="_self">网站推广</a></li>
