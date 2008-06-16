@@ -39,7 +39,7 @@ namespace Web.User
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-            sb.AppendFormat("请点击下面的链接 <a href='http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.alinn.com/ResetPassword.aspx?userid={0}&num={1}</a> ", email, num);
+            sb.AppendFormat("请点击下面的链接 <a href='http://www.aaaa0.com/ResetPassword.aspx?userid={0}&num={1}'>http://www.aaaa0.com/ResetPassword.aspx?userid={0}&num={1}</a> ", email, num);
 
             return sb.ToString();
         }

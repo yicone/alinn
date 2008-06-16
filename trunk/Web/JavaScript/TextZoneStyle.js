@@ -1,5 +1,5 @@
-﻿var imageHome = "/images";
-var defaultImagePath = "aaaa0_1.jpg";
+﻿var imageHome = "/Member/Ad/uploadImages/";
+var defaultImageHome = "/images/defaultAd";
 //定义TextZone对象
 function TextZone(zoneSize, layoutType){
     this.zoneSize = zoneSize;
@@ -78,9 +78,9 @@ function TextZone(zoneSize, layoutType){
 
             if(mediaType == "text") {
                 if(isDefaultZone == "true"){
-                    title = "阿里奶奶：好产品更需要好广告";
-                    text = "我们一起创建公开、透明的广告交易平台。买广告，卖广告，一切都很轻松!";
-                    link = "www.alinn.com";
+                    title = "一针见血 赢在广告";
+                    text = "拉一个注册用户两毛，推荐一个网站99再送百万流量。";
+                    link = "www.aaaa0.com";
                 }
                 
                 if (this.layoutType == "1") {
@@ -95,7 +95,8 @@ function TextZone(zoneSize, layoutType){
                 this.mainlinkDiv = $("#main_link"); 
             } else {
                 if(isDefaultZone == "true"){
-                    imagePath = defaultImagePath;
+                    imageHome = defaultImageHome;
+                    imagePath = w + "x" + h + ".gif";
                 }
                 this.bgimgDiv.css("background-image", "url('" + imageHome + "/" + imagePath + "')");
                 this.bgimgDiv.css("margin-top", -(h - 2));
@@ -176,51 +177,51 @@ function copyCode(jscode){
 
 function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     var sbJs = new StringBuilder('<script type="text/JavaScript"> \n');
-    sbJs.append('alinn_pid="');
+    sbJs.append('aaaa0_pid="');
     sbJs.append(zoneId);
     sbJs.append('"; \n');
 
-    sbJs.append('alinn_titlecolor="');
+    sbJs.append('aaaa0_titlecolor="');
     sbJs.append(oTextZoneStyle.title$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_textcolor="');
+    sbJs.append('aaaa0_textcolor="');
     sbJs.append(oTextZoneStyle.text$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_linkcolor="');
+    sbJs.append('aaaa0_linkcolor="');
     sbJs.append(oTextZoneStyle.link$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_bordercolor="');
+    sbJs.append('aaaa0_bordercolor="');
     sbJs.append(oTextZoneStyle.border$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_backgroundcolor="');
+    sbJs.append('aaaa0_backgroundcolor="');
     sbJs.append(oTextZoneStyle.background$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_groundingcolor="');
+    sbJs.append('aaaa0_groundingcolor="');
     sbJs.append(oTextZoneStyle.grounding$color);
     sbJs.append('"; \n');
     
-    sbJs.append('alinn_cornerstyle="');
+    sbJs.append('aaaa0_cornerstyle="');
     sbJs.append(oTextZoneStyle.corner$style);
     sbJs.append('"; \n');
 	
-	sbJs.append('alinn_backgroundimage="');
+	sbJs.append('aaaa0_backgroundimage="');
     sbJs.append(oTextZoneStyle.background$image);
     sbJs.append('"; \n');
 	
-    sbJs.append('alinn_iconimage="');
+    sbJs.append('aaaa0_iconimage="');
     sbJs.append(oTextZoneStyle.icon$image);
     sbJs.append('"; \n');
 	
-	sbJs.append('alinn_sizecode="');
+	sbJs.append('aaaa0_sizecode="');
     sbJs.append(sizeCode);
     sbJs.append('"; \n');
 	
-		sbJs.append('alinn_layouttype="');
+		sbJs.append('aaaa0_layouttype="');
     sbJs.append(layoutType);
     sbJs.append('"; \n');
 	

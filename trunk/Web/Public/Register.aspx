@@ -140,7 +140,7 @@
                     &nbsp;<asp:TextBox ID="mobile" runat="server"></asp:TextBox>
                 </td>
                 <td style="height: 44px" class="style1">
-                    <font color="red">*</font> 手机号码是阿里奶奶就付款、投放等重要问题和您保持联系的首选， 请认真填写
+                    <font color="red">*</font> 手机号码是赢在广告就付款、投放等重要问题和您保持联系的首选， 请认真填写
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="mobile"
                         ErrorMessage="手机号码不能为空"></asp:RequiredFieldValidator>
                 </td>

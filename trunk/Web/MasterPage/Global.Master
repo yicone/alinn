@@ -9,7 +9,6 @@
     <meta http-equiv="Content-Language" content="zh-cn" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%--在此行上方增加全局的META标签--%>
-
     <%--<script type="text/javascript" src="/JavaScript/jquery.js"></script>--%>
 
     <script type="text/javascript" src="/JavaScript/common.js"></script>
@@ -27,19 +26,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="text-align:center;">
-    <div style="text-align:center; width:984"><uc3:Header ID="Header2" runat="server" /></div>
-    <div id="maincontent">
-    <div style="width: 984px; margin-left: auto; margin-right: auto; margin-top:0px; text-align:center;">
-        <asp:ContentPlaceHolder ID="_mainContent" runat="server">
-        </asp:ContentPlaceHolder>
-    <uc2:Footer ID="Footer1" runat="server" />
+    <div style="width: 984px" class="center">
+        <div>
+            <uc3:Header ID="Header2" runat="server" />
+        </div>
+        <div id="maincontent" class="center" style="margin-top: 0px;">
+                <asp:ContentPlaceHolder ID="_mainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                
+        </div>
+        <div>
+            <uc2:Footer ID="Footer1" runat="server" />
+        </div>
     </div>
-    </div>
+    </form>
     <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
         <%--此处添加JS代码和函数--%>
     </asp:ContentPlaceHolder>
-    </div>
-    </form>
 </body>
 </html>

@@ -1,17 +1,17 @@
 ﻿function generateIFrame(){
-    var query = "titlecolor=" + alinn_titlecolor;
-    query = query + "&textcolor=" + alinn_textcolor;
-    query = query + "&linkcolor=" + alinn_linkcolor;
-    query = query + "&bordercolor=" + alinn_bordercolor;
-    query = query + "&backgroundcolor=" + alinn_backgroundcolor;
-    query = query + "&groundingcolor=" + alinn_groundingcolor;
-    query = query + "&cornerstyle=" + alinn_cornerstyle;
-    query = query + "&backgroundimage=" + alinn_backgroundimage;
-    query = query + "&iconimage=" + alinn_iconimage;
-    query = query + "&sizecode=" + alinn_sizecode;
-    query = query + "&layouttype=" + alinn_layouttype;
+    var query = "titlecolor=" + aaaa0_titlecolor;
+    query = query + "&textcolor=" + aaaa0_textcolor;
+    query = query + "&linkcolor=" + aaaa0_linkcolor;
+    query = query + "&bordercolor=" + aaaa0_bordercolor;
+    query = query + "&backgroundcolor=" + aaaa0_backgroundcolor;
+    query = query + "&groundingcolor=" + aaaa0_groundingcolor;
+    query = query + "&cornerstyle=" + aaaa0_cornerstyle;
+    query = query + "&backgroundimage=" + aaaa0_backgroundimage;
+    query = query + "&iconimage=" + aaaa0_iconimage;
+    query = query + "&sizecode=" + aaaa0_sizecode;
+    query = query + "&layouttype=" + aaaa0_layouttype;
     
-    query = query + "&zoneid=" + alinn_pid;
+    query = query + "&zoneid=" + aaaa0_pid;
     query = query + "&zonehref=" + location.href;
 
 	var dframe = document.createElement("IFRAME");
@@ -20,7 +20,7 @@
 	jframe.attr("id", "");
 	jframe.attr("scrolling", "no");
 	jframe.attr("frameborder", "0");
-	var size = alinn_sizecode.split("x");
+	var size = aaaa0_sizecode.split("x");
 	var width = size[0];
 	var height = size[1];
 	jframe.attr("width", width);

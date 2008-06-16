@@ -2,7 +2,7 @@
     MasterPageFile="~/MasterPage/Global.Master" Title="用户登录" enableEventValidation="false"%>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
             <td width="608" align="center" valign="top">
                 <table width="608" border="0" cellspacing="0" cellpadding="0">
@@ -295,7 +295,7 @@
             </td>
         </tr>
     </table>
-    <table width="760" height="50" border="0" align="center" cellpadding="0" cellspacing="0"
+    <table width="100%" height="50" border="0" align="center" cellpadding="0" cellspacing="0"
         bgcolor="#32ADE6">
         <tr>
             <td>

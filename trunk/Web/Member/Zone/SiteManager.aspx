@@ -7,34 +7,38 @@
 
 </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
-
-    <div style="width: 950px; margin-top: 50px; margin-left: auto; margin-right: auto">
-        <div style="text-align:left">
-            <asp:ImageButton ID="btnAddSite" runat="server" Text="新增网站" 
-                OnClick="btnAddSite_Click" Height="25px" ImageAlign="Middle" 
-                ImageUrl="~/App_Themes/new/images/grow.gif" style="width: 80px" Width="80px" />
+    <div style="width:950px" class="center">
+        <div style="text-align: left">
+            <asp:ImageButton ID="btnAddSite" runat="server" Text="新增网站" OnClick="btnAddSite_Click"
+                Height="25px" ImageAlign="Middle" ImageUrl="~/App_Themes/new/images/grow.gif"
+                Style="width: 80px" Width="80px" />
         </div>
         <div style="margin-top: 20px">
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding"
                 OnItemCommand="DataList1_ItemCommand" Width="100%">
                 <ItemTemplate>
- <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5left.gif">&nbsp;</td>
-    <td height="30" align="left" valign="middle" background="/app_themes/new/images/title5mid.gif" class="STYLE8"><asp:LinkButton runat="server" ID="lbViewSite">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
-                        <span style="width: auto"></span>
-                        <asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "/Member/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>'>在此网站下新增广告位</asp:LinkButton>
-                        &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "/Member/Zone/Site.aspx?action=update&siteid=" + Eval("SiteId")%>'>修改</asp:LinkButton>
-                        &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" CommandName="DelSite"
-                            CommandArgument='<%# Eval("SiteId") %>'>删除</asp:LinkButton>
-                        </p></td>
-    <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5right.gif">&nbsp;</td>
-  </tr>
-</table>
-                    <span style="width: 100%" class="tdblue">
-                        
-                    </span>
-                    <iframe id='<%# "siteiframe" + Eval("SiteId") %>' width="100%" scrolling="no" frameborder="0"
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                        <tr>
+                            <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5left.gif">
+                                &nbsp;
+                            </td>
+                            <td height="30" align="left" valign="middle" background="/app_themes/new/images/title5mid.gif"
+                                class="STYLE8">
+                                <asp:LinkButton runat="server" ID="lbViewSite">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
+                                <span style="width: auto"></span>
+                                <asp:LinkButton runat="server" ID="lbAddZone" PostBackUrl='<%# "/Member/Zone/Zone.aspx?action=new&siteid=" + Eval("SiteId") %>'>在此网站下新增广告位</asp:LinkButton>
+                                &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="lbChangeSite" PostBackUrl='<%# "/Member/Zone/Site.aspx?action=update&siteid=" + Eval("SiteId")%>'>修改</asp:LinkButton>
+                                &nbsp;&nbsp;&nbsp;<asp:LinkButton runat="server" ID="LinkButton1" CommandName="DelSite"
+                                    CommandArgument='<%# Eval("SiteId") %>'>删除</asp:LinkButton>
+                                </p>
+                            </td>
+                            <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5right.gif">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <span class="tdblue"></span>
+                    <iframe id='<%# "siteiframe" + Eval("SiteId") %>' scrolling="no" frameborder="0" width="100%"
                         src='<%# "/Member/Zone/ZoneManager.aspx?siteid=" + Eval("SiteId") %>'>
                         <!--读取广告位列表-->
                     </iframe>
