@@ -18,6 +18,10 @@
         {
             text-align: right;
         }
+        .style4
+        {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +71,7 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="width:60%;">
+    <td style="width:40%;">
                <table cellpadding="0" cellspacing="0" class="style1">
                 <tr>
                     <td class="style3">
@@ -196,7 +200,26 @@
                 </tr>
             </table>
     </td>
-    <td>22222222222</td>
+    <td valign="top">
+    <br />
+        <span class="style4">请点击下面的网址进行人工审核:<br />
+        <p>
+            1.如果审核不合格，请点击审核拒绝按钮。</p>
+        <p>
+            2.如果审核通过，请点击网址后面的截图按钮，如果提示截图成功，请点击“审核通过”按钮，如果提示不成功，重新截图。</p>
+        </span>
+        </p>
+        <br />
+        <asp:GridView ID="gv_Urls" runat="server" AutoGenerateColumns="False" 
+            Width="100%" onselectedindexchanged="gv_Urls_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="Url" HeaderText="广告位投放列表" />
+                <asp:HyperLinkField Text="截图" />
+                <asp:CommandField ButtonType="Button" HeaderText="截图" ShowHeader="True" 
+                    ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
+      </td>
   </tr>
   <tr>
     <td>&nbsp;</td>

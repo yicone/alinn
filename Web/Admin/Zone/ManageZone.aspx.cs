@@ -44,6 +44,8 @@ namespace Web.Admin.Zone
             this.labKeyWords.Text = zModel.Keywords;
             this.labDescription.Text = zModel.Description;
             this.labWeekPrice.Text = zModel.WeekPrice.ToString();
+            //取得广告位投放网址并显示
+            gvUrlsDateBind(zoneId);
         }
         protected int getSelectedIndex(int? id)
         {
@@ -142,7 +144,19 @@ namespace Web.Admin.Zone
         {
             HOT.BLL.ZoneLocation zlBLL = new HOT.BLL.ZoneLocation();
             DataSet ds = new DataSet();
+            ds = zlBLL.GetList("AL_ZoneLocation.ZoneId='" + zoneId.ToString()+"'");
             return ds;
+        }
+        protected void gvUrlsDateBind(Guid zoneId)
+        {
+            this.gv_Urls.DataSource = GetUrls(zoneId);
+            this.gv_Urls.DataBind();
+        }
+
+        protected void gv_Urls_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string url=this.gv_Urls.SelectedRow.Cells[0].Text.ToString();
+           Response.Redirect("../GetPic/Snap.aspx?url=" + url);
         }
     }
 }
