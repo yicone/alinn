@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Web.MasterPage.Default"
-    MasterPageFile="~/MasterPage/Global1.Master" %>
+    MasterPageFile="~/MasterPage/Global.Master" %>
 
 <%@ Register Src="../Controls/Search.ascx" TagName="Search" TagPrefix="uc1" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
@@ -9,10 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
-
-
-
-<table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
+    <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="489" height="60"><a href="http://www.aaaa0.com.cn"><img src="/app_Themes/new/images/ad3.gif" width="489" height="60"></a></td>
     <td width="489" height="60"><a href="http://www.aaaa0.cn"><img src="/app_Themes/new/images/ad2.gif" width="489" height="60"></a></td>
@@ -26,26 +23,37 @@
 </table>
 <table width="984" height="257" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="290" valign="top"><table width="289" height="199" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
-      <tr>
-        <td width="18" height="26" valign="top" background="/app_Themes/new/images/004left.jpg" bgcolor="#FFFFFF">&nbsp;</td>
-        <td align="left" height="26" valign="middle" background="/app_Themes/new/images/004.jpg" bgcolor="#FFFFFF"><span class="a5">网站公告</span></td>
-      </tr>
-      <tr>
-        <td colspan="2" valign="top" bgcolor="#FFFFFF"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+    <td width="290" valign="top">
+    <table width="100%" height="189" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
+        <tr>
+          <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
-              <td valign="top" class="tablebgc"> 
+              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
+              <td background="/app_Themes/new/images/004.jpg"><span class="a5">网站公告</span></td>
+            </tr>
+          </table>
+          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
+  </tr>
+</table>
+    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" class="tablebgc">
                        <asp:ContentPlaceHolder ID="notice" runat="server">
                         </asp:ContentPlaceHolder></td>
-            </tr>
-        </table></td>
+          </td>
       </tr>
+    </table></td>
+        </tr>
     </table>
+    
     <table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
         </tr>
-      </table><table width="100%" height="189" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
+      </table>
+      <table width="100%" height="189" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
         <tr>
           <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
@@ -67,7 +75,8 @@
       </tr>
     </table></td>
         </tr>
-    </table></td>
+    </table>
+    </td>
     <td width="10"></td>
     <td valign="top"><table width="100%" height="196" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
@@ -314,7 +323,8 @@ oFlash1.write("flash");
     <td width="10"></td>
     <td width="250" valign="top"><table width="100%" height="156" border="0" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
         <tr>
-          <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <td valign="top" bgcolor="#FFFFFF">
+          <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
               <td background="/app_Themes/new/images/004.jpg"><span class="a5">客服中心</span></td>
@@ -371,19 +381,18 @@ oFlash1.write("flash");
           <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
         </tr>
     </table>
-      <table width="100%" height="240" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
-        <tr>
-          <td width="18" height="26" valign="top" background="/app_Themes/new/images/004left.jpg" bgcolor="#FFFFFF">&nbsp;</td>
-          <td align="left" valign="middle" background="/app_Themes/new/images/004.jpg" bgcolor="#FFFFFF">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" valign="top" bgcolor="#FFFFFF"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td valign="top" class="tablebgc">&nbsp;</td>
-              </tr>
-          </table></td>
-        </tr>
-      </table></td>
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
+              <td background="/app_Themes/new/images/004.jpg"><span class="a5">客服中心</span></td>
+            </tr>
+          </table>
+          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
+  </tr>
+</table>
+                                </td>
   </tr>
 </table>
 <table width="984" height="11" border="0" align="center" cellpadding="0" cellspacing="0">

@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Default.Master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="Web.Default" Title="赢在广告" %>
-
+    CodeBehind="Default.aspx.cs" Inherits="Web.Default" Title="赢在广告：www.aaaa0.com" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="notice" runat="server">
     <asp:GridView ID="gvNews" runat="server" AutoGenerateColumns="False" DataKeyNames="NewsId"
         DataSourceID="SqlDataSource1" ShowHeader="False" Width="100%">
@@ -76,14 +75,15 @@
 <asp:Content ID="Content5" runat="server" 
     contentplaceholderid="ContentPlaceHolder4">
     <asp:DataList ID="dlClasses" runat="server" OnItemDataBound="dlClasses_ItemDataBound"
-        RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" Width="100%">
+        RepeatColumns="7" RepeatDirection="Horizontal" ShowFooter="False" 
+        Width="100%">
         <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False"
             Font-Underline="False" HorizontalAlign="Center" VerticalAlign="Top" />
         <ItemTemplate>
             <asp:Label ID="labClassName" runat="server" Text='<%# Bind("ClassName") %>' Font-Size="Medium"
                 ForeColor="#FF3300"></asp:Label>
             <br />
-            <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="4" RepeatDirection="Horizontal"
+            <asp:DataList ID="dlSonClasses" runat="server" RepeatColumns="1" RepeatDirection="Horizontal"
                 RepeatLayout="Flow" Width="100%">
                 <ItemTemplate>
                     <a href="/Public/AdList.aspx?ClassId=<%#Eval("ClassId") %>">

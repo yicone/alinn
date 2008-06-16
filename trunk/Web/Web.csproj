@@ -188,27 +188,6 @@
     <Compile Include="Controls\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage\Default1.Master.cs">
-      <DependentUpon>Default1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\Default1.Master.designer.cs">
-      <DependentUpon>Default1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage\Global1.Master.cs">
-      <DependentUpon>Global1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\Global1.Master.designer.cs">
-      <DependentUpon>Global1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage\Member1.Master.cs">
-      <DependentUpon>Member1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\Member1.Master.designer.cs">
-      <DependentUpon>Member1.Master</DependentUpon>
-    </Compile>
     <Compile Include="Member\Order\OrderManager.aspx.cs">
       <DependentUpon>OrderManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -534,13 +513,6 @@
     </Compile>
     <Compile Include="Public\Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Public\text.aspx.cs">
-      <DependentUpon>text.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Public\text.aspx.designer.cs">
-      <DependentUpon>text.aspx</DependentUpon>
     </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1083,14 +1055,10 @@
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
-    <Content Include="Public\text.aspx" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
     <None Include="database\test.sql" />
     <None Include="database\test_yicone.sql" />
-    <Content Include="MasterPage\Member1.Master" />
-    <Content Include="MasterPage\Global1.Master" />
-    <Content Include="MasterPage\Default1.Master" />
     <Content Include="Login.ashx" />
     <Content Include="MasterPage\Global.Master" />
     <Content Include="MasterPage\Default.Master" />
