@@ -4,6 +4,9 @@ using HOT.Common;
 using HOT.Model;
 using HOT.DALFactory;
 using HOT.IDAL;
+
+using System.Collections;
+
 namespace HOT.BLL
 {
 	/// <summary>
@@ -28,6 +31,38 @@ namespace HOT.BLL
         public bool Exists(Guid zoneId, DateTime date)
         {
             return dal.Exists(zoneId, date);
+        }
+        /// <summary>
+        /// 得到购买的日期数组
+        /// </summary>
+        /// <param name="zoneId"></param>
+        /// <param name="checkDate"></param>
+        /// <returns></returns>
+        public static ArrayList getCouldBuy(Guid zoneId, DateTime checkDate)
+        {
+            int year = checkDate.Year;
+            int month = checkDate.Month;
+            int today = checkDate.Day;
+            ArrayList arraylist = new ArrayList();
+            int daysCount = HOT.Common.Date.GetMonthDaysCount(year, month);
+            for (int i = 1; i <= daysCount; i++)
+            {
+                int add = i - today;
+                DateTime datetime = checkDate.AddDays(add);
+                HOT.BLL.Order oBLL = new HOT.BLL.Order();
+                if (!oBLL.Exists(zoneId, datetime.Date))
+                {
+                    if (datetime.Year >= DateTime.Now.Year && datetime.Month >= DateTime.Now.Month && datetime.Day > DateTime.Now.Day)
+                    {
+                        arraylist.Add(datetime.Day);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            return arraylist;
         }
 		/// <summary>
 		/// 增加一条数据

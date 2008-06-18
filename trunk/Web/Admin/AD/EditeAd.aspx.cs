@@ -30,8 +30,9 @@ namespace Web.Admin
 
             HOT.DBUtility.DbHelperSQL.ExecuteSql(sql);
             //提示添加成功，并且转向上一页面
-            string name = Request.UrlReferrer.ToString();
-            MessageBox.ShowAndRedirect(this.Page, "审核成功", name);
+            //string name = Request.UrlReferrer.ToString();
+            //MessageBox.ShowAndRedirect(this.Page, "审核成功", name);
+            Response.Write("<script>alert('OK');history.go(-2)</script>");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Web.Admin
             this.txtUrl.Enabled = false;
             this.txtUrlText.Text = model.UrlText;
             this.txtUrlText.Enabled = false;
-            this.rblSize.SelectedIndex = int.Parse(model.SizeId.ToString()) - 11;
+            this.rblSize.SelectedIndex = int.Parse(model.SizeId.ToString());
             this.rblSize.Enabled = false;
             switch (model.AuditState)
             {
