@@ -385,9 +385,11 @@
         if (weekprice.length < 1 || !$("#transtype_period").attr("checked")) {
             $("#weekprice").val(0);
         }
-        if ((parseFloat(weekprice) < 0.05 || parseFloat(weekprice) > 1000000) && $("#transtype_period").attr("checked")) {
-            alert("按时长价格请限定在0.05-1000000元/周");
-            return false;
+        if($("#transtype_period").attr("checked")) {
+            if ((parseFloat(weekprice) < 0.05 || parseFloat(weekprice) > 1000000)) {
+                alert("按时长价格请限定在0.05-1000000元/周");
+                return false;
+            }
         }
         var reg = /\.\d{3,}/
         if (reg.test(weekprice)) {
