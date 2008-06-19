@@ -275,40 +275,40 @@ oFlash1.write("flash");
                     </div>
                     <!-- 旅游度假 -->
                     <div id="ecBox1" style="display: block; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 195px; border: #b1dceb 1px solid;
-                        margin-top: 2px; padding-left: 5px; padding-top: 5px;">
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
+                        margin-top: 2px;">
                         <asp:ContentPlaceHolder ID="ecBox1" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
                     <!--旅游度假结束-->
                     <!--医疗健康-->
                     <div id="ecBox2" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 180px; border: #b1dceb 1px solid;
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
                         margin-top: 2px;">
                         2</div>
                     <!--医疗健康结束-->
                     <!--招商加盟-->
                     <div id="ecBox3" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 180px; border: #b1dceb 1px solid;
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
                         margin-top: 2px;">
                         3
                     </div>
                     <!--招商加盟结束-->
                     <!--教育招聘-->
                     <div id="ecBox4" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 180px; border: #b1dceb 1px solid;
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
                         margin-top: 2px;">
                         4</div>
                     <!--教育招聘结束-->
                     <!--消费购物-->
                     <div id="ecBox5" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 180px; border: #b1dceb 1px solid;
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
                         margin-top: 2px;">
                         5</div>
                     <!--消费购物结束-->
                     <!--站长自荐-->
                     <div id="ecBox6" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 360px; height: 180px; border: #b1dceb 1px solid;
+                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
                         margin-top: 2px;">
                         6</div>
                     <!--站长自荐结束-->
