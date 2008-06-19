@@ -514,6 +514,13 @@
     <Compile Include="Public\Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Public\text.aspx.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\text.aspx.designer.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Public\ZoneOutput.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ZoneOutput.aspx</DependentUpon>
@@ -1076,6 +1083,7 @@
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
     <Content Include="Public\testZone.html" />
+    <Content Include="Public\text.aspx" />
     <Content Include="Public\ZoneOutput.aspx" />
     <Content Include="Public\ZoneStat.aspx" />
     <None Include="database\test.sql" />
