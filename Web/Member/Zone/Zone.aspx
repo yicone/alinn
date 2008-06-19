@@ -271,7 +271,7 @@
                 &nbsp;
             </td>
             <td width="164" align="center" valign="middle">
-                <a id="btnCheck" onclick="javascript:doCheckAndNext();" href="javascript:doCheckAndNext();">
+                <a id="btnCheck" href="#">
                     <img src="/app_themes/new/images/nextif.gif" width="164" height="32" border="0" usemap="#Map" /></a>
             </td>
             <td width="406" align="center" valign="middle">
@@ -280,7 +280,7 @@
         </tr>
     </table>
     <map name="Map" id="Map">
-        <area shape="rect" coords="2,3,166,38" href="#" />
+        <area shape="rect" coords="2,3,166,38" onclick="javascript:doCheckAndNext();" href="#" />
     </map>
     <input id="hdn_dbaction" type="hidden" value="new" name="hdn_dbaction" runat="server" />
     <%--<input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />--%>
