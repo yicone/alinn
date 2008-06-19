@@ -22,8 +22,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ecBox1" runat="server">
     <asp:GridView ID="gvecBox1" runat="server" AutoGenerateColumns="False" CellPadding="0"
-        ForeColor="#333333" GridLines="None" Height="90%" HorizontalAlign="Center" 
-        Width="98%" ShowHeader="False">
+        ForeColor="#333333" GridLines="None" Height="98%" HorizontalAlign="Center" 
+        Width="98%">
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
         <RowStyle BackColor="#E3EAEB" />
         <Columns>
