@@ -4,6 +4,11 @@
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div id="maincontent">
+<table width="984" height="30" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="tdblue">广告组概览&nbsp;&nbsp;&nbsp; 当前共有X个组 </td>
+  </tr>
+</table>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -11,23 +16,30 @@
                 <asp:PostBackTrigger ControlID="btnAddGroup" />
             </Triggers>
             <ContentTemplate>
-                <asp:Button ID="btnAddGroup" runat="server" Text="新增广告组" OnClick="btnAddGroup_Click" />
+            <div style="text-align:left;">
+                            <asp:ImageButton ID="btnAddGroup" runat="server" Text="新增广告组" 
+                                OnClick="btnAddGroup_Click" ImageUrl="~/App_Themes/new/images/grow.gif" />
+</div>
                 <asp:DataList ID="dlAdGroup" runat="server" Width="100%" OnItemDataBound="dlAdGroup_ItemDataBound"
                     OnItemCommand="dlAdGroup_ItemCommand" DataKeyField="AdGroupId">
                     <ItemTemplate>
+                    <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="13" height="30" align="center" valign="middle" background="/App_Themes/new/images/title5left.gif">&nbsp;</td>
+    <td height="30" align="center" valign="middle" background="~/App_Themes/new/images/title5mid.gif">
+    <td>
+        <asp:LinkButton ID="btnGroupName" runat="server" OnClick="btnGroupName_Click" 
+            Text='<%# Bind("GroupName") %>' Width="112px" /></td>
+            <td>
+        <asp:LinkButton ID="lbtnDeleteGroup" runat="server" CommandName="DeleteGroup" 
+            Text="删除此广告组" Width="100px" /></td>
+            <td>
+        <asp:LinkButton ID="lbtnAddAd" runat="server" CommandName="AddAd"> 添加此广告组下广告</asp:LinkButton></td>
+      </td>
+    <td width="13" height="30" align="center" valign="middle" background="/App_Themes/new/images/title5right.gif">&nbsp;</td>
+  </tr>
+</table>
                         <table width="100%">
-                            <tr>
-                                <td style="width: 200px">
-                                    <asp:Button ID="btnGroupName" runat="server" Text='<%# Bind("GroupName") %>' OnClick="btnGroupName_Click"
-                                        Width="112px" />
-                                </td>
-                                <td style="width: 600px" align="right">
-                                    <asp:LinkButton ID="lbtnDeleteGroup" runat="server" Text="删除此广告组" CommandName="DeleteGroup"
-                                        Width="100px" />
-                                    <asp:LinkButton ID="lbtnAddAd" runat="server" CommandName="AddAd">
-						添加此广告组下广告</asp:LinkButton>
-                                </td>
-                            </tr>
                             <tr>
                                 <td colspan="2">
                                     <table width="100%">

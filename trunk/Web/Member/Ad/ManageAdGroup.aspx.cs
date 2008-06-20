@@ -113,7 +113,7 @@ namespace Web.User
             }
         }
 
-        protected void btnAddGroup_Click(object sender, EventArgs e)
+        protected void btnAddGroup_Click(object sender, ImageClickEventArgs e)
         {
             Server.Transfer("/Member/Ad/NewGroup.aspx");
         }
