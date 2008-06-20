@@ -565,6 +565,7 @@ CREATE TABLE [dbo].[AL_Order](
 	[EverydayPrice] [decimal](18, 0) NULL,
 	[Price] [decimal](18, 0) NULL,
 	[Payment] [tinyint] NULL DEFAULT ((0)),
+	[PayId] int identity(1000000000,1),
 	[CreateDate] [datetime] NULL DEFAULT (getdate()),
 PRIMARY KEY CLUSTERED 
 (
@@ -593,6 +594,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'需要支付费用（当为包周时为包周费用，为点击方式时为投入的费用）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order', @level2type=N'COLUMN',@level2name=N'Price'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'支付状态，默认为0为未支付' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order', @level2type=N'COLUMN',@level2name=N'Payment'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'支付单号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order', @level2type=N'COLUMN',@level2name=N'PayId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'订单提交时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order', @level2type=N'COLUMN',@level2name=N'CreateDate'
 GO

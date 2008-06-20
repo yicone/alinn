@@ -88,7 +88,7 @@
 		&nbsp;</td>
 	<td height="25" width="*" align="left">
 		<asp:ImageButton ID="ibtnPay" runat="server" 
-            ImageUrl="~/Order/images/tenpay_button_02_l.gif" />
+            ImageUrl="~/Order/images/tenpay_button_02_l.gif" onclick="ibtnPay_Click" />
 	</td></tr>
 </table>
 </asp:Content>

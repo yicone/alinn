@@ -22,6 +22,7 @@ namespace HOT.Model
         private decimal? _everydayprice;
         private decimal? _price;
         private int? _payment;
+        private int? _payid;
         private DateTime? _createdate;
         /// <summary>
         /// 
@@ -123,6 +124,11 @@ namespace HOT.Model
         {
             set { _payment = value; }
             get { return _payment; }
+        }
+        public int? PayId
+        {
+            set { _payid = value; }
+            get { return _payid; }
         }
         /// <summary>
         /// 
