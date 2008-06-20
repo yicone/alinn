@@ -27,7 +27,7 @@ namespace Web.Order
             HOT.BLL.Order bll = new HOT.BLL.Order();
             HOT.Model.Order model = bll.GetModelByUserId(UserId);
             this.lblOrderName.Text = model.OrderName;
-            Session["OrderName"] = model.OrderName;
+            Session["OrderId"] = model.OrderId;
             this.lblStartDate.Text = model.StartDate.ToString();
             this.lblEndDate.Text = model.EndDate.ToString();
             this.lblAuditState.Text =ShowCheck(model.AuditState);
@@ -80,6 +80,11 @@ namespace Web.Order
                     break;
             }
             return payMent;
+        }
+
+        protected void ibtnPay_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

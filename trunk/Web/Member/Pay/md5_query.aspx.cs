@@ -9,6 +9,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
+using System.Configuration;
+
 namespace tenpaymd5
 {
 	/// <summary>
@@ -65,7 +67,7 @@ namespace tenpaymd5
 			md5pay.InitQueryParam(tbDate.Text.Trim(),tbTranID.Text.Trim(),long.Parse(tbBillNo.Text.Trim()),tbMemo.Text.Trim());
 			
 			
-			string url = "";
+			string url =ConfigurationManager.AppSettings["querygateurl"];
 			if(!md5pay.GetQueryUrl(out url))
 			{
 				labErrmsg.Text = Server.HtmlEncode(url);

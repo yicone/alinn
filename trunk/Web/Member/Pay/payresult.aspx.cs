@@ -9,6 +9,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
+using System.Configuration;
+
 namespace tenpaymd5
 {
 	/// <summary>
@@ -46,7 +48,9 @@ namespace tenpaymd5
 					if(md5pay.PayResult == Md5Pay.PAYOK)
 					{
 						//支付成功,在这里处理你的逻辑
-
+                        string sql = "update al_order set payment=1 where orderId='" + Session["OrderId"].ToString() + "'";
+                        HOT.DBUtility.DbHelperSQL.ExecuteSql(sql);
+                        Session["OrderId"] = null;
 					}
 					else
 					{

@@ -18,13 +18,12 @@ namespace tenpaymd5
 		/// <summary>
 		/// 商户号（替换为自已的商户号）
 		/// </summary>
-        private const string bargainor_id = "1202752601";
+        private const string bargainor_id = ConfigurationManager.AppSettings["bargainor_id"];
 
 		/// <summary>
 		/// 商户KEY（替换为自已的KEY）
 		/// </summary>
-        private const string key = "a95818b08e81054205f0ee9f1179cb7b";
-
+        private const string key = ConfigurationManager.AppSettings["key"];
 		/// <summary>
 		/// 财付通支付网关URL
 		/// </summary>

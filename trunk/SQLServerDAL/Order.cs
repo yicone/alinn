@@ -197,6 +197,10 @@ namespace HOT.SQLServerDAL
                 {
                     model.Payment = int.Parse(ds.Tables[0].Rows[0]["Payment"].ToString());
                 }
+                if (ds.Tables[0].Rows[0]["PayId"].ToString() != "")
+                {
+                    model.PayId = int.Parse(ds.Tables[0].Rows[0]["PayId"].ToString());
+                }
                 if (ds.Tables[0].Rows[0]["CreateDate"].ToString() != "")
                 {
                     model.CreateDate = DateTime.Parse(ds.Tables[0].Rows[0]["CreateDate"].ToString());
