@@ -4,90 +4,96 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <br />
-    <table cellpadding="0" cellspacing="0" style="width: 100%">
-        <tr>
-            <td style="text-align: center">
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
+   <SCRIPT language=JavaScript> 
+<!-- 
+function doClick(o){ 
+     o.className="navs_current"; 
+     var j; 
+     var id; 
+     var e; 
+     for(var i=1;i<=5;i++){ //数字5为滑动门数量 
+       id ="navs"+i; 
+       j = document.getElementById(id); 
+       e = document.getElementById("sub"+i); 
+       if(id != o.id){ 
+         j.className="navs_link"; 
+         e.style.display = "none"; 
+       }else{ 
+            e.style.display = "block"; 
+       } 
+     } 
+} 
+//--> 
+</SCRIPT>  
+    
+    <table width="984" height="40" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="a7">你的位置：首页&gt;买广告&gt;广告详情</td>
+  </tr>
+</table>
+
+
+<table width="984" height="35" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" class="a7">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
                 <asp:Label ID="labZoneName" runat="server"></asp:Label>
+                </td>
+  </tr>
+</table>
+<table width="984" height="8" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/分隔符.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<table width="984" height="204" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="200" valign="top"><div align="center"><img src="images/003.gif" width="163" height="128"></div><br>
+      <span class="a8">&nbsp;网站名称：</span><br>
+    <span class="a8">&nbsp;广告位置：</span><br>
+    <span class="a8">&nbsp;广告尺寸：</span></td>
+    <td width="10">&nbsp;</td>
+    <td width="777" valign="top"><table width="100%" height="202" border="0" cellpadding="0" cellspacing="1" bgcolor="#D2ECFB">
+      <tr>
+        <td valign="top" bgcolor="#FFFFFF"><table width="99%" height="198" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="242" valign="middle"><table width="95%" height="179" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#87CCF3">
+              <tr>
+                <td height="177" valign="top" bgcolor="#FFFFFF"><br>
+              &nbsp;<span class="a7">网站主信息</span><br>
+              <br><asp:Label ID="labSiteOwner" runat="server"></asp:Label><br />
+                &nbsp;<span class="a8">网站主信誉：</span><br><br>
+                &nbsp;<span class="a8">广告主信誉：</span><br><br>
+                 &nbsp;<span class="a8">注册时间：</span><asp:Label ID="labRegTime" runat="server"></asp:Label><br><br>
+                &nbsp;<span class="a8">联系网站主：</span><asp:Label ID="labConnect" runat="server"></asp:Label></td>
+              </tr>
+            </table>
             </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <table style="width: 1024px; border-width: 1px;">
-                    <tr>
-                        <td style="width: 20%; text-align: left;">
-                            <asp:DataList ID="dlSiteOwerInfo" runat="server">
-                                <ItemTemplate>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td colspan="2" style="text-align: center">
-                                                网站主信息
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                网站主：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labSiteOwner" runat="server" Text='<%# Eval("NickName") %>'></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                网站主信用：
-                                            </td>
-                                            <td>
-                                                &nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                广告主信用：
-                                            </td>
-                                            <td>
-                                                &nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                注册时间：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labRegTime" runat="server" Text='<%# Eval("RegTime") %>'></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                联系站主：
-                                            </td>
-                                            <td>
-                                                <a href="tencent://message/?uin=<%# Eval("QQ") %>&Site=<%# Eval("NickName") %>&Menu=yes"
-                                                    target="blank">
-                                                    <img src="http://wpa.qq.com/pa?p=1:1363036:7" alt="联系我吧？"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </ItemTemplate>
-                            </asp:DataList>
-                        </td>
-                        <td style="width: 60%; text-align: left;">
-                            <br />
-                            价格：<asp:Label ID="labWeekPrice" runat="server"></asp:Label>
-                            元/周<br />
-                            <div>请选择购买时长：<select class="input" ><option value="7" onclick="changeDay(7)" selected="selected">
-                                一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div><br />
-                            <br />
-                            <%--请选择开始时间：<asp:TextBox ID="txtStartDate" runat="server" OnTextChanged="txtStartDate_TextChanged"></asp:TextBox>
-                            ，请选择购买时长：<asp:DropDownList ID="ddlWeek" runat="server" AutoPostBack="True">
-                                <asp:ListItem Value="1">1周</asp:ListItem>
-                                <asp:ListItem Value="2">2周</asp:ListItem>
-                                <asp:ListItem Value="3">3周</asp:ListItem>
-                                <asp:ListItem Value="4">4周</asp:ListItem>
-                            </asp:DropDownList>
-                            <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtStartDate">
-                            </cc1:CalendarExtender>--%>
-                            <!-- 开始日历 -->
+            <td width="229" align="center" valign="middle"><table width="90%" height="179" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#87CCF3">
+              <tr>
+                <td height="177" align="center" bgcolor="#FFFFFF">  <br>
+                  <span class="STYLE10"><asp:Label ID="labWeekPrice" runat="server"></asp:Label>元/周</span><br>
+                  <br>
+                  <br>
+                  <br>
+                  <img src="images/a029.jpg" width="143" height="37"></td>
+              </tr>
+            </table>
+              </td>
+            <td width="307">
+                                <div class="rilishuoming_1224">
+                                    选择购买起始日期，购买时长：<select class="input" name="D1" ><option value="7" onclick="changeDay(7)" selected="selected">
+                                一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div>
+                                <div id="putOnDay" class="rilishuoming_1224_1">
+                                    <p>
+                                        起始日期:2008-06-08</p>
+                                    <p>
+                                        结束日期:2008-07-07</p>
+                                    <p>
+                                        购买天数:30天</p>
+                                </div>
                             <table>
                             <tr>
                             <td>
@@ -871,17 +877,7 @@
                             </div>
                             </td>
                             <td class="rili_1224" valign="top" align="left">
-                                <div class="rilishuoming_1224">
-                                    选择购买起始日期</div>
-                                <div id="putOnDay" class="rilishuoming_1224_1">
-                                    <p>
-                                        起始日期:2008-06-08</p>
-                                    <p>
-                                        结束日期:2008-07-07</p>
-                                    <p>
-                                        购买天数:30天</p>
-                                </div>
-                            </td>
+                                &nbsp;</td>
                             </tr>
                             </table>
                             
@@ -890,67 +886,38 @@
                             <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnStore" runat="server" OnClick="btnStore_Click" Text="收藏广告位" />
-                        </td>
-                        <td style="width: 20%; text-align: left;">
-                            <asp:DataList ID="dlSiteInfo" runat="server">
-                                <ItemTemplate>
-                                    <table cellpadding="0" cellspacing="0" style="width: 100%">
-                                        <tr>
-                                            <td colspan="2">
-                                                &nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                网站名：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labSiteName" runat="server" Text='<%# Eval("SiteName") %>'></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                广告位：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labZoneName" runat="server" Text='<%# Eval("ZoneName") %>'></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                尺寸：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labSize" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                位置：
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="labInfirst" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </ItemTemplate>
-                            </asp:DataList>
-                        </td>
-                    </tr>
-                </table>
             </td>
-        </tr>
-    </table>
-    <br />
-    <asp:Button ID="btnZoneInfo" runat="server" OnClick="btnZoneInfo_Click" Text="广告位信息" />
-    <asp:Button ID="btnZoneUrl" runat="server" OnClick="btnZoneUrl_Click" Text="广告位出现的网址" />
-    <asp:Button ID="btnOtherZone" runat="server" Text="该网站下其它广告位" OnClick="btnOtherZone_Click" />
-    <asp:Button ID="btnLatestOrder" runat="server" Text="最近交易记录" OnClick="btnLatestOrder_Click" />
-    <asp:Button ID="Button5" runat="server" Text="交易评价" />
-    <asp:Button ID="Button6" runat="server" Text="相关广告位推荐" />
-    <asp:Button ID="Button7" runat="server" Text="留言" />
-    <asp:MultiView ID="mvZoneInfo" runat="server">
-        <asp:View ID="View1" runat="server">
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="984" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/分隔符.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<table width="984" height="223" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="210" valign="top">
+	<div id="div_zkj"> 
+<div id="div_header"> 
+<div class="navs_main"> 
+<ul> 
+<!--把下面的onmouseover改为onmousedown可设置为点击滑动--> 
+<li class=navs_current id=navs1 onmouseover=javascript:doClick(this)><a href="#">广告位介绍</a></li> 
+<li class=navs_link id=navs2 onmouseover=javascript:doClick(this)><a href="#">该网站下其它广告位</a></li> 
+<li class=navs_link id=navs3 onmouseover=javascript:doClick(this)><a href="#">最近交易记录</a></li> 
+<li class=navs_link id=navs4 onmouseover=javascript:doClick(this)><a href="#">交易评价</a></li> 
+<li class=navs_link id=navs5 onmouseover=javascript:doClick(this)><a href="#">留言</a></li> 
+</ul> 
+
+</div> 
+<div id="clear"></div> 
+
+<!--下行的class中无"undis"表示为默认选中的主菜单--> 
+<div class="sub_box" id="sub1"> 
             <table  style="width:1024px; border-width:thin;">
         <tr>
             <td>
@@ -989,18 +956,18 @@
                 &nbsp;</td>
         </tr>
     </table>
-        </asp:View>
-        <asp:View ID="View2" runat="server">
-            2
-        </asp:View>
-        <asp:View ID="View3" runat="server">
+</div> 
+<div class="undis sub_box" id="sub2"> 
+<ul><li>2222222222222222222</li></ul> 
+</div> 
+<div class="undis sub_box" id="sub3"> 
             <asp:GridView ID="gvOtherZone" runat="server">
                 <Columns>
                     <asp:BoundField DataField="ZoneName" />
                 </Columns>
             </asp:GridView>
-        </asp:View>
-        <asp:View ID="View4" runat="server">
+</div> 
+<div class="undis sub_box" id="sub4"> 
             <asp:GridView ID="gvLatestOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderId"
                 DataSourceID="sdsLatestOrder">
                 <Columns>
@@ -1018,15 +985,25 @@
                     <asp:BoundField DataField="Payment" HeaderText="Payment" SortExpression="Payment" />
                     <asp:BoundField DataField="CreateDate" HeaderText="CreateDate" SortExpression="CreateDate" />
                 </Columns>
-            </asp:GridView>
-            <asp:SqlDataSource ID="sdsLatestOrder" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+            </asp:GridView> 
+                        <asp:SqlDataSource ID="sdsLatestOrder" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
                 SelectCommand="SELECT * FROM [AL_Order] WHERE ([ZoneId] = @ZoneId)">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="ZoneId" QueryStringField="ZoneId" Type="Object" />
                 </SelectParameters>
             </asp:SqlDataSource>
-        </asp:View>
-    </asp:MultiView>
+</div> 
+<div class="undis sub_box" id="sub5"> 
+<ul><li>4444444444444444444444</li></ul> 
+<ul><li>4444444444444444444444</li></ul>
+</div> 
+<div id="clear"></div> 
+</div> 
+</div></div> 
+</td>
+  </tr>
+</table>
+
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>

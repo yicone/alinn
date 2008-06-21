@@ -27,10 +27,9 @@ namespace Web
                 Guid zoneId=new Guid(this.Request.QueryString["ZoneId"].ToString());
               if (!IsPostBack)
             {
-                ShowZoneInfo(zoneId);
-                dlSiteOwerInfoDataBind();
-                dlSiteInfoDataBind();
-                this.mvZoneInfo.ActiveViewIndex = 0;
+                //ShowZoneInfo(zoneId);
+                //dlSiteOwerInfoDataBind();
+                //dlSiteInfoDataBind();
                 showInfo();
                 gvOtherZone.DataBind();
                   HOT.BLL.Zone zBLL=new HOT.BLL.Zone();
@@ -50,30 +49,36 @@ namespace Web
             Guid guid = new Guid(this.Request.QueryString["ZoneId"].ToString());
             //Response.Redirect("/Member/Ad/BuyAd.aspx?ZoneId=" + guid.ToString()+"&StartDate="+this.txtStartDate.Text+"&Week="+this.ddlWeek.SelectedValue);
         }
-        protected void ShowZoneInfo(Guid zoneId)
-        {
-            HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
-            HOT.Model.Zone zModel = new HOT.Model.Zone();
-            zModel = zBLL.GetModel(zoneId);
-            this.labZoneName.Text = zModel.ZoneName;
-            this.labWeekPrice.Text = zModel.WeekPrice.ToString();
-        }
-        protected void dlSiteOwerInfoDataBind()
-        {
-            string sql = "";
-            sql = "select AL_User.NickName,AL_User.RegTime,AL_User.QQ from AL_Zone left join AL_User on AL_Zone.UserId=AL_User.UserId  where AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString()+"'";
-            DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
-            this.dlSiteOwerInfo.DataSource = ds;
-            this.dlSiteOwerInfo.DataBind();
-        }
-        protected void dlSiteInfoDataBind()
-        {
-            string sql = "";
-            sql = "select AL_ZonePic.ZonePic,AL_Site.SiteName,AL_Site.SiteUrl,AL_Zone.ZoneName,AL_Zone.SizeId,AL_Zone.MediaType,AL_Zone.Infirst from AL_Zone left join AL_ZonePic on AL_ZonePic.ZoneId=AL_Zone.ZoneId left join AL_Site on AL_Site.SiteId=AL_Zone.SiteId where  AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString() + "'";
-            DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
-            this.dlSiteInfo.DataSource = ds;
-            this.dlSiteInfo.DataBind();
-        }
+        //protected void ShowZoneInfo(Guid zoneId)
+        //{
+        //    HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
+        //    HOT.Model.Zone zModel = new HOT.Model.Zone();
+        //    zModel = zBLL.GetModel(zoneId);
+        //    this.labZoneName.Text = zModel.ZoneName;
+        //    this.labWeekPrice.Text = zModel.WeekPrice.ToString();
+        //    HOT.BLL.Site sBLL=new HOT.BLL.Site();
+        //    HOT.Model.Site sModel=new HOT.Model.Site();
+        //    sModel=sBLL.GetModel(zModel.SiteId);
+        //    //this.labSiteName.Text = sModel.SiteName;
+        //    //this.labZoneName1.Text = zModel.ZoneName;
+        //    //this.labInfirst1.Text = this.labInfirst.Text;
+        //}
+        //protected void dlSiteOwerInfoDataBind()
+        //{
+        //    string sql = "";
+        //    sql = "select AL_User.NickName,AL_User.RegTime,AL_User.QQ from AL_Zone left join AL_User on AL_Zone.UserId=AL_User.UserId  where AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString()+"'";
+        //    DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
+        //    this.dlSiteOwerInfo.DataSource = ds;
+        //    this.dlSiteOwerInfo.DataBind();
+        //}
+        //protected void dlSiteInfoDataBind()
+        //{
+        //    string sql = "";
+        //    sql = "select AL_ZonePic.ZonePic,AL_Site.SiteName,AL_Site.SiteUrl,AL_Zone.ZoneName,AL_Zone.SizeId,AL_Zone.MediaType,AL_Zone.Infirst from AL_Zone left join AL_ZonePic on AL_ZonePic.ZoneId=AL_Zone.ZoneId left join AL_Site on AL_Site.SiteId=AL_Zone.SiteId where  AL_Zone.ZoneId='" + this.Request.QueryString["ZoneId"].ToString() + "'";
+        //    DataSet ds = HOT.DBUtility.DbHelperSQL.Query(sql);
+        //    this.dlSiteInfo.DataSource = ds;
+        //    this.dlSiteInfo.DataBind();
+        //}
         protected string getSize(int sizeId)
         {
             string size = "";
@@ -135,7 +140,19 @@ namespace Web
                     labZoneClass.Text += zcParentModel.ClassName.ToString() + " > " + zcModel.ClassName.ToString()+";";
                 }
             }
-            
+            //得到网站的相关信息
+            HOT.BLL.Site sBLL=new HOT.BLL.Site();
+            HOT.Model.Site sModel=new HOT.Model.Site();
+            sModel=sBLL.GetModel(zModel.SiteId);
+            //得到网站主相关信息
+            HOT.BLL.User uBLL = new HOT.BLL.User();
+            HOT.Model.User uModel = new HOT.Model.User();
+            uModel = uBLL.GetUser(zModel.UserId);
+            this.labSiteOwner.Text = uModel.NickName;
+            this.labRegTime.Text = uModel.RegTime.ToString();
+            this.labConnect.Text = @"<a href='tencent://message/?uin="+uModel.QQ+"&Site="+sModel.SiteName+@"&Menu=yes'
+                                                    target='blank'>
+                                                    <img src='http://wpa.qq.com/pa?p=1:1363036:7' alt='联系我吧？'></a>";
         }
         //绑定gvOtherZone，显示同一网站下的广告位
         protected void gvOtherZoneDataBind()
@@ -148,25 +165,6 @@ namespace Web
             ds = HOT.DBUtility.DbHelperSQL.Query(sql);
             this.gvOtherZone.DataSource = ds;
             this.gvOtherZone.DataBind();
-        }
-        protected void btnZoneInfo_Click(object sender, EventArgs e)
-        {
-            this.mvZoneInfo.ActiveViewIndex = 0;
-        }
-
-        protected void btnZoneUrl_Click(object sender, EventArgs e)
-        {
-            this.mvZoneInfo.ActiveViewIndex = 1;
-        }
-
-        protected void btnOtherZone_Click(object sender, EventArgs e)
-        {
-            this.mvZoneInfo.ActiveViewIndex = 2;
-        }
-
-        protected void btnLatestOrder_Click(object sender, EventArgs e)
-        {
-            this.mvZoneInfo.ActiveViewIndex = 3;
         }
 
         protected void txtStartDate_TextChanged(object sender, EventArgs e)
