@@ -133,12 +133,22 @@ namespace Web
             }
         }
 
-        private void RenderDefaultZone(object zoneId)
+        private void RenderDefaultZone(Guid zoneId)
         {
             hdn_isdefaultzone.Value = "true";
-            //throw new Exception("The method or operation is not implemented.");
-            //TODO;根据广告位创建时选择的MediaType显示不同的默认广告
-            //文字和图片多选时，选择图片？
+            
+            //根据广告位创建时选择的MediaType显示不同的默认广告
+            //文字和图片多选时，选择图片
+            HOT.BLL.Zone zoneManager = new HOT.BLL.Zone();
+            HOT.Model.Zone zone = zoneManager.GetModel(zoneId);
+            if (zone.MediaType == 2)
+            {
+                hdn_mediatype.Value = "text";
+            }
+            else// if (zone.MediaType == 5)
+            {
+                hdn_mediatype.Value = "picture";
+            }
         }
         #endregion
     }

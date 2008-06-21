@@ -76,8 +76,7 @@
                 var layouttype = $("#hdn_layouttype").val();
                 var currentStyle = new TextZoneStyle(jsonStyle);
                 var oTextZone = new TextZone(sizecode, layouttype);
-                var mediatype = $("$hdn_mediatype").val();
-                
+                var mediatype = $("#hdn_mediatype").val();
                 oTextZone.initZone($("#hdn_title").val(), $("#hdn_text").val(), $("#hdn_link").val(), $("#hdn_imagepath").val(), $("#hdn_isdefaultzone").val(), mediatype);           //修改文字广告的内容，或图片广告的背景图
                 if(mediatype == "text")
                 {
@@ -98,7 +97,7 @@
                     //alert(location.href);
                     //alert(location.host);
                     $.post("/Public/ZoneStat.aspx", kvp, success = function(){
-                        alert("点击信息已发送！");
+                        //alert("点击信息已发送！");
                     });
             }
             
@@ -112,7 +111,7 @@
                     //alert(location.href);
                     //alert(location.host);
                     $.post("/Public/ZoneStat.aspx", kvp, success = function(){
-                        alert("刷新信息已发送！");
+                        //alert("刷新信息已发送！");
                     });
             }
     </script>
