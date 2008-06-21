@@ -23,16 +23,6 @@
                     PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
-<table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">&nbsp;</td>
-  </tr>
-</table>
-<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
-  </tr>
-</table>
 <table width="984" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="124" rowspan="2" background="/app_themes/new/images/ad.gif"></td>

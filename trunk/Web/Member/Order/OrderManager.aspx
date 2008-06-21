@@ -4,17 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="_searchcontent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
-
-<table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">&nbsp;</td>
-  </tr>
-</table>
-<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
-  </tr>
-</table>
     <div style="text-align:left;">
     <asp:Button ID="btnTimeAd" runat="server" onclick="btnTimeAd_Click" 
         Text="按时长计费广告" BackColor="#CCFFFF" />

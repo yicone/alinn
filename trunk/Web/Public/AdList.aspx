@@ -95,7 +95,7 @@
 
            </HeaderTemplate>
            <ItemTemplate>
-<table style="width:100%; border-width:thin; background-image: url('/app_themes/new/images/004.gif');">
+<table style="width:100%; border-width:thin; background: url('/app_themes/new/images/004.gif');background-position:bottom;background-attachment:scroll; ">
   <tr>
     <td style="width:100px;height:75px;"><a href="/Pulic/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
     <td>

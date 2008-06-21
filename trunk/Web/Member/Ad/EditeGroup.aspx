@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Member.Master" AutoEventWireup="true" CodeBehind="EditeGroup.aspx.cs" Inherits="Web.Ad.EditeGroup" Title="Untitled Page" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="_headContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="_htmlHeadContent" runat="server">
     <style type="text/css">
         .style1
         {
