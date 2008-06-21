@@ -601,6 +601,29 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'订单提交时间' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'订单表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Order'
 GO
+/****** Object:  Table [dbo].[AL_Order]    Script Date: 06/03/2008 18:06:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AL_Evaluation](
+	[EvaluationId] [uniqueidentifier] NOT NULL,
+	[OrderId] [uniqueidentifier] NULL,
+	[Score] tinyint null,
+	[Type] tinyint null,
+	[CreateDate] [datetime] NULL DEFAULT (getdate()),
+PRIMARY KEY CLUSTERED 
+(
+	[EvaluationId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价针对的定单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'OrderId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'Score'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价类型0为网站主的评价，1为广告主的评价' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'Type'
+GO
 /****** Object:  Table [dbo].[AL_NewsClass]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
 GO

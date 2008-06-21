@@ -958,17 +958,14 @@ function doClick(o){
     </table>
 </div> 
 <div class="undis sub_box" id="sub2"> 
-<ul><li>2222222222222222222</li></ul> 
-</div> 
-<div class="undis sub_box" id="sub3"> 
             <asp:GridView ID="gvOtherZone" runat="server">
                 <Columns>
                     <asp:BoundField DataField="ZoneName" />
                 </Columns>
             </asp:GridView>
 </div> 
-<div class="undis sub_box" id="sub4"> 
-            <asp:GridView ID="gvLatestOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderId"
+<div class="undis sub_box" id="sub3"> 
+           <asp:GridView ID="gvLatestOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderId"
                 DataSourceID="sdsLatestOrder">
                 <Columns>
                     <asp:BoundField DataField="OrderId" HeaderText="OrderId" ReadOnly="True" SortExpression="OrderId" />
@@ -993,9 +990,11 @@ function doClick(o){
                 </SelectParameters>
             </asp:SqlDataSource>
 </div> 
+<div class="undis sub_box" id="sub4"> 
+ 交易评价
+</div> 
 <div class="undis sub_box" id="sub5"> 
-<ul><li>4444444444444444444444</li></ul> 
-<ul><li>4444444444444444444444</li></ul>
+留言
 </div> 
 <div id="clear"></div> 
 </div> 
