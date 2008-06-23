@@ -611,6 +611,7 @@ CREATE TABLE [dbo].[AL_Evaluation](
 	[OrderId] [uniqueidentifier] NULL,
 	[Score] tinyint null,
 	[Type] tinyint null,
+	[Descriptiont] nvarchar(300),
 	[CreateDate] [datetime] NULL DEFAULT (getdate()),
 PRIMARY KEY CLUSTERED 
 (
@@ -623,6 +624,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'Score'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价类型0为网站主的评价，1为广告主的评价' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'Type'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价描述' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_Evaluation', @level2type=N'COLUMN',@level2name=N'Description'
 GO
 /****** Object:  Table [dbo].[AL_NewsClass]    Script Date: 06/03/2008 18:06:31 ******/
 SET ANSI_NULLS ON
