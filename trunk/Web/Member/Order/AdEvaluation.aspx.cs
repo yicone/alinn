@@ -19,7 +19,7 @@ namespace Web.Member.Order
             {
                 HOT.BLL.Order oBLL = new HOT.BLL.Order();
                 HOT.Model.Order oModel = new HOT.Model.Order();
-                oModel = oBLL.GetModel(this.Request.QueryString["OrderId"]);
+                oModel = oBLL.GetModel(new Guid(this.Request.QueryString["OrderId"]));
 
                 HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
                 HOT.Model.Zone zModel = new HOT.Model.Zone();
@@ -34,7 +34,7 @@ namespace Web.Member.Order
             }
             else
             {
-                HOT.Common.MessageBox.Show("参数错误");
+                HOT.Common.MessageBox.Show(this,"参数错误");
             }
 
         }
@@ -45,7 +45,7 @@ namespace Web.Member.Order
             HOT.Model.Evaluation eModel = new HOT.Model.Evaluation();
             eModel.OrderId = new Guid(this.Request.QueryString["OrderId"]);
             eModel.Descriptiont = this.txtDescription.Text;
-            eModel.Score = this.rblEvaluation.SelectedValue;
+            eModel.Score = int.Parse(this.rblEvaluation.SelectedValue);
 
             HOT.BLL.Order oBLL=new HOT.BLL.Order();
             HOT.Model.Order oModel=new HOT.Model.Order();

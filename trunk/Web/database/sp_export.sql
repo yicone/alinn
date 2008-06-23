@@ -2558,14 +2558,13 @@ CREATE PROCEDURE UP_AL_Evaluation_ADD
 @OrderId uniqueidentifier,
 @Score tinyint,
 @Type tinyint,
-@Descriptiont nvarchar(600),
-@CreateDate datetime
-
+@Descriptiont nvarchar(600)
  AS 
+SET @EvaluationId = CAST(CAST(NEWID() AS BINARY(10)) + CAST(GETDATE() AS BINARY(6)) AS UNIQUEIDENTIFIER)
 	INSERT INTO AL_Evaluation(
-	[EvaluationId],[OrderId],[Score],[Type],[Descriptiont],[CreateDate]
+	[EvaluationId],[OrderId],[Score],[Type],[Descriptiont]
 	)VALUES(
-	@EvaluationId,@OrderId,@Score,@Type,@Descriptiont,@CreateDate
+	@EvaluationId,@OrderId,@Score,@Type,@Descriptiont
 	)
 
 GO
@@ -2646,3 +2645,25 @@ CREATE PROCEDURE UP_AL_Evaluation_GetList
 
 GO
 
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_GetListWhere]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_GetListWhere]
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_GetListWhere
+@StrWhere varchar(500)
+ AS 
+declare @sql varchar(3000)
+set @sql='
+	SELECT 
+	AL_Evaluation.*,AL_User.NickName
+	 FROM AL_Evaluation 
+	LEFT JOIN AL_Order on AL_Order.OrderId=AL_Evaluation.EvaluationId
+	LEFT JOIN AL_User on AL_User.UserId=AL_Order.UserId Where '+@StrWhere
+exec(@sql)
+
+GO
