@@ -103,6 +103,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employment.cs" />
+    <Compile Include="Evaluation.cs" />
     <Compile Include="InFirstpage.cs" />
     <Compile Include="MediaType.cs" />
     <Compile Include="News.cs" />

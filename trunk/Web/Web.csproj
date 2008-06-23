@@ -188,6 +188,13 @@
     <Compile Include="Controls\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Order\AdEvaluation.aspx.cs">
+      <DependentUpon>AdEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Order\AdEvaluation.aspx.designer.cs">
+      <DependentUpon>AdEvaluation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Order\OrderManager.aspx.cs">
       <DependentUpon>OrderManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -946,6 +953,7 @@
     <Content Include="JavaScript\jquery\ui.tabs.css" />
     <Content Include="JavaScript\jquery\ui.tabs.js" />
     <Content Include="JavaScript\TextZoneStyle.js" />
+    <Content Include="Member\Order\AdEvaluation.aspx" />
     <Content Include="Member\Order\OrderManager.aspx" />
     <Content Include="Member\Store\MyStore.aspx" />
     <Content Include="Member\Zone\EffectReport.aspx" />

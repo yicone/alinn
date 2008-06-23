@@ -2517,3 +2517,132 @@ CREATE PROCEDURE UP_AL_ZoneLocation_GetList
 
 GO
 
+/******************************************************************
+* 表名：AL_Evaluation
+* 时间：2008-6-23 15:52:44
+******************************************************************/
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_Exists]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_Exists]
+GO
+------------------------------------
+--用途：是否已经存在 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_Exists
+@EvaluationId uniqueidentifier
+AS
+	DECLARE @TempID int
+	SELECT @TempID = count(1) FROM AL_Evaluation WHERE EvaluationId=@EvaluationId 
+	IF @TempID = 0
+		RETURN 0
+	ELSE
+		RETURN 1
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_ADD]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_ADD]
+GO
+------------------------------------
+--用途：增加一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_ADD
+@EvaluationId uniqueidentifier,
+@OrderId uniqueidentifier,
+@Score tinyint,
+@Type tinyint,
+@Descriptiont nvarchar(600),
+@CreateDate datetime
+
+ AS 
+	INSERT INTO AL_Evaluation(
+	[EvaluationId],[OrderId],[Score],[Type],[Descriptiont],[CreateDate]
+	)VALUES(
+	@EvaluationId,@OrderId,@Score,@Type,@Descriptiont,@CreateDate
+	)
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_Update]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_Update]
+GO
+------------------------------------
+--用途：修改一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_Update
+@EvaluationId uniqueidentifier,
+@OrderId uniqueidentifier,
+@Score tinyint,
+@Type tinyint,
+@Descriptiont nvarchar(600),
+@CreateDate datetime
+ AS 
+	UPDATE AL_Evaluation SET 
+	[OrderId] = @OrderId,[Score] = @Score,[Type] = @Type,[Descriptiont] = @Descriptiont,[CreateDate] = @CreateDate
+	WHERE EvaluationId=@EvaluationId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_Delete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_Delete]
+GO
+------------------------------------
+--用途：删除一条记录 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_Delete
+@EvaluationId uniqueidentifier
+ AS 
+	DELETE AL_Evaluation
+	 WHERE EvaluationId=@EvaluationId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_GetModel]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_GetModel]
+GO
+------------------------------------
+--用途：得到实体对象的详细信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_GetModel
+@EvaluationId uniqueidentifier
+ AS 
+	SELECT 
+	EvaluationId,OrderId,Score,Type,Descriptiont,CreateDate
+	 FROM AL_Evaluation
+	 WHERE EvaluationId=@EvaluationId 
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Evaluation_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Evaluation_GetList]
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-23 15:52:44
+------------------------------------
+CREATE PROCEDURE UP_AL_Evaluation_GetList
+ AS 
+	SELECT 
+	EvaluationId,OrderId,Score,Type,Descriptiont,CreateDate
+	 FROM AL_Evaluation
+
+GO
+

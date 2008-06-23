@@ -98,6 +98,7 @@
     <Compile Include="IAd.cs" />
     <Compile Include="IAdGroup.cs" />
     <Compile Include="IEmployment.cs" />
+    <Compile Include="IEvaluation.cs" />
     <Compile Include="INews.cs" />
     <Compile Include="INewsClass.cs" />
     <Compile Include="IOrder.cs" />

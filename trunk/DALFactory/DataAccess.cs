@@ -213,5 +213,15 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.IZoneLocation)objType;
         }
+        /// <summary>
+        /// 创建Evaluation数据层接口
+        /// </summary>
+        public static HOT.IDAL.IEvaluation CreateEvaluation()
+        {
+
+            string CacheKey = path + ".Evaluation";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IEvaluation)objType;
+        }
 }
 }
