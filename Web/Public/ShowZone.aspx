@@ -62,12 +62,12 @@ function doClick(o){
             <td width="242" valign="middle"><table width="95%" height="179" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#87CCF3">
               <tr>
                 <td height="177" valign="top" bgcolor="#FFFFFF"><br>
-              &nbsp;<span class="a7">网站主信息</span><br>
+                    &nbsp;<span class="a7">网站主信息</span><br>
               <br><asp:Label ID="labSiteOwner" runat="server"></asp:Label><br />
-                &nbsp;<span class="a8">网站主信誉：</span><br><br>
-                &nbsp;<span class="a8">广告主信誉：</span><br><br>
-                 &nbsp;<span class="a8">注册时间：</span><asp:Label ID="labRegTime" runat="server"></asp:Label><br><br>
-                &nbsp;<span class="a8">联系网站主：</span><asp:Label ID="labConnect" runat="server"></asp:Label></td>
+                    &nbsp;<span class="a8">网站主信誉：</span><br><br>
+                    &nbsp;<span class="a8">广告主信誉：</span><br><br>
+                    &nbsp;<span class="a8">注册时间：</span><asp:Label ID="labRegTime" runat="server"></asp:Label><br><br>
+                    &nbsp;<span class="a8">联系网站主：</span><asp:Label ID="labConnect" runat="server"></asp:Label></td>
               </tr>
             </table>
             </td>
@@ -85,7 +85,7 @@ function doClick(o){
             <td width="307">
                                 <div class="rilishuoming_1224">
                                     选择购买起始日期，购买时长：<select class="input" name="D1" ><option value="7" onclick="changeDay(7)" selected="selected">
-                                一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div>
+                                        一周</option><option value="14" onclick="changeDay(14)">两周</option></select></div>
                                 <div id="putOnDay" class="rilishuoming_1224_1">
                                     <p>
                                         起始日期:2008-06-08</p>
@@ -884,7 +884,7 @@ function doClick(o){
                             <!-- 结束日历 -->
                             <br />
                             <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnStore" runat="server" OnClick="btnStore_Click" Text="收藏广告位" />
             </td>
           </tr>
@@ -906,8 +906,10 @@ function doClick(o){
 <div class="navs_main"> 
 <ul> 
 <!--把下面的onmouseover改为onmousedown可设置为点击滑动--> 
-<li class=navs_current id=navs1 onmouseover=javascript:doClick(this)><a href="#">广告位介绍</a></li> 
-<li class=navs_link id=navs2 onmouseover=javascript:doClick(this)><a href="#">该网站下其它广告位</a></li> 
+<li class=navs_current id=navs1 onmouseover=javascript:doClick(this)><a href="#">
+    广告位介绍</a></li> 
+<li class=navs_link id=navs2 onmouseover=javascript:doClick(this)><a href="#">
+    该网站下其它广告位</a></li> 
 <li class=navs_link id=navs3 onmouseover=javascript:doClick(this)><a href="#">最近交易记录</a></li> 
 <li class=navs_link id=navs4 onmouseover=javascript:doClick(this)><a href="#">交易评价</a></li> 
 <li class=navs_link id=navs5 onmouseover=javascript:doClick(this)><a href="#">留言</a></li> 
@@ -991,11 +993,39 @@ function doClick(o){
             </asp:SqlDataSource>
 </div> 
 <div class="undis sub_box" id="sub4"> 
- 交易评价
+    <asp:DataList ID="dlEvaluation" runat="server" DataKeyField="EvaluationId" 
+        DataSourceID="sdsEvaluation">
+        <ItemTemplate>
+        <table width="100%" border="0">
+  <tr>
+    <td width="16%">用户：            <asp:Label ID="NickNameLabel" runat="server" Text='<%# Eval("NickName") %>' /></td>
+    <td width="84%">分数：            <asp:Label ID="ScoreLabel" runat="server" Text='<%# Eval("Score") %>' /></td>
+  </tr>
+  <tr>
+    <td>描述：            <asp:Label ID="DescriptiontLabel" runat="server" 
+                Text='<%# Eval("Descriptiont") %>' /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>评价时间：</td>
+    <td>            <asp:Label ID="CreateDateLabel" runat="server" 
+                Text='<%# Eval("CreateDate") %>' /></td>
+  </tr>
+ </table>
+        </ItemTemplate>
+    </asp:DataList>
+    <asp:SqlDataSource ID="sdsEvaluation" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+        SelectCommand="UP_AL_Evaluation_GetListWhere" 
+        SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="AL_Evaluation.Type=1" Name="StrWhere" 
+                Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 </div> 
 <div class="undis sub_box" id="sub5"> 
-留言
-</div> 
+    留言 </div> 
 <div id="clear"></div> 
 </div> 
 </div></div> 
