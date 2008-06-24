@@ -30,8 +30,7 @@ function TextZone(zoneSize, layoutType){
             //	                assert(false, "广告位样式未定义");
             //		            $w._currentStyle = defaultStyle;
             //	            }
-            if (this.Style != undefined) {
-                var titlecolor = this.Style.title$color;
+            if (this.Style != "") {
                 this.maintitleDiv.css("color", "#" + this.Style.title$color);
                 this.maintextDiv.css("color", "#" + this.Style.text$color);
                 this.mainlinkDiv.css("color", "#" + this.Style.link$color);
@@ -97,14 +96,15 @@ function TextZone(zoneSize, layoutType){
                 if(isDefaultZone == "true"){
                     imageHome = defaultImageHome;
                     imagePath = w + "x" + h + ".gif";
+                    link = "www.aaaa0.com";
+                    imageFullPath = imageHome + "/" + imagePath;
                 }
-                this.bgimgDiv.css("background-image", "url('" + imageHome + "/" + imagePath + "')");
+//                this.bgimgDiv.css("background-image", "url('" + imageFullPath + "')");
+                zoneDiv.css("display", "none"); //解决图片链接不能点击
                 this.bgimgDiv.css("margin-top", -(h - 2));
                 this.bgimgDiv.css("display", "block");
+                this.bgimgDiv.append('<a target="_blank" href="http://' + link + '" href="float:left;"><img src="' + imageFullPath + '"/></a>');
             }
-
-            
-
         };
         
         TextZone._initialized = true;
@@ -221,13 +221,13 @@ function generateCode(zoneId, oTextZoneStyle, sizeCode, layoutType){
     sbJs.append(sizeCode);
     sbJs.append('"; \n');
 	
-		sbJs.append('aaaa0_layouttype="');
+	sbJs.append('aaaa0_layouttype="');
     sbJs.append(layoutType);
     sbJs.append('"; \n');
 	
 	sbJs.append('<\/script> \n');
-	sbJs.append('<script src="http://www.aaaa0.com/JavaScript/jquery.js" type=text/javascript> \n');
-	sbJs.append('<\/script>');
+//	sbJs.append('<script src="http://www.aaaa0.com/JavaScript/jquery.js" type=text/javascript> \n');
+//	sbJs.append('<\/script>');
 	sbJs.append('<script src="http://www.aaaa0.com/JavaScript/inf.js" type=text/javascript> \n');
 	sbJs.append('<\/script>');
 	

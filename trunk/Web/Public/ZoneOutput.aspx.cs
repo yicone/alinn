@@ -130,6 +130,7 @@ namespace Web
                 hdn_mediatype.Value = "picture";
                 //取出图片广告的图片路径，交给JS来处理
                 hdn_imagepath.Value = ad.Img;
+                hdn_link.Value = ad.Url;
             }
         }
 
