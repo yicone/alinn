@@ -15,6 +15,12 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["introducer"].Length > 0)
+            {
+                HOT.BLL.User bUser = new HOT.BLL.User();
+                bUser.SetIntroducer();
+            }
+
             if (!IsPostBack)
             {
                 dlClassesDataBind();
