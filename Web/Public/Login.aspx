@@ -203,7 +203,7 @@
                                                 <td height="24" colspan="2" align="center" class="STYLE4">
                                                     <asp:ImageButton ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="login_sub"
                                                         ImageUrl="~/App_Themes/new/images/login.gif" />
-                                                    &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/User/GetPassWord.aspx"
+                                                    &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/GetPassWord.aspx"
                                                         CssClass="forget_password">忘记密码？
                                                     </asp:HyperLink>
                                                     &nbsp;
