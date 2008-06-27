@@ -27,7 +27,7 @@
         <label for="remember_password">
             在此计算机上记住密码</label>
         <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="登录" CssClass="login_sub" />
-        <asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/User/GetPassWord.aspx"
+        <asp:HyperLink ID="linkGetPassWord" runat="server" NavigateUrl="/GetPassWord.aspx"
             CssClass="forget_password">忘记密码？
         </asp:HyperLink><br />
         <asp:Label ID="Label1" runat="server" Width="100px" ForeColor="Red"></asp:Label>

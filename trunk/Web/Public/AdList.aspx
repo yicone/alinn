@@ -97,7 +97,7 @@
            <ItemTemplate>
 <table style="width:100%; border-width:thin; background: url('/app_themes/new/images/004.gif');background-position:bottom;background-attachment:scroll; ">
   <tr>
-    <td style="width:100px;height:75px;"><a href="/Pulic/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
+    <td style="width:100px;height:75px;"><a href="/Public/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
     <td>
     <table width="100%" border="0">
   <tr style="width:100px;">
