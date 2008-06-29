@@ -14,22 +14,31 @@ namespace Web {
     public partial class ShowZone {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// labWeekPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label labWeekPrice;
         
         /// <summary>
-        /// labZoneName control.
+        /// btnBuyAd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labZoneName;
+        protected global::System.Web.UI.WebControls.Button btnBuyAd;
+        
+        /// <summary>
+        /// btnStore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStore;
         
         /// <summary>
         /// labSiteOwner control.
@@ -57,33 +66,6 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labConnect;
-        
-        /// <summary>
-        /// labWeekPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labWeekPrice;
-        
-        /// <summary>
-        /// btnBuyAd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuyAd;
-        
-        /// <summary>
-        /// btnStore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStore;
         
         /// <summary>
         /// labZoneClass control.
@@ -138,15 +120,6 @@ namespace Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labAlexa;
-        
-        /// <summary>
-        /// gvOtherZone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOtherZone;
         
         /// <summary>
         /// gvLatestOrder control.
