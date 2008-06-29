@@ -8,15 +8,37 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
     <div class="center" style="width:915px">
-        <div style="height: 80px; background-image: url('images/bg_recommendlink.png')" class="center">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  
+  <tr>
+    <th width="2%" height="34" background="/images/yh02.gif" class="bu06"  scope="row">&nbsp;</th>
+    <th width="16%" align="left" background="/images/yh02.gif" class="gl01"  scope="row">复制链接 </th>
+    <th width="82%" background="/images/yh02.gif" class="bu06"  scope="row">&nbsp;</th>
+  </tr>
+</table>
+<table width="100%" height="157" border="1" cellpadding="0" cellspacing="0" bordercolor="#EEEFEE">
+  <tr>
+    <th height="155" scope="col"><table width="800" height="100" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th background="/images/tg01.gif" scope="col">
             <div style="float: left; margin-left: 50px; margin-top: 20px">
                 推广链接：<span id="txtRecommendLink">http://www.aaaa0.com?introducer=<%= HOT.BLL.User.GetLoginUser().ToString() %></span><input
                     name="btnCopy" type="button" value="复制链接" onclick="javascript:copyLink();" style="margin-left: 60px" />
             </div>
-        </div>
-        <br />
-        <br />
-        <br />
+          </th>
+      </tr>
+    </table></th>
+  </tr>
+</table>
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#EEEFEE">
+  <tr>
+    <th width="109" height="30" background="../用户管理/images/yh02.gif" class="bu02" scope="col">用户列表</th>
+    <th width="161" background="../用户管理/images/yh02.gif" class="bu02" scope="col">用户名</th>
+    <th width="257" background="../用户管理/images/yh02.gif" class="bu02" scope="col">网站名称</th>
+    <th width="230" background="../用户管理/images/yh02.gif" class="bu02" scope="col">网址</th>
+    <th width="189" background="../用户管理/images/yh02.gif" class="bu02" scope="col">日独立IP</th>
+  </tr>
+</table>
         <div  style="text-align: left">
             <h3>网站列表</h3>
             <asp:DataList runat="server" ID="DataList1" Width="100%" DataSourceID="SqlDataSource1">

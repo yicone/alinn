@@ -111,11 +111,10 @@ namespace Web.User
                 Session["AdGroupIdToBeAdd"] = guid;
                 Response.Redirect("/Member/Ad/NewAd.aspx?AdGroupId=" + guid.ToString(), true);
             }
-        }
-
-        protected void btnAddGroup_Click(object sender, ImageClickEventArgs e)
-        {
-            Server.Transfer("/Member/Ad/NewGroup.aspx");
+            if (e.CommandName == "EditeAdGroup")
+            { 
+                
+            }
         }
 
         protected void dlAD_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -187,6 +186,11 @@ namespace Web.User
                     break;
             }
             return state;
+        }
+
+        protected void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("/Member/Ad/NewGroup.aspx");
         }
     }
 }

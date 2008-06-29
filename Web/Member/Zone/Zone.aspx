@@ -22,58 +22,37 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <table width="984" height="36" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center" valign="middle" background="/app_themes/new/images/menu.gif">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-    <table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-    <table width="984" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-            <td width="124" rowspan="2" background="/app_themes/new/images/ad.gif">
-            </td>
-            <td width="860" height="16">
-            </td>
-        </tr>
-        <tr>
-            <td width="860" height="9" background="/app_themes/new/images/adline.gif">
-            </td>
-        </tr>
-    </table>
-    <table width="984" height="39" border="0" align="center" cellpadding="0" cellspacing="0"
-        background="/app_themes/new/images/ad4.gif">
-        <tr>
-            <td background="/app_themes/new/images/ad42.gif">
-                &nbsp;
-            </td>
-            <td background="/app_themes/new/images/ad42.gif">
-                &nbsp;
-            </td>
-            <td background="/app_themes/new/images/ad42.gif">
-                &nbsp;
-            </td>
-            <td background="/app_themes/new/images/ad42.gif">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-    <table width="984" height="20" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-            <td height="43" align="center" valign="middle" background="/app_themes/new/images/title2.gif">
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table width="984" border="0" cellspacing="0" cellpadding="0">
+
+<table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="106" height="29" align="center" background="/images/yh04.gif" class="f2" scope="col">填写广告位信息</th>
+    <th width="829" align="left" background="/images/yh03.gif" scope="col">&nbsp;</th>
+  </tr>
+</table>
+<table width="936" height="30" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="135" height="30" background="/images/yh08.gif" class="bu04" scope="col">1. 选择网站 </th>
+    <th width="31" background="/images/yh08.gif" class="bu10" scope="col">→</th>
+    <th width="147" background="/images/yh08.gif" class="f4" scope="col">2. 填写广告位信息</th>
+    <th width="37" background="/images/yh08.gif" class="bu04" scope="col"><span class="bu10">→</span></th>
+    <th width="157" background="/images/yh08.gif" class="bu04" scope="col">3. 选择广告位类目 </th>
+    <th width="75" background="/images/yh08.gif" class="bu04" scope="col"><span class="bu10">→</span></th>
+    <th width="354" align="left" background="/images/yh08.gif" class="bu04" scope="col">4. 获取广告位代码 </th>
+  </tr>
+</table>
+<br />
+<table width="936" height="517" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#C2EAFD">
+  <tr bordercolor="#C2EAFD">
+    <th height="40" scope="col"><table width="100%" height="40" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th width="3%" height="40" bgcolor="#EFF4FA" scope="col"><img src="/images/yh19.gif" width="15" height="13" /></th>
+        <th width="97%" height="40" align="left" bgcolor="#EFF4FA" scope="col"><span class="bu03">填写广告位信息 <span class="f3">(以下为必填项</span><span class="f3">)</span></span></th>
+      </tr>
+    </table></th>
+  </tr>
+  <tr bordercolor="#C2EAFD">
+    <th valign="top" scope="col">
+                <table width="936" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td width="242" height="30" align="right" valign="middle" class="tdblue">
                             广告位名称：
@@ -261,27 +240,19 @@
                         </td>
                     </tr>
                 </table>
-            </td>
-        </tr>
-    </table>
-    <table width="984" height="50" border="0" align="center" cellpadding="0" cellspacing="0"
-        bgcolor="#65BFEF">
-        <tr>
-            <td width="414" align="center" valign="middle">
-                &nbsp;
-            </td>
-            <td width="164" align="center" valign="middle">
-                <a id="btnCheck" href="#">
-                    <img src="/app_themes/new/images/nextif.gif" width="164" height="32" border="0" usemap="#Map" /></a>
-            </td>
-            <td width="406" align="center" valign="middle">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-    <map name="Map" id="Map">
+    
+    
+    </th>
+  </tr>
+  <tr bordercolor="#C2EAFD">
+    <th height="50" bgcolor="#EFF4FA" scope="col" style="text-align:center;">                <a id="btnCheck" href="#">
+                    <img src="/images/yh09.gif" width="170" height="40" border="0" usemap="#Map" /></a>
+                        <map name="Map" id="Map">
         <area shape="rect" coords="2,3,166,38" onclick="javascript:doCheckAndNext();" href="#" />
-    </map>
+    </map></th>
+  </tr>
+</table>
+
     <input id="hdn_dbaction" type="hidden" value="new" name="hdn_dbaction" runat="server" />
     <%--<input id="hdn_siteid" type="hidden" value="" name="hdn_siteid" runat="server" />--%>
     <input id="hdn_sitename" type="hidden" value="" name="hdn_sitename" runat="server" />

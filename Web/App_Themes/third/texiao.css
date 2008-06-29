@@ -1,0 +1,153 @@
+/* CSS Document */
+/***************************已下是图片切化还程序**/
+#fdpbk{
+	width:375px;
+	height:205px;
+	overflow:hidden;
+}
+#fdp{
+	width:375px;
+	height:185px;
+}
+#fdptag{
+	width:375px;
+	height:185px;
+	margin:0px;
+	padding:0px;
+	text-align:left;
+	float:left;
+}
+#fdptag li{
+	width:14px;
+	height:16px;
+	border:1px solid #d0ecff;
+	display:block;
+	float:right;
+	margin:0px 2px;
+	padding:1px 3px;
+	list-style:none;
+	overflow:hidden;
+	font-size:12px;
+	text-align:center;
+	color:#065a95;
+}
+#fdptag .li1{
+	border:1px solid #cd001d;
+	background-color:#ff5a71;
+	color:#fff;
+}
+/************************单行滚动文字**********/
+*{
+	font-size:12px;
+	font-family: "宋体";
+	font-weight: normal;
+	color: #0066CC;
+}
+ #scrollBox2{
+	width:200px;
+	height:27px;
+	line-height:22px;
+	overflow:hidden;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/********************翻页图片**********/
+
+
+.clear{
+	clear:both;
+}
+.hotSP{
+	clear:both;
+	height: 250px;
+	width: 260px;
+}
+.hotSP .hotSPlist{border:1px solid #D4D4D4;border-top:none;}
+.hotSP .hotSPlist ul{clear:both;margin:0;padding:0;}
+.hotSP .hotSPlist li{padding:0px;float:left;text-align:center;width:85px;list-style-type:none;margin: 0;}
+.hotSP .hotSPlist a{display:block;line-height:26px;text-align:center;color:#000000;}
+.hotSP .hotSPlist img{display:block;border:2px solid #CCCCCC;margin-left:5px!important;margin-left:0px;}
+
+/********************站长互动**********/
+
+.nTab{
+	float: left;
+	width: 560px;
+	background-position:left 5px;
+	background-repeat:repeat-y;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 6px;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+	border-bottom-color: #D2ECFB;
+	border-right-width: 1px;
+	border-right-style: none;
+	border-right-color: #D2ECFB;
+}
+.nTab .TabTitle{
+	clear: both;
+	height: 22px;
+	overflow: hidden;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D2ECFB;
+	font-family: "宋体";
+}
+.nTab .TabTitle ul{
+border:0;
+margin:0;
+padding:0;
+}
+.nTab .TabTitle li{
+float: left;
+width: 90px;
+cursor: pointer;
+padding-top: 4px;
+padding-right: 0px;
+padding-left: 0px;
+padding-bottom: 2px;
+list-style-type: none;
+}
+.nTab .TabTitle .active{
+	background:#fff;
+	border-left:1px #AACCEE solid;
+	border-top:1px #AACCEE solid;
+	border-right:1px #AACCEE solid;
+	border-bottom:1px #fff solid;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0099CC;
+}
+.nTab .TabTitle .normal{
+	background:#EBF3FB;
+	border:1px #AACCEE solid;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	
+}
+.nTab .TabContent{
+	width:auto;
+	margin: 0px auto;
+	padding:10px 0 0 0;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-left-style: none;
+	border-right-color: #AACCEE;
+	border-left-color: #AACCEE;
+	font-size: 12px;
+	font-weight: lighter;
+	color: #0099CC;
+	background-color: #FFFFFF;
+	background-position: left center;
+}
+.none {display:none;}
+.biaoti {
+	font-family: "宋体";
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF3300;
+}

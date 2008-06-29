@@ -15,16 +15,20 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["introducer"].Length > 0)
+            //edited by fzf 20080628
+            if (Request.QueryString["introducer"] != null)
             {
-                HOT.BLL.User bUser = new HOT.BLL.User();
-                bUser.SetIntroducer();
+                if (Request.QueryString["introducer"].Length > 0)
+                {
+                    HOT.BLL.User bUser = new HOT.BLL.User();
+                    bUser.SetIntroducer();
+                }
             }
 
             if (!IsPostBack)
             {
                 dlClassesDataBind();
-                gvecBox1DataBind();
+                //gvecBox1DataBind();
             }
         }
         /// <summary>
@@ -76,17 +80,17 @@ namespace Web
             }
             return strWhere;
         }
-        protected void gvecBox1DataBind()
-        {
-            int parentId = 2;
-            DataSet ds = new DataSet();
-            ds = GetSonClasses(parentId);
-            string strWhere = GetSqlWhere(ds);
-            HOT.BLL.Zone zBLL=new HOT.BLL.Zone();
-            ds = zBLL.GetList(0, 8, 0, strWhere);
-            this.gvecBox1.DataSource = ds;
-            this.gvecBox1.DataBind();
-        }
+        //protected void gvecBox1DataBind()
+        //{
+        //    int parentId = 2;
+        //    DataSet ds = new DataSet();
+        //    ds = GetSonClasses(parentId);
+        //    string strWhere = GetSqlWhere(ds);
+        //    HOT.BLL.Zone zBLL=new HOT.BLL.Zone();
+        //    ds = zBLL.GetList(0, 8, 0, strWhere);
+        //    this.gvecBox1.DataSource = ds;
+        //    this.gvecBox1.DataBind();
+        //}
 
         protected void dlClasses_SelectedIndexChanged(object sender, EventArgs e)
         {

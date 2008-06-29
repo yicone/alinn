@@ -8,10 +8,14 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
     <div style="width:950px" class="center">
-        <div style="text-align: left">
+            <div style="text-align: left; background-image:url(/images/yh08.gif); width:100%;">
+                <span width="166" height="30" align="center" valign="middle" background="images/yh08.gif" class="d4" scope="col">广告组概览</span>
+            <span class="bu05">当前共有X个组</span>
+        </div>
+        <div style="text-align: left; width:100%;">
             <asp:ImageButton ID="btnAddSite" runat="server" Text="新增网站" OnClick="btnAddSite_Click"
-                Height="25px" ImageAlign="Middle" ImageUrl="~/App_Themes/new/images/grow.gif"
-                Style="width: 80px" Width="80px" />
+                Height="25px" ImageAlign="Middle" ImageUrl="/images/yh28.gif"
+                Style="width: 100px" Width="80px" />
         </div>
         <div style="margin-top: 20px">
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnDataBinding="DataList1_DataBinding"
@@ -19,10 +23,10 @@
                 <ItemTemplate>
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
                         <tr>
-                            <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5left.gif">
+                            <td width="13" height="30" align="center" valign="middle" background="/images/yh29.gif">
                                 &nbsp;
                             </td>
-                            <td height="30" align="left" valign="middle" background="/app_themes/new/images/title5mid.gif"
+                            <td height="30" align="left" valign="middle" background="/images/yh29.gif"
                                 class="STYLE8">
                                 <asp:LinkButton runat="server" ID="lbViewSite">网站名称：<%# Eval("SiteName") %>&nbsp;&nbsp;&nbsp;(共<%# Eval("ZoneCount") %>个广告位)&nbsp;&nbsp;&nbsp;<%# this.ConvertAuditState(Convert.ToInt32(Eval("AuditState"))) %> </asp:LinkButton>
                                 <span style="width: auto"></span>
@@ -32,7 +36,7 @@
                                     CommandArgument='<%# Eval("SiteId") %>'>删除</asp:LinkButton>
                                 </p>
                             </td>
-                            <td width="13" height="30" align="center" valign="middle" background="/app_themes/new/images/title5right.gif">
+                            <td width="13" height="30" align="center" valign="middle" background="/images/yh29.gif">
                                 &nbsp;
                             </td>
                         </tr>

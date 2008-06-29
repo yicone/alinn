@@ -20,36 +20,6 @@
         SelectCommand="SELECT TOP (8) NewsId, ClassId, Title, [Content], CreateDate FROM AL_News ORDER BY NewsId DESC">
     </asp:SqlDataSource>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ecBox1" runat="server">
-    <asp:GridView ID="gvecBox1" runat="server" AutoGenerateColumns="False" CellPadding="0"
-        ForeColor="#333333" GridLines="None" Height="98%" HorizontalAlign="Center" 
-        Width="98%">
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <RowStyle BackColor="#E3EAEB" />
-        <Columns>
-            <asp:BoundField DataField="SiteName" HeaderText="网站名">
-                <ItemStyle Width="10%" />
-            </asp:BoundField>
-            <asp:BoundField DataField="ZoneName" HeaderText="广告位名称">
-                <ItemStyle Width="30%" />
-            </asp:BoundField>
-            <asp:BoundField DataField="MediaType" HeaderText="广告形式">
-                <ItemStyle Width="15%" />
-            </asp:BoundField>
-            <asp:BoundField DataField="PricePerK" HeaderText="千人成本">
-                <ItemStyle Width="15%" />
-            </asp:BoundField>
-            <asp:BoundField DataField="VistersNum" HeaderText="日浏览量">
-                <ItemStyle Width="15%" />
-            </asp:BoundField>
-        </Columns>
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <HeaderStyle BackColor="#99CCFF" Font-Bold="True" ForeColor="White" />
-        <EditRowStyle BackColor="#7C6F57" />
-        <AlternatingRowStyle BackColor="White" VerticalAlign="Middle" />
-    </asp:GridView>
-</asp:Content>
 <asp:Content ID="Content4" runat="server" 
     contentplaceholderid="ContentPlaceHolder3">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="NewsId"

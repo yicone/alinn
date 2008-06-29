@@ -20,7 +20,7 @@ namespace Web.Member.Order {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTimeAd;
+        protected global::System.Web.UI.WebControls.LinkButton btnTimeAd;
         
         /// <summary>
         /// btnPointAd control.
@@ -29,7 +29,7 @@ namespace Web.Member.Order {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPointAd;
+        protected global::System.Web.UI.WebControls.LinkButton btnPointAd;
         
         /// <summary>
         /// ScriptManager1 control.
