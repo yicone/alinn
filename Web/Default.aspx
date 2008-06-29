@@ -47,7 +47,7 @@
     contentplaceholderid="ContentPlaceHolder4">
     <asp:DataList ID="dlClasses" runat="server" OnItemDataBound="dlClasses_ItemDataBound"
         RepeatColumns="7" RepeatDirection="Horizontal" ShowFooter="False" 
-        Width="100%">
+        Width="95%">
         <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False"
             Font-Underline="False" HorizontalAlign="Center" VerticalAlign="Top" />
         <ItemTemplate>

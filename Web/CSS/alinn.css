@@ -1,15 +1,4 @@
-﻿body, p, td, input, option, textarea, select {
-	color: #333333;
-	font-family: "Verdana";
-	font-size: 12px;
-	font-size-adjust: none;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: normal;
-}
-body, form, ul, li, p, ol {
+﻿body, form, ul, li, p, ol {
 	margin: 0pt;
 	padding: 0pt;
 }
@@ -50,13 +39,12 @@ table {
 	font-size: 14px;
 }
 .number {
-	font-family: Arial;
+
 }
 .b {
 	font-weight: bold;
 }
 .s {
-	font-family: "宋体";
 	text-decoration: line-through;
 }
 .ime {
@@ -136,7 +124,6 @@ a.linkFloat:hover {
 }
 #headV3 {
 	background: transparent url(http://pics.paipai.com/head/headBg.gif) repeat scroll 0%;
-	font-family: Verdana;
 	height: 125px;
 	margin-bottom: 10px;
 	overflow: hidden;
@@ -265,7 +252,6 @@ a.linkFloat:hover {
 #headV3 #headForm .findInto {
 	border: 1px solid #4194CF;
 	color: #808080;
-	font-family: "宋体";
 	height: 16px;
 	padding: 4px 0pt 0pt 4px;
 	width: 240px;
@@ -315,7 +301,6 @@ a.linkFloat:hover {
 }
 #footV3 {
 	border-top: 1px solid #E0DFE4;
-	font-family: Verdana;
 	margin-top: 20px;
 }
 #footV3 #footLink {
@@ -410,7 +395,6 @@ a.linkFloat:hover {
 #headV3B .findInto {
 	border: 1px solid #BBBBBB;
 	color: #808080;
-	font-family: "宋体";
 	height: 15px;
 	padding: 3px 0pt 0pt 4px;
 	width: 120px;
@@ -492,7 +476,6 @@ a.linkFloat:hover {
 #headV3D .findInto {
 	border: 1px solid #BBBBBB;
 	color: #808080;
-	font-family: "宋体";
 	height: 15px;
 	padding: 3px 0pt 0pt 4px;
 	width: 120px;
@@ -580,7 +563,6 @@ a.linkFloat:hover {
 #headMyFind .findInto {
 	border: 1px solid #BBBBBB;
 	color: #808080;
-	font-family: "宋体";
 	height: 15px;
 	padding: 3px 0pt 0pt 4px;
 	width: 120px;
@@ -800,7 +782,7 @@ a.linkOrange:active, a.linkOrange:hover {
 	width: 76px;
 }
 .channelList2 a div {
-	font-family: "宋体";
+	
 }
 li.dotList {
 	background: transparent url(http://pics.paipai.com/index/dot.gif) no-repeat scroll left center;
@@ -848,7 +830,6 @@ li.dotList {
 }
 #linkPush a:hover, #linkPush a.linkPushHere {
 	background: transparent url(http://pics.paipai.com/index/v4/pushHere.gif) no-repeat scroll 0%;
-	font-family: "宋体";
 	padding-top: 8px;
 	text-align: center;
 	width: 92px;
@@ -947,7 +928,6 @@ li.dotList {
 #sort .sortThree .sortItem li {
 	border-left: 1px solid #AAAAAA;
 	float: left;
-	font-family: "宋体";
 	height: 12px;
 	margin-left: -1px;
 	overflow: hidden;
@@ -978,7 +958,6 @@ li.dotList {
 #newSaleInfo div div {
 	border-right: 1px dashed #DDE0E1;
 	float: left;
-	font-family: "宋体";
 	height: 38px;
 	line-height: 140%;
 	margin-top: 3px;

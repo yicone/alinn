@@ -26,7 +26,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="width: 984px" class="center">
+    <div style="width: 984px; text-align:center;" class="center">
         <div>
             <uc3:Header ID="Header2" runat="server" />
         </div>

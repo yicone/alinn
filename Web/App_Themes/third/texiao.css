@@ -39,7 +39,7 @@
 /************************单行滚动文字**********/
 *{
 	font-size:12px;
-	font-family: "宋体";
+	font-family: "新宋体";
 	font-weight: normal;
 	color: #0066CC;
 }
@@ -93,7 +93,7 @@
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #D2ECFB;
-	font-family: "宋体";
+	font-family: "新宋体";
 }
 .nTab .TabTitle ul{
 border:0;

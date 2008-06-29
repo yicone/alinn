@@ -20,6 +20,11 @@ namespace Web.Ad
             this.Page.Title = "广告列表";
             string inClass = "";
             string key = "";
+            string siteId = "";
+            if (this.Request.QueryString["SiteId"] != null)
+            {
+                siteId = "and AL_Zone.siteId='" + this.Request.QueryString["SiteId"] + "'";
+            }
             if (this.Request.QueryString["ClassId"] != null)
             {
                 int parentId = int.Parse(this.Request.QueryString["ClassId"].ToString());
@@ -38,7 +43,7 @@ namespace Web.Ad
             {
                 key = " and keywords like '%" + this.Request.QueryString["Key"] + "%'";
             }
-            Where += this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString()+this.ddlVisteNumPerDay.SelectedValue.ToString()+inClass+key;
+            Where += siteId +this.rblInFirst.SelectedValue.ToString() + this.ddlPricePerK.SelectedValue.ToString()+this.ddlVisteNumPerDay.SelectedValue.ToString()+inClass+key;
             HOT.BLL.Zone zBLL = new HOT.BLL.Zone();
             //if (!IsPostBack)
             //{

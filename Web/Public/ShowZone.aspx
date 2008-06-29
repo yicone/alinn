@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true"
-    CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone"  enableEventValidation="false" Title="广告位" %>
+    CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone" Title="广告位" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
@@ -1327,7 +1327,7 @@
     <th width="175" height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="col">标　题:&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th width="74" align="left" valign="middle" bgcolor="#F0F0F0" scope="col">
       <label></label>
-    </form>    </th>
+    </th>
     <th colspan="2" align="left" bgcolor="#F0F0F0" scope="col"><input name="textfield" type="text" size="50" /></th>
   </tr>
   <tr>

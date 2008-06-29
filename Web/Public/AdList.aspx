@@ -28,7 +28,7 @@
 </table>
 <table width="936" height="8" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td><img src="/app_themes/new/images/分隔符.gif" width="1" height="1" /></td>
+    <td><img src="/images/d01.gif" width="1" height="1" /></td>
   </tr>
 </table>
 
@@ -108,8 +108,8 @@
     <td style="width:100px;">广告缩略图</td>
     <td style="width: 280px">广告详细信息</td>
     <td style="width: 80px">最早购买时间</td>
-    <td style="width: 86px">周价格</td>
-    <td style="width: 86px">广告大小</td>
+    <td style="width: 51px">周价格</td>
+    <td style="width: 51px">广告大小</td>
     <td style="width: 86px">日均访问人数</td>
     <td style="width: 86px">千人访问成本</td>
   </tr>
@@ -119,8 +119,8 @@
            <ItemTemplate>
 <table style="width:100%; border-width:thin; background: url('/app_themes/new/images/004.gif');background-position:bottom;background-attachment:scroll; ">
   <tr>
-    <td style="width:100px;height:75px;"><a href="/Public/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="#" height="75px" width="100px" /></a></td>
-    <td>
+    <td style="width:100px;height:75px;"><a href="/Public/ShowZone.aspx?ZoneId=<%# Eval("ZoneId") %>" target="_blank"><img src="/images/nopic.gif" height="75px" width="100px" /></a></td>
+    <td style="width:280px;">
     <table width="100%" border="0">
   <tr style="width:100px;">
     <td style="width:70px; height: 40px;">网站名：</td>
@@ -135,7 +135,7 @@
     <td style="width: 139px"><asp:Label ID="labZoneDescription" runat="server"></asp:Label></td>
   </tr>
         <tr>
-            <td colspan="2"><a href="tencent://message/?uin=<%# Eval("QQ") %>&Site=<%# Eval("SiteName") %>&Menu=yes" target="blank"><img src="http://wpa.qq.com/pa?p=1:1363036:7" alt="联系我吧？"></a><a href="/Member/Zone/ZoneSite.aspx?SiteId=<%# Eval("SiteId") %>">查看此网站下的更多广告位</a></td>
+            <td colspan="2"><a href="tencent://message/?uin=<%# Eval("QQ") %>&Site=<%# Eval("SiteName") %>&Menu=yes" target="blank"><img src="http://wpa.qq.com/pa?p=1:1363036:7" alt="联系我吧？"></a><a href="/public/adlist.aspx?SiteId=<%# Eval("SiteId") %>">查看此网站下的更多广告位</a></td>
         </tr>
     </table></td>
     <td style="width: 80px"><asp:Label ID="labTime" runat="server"></asp:Label></td>
