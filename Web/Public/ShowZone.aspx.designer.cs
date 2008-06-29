@@ -122,6 +122,15 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Label labAlexa;
         
         /// <summary>
+        /// gvOtherZone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvOtherZone;
+        
+        /// <summary>
         /// gvLatestOrder control.
         /// </summary>
         /// <remarks>

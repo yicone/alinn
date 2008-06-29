@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
     <div style="width:950px" class="center">
             <div style="text-align: left; background-image:url(/images/yh08.gif); width:100%;">
-                <span width="166" height="30" align="center" valign="middle" background="images/yh08.gif" class="d4" scope="col">广告组概览</span>
+                <span width="166" height="30" align="center" valign="middle" background="/images/yh08.gif" class="d4" scope="col">广告组概览</span>
             <span class="bu05">当前共有X个组</span>
         </div>
         <div style="text-align: left; width:100%;">

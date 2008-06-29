@@ -52,7 +52,7 @@ namespace Web.User
             
         }
 
-        protected void btnUpdate_Click(object sender, EventArgs e)
+        protected void ibtnUpdate_Click(object sender, ImageClickEventArgs e)
         {
             if (this.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Web.User
             }
         }
 
-        protected void btnReset_Click(object sender, EventArgs e)
+        protected void ibtnReset_Click(object sender, ImageClickEventArgs e)
         {
             BindUserInfo();
         }

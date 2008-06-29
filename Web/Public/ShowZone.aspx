@@ -1,34 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true"
-    CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone" Title="广告位" %>
+    CodeBehind="ShowZone.aspx.cs" Inherits="Web.ShowZone"  enableEventValidation="false" Title="广告位" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="_mainContent" runat="server">
     <br />
-   <SCRIPT language=JavaScript> 
-<!-- 
-function doClick(o){ 
-     o.className="navs_current"; 
-     var j; 
-     var id; 
-     var e; 
-     for(var i=1;i<=5;i++){ //数字5为滑动门数量 
-       id ="navs"+i; 
-       j = document.getElementById(id); 
-       e = document.getElementById("sub"+i); 
-       if(id != o.id){ 
-         j.className="navs_link"; 
-         e.style.display = "none"; 
-       }else{ 
-            e.style.display = "block"; 
-       } 
-     } 
-} 
-//--> 
-</SCRIPT>  
-
 <table width="936" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#F5F8FC">
   <tr>
-    <th height="40" align="left" background="images/b01.gif" class="d1" scope="col"><table width="936" height="40" border="0" cellpadding="0" cellspacing="0">
+    <th height="40" align="left" background="/images/b01.gif" class="d1" scope="col"><table width="936" height="40" border="0" cellpadding="0" cellspacing="0">
       <tr>
         <th width="348" align="left" scope="col">&nbsp;你的位置: 首页 > 买广告 > 广告位详情</th>
         <th width="588" scope="col">&nbsp;</th>
@@ -51,10 +29,10 @@ function doClick(o){
             <th width="246" height="340" valign="top" scope="col">
             <table width="100%" height="280" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <th colspan="2" scope="col"><img src="images/003.gif" width="160" height="120" /></th>
+                <th colspan="2" scope="col"><img src="/images/003.gif" width="160" height="120" /></th>
               </tr>
               <tr>
-                <th height="40" colspan="2" scope="row"><img src="images/b04.gif" width="111" height="30" /></th>
+                <th height="40" colspan="2" scope="row"><img src="/images/b04.gif" width="111" height="30" /></th>
               </tr>
               <tr>
                 <th width="90" height="40" align="right" valign="middle" scope="row">&nbsp;<span class="bu04">网站名称：</span></th>
@@ -896,10 +874,10 @@ function doClick(o){
             </table></th>
             <th width="328" valign="top" scope="col"><table width="300" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <th height="14" scope="col"><img src="images/b05.gif" width="300" height="14" /></th>
+                <th height="14" scope="col"><img src="/images/b05.gif" width="300" height="14" /></th>
               </tr>
               <tr>
-                <th height="200" background="images/b06.gif" scope="row"><table width="300" height="200" border="0" cellpadding="0" cellspacing="0">
+                <th height="200" background="/images/b06.gif" scope="row"><table width="300" height="200" border="0" cellpadding="0" cellspacing="0">
                   <tr>
                     <th colspan="3" align="center" class="bu03" scope="col">网站主信息</th>
                   </tr>
@@ -926,7 +904,7 @@ function doClick(o){
                 </table></th>
               </tr>
               <tr>
-                <th height="14" scope="row"><img src="images/b07.gif" width="300" height="14" /></th>
+                <th height="14" scope="row"><img src="/images/b07.gif" width="300" height="14" /></th>
               </tr>
               
             </table>
@@ -951,7 +929,7 @@ function doClick(o){
 <br />
 <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th colspan="2" scope="col"><img src="images/b08.gif" width="937" height="30" /></th>
+    <th colspan="2" scope="col"><img src="/images/b08.gif" width="937" height="30" /></th>
   </tr>
   <tr>
     <th width="400" height="230" bgcolor="#F0F0F0" scope="row"><table width="374" height="210" border="0" cellpadding="0" cellspacing="0">
@@ -1003,7 +981,7 @@ function doClick(o){
       <tr>
         <th width="480" height="210" scope="row">
         <asp:Label ID="labAlexa" runat="server"></asp:Label><br />
-        <img src="images/b09.gif" width="480" height="211" /></th>
+        <img src="/images/b09.gif" width="480" height="211" /></th>
       </tr>
     </table></th>
   </tr>
@@ -1015,7 +993,7 @@ function doClick(o){
     <th align="right" bgcolor="#F0F0F0" class="bu06" scope="col">&gt;&gt; 更多&nbsp;</th>
   </tr>
   <tr>
-    <th height="20" colspan="2" align="left" background="images/b10.gif" scope="col"><table width="936" height="20" border="0" cellpadding="0" cellspacing="0">
+    <th height="20" colspan="2" align="left" background="/images/b10.gif" scope="col"><table width="936" height="20" border="0" cellpadding="0" cellspacing="0">
       <tr>
         <th width="241" align="center" class="bu02" scope="col">广告位名称</th>
         <th width="10" class="bu01" scope="col">|</th>
@@ -1031,29 +1009,11 @@ function doClick(o){
     </table></th>
   </tr>
 </table>
-<table width="936" height="60" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <th width="246" height="25" background="images/b11.gif" class="bu06" scope="col">八讯免费网 顶部 横幅广告</th>
-    <th width="130" background="images/b11.gif" class="bu07" scope="col">￥21.00元/周</th>
-    <th width="171" background="images/b11.gif" class="bu02" scope="col">2008-06-23</th>
-    <th width="161" background="images/b11.gif" class="bu02" scope="col">468x60</th>
-    <th width="228" background="images/b11.gif" class="bu02" scope="col">0.73元</th>
-  </tr>
-  <tr>
-    <th height="25" background="images/b11.gif" scope="col"><span class="bu06">八讯免费网 顶部 横幅广告</span></th>
-    <th height="25" background="images/b11.gif" class="bu07" scope="col">￥21.00元/周</th>
-    <th height="25" background="images/b11.gif" class="bu02" scope="col">2008-06-23</th>
-    <th height="25" background="images/b11.gif" class="bu02" scope="col">468x60</th>
-    <th height="25" background="images/b11.gif" scope="col"><span class="bu02">0.73元</span></th>
-  </tr>
-  <tr>
-    <th height="25" background="images/b11.gif" scope="col"><span class="bu06">八讯免费网 顶部 横幅广告</span></th>
-    <th height="25" background="images/b11.gif" class="bu07" scope="col">￥21.00元/周</th>
-    <th height="25" background="images/b11.gif" class="bu02" scope="col">2008-06-23</th>
-    <th height="25" background="images/b11.gif" class="bu02" scope="col">468x60</th>
-    <th height="25" background="images/b11.gif" scope="col"><span class="bu02">0.73元</span></th>
-  </tr>
-</table>
+            <asp:GridView ID="gvOtherZone" runat="server">
+                <Columns>
+                    <asp:BoundField DataField="ZoneName" />
+                </Columns>
+            </asp:GridView>
 <br>
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -1094,11 +1054,11 @@ function doClick(o){
 </table>
 <table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="243" height="20" background="images/b10.gif" class="bu02" scope="col">表 情</th>
-    <th width="10" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="439" background="images/b10.gif" class="bu02" scope="col">评价内容</th>
-    <th width="8" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="236" background="images/b10.gif" class="bu02" scope="col">评价人</th>
+    <th width="243" height="20" background="/images/b10.gif" class="bu02" scope="col">表 情</th>
+    <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="439" background="/images/b10.gif" class="bu02" scope="col">评价内容</th>
+    <th width="8" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="236" background="/images/b10.gif" class="bu02" scope="col">评价人</th>
   </tr>
 </table>
    <asp:DataList ID="dlEvaluation" runat="server" DataKeyField="EvaluationId" 
@@ -1140,9 +1100,9 @@ function doClick(o){
 </table>
 <table width="936" height="312" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="234" height="312" background="images/b12.gif" scope="col"><table width="100%" height="303" border="0" cellpadding="0" cellspacing="0">
+    <th width="234" height="312" background="/images/b12.gif" scope="col"><table width="100%" height="303" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <th height="152" colspan="2" scope="col"><p><img src="images/003.gif" width="160" height="120" /><br />
+        <th height="152" colspan="2" scope="col"><p><img src="/images/003.gif" width="160" height="120" /><br />
           <span class="bu07">￥10.00元/周</span></p>
           </th>
       </tr>
@@ -1167,9 +1127,9 @@ function doClick(o){
         <th height="30" align="left" class="bu04" scope="row">2008-06-23</th>
       </tr>
     </table></th>
-    <th width="234" background="images/b12.gif" scope="col"><table width="100%" height="312" border="0" cellpadding="0" cellspacing="0">
+    <th width="234" background="/images/b12.gif" scope="col"><table width="100%" height="312" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <th height="150" colspan="2" scope="col"><img src="images/003.gif" width="160" height="120" /><br />
+        <th height="150" colspan="2" scope="col"><img src="/images/003.gif" width="160" height="120" /><br />
           <span class="bu07">￥10.00元/周</span></th>
       </tr>
       <tr>
@@ -1195,7 +1155,7 @@ function doClick(o){
     </table></th>
     <th width="234" bgcolor="#EAEFF9" scope="col"><table width="100%" height="312" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <th height="150" colspan="2" scope="col"><img src="images/003.gif" width="160" height="120" /><br />
+        <th height="150" colspan="2" scope="col"><img src="/images/003.gif" width="160" height="120" /><br />
           <span class="bu07">￥10.00元/周</span></th>
       </tr>
       <tr>
@@ -1221,57 +1181,57 @@ function doClick(o){
     </table></th>
     <th width="234" bgcolor="#EAEFF9" scope="col"><table width="100%" height="300" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <th height="25" background="images/b13.gif" class="bu03" scope="col">同类目成交排行榜</th>
+        <th height="25" background="/images/b13.gif" class="bu03" scope="col">同类目成交排行榜</th>
       </tr>
       <tr>
-        <th height="262" background="images/b14.gif" scope="row"><table width="95%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <th height="262" background="/images/b14.gif" scope="row"><table width="95%" height="100%" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <th width="32" height="24" scope="col"><img src="images/p1.gif" width="22" height="22" /></th>
+            <th width="32" height="24" scope="col"><img src="/images/p1.gif" width="22" height="22" /></th>
             <th width="120" height="24" scope="col"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th width="70" height="24" class="bu08" scope="col">￥2.80元/周</th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p2.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p2.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p3.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p3.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p4.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p4.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p5.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p5.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p6.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p6.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p7.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p7.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p8.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p8.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p9.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p9.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
           <tr>
-            <th height="24" scope="row"><img src="images/p10.gif" width="22" height="22" /></th>
+            <th height="24" scope="row"><img src="/images/p10.gif" width="22" height="22" /></th>
             <th height="24" scope="row"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a></th>
             <th height="24" scope="row"><span class="bu08">￥2.80元/周</span></th>
           </tr>
@@ -1280,7 +1240,7 @@ function doClick(o){
       </tr>
       
       <tr>
-        <th height="13" scope="row"><img src="images/b15.gif" width="234" height="13" /></th>
+        <th height="13" scope="row"><img src="/images/b15.gif" width="234" height="13" /></th>
       </tr>
     </table></th>
   </tr>
@@ -1294,33 +1254,33 @@ function doClick(o){
 </table>
 <table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="198" height="20" background="images/b10.gif" class="bu02" scope="col">广告主</th>
-    <th width="9" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="193" background="images/b10.gif" class="bu02" scope="col">成交价格</th>
-    <th width="10" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="356" background="images/b10.gif" class="bu02" scope="col">投放时间</th>
-    <th width="11" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="159" background="images/b10.gif" class="bu02" scope="col">交易状态</th>
+    <th width="198" height="20" background="/images/b10.gif" class="bu02" scope="col">广告主</th>
+    <th width="9" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="193" background="/images/b10.gif" class="bu02" scope="col">成交价格</th>
+    <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="356" background="/images/b10.gif" class="bu02" scope="col">投放时间</th>
+    <th width="11" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="159" background="/images/b10.gif" class="bu02" scope="col">交易状态</th>
   </tr>
 </table>
 <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="203" height="25" background="images/b11.gif" class="bu06" scope="col">原色网络</th>
-    <th width="203" background="images/b11.gif" class="bu02" scope="col">24.00</th>
-    <th width="366" background="images/b11.gif" class="bu02" scope="col">2008-06-15 ——2008-06-21</th>
-    <th width="164" background="images/b11.gif" class="bu02" scope="col">清算完毕</th>
+    <th width="203" height="25" background="/images/b11.gif" class="bu06" scope="col">原色网络</th>
+    <th width="203" background="/images/b11.gif" class="bu02" scope="col">24.00</th>
+    <th width="366" background="/images/b11.gif" class="bu02" scope="col">2008-06-15 ——2008-06-21</th>
+    <th width="164" background="/images/b11.gif" class="bu02" scope="col">清算完毕</th>
   </tr>
   <tr>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
   </tr>
   <tr>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
   </tr>
 </table>
 <br>
@@ -1332,28 +1292,28 @@ function doClick(o){
 </table>
 <table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="449" height="20" background="images/b10.gif" class="bu02" scope="col">标 题</th>
-    <th width="10" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="236" background="images/b10.gif" class="bu02" scope="col">评价人</th>
-    <th width="8" background="images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="236" background="images/b10.gif" class="bu02" scope="col">最后回复时间</th>
+    <th width="449" height="20" background="/images/b10.gif" class="bu02" scope="col">标 题</th>
+    <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="236" background="/images/b10.gif" class="bu02" scope="col">评价人</th>
+    <th width="8" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
+    <th width="236" background="/images/b10.gif" class="bu02" scope="col">最后回复时间</th>
   </tr>
 </table>
 <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="450" height="25" background="images/b11.gif" class="bu06" scope="col"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th width="248" background="images/b11.gif" class="bu06" scope="col"><a href="#" class="bu06">网缘人生</a></th>
-    <th width="238" background="images/b11.gif" class="bu06" scope="col">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
+    <th width="450" height="25" background="/images/b11.gif" class="bu06" scope="col"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
+    <th width="248" background="/images/b11.gif" class="bu06" scope="col"><a href="#" class="bu06">网缘人生</a></th>
+    <th width="238" background="/images/b11.gif" class="bu06" scope="col">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
   </tr>
   <tr>
-    <th height="25" background="images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th height="25" background="images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
-    <th height="25" background="images/b11.gif" scope="row"><span class="bu06">&nbsp;</span><span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
+    <th height="25" background="/images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
+    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">&nbsp;</span><span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
   </tr>
   <tr>
-    <th height="25" background="images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th height="25" background="images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
-    <th height="25" background="images/b11.gif" scope="row">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
+    <th height="25" background="/images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
+    <th height="25" background="/images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
+    <th height="25" background="/images/b11.gif" scope="row">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
   </tr>
 </table>?<br>
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -1383,14 +1343,14 @@ function doClick(o){
   <tr>
     <th height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">校验码:&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th width="103" height="25" align="left" valign="middle" bgcolor="#F0F0F0" scope="row"><img src="images/b17.gif" width="101" height="22" /></th>
+    <th width="103" height="25" align="left" valign="middle" bgcolor="#F0F0F0" scope="row"><img src="/images/b17.gif" width="101" height="22" /></th>
     <th width="584" align="left" valign="middle" bgcolor="#F0F0F0" scope="row"><input name="textfield3" type="text" size="8" />
     <span id="ipt_chk_inf"><span class="bu04">请输入左侧字</span>&nbsp;&nbsp;&nbsp;<a href="#" class="bu06">看不清楚？换个图片</a></span></th>
   </tr>
   <tr>
     <th height="30" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th height="25" align="left" bgcolor="#F0F0F0" scope="row"><img src="images/b18.gif" width="78" height="22" /></th>
+    <th height="25" align="left" bgcolor="#F0F0F0" scope="row"><img src="/images/b18.gif" width="78" height="22" /></th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
   </tr>
 </table>
