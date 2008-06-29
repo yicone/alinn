@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>无标题页</title>
-<link  href="images/StyleSheet.css" rel="Stylesheet"  type="text/css" />
+<link  href="/images/StyleSheet.css" rel="Stylesheet"  type="text/css" />
 </head>
 <body class="admin_main_body">
     <form id="form1" runat="server">

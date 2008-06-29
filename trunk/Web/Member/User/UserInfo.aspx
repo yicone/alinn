@@ -3,11 +3,22 @@
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
     <div style="text-align: center">
+    <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="106" height="29" align="center" background="images/yh04.gif" class="dl02" scope="col">用户信息</th>
+    <th width="829" align="left" background="images/yh03.gif" scope="col">&nbsp;</th>
+  </tr>
+</table>
         <table>
             <tr id="cname_tr">
                 <td>
-                    公司名称：
-                </td>
+                    &nbsp;</td>
+                <td>
+                    带 * 为必填项，其他为可选项</td>
+            </tr>
+            <tr id="cname_tr">
+                <td>
+                    公司名称：                 </td>
                 <td>
                     &nbsp;<asp:TextBox ID="comName" runat="server"></asp:TextBox>
                 </td>
@@ -92,9 +103,18 @@
             </tr>
         </table>
     </div>
-    <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="提交修改" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnReset" runat="server" Text="重置" OnClick="btnReset_Click" />
+
+
+    <table width="22%" height="50" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th scope="col"> 
+            <asp:ImageButton ID="ibtnUpdate" runat="server" Height="25px" 
+                onclick="ibtnUpdate_Click" Width="78px" ImageUrl="~/images/yh20.gif" /></th>
+        <th width="78" scope="col">
+            <asp:ImageButton ID="ibtnReset" runat="server" ImageUrl="~/images/yh21.gif" 
+                onclick="ibtnReset_Click" /></th>
+      </tr>
+    </table>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="_htmlHeadContent">
     <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
@@ -103,6 +123,11 @@
         #form1
         {
             text-align: center;
+        }
+        .style2
+        {
+            height: 25px;
+            width:auto;
         }
     </style>
 </asp:Content>
