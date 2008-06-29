@@ -17,26 +17,34 @@
             </Triggers>
             <ContentTemplate>
             <div style="text-align:left;">
-                            <asp:ImageButton ID="btnAddGroup" runat="server" Text="新增广告组" 
-                                OnClick="btnAddGroup_Click" ImageUrl="~/App_Themes/new/images/grow.gif" />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="63" height="40">&nbsp;</td>
+    <td width="100" height="25" align="center" class="bu02"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th height="25" background="/images/yh28.gif" class="bu02" scope="col" align="center">
+                                      <asp:LinkButton ID="btnAddGroup" runat="server" Text="新增广告组" 
+                                OnClick="btnAddGroup_Click"/>
+          </th>
+        </tr>
+      </table></td>
+    <td width="781" height="25">&nbsp;</td>
+  </tr>
+</table>
 </div>
                 <asp:DataList ID="dlAdGroup" runat="server" Width="100%" OnItemDataBound="dlAdGroup_ItemDataBound"
                     OnItemCommand="dlAdGroup_ItemCommand" DataKeyField="AdGroupId">
                     <ItemTemplate>
-                    <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
+                    
+   <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="13" height="30" align="center" valign="middle" background="/App_Themes/new/images/title5left.gif">&nbsp;</td>
-    <td height="30" align="center" valign="middle" background="~/App_Themes/new/images/title5mid.gif">
-    <td>
+    <td width="63" height="30" align="center" valign="middle" background="/images/yh29.gif">&nbsp;</td>
+    <td width="561" align="left" valign="middle" background="/images/yh29.gif">
         <asp:LinkButton ID="btnGroupName" runat="server" OnClick="btnGroupName_Click" 
-            Text='<%# Bind("GroupName") %>' Width="112px" /></td>
-            <td>
-        <asp:LinkButton ID="lbtnDeleteGroup" runat="server" CommandName="DeleteGroup" 
-            Text="删除此广告组" Width="100px" /></td>
-            <td>
-        <asp:LinkButton ID="lbtnAddAd" runat="server" CommandName="AddAd"> 添加此广告组下广告</asp:LinkButton></td>
-      </td>
-    <td width="13" height="30" align="center" valign="middle" background="/App_Themes/new/images/title5right.gif">&nbsp;</td>
+            Text='<%# Bind("GroupName") %>' Width="112px" />
+    </td>
+    <td width="312" align="center" valign="middle" background="/images/yh29.gif"><a href="#"><span class="bu09"><asp:LinkButton ID="lbtnAddAd" runat="server" CommandName="AddAd"> 添加此广告组下广告</asp:LinkButton></span></a>&nbsp;<a href="#"><span class="bu09">        <asp:LinkButton ID="lbtnDeleteGroup" runat="server" CommandName="DeleteGroup" 
+            Text="删除此广告组" Width="100px" /></span></a></td>
   </tr>
 </table>
                         <table width="100%">
@@ -47,13 +55,15 @@
                                             <td style="width: 800px; height: 39px;">
                                                 类目：<asp:Label ID="labZoneClass" runat="server" Text="Label" Width="150px"></asp:Label>
                                                 关键字：<asp:Label ID="labKeyWords" runat="server" Width="300px"></asp:Label>
-                                                <asp:HyperLink ID="hlEdite" runat="server">
+                                                <asp:HyperLink ID="hlEdite" runat="server" 
+                                                    NavigateUrl="~/Member/Ad/EditeAd.aspx">
 									修改分类和关键字</asp:HyperLink>
                                             </td>
                                         </tr>
                                     </table>
-                                    <asp:DataList ID="dlAD" runat="server" RepeatColumns="6" RepeatDirection="Horizontal"
-                                        OnItemDataBound="dlAD_ItemDataBound" DataKeyField="AdId" OnItemCommand="dlAD_ItemCommand">
+                                    <asp:DataList ID="dlAD" runat="server" RepeatColumns="4" RepeatDirection="Horizontal"
+                                        OnItemDataBound="dlAD_ItemDataBound" DataKeyField="AdId" 
+                                        OnItemCommand="dlAD_ItemCommand" Width="100%">
                                         <ItemTemplate>
                                             <table style="width: 100%">
                                                 <tr>

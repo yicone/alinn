@@ -61,7 +61,7 @@ namespace Web
             }
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, ImageClickEventArgs e)
         {
             #region 参数验证
             string strErr = "";
@@ -104,7 +104,7 @@ namespace Web
                 MessageBox.Show(this, strErr);
                 return;
             }
-            
+
             string siteName = this.txtSiteName.Text;
             string siteUrl = this.txtSiteUrl.Text;
             int siteClass = int.Parse(this.rblSiteClass.Text);
@@ -122,15 +122,15 @@ namespace Web
             }
             string employments = (sbEmployments.Length > 0) ? (sbEmployments.Remove(sbEmployments.Length - 1, 1).ToString()) : string.Empty;
             string taste = this.txtTaste.Text;
-            string description = this.txtDescription.Text; 
+            string description = this.txtDescription.Text;
             #endregion
 
             HOT.Model.Site model = new HOT.Model.Site();
-            HOT.BLL.Site siteManager = new HOT.BLL.Site() ;
+            HOT.BLL.Site siteManager = new HOT.BLL.Site();
 
             bool updateFlag = (Request.QueryString["action"] == "update");
-            
-            if(updateFlag)
+
+            if (updateFlag)
             {
                 Guid siteId;
                 if (GuidHelper.TryParse(Request.QueryString["siteid"], out siteId))
@@ -158,11 +158,6 @@ namespace Web
                 siteManager.Add(model);
 
             Response.Redirect("/Member/Zone/SiteManager.aspx", true);
-        }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -5,25 +5,53 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_mainContent" runat="server">
     <div style="text-align:left;">
-    <asp:Button ID="btnTimeAd" runat="server" onclick="btnTimeAd_Click" 
-        Text="按时长计费广告" BackColor="#CCFFFF" />
-    <asp:Button ID="btnPointAd" runat="server" onclick="btnPointAd_Click" 
-        Text="按点击计费广告" BackColor="#CCFFFF" />
+    
+
+        <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="106" height="29" align="center" background="/images/yh04.gif" class="f2" scope="col"><asp:LinkButton ID="btnTimeAd" runat="server" onclick="btnTimeAd_Click" 
+        Text="按时长计费广告"/></th>
+        <th width="106" height="29" align="center" background="/images/yh04.gif" class="f2" scope="col">    <asp:LinkButton ID="btnPointAd" runat="server" onclick="btnPointAd_Click" 
+        Text="按点击计费广告" /></th>
+    <th width="723" align="left" background="/images/yh03.gif" scope="col">&nbsp;</th>
+  </tr>
+</table>
         </div>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:MultiView ID="mvOrder" runat="server">
         <asp:View ID="View1" runat="server">
-        <br />
-           <div style="text-align:left;"> 创建时间：<asp:DropDownList ID="ddlTime" runat="server" AutoPostBack="True">
+           <div style="text-align:left;">
+            <table width="936" height="30" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="832" height="30" align="left" background="/images/yh08.gif" class="f4" scope="col"><span class="STYLE4">&nbsp;&nbsp;&nbsp;</span><span class="bu04">创建时间：<asp:DropDownList ID="ddlTime" runat="server" AutoPostBack="True">
                 <asp:ListItem Value="0">所有时间</asp:ListItem>
                 <asp:ListItem Value="1">最近三天</asp:ListItem>
                 <asp:ListItem Selected="True" Value="2">最近一周</asp:ListItem>
                 <asp:ListItem Value="3">最近一月</asp:ListItem>
                 <asp:ListItem Value="4">最近三个月</asp:ListItem>
-            </asp:DropDownList><br />
-            <br /></div>
-            <asp:DataList ID="dlTimeOrder" runat="server" Width="100%" ForeColor="#0066CC">
+            </asp:DropDownList></span><span class="STYLE4">
+    <label>
+
+</label>
+    </span>
+      <label><span class="bu04">按计划查看：</span> </label>
+      <span class="STYLE4">
+      <label>
+<select name="select2">
+  <option value="2">所有广告计划</option>
+</select>
+&nbsp;&nbsp;<img src="/images/yh22.gif" width="10" height="14" /> </label>
+      </span>
+      <label><span class="bu04">更多查询条件</span></label>
+      <span class="STYLE4">
+      <label>&nbsp;&nbsp;</label>
+      </span></th>
+    <th width="104" align="left" background="/images/yh08.gif" class="f4" scope="col"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image21','','images/yh26.gif',1)"><img src="/images/yh27.gif" name="Image21" width="89" height="26" border="0" id="Image21" /></a></th>
+  </tr>
+</table>
+            </div>
+            <asp:DataList ID="dlTimeOrder" runat="server" Width="936px" ForeColor="#0066CC">
                 <ItemTemplate>
                       <table cellpadding="0" cellspacing="0" style="width:100%; color: #0066CC;">
                           <tr>

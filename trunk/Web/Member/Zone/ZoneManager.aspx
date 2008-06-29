@@ -53,7 +53,7 @@
             DataSourceID="SqlDataSource1">
             <HeaderTemplate>
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
+                    <tr style="background-image:url(/images/yh29.gif);">
                         <td class="baibiao first">
                             广告位名称/尺寸
                         </td>

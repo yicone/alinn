@@ -9,746 +9,751 @@
 </asp:Content>
 
 <asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="_mainContent">
-    <table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="489" height="60"><a href="http://www.aaaa0.com.cn"><img src="/app_Themes/new/images/ad3.gif" width="489" height="60"></a></td>
-    <td width="489" height="60"><a href="http://www.aaaa0.cn"><img src="/app_Themes/new/images/ad2.gif" width="489" height="60"></a></td>
-
-  </tr>
+ <table width="938" height="40" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th scope="col"><img src="images/gg01.png" width="938" height="36" /></th>
+   </tr>
 </table>
-<table width="984" height="7" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-  </tr>
-</table>
-<table width="984" height="257" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="290" valign="top">
-    <table width="100%" height="189" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
-        <tr>
-          <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
-              <td background="/app_Themes/new/images/004.jpg"><span class="a5">网站公告</span></td>
-            </tr>
-          </table>
-          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-  </tr>
-</table>
-    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td valign="top" class="tablebgc">
-                       <asp:ContentPlaceHolder ID="notice" runat="server">
+ <table width="938" border="0" align="center" cellpadding="0" cellspacing="0" height="212">
+   <tr>
+     <td width="283" height="212" valign="top" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <th height="28" align="right" background="images/gonggao02.gif" scope="col"><span class="sy07">>> 更多</span>&nbsp;</th>
+         <th width="22" height="1" rowspan="2" background="images/gonggao01.gif" scope="col">&nbsp;</th>
+       </tr>
+       <tr>
+         <td height="136" align="center" valign="middle" background="images/gonggao03.gif" scope="col">
+                                <asp:ContentPlaceHolder ID="notice" runat="server">
                         </asp:ContentPlaceHolder></td>
-          </td>
-      </tr>
-    </table></td>
-        </tr>
-    </table>
-    
-    <table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-      </table>
-      <table width="100%" height="189" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
-        <tr>
-          <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
-              <td background="/app_Themes/new/images/004.jpg"><span class="a5">站长活动</span></td>
-            </tr>
-          </table>
-          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-  </tr>
-</table>
-    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td valign="top" class="tablebgc">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+         </td>
+       </tr>
+     </table>
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <th height="18" background="images/gonggao04.gif" scope="col">&nbsp;</th>
+         </tr>
+       </table>
+       <table width="100%" height="27" border="0" cellpadding="0" cellspacing="0">
+         <tr>
+           <th width="76" height="27" scope="col"><img src="images/cj01.gif" width="76" height="27" /></th>
+           <th height="27" align="center" valign="middle" background="images/cj03.gif" scope="col">
+           <div id="scrollBox2">
+                       <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
             </asp:ContentPlaceHolder>
-          </td>
-      </tr>
-    </table></td>
+           </div>
+           <script>
+window.onload=function(){
+  new Marquee(
+    "scrollBox2",  //容器ID<br />
+    0,  //向上滚动(0向上 1向下 2向左 3向右)<br />
+    2,  //滚动的步长<br />
+    200,  //容器可视宽度<br />
+   20,  //容器可视高度<br />
+    50,  //定时器 数值越小，滚动的速度越快(1000=1秒,建议不小于20)<br />
+    2000,  //间歇停顿时间(0为不停顿,1000=1秒)<br />
+    1000,  //开始时的等待时间(0为不等待,1000=1秒)<br />
+    22  //间歇滚动间距(可选)<br />
+    );
+  };
+function Marquee(){
+  this.ID=document.getElementById(arguments[0]);
+  this.Direction=arguments[1];
+  this.Step=arguments[2];
+  this.Width=arguments[3];
+  this.Height=arguments[4];
+  this.Timer=arguments[5];
+  this.WaitTime=arguments[6];
+  this.StopTime=arguments[7];
+  if(arguments[8]){this.ScrollStep=arguments[8];}else{this.ScrollStep=this.Direction>1?this.Width:this.Height;}
+  this.CTL=this.StartID=this.Stop=this.MouseOver=0;
+  this.ID.style.overflowX=this.ID.style.overflowY="hidden";
+  this.ID.noWrap=true;
+  this.ID.style.width=this.Width;
+  this.ID.style.height=this.Height;
+  this.ClientScroll=this.Direction>1?this.ID.scrollWidth:this.ID.scrollHeight;
+  this.ID.innerHTML+=this.ID.innerHTML;
+  this.Start(this,this.Timer,this.WaitTime,this.StopTime);
+  }
+Marquee.prototype.Start=function(msobj,timer,waittime,stoptime){
+  msobj.StartID=function(){msobj.Scroll();}
+  msobj.Continue=function(){
+    if(msobj.MouseOver==1){setTimeout(msobj.Continue,waittime);}
+    else{clearInterval(msobj.TimerID); msobj.CTL=msobj.Stop=0; msobj.TimerID=setInterval(msobj.StartID,timer);}
+    }
+  msobj.Pause=function(){msobj.Stop=1; clearInterval(msobj.TimerID); setTimeout(msobj.Continue,waittime);}
+  msobj.Begin=function(){
+    msobj.TimerID=setInterval(msobj.StartID,timer);
+    msobj.ID.onmouseover=function(){msobj.MouseOver=1; clearInterval(msobj.TimerID);}
+    msobj.ID.onmouseout=function(){msobj.MouseOver=0; if(msobj.Stop==0){clearInterval(msobj.TimerID); msobj.TimerID=setInterval(msobj.StartID,timer);}}
+    }
+  setTimeout(msobj.Begin,stoptime);
+  }
+Marquee.prototype.Scroll=function(){
+  switch(this.Direction){
+    case 0:
+      this.CTL+=this.Step;
+      if(this.CTL>=this.ScrollStep&&this.WaitTime>0){this.ID.scrollTop+=this.ScrollStep+this.Step-this.CTL; this.Pause(); return;}
+      else{if(this.ID.scrollTop>=this.ClientScroll) this.ID.scrollTop-=this.ClientScroll; this.ID.scrollTop+=this.Step;}
+      break;
+    case 1:
+      this.CTL+=this.Step;
+      if(this.CTL>=this.ScrollStep&&this.WaitTime>0){this.ID.scrollTop-=this.ScrollStep+this.Step-this.CTL; this.Pause(); return;}
+      else{if(this.ID.scrollTop<=0) this.ID.scrollTop+=this.ClientScroll; this.ID.scrollTop-=this.Step;}
+      break;
+    case 2:
+      this.CTL+=this.Step;
+      if(this.CTL>=this.ScrollStep&&this.WaitTime>0){this.ID.scrollLeft+=this.ScrollStep+this.Step-this.CTL; this.Pause(); return;}
+      else{if(this.ID.scrollLeft>=this.ClientScroll) this.ID.scrollLeft-=this.ClientScroll; this.ID.scrollLeft+=this.Step;}
+      break;
+    case 3:
+      this.CTL+=this.Step;
+      if(this.CTL>=this.ScrollStep&&this.WaitTime>0){this.ID.scrollLeft-=this.ScrollStep+this.Step-this.CTL; this.Pause(); return;}
+      else{if(this.ID.scrollLeft<=0) this.ID.scrollLeft+=this.ClientScroll; this.ID.scrollLeft-=this.Step;}
+      break;
+    }
+  }
+</script></th>
+           <th width="14" height="27" scope="col"><img src="images/cj02.gif" width="14" height="27" /></th>
+         </tr>
+     </table>     </td>
+     <td height="212" align="center" valign="middle" scope="col">
+	 
+	 <div id="fdpbk"> <img id="fdp" src="gdtp/huandeng1.jpg" onmouseover="imgstop()" onmouseout="restplay()" />
+    <ul id="fdptag">
+      <li>4</li>
+      <li>3</li>
+      <li>2</li>
+      <li class="li1">1</li>
+    </ul>
+</div>
+     <script>
+var imgurl0=new Image();
+var imgurl1=new Image();
+var imgurl2=new Image();
+var imgurl3=new Image();
+imgurl0.src="gdtp/huandeng1.jpg";
+imgurl1.src="gdtp/huandeng2.jpg";
+imgurl2.src="gdtp/huandeng3.gif";
+imgurl3.src="gdtp/huandeng4.jpg";
+var ifie;
+if (window.navigator.userAgent.indexOf("MSIE")>=1){//如果浏览器为IE
+	ifie=true;
+}
+if (window.navigator.userAgent.indexOf("Firefox")>=1){//如果浏览器为Firefox
+	ifie=false;
+}
+var time=0;
+var playdate=4000;//切换时间
+var apz=100;
+var ap;
+function clear(){//清除所有定时
+	clearTimeout(ap);
+	clearTimeout(ip);
+	clearTimeout(iplay);
+}
+function imgplay(){//播放图片
+	obj=document.getElementById("fdp");
+	img=eval("imgurl"+time);
+	obj.src=img.src;
+	if(ifie){
+		obj.style.cssText='FILTER: alpha(opacity=100);';
+	}else{
+		obj.style.opacity=1;
+	}
+	apz=100;
+	var lit=3-time;
+	obj1=document.getElementById("fdptag");
+	tag=obj1.getElementsByTagName("li");
+	for(i=0;i<tag.length;i++){
+		tag[i].className="";
+	}
+	tag[lit].className="li1";
+	time++;
+	if(time>=4){
+		time=0;
+	}
+	clearTimeout(ap);
+	ip=setTimeout(imgalpha,3000);
+	iplay=setTimeout(imgplay,playdate);
+}
+function imgalpha(){//淡出
+	clearTimeout(ip);
+	obj=document.getElementById("fdp");
+	if(ifie){
+		if(obj.filters.alpha.opacity<=40){
+			clearTimeout(ap);
+		}
+	}else{
+		if(obj.style.opacity<=0.4){
+			clearTimeout(ap);
+		}
+	}
+	apz=apz-4;
+	if(ifie){
+		obj.style.cssText='FILTER: alpha(opacity='+apz+');';
+		obj.filters.alpha.opacity=apz;
+	}
+	else{
+		tapz=apz/100;
+		obj.style.opacity=tapz;
+	}
+	ap=setTimeout(imgalpha,100);
+}
+function imgstop(){//暂停播放
+	clear();
+}
+function restplay(){//重启播放
+	clear();
+	iplay=setTimeout(imgplay,2000);
+}
+function dispimg(e){
+	clear();
+	var srcElement=e.srcElement || e.target; 
+	time=srcElement.v;
+	imgplay();
+	imgstop();
+}
+imgplay();
+liobj=document.getElementById("fdptag").getElementsByTagName("li");
+for(i=0;i<liobj.length;i++){
+	liobj[i].v=3-i;
+	if(ifie){
+		liobj[i].attachEvent("onmousemove",dispimg);
+		liobj[i].attachEvent("onmouseout",restplay);
+	}else{
+		liobj[i].addEventListener("mousemove",dispimg,false);
+		liobj[i].addEventListener("mouseout",restplay,false);
+	}
+}
+</script></td>
+     <th width="266" align="center" valign="top" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <th width="266" height="27" align="right" valign="middle" background="images/tj01.GIF" scope="col"><span class="sy07">&gt;&gt; 更多&nbsp;</span></th>
+       </tr>
+       <tr>
+         <td height="152" align="center" valign="top" background="images/tj03.gif" scope="row"><table width="265" height="154" border="0" cellpadding="0" cellspacing="0" >
+           <tr>
+             <td width="36%" align="right" valign="top" scope="col"><br />
+                 <img src="images/index01_31.gif" width="90" height="109" /></td>
+             <td width="64%" height="154" align="center" valign="bottom"  scope="col"> 
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a><br /> 
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a> <br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定</a></td>
+           </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <th height="6" scope="row"><img src="images/tj02.gif" width="266" height="6" /></th>
+       </tr>
+     </table>
+       <table width="99%" height="25" border="0" cellpadding="0" cellspacing="0">
+         <tr>
+           <td width="88" height="25" align="center" valign="middle" background="images/an01.gif" class="sy03"><a href="#">买卖帮助</a></td>
+           <td width="88" height="25" align="center" valign="middle" background="images/an01.gif" class="sy03"><a href="#">社区热贴</a></td>
+           <td align="center" valign="middle" background="images/an01.gif" class="sy03"><a href="#">精彩活动</a></td>
+         </tr>
+       </table></th>
+   </tr>
+</table>
+ <table width="938" height="260" border="0" align="center" cellpadding="0" cellspacing="2">
+   <tr>
+     <td width="281" height="256" align="left" valign="top" scope="col"><table width="100%" height="252" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+       <tr>
+         <td height="29" align="right" background="images/sq1.gif"><span class="sy07">&gt;&gt; 更多</span>&nbsp;</td>
         </tr>
-    </table>
-    </td>
-    <td width="10"></td>
-    <td valign="top"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td valign="top">
-           
-           <div id="flash">
+       <tr>
+         <td height="217" align="center" valign="middle" background="images/sq3.gif"><table width="100%" height="217" border="0" cellpadding="0" cellspacing="0">
+           <tr>
+             <td width="32%" align="center"><img src="images/tp03.gif" width="80" height="100" /></td>
+             <td width="68%"><span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a>
+			 </td>
+           </tr>
+           <tr>
+             <td align="center"><img src="images/tp03.gif" width="80" height="100" /></td>
+             <td><span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定已有</a></td>
+           </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <td height="6"><img src="images/sq2.gif" width="281" height="6" /></td>
+       </tr>
+     </table></td>
+     <th width="249" height="256" valign="top" scope="col"><table width="100%" height="250" border="0" cellpadding="0" cellspacing="2">
+       <tr>
+         <th width="25" height="94" align="left" bgcolor="eeeced" scope="col"><img src="images/bs01.gif" width="25" height="94" /></th>
+         <td width="219" align="center" valign="middle" bgcolor="eeeced" scope="col"><a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+		 <a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+		 <a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+		 <a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+	     <a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a></td>
+       </tr>
+       
+       <tr>
+         <th height="94" align="left" bgcolor="eeeced" scope="row"><img src="images/bs02.gif" width="25" height="94" /></th>
+         <td height="94" align="center" valign="middle" bgcolor="eeeced" scope="row"><a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+<a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+<a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+<a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a><br />
+<a href="#" class="sy-6">&nbsp;本手册针对的是已有一定网页设计</a>    </td>
+       </tr>
+       <tr>
+         <th height="60" colspan="2" scope="row"><img src="images/t02.gif" width="240" height="55" /></th>
+       </tr>
+     </table></th>
+     <th width="135" height="256" align="center" valign="top" scope="col"><table width="100%" height="255" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th height="50" scope="col"><img src="images/t01.gif" width="135" height="58" /></th>
+       </tr>
+       <tr>
+         <td height="30" background="images/tj04.gif" class="sy02" scope="row">&gt;&gt; 买卖指南</td>
+       </tr>
+       <tr>
+         <th height="136" align="center" valign="middle" scope="row"><span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a><br>
+		 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已</a></th>
+       </tr>
+     </table></th>
+     <th width="263" align="center" valign="middle" bgcolor="#FFF3DB" scope="col">
+	 
+	 <div id="clk_rmcp"> 
+<div class="hotSP">
+<br />
+<div class="hotSPlist">
+<ul><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" /></a>
+<a href="#" target="_blank">包装袋</a></li>
+<li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" /></a>
+<a href="#" target="_blank">环保茶叶包装</a></li>
+<li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" /></a>
+<a href="#" target="_blank">海胆礼盒</a></li>
+</ul>
+<script type="text/javascript">
+var marqueeContent1=new Array(); //滚动公告
+marqueeContent1[0]='<li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />油压机</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />迷你直升飞机</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />交直流电焊机</a></li>';
 
-                    <script type="text/javascript">
-// <![CDATA[
-var arr1 = new Array;
-var arr2 = new Array;
-var arr3 = new Array;
 
-arr1.push("images/01.jpg");
-arr2.push("http://www.hotbook.cn/");
-arr3.push("“热点图书");
- arr1.push("images/02.jpg");
-arr2.push("http://www.downke.cn/");
-arr3.push("“当客网");
- arr1.push("images/03.jpg");
-arr2.push("http://www.hotbook.cn/");
-arr3.push("热点图书");
- arr1.push("images/04.jpg");
-arr2.push("http://www.downke.cn/");
-arr3.push("当客网");
- arr1.push("images/05.jpg");
-arr2.push("http://www.hotbook.cn/");
-arr3.push("热点图书");
- arr1.push("images/06.jpg");
-arr2.push("http://www.downke.cn/");
-arr3.push("当客网");
- 
+marqueeContent1[1]='<li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />尼龙件</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />软密封蝶阀</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />女式毛衣</a></li>';
 
-var pics = arr1.join("|");
-var mylinks = arr2.join("|");
-var texts = arr3.join("|");
 
-oFlash1 = new sFlash("../flash/flash.swf","js","400","180","0","#ffffff");
-oFlash1.addParam("quality", "high");
-oFlash1.addParam("wmode", "opaque")
-oFlash1.addParam("salign", "t");
-oFlash1.addVariable("p",pics);	
-oFlash1.addVariable("l",mylinks);
-oFlash1.addVariable("icon",texts);
-oFlash1.write("flash");
-// ]]>
-                    </script>
+marqueeContent1[2]='<li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />同步熔断机</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />手提袋</a></li><li><a href="#" target="_blank"><img src="gdtp/faye.gif" border="0" />水封截止阀</a></li>';
 
-                </div>
-           </td>
-      </tr>
-    </table><table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-      </table>
-    <table width="100%" height="192" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td valign="top">
-                        <div class="Recommend">
 
-                    <script language="javascript">
-			function openAdView(url) {
-				window.open(url);
-			}
-			function openNewWindDowAdView(id) {
-				window.open('adZoneView_&#039;+id+&#039;.html');
-			}
-			//搜索
-			function search(formId) {
-				var form = document.getElementById(formId);
-				if(form.keyword.value == '例如:旅游 教育 招商 医疗 购物'){
-					form.keyword.value = "";
-				}
-				form.action='/dirAdZoneSearch.do';
-				form.submit();
-			}
-			//注册
-			function reg(){
-				window.location='/userRegEdit.do';
-			}
-			<!--
-			/*精品推荐播放*/
-			var scrollEcCt=1;
-			var EcpauseTime=6*1000;
-			var timerEc;
-			function hideAllEcClips() {
-				for (i=1; i<7; i++){
-					var allEcBoxs="ecBox"+i;
-					var ecNavNum="ecNav"+i;
-					document.getElementById(allEcBoxs).style.display="none";
-					document.getElementById(ecNavNum).className="topnavoff";
-				}
-			}
-			function ecNavOn(n,flag) {
-				var curEcBox="ecBox"+n;
-				var curEcNavNum="ecNav"+n;
-				hideAllEcClips();
-				document.getElementById(curEcBox).style.display="block";
-				document.getElementById(curEcNavNum).className="topnavon";
-				scrollEcCt=n;
-				if(flag=="scroll"){ //表示通过循环滚动执行
-					  
-				}
-				else{  //通过鼠标定位
-				   pause();
-				}
-			}
-			function ecNavTrOver() {
-				stopEcScroll();
-			}
-			function ecNavTrOut() {
-				timerEc=setTimeout("fecScroll()",EcpauseTime);
-			}
-			function fecScroll() {
-				stopEcScroll();
-				ecNavOn(scrollEcCt,"scroll");
-				scrollEcCt+=1;
-				if (scrollEcCt==7) {
-					scrollEcCt=1;
-				}
-				timerEc=setTimeout("fecScroll()",EcpauseTime);
-			}
-			function stopEcScroll() {   
-				clearTimeout(timerEc);	
-			}
-			function pause(){
-				clearTimeout(timerEc);
-			}
-			-->
-                    </script>
-
-                    <!--滑动菜单JS-->
-
-                    <script type="text/javascript">
-			function nTabs(thisObj,Num) {
-				if(thisObj.className == "active")return;
-				var tabObj = thisObj.parentNode.id;
-				var tabList = document.getElementById(tabObj).getElementsByTagName("li");
-				for(i=0; i <tabList.length; i++) {
-					if (i == Num) {
-						thisObj.className = "active"; 
-				    	document.getElementById(tabObj+"_Content"+i).style.display = "block";
-					}else{
-						tabList[i].className = "normal"; 
-						document.getElementById(tabObj+"_Content"+i).style.display = "none";
-					}
-				} 
-			}
-			function showandhide(flag){
-				if(flag=='1') {
-					document.getElementById("gonggao").style.display="block";
-					document.getElementById("baodao").style.display="none";
-					//alert("active");
-				}
-				if(flag=='2'){
-					//alert("normal");
-					document.getElementById("gonggao").style.display="none";
-					document.getElementById("baodao").style.display="block";
-				}
-			}
-                    </script>
-
-                    <!--精品推荐 最新广告位-->
-                    <!--精品推荐-->
-                    <div style="float: left;
-                        width:54px; padding-top: 10px; height: 132px; border-left: #b1dceb 1px solid;
-                        border-top: #b1dceb 1px solid; border-bottom: #b1dceb 1px solid; margin-top: 2px;
-                        margin-left: 2px;">
-                        <div class="topnavon" id="ecNav1" onmouseover="ecNavOn(1,'mouse')" style="float: right"
-                            onmouseout="ecNavTrOut()">
-                            旅游度假
-                        </div>
-                        <div class="topnavoff" id="ecNav2" onmouseover="ecNavOn(2,'mouse')" style="float: right"
-                            onmouseout="ecNavTrOut()">
-                            医疗健康
-                        </div>
-                        <div class="topnavoff" id="ecNav3" onmouseover="ecNavOn(3,'mouse')" style="float: right; height: 19px;"
-                            onmouseout="ecNavTrOut()">
-                            网络服务
-                        </div>
-                        <div class="topnavoff" id="ecNav4" onmouseover="ecNavOn(4,'mouse')" style="float: right"
-                            onmouseout="ecNavTrOut()">
-                            教育招聘
-                        </div>
-                        <div class="topnavoff" id="ecNav5" onmouseover="ecNavOn(5,'mouse')" style="float: right"
-                            onmouseout="ecNavTrOut()">
-                            招商项目
-                        </div>
-                        <div class="topnavoff" id="ecNav6" onmouseover="ecNavOn(6,'mouse')" style="float: right"
-                            onmouseout="ecNavTrOut()">
-                            网站自荐
-                        </div>
-                        <div style="clear: both">
-                        </div>
-                    </div>
-                    <!-- 旅游度假 -->
-                    <div id="ecBox1" style="display: block; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        <asp:ContentPlaceHolder ID="ecBox1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <!--旅游度假结束-->
-                    <!--医疗健康-->
-                    <div id="ecBox2" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        2</div>
-                    <!--医疗健康结束-->
-                    <!--招商加盟-->
-                    <div id="ecBox3" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        3
-                    </div>
-                    <!--招商加盟结束-->
-                    <!--教育招聘-->
-                    <div id="ecBox4" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        4</div>
-                    <!--教育招聘结束-->
-                    <!--消费购物-->
-                    <div id="ecBox5" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        5</div>
-                    <!--消费购物结束-->
-                    <!--站长自荐-->
-                    <div id="ecBox6" style="display: none; background: url(images/index/jptj_pic_right.jpg) no-repeat;
-                        float: left; overflow: hidden; width: 350px; height: 180px; border: #b1dceb 1px solid;
-                        margin-top: 2px;">
-                        6</div>
-                    <!--站长自荐结束-->
-
-                    <script language="javascript">fecScroll();</script>
-
-                    <!--精品推荐结束-->
-                </div>
-        </td>
-      </tr>
-    </table></td>
-    <td width="10"></td>
-    <td width="250" valign="top"><table width="100%" height="156" border="0" cellpadding="0" cellspacing="1" bgcolor="#E4F5FF">
-        <tr>
-          <td valign="top" bgcolor="#FFFFFF">
-          <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
-              <td background="/app_Themes/new/images/004.jpg"><span class="a5">客服中心</span></td>
-            </tr>
-          </table>
-          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
+var marqueeInterval1=new Array(); //定义一些常用而且要经常用到的变量
+var marqueeId1=0;
+var marqueeDelay1=3000;
+var marqueeHeight1=110;
+//接下来的是定义一些要使用到的函数
+function initMarquee1() {
+var str1=marqueeContent1[0];
+document.write('<div id=marqueeBox1 style="clear:both;overflow:hidden;height:'+marqueeHeight1+'px" onmouseover="clearInterval(marqueeInterval1[0])" onmouseout="marqueeInterval1[0]=setInterval(\'startMarquee1()\',marqueeDelay1)"><ul>'+str1+'</ul></div>');
+marqueeId1++;
+marqueeInterval1[0]=setInterval("startMarquee1()",marqueeDelay1);
+}
+function startMarquee1() {
+var str1=marqueeContent1[marqueeId1];
+marqueeId1++;
+var m1=document.getElementById('marqueeBox1');
+if(marqueeId1>=marqueeContent1.length) marqueeId1=0;
+if(m1.childNodes.length==1) {
+var nextLine1=document.createElement('ul');
+nextLine1.innerHTML=str1;
+m1.appendChild(nextLine1);
+}
+else {
+var m1=document.getElementById('marqueeBox1');
+m1.childNodes[0].innerHTML=str1;
+m1.appendChild(m1.childNodes[0]);
+m1.scrollTop=0;
+}
+clearInterval(marqueeInterval1[1]);
+marqueeInterval1[1]=setInterval("scrollMarquee1()",13);
+}
+function scrollMarquee1() {
+var m1=document.getElementById('marqueeBox1');
+m1.scrollTop++;
+if(m1.scrollTop%marqueeHeight1==(marqueeHeight1-1)){
+clearInterval(marqueeInterval1[1]);
+}
+}
+</script>
+<script type="text/javascript">initMarquee1();</script>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+	 
+	 
+	</th>
+   </tr>
+</table>
+ <table width="938" height="70" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th scope="col"><img src="images/01_28.gif" width="936" height="71" /></th>
+   </tr>
+ </table>
+ <table width="936" height="620" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th height="620" valign="top" scope="col"><table width="241" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <th width="41" height="29" align="right" valign="bottom" background="images/ym01.gif" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
+    <td align="right">&nbsp;&nbsp;</td>
   </tr>
 </table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="22%" align="center">&nbsp;<img src="/app_Themes/new/images/a016.jpg" width="36" height="22"></td>
-                <td width="78%" class="STYLE8">029-88336734 88336743 </td>
-              </tr>
-            </table>
-            <table width="90%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td height="31" align="center"><a target="_blank"
-									href="http://wpa.qq.com/msgrd?V=1&Uin=664194760&Site=www.yigao.com&Menu=yes"><img
-										border="0" SRC="http://wpa.qq.com/pa?p=1:418336:8"
-										alt="赢在广告客服"> </a></td>
-                <td align="center"><a target="_blank"
-									href="http://wpa.qq.com/msgrd?V=1&Uin=664194760&Site=www.yigao.com&Menu=yes"><img
-										border="0" SRC="http://wpa.qq.com/pa?p=1:418336:8"
-										alt="赢在广告客服"> </a></td>
-              </tr>
-            </table>
-            <table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-              </tr>
-            </table>
-            <table width="90%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="center"><img src="/app_Themes/new/images/a017.jpg" width="75" height="22"></td>
-                <td align="center"><img src="/app_Themes/new/images/a018.jpg" width="75" height="22"></td>
-              </tr>
-            </table>
-            <table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td align="center"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-              </tr>
-            </table>
-            <table width="90%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="center"><img src="/app_Themes/new/images/a019.jpg" width="75" height="22"></td>
-                <td align="center"><img src="/app_Themes/new/images/a020.jpg" width="75" height="22"></td>
-              </tr>
-            </table></td>
-        </tr>
-      </table><table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-    </table>
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td width="18" height="26" background="/app_Themes/new/images/004left.jpg"></td>
-              <td background="/app_Themes/new/images/004.jpg"><span class="a5">客服中心</span></td>
-            </tr>
-          </table>
-          <table width="100%" height="5" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-  </tr>
-</table>
-                                </td>
-  </tr>
-</table>
-<table width="984" height="11" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td></td>
-  </tr>
-</table>
-<table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="720" align="center" valign="top" background="/app_Themes/new/images/a009.jpg"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="5" height="44" background="/app_Themes/new/images/a008left.gif"></td>
-        <td width="709" background="/app_Themes/new/images/a008mid.gif"><img src="/app_Themes/new/images/a008lm.gif" width="100" height="44"></td>
-        <td width="5" background="/app_Themes/new/images/a008right.gif"></td>
-      </tr>
-    </table>
-      <table width="99%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="1" bgcolor="#e1f3fc"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-      </table>
-      <table width="99%" height="487" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td valign="top" background="/app_Themes/new/images/002.gif">
-              <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+</th>
+       </tr>
+       <tr>
+         <td height="158" align="center" valign="top" background="images/ym03.gif"  scope="row"><table width="95%" height="158" cellspacing="0">
+           <tr>
+             <td height="65" colspan="2" align="left" valign="bottom">
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a></td>
+             </tr>
+           <tr>
+             <td width="35%" height="80"><img src="gdtp/faye.gif" width="75" height="75" /></td>
+             <td width="65%" align="left" valign="bottom">
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有定</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有定</a></td>
+           </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <th height="11" scope="row"><img src="images/ym02.gif" width="241" height="11" /></th>
+       </tr>
+     </table>
+       <table width="241" height="209" border="0" cellpadding="0" cellspacing="0">
+         <tr>
+           <th width="41" height="40" align="right" valign="bottom" background="images/lj01.gif" scope="col">&nbsp;&nbsp;&nbsp;</th>
+         </tr>
+         <tr>
+           <th height="158" align="center" valign="top" background="images/ym03.gif" scope="row"><table width="95%" height="157" border="0" cellspacing="0">
+             <tr>
+               <td height="152" align="left" valign="bottom"> 
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			    <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			    <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+				<span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+				 <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+				<span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a></td>
+             </tr>
+           </table></th>
+         </tr>
+         <tr>
+           <th height="11" scope="row"><img src="images/ym02.gif" width="241" height="11" /></th>
+         </tr>
+       </table>
+       <table width="241" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <th width="41" height="40" align="right" valign="bottom" background="images/wz01.gif" scope="col">&nbsp;&nbsp;&nbsp;</th>
+         </tr>
+         <tr>
+           <th height="158" background="images/ym03.gif" scope="row"><table width="95%" height="158" border="0" cellspacing="0">
+             <tr>
+               <td height="110"><span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a><br />
+			   <span class="sy04">● </span><a href="#" class="sy-4">本手册针对的是已有一定是已有一定</a></td>
+             </tr>
+             <tr>
+               <td height="50" align="left" valign="middle"><img src="gdtp/0028.gif" width="223" height="50" /></td>
+             </tr>
+           </table></th>
+         </tr>
+         <tr>
+           <th height="11" scope="row"><img src="images/ym02.gif" width="241" height="11" /></th>
+         </tr>
+     </table></th>
+     <th width="696" height="620" align="center" valign="top" scope="col">
+     <table width="100%" height="600" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th width="960" height="35" background="images/lm.gif" scope="col">&nbsp;</th>
+       </tr>
+       <tr>
+         <th width="960" height="567" background="images/lm02.gif" scope="row"><table width="99%" height="570" border="0" cellpadding="0" cellspacing="0">
+           <tr>
+             <td valign="top" background="images/xx05.gif">
+                           <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
                   <p>
                       &nbsp;</p>
               </asp:ContentPlaceHolder>
-            </td>
-        </tr>
-      </table>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             
+             
+             
+             </td>
+             </tr>
+         </table></th>
+       </tr>
+       <tr>
+         <td height="12" scope="row"><img src="images/lm01.gif" width="696" height="12" /></td>
+       </tr>
+     </table>
+     </th>
+   </tr>
+</table>
+ <table width="936" height="181" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <td height=31 colspan="3" background="images/zz01.gif" scope="col">&nbsp;</td>
+   </tr>
+   <tr>
+     <th width="29" height="150" scope="row"><img src="images/zz02.gif" width="29" height="150" /></th>
+     <th width="879" valign="bottom" scope="row"><table width="100%" height="20" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th height="140" align="center" valign="middle" scope="col"><div id="Div1" style="OVERFLOW: hidden; WIDTH: 875px; HEIGHT: 140px; line-height: 23px;">
+  <table border="0" cellpadding="0" cellspacing="0" background="images/hudong04.gif" cellspace="0">
+    <tr>
+      <td id="Td1" valign="top"><table height="130" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td><img src="/app_Themes/new/images/a010.jpg" width="720" height="11"></td>
+          <td height="130" valign="top">&nbsp;</td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">网络互联</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/wl.GIF" width="75" height="102" /></td>
+              <td width="172" align="left" class="roll">&nbsp;<a href="#" ">所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">法律法规</a> </td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/fl.gif" width="75" height="102" /></td>
+              <td width="172" align="left" valign="top"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">黑客安全</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/heke.GIF" width="75" height="102" /></td>
+              <td width="172" align="left" valign="top"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">域名空间</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/kj.gif" width="75" height="102" /></td>
+              <td width="172" align="left" valign="top"  class="roll">&nbsp;<a href="#">所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">动漫游戏</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/dm.GIF" width="75" height="102" /></td>
+              <td width="172" align="left" valign="bottom"  class="roll">&nbsp;<a href="#">所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">门户网站</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/wz.GIF" width="75" height="102" /></td>
+              <td width="172" align="left" valign="bottom"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">旅游户外</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/ly.gif" width="75" height="102" /></td>
+              <td width="172"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">两性生活</a></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/lx.gif" width="75" height="102" /></td>
+              <td width="172"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
+          <td valign="top"><table width="232" height="130" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2" class="roll">&nbsp;<a href="#" class="biaoti">体育运动</a></span></td>
+            </tr>
+            <tr>
+              <td width="60" height="102" class="roll"><img src="gdtp/ty.gif" width="75" height="102" /></td>
+              <td width="172" valign="bottom"  class="roll">&nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a><br />
+                &nbsp;<a href="#" >所以推荐给你最终也是目</a></td>
+            </tr>
+          </table></td>
         </tr>
       </table></td>
-	<td width="13" valign="top"></td>
-    <td valign="top" bgcolor="#FBFCFF"><table width="250" height="235" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td valign="top"><DIV id=slidingBlock>
-<SCRIPT language=javascript>
-  function switchmodTag(modtag,modcontent,modk) {
-    for(i=1; i <4; i++) {
-      if (i==modk) {
-        document.getElementById(modtag+i).className="menuOn";document.getElementById(modcontent+i).className="slidingList";}
-      else {
-        document.getElementById(modtag+i).className="menuNo";document.getElementById(modcontent+i).className="slidingList_none";}
-    }
-  }
-</SCRIPT>
-
-<H4 class=menuOn id=mod1 
-onmouseover="switchmodTag('mod','slidingList','1');this.blur();">域名交易</H4>
-<H4 class=menuNo id=mod2 
-onmouseover="switchmodTag('mod','slidingList','2');this.blur();">网站交易</H4>
-<H4 class=menuNo id=mod3 
-onmouseover="switchmodTag('mod','slidingList','3');this.blur();">连接交易</H4>
-<DIV class=slidingList id=slidingList1>
-<UL>
-  <LI class=one><SPAN>1</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>2</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>3</SPAN><A class=a2 
-  href="/">第一个的信息第一个的信息</A> </LI>
-  <LI class=one><SPAN>4</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>5</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-   <LI class=one><SPAN>6</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>7</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>8</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>9</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI></UL></DIV>
-<DIV class=slidingList_none id=slidingList2>
-<UL>
-  <LI class=two><SPAN>1</SPAN><A class=a2 href="">第二个的信息第二个的信息</A> 
-  <LI class=two><SPAN>2</SPAN><A class=a2 href="">第二个的信息第二个的信息</A> 
-
-  <LI class=two><SPAN>3</SPAN><A class=a2 
-  href="/">第二个的信息第二个的信息</A> 
-  <LI class=two><SPAN>4</SPAN><A class=a2 href="">第二个的信息第二个的信息</A> 
-  <LI class=two><SPAN>5</SPAN><A class=a2 href="">第二个的信息第二个的信息</A> 
-  <LI class=two><SPAN>6</SPAN><A class=a2 href="">第二个的信息第二个的信息</A> 
-  <LI class=two><SPAN>7</SPAN><A class=a2 href="">第二个的信息第二个的信息</A>
-  <LI class=two><SPAN>8</SPAN><A class=a2 href="">第二个的信息第二个的信息</A>
-   <LI class=two><SPAN>9</SPAN><A class=a2 href="">第二个的信息第二个的信息</A>
-  
-  </LI></UL></DIV>
-<DIV class=slidingList_none id=slidingList3>
-<UL>
-  <LI class=thr><SPAN>1</SPAN><A class=a2 href="">第三个的信息第三个的信息</A> 
-  <LI class=thr><SPAN>2</SPAN><A class=a2 href="">第三个的信息第三个的信息</A> 
-
-  <LI class=thr><SPAN>3</SPAN><A class=a2 
-  href="/">第三个的信息第三个的信息</A> 
-  <LI class=thr><SPAN>4</SPAN><A class=a2 href="">第三个的信息第三个的信息</A> 
-  <LI class=thr><SPAN>5</SPAN><A class=a2 href="">第三个的信息第三个的信息</A> 
-  </LI>
-   <LI class=one><SPAN>6</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>7</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>8</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI>
-  <LI class=one><SPAN>9</SPAN><A class=a2 href="">第一个的信息第一个的信息</A> 
-  </LI></UL></DIV></DIV></td>
-      </tr>
-    </table>
-      <table width="100%" height="262" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td align="center" valign="top"><a href="http://www.paipai.com/mall/man/2008/dad/?PTAG=20012.1.2"><img src="/app_Themes/new/images/a025.jpg" width="250" height="305" border="0"></a></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-<table width="984" height="8" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td></td>
-  </tr>
-</table>
-<table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="15" height="31" background="/app_Themes/new/images/0181.jpg"></td>
-    <td width="954" background="/app_Themes/new/images/0182.jpg"><span class="a5">站长互动</span></td>
-    <td width="15" background="/app_Themes/new/images/0183.jpg"></td>
-  </tr>
-  <tr>
-    <td height="185" colspan="3"><table width="984" height="185" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="12" height="185" rowspan="2" align="center" valign="middle" background="/app_Themes/new/images/019.jpg">&nbsp;</td>
-        <td width="16" height="185" rowspan="2" align="center" valign="middle" background="/app_Themes/new/images/020.jpg">&nbsp;</td>
-        <td width="928" height="180" align="left" valign="middle"><div id=demo style="OVERFLOW: hidden; WIDTH: 928px; HEIGHT: 180px">
-          <table cellPadding=0 align=left border=0 cellspace="0">
-   <tr>
-     <td id=demo11 vAlign=top><table height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr>
-         <td height="180" valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">影音娱乐</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/电影.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">网络互联</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/互联网.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">法律法规 </td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/法律法规.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">黑客安全</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/黑客.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">域名空间</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/域名.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">动漫游戏</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/游戏.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">门户网站</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/门户.gif" width="60" height="152" /></td>
-               <td width="172" align="left" valign="top" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">旅游户外</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/旅游2.gif" width="60" height="152" /></td>
-               <td width="172" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">两性生活</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/两性2.gif" width="60" height="152" /></td>
-               <td width="172" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-         <td valign="top"><table width="232" height="180" border="0" align="center" cellpadding="0" cellspacing="0">
-             <tr>
-               <td colspan="2" class="roll">体育运动</td>
-             </tr>
-             <tr>
-               <td width="60" height="152" class="roll"><img src="/app_Themes/new/images/img/体育运动.gif" width="60" height="152" /></td>
-               <td width="172" class="roll">&nbsp;</td>
-             </tr>
-         </table></td>
-       </tr>
-     </table></td>
-     <td id=demo12 vAlign=top></td>
-   </tr>
+      <td id="Td2" valign="top"></td>
+    </tr>
   </table>
 </div>
-<SCRIPT>
-  var speed=15
-  demo12.innerHTML=demo11.innerHTML
-  function Marquee11(){
-  if(demo12.offsetWidth-demo.scrollLeft<=0)
-  demo.scrollLeft-=demo11.offsetWidth
-  else{
-  demo.scrollLeft++
-  }
-  }
-  var MyMar1=setInterval(Marquee11,speed)
-  demo.onmouseover=function() {clearInterval(MyMar1)}
-  demo.onmouseout=function() {MyMar1=setInterval(Marquee11,speed)}
-</SCRIPT></td>
-        <td width="16" height="185" rowspan="2" align="center" valign="middle" background="/app_Themes/new/images/023.jpg">&nbsp;</td>
-        <td width="12" height="185" rowspan="2" align="center" valign="middle" background="/app_Themes/new/images/022.jpg">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="928" height="5" align="center" valign="middle" background="/app_Themes/new/images/024.jpg"></td>
-        </tr>
-    </table></td>
-  </tr>
+</th>
+       </tr>
+       <tr>
+         <th height="10" align="left" valign="bottom" scope="col"><img src="images/zz04.gif" width="879" height="10" /></th>
+       </tr>
+     </table></th>
+     <th width="28" scope="row"><img src="images/zz03.gif" width="27" height="150" /></th>
+   </tr>
+ </table>
+ <table width="936" height="192" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th width="312" height="74" align="left" valign="top" scope="col"><table width="312" height="172" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th width="312" height="38" align="center" background="images/pp01.gif" class="sy05" scope="col">最新广告位</th>
+       </tr>
+       <tr>
+         <th width="312" height="160" align="center" background="images/pp03.gif" scope="row"><table width="90%" height="160" border="0" cellspacing="0">
+           <tr>
+             <td width="22%"><img src="gdtp/0000.gif" width="80" height="160" /></td>
+             <td width="78%" align="center" valign="middle"><span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+			 
+			 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a>               </td>
+           </tr>
+         </table></th>
+       </tr>
+       <tr>
+         <th height="11" background="images/pp02.gif" scope="row">&nbsp;</th>
+       </tr>
+     </table></th>
+     <th width="314" align="left" valign="top" scope="col"><table width="314" height="172" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th width="314" height="38" align="center" background="images/pp01.gif" class="sy05" scope="col">最新成交</th>
+       </tr>
+       <tr>
+         <th height="160" align="center" background="images/pp03.gif" scope="row"><table width="90%" height="160" border="0" cellspacing="0">
+           <tr>
+             <td width="22%"><img src="gdtp/0000.gif" width="80" height="160" /></td>
+             <td width="78%" align="center" valign="middle"><span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a> </td>
+           </tr>
+         </table></th>
+       </tr>
+       <tr>
+         <th height="11" background="images/pp02.gif" scope="row">&nbsp;</th>
+       </tr>
+     </table></th>
+     <th width="310" align="left" valign="top" scope="col"><table width="310" height="172" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th width="310" height="38" align="center" background="images/pp01.gif" class="sy05" scope="col">好广告推荐</th>
+       </tr>
+       <tr>
+         <th height="160" align="center" background="images/pp03.gif" scope="row"><table width="90%" height="160" border="0" cellspacing="0">
+           <tr>
+             <td width="22%"><img src="gdtp/0000.gif" width="80" height="160" /></td>
+             <td width="78%" align="center" valign="middle"><span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a><br />
+                 <span class="sy04">● </span><a href="#" class="sy-7">本手册针对的是已有一定是已有</a> </td>
+           </tr>
+         </table></th>
+       </tr>
+       <tr>
+         <th height="11" background="images/pp02.gif" scope="row">&nbsp;</th>
+       </tr>
+     </table></th>
+   </tr>
 </table>
-<table width="984" height="10" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td></td>
-  </tr>
-</table>
-<table width="984" height="218" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="248" valign="top"><table width="236" height="32" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td background="/app_Themes/new/images/a022.jpg">&nbsp;&nbsp;<span class="a5">最新广告位</span></td>
-      </tr>
-    </table>
-      <table width="236" height="174" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="167" valign="top" background="/app_Themes/new/images/a023.jpg">&nbsp;</td>
-        </tr>
-      </table>
-      <table width="236" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="12" background="/app_Themes/new/images/a024.jpg"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-      </table></td>
-    <td width="248" valign="top"><table width="236" height="32" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td background="/app_Themes/new/images/a022.jpg">&nbsp;&nbsp;<span class="a5">最新交易</span></td>
-      </tr>
-    </table>
-      <table width="236" height="174" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="167" valign="top" background="/app_Themes/new/images/a023.jpg" class="tablebgc">&nbsp;</td>
-        </tr>
-      </table>
-      <table width="236" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="12" background="/app_Themes/new/images/a024.jpg"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-    </table></td>
-    <td width="248" valign="top"><table width="236" height="32" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td background="/app_Themes/new/images/a022.jpg">&nbsp;&nbsp;<span class="a5">成交排行</span></td>
-      </tr>
-    </table>
-      <table width="236" height="174" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="167" valign="top" background="/app_Themes/new/images/a023.jpg" class="tablebgc">&nbsp;</td>
-        </tr>
-      </table>
-      <table width="236" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="12" background="/app_Themes/new/images/a024.jpg"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-    </table></td>
-    <td width="236" valign="top"><table width="236" height="32" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td background="/app_Themes/new/images/a022.jpg">&nbsp;&nbsp;<span class="a5">论坛热帖</span></td>
-      </tr>
-    </table>
-      <table width="236" height="174" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="167" valign="top" background="/app_Themes/new/images/a023.jpg" class="tablebgc">&nbsp;</td>
-        </tr>
-      </table>
-      <table width="236" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="12" background="/app_Themes/new/images/a024.jpg"><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-        </tr>
-    </table></td>
-  </tr>
-</table>
-
-<table width="984" height="8" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td><img src="/app_Themes/new/images/分隔符.gif" width="1" height="1"></td>
-  </tr>
-</table>
-
-<table width="984" height="122" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="984" valign="top" bgcolor="#EEF5FD"><table width="100%" height="26" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td><img src="/app_Themes/new/images/a013.jpg" width="56" height="24"></td>
-      </tr>
-    </table>
-      <table width="100%" height="129" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="95" valign="top">&nbsp;</td>
-        </tr>
-      </table></td>
-  </tr>
-</table>
-<table width="984" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="28" colspan="3" align="center" valign="middle" background="/app_Themes/new/images/029.jpg">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="18" height="64" align="center" valign="middle" background="/app_Themes/new/images/031.jpg">&nbsp;</td>
-    <td width="948" height="64" background="/app_Themes/new/images/033.jpg"></td>
-  </tr>
-</table>
+ <table width="938" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th width="938" height="28" background="images/zzh01.gif" scope="col">&nbsp;</th>
+   </tr>
+   <tr>
+     <th height="150" background="images/zzh02.gif" scope="row">&nbsp;</th>
+   </tr>
+   <tr>
+     <th height="11" scope="row"><img src="images/zzh03.gif" width="938" height="11" /></th>
+   </tr>
+ </table>
+ <table width="938" height="103" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <th height="36" colspan="3" background="images/hz01.gif" scope="col">&nbsp;</th>
+   </tr>
+   <tr>
+     <th width="25" height="67" scope="row"><img src="images/hz02.gif" width="25" height="67" /></th>
+     <th width="888" align="center" valign="bottom" scope="row"><table width="100%" height="67" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+         <th height="56" scope="col"><img src="images/index01_116.gif" width="881" height="54" /></th>
+       </tr>
+       <tr>
+         <th height="10" scope="col"><img src="images/hz03.gif" width="888" height="10" /></th>
+       </tr>
+     </table></th>
+     <th width="25" scope="row"><img src="images/hz04.gif" width="25" height="67" /></th>
+   </tr>
+ </table>
 </asp:Content>

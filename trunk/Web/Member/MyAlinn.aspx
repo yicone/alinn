@@ -2,212 +2,160 @@
     MasterPageFile="~/MasterPage/Member.Master" Title="用户管理中心" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_mainContent">
-    <div id="maincontent">
-        <div class="lcol1">
-            <!-- system messeges -->
-            <!-- 网站主概况 -->
-            <h1 class="summary-title">
-                <div class="lc">
-                </div>
-                <div class="mc">
-                    网站主概况 <i class="open"></i>
-                </div>
-                <div class="rc">
-                </div>
-                <div class="clearing">
-                </div>
-            </h1>
-            <div class="role-summary seller" style="_height: 1%">
-                <div class="finance-bar">
-                    <ul>
-                        <li>05月16日收入：<span class="large-green">0.00</span>元 </li>
-                        <li>未结算收入：<span class="large-green">0.00</span>元 </li>
-                        <li class="no-border">可用收入：<span class="large-green">0.00</span>元 </li>
-                        <li class="action no-border"><a class="draw" href="http://www.alimama.com/membersvc/accounts/draw.htm?menuid=H03_L0302_V03">
-                            <span>提现</span></a> </li>
-                    </ul>
-                </div>
-                <div class="desc-for-bar">
-                    <div class="for-yesterday">
-                        <div class="arrow">
-                        </div>
-                        <div class="top">
-                        </div>
-                        <div class="body">
-                            <ul>
-                                <li><a href="http://www.alimama.com/membersvc/report/seller_earning.htm">» 查看广告位收益</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bottom">
-                        </div>
-                    </div>
-                    <div class="action-points">
-                        <ul>
-                            <li>上次提现时间：<em></em> </li>
-                            <li>下次结算时间：<em>2008-06-15</em> </li>
-                        </ul>
-                    </div>
-                    <div class="clearing">
-                    </div>
-                </div>
-                <!-- 最新交易 -->
-                <div class="sections">
-                    <h3>
-                        <i></i>最新交易 <a class="view-all" href="http://www.alimama.com/membersvc/campaign/cpt/trans_mgr.htm">
-                            查看详情</a></h3>
-                    <ul class="trans">
-                        暂无交易
-                    </ul>
-                    <div class="clearing">
-                    </div>
-                </div>
-                <!-- 待评价 -->
-                <!-- 待评价结束 -->
-            </div>
-            <div class="role-summary-footer">
-                <div class="lc">
-                </div>
-                <div class="mc">
-                </div>
-                <div class="rc">
-                </div>
-                <div class="clearing">
-                </div>
-            </div>
-            <div class="clearing">
-            </div>
-            <!-- 广告主 -->
-            <h1 class="summary-title">
-                <div class="lc">
-                </div>
-                <div class="mc">
-                    广告主上手
-                </div>
-                <div class="rc">
-                </div>
-            </h1>
-            <div class="role-summary seller">
-                <p class="start-from-here">
-                    作为广告主，您了解以下几种计费模式吗？明白了就直接点击创建各自的广告</p>
-                <ul class="plans-intro">
-                    <li class="cpt"><a href="http://www.alimama.com/membersvc/campaign/cpt/select_zone.htm">
-                        <cite><i></i>
-                            <h5>
-                                按时长计费</h5>
-                            <span class="gray">CPT</span> </cite>
-                        <div class="intro">
-                            按广告展现的时长进行付费，目前最小购买时间单位是一周。按周期来进行付费。目前广告位最多可以连续购买4周。按时长付费有助于您更好的提高产品/服务的品牌及知名度。
-                        </div>
-                    </a></li>
-                    <li class="cpm"><a href="http://www.alimama.com/membersvc/campaign/cpm/cpm_campaign_create.htm">
-                        <cite><i></i>
-                            <h5>
-                                按浏览量计费</h5>
-                            <span class="gray">CPM</span> </cite>
-                        <div class="intro">
-                            按每次点击进行付费，广告主为每次点击制定价格，按照广告被点击的次数进行付费！广告的点击情况除了和站点有关外，还和广告的样式，内容是否与网站内容相关等因素有关。
-                        </div>
-                    </a></li>
-                    <li class="cpc"><a href="http://www.alimama.com/membersvc/campaign/cpc/cpc_campaign_create.htm">
-                        <cite><i></i>
-                            <h5>
-                                按点击计费</h5>
-                            <span class="gray">CPC</span> </cite>
-                        <div class="intro">
-                            CPM即每千次印象费用，广告主按照其广告所在页面展现1000次进行付费。按广告展现付费可以更有效的控制成本，也可以得到更好的品牌/产品知名度的提升。
-                        </div>
-                    </a></li>
-                </ul>
-                <div class="clearing">
-                </div>
-            </div>
-            <div class="role-summary-footer">
-                <div class="lc">
-                </div>
-                <div class="mc">
-                </div>
-                <div class="rc">
-                </div>
-            </div>
-            <div class="my_sanbao_banner">
-                </div>
-        </div>
-        <div class="lcol3">
-            <div class="side-block userinfo">
-                <h3>
-                    <span class="open">个人信息<i></i></span></h3>
-                <div class="clearing">
-                </div>
-                <div class="ava-and-nick">
-                    <div class="user">
-                        <p class="nickname">
-                            <strong>
-                                <%# Eval("NickName") %></strong></p>
-                        <p class="regdate">
-                            <i>上次登录时间:<%# Eval("LastLoginTime") %></i></p>
-                    </div>
-                </div>
-                <ul class="attrs">
-                    <li>
-                        <label>
-                            <i class="pm"></i>站内消息：</label>
-                        <div class="value">
-                            <a href="#" target="_blank">
-                                <%# Eval("MsgCount") %></a>条</div>
-                    </li>
-                    <li>
-                        <label>
-                            <i class="pm"></i>广告主积分：</label>
-                        <div class="value">
-                            <a href="#" target="_blank">
-                                <%# Eval("MsgCount") %></a>条</div>
-                    </li>
-                    <li>
-                        <label>
-                            <i class="pm"></i>网站主积分：</label>
-                        <div class="value">
-                            <a href="#" target="_blank">
-                                <%# Eval("MsgCount") %></a>条</div>
-                    </li>
-                </ul>
-                <div class="alipay-bind">
-                    <i></i>您尚未绑定财富通，请尽快<a onclick="javascript:document.alipayForm.submit()" href="#">绑定</a>
-                </div>
-            </div>
-            <div class="side-block alias">
-                <h3>
-                    <span class="open">快速入口<i></i></span></h3>
-                <div class="clearing">
-                </div>
-                <div class="buyer">
-                    <h5>
-                        <span>广告主</span></h5>
-                    <ul>
-                        <li><i class="new-gg-plan"></i><a href="#">新建广告计划</a> </li>
-                        <li><i class="manage-gg-group"></i><a href="/Member/Ad/ManageAdGroup.aspx">广告组管理</a>
-                        </li>
-                        <li><i class="manage-trans-buyer"></i><a href="#">广告计划管理</a> </li>
-                        <li><i class="incomes"></i><a href="#">消费账户</a> </li>
-                    </ul>
-                </div>
-                <div class="seller">
-                    <h5>
-                        <span>网站主</span></h5>
-                    <ul>
-                        <li><i class="new-gg-board"></i><a href="/Member/Zone/Zone.aspx?action=new">发布广告位</a>
-                        </li>
-                        <li><i class="view-income"></i><a href="/Member/Zone/SiteManager.aspx">广告位管理</a>
-                        </li>
-                        <li><i class="manage-trans-seller"></i><a href="#">交易管理(卖)</a> </li>
-                        <li><i class="incomes"></i><a href="#">收入账户</a> </li>
-                    </ul>
-                </div>
-                <div class="clearing">
-                </div>
-            </div>
-            <div class="side-block news">
-            </div>
-        </div>
-    </div>
+    <table width="936" height="382" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#EDEDED">
+  <tr>
+    <th height="380" valign="top" scope="col"><table width="936" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="260" height="30" align="left" background="/images/yz01.gif" scope="col"><span class="d4">&nbsp;&nbsp;个人信息</span> </th>
+        <th scope="col"><%# Eval("NickName") %></th>
+        <th align="left" background="/images/yz03.gif" scope="col"><span class="d4">&nbsp;&nbsp;广告主概况</span></th>
+      </tr>
+      <tr>
+        <th width="260" height="152" valign="top" bgcolor="#F1F1F1" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th width="115" height="30" align="right" scope="col"><strong class="bt02">ping08&nbsp;</strong></th>
+            <th width="145" scope="col">&nbsp;</th>
+          </tr>
+          <tr>
+            <th height="30" align="right" class="gl01" scope="row">上次登录时间:&nbsp;</th>
+            <td class="gl01">&nbsp;<%# Eval("LastLoginTime") %></td>
+          </tr>
+          <tr>
+            <th height="30" align="right" scope="row"><img src="/images/yz02.gif" width="18" height="12" /> <span class="bu02">站内消息：</a></span></th>
+            <td class="bu02">&nbsp;<%# Eval("MsgCount") %>条</td>
+          </tr>
+          <tr>
+            <th height="30" align="right" class="bu02" scope="row"><img src="/images/yz04.gif" width="16" height="15" />广告主积分：</th>
+            <td class="bu02">&nbsp;<%# Eval("MsgCount") %></td>
+          </tr>
+          <tr>
+            <th height="30" align="right" class="bu02" scope="row"><img src="/images/yz04.gif" width="16" height="15" />网站主积分：</th>
+            <td class="bu02">&nbsp;<%# Eval("MsgCount") %></td>
+          </tr>
+        </table></th>
+        <th width="20" scope="col">&nbsp;</th>
+        <th valign="top" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th height="50" scope="col"><table width="90%" height="30" border="0" cellpadding="0" cellspacing="0" bgcolor="#F1F1F1">
+              <tr>
+                <th width="281" align="left" scope="col"><span class="bu06">&nbsp;&nbsp;</span><span class="d3">今日实时支出：</span><span class="bu07">0.00元</span><span class="d3"> &nbsp;&nbsp;可用余额：</span><span class="bu07">0.00元</span> </th>
+                <th width="244" scope="col">&nbsp;</th>
+              </tr>
+            </table></th>
+          </tr>
+          <tr>
+            <th height="40" align="left" bgcolor="#F8F8F8" scope="row"><em></em>&nbsp;&nbsp;&nbsp; <span class="bt02">&gt;&gt;&nbsp;最新广告计划</span> <span class="d3">&nbsp;&nbsp;<a href="#" class="bu06">查看广告计划</a></span></th>
+          </tr>
+          <tr>
+            <th height="40" align="left" scope="row">&nbsp;&nbsp;&nbsp;&nbsp;<span class="gl02">&nbsp;&nbsp; 暂无最新广告计划</span></th>
+          </tr>
+          <tr>
+            <th height="22" scope="row">&nbsp;</th>
+          </tr>
+        </table></th>
+      </tr>
+    </table>
+    <br /><br />
+    <table width="936" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="260" height="30" align="left" background="/images/yz01.gif" scope="col"><span class="d4">&nbsp;&nbsp;快速入口</span> </th>
+        <th scope="col">&nbsp;</th>
+        <th align="left" background="/images/yz03.gif" scope="col"><span class="d4">&nbsp;&nbsp;网站主概况</span></th>
+      </tr>
+      <tr>
+        <th width="260" height="152" valign="top" bgcolor="#F1F1F1" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <th width="125" height="35" align="center" scope="col"><strong class="bt02">广告主</strong></th>
+              <th width="135" class="bt02" scope="col">网站主</th>
+            </tr>
+            <tr>
+              <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col"><span class="bu02"><a href="#">新建广告计划</a></span></th>
+                  </tr>
+                </table></th>
+              <td align="center" valign="middle" class="gl01"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">发布广告位</a></span></th>
+                  </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+              <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                <tr>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告组管理</a></span></th>
+                </tr>
+              </table></th>
+              <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告位管理</a></span></th>
+                  </tr>
+                </table></td>
+            </tr>
+            <tr>
+              <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告计划管理</a></span></th>
+                  </tr>
+                </table></th>
+              <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                <tr>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">交易管理(卖)</a></span></th>
+                </tr>
+              </table>
+                </td>
+            </tr>
+            <tr>
+              <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">修改账户</a></span></th>
+                  </tr>
+                </table></th>
+              <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                <tr>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">我的推广</a></span></th>
+                </tr>
+              </table>
+                </td>
+            </tr>
+            <tr>
+              <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                  <tr>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">消费账户</a></span></th>
+                  </tr>
+                </table></th>
+              <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
+                <tr>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">收入账户</a></span></th>
+                </tr>
+              </table>                
+            </tr>
+        </table></th>
+        <th width="20" scope="col">&nbsp;</th>
+        <th valign="top" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <th height="60" colspan="3" scope="col"><table width="90%" height="30" border="0" cellpadding="0" cellspacing="0" bgcolor="#F1F1F1">
+                  <tr>
+                    <th width="477" align="left" scope="col"><span class="bu06">&nbsp;&nbsp;</span><span class="d3">06月23日收入：</span><span class="bu07">0.00元</span><span class="d3"> &nbsp;&nbsp;未结算收入：<span class="bu07">0.00元</span>&nbsp;&nbsp;可用收入：<span class="bu07">0.00元</span> </span> </th>
+                    <th width="113" scope="col">&nbsp;</th>
+                  </tr>
+              </table></th>
+            </tr>
+            <tr>
+              <th width="39%" height="60" align="left" scope="row"><em></em>&nbsp;&nbsp;&nbsp;<span class="d3">&nbsp;&nbsp;<a href="#" class="bu06">查看广告位收益 </a></span></th>
+              <th width="30%" align="left" class="q01" scope="row">上次提现时间：<em class="bu07">008-07-15</em></th>
+              <th width="31%" align="left" class="q01" scope="row">下次结算时间：<em class="bu07">2008-07-15</em> </th>
+            </tr>
+            <tr>
+              <th height="40" colspan="3" align="left" bgcolor="#F8F8F8" scope="row">&nbsp;&nbsp;&nbsp;&nbsp;<span class="gl02">&nbsp;<span class="bt02">&gt;&gt;&nbsp;查看交易 &nbsp;&nbsp;<a href="campaign/cpt/trans_mgr.htm" class="bu06">查看详情</a></span></span></th>
+            </tr>
+            <tr>
+              <th height="50" colspan="3" align="left" scope="row"><span class="gl02"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;暂无</span></th>
+            </tr>
+        </table></th>
+      </tr>
+    </table></th>
+  </tr>
+</table>
 </asp:Content>

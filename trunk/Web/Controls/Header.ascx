@@ -1,69 +1,61 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Web.Controls.Header" %>
-<%@ Register Src="Search.ascx" TagName="Search" TagPrefix="uc1" %>
+<%@ Register src="Search.ascx" tagname="Search" tagprefix="uc1" %>
+<style type="text/css">
+    .style3
+    {
+        width: 667px;
+    }
+</style>
 <div style="text-align: center">
-    <table style="height: 24px; width: 100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td background="images/001.jpg" class="STYLE4" align="left;">
-                <a class="a2" href="/">赢在广告首页</a>&nbsp;<span class="STYLE4">|</span>&nbsp;<a class="a2"
-                    href="#">加入收藏夹</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                欢迎您！
-                <asp:HyperLink ID="hlLogin" runat="server">登录</asp:HyperLink>&nbsp;|&nbsp;
-                <asp:LinkButton ID="lbRegister" runat="server" OnClick="LinkButton1_Click">注册</asp:LinkButton>
-                </span> &nbsp;&nbsp;<a class="a2" href="#">财富通</a> | <a class="a2" href="#">腾讯QQ</a>
-                <span class="STYLE4">|</span> <a class="a2" href="#">帮助中心</a>
-            </td>
-        </tr>
-    </table>
-    <table style="height: 62px; width: 100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td width="200" align="center">
-                <img src="/app_themes/new/images/logo.gif" width="145" height="62">
-            </td>
-            <td align="center">
+    <table width="938" border="0" align="center" cellpadding="0" cellspacing="0" >
+  <tr>
+    <th width="300" height="65" rowspan="2" scope="col"><img src="/images/logo.gif" width="182" height="65" /></th>
+    <th height="20" align="right" background="/images/yh07.gif" scope="col" 
+          colspan="2"> <span class="bu06"> 欢迎您！<asp:HyperLink ID="hlLogin" runat="server">登录</asp:HyperLink>|</span> <span class="bu06"><asp:LinkButton ID="lbRegister" runat="server" OnClick="LinkButton1_Click">注册</asp:LinkButton>|</span> <span class="bu06">财富通</span> <span class="bu06">|</span> <span class="bu06">腾讯QQ</span> <span class="bu06">|</span> <span class="bu06">用户中心</span></th>
+    
+  </tr>
+  <tr>
+    <th valign="bottom" scope="col">
                 <div id="menu">
                     <ul>
-                        <li><a href="/" target="_self">首页</a></li>
-                        <li><a href="/Public/AdList.aspx" target="_self">买广告</a></li>
-                        <li><a href="/public/sellad.aspx" target="_self">卖广告</a></li>
-                        <li><a href="#" target="_self">网站推广</a></li>
-                        <li><a href="#" target="_self">社区</a></li>
+                        <li class="shouye"><a href="/" target="_self">首页</a></li>
+                        <li class="mai"><a href="/Public/AdList.aspx" target="_self">买广告</a></li>
+                        <li class="mai1"><a href="/public/sellad.aspx" target="_self">卖广告</a></li>
+                        <li class="tuiguang"><a href="#" target="_self">网站推广</a></li>
+                        <li class="shequ"><a href="#" target="_self">社区</a></li>
                     </ul>
                 </div>
-            </td>
-            <td width="312" valign="top">
-                <table width="100%" height="29" border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td align="right" valign="bottom">
-                            <a href="#"></a>&nbsp;&nbsp;<a href="#"></a>&nbsp;&nbsp;&nbsp;
-                        </td>
-                    </tr>
-                </table>
-                <table width="100%" height="32" border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <table style="height: 64px; width: 100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td style="text-align: center;" background="/app_themes/new/images/a007.jpg">
-                <uc1:Search ID="Search1" runat="server" />
-            </td>
-        </tr>
-    </table>
-    <table style="height: 7px; width: 100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td>
-                <img src="/app_themes/new/images/分隔符.gif" width="1" height="1">
-            </td>
-        </tr>
-    </table>
+    </th>
+    <th width="300" scope="col">&nbsp;</th>
+  </tr>
+</table>
+        
+    <table width="938" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="273" height="30" background="/images/index0_09.gif" scope="col">&nbsp;</th>
+    <th width="389" background="/images/index0_10.gif" scope="col">&nbsp;</th>
+    <th width="276" background="/images/index0_11.gif" scope="col">&nbsp;</th>
+  </tr>
+  <tr>
+    <th height="30" colspan="3" scope="row"><table width="100%" height="20" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th width="229" height="37" background="/images/index0_12.gif" scope="col">&nbsp;</th>
+        <th scope="col"><table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <th height="8" colspan="2" align="left" valign="top" scope="col"><img src="/images/index01_13.gif" width="509" height="8" /><img src="/images/index01_14.gif" width="200" height="8" /></th>
+          </tr>
+          <tr>
+            <th height="29" align="left" valign="top" scope="col" class="style3" style="background-image:url(/images/searchbg.gif);">
+                                <uc1:Search ID="Search1" runat="server" />   
+                                          </th>
+            <th width="39" align="left" valign="top" style="background-image:url(/images/index01_121.gif);"scope="col">
+                &nbsp;</th>
+          </tr>
+        </table>    
+        
+        </th>
+      </tr>
+    </table></th>
+  </tr>
+</table>
 </div>

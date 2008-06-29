@@ -1,5 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.Master.cs" Inherits="Web.MasterPage.Member"
-    MasterPageFile="~/MasterPage/Global.Master" %>
+    MasterPageFile="~/MasterPage/MemberGlobal.Master" %>
 
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
     <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
@@ -51,12 +51,6 @@
     </td>
   </tr>
 </table>
-<table width="984" height="34" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="/app_themes/new/images/menutwo.gif">&nbsp;</td>
-  </tr>
-</table>
-
     </div>
     <div style="margin-top: 50px" class="center">
         <asp:ContentPlaceHolder ID="_mainContent" runat="server">
