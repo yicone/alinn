@@ -18,7 +18,7 @@ namespace Web.User
 
         }
 
-        protected void btnConfix_Click(object sender, EventArgs e)
+        protected void ibtnUpdate_Click(object sender, ImageClickEventArgs e)
         {
             if (this.IsValid)
             {

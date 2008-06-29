@@ -5,8 +5,8 @@
     <div style="text-align: center">
     <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="106" height="29" align="center" background="images/yh04.gif" class="dl02" scope="col">用户信息</th>
-    <th width="829" align="left" background="images/yh03.gif" scope="col">&nbsp;</th>
+    <th width="106" height="29" align="center" background="/images/yh04.gif" class="dl02" scope="col">用户信息</th>
+    <th width="829" align="left" background="/images/yh03.gif" scope="col">&nbsp;</th>
   </tr>
 </table>
         <table>

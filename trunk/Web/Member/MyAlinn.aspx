@@ -71,12 +71,12 @@
             <tr>
               <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                   <tr>
-                    <th width="106" scope="col"><span class="bu02"><a href="#">新建广告计划</a></span></th>
+                    <th width="106" scope="col"><span class="bu02"><a href="/public/adlist.aspx">新建广告计划</a></span></th>
                   </tr>
                 </table></th>
               <td align="center" valign="middle" class="gl01"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                   <tr>
-                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">发布广告位</a></span></th>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Zone/Site.aspx?action=new">发布广告位</a></span></th>
                   </tr>
                 </table>
                 </td>
@@ -84,24 +84,24 @@
             <tr>
               <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                 <tr>
-                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告组管理</a></span></th>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Ad/ManageAdGroup.aspx">广告组管理</a></span></th>
                 </tr>
               </table></th>
               <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                   <tr>
-                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告位管理</a></span></th>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Zone/SiteManager.aspx">广告位管理</a></span></th>
                   </tr>
                 </table></td>
             </tr>
             <tr>
               <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                   <tr>
-                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">广告计划管理</a></span></th>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Order/OrderManager.aspx">广告计划管理</a></span></th>
                   </tr>
                 </table></th>
               <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                 <tr>
-                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">交易管理(卖)</a></span></th>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Zone/OrderViewer.aspx">交易管理(卖)</a></span></th>
                 </tr>
               </table>
                 </td>
@@ -109,12 +109,12 @@
             <tr>
               <th height="40" align="center" valign="middle" class="bu02" scope="row"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                   <tr>
-                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">修改账户</a></span></th>
+                    <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/User/UserInfo.aspx">修改账户</a></span></th>
                   </tr>
                 </table></th>
               <td align="center" valign="middle" class="bu02"><table width="110" height="30" border="1" cellpadding="0" cellspacing="0" bordercolor="#E0DFE3" bgcolor="#FFFFFF">
                 <tr>
-                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="#">我的推广</a></span></th>
+                  <th width="106" scope="col">&nbsp;<span class="bu02"><a href="/Member/Zone/MyRecommendation.aspx">我的推广</a></span></th>
                 </tr>
               </table>
                 </td>

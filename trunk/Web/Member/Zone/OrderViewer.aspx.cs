@@ -33,7 +33,7 @@ namespace Web.Member.Zone
             }
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void ImageButton1_Click(object sender, EventArgs e)
         {
             //Creat a query about
         }

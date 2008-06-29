@@ -223,6 +223,13 @@
     <Compile Include="Member\Store\MyStore.aspx.designer.cs">
       <DependentUpon>MyStore.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\User\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\User\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Zone\EffectReport.aspx.cs">
       <DependentUpon>EffectReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -475,13 +482,6 @@
     <Compile Include="Member\User\UserInfo.aspx.designer.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Public\ResetPassword.aspx.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Public\ResetPassword.aspx.designer.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Public\SellAd.aspx.cs">
       <DependentUpon>SellAd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -650,8 +650,6 @@
     <Content Include="App_Themes\Basic\Menu.css" />
     <Content Include="App_Themes\Basic\style.css" />
     <Content Include="App_Themes\new\css.css" />
-    <Content Include="App_Themes\third\css.css" />
-    <Content Include="App_Themes\third\DataList.css" />
     <Content Include="App_Themes\new\images\001.jpg" />
     <Content Include="App_Themes\new\images\001.swf" />
     <Content Include="App_Themes\new\images\002.gif" />
@@ -919,6 +917,8 @@
     <Content Include="App_Themes\new\images\hover.gif" />
     <Content Include="App_Themes\new\images\购买时段.jpg" />
     <Content Include="App_Themes\new\images\active.gif" />
+    <Content Include="App_Themes\third\css.css" />
+    <Content Include="App_Themes\third\DataList.css" />
     <Content Include="App_Themes\third\Menu.css" />
     <Content Include="App_Themes\third\texiao.css" />
     <Content Include="Controls\Calendar.ascx" />
@@ -1234,6 +1234,7 @@
     <Content Include="images\m01.gif" />
     <Content Include="images\m02.gif" />
     <Content Include="images\money.gif" />
+    <Content Include="images\nopic.gif" />
     <Content Include="images\p01.GIF" />
     <Content Include="images\p02.gif" />
     <Content Include="images\p03.GIF" />
@@ -1391,6 +1392,7 @@
     <Content Include="Member\Order\AdEvaluation.aspx" />
     <Content Include="Member\Order\OrderManager.aspx" />
     <Content Include="Member\Store\MyStore.aspx" />
+    <Content Include="Member\User\ResetPassword.aspx" />
     <Content Include="Member\Zone\EffectReport.aspx" />
     <Content Include="Member\Zone\images\bg_recommendlink.png" />
     <Content Include="Member\Zone\images\ZoneSite.aspx" />
@@ -1516,7 +1518,6 @@
     <Content Include="Public\Register.aspx" />
     <Content Include="Member\User\Seccess.aspx" />
     <Content Include="Member\User\UserInfo.aspx" />
-    <Content Include="Public\ResetPassword.aspx" />
     <Content Include="Public\SellAd.aspx" />
     <Content Include="Public\ShowZone.aspx" />
     <Content Include="Public\Success.aspx" />
