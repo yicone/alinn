@@ -28,7 +28,7 @@ namespace Web.User
                 mUser.CompanyAddress = mUserTemp.CompanyAddress;
                 mUser.CompanyName = mUserTemp.CompanyName;
                 mUser.Email = mUserTemp.Email;
-                mUser.Introducer = mUserTemp.Introducer;
+                mUser.Introducer = new Guid(mUserTemp.Introducer);
                 mUser.LinkMan = mUserTemp.LinkMan;
                 mUser.Mobile = mUserTemp.Mobile;
                 mUser.Msn = mUserTemp.Msn;
