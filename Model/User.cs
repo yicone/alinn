@@ -21,7 +21,7 @@ namespace HOT.Model
         private string _mobile;
         private string _qq;
         private string _msn;
-        private string _introducer;
+        private Guid _introducer;
         private DateTime? _lastlogintime;
         private string _lastloginip;
         private int? _logintimes;
@@ -150,7 +150,7 @@ namespace HOT.Model
         /// <summary>
         /// 
         /// </summary>
-        public string Introducer
+        public Guid Introducer
         {
             set { _introducer = value; }
             get { return _introducer; }
