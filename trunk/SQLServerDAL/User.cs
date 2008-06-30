@@ -63,7 +63,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Mobile", SqlDbType.NVarChar,50),
 					new SqlParameter("@QQ", SqlDbType.NVarChar,50),
 					new SqlParameter("@Msn", SqlDbType.NVarChar,50),
-					new SqlParameter("@Introducer", SqlDbType.VarChar,16),
+					new SqlParameter("@Introducer", SqlDbType.UniqueIdentifier),
 					new SqlParameter("@LastLoginTime", SqlDbType.DateTime),
 					new SqlParameter("@LastLoginIP", SqlDbType.NVarChar,15),
 					new SqlParameter("@LoginTimes", SqlDbType.Int,4),
@@ -113,7 +113,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Mobile", SqlDbType.NVarChar,50),
 					new SqlParameter("@QQ", SqlDbType.NVarChar,50),
 					new SqlParameter("@Msn", SqlDbType.NVarChar,50),
-					new SqlParameter("@Introducer", SqlDbType.VarChar,16),
+					new SqlParameter("@Introducer", SqlDbType.VarChar,50),
 					new SqlParameter("@ActiveCode", SqlDbType.VarChar,16),
                     new SqlParameter("@RegIP", SqlDbType.VarChar,16),
                     new SqlParameter("@RegTime", SqlDbType.VarChar,16)};
@@ -157,7 +157,7 @@ namespace HOT.SQLServerDAL
 					new SqlParameter("@Mobile", SqlDbType.NVarChar,50),
 					new SqlParameter("@QQ", SqlDbType.NVarChar,50),
 					new SqlParameter("@Msn", SqlDbType.NVarChar,50),
-					new SqlParameter("@Introducer", SqlDbType.VarChar,16),
+					new SqlParameter("@Introducer", SqlDbType.UniqueIdentifier),
 					new SqlParameter("@LastLoginTime", SqlDbType.DateTime),
 					new SqlParameter("@LastLoginIP", SqlDbType.NVarChar,15),
 					new SqlParameter("@LoginTimes", SqlDbType.Int,4),
@@ -254,7 +254,7 @@ namespace HOT.SQLServerDAL
                 model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
                 model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
                 model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
-                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                model.Introducer = new Guid(ds.Tables[0].Rows[0]["Introducer"].ToString());
                 if (ds.Tables[0].Rows[0]["LastLoginTime"].ToString() != "")
                 {
                     model.LastLoginTime = DateTime.Parse(ds.Tables[0].Rows[0]["LastLoginTime"].ToString());
@@ -310,7 +310,7 @@ namespace HOT.SQLServerDAL
                 model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
                 model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
                 model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
-                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                model.Introducer = new Guid(ds.Tables[0].Rows[0]["Introducer"].ToString());
                 if (ds.Tables[0].Rows[0]["LastLoginTime"].ToString() != "")
                 {
                     model.LastLoginTime = DateTime.Parse(ds.Tables[0].Rows[0]["LastLoginTime"].ToString());
@@ -446,7 +446,7 @@ namespace HOT.SQLServerDAL
                 model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
                 model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
                 model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
-                model.Introducer = ds.Tables[0].Rows[0]["Introducer"].ToString();
+                model.Introducer = new Guid(ds.Tables[0].Rows[0]["Introducer"].ToString());
                 model.ActiveCode = ds.Tables[0].Rows[0]["ActiveCode"].ToString();
                 if (ds.Tables[0].Rows[0]["RegTime"].ToString() != "")
                 {
