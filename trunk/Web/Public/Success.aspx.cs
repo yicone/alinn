@@ -29,7 +29,10 @@ namespace Web.Public
                     mUser.CompanyAddress = mUserTemp.CompanyAddress;
                     mUser.CompanyName = mUserTemp.CompanyName;
                     mUser.Email = mUserTemp.Email;
-                    mUser.Introducer = mUserTemp.Introducer.Length==0?null:mUserTemp.Introducer;
+                    if (mUserTemp.Introducer.Length == 0)
+                        mUser.Introducer = new Guid();
+                    else
+                        mUser.Introducer = new Guid(mUserTemp.Introducer);
                     mUser.LinkMan = mUserTemp.LinkMan;
                     mUser.Mobile = mUserTemp.Mobile;
                     mUser.Msn = mUserTemp.Msn;
