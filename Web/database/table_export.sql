@@ -643,6 +643,17 @@ PRIMARY KEY CLUSTERED
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻分类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AL_NewsClass'
 GO
+
+--留言表
+CREATE TABLE [DBO].[AL_Message]
+(
+	[MessageId] int identity(1,1) primary key not null,
+	[UserId] [uniqueidentifier] NULL,
+	[ZoneId] [uniqueidentifier] NULL,
+	[Title] [nvarchar] (200) null,
+	[MessageContent] [nvarchar] (1000) null,
+	[CreateDate] [DateTime] default(GETDATE())
+)
 /****** Object:  Trigger [CheckOrder]    Script Date: 06/03/2008 18:06:33 ******/
 SET ANSI_NULLS ON
 GO

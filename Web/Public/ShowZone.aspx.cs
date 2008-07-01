@@ -39,6 +39,7 @@ namespace Web
                   HOT.Model.Site sModel=new HOT.Model.Site();
                   sModel=sBLL.GetModel(zModel.SiteId);
                   this.labAlexa.Text = "Alexa" + GetAlexaInfo("www.hotbook.cn");
+                  dlMessageDateBind(zoneId);
             }
             }
 
@@ -118,10 +119,12 @@ namespace Web
             if (zModel.InFirst == 0)
             {
                 this.labInfirst.Text = "不在首页";
+                this.labIn.Text = "不在首页";
             }
             else
             {
                 this.labInfirst.Text = "在首页";
+                this.labIn.Text = "在首页";
             }
             this.labKeywords.Text = zModel.Keywords;
             this.labDescription.Text = zModel.Description;
@@ -140,10 +143,18 @@ namespace Web
                     labZoneClass.Text += zcParentModel.ClassName.ToString() + " > " + zcModel.ClassName.ToString()+";";
                 }
             }
+            //广告位相关信息
+            this.labZoneName.Text = zModel.ZoneName;
+            this.labZoneName1.Text = zModel.ZoneName;
+            HOT.BLL.ZoneSize zsBLL = new HOT.BLL.ZoneSize();
+            HOT.Model.ZoneSize zsModel = new HOT.Model.ZoneSize();
+            zsModel = zsBLL.GetModel(zModel.SizeId);
+            this.labZoneSize.Text = zsModel.SizeCode;
             //得到网站的相关信息
             HOT.BLL.Site sBLL=new HOT.BLL.Site();
             HOT.Model.Site sModel=new HOT.Model.Site();
             sModel=sBLL.GetModel(zModel.SiteId);
+            this.labSiteName.Text = sModel.SiteName;
             //得到网站主相关信息
             HOT.BLL.User uBLL = new HOT.BLL.User();
             HOT.Model.User uModel = new HOT.Model.User();
@@ -175,16 +186,6 @@ namespace Web
             //}
         }
 
-        protected void btnStore_Click(object sender, EventArgs e)
-        {
-            HOT.Model.Store sModel = new HOT.Model.Store();
-            HOT.BLL.Store sBLL = new HOT.BLL.Store();
-
-            sModel.UserId = HOT.BLL.User.GetLoginUser();
-            sModel.ZoneId = new Guid(this.Request.QueryString["ZoneId"]);
-            sBLL.Add(sModel);
-            HOT.Common.MessageBox.Show(this.Page,"收藏成功");
-        }
         private string GetAlexaInfo(string url)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -214,5 +215,33 @@ namespace Web
             return sb.ToString();
         }
 
+        protected void btnStoreZone_Click(object sender, ImageClickEventArgs e)
+        {
+            HOT.Model.Store sModel = new HOT.Model.Store();
+            HOT.BLL.Store sBLL = new HOT.BLL.Store();
+
+            sModel.UserId = HOT.BLL.User.GetLoginUser();
+            sModel.ZoneId = new Guid(this.Request.QueryString["ZoneId"]);
+            sBLL.Add(sModel);
+            HOT.Common.MessageBox.Show(this.Page, "收藏成功");
+        }
+
+        protected void ibtnAddMessage_Click(object sender, ImageClickEventArgs e)
+        {
+            HOT.BLL.Message mBLL = new HOT.BLL.Message();
+            HOT.Model.Message mModel = new HOT.Model.Message();
+            mModel.Title = this.textTitle.Text;
+            mModel.MessageContent = this.textMessageContent.Text;
+            mBLL.Add(mModel);
+            HOT.Common.MessageBox.Show(this.Page, "留言成功");
+        }
+        protected void dlMessageDateBind(Guid zoneId)
+        {
+            HOT.BLL.Message mBLL = new HOT.BLL.Message();
+            DataSet ds = new DataSet();
+            ds = mBLL.GetList(" AL_Message.ZoneId='" + zoneId.ToString() + "'");
+            this.dlMessage.DataSource = ds;
+            this.dlMessage.DataBind();
+        }
     }
 }

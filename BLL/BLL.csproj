@@ -106,6 +106,7 @@
     <Compile Include="Evaluation.cs" />
     <Compile Include="InFirstpage.cs" />
     <Compile Include="MediaType.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="News.cs" />
     <Compile Include="NewsClass.cs" />
     <Compile Include="Order.cs" />

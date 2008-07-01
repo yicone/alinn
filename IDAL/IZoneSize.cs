@@ -27,7 +27,7 @@ namespace HOT.IDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        HOT.Model.ZoneSize GetModel(int SizeId);
+        HOT.Model.ZoneSize GetModel(int? SizeId);
         /// <summary>
         /// 获得数据列表
         /// </summary>
