@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Employment.cs" />
     <Compile Include="Evaluation.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="News.cs" />
     <Compile Include="NewsClass.cs" />
     <Compile Include="Order.cs" />

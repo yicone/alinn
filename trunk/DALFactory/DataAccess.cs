@@ -223,5 +223,14 @@ namespace HOT.DALFactory
             object objType = CreateObject(path, CacheKey);
             return (HOT.IDAL.IEvaluation)objType;
         }
+        /// 创建Message数据层接口
+        /// </summary>
+        public static HOT.IDAL.IMessage CreateMessage()
+        {
+
+            string CacheKey = path + ".Message";
+            object objType = CreateObject(path, CacheKey);
+            return (HOT.IDAL.IMessage)objType;
+        }
 }
 }

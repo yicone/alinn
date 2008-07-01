@@ -8,7 +8,7 @@
   <tr>
     <th height="40" align="left" background="/images/b01.gif" class="d1" scope="col"><table width="936" height="40" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <th width="348" align="left" scope="col">&nbsp;你的位置: 首页 > 买广告 > 广告位详情</th>
+        <th width="348" align="left" scope="col">&nbsp;你的位置: 首页 &gt; 买广告 &gt; 广告位详情</th>
         <th width="588" scope="col">&nbsp;</th>
       </tr>
     </table></th>
@@ -18,7 +18,8 @@
       <tr>
         <th height="30" scope="col"><table width="936" height="30" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <th width="758" scope="col">&nbsp;&nbsp;&nbsp;<span class="bu03">广告位名称</span></th>
+            <th width="758" scope="col">&nbsp;&nbsp;&nbsp;<asp:Label ID="labZoneName1" runat="server"></asp:Label>
+                                                        </th>
             <th width="178" class="bu02" scope="col">本页浏览量：92次&nbsp; </th>
           </tr>
         </table></th>
@@ -32,30 +33,40 @@
                 <th colspan="2" scope="col"><img src="/images/003.gif" width="160" height="120" /></th>
               </tr>
               <tr>
-                <th height="40" colspan="2" scope="row"><img src="/images/b04.gif" width="111" height="30" /></th>
+                <th height="40" colspan="2" scope="row">
+                    <asp:ImageButton ID="btnStoreZone" runat="server" Height="30px" 
+                        ImageUrl="/images/b04.gif" onclick="btnStoreZone_Click" Width="111px" /></th>
               </tr>
               <tr>
                 <th width="90" height="40" align="right" valign="middle" scope="row">&nbsp;<span class="bu04">网站名称：</span></th>
                 <th width="156" align="left" scope="row"><label></label>
-                  <span class="bu05">八讯免费网</span></th>
+                    <asp:Label ID="labSiteName" runat="server"></asp:Label>
+                  </th>
               </tr>
               <tr>
                 <th height="40" align="right" valign="middle" scope="row">&nbsp;<span class="bu04">广告位：</span></th>
-                <th height="40" align="left" class="bu05" scope="row">八讯免费网 全站 中部</th>
+                <th height="40" align="left" class="bu05" scope="row">
+                    <asp:Label ID="labZoneName" runat="server"></asp:Label>
+                                                                    </th>
               </tr>
               <tr>
                 <th height="40" align="right" valign="middle" scope="row">&nbsp;<span class="bu04">广告尺寸：</span></th>
-                <th height="40" align="left" class="bu04" scope="row">450×760</th>
+                <th height="40" align="left" class="bu04" scope="row">
+                    <asp:Label ID="labZoneSize" runat="server"></asp:Label>
+                                                                    </th>
               </tr>
               <tr>
                 <th height="40" align="right" valign="middle" scope="row">&nbsp;<span class="bu04">位&nbsp;置：</span></th>
-                <th height="40" align="left" class="bu04" scope="row">第一屏 ?页面中部</th>
+                <th height="40" align="left" class="bu04" scope="row">
+                    <asp:Label ID="labIn" runat="server"></asp:Label>
+                                                                    </th>
               </tr>
             </table>
               <p>&nbsp;</p></th>
             <th width="362" valign="top" scope="col"><table width="358" height="300" border="0" cellpadding="0" cellspacing="0">
               <tr width="306">
-                <th width="378" height="40" align="left" scope="col">&nbsp;<span class="bu04">价&nbsp;      格：</span> &nbsp;<asp:Label ID="labWeekPrice" runat="server"></asp:Label>元/周</th>
+                <th width="378" height="40" align="left" scope="col">&nbsp;<span class="bu04">价&nbsp; 格：</span> 
+                    &nbsp;<asp:Label ID="labWeekPrice" runat="server"></asp:Label>元/周</th>
               </tr>
               <tr>
                 <th width="378" height="40" align="left" scope="row">&nbsp;<span class="bu04">购买时间：请选择购买时段</span></th>
@@ -869,7 +880,7 @@
                 <th width="378" height="40" scope="row">
                             <asp:Button ID="btnBuyAd" runat="server" OnClick="btnBuyAd_Click" Text="购买广告" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="btnStore" runat="server" OnClick="btnStore_Click" Text="收藏广告位" /></th>
+                    </th>
               </tr>
             </table></th>
             <th width="328" valign="top" scope="col"><table width="300" border="0" cellspacing="0" cellpadding="0">
@@ -1018,7 +1029,8 @@
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th width="680" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">该网站下其它广告位</span></th>
-    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06">&gt;&gt; 更多&nbsp;</span></th>
+    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06">&gt;&gt; 
+        更多&nbsp;</span></th>
   </tr>
 </table>
            <asp:GridView ID="gvLatestOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderId"
@@ -1049,12 +1061,14 @@
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th width="680" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">交易评价(3) </span></th>
-    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06"><span class="bu06">&gt;&gt; </span>更多&nbsp;</span></th>
+    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06"><span class="bu06">
+        &gt;&gt; </span>更多&nbsp;</span></th>
   </tr>
 </table>
 <table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="243" height="20" background="/images/b10.gif" class="bu02" scope="col">表 情</th>
+    <th width="243" height="20" background="/images/b10.gif" class="bu02" scope="col">表 
+        情</th>
     <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
     <th width="439" background="/images/b10.gif" class="bu02" scope="col">评价内容</th>
     <th width="8" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
@@ -1095,7 +1109,8 @@
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th width="686" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">相关广告位推荐</span></th>
-    <th width="250" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06">&gt;&gt; 更多&nbsp;</span></th>
+    <th width="250" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06">&gt;&gt; 
+        更多&nbsp;</span></th>
   </tr>
 </table>
 <table width="936" height="312" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -1187,7 +1202,8 @@
         <th height="262" background="/images/b14.gif" scope="row"><table width="95%" height="100%" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <th width="32" height="24" scope="col"><img src="/images/p1.gif" width="22" height="22" /></th>
-            <th width="120" height="24" scope="col"><a href="#" target="_blank" class="bu09">论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
+            <th width="120" height="24" scope="col"><a href="#" target="_blank" class="bu09">
+                论坛首页一(高点击)</a><a href="http://www.alimama.com/membersvc/zone/303485.htm" target="_blank" class="bu09"></a></th>
             <th width="70" height="24" class="bu08" scope="col">￥2.80元/周</th>
           </tr>
           <tr>
@@ -1248,74 +1264,41 @@
 <br>
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="680" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">该网站下其它广告位</span></th>
-    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06">&gt;&gt; 更多&nbsp;</span></th>
+    <th width="680" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">留言（3）</span></th>
+    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06"><span class="bu06">
+        &gt;&gt; </span>更多&nbsp;</span></th>
   </tr>
 </table>
-<table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <th width="198" height="20" background="/images/b10.gif" class="bu02" scope="col">广告主</th>
-    <th width="9" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="193" background="/images/b10.gif" class="bu02" scope="col">成交价格</th>
-    <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="356" background="/images/b10.gif" class="bu02" scope="col">投放时间</th>
-    <th width="11" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
-    <th width="159" background="/images/b10.gif" class="bu02" scope="col">交易状态</th>
-  </tr>
-</table>
+    <asp:DataList ID="dlMessage" runat="server">
+        <ItemTemplate>
 <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="203" height="25" background="/images/b11.gif" class="bu06" scope="col">原色网络</th>
-    <th width="203" background="/images/b11.gif" class="bu02" scope="col">24.00</th>
-    <th width="366" background="/images/b11.gif" class="bu02" scope="col">2008-06-15 ——2008-06-21</th>
-    <th width="164" background="/images/b11.gif" class="bu02" scope="col">清算完毕</th>
-  </tr>
-  <tr>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
-  </tr>
-  <tr>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">原色网络</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">24.00</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">2008-06-15 ——2008-06-21</span></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu02">清算完毕</span></th>
+    <th width="450" height="25" background="/images/b11.gif" class="bu06" scope="col">
+        <asp:Label ID="labTitle" runat="server" Text='<%# Eval("Title") %>'></asp:Label>
+      </th>
+    <th width="248" background="/images/b11.gif" class="bu06" scope="col">
+        <asp:Label ID="labUser" runat="server" Text='<%# Eval("NickName") %>'></asp:Label>
+      </th>
+    <th width="238" background="/images/b11.gif" class="bu06" scope="col">&nbsp;<span class="bu02"><asp:Label 
+            ID="labCreateDate" runat="server" Text='<%# Eval("CreateDate") %>'></asp:Label>
+        </span></th>
   </tr>
 </table>
-<br>
-<table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <th width="680" align="left" bgcolor="#F0F0F0" scope="col">&nbsp;<span class="bu03">留言（3）</span></th>
-    <th width="256" align="right" bgcolor="#F0F0F0" scope="col"><span class="bu06"><span class="bu06">&gt;&gt; </span>更多&nbsp;</span></th>
-  </tr>
-</table>
+        </ItemTemplate>
+        <HeaderTemplate>
 <table width="936" height="22" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="449" height="20" background="/images/b10.gif" class="bu02" scope="col">标 题</th>
+    <th width="449" height="20" background="/images/b10.gif" class="bu02" scope="col">标 
+        题</th>
     <th width="10" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
     <th width="236" background="/images/b10.gif" class="bu02" scope="col">评价人</th>
     <th width="8" background="/images/b10.gif" scope="col"><span class="bu01">|</span></th>
     <th width="236" background="/images/b10.gif" class="bu02" scope="col">最后回复时间</th>
   </tr>
 </table>
-<table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <th width="450" height="25" background="/images/b11.gif" class="bu06" scope="col"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th width="248" background="/images/b11.gif" class="bu06" scope="col"><a href="#" class="bu06">网缘人生</a></th>
-    <th width="238" background="/images/b11.gif" class="bu06" scope="col">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
-  </tr>
-  <tr>
-    <th height="25" background="/images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th height="25" background="/images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
-    <th height="25" background="/images/b11.gif" scope="row"><span class="bu06">&nbsp;</span><span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
-  </tr>
-  <tr>
-    <th height="25" background="/images/b11.gif" scope="row"><a href="#" target="_blank" class="bu06">让您的网站赚更多的钱：http://pageads.cn/</a></th>
-    <th height="25" background="/images/b11.gif" scope="row"><a href="#" class="bu06">网缘人生</a></th>
-    <th height="25" background="/images/b11.gif" scope="row">&nbsp;<span class="bu02">2008-04-14 &nbsp;17:04:20</span></th>
-  </tr>
-</table>?<br>
+        </HeaderTemplate>
+    </asp:DataList>
+<br>
 <table width="936" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th align="left" bgcolor="#F0F0F0" class="bu03" scope="col">&nbsp;发表留言</th>
@@ -1324,33 +1307,42 @@
 </table>
 <table width="936" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="175" height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="col">标　题:&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th width="175" height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="col">
+        标　题:&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th width="74" align="left" valign="middle" bgcolor="#F0F0F0" scope="col">
       <label></label>
     </th>
-    <th colspan="2" align="left" bgcolor="#F0F0F0" scope="col"><input name="textfield" type="text" size="50" /></th>
+    <th colspan="2" align="left" bgcolor="#F0F0F0" scope="col">
+        <asp:TextBox ID="textTitle" runat="server" Width="440px"></asp:TextBox>
+      </th>
   </tr>
   <tr>
     <th height="25" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">内　容:&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th height="25" colspan="2" align="left" bgcolor="#F0F0F0" scope="row"><textarea name="textarea" cols="60" rows="10"></textarea></th>
+    <th height="25" colspan="2" align="left" bgcolor="#F0F0F0" scope="row">
+        <asp:TextBox ID="textMessageContent" runat="server" Height="184px" 
+            TextMode="MultiLine" Width="440px"></asp:TextBox>
+      </th>
   </tr>
   <tr>
-    <th height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">图片链接:&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">&nbsp;&nbsp;&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th height="25" colspan="2" align="left" bgcolor="#F0F0F0" scope="row"><input name="textfield2" type="text" value="http://" size="50" /></th>
+    <th height="25" colspan="2" align="left" bgcolor="#F0F0F0" scope="row">
+        <asp:ImageButton ID="ibtnAddMessage" runat="server" Height="22px" 
+            ImageUrl="/images/b18.gif" onclick="ibtnAddMessage_Click" Width="78px" />
+      </th>
   </tr>
   <tr>
-    <th height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">校验码:&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th height="30" align="right" bgcolor="#F0F0F0" class="bu04" scope="row">&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th width="103" height="25" align="left" valign="middle" bgcolor="#F0F0F0" scope="row"><img src="/images/b17.gif" width="101" height="22" /></th>
-    <th width="584" align="left" valign="middle" bgcolor="#F0F0F0" scope="row"><input name="textfield3" type="text" size="8" />
-    <span id="ipt_chk_inf"><span class="bu04">请输入左侧字</span>&nbsp;&nbsp;&nbsp;<a href="#" class="bu06">看不清楚？换个图片</a></span></th>
+    <th width="103" height="25" align="left" valign="middle" bgcolor="#F0F0F0" scope="row">
+        &nbsp;</th>
+    <th width="584" align="left" valign="middle" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
   </tr>
   <tr>
     <th height="30" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
-    <th height="25" align="left" bgcolor="#F0F0F0" scope="row"><img src="/images/b18.gif" width="78" height="22" /></th>
+    <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
     <th height="25" align="left" bgcolor="#F0F0F0" scope="row">&nbsp;</th>
   </tr>
 </table>

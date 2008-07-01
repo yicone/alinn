@@ -51,7 +51,7 @@ namespace HOT.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public HOT.Model.ZoneSize GetModel(int SizeId)
+		public HOT.Model.ZoneSize GetModel(int? SizeId)
 		{
 			return dal.GetModel(SizeId);
 		}
