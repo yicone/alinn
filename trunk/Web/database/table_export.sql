@@ -492,7 +492,7 @@ CREATE TABLE [dbo].[AL_UserTemp](
 	[Mobile] [nvarchar](50) NULL,
 	[QQ] [nvarchar](50) NULL,
 	[Msn] [nvarchar](50) NULL,
-	[Introducer] [varchar](16) NULL,
+	[Introducer] [varchar](50) NULL,
 	[IsLocked] [tinyint] NULL,
 	[ActiveCode] [varchar](16) NULL,
 	[RegTime] [datetime] NULL CONSTRAINT [DF__AL_UserTe__RegTi__60A75C0F]  DEFAULT (getdate()),
