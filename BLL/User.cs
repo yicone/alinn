@@ -137,7 +137,7 @@ namespace HOT.BLL
         {
             MailMessage mailMsg = new MailMessage();
 
-            MailAddress mailAddress = new MailAddress("lixiaowei521808@163.com");
+            MailAddress mailAddress = new MailAddress("发送邮件地址");
             mailMsg.From = mailAddress;
             mailMsg.To.Add(email);
             mailMsg.Subject = Subject;
@@ -145,8 +145,8 @@ namespace HOT.BLL
             mailMsg.BodyEncoding = System.Text.Encoding.UTF8;
             mailMsg.IsBodyHtml = true;
 
-            SmtpClient client = new SmtpClient("smtp.163.com");
-            client.Credentials = new System.Net.NetworkCredential("lixiaowei521808@163.com", "834386");
+            SmtpClient client = new SmtpClient("SMTP服务器");
+            client.Credentials = new System.Net.NetworkCredential("用户名", "密码");
             //client.EnableSsl = true;
             try
             {
