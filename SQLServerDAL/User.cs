@@ -254,7 +254,10 @@ namespace HOT.SQLServerDAL
                 model.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
                 model.QQ = ds.Tables[0].Rows[0]["QQ"].ToString();
                 model.Msn = ds.Tables[0].Rows[0]["Msn"].ToString();
-                model.Introducer = new Guid(ds.Tables[0].Rows[0]["Introducer"].ToString());
+                if (ds.Tables[0].Rows[0]["Introducer"].ToString() != "")
+                {
+                    model.Introducer = new Guid(ds.Tables[0].Rows[0]["Introducer"].ToString());
+                }
                 if (ds.Tables[0].Rows[0]["LastLoginTime"].ToString() != "")
                 {
                     model.LastLoginTime = DateTime.Parse(ds.Tables[0].Rows[0]["LastLoginTime"].ToString());
