@@ -103,7 +103,7 @@ function TextZone(zoneSize, layoutType){
                 zoneDiv.css("display", "none"); //解决图片链接不能点击
                 this.bgimgDiv.css("margin-top", -(h - 2));
                 this.bgimgDiv.css("display", "block");
-                this.bgimgDiv.append('<a target="_blank" href="http://' + link + '" href="float:left;"><img src="' + imageFullPath + '"/></a>');
+                this.bgimgDiv.append('<a target="_blank" href="http://' + link + '" href="float:left;"><img style="border-width:0px" src="' + imageFullPath + '"/></a>');
             }
         };
         

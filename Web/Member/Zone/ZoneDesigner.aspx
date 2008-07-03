@@ -185,15 +185,15 @@
                         <table id="main_inner" cellspacing="0" cellpadding="0" border="0" align="center">
                         </table>
                     </div>
-                    <a id="icon" style="float: right; position: relative; margin-right: 0px; margin-top: -17px;
+                    <a id="icon" style="float: right; position: relative; margin-right: 0px; margin-top: -13px;
                         background: transparent none no-repeat scroll 0% 50%; -moz-background-clip: -moz-initial;
                         -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;
-                        z-index: 150; height: 17px; width: 90px;" href="http://www.aaaa0.com" target="_blank"><!-- another ZoneOutput -->
-                        <div style="position: relative; margin-right: 0px; margin-bottom: -17px; width: 90px;
-                            height: 17px; z-index: 2; background-image: url(http://img.alimama.cn/images/adzone/alimama0_b.png);">
+                        z-index: 150; height: 13px; width: 78px;" href="http://www.aaaa0.com" target="_blank"><!-- another in ZoneOutput -->
+                        <div style="position: relative; margin-right: 0px; margin-bottom: -13px; width: 78px;
+                            height: 13px; z-index: 2; background-image: url(/images/aaaa0.gif);">
                         </div>
-                        <div style="position: relative; margin-right: 0px; margin-bottom: 0px; width: 90px;
-                            height: 17px; z-index: 1; background-color: rgb(230, 230, 230); opacity: 0.6;">
+                        <div style="position: relative; margin-right: 0px; margin-bottom: 0px; width: 78px;
+                            height: 13px; z-index: 1; background-color: rgb(230, 230, 230); opacity: 0.6;">
                         </div>
                     </a>
                     <div class="clearing">

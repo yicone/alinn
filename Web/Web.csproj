@@ -237,13 +237,6 @@
     <Compile Include="Member\Zone\EffectReport.aspx.designer.cs">
       <DependentUpon>EffectReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\Zone\images\ZoneSite.aspx.cs">
-      <DependentUpon>ZoneSite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Member\Zone\images\ZoneSite.aspx.designer.cs">
-      <DependentUpon>ZoneSite.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Public\AdList.aspx.cs">
       <DependentUpon>AdList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1360,6 +1353,7 @@
     <Content Include="images\zzh02.gif" />
     <Content Include="images\zzh03.gif" />
     <Content Include="images\分隔符.gif" />
+    <Content Include="JavaScript\calendar.js" />
     <Content Include="JavaScript\common.js" />
     <Content Include="JavaScript\flash.js" />
     <Content Include="JavaScript\inf.js" />

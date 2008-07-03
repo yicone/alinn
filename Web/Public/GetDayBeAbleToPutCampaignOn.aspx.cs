@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using HOT.Common;
 
 namespace Web.Public
 {
@@ -26,13 +27,21 @@ namespace Web.Public
                 if (dict != null)
                 {
                     //TODO:将test替换为从数据库返回的真实数据
-                    int[] test = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
-                    ResponseToAJAX(test);
-                    Response.End();
-                }
-            }
+                    // TODO:验证参数合法性
+                    Guid zoneId = new Guid(dict["zoneid"]); 
+                    DateTime datetime = new DateTime(int.Parse(dict["year"]), int.Parse(dict["month"]), DateTime.Today.Day);
+                    if (zoneId != Guid.Empty)
+                    {
+                        //ArrayList al = HOT.BLL.Order.getCouldBuy(zoneId, datetime);
+                        int[] days = new int[] { 1, 2, 3, 4, 5, 6, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20 };
+                        //int[] days = (int[])al.ToArray(typeof (int));
+                        ResponseToAJAX(days);
+                        Response.End();
+                    }//end if
+                }//end if
+            }//end if.
         }
-
+        
         private Dictionary<string, string> GetValidQueryStringDictionary(string[] querys)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>(querys.Length);

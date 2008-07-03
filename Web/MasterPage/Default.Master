@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Web.MasterPage.Default"
     MasterPageFile="~/MasterPage/Global.Master" %>
 <asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="_htmlHeadContent">
-
+    <link type="text/css" href="/CSS/texiao.css" runat="server" />
     <script src="../JavaScript/flash.js" type="text/javascript"></script>
     <%--在此行上方增加Default.Master覆盖范围内的JS引用--%>
 </asp:Content>

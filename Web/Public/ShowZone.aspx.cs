@@ -149,7 +149,10 @@ namespace Web
             HOT.BLL.ZoneSize zsBLL = new HOT.BLL.ZoneSize();
             HOT.Model.ZoneSize zsModel = new HOT.Model.ZoneSize();
             zsModel = zsBLL.GetModel(zModel.SizeId);
-            this.labZoneSize.Text = zsModel.SizeCode;
+            if (zsModel != null)
+            {
+                this.labZoneSize.Text = zsModel.SizeCode;
+            }
             //得到网站的相关信息
             HOT.BLL.Site sBLL=new HOT.BLL.Site();
             HOT.Model.Site sModel=new HOT.Model.Site();
@@ -159,11 +162,14 @@ namespace Web
             HOT.BLL.User uBLL = new HOT.BLL.User();
             HOT.Model.User uModel = new HOT.Model.User();
             uModel = uBLL.GetUser(zModel.UserId);
-            this.labSiteOwner.Text = uModel.NickName;
-            this.labRegTime.Text = uModel.RegTime.ToString();
-            this.labConnect.Text = @"<a href='tencent://message/?uin="+uModel.QQ+"&Site="+sModel.SiteName+@"&Menu=yes'
+            if (uModel != null)
+            {
+                this.labSiteOwner.Text = uModel.NickName;
+                this.labRegTime.Text = uModel.RegTime.ToString();
+                this.labConnect.Text = @"<a href='tencent://message/?uin=" + uModel.QQ + "&Site=" + sModel.SiteName + @"&Menu=yes'
                                                     target='blank'>
                                                     <img src='http://wpa.qq.com/pa?p=1:1363036:7' alt='联系我吧？'></a>";
+            }
         }
         //绑定gvOtherZone，显示同一网站下的广告位
         protected void gvOtherZoneDataBind()

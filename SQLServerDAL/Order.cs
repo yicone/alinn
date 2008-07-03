@@ -52,11 +52,11 @@ namespace HOT.SQLServerDAL
             int result = DbHelperSQL.RunProcedure("MY_AL_Order_CouldBuy", parameters, out rowsAffected);
             if (result == 0)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         /// <summary>

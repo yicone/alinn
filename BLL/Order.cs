@@ -36,7 +36,7 @@ namespace HOT.BLL
         /// 得到购买的日期数组
         /// </summary>
         /// <param name="zoneId"></param>
-        /// <param name="checkDate"></param>
+        /// <param name="checkDate">用户选择的起始日期</param>
         /// <returns></returns>
         public static ArrayList getCouldBuy(Guid zoneId, DateTime checkDate)
         {
