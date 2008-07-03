@@ -919,6 +919,8 @@
     <Content Include="App_Themes\new\images\active.gif" />
     <Content Include="App_Themes\third\css.css" />
     <Content Include="App_Themes\third\DataList.css" />
+    <Content Include="App_Themes\third\images\bg_nav.gif" />
+    <Content Include="App_Themes\third\images\bg_nav.jpg" />
     <Content Include="App_Themes\third\Menu.css" />
     <Content Include="App_Themes\third\texiao.css" />
     <Content Include="Controls\Calendar.ascx" />

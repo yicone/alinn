@@ -35,9 +35,12 @@ namespace HOT.SQLServerDAL
                 return false;
             }
         }
-        /// <summary>
-        /// 是否可以购买
-        /// </summary>
+/// <summary>
+/// 判断某一天是否可以被购买
+/// </summary>
+/// <param name="zoneId"></param>
+/// <param name="date"></param>
+/// <returns></returns>
         public bool Exists(Guid zoneId,DateTime date)
         {
             int rowsAffected;

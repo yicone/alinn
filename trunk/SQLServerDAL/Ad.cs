@@ -60,7 +60,7 @@ namespace HOT.SQLServerDAL
             }
         }
         /// <summary>
-        ///  增加一条数据
+        ///  增加一个广告
         /// </summary>
         public void Add(HOT.Model.Ad model)
         {
