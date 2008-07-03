@@ -165,6 +165,7 @@ namespace HOT.SQLServerDAL
         /// </summary>
         /// <param name="strWhere">²éÑ¯Ìõ¼þ</param>
         /// <returns>dataset</returns>
+       
         public DataSet GetList(int startIndex, int endIndex,int doCount,Guid UserId)
         {
             SqlParameter[] parameters = { new SqlParameter("@startIndex", SqlDbType.Int,4),

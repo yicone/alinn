@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MemberGlobal.master.cs" Inherits="Web.MasterPage.MemberGlobal" %>
+
+<%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="../Controls/MemberHeader.ascx" TagName="MemberHeader" TagPrefix="uc3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>我的阿里奶奶</title>
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%--在此行上方增加全局的META标签--%>
+    <%--<script type="text/javascript" src="/JavaScript/jquery.js"></script>--%>
+
+    <script type="text/javascript" src="/JavaScript/common.js"></script>
+
+    <%--在此行上方增加全局的JS引用--%>
+    <link type="text/css" href="/CSS/alinn.css" rel="stylesheet" />
+    <link type="text/css" href="/CSS/myalinn.css" rel="stylesheet" />
+    <link type="text/css" href="/CSS/ie_hacks.css" rel="stylesheet" />
+    <link type="text/css" href="/CSS/overlay.css" rel="stylesheet" />
+    <%--在此行上方增加全局的样式表引用--%>
+    <asp:ContentPlaceHolder ID="_htmlHeadContent" runat="server">
+        <%--此处添加MEAT标签、JS脚本和样式表的引用--%>
+        <%--将特定页面才使用的JS脚本和样式表引用放置在此处，有利于减少网络流量--%>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 984px" class="center">
+        <div>
+            <uc3:MemberHeader ID="MemberHeader1" runat="server" />
+        </div>
+        <div id="maincontent" class="center" style="margin-top: 0px;">
+                <asp:ContentPlaceHolder ID="_mainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                
+        </div>
+        <div>
+            <uc2:Footer ID="Footer1" runat="server" />
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="_scriptContent" runat="server">
+        <%--此处添加JS代码和函数--%>
+    </asp:ContentPlaceHolder>
+    </form>
+    </body>
+</html>

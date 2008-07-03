@@ -2920,3 +2920,27 @@ CREATE PROCEDURE UP_AL_Message_GetList
 
 GO
 
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UP_AL_Message_GetListWhere]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[UP_AL_Message_GetListWhere]
+GO
+------------------------------------
+--用途：查询记录信息 
+--项目名称：Alinn
+--说明：
+--时间：2008-6-30 14:31:19
+------------------------------------
+CREATE PROCEDURE UP_AL_Message_GetListWhere
+@strWhere varchar(1000)
+ AS 
+Declare @sql varchar(4000)
+set @sql='
+	SELECT 
+	AL_Message.MessageId,AL_Message.UserId,AL_Message.ZoneId,AL_Message.Title,AL_Message.MessageContent,AL_Message.CreateDate
+,AL_User.NickName
+	 FROM AL_Message left join al_user on AL_User.UserId=AL_Message.UserId where '+@strWhere
+exec(@sql)
+
+
+GO
+
